@@ -12,6 +12,9 @@ dependencies = [
     "nflreadpy==0.1.5",
     "polars==1.44.2",
     "tzdata>=2025.1",
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "scikit-learn==1.9.1",
 ]
 
 [project.optional-dependencies]
@@ -43,5 +46,5 @@ files = ["src"]
 strict = true
 
 [[tool.mypy.overrides]]
-module = ["nflreadpy.*"]
+module = ["nflreadpy.*", "sklearn.*"]
 ignore_missing_imports = true

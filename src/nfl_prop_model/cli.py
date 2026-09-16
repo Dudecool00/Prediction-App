@@ -22,7 +22,7 @@ from nfl_prop_model.features.quarterback import FEATURE_COLUMNS, add_lagged_feat
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="NFL quarterback data foundation (Milestones 0–1)")
+    parser = argparse.ArgumentParser(description="NFL quarterback data and baseline research")
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
     for name in ("fetch", "build"):
@@ -33,8 +33,21 @@ def main(argv: list[str] | None = None) -> int:
             command.add_argument("--refresh", action="store_true", help="Retrieve a new snapshot")
         else:
             command.add_argument("--report-dir", type=Path, default=Path("reports/local"))
+    evaluation = commands.add_parser("evaluate", help="Weekly baseline evaluation on 2023-2024")
+    evaluation.add_argument("--data-dir", type=Path, default=Path("data"))
+    evaluation.add_argument("--report-dir", type=Path, default=Path("reports/local/baselines"))
     args = parser.parse_args(argv)
     try:
+        if args.command == "evaluate":
+            from nfl_prop_model.modeling.report import write_evaluation
+
+            report = write_evaluation(args.data_dir, args.report_dir)
+            print(
+                f"Evaluated {report['counts']['evaluated_qb_games']:,} QB-games across "
+                f"{report['counts']['folds']} weekly folds."
+            )
+            print(f"Report: {args.report_dir / 'evaluation.md'}")
+            return 0
         key = season_key(args.seasons)
         if args.command == "fetch":
             snapshot = fetch_snapshot(args.data_dir, args.seasons, refresh=args.refresh)
