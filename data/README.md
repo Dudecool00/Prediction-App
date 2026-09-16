@@ -58,3 +58,11 @@ what was known before historical games; refresh and verify roster/game status fo
 Tests use hand-authored fictitious teams/players and numerical examples, not redistributed data.
 If sharing generated tables or reports, preserve the source attribution, license link, and
 description of changes above. No endorsement by the NFL or nflverse is implied.
+
+## Baseline evaluation outputs
+
+`processed/baselines_2022_2024/` stores hash-named out-of-fold predictions and a manifest linking
+them to the unchanged historical table. `reports/milestone_2/` contains aggregate metrics and
+fold-level preprocessing/coefficient diagnostics. Training uses 2022 for warmup and earlier
+available games for each 2023-2024 week. No 2025-season results or market prices are ingested.
+Prediction errors are derived research outputs, not a historical betting-return dataset.

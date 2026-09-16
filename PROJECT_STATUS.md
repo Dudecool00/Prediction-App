@@ -2,7 +2,7 @@
 
 Updated 2026-09-15 UTC and America/Chicago.
 
-## Completed implementation: Milestones 0 and 1
+## Completed data foundation: Milestones 0 and 1
 
 - Python package, CLI entry point, isolated environment, dependency constraints, Ruff, mypy,
   pytest, Git ignores, setup guide, and an offline GitHub Actions workflow.
@@ -28,19 +28,55 @@ Updated 2026-09-15 UTC and America/Chicago.
   source hashes and IDs, and [dated retirement evidence](reports/current_qbs_2026/retirement_notes.md).
   Today's charts do not resolve historical starter discrepancies or confirm future starters.
 
+## Completed research baseline: Milestone 2
+
+- Added `nfl-prop evaluate`: prior-five-game mean, season-to-date mean, and Ridge with fixed
+  alpha=1. Median imputation, missing indicators, scaling, and regression fit only on each
+  training fold. The feature allowlist excludes current outcomes, diagnostics, and 2026 status.
+- 2022 provides 633 initial training rows. Every 2023-2024 recorded QB-game is scored:
+  **1,327 games, 36 weekly folds, three forecasts, zero evaluation rows dropped**.
+- Training cutoffs precede each week's earliest pregame timestamp. A training outcome must
+  clear kickoff plus 24 hours strictly before that cutoff. The 2025 holdout remains untouched.
+- Results in [evaluation.md](reports/milestone_2/evaluation.md); JSON records all fold cutoffs,
+  medians, scaler parameters, coefficients, versions, metrics, and source hashes. Predictions
+  are in ignored `data/processed/baselines_2022_2024/`; estimators are fitted transiently.
+
+| Forecast | MAE | RMSE | Bias |
+| --- | ---: | ---: | ---: |
+| Prior-five mean | 72.03 | 91.97 | +2.35 |
+| Season-to-date mean | 70.58 | 91.57 | -4.11 |
+| Ridge | 68.80 | 85.72 | +10.21 |
+
+All units are yards; positive bias means overprediction. Ridge improves aggregate error but
+has greater bias and does not win every subgroup. Its no-history MAE is 98.24 yards (29 cases).
+This is an appearance-conditioned research comparison. Starter-specific/production validity,
+statistical significance, calibration, uncertainty intervals, and profitability remain unproven.
+
 ## Validation evidence
 
-- Clean installs succeeded with Windows Python 3.14.2 (`.venv`) and 3.12.14 (`.venv-check`).
-- 33 tests pass on Python 3.14, including five new current-chart tests. The original 28 passed
-  on both runtimes: mathematical examples, future-outcome mutation, shifted history, cohort
-  integrity, schema failures, cache checksums, and offline CLI rebuilds.
-- Ruff lint and formatting pass; strict mypy passes for all 11 source files.
+- Pinned installations and **45 tests pass** under Windows Python 3.14.2 (`.venv`) and 3.12.14
+  (`.venv-check`). The 12 added modeling cases verify cutoffs, delayed results, grouped games,
+  fold preprocessing, current/future outcome mutation, forbidden columns, holdout rejection,
+  newcomer fallbacks, numerical metrics, and deterministic offline CLI evaluation.
+- Ruff lint and formatting pass; strict mypy passes for all 15 source files.
 - `pip check` reports no broken requirements in either environment.
 - Full-data fetch reused the cache. Two offline builds produced identical manifests and
   output SHA-256 `5bceef915e3ff9216710f6be47c505fc39611d6b2ffa3d7bac77f3d6d44261cc`.
 - The current-chart audit also succeeds offline; its report references that same historical
   table hash. A direct file checksum after the cross-reference confirms the table is unchanged.
-- GitHub Actions is configured but has not run remotely; changes have not been pushed.
+- Full-data evaluation reproduced prediction SHA-256
+  `6180fb2545dbe6ee1212469e39fb9177638bf5f2a5127fe997325a59e04fcae4` on repeated Python 3.14 runs.
+  Historical data remain unchanged. Floating-point equality across platforms is not promised.
+- The foundation's [GitHub Actions run](https://github.com/Dudecool00/Prediction-App/actions/runs/35043536050)
+  passes on Ubuntu/Python 3.11 and Windows/Python 3.12. Milestone 2 uses the same CI matrix.
+  NumPy 2.4.6 / SciPy 1.17.1 were selected with wheels for both 3.11 and 3.14.
+
+## GitHub review
+
+The foundation is published as [PR #1](https://github.com/Dudecool00/Prediction-App/pull/1),
+commit `ae5124c` on `codex/data-foundation`. Milestone 2 uses `codex/milestone-2-baselines`, based
+on that foundation so its review can show only the new baseline changes. Merge the foundation
+first and retarget the baseline PR to `main` before merging it. Neither milestone is merged yet.
 
 **Environment issue still open:** pytest emits native `Windows fatal exception: access violation`
 diagnostics during Polars execution, while all assertions complete and the process exits 0.
@@ -60,8 +96,8 @@ and CLI succeed, but clean native-runtime validation on another machine/CI remai
   starter-specific evaluation; do not interpret unmatched labels as proven inactive players.
 - Inactive QBs absent from statistics are not reconstructed; history is regular-season and
   sample-limited. Current historical files may contain revisions unavailable pregame.
-- **Model versus baseline: not evaluated.** No trained model, probability calibration,
-  interval coverage, historical betting ROI, EV engine, or UI exists yet.
+- Probability calibration, interval coverage, historical betting ROI, EV engine, and UI are
+  not implemented. The baseline report above measures point-error performance only.
 - 2025-season analysis is reserved. The schedules loader internally reads all seasons, then
   returns only the requested development seasons. January 2025 dates in the 2024 season are valid.
 
@@ -71,6 +107,7 @@ and CLI succeed, but clean native-runtime validation on another machine/CI remai
 .\.venv\Scripts\python.exe -m pip install -c requirements-dev.lock -e '.[dev]'
 .\.venv\Scripts\nfl-prop.exe fetch --seasons 2022 2023 2024
 .\.venv\Scripts\nfl-prop.exe build --report-dir reports/local
+.\.venv\Scripts\nfl-prop.exe evaluate --report-dir reports/milestone_2
 .\.venv\Scripts\python.exe -m nfl_prop_model.data.current_qbs --refresh
 .\.venv\Scripts\python.exe -m pytest
 .\.venv\Scripts\python.exe -m ruff check .
@@ -80,11 +117,12 @@ and CLI succeed, but clean native-runtime validation on another machine/CI remai
 
 Use `fetch --refresh` only when a new upstream snapshot is wanted. The README documents clean
 setup on Windows and macOS/Linux, data paths, restoring older cached snapshots, and all features.
-Training, evaluation, weather, and app-start commands will be added in their own milestones.
+`evaluate` fits each fold and writes its comparison in one command. Production prediction,
+weather, and app-start commands will be added in their own milestones.
 
 ## Next milestone
 
-Review the audit, reconcile starter-source discrepancies, and resolve/independently verify
-the native diagnostics. Then begin Milestone 2: naive prior-five-game and Ridge baselines,
-walk-forward evaluation on development seasons, train-fold preprocessing, MAE/RMSE/bias by
-season and observed-history bucket. Keep the 2025-season holdout out of model selection.
+Review the foundation PR, baseline bias and limited-history failures, reconcile historical starter
+labels, and independently verify native diagnostics.
+Milestone 3 adds one nonlinear model and chronological uncertainty calibration, with incremental
+schedule/opponent/weather features. Keep 2025 out of feature/model selection.
