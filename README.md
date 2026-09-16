@@ -197,9 +197,10 @@ replacement column. Invalid/missing kickoff times or unmatched QB games stop the
 
 **Current Windows validation caveat:** 45 tests pass under Python 3.12 and 3.14, but pytest prints
 native access-violation diagnostics during Polars calls.
-The processes complete with exit code 0; the CLI succeeds. The cause remains unresolved after
-testing another Polars version and its compatibility runtime. No fault handler is suppressed.
-See [PROJECT_STATUS.md](PROJECT_STATUS.md) for evidence and the outstanding environment check.
+The processes complete with exit code 0; the CLI succeeds. The local cause remains unresolved
+after testing another Polars version and its compatibility runtime. No fault handler is suppressed.
+Independent GitHub CI passes all 45 tests on Linux/Python 3.11 and Windows/Python 3.12 without
+those native diagnostics. See [PROJECT_STATUS.md](PROJECT_STATUS.md) for evidence.
 
 ## Architecture and learning guide
 
@@ -274,8 +275,8 @@ fetch/build and evaluation reject 2025+ analysis. `load_schedules` internally re
 file before filtering; only requested development seasons are stored/analyzed here. January 2025
 games belonging to the **2024 season** are valid development data.
 
-Next: reconcile historical starter labels, investigate bias and limited-history cases, and obtain
-independent runtime validation. Milestone 3 adds one nonlinear model and chronological uncertainty
+Next: reconcile historical starter labels and investigate bias and limited-history cases.
+Milestone 3 adds one nonlinear model and chronological uncertainty
 calibration, with schedule/opponent/weather features assessed incrementally. The EV engine and
 Streamlit application follow later. Statistical accuracy is not historical profitability.
 

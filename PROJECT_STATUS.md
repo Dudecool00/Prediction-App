@@ -68,22 +68,25 @@ statistical significance, calibration, uncertainty intervals, and profitability 
   `6180fb2545dbe6ee1212469e39fb9177638bf5f2a5127fe997325a59e04fcae4` on repeated Python 3.14 runs.
   Historical data remain unchanged. Floating-point equality across platforms is not promised.
 - The foundation's [GitHub Actions run](https://github.com/Dudecool00/Prediction-App/actions/runs/35043536050)
-  passes on Ubuntu/Python 3.11 and Windows/Python 3.12. Milestone 2 uses the same CI matrix.
+  passes. [Milestone 2 CI](https://github.com/Dudecool00/Prediction-App/actions/runs/35046398100)
+  also passes all 45 tests, lint, formatting, typing, and dependency checks on Ubuntu/Python 3.11
+  and Windows/Python 3.12. Both test logs contain zero native access-violation messages.
   NumPy 2.4.6 / SciPy 1.17.1 were selected with wheels for both 3.11 and 3.14.
 
 ## GitHub review
 
 The foundation is merged in [PR #1](https://github.com/Dudecool00/Prediction-App/pull/1),
-commit `41f0e93` on `main`. Milestone 2 uses `codex/milestone-2-baselines`, rebased onto that
-merged foundation so its draft PR targets `main` and shows only the new baseline changes.
+commit `41f0e93` on `main`. [Milestone 2 draft PR #2](https://github.com/Dudecool00/Prediction-App/pull/2)
+uses `codex/milestone-2-baselines`, rebased onto that merged foundation. It targets `main` and
+shows only the new baseline changes.
 
 **Environment issue still open:** pytest emits native `Windows fatal exception: access violation`
 diagnostics during Polars execution, while all assertions complete and the process exits 0.
 Reproduced inside and outside the sandbox, on Python 3.12 and 3.14, with Polars 1.38.1 and
 1.44.2, and with the compatibility runtime. Version/runtime swaps did not resolve it.
 No fault handler or test has been disabled. Polars 1.44.2's standard runtime is restored.
-Local diagnostic output is kept in ignored `reports/local/test-*.txt`. The numerical tests
-and CLI succeed, but clean native-runtime validation on another machine/CI remains outstanding.
+Local diagnostic output is kept in ignored `reports/local/test-*.txt`. Independent Linux and
+Windows CI runners pass all 45 tests without these messages. The local root cause remains open.
 
 ## Data limitations and current modeling results
 
@@ -121,7 +124,6 @@ weather, and app-start commands will be added in their own milestones.
 
 ## Next milestone
 
-Review baseline bias and limited-history failures, reconcile historical starter labels, and
-independently verify native diagnostics.
+Review baseline bias and limited-history failures and reconcile historical starter labels.
 Milestone 3 adds one nonlinear model and chronological uncertainty calibration, with incremental
 schedule/opponent/weather features. Keep 2025 out of feature/model selection.
