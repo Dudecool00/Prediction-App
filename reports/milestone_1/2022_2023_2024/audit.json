@@ -1,0 +1,1406 @@
+{
+  "by_season": [
+    {
+      "fewer_than_five_prior_games": 323,
+      "no_prior_history": 83,
+      "qb_games": 633,
+      "quarterbacks": 83,
+      "recorded_nonstarters": 95,
+      "season": 2022,
+      "zero_attempts": 16
+    },
+    {
+      "fewer_than_five_prior_games": 110,
+      "no_prior_history": 18,
+      "qb_games": 663,
+      "quarterbacks": 81,
+      "recorded_nonstarters": 119,
+      "season": 2023,
+      "zero_attempts": 30
+    },
+    {
+      "fewer_than_five_prior_games": 58,
+      "no_prior_history": 11,
+      "qb_games": 664,
+      "quarterbacks": 78,
+      "recorded_nonstarters": 153,
+      "season": 2024,
+      "zero_attempts": 33
+    }
+  ],
+  "counts": {
+    "completed_regular_schedule_games": 815,
+    "excluded_non_qb_or_unknown_position": 54408,
+    "excluded_qb_missing_target": 0,
+    "excluded_qb_non_regular_season": 89,
+    "excluded_qb_uncompleted_games": 0,
+    "included_qb_games": 1960,
+    "included_recorded_nonstarters": 367,
+    "included_unique_qbs": 112,
+    "included_unknown_starter_status": 0,
+    "included_zero_attempt_rows": 79,
+    "scheduled_starters_without_target_rows": [
+      {
+        "game_id": "2022_08_LV_NO",
+        "player_id": "00-0031503",
+        "team": "NO"
+      },
+      {
+        "game_id": "2022_11_PHI_IND",
+        "player_id": "00-0036879",
+        "team": "IND"
+      },
+      {
+        "game_id": "2024_08_ARI_MIA",
+        "player_id": "00-0034177",
+        "team": "MIA"
+      },
+      {
+        "game_id": "2024_08_KC_LV",
+        "player_id": "00-0038579",
+        "team": "LV"
+      },
+      {
+        "game_id": "2024_10_NYG_CAR",
+        "player_id": "00-0027973",
+        "team": "CAR"
+      },
+      {
+        "game_id": "2024_10_PIT_WAS",
+        "player_id": "00-0032268",
+        "team": "WAS"
+      },
+      {
+        "game_id": "2024_11_MIN_TEN",
+        "player_id": "00-0034771",
+        "team": "TEN"
+      },
+      {
+        "game_id": "2024_12_KC_CAR",
+        "player_id": "00-0027973",
+        "team": "CAR"
+      },
+      {
+        "game_id": "2024_12_DET_IND",
+        "player_id": "00-0026158",
+        "team": "IND"
+      },
+      {
+        "game_id": "2024_12_DAL_WAS",
+        "player_id": "00-0032268",
+        "team": "WAS"
+      },
+      {
+        "game_id": "2024_13_TEN_WAS",
+        "player_id": "00-0032268",
+        "team": "WAS"
+      },
+      {
+        "game_id": "2024_13_TB_CAR",
+        "player_id": "00-0027973",
+        "team": "CAR"
+      },
+      {
+        "game_id": "2024_14_NO_NYG",
+        "player_id": "00-0038476",
+        "team": "NYG"
+      },
+      {
+        "game_id": "2024_14_JAX_TEN",
+        "player_id": "00-0034771",
+        "team": "TEN"
+      },
+      {
+        "game_id": "2024_15_ATL_LV",
+        "player_id": "00-0038579",
+        "team": "LV"
+      },
+      {
+        "game_id": "2024_16_TEN_IND",
+        "player_id": "00-0026158",
+        "team": "IND"
+      },
+      {
+        "game_id": "2024_17_LV_NO",
+        "player_id": "00-0038998",
+        "team": "NO"
+      },
+      {
+        "game_id": "2024_17_IND_NYG",
+        "player_id": "00-0038476",
+        "team": "NYG"
+      },
+      {
+        "game_id": "2024_17_DAL_PHI",
+        "player_id": "00-0036389",
+        "team": "PHI"
+      },
+      {
+        "game_id": "2024_17_MIA_CLE",
+        "player_id": "00-0031503",
+        "team": "CLE"
+      },
+      {
+        "game_id": "2022_11_CAR_BAL",
+        "player_id": "00-0033275",
+        "team": "CAR"
+      },
+      {
+        "game_id": "2022_15_PIT_CAR",
+        "player_id": "00-0038102",
+        "team": "PIT"
+      },
+      {
+        "game_id": "2024_08_IND_HOU",
+        "player_id": "00-0026158",
+        "team": "IND"
+      },
+      {
+        "game_id": "2024_09_WAS_NYG",
+        "player_id": "00-0032268",
+        "team": "WAS"
+      },
+      {
+        "game_id": "2024_10_TEN_LAC",
+        "player_id": "00-0034771",
+        "team": "TEN"
+      },
+      {
+        "game_id": "2024_11_WAS_PHI",
+        "player_id": "00-0032268",
+        "team": "WAS"
+      },
+      {
+        "game_id": "2024_11_IND_NYJ",
+        "player_id": "00-0026158",
+        "team": "IND"
+      },
+      {
+        "game_id": "2024_12_TEN_HOU",
+        "player_id": "00-0034771",
+        "team": "TEN"
+      },
+      {
+        "game_id": "2024_13_LV_KC",
+        "player_id": "00-0035289",
+        "team": "LV"
+      },
+      {
+        "game_id": "2024_13_IND_NE",
+        "player_id": "00-0026158",
+        "team": "IND"
+      },
+      {
+        "game_id": "2024_13_TEN_WAS",
+        "player_id": "00-0034771",
+        "team": "TEN"
+      },
+      {
+        "game_id": "2024_14_CAR_PHI",
+        "player_id": "00-0027973",
+        "team": "CAR"
+      },
+      {
+        "game_id": "2024_14_LV_TB",
+        "player_id": "00-0035289",
+        "team": "LV"
+      },
+      {
+        "game_id": "2024_16_NYG_ATL",
+        "player_id": "00-0038476",
+        "team": "NYG"
+      },
+      {
+        "game_id": "2024_16_CLE_CIN",
+        "player_id": "00-0031503",
+        "team": "CLE"
+      },
+      {
+        "game_id": "2024_16_NO_GB",
+        "player_id": "00-0038998",
+        "team": "NO"
+      },
+      {
+        "game_id": "2024_18_MIA_NYJ",
+        "player_id": "00-0036212",
+        "team": "MIA"
+      }
+    ],
+    "source_player_duplicate_key_rows": 0,
+    "source_player_null_key_rows": 66,
+    "source_player_rows": 56457,
+    "source_qb_duplicate_keys": 0,
+    "source_schedule_duplicate_keys": 0,
+    "source_schedule_rows": 854,
+    "source_unknown_position_rows": 66,
+    "unknown_scheduled_starter_slots": 0,
+    "unmatched_qb_game_ids": 0
+  },
+  "feature_columns": [
+    "passing_yards_lag1",
+    "passing_yards_mean3",
+    "passing_yards_mean5",
+    "attempts_mean5",
+    "passing_yards_season_mean",
+    "prior_games_in_sample",
+    "prior_season_games_in_sample"
+  ],
+  "generated_at_utc": "2026-09-15T03:29:30.445448+00:00",
+  "last_included_kickoff_utc": "2025-01-06T01:20:00+00:00",
+  "model_results": "Not evaluated: Milestones 0 and 1 only.",
+  "pipeline_version": "0.1.0",
+  "processed_metadata": {
+    "build_environment": {
+      "polars": "1.44.2",
+      "python": "3.14.2",
+      "tzdata": "2026.4"
+    },
+    "file": "quarterback_games-5bceef915e3ff9216710f6be47c505fc39611d6b2ffa3d7bac77f3d6d44261cc.parquet",
+    "pipeline_source_sha256": "80d6c3f5427ab357fcfdea1a181c200fa0b0f854ae062c55f2f4708c2806f5b3",
+    "rows": 1960,
+    "schema": {
+      "attempts_mean5": "Float64",
+      "game_id": "String",
+      "history_available_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "is_designated_home": "Boolean",
+      "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "observed_attempts": "Float64",
+      "observed_completions": "Float64",
+      "opponent_team": "String",
+      "passing_yards_lag1": "Float64",
+      "passing_yards_mean3": "Float64",
+      "passing_yards_mean5": "Float64",
+      "passing_yards_season_mean": "Float64",
+      "player_display_name": "String",
+      "player_id": "String",
+      "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "prior_games_in_sample": "UInt32",
+      "prior_season_games_in_sample": "UInt32",
+      "schedule_reported_starter": "Boolean",
+      "season": "Int32",
+      "target_passing_yards": "Float64",
+      "team": "String",
+      "week": "Int32"
+    },
+    "sha256": "5bceef915e3ff9216710f6be47c505fc39611d6b2ffa3d7bac77f3d6d44261cc"
+  },
+  "raw_manifest": {
+    "datasets": {
+      "player_stats": {
+        "file": "player_stats-af357ced3ffaab6efff4aa865f7efe0f4d1157cd951e3c1220eb4ff46ced2993.parquet",
+        "license": "CC-BY-4.0",
+        "loader": "nflreadpy.load_player_stats(seasons, summary_level='week')",
+        "rows": 56457,
+        "schema": {
+          "air_yards_share": "Float64",
+          "attempts": "Int32",
+          "carries": "Int32",
+          "completions": "Int32",
+          "def_2pt_atts": "Int32",
+          "def_2pt_made": "Int32",
+          "def_fg_blocks": "Int32",
+          "def_fumbles": "Int32",
+          "def_fumbles_forced": "Int32",
+          "def_interception_yards": "Int32",
+          "def_interceptions": "Int32",
+          "def_pass_defended": "Int32",
+          "def_pat_blocks": "Int32",
+          "def_punt_blocks": "Int32",
+          "def_qb_hits": "Int32",
+          "def_sack_yards": "Float64",
+          "def_sacks": "Float64",
+          "def_safeties": "Int32",
+          "def_tackle_assists": "Int32",
+          "def_tackles_for_loss": "Int32",
+          "def_tackles_for_loss_yards": "Int32",
+          "def_tackles_solo": "Int32",
+          "def_tackles_with_assist": "Int32",
+          "def_tds": "Int32",
+          "fantasy_points": "Float64",
+          "fantasy_points_ppr": "Float64",
+          "fg_att": "Int32",
+          "fg_blocked": "Int32",
+          "fg_blocked_distance": "Int32",
+          "fg_blocked_list": "String",
+          "fg_long": "Int32",
+          "fg_made": "Int32",
+          "fg_made_0_19": "Int32",
+          "fg_made_20_29": "Int32",
+          "fg_made_30_39": "Int32",
+          "fg_made_40_49": "Int32",
+          "fg_made_50_59": "Int32",
+          "fg_made_60_": "Int32",
+          "fg_made_distance": "Int32",
+          "fg_made_list": "String",
+          "fg_missed": "Int32",
+          "fg_missed_0_19": "Int32",
+          "fg_missed_20_29": "Int32",
+          "fg_missed_30_39": "Int32",
+          "fg_missed_40_49": "Int32",
+          "fg_missed_50_59": "Int32",
+          "fg_missed_60_": "Int32",
+          "fg_missed_distance": "Int32",
+          "fg_missed_list": "String",
+          "fg_pct": "Float64",
+          "fumble_recovery_opp": "Int32",
+          "fumble_recovery_own": "Int32",
+          "fumble_recovery_tds": "Int32",
+          "fumble_recovery_yards_opp": "Int32",
+          "fumble_recovery_yards_own": "Int32",
+          "fumbles_forced_by_opp": "Int32",
+          "fumbles_lost_total": "Int32",
+          "fumbles_not_forced": "Int32",
+          "fumbles_out_of_bounds": "Int32",
+          "fumbles_total": "Int32",
+          "game_id": "String",
+          "gwfg_att": "Int32",
+          "gwfg_blocked": "Int32",
+          "gwfg_distance": "Int32",
+          "gwfg_made": "Int32",
+          "gwfg_missed": "Int32",
+          "headshot_url": "String",
+          "kickoff_return_yards": "Int32",
+          "kickoff_returns": "Int32",
+          "misc_yards": "Int32",
+          "opponent_team": "String",
+          "pacr": "Float64",
+          "passing_10": "Int32",
+          "passing_16": "Int32",
+          "passing_20": "Int32",
+          "passing_2pt_conversions": "Int32",
+          "passing_40": "Int32",
+          "passing_air_yards": "Int32",
+          "passing_cpoe": "Float64",
+          "passing_epa": "Float64",
+          "passing_first_downs": "Int32",
+          "passing_interceptions": "Int32",
+          "passing_tds": "Int32",
+          "passing_yards": "Int32",
+          "passing_yards_after_catch": "Int32",
+          "pat_att": "Int32",
+          "pat_blocked": "Int32",
+          "pat_made": "Int32",
+          "pat_missed": "Int32",
+          "pat_pct": "Float64",
+          "penalties": "Int32",
+          "penalty_yards": "Int32",
+          "player_display_name": "String",
+          "player_id": "String",
+          "player_name": "String",
+          "position": "String",
+          "position_group": "String",
+          "pt_att": "Int32",
+          "pt_blocked": "Int32",
+          "pt_downed": "Int32",
+          "pt_fair_caught": "Int32",
+          "pt_inside_20": "Int32",
+          "pt_long": "Int32",
+          "pt_net_yards": "Int32",
+          "pt_out_of_bounds": "Int32",
+          "pt_return_tds": "Int32",
+          "pt_return_yards": "Int32",
+          "pt_returned": "Int32",
+          "pt_touchback": "Int32",
+          "pt_yards": "Int32",
+          "punt_return_yards": "Int32",
+          "punt_returns": "Int32",
+          "racr": "Float64",
+          "receiving_10": "Int32",
+          "receiving_16": "Int32",
+          "receiving_20": "Int32",
+          "receiving_2pt_conversions": "Int32",
+          "receiving_40": "Int32",
+          "receiving_air_yards": "Int32",
+          "receiving_epa": "Float64",
+          "receiving_first_downs": "Int32",
+          "receiving_fumbles": "Int32",
+          "receiving_fumbles_lost": "Int32",
+          "receiving_tds": "Int32",
+          "receiving_yards": "Int32",
+          "receiving_yards_after_catch": "Int32",
+          "receptions": "Int32",
+          "rushing_10": "Int32",
+          "rushing_12": "Int32",
+          "rushing_20": "Int32",
+          "rushing_2pt_conversions": "Int32",
+          "rushing_40": "Int32",
+          "rushing_epa": "Float64",
+          "rushing_first_downs": "Int32",
+          "rushing_fumbles": "Int32",
+          "rushing_fumbles_lost": "Int32",
+          "rushing_tds": "Int32",
+          "rushing_yards": "Int32",
+          "sack_fumbles": "Int32",
+          "sack_fumbles_lost": "Int32",
+          "sack_yards_lost": "Int32",
+          "sacks_suffered": "Int32",
+          "season": "Int32",
+          "season_type": "String",
+          "special_teams_tds": "Int32",
+          "target_share": "Float64",
+          "targets": "Int32",
+          "team": "String",
+          "week": "Int32",
+          "wopr": "Float64"
+        },
+        "sha256": "af357ced3ffaab6efff4aa865f7efe0f4d1157cd951e3c1220eb4ff46ced2993",
+        "source": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player"
+      },
+      "schedules": {
+        "file": "schedules-8bce9f23bf0158ecffc23fba1a2a8f780025759a1ed3dced81510eb30b312bef.parquet",
+        "license": "CC-BY-4.0",
+        "loader": "nflreadpy.load_schedules(seasons)",
+        "rows": 854,
+        "schema": {
+          "away_coach": "String",
+          "away_moneyline": "Int32",
+          "away_qb_id": "String",
+          "away_qb_name": "String",
+          "away_rest": "Int32",
+          "away_score": "Int32",
+          "away_spread_odds": "Int32",
+          "away_team": "String",
+          "div_game": "Int32",
+          "espn": "String",
+          "ftn": "Int32",
+          "game_id": "String",
+          "game_type": "String",
+          "gameday": "String",
+          "gametime": "String",
+          "gsis": "Int32",
+          "home_coach": "String",
+          "home_moneyline": "Int32",
+          "home_qb_id": "String",
+          "home_qb_name": "String",
+          "home_rest": "Int32",
+          "home_score": "Int32",
+          "home_spread_odds": "Int32",
+          "home_team": "String",
+          "location": "String",
+          "nfl_detail_id": "String",
+          "old_game_id": "String",
+          "over_odds": "Int32",
+          "overtime": "Int32",
+          "pff": "Int32",
+          "pfr": "String",
+          "referee": "String",
+          "result": "Int32",
+          "roof": "String",
+          "season": "Int32",
+          "spread_line": "Float64",
+          "stadium": "String",
+          "stadium_id": "String",
+          "surface": "String",
+          "temp": "Int32",
+          "total": "Int32",
+          "total_line": "Float64",
+          "under_odds": "Int32",
+          "week": "Int32",
+          "weekday": "String",
+          "wind": "Int32"
+        },
+        "sha256": "8bce9f23bf0158ecffc23fba1a2a8f780025759a1ed3dced81510eb30b312bef",
+        "source": "https://github.com/nflverse/nflverse-data/releases/tag/schedules"
+      }
+    },
+    "format_version": 1,
+    "packages": {
+      "nflreadpy": "0.1.5",
+      "polars": "1.44.2",
+      "tzdata": "2026.4"
+    },
+    "python_version": "3.14.2",
+    "retrieved_at_utc": "2026-09-15T03:08:35.222604+00:00",
+    "seasons": [
+      2022,
+      2023,
+      2024
+    ]
+  },
+  "retrieved_at_utc": "2026-09-15T03:08:35.222604+00:00",
+  "seasons": [
+    2022,
+    2023,
+    2024
+  ],
+  "source_missingness": {
+    "player_stats": {
+      "air_yards_share": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "attempts": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "carries": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "completions": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_2pt_atts": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_2pt_made": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_fg_blocks": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_fumbles": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_fumbles_forced": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_interception_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_interceptions": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_pass_defended": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_pat_blocks": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_punt_blocks": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_qb_hits": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_sack_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_sacks": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_safeties": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_tackle_assists": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_tackles_for_loss": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_tackles_for_loss_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_tackles_solo": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_tackles_with_assist": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "def_tds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fantasy_points": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fantasy_points_ppr": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_att": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_blocked": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_blocked_distance": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_blocked_list": {
+        "null_count": 56391,
+        "null_fraction": 0.9988309687018438
+      },
+      "fg_long": {
+        "null_count": 55027,
+        "null_fraction": 0.9746709885399507
+      },
+      "fg_made": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_made_0_19": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_made_20_29": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_made_30_39": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_made_40_49": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_made_50_59": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_made_60_": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_made_distance": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_made_list": {
+        "null_count": 55027,
+        "null_fraction": 0.9746709885399507
+      },
+      "fg_missed": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_missed_0_19": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_missed_20_29": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_missed_30_39": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_missed_40_49": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_missed_50_59": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_missed_60_": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_missed_distance": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fg_missed_list": {
+        "null_count": 56070,
+        "null_fraction": 0.9931452255699028
+      },
+      "fg_pct": {
+        "null_count": 54942,
+        "null_fraction": 0.973165417928689
+      },
+      "fumble_recovery_opp": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fumble_recovery_own": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fumble_recovery_tds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fumble_recovery_yards_opp": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fumble_recovery_yards_own": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fumbles_forced_by_opp": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fumbles_lost_total": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fumbles_not_forced": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fumbles_out_of_bounds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "fumbles_total": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "game_id": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "gwfg_att": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "gwfg_blocked": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "gwfg_distance": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "gwfg_made": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "gwfg_missed": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "headshot_url": {
+        "null_count": 77,
+        "null_fraction": 0.0013638698478488052
+      },
+      "kickoff_return_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "kickoff_returns": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "misc_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "opponent_team": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pacr": {
+        "null_count": 54379,
+        "null_fraction": 0.9631932267035088
+      },
+      "passing_10": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "passing_16": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "passing_20": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "passing_2pt_conversions": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "passing_40": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "passing_air_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "passing_cpoe": {
+        "null_count": 54386,
+        "null_fraction": 0.9633172148714951
+      },
+      "passing_epa": {
+        "null_count": 54338,
+        "null_fraction": 0.9624670102910179
+      },
+      "passing_first_downs": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "passing_interceptions": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "passing_tds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "passing_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "passing_yards_after_catch": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pat_att": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pat_blocked": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pat_made": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pat_missed": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pat_pct": {
+        "null_count": 54919,
+        "null_fraction": 0.9727580282338771
+      },
+      "penalties": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "penalty_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "player_display_name": {
+        "null_count": 66,
+        "null_fraction": 0.0011690312981561188
+      },
+      "player_id": {
+        "null_count": 66,
+        "null_fraction": 0.0011690312981561188
+      },
+      "player_name": {
+        "null_count": 66,
+        "null_fraction": 0.0011690312981561188
+      },
+      "position": {
+        "null_count": 66,
+        "null_fraction": 0.0011690312981561188
+      },
+      "position_group": {
+        "null_count": 66,
+        "null_fraction": 0.0011690312981561188
+      },
+      "pt_att": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pt_blocked": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pt_downed": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pt_fair_caught": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pt_inside_20": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pt_long": {
+        "null_count": 54771,
+        "null_fraction": 0.9701365641107391
+      },
+      "pt_net_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pt_out_of_bounds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pt_return_tds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pt_return_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pt_returned": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pt_touchback": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pt_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "punt_return_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "punt_returns": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "racr": {
+        "null_count": 42926,
+        "null_fraction": 0.760330871282569
+      },
+      "receiving_10": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receiving_16": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receiving_20": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receiving_2pt_conversions": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receiving_40": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receiving_air_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receiving_epa": {
+        "null_count": 42844,
+        "null_fraction": 0.7588784384575872
+      },
+      "receiving_first_downs": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receiving_fumbles": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receiving_fumbles_lost": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receiving_tds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receiving_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receiving_yards_after_catch": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "receptions": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "rushing_10": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "rushing_12": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "rushing_20": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "rushing_2pt_conversions": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "rushing_40": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "rushing_epa": {
+        "null_count": 49322,
+        "null_fraction": 0.8736206316311529
+      },
+      "rushing_first_downs": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "rushing_fumbles": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "rushing_fumbles_lost": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "rushing_tds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "rushing_yards": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "sack_fumbles": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "sack_fumbles_lost": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "sack_yards_lost": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "sacks_suffered": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "season": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "season_type": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "special_teams_tds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "target_share": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "targets": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "team": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "week": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "wopr": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      }
+    },
+    "schedules": {
+      "away_coach": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "away_moneyline": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "away_qb_id": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "away_qb_name": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "away_rest": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "away_score": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "away_spread_odds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "away_team": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "div_game": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "espn": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "ftn": {
+        "null_count": 285,
+        "null_fraction": 0.3337236533957845
+      },
+      "game_id": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "game_type": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "gameday": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "gametime": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "gsis": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "home_coach": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "home_moneyline": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "home_qb_id": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "home_qb_name": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "home_rest": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "home_score": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "home_spread_odds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "home_team": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "location": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "nfl_detail_id": {
+        "null_count": 854,
+        "null_fraction": 1.0
+      },
+      "old_game_id": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "over_odds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "overtime": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "pff": {
+        "null_count": 854,
+        "null_fraction": 1.0
+      },
+      "pfr": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "referee": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "result": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "roof": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "season": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "spread_line": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "stadium": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "stadium_id": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "surface": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "temp": {
+        "null_count": 407,
+        "null_fraction": 0.4765807962529274
+      },
+      "total": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "total_line": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "under_odds": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "week": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "weekday": {
+        "null_count": 0,
+        "null_fraction": 0.0
+      },
+      "wind": {
+        "null_count": 407,
+        "null_fraction": 0.4765807962529274
+      }
+    }
+  },
+  "table_missingness": {
+    "attempts_mean5": {
+      "null_count": 112,
+      "null_fraction": 0.05714285714285714
+    },
+    "game_id": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "history_available_at_utc": {
+      "null_count": 112,
+      "null_fraction": 0.05714285714285714
+    },
+    "is_designated_home": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "kickoff_utc": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "observed_attempts": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "observed_completions": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "opponent_team": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "passing_yards_lag1": {
+      "null_count": 112,
+      "null_fraction": 0.05714285714285714
+    },
+    "passing_yards_mean3": {
+      "null_count": 112,
+      "null_fraction": 0.05714285714285714
+    },
+    "passing_yards_mean5": {
+      "null_count": 112,
+      "null_fraction": 0.05714285714285714
+    },
+    "passing_yards_season_mean": {
+      "null_count": 242,
+      "null_fraction": 0.12346938775510204
+    },
+    "player_display_name": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "player_id": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "prediction_time_utc": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "prior_games_in_sample": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "prior_season_games_in_sample": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "schedule_reported_starter": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "season": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "target_passing_yards": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "team": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    },
+    "week": {
+      "null_count": 0,
+      "null_fraction": 0.0
+    }
+  }
+}

@@ -1,0 +1,1974 @@
+{
+  "current_chart_qbs": [
+    {
+      "espn_id": "2578570",
+      "gsis_id": "00-0033119",
+      "historical_game_rows": 23,
+      "history_match_status": "matched_history",
+      "player_name": "Jacoby Brissett",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ARI"
+    },
+    {
+      "espn_id": "4038524",
+      "gsis_id": "00-0035289",
+      "historical_game_rows": 31,
+      "history_match_status": "matched_history",
+      "player_name": "Gardner Minshew II",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ARI"
+    },
+    {
+      "espn_id": "4430841",
+      "gsis_id": "00-0041561",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Carson Beck",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ARI"
+    },
+    {
+      "espn_id": "4360423",
+      "gsis_id": "00-0039917",
+      "historical_game_rows": 5,
+      "history_match_status": "matched_history",
+      "player_name": "Michael Penix Jr.",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ATL"
+    },
+    {
+      "espn_id": "4241479",
+      "gsis_id": "00-0036212",
+      "historical_game_rows": 41,
+      "history_match_status": "matched_history",
+      "player_name": "Tua Tagovailoa",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ATL"
+    },
+    {
+      "espn_id": "2972515",
+      "gsis_id": "00-0033662",
+      "historical_game_rows": 27,
+      "history_match_status": "matched_history",
+      "player_name": "Cooper Rush",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ATL"
+    },
+    {
+      "espn_id": "5344782",
+      "gsis_id": "00-0041194",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Jack Strand",
+      "pos_rank": 4,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ATL"
+    },
+    {
+      "espn_id": "3916387",
+      "gsis_id": "00-0034796",
+      "historical_game_rows": 45,
+      "history_match_status": "matched_history",
+      "player_name": "Lamar Jackson",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "BAL"
+    },
+    {
+      "espn_id": "4035671",
+      "gsis_id": "00-0035993",
+      "historical_game_rows": 15,
+      "history_match_status": "matched_history",
+      "player_name": "Tyler Huntley",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "BAL"
+    },
+    {
+      "espn_id": "4429582",
+      "gsis_id": "00-0040981",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Joe Fagnano",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "BAL"
+    },
+    {
+      "espn_id": "4036419",
+      "gsis_id": "00-0037327",
+      "historical_game_rows": 9,
+      "history_match_status": "matched_history",
+      "player_name": "Skylar Thompson",
+      "pos_rank": 4,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "BAL"
+    },
+    {
+      "espn_id": "3918298",
+      "gsis_id": "00-0034857",
+      "historical_game_rows": 49,
+      "history_match_status": "matched_history",
+      "player_name": "Josh Allen",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "BUF"
+    },
+    {
+      "espn_id": "3115293",
+      "gsis_id": "00-0034577",
+      "historical_game_rows": 9,
+      "history_match_status": "matched_history",
+      "player_name": "Kyle Allen",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "BUF"
+    },
+    {
+      "espn_id": "4685720",
+      "gsis_id": "00-0039150",
+      "historical_game_rows": 30,
+      "history_match_status": "matched_history",
+      "player_name": "Bryce Young",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CAR"
+    },
+    {
+      "espn_id": "4240703",
+      "gsis_id": "00-0038102",
+      "historical_game_rows": 30,
+      "history_match_status": "matched_history",
+      "player_name": "Kenny Pickett",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CAR"
+    },
+    {
+      "espn_id": "4428993",
+      "gsis_id": "00-0041149",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Haynes King",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CAR"
+    },
+    {
+      "espn_id": "4431611",
+      "gsis_id": "00-0039918",
+      "historical_game_rows": 17,
+      "history_match_status": "matched_history",
+      "player_name": "Caleb Williams",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CHI"
+    },
+    {
+      "espn_id": "4434153",
+      "gsis_id": "00-0038416",
+      "historical_game_rows": 9,
+      "history_match_status": "matched_history",
+      "player_name": "Tyson Bagent",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CHI"
+    },
+    {
+      "espn_id": "15168",
+      "gsis_id": "00-0028986",
+      "historical_game_rows": 4,
+      "history_match_status": "matched_history",
+      "player_name": "Case Keenum",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CHI"
+    },
+    {
+      "espn_id": "4431580",
+      "gsis_id": "00-0041172",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Miller Moss",
+      "pos_rank": 4,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CHI"
+    },
+    {
+      "espn_id": "3915511",
+      "gsis_id": "00-0036442",
+      "historical_game_rows": 43,
+      "history_match_status": "matched_history",
+      "player_name": "Joe Burrow",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CIN"
+    },
+    {
+      "espn_id": "11252",
+      "gsis_id": "00-0026158",
+      "historical_game_rows": 17,
+      "history_match_status": "matched_history",
+      "player_name": "Joe Flacco",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CIN"
+    },
+    {
+      "espn_id": "3122840",
+      "gsis_id": "00-0033537",
+      "historical_game_rows": 19,
+      "history_match_status": "matched_history",
+      "player_name": "Deshaun Watson",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CLE"
+    },
+    {
+      "espn_id": "4432762",
+      "gsis_id": "00-0040668",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Shedeur Sanders",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CLE"
+    },
+    {
+      "espn_id": "4431325",
+      "gsis_id": "00-0041092",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Taylen Green",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CLE"
+    },
+    {
+      "espn_id": "4427238",
+      "gsis_id": "00-0040704",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Dillon Gabriel",
+      "pos_rank": 4,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CLE"
+    },
+    {
+      "espn_id": "2577417",
+      "gsis_id": "00-0033077",
+      "historical_game_rows": 37,
+      "history_match_status": "matched_history",
+      "player_name": "Dak Prescott",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DAL"
+    },
+    {
+      "espn_id": "4426875",
+      "gsis_id": "00-0037077",
+      "historical_game_rows": 19,
+      "history_match_status": "matched_history",
+      "player_name": "Sam Howell",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DAL"
+    },
+    {
+      "espn_id": "4426338",
+      "gsis_id": "00-0039732",
+      "historical_game_rows": 17,
+      "history_match_status": "matched_history",
+      "player_name": "Bo Nix",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DEN"
+    },
+    {
+      "espn_id": "3892775",
+      "gsis_id": "00-0035264",
+      "historical_game_rows": 7,
+      "history_match_status": "matched_history",
+      "player_name": "Jarrett Stidham",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DEN"
+    },
+    {
+      "espn_id": "4241820",
+      "gsis_id": "00-0036879",
+      "historical_game_rows": 4,
+      "history_match_status": "matched_history",
+      "player_name": "Sam Ehlinger",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DEN"
+    },
+    {
+      "espn_id": "3046779",
+      "gsis_id": "00-0033106",
+      "historical_game_rows": 51,
+      "history_match_status": "matched_history",
+      "player_name": "Jared Goff",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DET"
+    },
+    {
+      "espn_id": "3044720",
+      "gsis_id": "00-0033949",
+      "historical_game_rows": 17,
+      "history_match_status": "matched_history",
+      "player_name": "Joshua Dobbs",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DET"
+    },
+    {
+      "espn_id": "4036378",
+      "gsis_id": "00-0036264",
+      "historical_game_rows": 36,
+      "history_match_status": "matched_history",
+      "player_name": "Jordan Love",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "GB"
+    },
+    {
+      "espn_id": "14163",
+      "gsis_id": "00-0028118",
+      "historical_game_rows": 14,
+      "history_match_status": "matched_history",
+      "player_name": "Tyrod Taylor",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "GB"
+    },
+    {
+      "espn_id": "4432577",
+      "gsis_id": "00-0039163",
+      "historical_game_rows": 32,
+      "history_match_status": "matched_history",
+      "player_name": "C.J. Stroud",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "HOU"
+    },
+    {
+      "espn_id": "4242546",
+      "gsis_id": "00-0036898",
+      "historical_game_rows": 24,
+      "history_match_status": "matched_history",
+      "player_name": "Davis Mills",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "HOU"
+    },
+    {
+      "espn_id": "4426335",
+      "gsis_id": "00-0040211",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Graham Mertz",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "HOU"
+    },
+    {
+      "espn_id": "3917792",
+      "gsis_id": "00-0035710",
+      "historical_game_rows": 32,
+      "history_match_status": "matched_history",
+      "player_name": "Daniel Jones",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "IND"
+    },
+    {
+      "espn_id": "4429084",
+      "gsis_id": "00-0039164",
+      "historical_game_rows": 15,
+      "history_match_status": "matched_history",
+      "player_name": "Anthony Richardson Sr.",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "IND"
+    },
+    {
+      "espn_id": "4683423",
+      "gsis_id": "00-0040206",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Riley Leonard",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "IND"
+    },
+    {
+      "espn_id": "4360310",
+      "gsis_id": "00-0036971",
+      "historical_game_rows": 43,
+      "history_match_status": "matched_history",
+      "player_name": "Trevor Lawrence",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "JAX"
+    },
+    {
+      "espn_id": "4889929",
+      "gsis_id": "00-0040234",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Quinn Ewers",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "JAX"
+    },
+    {
+      "espn_id": "3139477",
+      "gsis_id": "00-0033873",
+      "historical_game_rows": 49,
+      "history_match_status": "matched_history",
+      "player_name": "Patrick Mahomes",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "KC"
+    },
+    {
+      "espn_id": "4362887",
+      "gsis_id": "00-0036945",
+      "historical_game_rows": 38,
+      "history_match_status": "matched_history",
+      "player_name": "Justin Fields",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "KC"
+    },
+    {
+      "espn_id": "4567747",
+      "gsis_id": "00-0040906",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Garrett Nussmeier",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "KC"
+    },
+    {
+      "espn_id": "12483",
+      "gsis_id": "00-0026498",
+      "historical_game_rows": 40,
+      "history_match_status": "matched_history",
+      "player_name": "Matthew Stafford",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LA"
+    },
+    {
+      "espn_id": "4259553",
+      "gsis_id": "00-0039107",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Stetson Bennett IV",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LA"
+    },
+    {
+      "espn_id": "4685522",
+      "gsis_id": "00-0041568",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Ty Simpson",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LA"
+    },
+    {
+      "espn_id": "4877717",
+      "gsis_id": "00-0041414",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Matthew Caldwell",
+      "pos_rank": 4,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LA"
+    },
+    {
+      "espn_id": "4038941",
+      "gsis_id": "00-0036355",
+      "historical_game_rows": 47,
+      "history_match_status": "matched_history",
+      "player_name": "Justin Herbert",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LAC"
+    },
+    {
+      "espn_id": "4383351",
+      "gsis_id": "00-0037012",
+      "historical_game_rows": 6,
+      "history_match_status": "matched_history",
+      "player_name": "Trey Lance",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LAC"
+    },
+    {
+      "espn_id": "14880",
+      "gsis_id": "00-0029604",
+      "historical_game_rows": 39,
+      "history_match_status": "matched_history",
+      "player_name": "Kirk Cousins",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LV"
+    },
+    {
+      "espn_id": "4837248",
+      "gsis_id": "00-0041562",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Fernando Mendoza",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LV"
+    },
+    {
+      "espn_id": "4260394",
+      "gsis_id": "00-0038579",
+      "historical_game_rows": 20,
+      "history_match_status": "matched_history",
+      "player_name": "Aidan O'Connell",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LV"
+    },
+    {
+      "espn_id": "4242512",
+      "gsis_id": "00-0038128",
+      "historical_game_rows": 15,
+      "history_match_status": "matched_history",
+      "player_name": "Malik Willis",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "MIA"
+    },
+    {
+      "espn_id": "4433971",
+      "gsis_id": "00-0040014",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Kyle McCord",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "MIA"
+    },
+    {
+      "espn_id": "4429435",
+      "gsis_id": "00-0040398",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Brady Cook",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "MIA"
+    },
+    {
+      "espn_id": "3917315",
+      "gsis_id": "00-0035228",
+      "historical_game_rows": 36,
+      "history_match_status": "matched_history",
+      "player_name": "Kyler Murray",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "MIN"
+    },
+    {
+      "espn_id": "2573079",
+      "gsis_id": "00-0032950",
+      "historical_game_rows": 11,
+      "history_match_status": "matched_history",
+      "player_name": "Carson Wentz",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "MIN"
+    },
+    {
+      "espn_id": "4433970",
+      "gsis_id": "00-0039923",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "J.J. McCarthy",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "MIN"
+    },
+    {
+      "espn_id": "4431452",
+      "gsis_id": "00-0039851",
+      "historical_game_rows": 13,
+      "history_match_status": "matched_history",
+      "player_name": "Drake Maye",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NE"
+    },
+    {
+      "espn_id": "4240391",
+      "gsis_id": "00-0038476",
+      "historical_game_rows": 11,
+      "history_match_status": "matched_history",
+      "player_name": "Tommy DeVito",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NE"
+    },
+    {
+      "espn_id": "4431465",
+      "gsis_id": "00-0041123",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Behren Morton",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NE"
+    },
+    {
+      "espn_id": "4360689",
+      "gsis_id": "00-0040743",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Tyler Shough",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NO"
+    },
+    {
+      "espn_id": "4426339",
+      "gsis_id": "00-0039376",
+      "historical_game_rows": 7,
+      "history_match_status": "matched_history",
+      "player_name": "Spencer Rattler",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NO"
+    },
+    {
+      "espn_id": "4361259",
+      "gsis_id": "00-0037013",
+      "historical_game_rows": 21,
+      "history_match_status": "matched_history",
+      "player_name": "Zach Wilson",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NO"
+    },
+    {
+      "espn_id": "4689114",
+      "gsis_id": "00-0040691",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Jaxson Dart",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NYG"
+    },
+    {
+      "espn_id": "2969939",
+      "gsis_id": "00-0031503",
+      "historical_game_rows": 20,
+      "history_match_status": "matched_history",
+      "player_name": "Jameis Winston",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NYG"
+    },
+    {
+      "espn_id": "15864",
+      "gsis_id": "00-0030565",
+      "historical_game_rows": 49,
+      "history_match_status": "matched_history",
+      "player_name": "Geno Smith",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NYJ"
+    },
+    {
+      "espn_id": "4685413",
+      "gsis_id": "00-0041056",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Cade Klubnik",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NYJ"
+    },
+    {
+      "espn_id": "4040715",
+      "gsis_id": "00-0036389",
+      "historical_game_rows": 47,
+      "history_match_status": "matched_history",
+      "player_name": "Jalen Hurts",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PHI"
+    },
+    {
+      "espn_id": "14012",
+      "gsis_id": "00-0027973",
+      "historical_game_rows": 22,
+      "history_match_status": "matched_history",
+      "player_name": "Andy Dalton",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PHI"
+    },
+    {
+      "espn_id": "4685201",
+      "gsis_id": "00-0038400",
+      "historical_game_rows": 2,
+      "history_match_status": "matched_history",
+      "player_name": "Tanner McKee",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PHI"
+    },
+    {
+      "espn_id": "4879250",
+      "gsis_id": "00-0040891",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Cole Payton",
+      "pos_rank": 4,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PHI"
+    },
+    {
+      "espn_id": "8439",
+      "gsis_id": "00-0023459",
+      "historical_game_rows": 35,
+      "history_match_status": "matched_history",
+      "player_name": "Aaron Rodgers",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PIT"
+    },
+    {
+      "espn_id": "3116407",
+      "gsis_id": "00-0034771",
+      "historical_game_rows": 12,
+      "history_match_status": "matched_history",
+      "player_name": "Mason Rudolph",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PIT"
+    },
+    {
+      "espn_id": "4429955",
+      "gsis_id": "00-0040203",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Will Howard",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PIT"
+    },
+    {
+      "espn_id": "4714771",
+      "gsis_id": "00-0041565",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Drew Allar",
+      "pos_rank": 4,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PIT"
+    },
+    {
+      "espn_id": "3912547",
+      "gsis_id": "00-0034869",
+      "historical_game_rows": 33,
+      "history_match_status": "matched_history",
+      "player_name": "Sam Darnold",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "SEA"
+    },
+    {
+      "espn_id": "3924327",
+      "gsis_id": "00-0035704",
+      "historical_game_rows": 11,
+      "history_match_status": "matched_history",
+      "player_name": "Drew Lock",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "SEA"
+    },
+    {
+      "espn_id": "4432734",
+      "gsis_id": "00-0040673",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Jalen Milroe",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "SEA"
+    },
+    {
+      "espn_id": "4361741",
+      "gsis_id": "00-0037834",
+      "historical_game_rows": 40,
+      "history_match_status": "matched_history",
+      "player_name": "Brock Purdy",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "SF"
+    },
+    {
+      "espn_id": "4241464",
+      "gsis_id": "00-0036972",
+      "historical_game_rows": 35,
+      "history_match_status": "matched_history",
+      "player_name": "Mac Jones",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "SF"
+    },
+    {
+      "espn_id": "4430431",
+      "gsis_id": "00-0040589",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Kurtis Rourke",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "SF"
+    },
+    {
+      "espn_id": "3052587",
+      "gsis_id": "00-0034855",
+      "historical_game_rows": 46,
+      "history_match_status": "matched_history",
+      "player_name": "Baker Mayfield",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "TB"
+    },
+    {
+      "espn_id": "4596472",
+      "gsis_id": "00-0041251",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Jalon Daniels",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "TB"
+    },
+    {
+      "espn_id": "4688380",
+      "gsis_id": "00-0040676",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Cam Ward",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "TEN"
+    },
+    {
+      "espn_id": "3039707",
+      "gsis_id": "00-0033869",
+      "historical_game_rows": 20,
+      "history_match_status": "matched_history",
+      "player_name": "Mitchell Trubisky",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "TEN"
+    },
+    {
+      "espn_id": "4426348",
+      "gsis_id": "00-0039910",
+      "historical_game_rows": 17,
+      "history_match_status": "matched_history",
+      "player_name": "Jayden Daniels",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "WAS"
+    },
+    {
+      "espn_id": "2576980",
+      "gsis_id": "00-0032268",
+      "historical_game_rows": 18,
+      "history_match_status": "matched_history",
+      "player_name": "Marcus Mariota",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "WAS"
+    },
+    {
+      "espn_id": "4432722",
+      "gsis_id": "00-0041117",
+      "historical_game_rows": null,
+      "history_match_status": "no_2022_2024_sample_history",
+      "player_name": "Athan Kaliakmanis",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "WAS"
+    }
+  ],
+  "depth_manifest": {
+    "file": "depth_charts-8577d1eb5a84dcc0bacc72baa408503ef7db86a0cee366026aae3889967cb5f5.parquet",
+    "license": "CC-BY-4.0 (nflverse distribution)",
+    "loader": "nflreadpy.load_depth_charts([2026])",
+    "nflreadpy": "0.1.5",
+    "retrieved_at_utc": "2026-09-15T17:45:13.202530+00:00",
+    "rows": 520792,
+    "schema": {
+      "dt": "String",
+      "espn_id": "String",
+      "gsis_id": "String",
+      "player_name": "String",
+      "pos_abb": "String",
+      "pos_grp": "String",
+      "pos_grp_id": "String",
+      "pos_id": "String",
+      "pos_name": "String",
+      "pos_rank": "Int32",
+      "pos_slot": "Int32",
+      "team": "String"
+    },
+    "sha256": "8577d1eb5a84dcc0bacc72baa408503ef7db86a0cee366026aae3889967cb5f5",
+    "source": "https://github.com/nflverse/nflverse-data/releases/tag/depth_charts",
+    "upstream_loader": "https://github.com/nflverse/nflverse-rosters/blob/main/exec/update-depth-charts.R"
+  },
+  "historical_qbs": [
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 2,
+      "player_display_name": "AJ McCarron",
+      "player_id": "00-0031288",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 35,
+      "player_display_name": "Aaron Rodgers",
+      "player_id": "00-0023459",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PIT"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 20,
+      "player_display_name": "Aidan O'Connell",
+      "player_id": "00-0038579",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LV"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 22,
+      "player_display_name": "Andy Dalton",
+      "player_id": "00-0027973",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PHI"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 2,
+      "player_display_name": "Anthony Brown",
+      "player_id": "00-0037175",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 15,
+      "player_display_name": "Anthony Richardson",
+      "player_id": "00-0039164",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "IND"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 15,
+      "player_display_name": "Bailey Zappe",
+      "player_id": "00-0038108",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 46,
+      "player_display_name": "Baker Mayfield",
+      "player_id": "00-0034855",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "TB"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 3,
+      "player_display_name": "Blaine Gabbert",
+      "player_id": "00-0027948",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 17,
+      "player_display_name": "Bo Nix",
+      "player_id": "00-0039732",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DEN"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 4,
+      "player_display_name": "Brandon Allen",
+      "player_id": "00-0032434",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 6,
+      "player_display_name": "Brett Rypien",
+      "player_id": "00-0034955",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 3,
+      "player_display_name": "Brian Hoyer",
+      "player_id": "00-0026625",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 40,
+      "player_display_name": "Brock Purdy",
+      "player_id": "00-0037834",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "SF"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 5,
+      "player_display_name": "Bryce Perkins",
+      "player_id": "00-0035939",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 30,
+      "player_display_name": "Bryce Young",
+      "player_id": "00-0039150",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CAR"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 10,
+      "player_display_name": "C.J. Beathard",
+      "player_id": "00-0033936",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 32,
+      "player_display_name": "C.J. Stroud",
+      "player_id": "00-0039163",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "HOU"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 17,
+      "player_display_name": "Caleb Williams",
+      "player_id": "00-0039918",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CHI"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 11,
+      "player_display_name": "Carson Wentz",
+      "player_id": "00-0032950",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "MIN"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 4,
+      "player_display_name": "Case Keenum",
+      "player_id": "00-0028986",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CHI"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 3,
+      "player_display_name": "Chad Henne",
+      "player_id": "00-0026197",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 3,
+      "player_display_name": "Chase Daniel",
+      "player_id": "00-0026544",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 1,
+      "player_display_name": "Chris Oladokun",
+      "player_id": "00-0037324",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 1,
+      "player_display_name": "Chris Streveler",
+      "player_id": "00-0035752",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 11,
+      "player_display_name": "Clayton Tune",
+      "player_id": "00-0038582",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 4,
+      "player_display_name": "Colt McCoy",
+      "player_id": "00-0027688",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 27,
+      "player_display_name": "Cooper Rush",
+      "player_id": "00-0033662",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ATL"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 37,
+      "player_display_name": "Dak Prescott",
+      "player_id": "00-0033077",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DAL"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 32,
+      "player_display_name": "Daniel Jones",
+      "player_id": "00-0035710",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "IND"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 2,
+      "player_display_name": "David Blough",
+      "player_id": "00-0035040",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 24,
+      "player_display_name": "Davis Mills",
+      "player_id": "00-0036898",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "HOU"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 1,
+      "player_display_name": "Davis Webb",
+      "player_id": "00-0033550",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 42,
+      "player_display_name": "Derek Carr",
+      "player_id": "00-0031280",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 19,
+      "player_display_name": "Deshaun Watson",
+      "player_id": "00-0033537",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CLE"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 24,
+      "player_display_name": "Desmond Ridder",
+      "player_id": "00-0038122",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 13,
+      "player_display_name": "Dorian Thompson-Robinson",
+      "player_id": "00-0038583",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 13,
+      "player_display_name": "Drake Maye",
+      "player_id": "00-0039851",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NE"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 11,
+      "player_display_name": "Drew Lock",
+      "player_id": "00-0035704",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "SEA"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 5,
+      "player_display_name": "Easton Stick",
+      "player_id": "00-0035282",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 31,
+      "player_display_name": "Gardner Minshew",
+      "player_id": "00-0035289",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ARI"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 49,
+      "player_display_name": "Geno Smith",
+      "player_id": "00-0030565",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NYJ"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 3,
+      "player_display_name": "Hendon Hooker",
+      "player_id": "00-0038550",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 1,
+      "player_display_name": "Jacob Eason",
+      "player_id": "00-0036226",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 23,
+      "player_display_name": "Jacoby Brissett",
+      "player_id": "00-0033119",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ARI"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 11,
+      "player_display_name": "Jake Browning",
+      "player_id": "00-0035100",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 8,
+      "player_display_name": "Jake Haener",
+      "player_id": "00-0038998",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 47,
+      "player_display_name": "Jalen Hurts",
+      "player_id": "00-0036389",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PHI"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 20,
+      "player_display_name": "Jameis Winston",
+      "player_id": "00-0031503",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NYG"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 51,
+      "player_display_name": "Jared Goff",
+      "player_id": "00-0033106",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DET"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 3,
+      "player_display_name": "Jaren Hall",
+      "player_id": "00-0038598",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 7,
+      "player_display_name": "Jarrett Stidham",
+      "player_id": "00-0035264",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DEN"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 17,
+      "player_display_name": "Jayden Daniels",
+      "player_id": "00-0039910",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "WAS"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 8,
+      "player_display_name": "Jeff Driskel",
+      "player_id": "00-0032436",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 19,
+      "player_display_name": "Jimmy Garoppolo",
+      "player_id": "00-0031345",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 43,
+      "player_display_name": "Joe Burrow",
+      "player_id": "00-0036442",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CIN"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 17,
+      "player_display_name": "Joe Flacco",
+      "player_id": "00-0026158",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CIN"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 1,
+      "player_display_name": "Joe Milton III",
+      "player_id": "00-0039398",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 2,
+      "player_display_name": "John Wolford",
+      "player_id": "00-0034899",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 36,
+      "player_display_name": "Jordan Love",
+      "player_id": "00-0036264",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "GB"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 49,
+      "player_display_name": "Josh Allen",
+      "player_id": "00-0034857",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "BUF"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 5,
+      "player_display_name": "Josh Johnson",
+      "player_id": "00-0026300",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 17,
+      "player_display_name": "Joshua Dobbs",
+      "player_id": "00-0033949",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DET"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 38,
+      "player_display_name": "Justin Fields",
+      "player_id": "00-0036945",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "KC"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 47,
+      "player_display_name": "Justin Herbert",
+      "player_id": "00-0036355",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LAC"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 30,
+      "player_display_name": "Kenny Pickett",
+      "player_id": "00-0038102",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CAR"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 39,
+      "player_display_name": "Kirk Cousins",
+      "player_id": "00-0029604",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LV"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 9,
+      "player_display_name": "Kyle Allen",
+      "player_id": "00-0034577",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "BUF"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 6,
+      "player_display_name": "Kyle Trask",
+      "player_id": "00-0036928",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 36,
+      "player_display_name": "Kyler Murray",
+      "player_id": "00-0035228",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "MIN"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 45,
+      "player_display_name": "Lamar Jackson",
+      "player_id": "00-0034796",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "BAL"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 1,
+      "player_display_name": "Logan Woodside",
+      "player_id": "00-0034438",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 35,
+      "player_display_name": "Mac Jones",
+      "player_id": "00-0036972",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "SF"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 15,
+      "player_display_name": "Malik Willis",
+      "player_id": "00-0038128",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "MIA"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 18,
+      "player_display_name": "Marcus Mariota",
+      "player_id": "00-0032268",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "WAS"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 12,
+      "player_display_name": "Mason Rudolph",
+      "player_id": "00-0034771",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PIT"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 1,
+      "player_display_name": "Matt Barkley",
+      "player_id": "00-0030533",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 12,
+      "player_display_name": "Matt Ryan",
+      "player_id": "00-0026143",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 40,
+      "player_display_name": "Matthew Stafford",
+      "player_id": "00-0026498",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LA"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 5,
+      "player_display_name": "Michael Penix Jr.",
+      "player_id": "00-0039917",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ATL"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 11,
+      "player_display_name": "Mike White",
+      "player_id": "00-0034401",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 20,
+      "player_display_name": "Mitchell Trubisky",
+      "player_id": "00-0033869",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "TEN"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 2,
+      "player_display_name": "Nate Sudfeld",
+      "player_id": "00-0032792",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 4,
+      "player_display_name": "Nathan Peterman",
+      "player_id": "00-0033958",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 2,
+      "player_display_name": "Nick Foles",
+      "player_id": "00-0029567",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 13,
+      "player_display_name": "Nick Mullens",
+      "player_id": "00-0033319",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 11,
+      "player_display_name": "PJ Walker",
+      "player_id": "00-0033275",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 49,
+      "player_display_name": "Patrick Mahomes",
+      "player_id": "00-0033873",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "KC"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 41,
+      "player_display_name": "Russell Wilson",
+      "player_id": "00-0029263",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 21,
+      "player_display_name": "Ryan Tannehill",
+      "player_id": "00-0029701",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 33,
+      "player_display_name": "Sam Darnold",
+      "player_id": "00-0034869",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "SEA"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 4,
+      "player_display_name": "Sam Ehlinger",
+      "player_id": "00-0036879",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DEN"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 19,
+      "player_display_name": "Sam Howell",
+      "player_id": "00-0037077",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "DAL"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 2,
+      "player_display_name": "Sean Clifford",
+      "player_id": "00-0038391",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 9,
+      "player_display_name": "Skylar Thompson",
+      "player_id": "00-0037327",
+      "pos_rank": 4,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "BAL"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 7,
+      "player_display_name": "Spencer Rattler",
+      "player_id": "00-0039376",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NO"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 2,
+      "player_display_name": "Tanner McKee",
+      "player_id": "00-0038400",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "PHI"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 18,
+      "player_display_name": "Taylor Heinicke",
+      "player_id": "00-0031800",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 6,
+      "player_display_name": "Teddy Bridgewater",
+      "player_id": "00-0031237",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 7,
+      "player_display_name": "Tim Boyle",
+      "player_id": "00-0034177",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 17,
+      "player_display_name": "Tom Brady",
+      "player_id": "00-0019596",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 11,
+      "player_display_name": "Tommy DeVito",
+      "player_id": "00-0038476",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NE"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 5,
+      "player_display_name": "Trace McSorley",
+      "player_id": "00-0035146",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 43,
+      "player_display_name": "Trevor Lawrence",
+      "player_id": "00-0036971",
+      "pos_rank": 1,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "JAX"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 7,
+      "player_display_name": "Trevor Siemian",
+      "player_id": "00-0032156",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 6,
+      "player_display_name": "Trey Lance",
+      "player_id": "00-0037012",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "LAC"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 41,
+      "player_display_name": "Tua Tagovailoa",
+      "player_id": "00-0036212",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "ATL"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 15,
+      "player_display_name": "Tyler Huntley",
+      "player_id": "00-0035993",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "BAL"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 14,
+      "player_display_name": "Tyrod Taylor",
+      "player_id": "00-0028118",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "GB"
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 9,
+      "player_display_name": "Tyson Bagent",
+      "player_id": "00-0038416",
+      "pos_rank": 2,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "CHI"
+    },
+    {
+      "chart_match_status": "not_matched_current_qb",
+      "historical_game_rows": 21,
+      "player_display_name": "Will Levis",
+      "player_id": "00-0039152",
+      "pos_rank": null,
+      "source_snapshot_utc": null,
+      "team": null
+    },
+    {
+      "chart_match_status": "listed_current_qb",
+      "historical_game_rows": 21,
+      "player_display_name": "Zach Wilson",
+      "player_id": "00-0037013",
+      "pos_rank": 3,
+      "source_snapshot_utc": "2026-09-15T12:39:14Z",
+      "team": "NO"
+    }
+  ],
+  "historical_table_sha256": "5bceef915e3ff9216710f6be47c505fc39611d6b2ffa3d7bac77f3d6d44261cc",
+  "policy": "Prospective review only. Not a training feature or retirement registry.",
+  "summary": {
+    "current_chart_qbs": 92,
+    "current_chart_teams": 32,
+    "current_qbs_missing_gsis_mapping": 0,
+    "current_qbs_without_sample_history": 31,
+    "fraction_discarded_if_filtered": 0.21887755102040815,
+    "historical_game_rows": 1960,
+    "historical_qbs": 112,
+    "historical_qbs_matched": 61,
+    "historical_qbs_not_matched": 51,
+    "historical_rows_deleted": 0,
+    "historical_rows_discarded_if_filtered": 429
+  }
+}
