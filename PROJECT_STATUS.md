@@ -73,10 +73,9 @@ statistical significance, calibration, uncertainty intervals, and profitability 
 
 ## GitHub review
 
-The foundation is published as [PR #1](https://github.com/Dudecool00/Prediction-App/pull/1),
-commit `ae5124c` on `codex/data-foundation`. Milestone 2 uses `codex/milestone-2-baselines`, based
-on that foundation so its review can show only the new baseline changes. Merge the foundation
-first and retarget the baseline PR to `main` before merging it. Neither milestone is merged yet.
+The foundation is merged in [PR #1](https://github.com/Dudecool00/Prediction-App/pull/1),
+commit `41f0e93` on `main`. Milestone 2 uses `codex/milestone-2-baselines`, rebased onto that
+merged foundation so its draft PR targets `main` and shows only the new baseline changes.
 
 **Environment issue still open:** pytest emits native `Windows fatal exception: access violation`
 diagnostics during Polars execution, while all assertions complete and the process exits 0.
@@ -122,7 +121,7 @@ weather, and app-start commands will be added in their own milestones.
 
 ## Next milestone
 
-Review the foundation PR, baseline bias and limited-history failures, reconcile historical starter
-labels, and independently verify native diagnostics.
+Review baseline bias and limited-history failures, reconcile historical starter labels, and
+independently verify native diagnostics.
 Milestone 3 adds one nonlinear model and chronological uncertainty calibration, with incremental
 schedule/opponent/weather features. Keep 2025 out of feature/model selection.
