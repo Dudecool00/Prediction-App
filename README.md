@@ -3,10 +3,11 @@
 An educational NFL quarterback passing-yards research project. The eventual application will
 compare calibrated projections with manually entered sportsbook lines and prices.
 
-**Current scope: Milestones 0–2 — audited data and chronological baseline evaluation.** It downloads NFL
+**Current scope: audited data, baselines, and Milestone 3 model/uncertainty research.** It downloads NFL
 statistics through `nflreadpy`, caches them as Parquet, builds one row per recorded regular-season
-QB-game, and compares rolling forecasts with Ridge regression using strictly lagged features.
-The EV engine, calibrated uncertainty, and Streamlit UI are later milestones.
+QB-game, and compares rolling forecasts, Ridge, and XGBoost using strictly lagged features.
+Research now includes prediction intervals, threshold probabilities, and calibration diagnostics.
+Historical weather, the EV engine, and the Streamlit UI remain future work.
 Results are estimates, may be wrong, and may lose money. No profitability claim has been established.
 
 ## Start here
@@ -24,6 +25,7 @@ python -m venv .venv
 .\.venv\Scripts\nfl-prop.exe fetch --seasons 2022 2023 2024
 .\.venv\Scripts\nfl-prop.exe build --seasons 2022 2023 2024
 .\.venv\Scripts\nfl-prop.exe evaluate
+.\.venv\Scripts\nfl-prop.exe research
 ```
 
 The explicit executable paths avoid PowerShell activation-policy issues. If you already have
@@ -39,6 +41,7 @@ python3 -m venv .venv
 .venv/bin/nfl-prop fetch --seasons 2022 2023 2024
 .venv/bin/nfl-prop build --seasons 2022 2023 2024
 .venv/bin/nfl-prop evaluate
+.venv/bin/nfl-prop research
 ```
 
 `requirements-dev.lock` pins the tested dependency versions. It is a pip constraints file,
@@ -53,6 +56,10 @@ development dependencies. Python 3.11 is the minimum; see `PROJECT_STATUS.md` fo
 | `nfl-prop fetch --refresh` | Retrieve a new snapshot while preserving older raw files/manifests |
 | `nfl-prop build` | Rebuild and audit from cached data; requires no network |
 | `nfl-prop evaluate` | Fit rolling/Ridge baselines in weekly folds and report 2023–2024 errors offline |
+| `nfl-prop research` | Compare XGBoost feature groups and calibrated intervals/probabilities offline |
+| `data/processed/research_2022_2024/manifest.json` | Hash-named context table, points, intervals, probabilities, and provenance |
+| `reports/local/research/research.md` | Point errors, incremental feature comparisons, coverage, and probability scores |
+| `reports/local/research/calibration.html` | Interactive offline reliability plots with bin sample counts |
 | `data/processed/baselines_2022_2024/manifest.json` | Out-of-fold prediction filename/hash, method, versions, and fold metadata |
 | `reports/local/baselines/evaluation.md` | Baseline comparison by season and observed-history bucket |
 | `reports/local/baselines/evaluation.json` | Metrics, cutoffs, fold preprocessing, coefficients, and provenance |
@@ -62,8 +69,8 @@ development dependencies. Python 3.11 is the minimum; see `PROJECT_STATUS.md` fo
 | `reports/local/2022_2023_2024/source_schema.md` | Every source column, actual dtype, and null count |
 | `reports/local/2022_2023_2024/audit.json` | Complete machine-readable audit and provenance |
 
-All commands accept `--data-dir PATH`. `build` and `evaluate` accept `--report-dir PATH`;
-`build` adds a season-named subdirectory, while `evaluate` writes directly into the specified
+All commands accept `--data-dir PATH`. `build`, `evaluate`, and `research` accept `--report-dir PATH`;
+`build` adds a season-named subdirectory, while the modeling commands write directly into the specified
 report directory. Run one writer at a time in a given data directory.
 Parquet files contain a content hash in their filenames; read the manifest to locate the latest
 one. Rebuilding the same inputs and code produces the same table. Report-generation timestamps
@@ -195,12 +202,12 @@ Checksum mismatch: restore the original file or explicitly `fetch --refresh`.
 Schema mismatch: inspect the source schema before adapting a transformation; do not guess a
 replacement column. Invalid/missing kickoff times or unmatched QB games stop the build.
 
-**Current Windows validation caveat:** 45 tests pass under Python 3.12 and 3.14, but pytest prints
+**Current Windows validation caveat:** tests pass under Python 3.12 and 3.14, but pytest prints
 native access-violation diagnostics during Polars calls.
 The processes complete with exit code 0; the CLI succeeds. The local cause remains unresolved
 after testing another Polars version and its compatibility runtime. No fault handler is suppressed.
-Independent GitHub CI passes all 45 tests on Linux/Python 3.11 and Windows/Python 3.12 without
-those native diagnostics. See [PROJECT_STATUS.md](PROJECT_STATUS.md) for evidence.
+Milestone 2 GitHub CI passed all 45 tests on Linux/Python 3.11 and Windows/Python 3.12 without
+those native diagnostics. See [PROJECT_STATUS.md](PROJECT_STATUS.md) for current evidence.
 
 ## Architecture and learning guide
 
@@ -208,6 +215,8 @@ those native diagnostics. See [PROJECT_STATUS.md](PROJECT_STATUS.md) for evidenc
 nflreadpy -> cached Polars/Parquet snapshots -> source contracts
     -> quarterback-game target table -> shifted features -> audit + processed Parquet
     -> weekly training folds -> rolling forecasts + Ridge -> predictions + error report
+    -> schedule/opponent context -> training/calibration/test folds -> XGBoost comparisons
+    -> residual intervals + threshold probabilities -> coverage and reliability reports
 ```
 
 | File | What to study |
@@ -222,6 +231,10 @@ nflreadpy -> cached Polars/Parquet snapshots -> source contracts
 | `src/nfl_prop_model/modeling/baselines.py` | Feature allowlist, rolling fallbacks, and Ridge preprocessing |
 | `src/nfl_prop_model/modeling/evaluate.py` | Weekly cutoffs, fit/predict separation, and error metrics |
 | `src/nfl_prop_model/modeling/report.py` | Saved predictions, fold diagnostics, and readable results |
+| `src/nfl_prop_model/features/context.py` | Prior opponent totals and schedule features with coverage checks |
+| `src/nfl_prop_model/modeling/uncertainty.py` | Separate calibration window, interval ranks, signed residual tails |
+| `src/nfl_prop_model/modeling/research.py` | Fixed XGBoost feature comparisons and probability diagnostics |
+| `src/nfl_prop_model/modeling/research_report.py` | Research provenance, tables, and offline Plotly charts |
 | `src/nfl_prop_model/cli.py` | Small command layer connecting the components |
 | `tests/` | Executable examples of correct math and leakage protections |
 
@@ -275,10 +288,61 @@ fetch/build and evaluation reject 2025+ analysis. `load_schedules` internally re
 file before filtering; only requested development seasons are stored/analyzed here. January 2025
 games belonging to the **2024 season** are valid development data.
 
-Next: reconcile historical starter labels and investigate bias and limited-history cases.
-Milestone 3 adds one nonlinear model and chronological uncertainty
-calibration, with schedule/opponent/weather features assessed incrementally. The EV engine and
-Streamlit application follow later. Statistical accuracy is not historical profitability.
+## Milestone 3 model and uncertainty results
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe research --report-dir reports/milestone_3
+```
+
+The [research report](reports/milestone_3/research.md) compares all 1,327 evaluation QB-games
+across 36 weeks with no exclusions. Its JSON companion includes every fold's cutoffs,
+calibration counts, residual summaries, feature importance, source hashes, and diagnostics.
+`calibration.html` contains interactive reliability plots and is regenerated, not committed.
+XGBoost CPU 3.2.0 and Plotly 7.1.0 are pinned; no GPU or external chart service is needed.
+
+Before each week, reserve the latest six eligible weeks (at least 100 rows) for calibration
+and fit on earlier available results. Calibration and evaluation targets never fit the model.
+Features for each row can use earlier available game results. The three tree feature sets
+use the same fixed 150 depth-2 trees; there is no evaluation-based tuning or early stopping.
+All six forecasts share this protocol, which differs from the larger training window in
+Milestone 2. Compare models within the same report.
+
+| Forecast | MAE (yards) | RMSE (yards) | Bias (yards) |
+| --- | ---: | ---: | ---: |
+| Prior-five mean | 72.06 | 92.04 | +2.42 |
+| Season-to-date mean | 70.61 | 91.64 | -4.04 |
+| Ridge | 69.88 | 87.54 | +10.98 |
+| XGBoost: QB history | 68.15 | 85.80 | +3.94 |
+| XGBoost: + schedule | **67.51** | 85.60 | +3.81 |
+| XGBoost: + opponent | 67.57 | **85.30** | +3.01 |
+
+Schedule features reduce MAE by 0.64 yards versus QB history alone, with improvement in both
+seasons. Adding opponent history increases overall MAE by 0.06 yards but lowers RMSE by 0.29.
+Its contribution is mixed by season. These small development-sample differences do not
+establish statistical significance or choose a production model.
+
+Schedule inputs are designated home, neutral site, and each team's elapsed days since its
+previous regular-season game that season (first-game rest remains missing). Opponent inputs
+are prior-five-game gross passing yards allowed and attempts faced, summed over all passers
+and shifted before use. New context is saved separately; the original QB table is unchanged.
+Weather is deferred pending a usable historical forecast source, stadium map, and roof policy;
+see the [weather readiness note](reports/milestone_3/weather_readiness.md).
+
+Intervals at 50%, 80%, and 90% use finite-sample corrected absolute calibration-error ranks.
+Nominal 90% intervals cover **89.68%** for schedule XGBoost and **89.90%** with opponent inputs,
+with mean total widths of **279.01** and **278.73 yards**. Overall coverage hides weaknesses:
+for the 29 no-history cases these are **82.76%** and **86.21%**, respectively. Repeated players,
+shared games, and time dependence mean the assumptions for a formal coverage guarantee are
+not established; these are observed results, not per-player guarantees.
+
+Signed residuals also yield smoothed over probabilities for fixed diagnostic thresholds
+150.5, 200.5, 250.5, and 300.5 yards. Reports include Brier scores, log loss, and reliability
+bins with counts. These are not historical sportsbook lines or validated betting probabilities.
+The 37 starter-label discrepancies, participation-conditioned sample, and retrospective source
+revisions remain limitations. The 2025 holdout remains untouched.
+
+Next: close weather-data readiness and investigate limited-history calibration and starter
+labels, then build the manual odds/EV engine. Statistical accuracy is not betting profitability.
 
 ## Sources and data rights
 

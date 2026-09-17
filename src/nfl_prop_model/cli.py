@@ -36,8 +36,22 @@ def main(argv: list[str] | None = None) -> int:
     evaluation = commands.add_parser("evaluate", help="Weekly baseline evaluation on 2023-2024")
     evaluation.add_argument("--data-dir", type=Path, default=Path("data"))
     evaluation.add_argument("--report-dir", type=Path, default=Path("reports/local/baselines"))
+    research = commands.add_parser(
+        "research", help="Trees and chronological calibration on 2023-2024"
+    )
+    research.add_argument("--data-dir", type=Path, default=Path("data"))
+    research.add_argument("--report-dir", type=Path, default=Path("reports/local/research"))
     args = parser.parse_args(argv)
     try:
+        if args.command == "research":
+            from nfl_prop_model.modeling.research_report import write_research
+
+            report = write_research(args.data_dir, args.report_dir)
+            print(
+                f"Evaluated {report['counts']['evaluated_qb_games']:,} QB-games with calibration."
+            )
+            print(f"Report: {args.report_dir / 'research.md'}")
+            return 0
         if args.command == "evaluate":
             from nfl_prop_model.modeling.report import write_evaluation
 

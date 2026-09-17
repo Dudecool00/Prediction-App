@@ -66,3 +66,22 @@ them to the unchanged historical table. `reports/milestone_2/` contains aggregat
 fold-level preprocessing/coefficient diagnostics. Training uses 2022 for warmup and earlier
 available games for each 2023-2024 week. No 2025-season results or market prices are ingested.
 Prediction errors are derived research outputs, not a historical betting-return dataset.
+
+## Nonlinear model and uncertainty outputs
+
+`processed/research_2022_2024/` stores separate hash-named context features, point predictions,
+interval bounds, and diagnostic threshold probabilities. It preserves the original QB table
+and checks that its raw manifest matches the cached player/schedule inputs before joining.
+No new football dataset is downloaded by `research`.
+
+Opponent totals sum recorded passing yards and attempts across all positions, then shift
+prior-five regular-season team-game means. Yards are gross before sack subtraction. Missing
+team-game coverage fails; first-history values stay missing. Rest is elapsed days since the
+previous regular-season game in the same season, with no value for a season's first game.
+Designated home and neutral-site status come from the matched schedule. Retrospective schedule
+corrections remain an as-of limitation. Roof and observed weather columns are excluded.
+
+The report manifest records context missingness, all input/output hashes, environment, model
+settings, fold cutoffs, calibration samples, empirical coverage, and probability diagnostics.
+Historical weather is not ingested; [readiness findings](../reports/milestone_3/weather_readiness.md)
+explain the missing source coverage. Diagnostic thresholds are not historical market data.
