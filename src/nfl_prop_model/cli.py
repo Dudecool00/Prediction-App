@@ -49,6 +49,13 @@ def main(argv: list[str] | None = None) -> int:
     )
     settlement.add_argument("--data-dir", type=Path, default=Path("data"))
     settlement.add_argument("--report-dir", type=Path, default=Path("reports/local/settlement"))
+    upcoming = commands.add_parser("upcoming", help="2026 scheduled games and current QB readiness")
+    upcoming.add_argument("--data-dir", type=Path, default=Path("data"))
+    upcoming.add_argument("--report-dir", type=Path, default=Path("reports/local/upcoming"))
+    upcoming.add_argument("--days", type=int, default=14)
+    upcoming.add_argument(
+        "--refresh", action="store_true", help="Refresh schedules and depth charts"
+    )
     quote_command = commands.add_parser(
         "quote", help="Compare manual odds with a saved historical forecast"
     )
@@ -76,6 +83,24 @@ def main(argv: list[str] | None = None) -> int:
     quote_command.add_argument("--game-total", type=float, help="Recorded note; not a predictor")
     args = parser.parse_args(argv)
     try:
+        if args.command == "upcoming":
+            from nfl_prop_model.data.upcoming import (
+                fetch_upcoming,
+                load_upcoming_report,
+                write_upcoming_report,
+            )
+
+            if not 1 <= args.days <= 28:
+                raise ValueError("Upcoming horizon must be 1–28 days")
+            fetch_upcoming(args.data_dir, refresh=args.refresh)
+            report = load_upcoming_report(args.data_dir, days=args.days)
+            write_upcoming_report(args.report_dir, report)
+            print(
+                f"{report['counts']['upcoming_games']} upcoming games; "
+                f"{report['counts']['candidate_rows']} QB candidates. No forecasts generated."
+            )
+            print(f"Report: {args.report_dir / 'upcoming.md'}")
+            return 0
         if args.command == "settlement-audit":
             from nfl_prop_model.markets.audit import write_settlement_audit
 
