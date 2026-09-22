@@ -47,6 +47,7 @@ class ResearchResult:
     predictions: pl.DataFrame
     intervals: pl.DataFrame
     probabilities: pl.DataFrame
+    calibration_residuals: pl.DataFrame
     point_metrics: pl.DataFrame
     interval_metrics: pl.DataFrame
     probability_metrics: pl.DataFrame
@@ -109,6 +110,7 @@ def evaluate_research(
     points: list[pl.DataFrame] = []
     intervals: list[pl.DataFrame] = []
     probabilities: list[pl.DataFrame] = []
+    calibration_records: list[pl.DataFrame] = []
     audit: list[dict[str, Any]] = []
     for fold in walk_forward_folds(table):
         split = chronological_calibration_split(
@@ -166,6 +168,17 @@ def evaluate_research(
             if not np.isfinite(cal_prediction).all() or not np.isfinite(prediction).all():
                 raise DataQualityError(f"Non-finite {name} prediction")
             residuals = ResidualCalibration(cal_target - cal_prediction)
+            calibration_records.append(
+                calibration.select(
+                    "player_id", "game_id", "kickoff_utc", "prediction_time_utc"
+                ).with_columns(
+                    pl.lit(fold.name).alias("fold"),
+                    pl.lit(name).alias("model"),
+                    pl.lit(fold.cutoff_utc).alias("evaluation_cutoff_utc"),
+                    pl.lit(split.cutoff_utc).alias("training_cutoff_utc"),
+                    pl.Series("residual", residuals.residuals),
+                )
+            )
             point = keys.with_columns(
                 pl.lit(name).alias("model"), pl.Series("prediction", prediction)
             )
@@ -225,12 +238,16 @@ def evaluate_research(
     all_points = pl.concat(points).sort(sort)
     all_intervals = pl.concat(intervals).sort(*sort, "coverage")
     all_probabilities = pl.concat(probabilities).sort(*sort, "line")
+    all_calibration = pl.concat(calibration_records).sort(
+        "fold", "model", "kickoff_utc", "game_id", "player_id"
+    )
     require_keys(all_points, ["player_id", "game_id", "model"], "research forecasts")
     scores, reliability = probability_diagnostics(all_probabilities)
     return ResearchResult(
         all_points,
         all_intervals,
         all_probabilities,
+        all_calibration,
         point_metrics(all_points),
         interval_metrics(all_intervals),
         scores,

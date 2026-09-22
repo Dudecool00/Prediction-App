@@ -146,6 +146,7 @@ def write_research(data_dir: Path, report_dir: Path) -> dict[str, Any]:
             "predictions": result.predictions,
             "intervals": result.intervals,
             "probabilities": result.probabilities,
+            "calibration_residuals": result.calibration_residuals,
         }.items()
     }
     expected = table.filter(pl.col("season").is_in([2023, 2024])).height
@@ -180,6 +181,7 @@ def write_research(data_dir: Path, report_dir: Path) -> dict[str, Any]:
         source_hash.update(path.relative_to(root).as_posix().encode())
         source_hash.update(path.read_bytes())
     report = {
+        "format_version": 2,
         "generated_at_utc": datetime.now(UTC).isoformat(),
         "historical_source": source["table"],
         "context_sources": snapshot.manifest,
@@ -299,6 +301,10 @@ def write_research(data_dir: Path, report_dir: Path) -> dict[str, Any]:
         "It embeds Plotly for offline use and is regenerated rather than committed. Each point "
         "compares mean forecast probability with observed frequency in a fixed ten-percent bin. "
         "Hover for sample counts; empty bins are omitted. All bin values are in research.json.",
+        "",
+        "Calibration residuals are stored in a separate hash-verified Parquet artifact with "
+        "fold/model and source game timestamps, allowing later manual-line calculations to "
+        "reuse these same errors without fitting on the evaluated game's outcome.",
         "",
         "## Limits and next checks",
         "",

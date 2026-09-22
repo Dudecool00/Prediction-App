@@ -19,10 +19,13 @@ from nfl_prop_model.data.ingest_nfl import (
 from nfl_prop_model.data.quarterback_games import build_target_table
 from nfl_prop_model.data.storage import store_frame, write_json
 from nfl_prop_model.features.quarterback import FEATURE_COLUMNS, add_lagged_features
+from nfl_prop_model.markets.odds import ManualMarket, parse_american
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="NFL quarterback data and baseline research")
+    parser = argparse.ArgumentParser(
+        description="NFL quarterback forecasts and manual-market research"
+    )
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
     for name in ("fetch", "build"):
@@ -41,8 +44,68 @@ def main(argv: list[str] | None = None) -> int:
     )
     research.add_argument("--data-dir", type=Path, default=Path("data"))
     research.add_argument("--report-dir", type=Path, default=Path("reports/local/research"))
+    settlement = commands.add_parser(
+        "settlement-audit", help="Audit rounded probabilities and integer pushes"
+    )
+    settlement.add_argument("--data-dir", type=Path, default=Path("data"))
+    settlement.add_argument("--report-dir", type=Path, default=Path("reports/local/settlement"))
+    quote_command = commands.add_parser(
+        "quote", help="Compare manual odds with a saved historical forecast"
+    )
+    quote_command.add_argument("--data-dir", type=Path, default=Path("data"))
+    quote_command.add_argument("--report-dir", type=Path, default=Path("reports/local/quote"))
+    quote_command.add_argument("--player-id", required=True, help="Stable GSIS player ID")
+    quote_command.add_argument("--game-id", required=True, help="Saved 2023–2024 game ID")
+    quote_command.add_argument(
+        "--model",
+        required=True,
+        choices=(
+            "prior_five_mean",
+            "season_to_date_mean",
+            "ridge",
+            "xgb_qb",
+            "xgb_schedule",
+            "xgb_context",
+        ),
+    )
+    quote_command.add_argument("--line", required=True, type=float)
+    quote_command.add_argument("--over-odds", required=True, type=parse_american)
+    quote_command.add_argument("--under-odds", required=True, type=parse_american)
+    quote_command.add_argument("--sportsbook")
+    quote_command.add_argument("--game-spread", type=float, help="Recorded note; not a predictor")
+    quote_command.add_argument("--game-total", type=float, help="Recorded note; not a predictor")
     args = parser.parse_args(argv)
     try:
+        if args.command == "settlement-audit":
+            from nfl_prop_model.markets.audit import write_settlement_audit
+
+            write_settlement_audit(args.data_dir, args.report_dir)
+            print(f"Report: {args.report_dir / 'settlement_audit.md'}")
+            return 0
+        if args.command == "quote":
+            from nfl_prop_model.markets.quote import (
+                create_quote,
+                load_historical_forecast,
+                quote_markdown,
+                write_quote,
+            )
+
+            market = ManualMarket(
+                args.line,
+                args.over_odds,
+                args.under_odds,
+                args.sportsbook,
+                args.game_spread,
+                args.game_total,
+            )
+            forecast = load_historical_forecast(
+                args.data_dir, args.player_id, args.game_id, args.model
+            )
+            quote = create_quote(forecast, market)
+            write_quote(args.report_dir, quote)
+            print(quote_markdown(quote))
+            print(f"Report: {args.report_dir / 'quote.md'}")
+            return 0
         if args.command == "research":
             from nfl_prop_model.modeling.research_report import write_research
 

@@ -1,7 +1,11 @@
 """Hand-authored synthetic fixtures; no network or licensed data in unit tests."""
 
+from datetime import UTC, datetime, timedelta
+
 import polars as pl
 import pytest
+
+from nfl_prop_model.data.storage import store_frame, write_json
 
 
 @pytest.fixture
@@ -59,3 +63,94 @@ def sources() -> tuple[pl.DataFrame, pl.DataFrame]:
                 }
             )
     return pl.DataFrame(stats), pl.DataFrame(schedules)
+
+
+@pytest.fixture
+def saved_research(tmp_path):
+    data = tmp_path / "data"
+    directory = data / "processed" / "research_2022_2024"
+    kickoff = datetime(2023, 9, 17, 17, tzinfo=UTC)
+    train_cutoff = datetime(2023, 8, 31, 17, tzinfo=UTC)
+    evaluation_cutoff = kickoff - timedelta(hours=1)
+    point = pl.DataFrame(
+        [
+            {
+                "player_id": "QB",
+                "game_id": "2023_02_A_B",
+                "model": "xgb_schedule",
+                "season": 2023,
+                "week": 2,
+                "fold": "2023-W02",
+                "kickoff_utc": kickoff,
+                "prediction_time_utc": evaluation_cutoff,
+                "evaluation_cutoff_utc": evaluation_cutoff,
+                "training_cutoff_utc": train_cutoff,
+                "prediction": 200.0,
+                "actual": 350.0,
+                "prior_games_in_sample": 5,
+                "history_bucket": "5+ prior games",
+            }
+        ]
+    )
+    calibration = pl.DataFrame(
+        [
+            {
+                "player_id": f"QB-{index % 2}",
+                "game_id": f"cal-{index // 2}",
+                "model": "xgb_schedule",
+                "fold": "2023-W02",
+                "kickoff_utc": train_cutoff + timedelta(days=2, hours=3 * (index // 2)),
+                "prediction_time_utc": train_cutoff + timedelta(days=2, hours=3 * (index // 2) - 1),
+                "training_cutoff_utc": train_cutoff,
+                "evaluation_cutoff_utc": evaluation_cutoff,
+                "residual": float(index - 50),
+            }
+            for index in range(100)
+        ]
+    )
+    identity = pl.DataFrame(
+        [
+            {
+                "player_id": "QB",
+                "game_id": "2023_02_A_B",
+                "player_display_name": "Example QB",
+                "team": "A",
+                "opponent_team": "B",
+            }
+        ]
+    )
+    coverage = {
+        "model": "xgb_schedule",
+        "coverage": 0.9,
+        "n": 100,
+        "observed_coverage": 0.89,
+        "history_bucket": "5+ prior games",
+    }
+    manifest = {
+        "format_version": 2,
+        "generated_at_utc": "2026-09-18T00:00:00+00:00",
+        "research_source_sha256": "test-source-hash",
+        "method": {"minimum_calibration_rows": 100},
+        "context_sources": {"retrieved_at_utc": "2026-09-15T00:00:00+00:00"},
+        "folds": [
+            {
+                "fold": "2023-W02",
+                "calibration_rows": 100,
+                "latest_calibration_result_available_utc": (
+                    calibration["kickoff_utc"].max() + timedelta(hours=24)
+                ).isoformat(),
+            }
+        ],
+        "interval_overall": [coverage],
+        "interval_by_history": [coverage],
+        "artifacts": {
+            name: store_frame(directory, name, frame)
+            for name, frame in (
+                ("predictions", point),
+                ("calibration_residuals", calibration),
+                ("features", identity),
+            )
+        },
+    }
+    write_json(directory / "manifest.json", manifest)
+    return data, directory, manifest

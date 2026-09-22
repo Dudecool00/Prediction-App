@@ -276,6 +276,10 @@ def test_research_cli_reads_offline_snapshot_and_preserves_history(
     assert report["artifacts"]["predictions"]["rows"] == 105 * 6
     assert report["artifacts"]["intervals"]["rows"] == 105 * 6 * 3
     assert report["artifacts"]["probabilities"]["rows"] == 105 * 6 * 4
+    assert report["format_version"] == 2
+    assert report["artifacts"]["calibration_residuals"]["rows"] == sum(
+        fold["calibration_rows"] * 6 for fold in report["folds"]
+    )
     assert "plotly.js" in (report_dir / "calibration.html").read_text(encoding="utf-8")
     assert (processed / metadata["file"]).read_bytes() == original
     changed_snapshot = {**snapshot, "datasets": {**snapshot["datasets"], "extra": {}}}

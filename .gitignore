@@ -14,6 +14,8 @@ dist/
 data/raw/
 data/processed/
 data/cache/
+data/journal/
+.streamlit/secrets.toml
 models/*.joblib
 models/*.cbm
 .ipynb_checkpoints/
