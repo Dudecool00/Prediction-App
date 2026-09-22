@@ -1,13 +1,14 @@
 # prediction-app
 
-An educational NFL quarterback passing-yards research project. The eventual application will
-compare calibrated projections with manually entered sportsbook lines and prices.
+An educational NFL quarterback passing-yards research project. Compare historical projections
+with manually entered sportsbook lines and prices in a local Streamlit app.
 
-**Current scope: audited data, baselines, and Milestone 3 model/uncertainty research.** It downloads NFL
+**Current scope: historical forecasts, manual odds/EV, and a local research interface.** It downloads NFL
 statistics through `nflreadpy`, caches them as Parquet, builds one row per recorded regular-season
 QB-game, and compares rolling forecasts, Ridge, and XGBoost using strictly lagged features.
 Research now includes prediction intervals, threshold probabilities, and calibration diagnostics.
-Historical weather, the EV engine, and the Streamlit UI remain future work.
+The Streamlit interface compares manual prices and saves research snapshots. Upcoming-game
+forecasts, historical weather, and final model selection remain unfinished.
 Results are estimates, may be wrong, and may lose money. No profitability claim has been established.
 
 ## Start here
@@ -21,7 +22,7 @@ from the repository root. No API key or `.env` file is required.
 git clone https://github.com/Dudecool00/prediction-app.git
 cd prediction-app
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -c requirements-dev.lock -e '.[dev]'
+.\.venv\Scripts\python.exe -m pip install -c requirements-dev.lock -e '.[dev,app]'
 .\.venv\Scripts\nfl-prop.exe fetch --seasons 2022 2023 2024
 .\.venv\Scripts\nfl-prop.exe build --seasons 2022 2023 2024
 .\.venv\Scripts\nfl-prop.exe evaluate
@@ -37,7 +38,7 @@ this workspace, start at `python -m venv .venv`; do not clone a second copy insi
 git clone https://github.com/Dudecool00/prediction-app.git
 cd prediction-app
 python3 -m venv .venv
-.venv/bin/python -m pip install -c requirements-dev.lock -e '.[dev]'
+.venv/bin/python -m pip install -c requirements-dev.lock -e '.[dev,app]'
 .venv/bin/nfl-prop fetch --seasons 2022 2023 2024
 .venv/bin/nfl-prop build --seasons 2022 2023 2024
 .venv/bin/nfl-prop evaluate
@@ -342,10 +343,67 @@ The 37 starter-label discrepancies, participation-conditioned sample, and retros
 revisions remain limitations. The 2025 holdout remains untouched.
 
 Next: close weather-data readiness and investigate limited-history calibration and starter
-labels, then build the manual odds/EV engine. Statistical accuracy is not betting profitability.
+labels before upcoming-game forecasts. Statistical accuracy does not establish profitability.
+
+## Manual odds and local app
+
+Install the optional interface, then regenerate research once to save calibration residuals:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -c requirements-dev.lock -e '.[dev,app]'
+.\.venv\Scripts\nfl-prop.exe research
+.\.venv\Scripts\streamlit.exe run app.py
+```
+
+The app serves only on `127.0.0.1` by default. Open the URL printed in the terminal.
+Use **Compare a line**, **Model results**, and **Saved snapshots**. Select a historical
+season/player/game/model, enter a whole- or half-yard line and signed American prices, then
+compare both sides. Prices and market lines never change the point forecast or its interval.
+Changing the game, model, calibration artifacts, or page clears the previous comparison.
+`NFL_PROP_DATA_DIR` can select another local cache directory. No external sportsbook is connected.
+
+The command-line equivalent uses the same engine:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe quote --player-id 00-0034857 --game-id 2024_01_ARI_BUF --model xgb_schedule --line 225.5 --over-odds=-110 --under-odds=-110 --sportsbook "Hypothetical example"
+.\.venv\Scripts\nfl-prop.exe settlement-audit --report-dir reports/milestone_4
+```
+
+`quote` accepts `--data-dir`, `--report-dir`, optional `--game-spread` and `--game-total`.
+Spread/total are recorded notes, not model inputs. JSON retains unrounded values; display
+rounding never feeds calculations. Both American +100 and -100 mean decimal 2.0; zero,
+fractional prices, and values between -100 and +100 are rejected. Quarter-yard lines are
+unsupported. The [example](reports/milestone_4/example/quote.md) uses invented demonstration
+prices explicitly supplied to the command, not historical market observations.
+
+**Push-aware math:** expected profit per dollar is `p_win * (decimal_odds - 1) - p_loss`.
+A push refunds the stake. Fair odds and probability edge use `p_win / (p_win + p_loss)`;
+the comparison's break-even probability uses the same no-push basis. Edge is shown in
+percentage points, separately from estimated EV percent. No stake is recommended.
+
+Manual-line probabilities round point-plus-calibration-residual samples to whole yards.
+Each infinite tail gets a half-count pseudocount; integer push mass is the empirical count
+divided by `n + 1`. Half-yard lines have zero push mass. No fixed Gaussian variance or
+selected-game outcome enters the calculation. This explicit settlement approximation
+differs from the original continuous residual tail at exact boundaries. The
+[settlement audit](reports/milestone_4/settlement_audit.md) measures that difference:
+Ridge and all XGBoost half-line probabilities are unchanged on the four diagnostic thresholds.
+Integer push estimates remain experimental: schedule XGBoost assigned zero push mass in
+5 observed push cases across those four integer thresholds. The UI flags integer-line uncertainty.
+
+**Saved snapshots** are historical research comparisons, not evidence that a prediction or
+price was recorded before the original game. Each save exclusively creates a new UUID-named
+JSON file in ignored `data/journal/`, retaining inputs, outputs, timestamps, model/data hashes,
+and assumptions. The app has no edit/delete operation; checksums detect changed contents.
+These are local files under your control, not tamper-proof storage. Files are never silently
+overwritten. CLI quote reports can be regenerated; journal records are separate.
+
+This completes Milestone 4's historical integration and begins Milestone 5. The interface
+does **not** produce upcoming-game forecasts. Production eligibility/starter handling, weather,
+limited-history calibration, model freezing and final holdout assessment remain next work.
 
 ## Sources and data rights
 
 See [data/README.md](data/README.md) for dataset-level attribution, licenses, and transformations.
-This project uses public football data, manual market input in later milestones, and manual
+This project uses public football data, manual market input, and manual
 bet placement outside the app. No sportsbook credentials, scraping, or automated betting is used.

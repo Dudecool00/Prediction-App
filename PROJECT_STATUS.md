@@ -1,6 +1,26 @@
 # Project status
 
-Updated 2026-09-17. Milestones 0–2 are merged; Milestone 3 model/uncertainty work is ready for review.
+Updated 2026-09-22. PR #3 is merged (`a2093da`); its Linux and Windows CI passed.
+
+## New: manual odds and local research interface
+
+- Milestone 4 adds validated American prices, fair odds, break-even probabilities, edge in
+  percentage points, and push-aware EV. `nfl-prop quote` connects arbitrary whole/half-yard
+  lines to verified historical forecasts and saved chronological calibration errors.
+- `nfl-prop settlement-audit` checks rounding differences and sparse integer push estimates.
+  The original model/interval outputs remain unchanged; half-line Ridge/XGBoost probabilities
+  match the original four diagnostic thresholds. Integer pushes remain experimental.
+- Milestone 5 has a local Streamlit research preview: compare a line, inspect model results,
+  and save/download research snapshots. Saves create new files without overwriting originals;
+  checksum verification detects changed contents. No upcoming-game forecast is available yet.
+- Install `.[dev,app]` with the constraints file and run `streamlit run app.py`. Regenerate
+  `nfl-prop research` once to create format-2 calibration artifacts. See README for full commands.
+- Tests cover numerical edge cases, absent/corrupt calibration, price/outcome independence,
+  offline CLI, UI validation and stale-result clearing, snapshot collisions, and checksums.
+  Final validation and CI results are recorded in the review PR.
+- Reports: [manual example](reports/milestone_4/example/quote.md),
+  [settlement audit](reports/milestone_4/settlement_audit.md). Prices are hypothetical;
+  these outputs make no historical ROI or profitability claim.
 
 ## What works
 
@@ -42,29 +62,32 @@ opponent XGBoost covers **89.90%**, width **278.73**. For 29 no-history cases, c
 
 ## Validation
 
-- **55 tests pass on local Windows Python 3.12.14 and 3.14.2**; pip check passes in both.
-- Ruff lint/format checks and strict mypy pass (19 source files).
+- **100 tests pass on local Windows Python 3.12.14 and 3.14.2**; pip check passes in both.
+- Ruff lint/format checks and strict mypy pass (26 source files).
 - Tests cover current/future outcome mutation, calibration/training separation, delayed-result
   cutoffs, game grouping, opponent totals, rookie retention, finite-sample interval ranks,
   strict smoothed tail probabilities, hand-calculated metrics, offline CLI, and cache mismatch.
-- Two real-data runs reproduce all four research artifact hashes. Prediction SHA-256:
+- The manual-market extension preserves all four original research artifact hashes.
+  Format 2 adds 47,658 calibration residual records for arbitrary-line comparisons. Prediction SHA-256:
   `c9d2bd50de638323a108d63fe9b544e756a11a8f86b1352beb7daa661ab4b761`.
 - Historical table remains byte-identical, SHA-256:
   `5bceef915e3ff9216710f6be47c505fc39611d6b2ffa3d7bac77f3d6d44261cc`.
 - Dependencies include XGBoost CPU 3.2.0 and Plotly 7.1.0, pinned for Python 3.11+ support.
 - Local pytest still emits native Polars access-violation diagnostics, despite all assertions
   passing and exit code 0. No fault handler or tests are disabled. Earlier independent
-  [Milestone 2 CI](https://github.com/Dudecool00/Prediction-App/actions/runs/35046398100)
+  [Milestone 3 CI](https://github.com/Dudecool00/Prediction-App/actions/runs/35276936509)
   passed Linux/Python 3.11 and Windows/Python 3.12 with zero such messages.
-- Browser inspection confirms all four offline calibration plots and the legend render.
-- [Milestone 3 CI runs](https://github.com/Dudecool00/Prediction-App/actions?query=branch%3Acodex%2Fmilestone-3-uncertainty)
-  check Linux/Python 3.11 and Windows/Python 3.12; consult the run matching the PR's current commit.
+- Browser inspection confirms the comparison calculator and model-results page render.
+  App tests exercise invalid prices, changing games, saving twice, and reading saved snapshots.
+- CI installs the optional app and checks Linux/Python 3.11 and Windows/Python 3.12;
+  consult the review PR's exact commit for remote results.
 
 ## GitHub
 
 [Foundation PR #1](https://github.com/Dudecool00/Prediction-App/pull/1) is merged (`41f0e93`).
 [Milestone 2 PR #2](https://github.com/Dudecool00/Prediction-App/pull/2) is merged (`38aeda3`).
-Milestone 3 uses `codex/milestone-3-uncertainty`, based on that merged main branch.
+[Milestone 3 PR #3](https://github.com/Dudecool00/Prediction-App/pull/3) is merged (`a2093da`).
+Manual odds and the local research interface use `codex/milestone-4-manual-odds`.
 
 ## Open limitations and next work
 
@@ -79,18 +102,20 @@ Milestone 3 uses `codex/milestone-3-uncertainty`, based on that merged main bran
   Reported coverage is empirical. Fixed diagnostic thresholds are not historical sportsbook lines.
 - Source revisions and recorded kickoff times may differ from information available pregame.
   Kickoff plus 24 hours is an explicit result-availability assumption, not a publication record.
-- No production upcoming-game prediction, manual odds/EV engine, Streamlit UI, or prediction log
-  yet. Close the weather/calibration/starter gaps, then proceed to Milestone 4 manual odds math.
+- No production upcoming-game prediction yet. The manual EV engine, research UI, and historical
+  snapshot journal now work. Close weather/calibration/starter gaps, freeze the model, assess
+  the reserved holdout, and build timestamped upcoming-game forecasts before production use.
   Keep 2025 out of development decisions. Statistical accuracy does not establish profitability.
 
 ## Reproduce
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -c requirements-dev.lock -e '.[dev]'
+.\.venv\Scripts\python.exe -m pip install -c requirements-dev.lock -e '.[dev,app]'
 .\.venv\Scripts\nfl-prop.exe fetch --seasons 2022 2023 2024
 .\.venv\Scripts\nfl-prop.exe build
 .\.venv\Scripts\nfl-prop.exe evaluate --report-dir reports/milestone_2
-.\.venv\Scripts\nfl-prop.exe research --report-dir reports/milestone_3
+.\.venv\Scripts\nfl-prop.exe research
+.\.venv\Scripts\streamlit.exe run app.py
 .\.venv\Scripts\python.exe -m pytest
 .\.venv\Scripts\python.exe -m ruff check .
 .\.venv\Scripts\python.exe -m ruff format --check .

@@ -1,0 +1,770 @@
+{
+  "changes_from_continuous_residual_tail": [
+    {
+      "max_probability_change": 0.009569377990430616,
+      "mean_probability_change": 2.5963235591906056e-05,
+      "model": "prior_five_mean",
+      "n": 5308
+    },
+    {
+      "max_probability_change": 0.0,
+      "mean_probability_change": 0.0,
+      "model": "ridge",
+      "n": 5308
+    },
+    {
+      "max_probability_change": 0.014150943396226467,
+      "mean_probability_change": 0.00021098648805766858,
+      "model": "season_to_date_mean",
+      "n": 5308
+    },
+    {
+      "max_probability_change": 0.0,
+      "mean_probability_change": 0.0,
+      "model": "xgb_context",
+      "n": 5308
+    },
+    {
+      "max_probability_change": 0.0,
+      "mean_probability_change": 0.0,
+      "model": "xgb_qb",
+      "n": 5308
+    },
+    {
+      "max_probability_change": 0.0,
+      "mean_probability_change": 0.0,
+      "model": "xgb_schedule",
+      "n": 5308
+    }
+  ],
+  "counts": {
+    "forecasts": 7962,
+    "half_line_probabilities": 31848
+  },
+  "distribution_version": "rounded_signed_residuals_v1",
+  "half_line_probability_scores": [
+    {
+      "brier": 0.1778989110512035,
+      "line": 150.5,
+      "log_loss": 0.5471067932820676,
+      "model": "prior_five_mean",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.16395812408461966,
+      "line": 150.5,
+      "log_loss": 0.5025159915731257,
+      "model": "prior_five_mean",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.21510676600974823,
+      "line": 200.5,
+      "log_loss": 0.6269119033932025,
+      "model": "prior_five_mean",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.2225050041280529,
+      "line": 200.5,
+      "log_loss": 0.643052735967141,
+      "model": "prior_five_mean",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.19857652317949684,
+      "line": 250.5,
+      "log_loss": 0.5840536357290348,
+      "model": "prior_five_mean",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.20273162146740548,
+      "line": 250.5,
+      "log_loss": 0.5891355130182675,
+      "model": "prior_five_mean",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.13272729746192793,
+      "line": 300.5,
+      "log_loss": 0.4255631313939102,
+      "model": "prior_five_mean",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.11352135442767909,
+      "line": 300.5,
+      "log_loss": 0.38192854276075855,
+      "model": "prior_five_mean",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.17162007750618968,
+      "line": 150.5,
+      "log_loss": 0.5241972840416603,
+      "model": "ridge",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.15078315312112814,
+      "line": 150.5,
+      "log_loss": 0.47152911824716914,
+      "model": "ridge",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.21567071758060868,
+      "line": 200.5,
+      "log_loss": 0.6189529326763263,
+      "model": "ridge",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.2107232780357642,
+      "line": 200.5,
+      "log_loss": 0.6091707285326441,
+      "model": "ridge",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.19624649283597223,
+      "line": 250.5,
+      "log_loss": 0.572528275015633,
+      "model": "ridge",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.19242563550457564,
+      "line": 250.5,
+      "log_loss": 0.5616330722267682,
+      "model": "ridge",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.13057397552663536,
+      "line": 300.5,
+      "log_loss": 0.4193274786728608,
+      "model": "ridge",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.10679963104241778,
+      "line": 300.5,
+      "log_loss": 0.3666682684366084,
+      "model": "ridge",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.17395248373659988,
+      "line": 150.5,
+      "log_loss": 0.5379793152658706,
+      "model": "season_to_date_mean",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.16225583277190253,
+      "line": 150.5,
+      "log_loss": 0.5011080193453529,
+      "model": "season_to_date_mean",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.21530823691801654,
+      "line": 200.5,
+      "log_loss": 0.6245290734457862,
+      "model": "season_to_date_mean",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.2261772890644946,
+      "line": 200.5,
+      "log_loss": 0.6567572321172807,
+      "model": "season_to_date_mean",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.19817378601636335,
+      "line": 250.5,
+      "log_loss": 0.584401752879435,
+      "model": "season_to_date_mean",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.20231123226021888,
+      "line": 250.5,
+      "log_loss": 0.5904494847675209,
+      "model": "season_to_date_mean",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.13133863764315795,
+      "line": 300.5,
+      "log_loss": 0.4216240943242933,
+      "model": "season_to_date_mean",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.11359141829404643,
+      "line": 300.5,
+      "log_loss": 0.38826464071586564,
+      "model": "season_to_date_mean",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.16344443887890253,
+      "line": 150.5,
+      "log_loss": 0.506437770400249,
+      "model": "xgb_context",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.1446898331585644,
+      "line": 150.5,
+      "log_loss": 0.46295161710021393,
+      "model": "xgb_context",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.2116738842181554,
+      "line": 200.5,
+      "log_loss": 0.6085177219105095,
+      "model": "xgb_context",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.20986454793884352,
+      "line": 200.5,
+      "log_loss": 0.6139416817325073,
+      "model": "xgb_context",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.19136246788854025,
+      "line": 250.5,
+      "log_loss": 0.5581031885049372,
+      "model": "xgb_context",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.1902291457181981,
+      "line": 250.5,
+      "log_loss": 0.5597621012849963,
+      "model": "xgb_context",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.12719349269443064,
+      "line": 300.5,
+      "log_loss": 0.40601067459073426,
+      "model": "xgb_context",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.10651969277382524,
+      "line": 300.5,
+      "log_loss": 0.3680761777132115,
+      "model": "xgb_context",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.16585338659076626,
+      "line": 150.5,
+      "log_loss": 0.5117172035850847,
+      "model": "xgb_qb",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.14943573165966134,
+      "line": 150.5,
+      "log_loss": 0.471467446290671,
+      "model": "xgb_qb",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.21071838996760417,
+      "line": 200.5,
+      "log_loss": 0.607517308708061,
+      "model": "xgb_qb",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.2110795192886009,
+      "line": 200.5,
+      "log_loss": 0.6128861758252961,
+      "model": "xgb_qb",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.19476572642780082,
+      "line": 250.5,
+      "log_loss": 0.5672844256775491,
+      "model": "xgb_qb",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.1915579617089036,
+      "line": 250.5,
+      "log_loss": 0.5631344589288276,
+      "model": "xgb_qb",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.12853321447117305,
+      "line": 300.5,
+      "log_loss": 0.4093871764231428,
+      "model": "xgb_qb",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.10598487804270189,
+      "line": 300.5,
+      "log_loss": 0.3673122917777286,
+      "model": "xgb_qb",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.16329098521564844,
+      "line": 150.5,
+      "log_loss": 0.5065653653316339,
+      "model": "xgb_schedule",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.14553388672342404,
+      "line": 150.5,
+      "log_loss": 0.46427650635104845,
+      "model": "xgb_schedule",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.20946533483903942,
+      "line": 200.5,
+      "log_loss": 0.604056392816305,
+      "model": "xgb_schedule",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.21065094073930413,
+      "line": 200.5,
+      "log_loss": 0.6130365472405291,
+      "model": "xgb_schedule",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.19352898975724328,
+      "line": 250.5,
+      "log_loss": 0.5644653179663934,
+      "model": "xgb_schedule",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.19060309722168373,
+      "line": 250.5,
+      "log_loss": 0.5605366624362775,
+      "model": "xgb_schedule",
+      "n": 664,
+      "season": 2024
+    },
+    {
+      "brier": 0.12720373948519956,
+      "line": 300.5,
+      "log_loss": 0.4065362835423204,
+      "model": "xgb_schedule",
+      "n": 663,
+      "season": 2023
+    },
+    {
+      "brier": 0.10601574305811161,
+      "line": 300.5,
+      "log_loss": 0.36762704117532274,
+      "model": "xgb_schedule",
+      "n": 664,
+      "season": 2024
+    }
+  ],
+  "integer_push_diagnostics": [
+    {
+      "line": 150.0,
+      "mean_predicted_push_probability": 0.0029445542949151494,
+      "model": "prior_five_mean",
+      "n": 1327,
+      "observed_push_rate": 0.0015071590052750565,
+      "push_brier": 0.001516344615746009,
+      "pushes_given_zero_probability": 0
+    },
+    {
+      "line": 200.0,
+      "mean_predicted_push_probability": 0.00364836475074562,
+      "model": "prior_five_mean",
+      "n": 1327,
+      "observed_push_rate": 0.0052750565184626974,
+      "push_brier": 0.0053018851315288495,
+      "pushes_given_zero_probability": 6
+    },
+    {
+      "line": 250.0,
+      "mean_predicted_push_probability": 0.0033047709191169577,
+      "model": "prior_five_mean",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.0007827280009855081,
+      "pushes_given_zero_probability": 1
+    },
+    {
+      "line": 300.0,
+      "mean_predicted_push_probability": 0.002538488916669608,
+      "model": "prior_five_mean",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.0007682674719477029,
+      "pushes_given_zero_probability": 0
+    },
+    {
+      "line": 150.0,
+      "mean_predicted_push_probability": 0.0034486927024662364,
+      "model": "ridge",
+      "n": 1327,
+      "observed_push_rate": 0.0015071590052750565,
+      "push_brier": 0.001528327710537219,
+      "pushes_given_zero_probability": 1
+    },
+    {
+      "line": 200.0,
+      "mean_predicted_push_probability": 0.0037032048223842383,
+      "model": "ridge",
+      "n": 1327,
+      "observed_push_rate": 0.0052750565184626974,
+      "push_brier": 0.00527399310869636,
+      "pushes_given_zero_probability": 4
+    },
+    {
+      "line": 250.0,
+      "mean_predicted_push_probability": 0.0033818453308311603,
+      "model": "ridge",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.0007826184848259644,
+      "pushes_given_zero_probability": 1
+    },
+    {
+      "line": 300.0,
+      "mean_predicted_push_probability": 0.0023853157498554198,
+      "model": "ridge",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.0007716582068335757,
+      "pushes_given_zero_probability": 1
+    },
+    {
+      "line": 150.0,
+      "mean_predicted_push_probability": 0.0028460264421171946,
+      "model": "season_to_date_mean",
+      "n": 1327,
+      "observed_push_rate": 0.0015071590052750565,
+      "push_brier": 0.001517222941401323,
+      "pushes_given_zero_probability": 0
+    },
+    {
+      "line": 200.0,
+      "mean_predicted_push_probability": 0.003710441438187974,
+      "model": "season_to_date_mean",
+      "n": 1327,
+      "observed_push_rate": 0.0052750565184626974,
+      "push_brier": 0.005269642161267212,
+      "pushes_given_zero_probability": 2
+    },
+    {
+      "line": 250.0,
+      "mean_predicted_push_probability": 0.0035614698032635406,
+      "model": "season_to_date_mean",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.0007751695795561565,
+      "pushes_given_zero_probability": 0
+    },
+    {
+      "line": 300.0,
+      "mean_predicted_push_probability": 0.002534636349762462,
+      "model": "season_to_date_mean",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.0007670157362492407,
+      "pushes_given_zero_probability": 0
+    },
+    {
+      "line": 150.0,
+      "mean_predicted_push_probability": 0.0033101002522916445,
+      "model": "xgb_context",
+      "n": 1327,
+      "observed_push_rate": 0.0015071590052750565,
+      "push_brier": 0.0015283503608648735,
+      "pushes_given_zero_probability": 1
+    },
+    {
+      "line": 200.0,
+      "mean_predicted_push_probability": 0.004025271640449733,
+      "model": "xgb_context",
+      "n": 1327,
+      "observed_push_rate": 0.0052750565184626974,
+      "push_brier": 0.005249439068918579,
+      "pushes_given_zero_probability": 2
+    },
+    {
+      "line": 250.0,
+      "mean_predicted_push_probability": 0.0033954759847258952,
+      "model": "xgb_context",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.0007818897737618207,
+      "pushes_given_zero_probability": 1
+    },
+    {
+      "line": 300.0,
+      "mean_predicted_push_probability": 0.0024078513451605125,
+      "model": "xgb_context",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.0007644586824937947,
+      "pushes_given_zero_probability": 0
+    },
+    {
+      "line": 150.0,
+      "mean_predicted_push_probability": 0.0034619570874040643,
+      "model": "xgb_qb",
+      "n": 1327,
+      "observed_push_rate": 0.0015071590052750565,
+      "push_brier": 0.0015226491049697914,
+      "pushes_given_zero_probability": 0
+    },
+    {
+      "line": 200.0,
+      "mean_predicted_push_probability": 0.004077691528585516,
+      "model": "xgb_qb",
+      "n": 1327,
+      "observed_push_rate": 0.0052750565184626974,
+      "push_brier": 0.005270562861621962,
+      "pushes_given_zero_probability": 3
+    },
+    {
+      "line": 250.0,
+      "mean_predicted_push_probability": 0.003274617311951723,
+      "model": "xgb_qb",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.0007655723924688206,
+      "pushes_given_zero_probability": 0
+    },
+    {
+      "line": 300.0,
+      "mean_predicted_push_probability": 0.002286981119057753,
+      "model": "xgb_qb",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.0007566081342306177,
+      "pushes_given_zero_probability": 0
+    },
+    {
+      "line": 150.0,
+      "mean_predicted_push_probability": 0.003415831630808107,
+      "model": "xgb_schedule",
+      "n": 1327,
+      "observed_push_rate": 0.0015071590052750565,
+      "push_brier": 0.0015364409886766287,
+      "pushes_given_zero_probability": 2
+    },
+    {
+      "line": 200.0,
+      "mean_predicted_push_probability": 0.004035296795462091,
+      "model": "xgb_schedule",
+      "n": 1327,
+      "observed_push_rate": 0.0052750565184626974,
+      "push_brier": 0.005264913462508076,
+      "pushes_given_zero_probability": 1
+    },
+    {
+      "line": 250.0,
+      "mean_predicted_push_probability": 0.003365427317238429,
+      "model": "xgb_schedule",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.000781988341871046,
+      "pushes_given_zero_probability": 1
+    },
+    {
+      "line": 300.0,
+      "mean_predicted_push_probability": 0.0024317946440314004,
+      "model": "xgb_schedule",
+      "n": 1327,
+      "observed_push_rate": 0.0007535795026375283,
+      "push_brier": 0.0007723091985790894,
+      "pushes_given_zero_probability": 1
+    }
+  ],
+  "source_artifacts": {
+    "calibration_residuals": {
+      "file": "calibration_residuals-7ba466c9201390b466bbee248d5376405eb7806b1c6b64a315de5b3c8f68c36b.parquet",
+      "rows": 47658,
+      "schema": {
+        "evaluation_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "fold": "String",
+        "game_id": "String",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "model": "String",
+        "player_id": "String",
+        "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "residual": "Float64",
+        "training_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')"
+      },
+      "sha256": "7ba466c9201390b466bbee248d5376405eb7806b1c6b64a315de5b3c8f68c36b"
+    },
+    "features": {
+      "file": "features-859eb6d7046241e3adeaa751c61c4384da9ed42cb91996b1f24e637e4e43ac26.parquet",
+      "rows": 1960,
+      "schema": {
+        "attempts_mean5": "Float64",
+        "game_id": "String",
+        "history_available_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "is_designated_home": "Boolean",
+        "is_neutral_site": "Boolean",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "observed_attempts": "Float64",
+        "observed_completions": "Float64",
+        "opp_gross_pass_yards_allowed_mean5": "Float64",
+        "opp_pass_attempts_faced_mean5": "Float64",
+        "opponent_rest_days": "Float64",
+        "opponent_team": "String",
+        "passing_yards_lag1": "Float64",
+        "passing_yards_mean3": "Float64",
+        "passing_yards_mean5": "Float64",
+        "passing_yards_season_mean": "Float64",
+        "player_display_name": "String",
+        "player_id": "String",
+        "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "prior_games_in_sample": "UInt32",
+        "prior_season_games_in_sample": "UInt32",
+        "schedule_reported_starter": "Boolean",
+        "season": "Int32",
+        "target_passing_yards": "Float64",
+        "team": "String",
+        "team_rest_days": "Float64",
+        "week": "Int32"
+      },
+      "sha256": "859eb6d7046241e3adeaa751c61c4384da9ed42cb91996b1f24e637e4e43ac26"
+    },
+    "intervals": {
+      "file": "intervals-5e9a3a74f04eb8199e92a4496a9efdd0e50674c7c682ac212183fc9253c0e1e2.parquet",
+      "rows": 23886,
+      "schema": {
+        "actual": "Float64",
+        "coverage": "Float64",
+        "evaluation_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "fold": "String",
+        "game_id": "String",
+        "history_bucket": "String",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "lower": "Float64",
+        "model": "String",
+        "player_id": "String",
+        "prediction": "Float64",
+        "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "prior_games_in_sample": "UInt32",
+        "season": "Int32",
+        "training_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "upper": "Float64",
+        "week": "Int32"
+      },
+      "sha256": "5e9a3a74f04eb8199e92a4496a9efdd0e50674c7c682ac212183fc9253c0e1e2"
+    },
+    "predictions": {
+      "file": "predictions-c9d2bd50de638323a108d63fe9b544e756a11a8f86b1352beb7daa661ab4b761.parquet",
+      "rows": 7962,
+      "schema": {
+        "actual": "Float64",
+        "evaluation_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "fold": "String",
+        "game_id": "String",
+        "history_bucket": "String",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "model": "String",
+        "player_id": "String",
+        "prediction": "Float64",
+        "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "prior_games_in_sample": "UInt32",
+        "season": "Int32",
+        "training_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "week": "Int32"
+      },
+      "sha256": "c9d2bd50de638323a108d63fe9b544e756a11a8f86b1352beb7daa661ab4b761"
+    },
+    "probabilities": {
+      "file": "probabilities-669d81bae00a1b083c23ba97445ac30d542d2c8056cdf1b517a9cb2cba78aa5d.parquet",
+      "rows": 31848,
+      "schema": {
+        "actual": "Float64",
+        "evaluation_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "fold": "String",
+        "game_id": "String",
+        "history_bucket": "String",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "line": "Float64",
+        "model": "String",
+        "outcome_over": "Int64",
+        "player_id": "String",
+        "prediction": "Float64",
+        "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "prior_games_in_sample": "UInt32",
+        "probability_over": "Float64",
+        "season": "Int32",
+        "training_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "week": "Int32"
+      },
+      "sha256": "669d81bae00a1b083c23ba97445ac30d542d2c8056cdf1b517a9cb2cba78aa5d"
+    }
+  }
+}

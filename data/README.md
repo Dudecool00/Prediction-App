@@ -85,3 +85,10 @@ The report manifest records context missingness, all input/output hashes, enviro
 settings, fold cutoffs, calibration samples, empirical coverage, and probability diagnostics.
 Historical weather is not ingested; [readiness findings](../reports/milestone_3/weather_readiness.md)
 explain the missing source coverage. Diagnostic thresholds are not historical market data.
+
+Research manifest format 2 adds `calibration_residuals`, with fold/model, source player/game
+IDs, UTC cutoff/availability evidence, and signed errors from the separate calibration window.
+Regenerate `research` once after upgrading. The original four artifacts remain byte-identical.
+Manual quotes verify artifact hashes and calibration timing before pricing a custom line.
+`data/journal/` contains user-saved, append-only-through-the-app research snapshots and is
+ignored by Git. They capture today's analysis of historical forecasts, not original pregame logs.

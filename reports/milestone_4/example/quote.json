@@ -1,0 +1,186 @@
+{
+  "forecast": {
+    "evaluation_cutoff_utc": "2024-09-05T23:20:00+00:00",
+    "fold": "2024-W01",
+    "game_id": "2024_01_ARI_BUF",
+    "history_bucket": "5+ prior games",
+    "kickoff_utc": "2024-09-08T17:00:00+00:00",
+    "model": "xgb_schedule",
+    "player_id": "00-0034857",
+    "prediction": 212.08148193359375,
+    "prediction_time_utc": "2024-09-08T16:00:00+00:00",
+    "prior_games_in_sample": 33,
+    "season": 2024,
+    "training_cutoff_utc": "2023-12-01T00:15:00+00:00",
+    "week": 1
+  },
+  "format_version": 1,
+  "generated_at_utc": "2026-09-22T17:53:58.649421+00:00",
+  "limitations": [
+    "Historical demonstration with manually entered hypothetical prices; not a live quote or betting backtest.",
+    "Probabilities condition on recorded participation; starter labels, injuries, and weather remain unresolved.",
+    "Outcome probabilities round point-plus-residual samples to whole yards; push estimates are unvalidated and can be zero.",
+    "Interval coverage is empirical, not a guarantee for this player; small-history groups can under-cover.",
+    "EV assumes this market has action, standard win payouts, and full refunds on pushes; other void rules are not modeled.",
+    "Optional game spread/total are recorded notes, not model inputs. Prices and lines never alter the forecast.",
+    "Model estimates may be wrong and may lose money; no recommended stake or profitability claim."
+  ],
+  "market": {
+    "game_spread": null,
+    "game_total": null,
+    "line": 225.5,
+    "over_american": -110,
+    "sportsbook": "Hypothetical example",
+    "under_american": -110
+  },
+  "player": {
+    "opponent_team": "ARI",
+    "player_display_name": "Josh Allen",
+    "player_id": "00-0034857",
+    "team": "BUF"
+  },
+  "probabilities": {
+    "over": 0.41774891774891776,
+    "push": 0.0,
+    "under": 0.5822510822510822
+  },
+  "provenance": {
+    "artifacts": {
+      "calibration_residuals": {
+        "file": "calibration_residuals-7ba466c9201390b466bbee248d5376405eb7806b1c6b64a315de5b3c8f68c36b.parquet",
+        "rows": 47658,
+        "schema": {
+          "evaluation_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "fold": "String",
+          "game_id": "String",
+          "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "model": "String",
+          "player_id": "String",
+          "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "residual": "Float64",
+          "training_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')"
+        },
+        "sha256": "7ba466c9201390b466bbee248d5376405eb7806b1c6b64a315de5b3c8f68c36b"
+      },
+      "features": {
+        "file": "features-859eb6d7046241e3adeaa751c61c4384da9ed42cb91996b1f24e637e4e43ac26.parquet",
+        "rows": 1960,
+        "schema": {
+          "attempts_mean5": "Float64",
+          "game_id": "String",
+          "history_available_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "is_designated_home": "Boolean",
+          "is_neutral_site": "Boolean",
+          "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "observed_attempts": "Float64",
+          "observed_completions": "Float64",
+          "opp_gross_pass_yards_allowed_mean5": "Float64",
+          "opp_pass_attempts_faced_mean5": "Float64",
+          "opponent_rest_days": "Float64",
+          "opponent_team": "String",
+          "passing_yards_lag1": "Float64",
+          "passing_yards_mean3": "Float64",
+          "passing_yards_mean5": "Float64",
+          "passing_yards_season_mean": "Float64",
+          "player_display_name": "String",
+          "player_id": "String",
+          "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "prior_games_in_sample": "UInt32",
+          "prior_season_games_in_sample": "UInt32",
+          "schedule_reported_starter": "Boolean",
+          "season": "Int32",
+          "target_passing_yards": "Float64",
+          "team": "String",
+          "team_rest_days": "Float64",
+          "week": "Int32"
+        },
+        "sha256": "859eb6d7046241e3adeaa751c61c4384da9ed42cb91996b1f24e637e4e43ac26"
+      },
+      "predictions": {
+        "file": "predictions-c9d2bd50de638323a108d63fe9b544e756a11a8f86b1352beb7daa661ab4b761.parquet",
+        "rows": 7962,
+        "schema": {
+          "actual": "Float64",
+          "evaluation_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "fold": "String",
+          "game_id": "String",
+          "history_bucket": "String",
+          "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "model": "String",
+          "player_id": "String",
+          "prediction": "Float64",
+          "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "prior_games_in_sample": "UInt32",
+          "season": "Int32",
+          "training_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "week": "Int32"
+        },
+        "sha256": "c9d2bd50de638323a108d63fe9b544e756a11a8f86b1352beb7daa661ab4b761"
+      }
+    },
+    "distribution_version": "rounded_signed_residuals_v1",
+    "latest_calibration_result_available_utc": "2024-01-09T01:20:00+00:00",
+    "model_code_sha256": "2f76737eda5646b2c4c4c8ce393f48cdb4f9c0975b720e3a44c381f4a5f7c7f4",
+    "research_generated_at_utc": "2026-09-22T17:53:06.051700+00:00",
+    "source_retrieved_at_utc": "2026-09-15T03:08:35.222604+00:00"
+  },
+  "scope": "historical_research_demonstration",
+  "sides": {
+    "over": {
+      "american_odds": -110,
+      "break_even_conditional_probability": 0.5238095238095238,
+      "break_even_unconditional_probability": 0.5238095238095238,
+      "conditional_win_probability": 0.41774891774891776,
+      "decimal_odds": 1.9090909090909092,
+      "estimated_ev_per_dollar": -0.20247933884297514,
+      "estimated_ev_percent": -20.247933884297513,
+      "fair_american_odds": 139.3782383419689,
+      "fair_decimal_odds": 2.393782383419689,
+      "model_loss_probability": 0.5822510822510822,
+      "model_win_probability": 0.41774891774891776,
+      "probability_edge_percentage_points": -10.606060606060607,
+      "push_probability": 0.0
+    },
+    "under": {
+      "american_odds": -110,
+      "break_even_conditional_probability": 0.5238095238095238,
+      "break_even_unconditional_probability": 0.5238095238095238,
+      "conditional_win_probability": 0.5822510822510822,
+      "decimal_odds": 1.9090909090909092,
+      "estimated_ev_per_dollar": 0.11157024793388437,
+      "estimated_ev_percent": 11.157024793388437,
+      "fair_american_odds": -139.3782383419689,
+      "fair_decimal_odds": 1.7174721189591078,
+      "model_loss_probability": 0.41774891774891776,
+      "model_win_probability": 0.5822510822510822,
+      "probability_edge_percentage_points": 5.844155844155841,
+      "push_probability": 0.0
+    }
+  },
+  "statistic": "passing_yards",
+  "uncertainty": {
+    "calibration_rows": 230,
+    "lower": 69.8926887512207,
+    "nominal_coverage": 0.9,
+    "observed_coverage_history_group": [
+      {
+        "coverage": 0.9,
+        "history_bucket": "5+ prior games",
+        "mean_width": 278.4796946133078,
+        "model": "xgb_schedule",
+        "n": 1159,
+        "observed_coverage": 0.9042277825711821
+      }
+    ],
+    "observed_coverage_overall": [
+      {
+        "coverage": 0.9,
+        "mean_width": 279.0070947907253,
+        "model": "xgb_schedule",
+        "n": 1327,
+        "observed_coverage": 0.8967596081386586
+      }
+    ],
+    "upper": 354.2702751159668
+  }
+}

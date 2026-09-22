@@ -17,3 +17,8 @@ a separate six-week calibration window. Models never fit calibration or evaluati
 gain importance (not causal effects), Ridge preprocessing, residual summaries, and data/code
 hashes. Prediction intervals and threshold probabilities are saved separately in
 `data/processed/research_2022_2024/`. No production model has been selected or serialized.
+
+Milestone 4's format-2 research manifest also saves chronological signed calibration errors.
+The manual-market engine reuses these verified errors and a saved forecast; it does not refit
+a model when a line or price changes. See `reports/milestone_4/settlement_audit.md` for the
+discrete-yard approximation and integer-push limitations.
