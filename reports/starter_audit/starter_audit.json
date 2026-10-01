@@ -1,0 +1,1913 @@
+{
+  "audit_source_sha256": "d24a5b31e2891d54d58706e351ad4ef63923769c5407864b9cfe9506a7aebc90",
+  "cases": [
+    {
+      "espn_starter_ids": [
+        "14012"
+      ],
+      "game_id": "2022_08_LV_NO",
+      "pregame_verified": false,
+      "reconciled_name": "Andy Dalton",
+      "reconciled_player_id": "00-0027973",
+      "scheduled_name": "Jameis Winston",
+      "scheduled_player_id": "00-0031503",
+      "season": 2022,
+      "sources": {
+        "header": {
+          "file": "event-401437810-ea1bb0554323ad479e1f42f2ed169c368755690eaed524aa312435a7e5d3210d.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.300971+00:00",
+          "sha256": "ea1bb0554323ad479e1f42f2ed169c368755690eaed524aa312435a7e5d3210d",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401437810"
+        },
+        "roster": {
+          "file": "roster-401437810-18-f041e2b6fbb24a459fef60902e18d0ebf48318b3f74e1eabfeb8bef906cf7e19.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.794593+00:00",
+          "sha256": "f041e2b6fbb24a459fef60902e18d0ebf48318b3f74e1eabfeb8bef906cf7e19",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437810/competitions/401437810/competitors/18/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "NO"
+    },
+    {
+      "espn_starter_ids": [
+        "3052587"
+      ],
+      "game_id": "2022_11_CAR_BAL",
+      "pregame_verified": false,
+      "reconciled_name": "Baker Mayfield",
+      "reconciled_player_id": "00-0034855",
+      "scheduled_name": "Phillip Walker",
+      "scheduled_player_id": "00-0033275",
+      "season": 2022,
+      "sources": {
+        "header": {
+          "file": "event-401437846-540e25174c16832e1ca11ffbb3ae1987e761d707a1c82d751996e3b85a9e3735.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.370908+00:00",
+          "sha256": "540e25174c16832e1ca11ffbb3ae1987e761d707a1c82d751996e3b85a9e3735",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401437846"
+        },
+        "roster": {
+          "file": "roster-401437846-29-7b49fb844565d3d33ce2470c63f48e10300bc197eaf4df66ff055fa5a9035330.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.728474+00:00",
+          "sha256": "7b49fb844565d3d33ce2470c63f48e10300bc197eaf4df66ff055fa5a9035330",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437846/competitions/401437846/competitors/29/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "CAR"
+    },
+    {
+      "espn_starter_ids": [
+        "11237"
+      ],
+      "game_id": "2022_11_PHI_IND",
+      "pregame_verified": false,
+      "reconciled_name": "Matt Ryan",
+      "reconciled_player_id": "00-0026143",
+      "scheduled_name": "Sam Ehlinger",
+      "scheduled_player_id": "00-0036879",
+      "season": 2022,
+      "sources": {
+        "header": {
+          "file": "event-401437849-546de9e0f19351979e88be40a8adc35ad0e7bb454cae6e12e532154844a8cfc1.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.377621+00:00",
+          "sha256": "546de9e0f19351979e88be40a8adc35ad0e7bb454cae6e12e532154844a8cfc1",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401437849"
+        },
+        "roster": {
+          "file": "roster-401437849-11-6e2546a3c5eedfd03f9851d65fc8e42f117f17273b572b8abbe6aa6777b8c4e0.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.719477+00:00",
+          "sha256": "6e2546a3c5eedfd03f9851d65fc8e42f117f17273b572b8abbe6aa6777b8c4e0",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437849/competitions/401437849/competitors/11/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "IND"
+    },
+    {
+      "espn_starter_ids": [
+        "3039707"
+      ],
+      "game_id": "2022_15_PIT_CAR",
+      "pregame_verified": false,
+      "reconciled_name": "Mitchell Trubisky",
+      "reconciled_player_id": "00-0033869",
+      "scheduled_name": "Kenny Pickett",
+      "scheduled_player_id": "00-0038102",
+      "season": 2022,
+      "sources": {
+        "header": {
+          "file": "event-401437907-f483b53dd0d35accab97844b8c539371d28e7aa0371da05eaa455f8319e03455.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.298990+00:00",
+          "sha256": "f483b53dd0d35accab97844b8c539371d28e7aa0371da05eaa455f8319e03455",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401437907"
+        },
+        "roster": {
+          "file": "roster-401437907-23-fe957deb6ede562b6ef9474e0da852186b94a88f14d2a083a99ebb956c8bcb5f.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.937132+00:00",
+          "sha256": "fe957deb6ede562b6ef9474e0da852186b94a88f14d2a083a99ebb956c8bcb5f",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437907/competitions/401437907/competitors/23/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "PIT"
+    },
+    {
+      "espn_starter_ids": [
+        "4241479"
+      ],
+      "game_id": "2024_08_ARI_MIA",
+      "pregame_verified": false,
+      "reconciled_name": "Tua Tagovailoa",
+      "reconciled_player_id": "00-0036212",
+      "scheduled_name": "Tim Boyle",
+      "scheduled_player_id": "00-0034177",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671850-4a7f67bfcb3a7ad60f22e0ad699fa217753bb5ca3325c40ee03d97f7a984f629.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.044825+00:00",
+          "sha256": "4a7f67bfcb3a7ad60f22e0ad699fa217753bb5ca3325c40ee03d97f7a984f629",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671850"
+        },
+        "roster": {
+          "file": "roster-401671850-15-04658bdccd7c0bc288add2025bc99d445701ae0d9b319c19df068a37e0b2b867.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.683857+00:00",
+          "sha256": "04658bdccd7c0bc288add2025bc99d445701ae0d9b319c19df068a37e0b2b867",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671850/competitions/401671850/competitors/15/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "MIA"
+    },
+    {
+      "espn_starter_ids": [
+        "4429084"
+      ],
+      "game_id": "2024_08_IND_HOU",
+      "pregame_verified": false,
+      "reconciled_name": "Anthony Richardson",
+      "reconciled_player_id": "00-0039164",
+      "scheduled_name": "Joe Flacco",
+      "scheduled_player_id": "00-0026158",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671856-ee3c2f8e557ead11a6fae6798440b33a8a30796cf0a2f3f490df1a3efa6948ec.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.129316+00:00",
+          "sha256": "ee3c2f8e557ead11a6fae6798440b33a8a30796cf0a2f3f490df1a3efa6948ec",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671856"
+        },
+        "roster": {
+          "file": "roster-401671856-11-84aea1785c9c347cea7dd656092ba57c87a8a7d16068ac6dcbfb2fc819ae3e28.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.550491+00:00",
+          "sha256": "84aea1785c9c347cea7dd656092ba57c87a8a7d16068ac6dcbfb2fc819ae3e28",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671856/competitions/401671856/competitors/11/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "IND"
+    },
+    {
+      "espn_starter_ids": [
+        "4038524"
+      ],
+      "game_id": "2024_08_KC_LV",
+      "pregame_verified": false,
+      "reconciled_name": "Gardner Minshew",
+      "reconciled_player_id": "00-0035289",
+      "scheduled_name": "Aidan O'Connell",
+      "scheduled_player_id": "00-0038579",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671671-5a755eb01af2d84c3d7426c3a0cd568f7e0395827d824fe7009a3154f0f32cb9.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.130321+00:00",
+          "sha256": "5a755eb01af2d84c3d7426c3a0cd568f7e0395827d824fe7009a3154f0f32cb9",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671671"
+        },
+        "roster": {
+          "file": "roster-401671671-13-510e60f0e92f656eb4f14f800e5ba0bfa9e88f641731a241b96413a69c11616c.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.547428+00:00",
+          "sha256": "510e60f0e92f656eb4f14f800e5ba0bfa9e88f641731a241b96413a69c11616c",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671671/competitions/401671671/competitors/13/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "LV"
+    },
+    {
+      "espn_starter_ids": [
+        "4426348"
+      ],
+      "game_id": "2024_09_WAS_NYG",
+      "pregame_verified": false,
+      "reconciled_name": "Jayden Daniels",
+      "reconciled_player_id": "00-0039910",
+      "scheduled_name": "Marcus Mariota",
+      "scheduled_player_id": "00-0032268",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671711-87a279716d4f0f080d89a4e4e2b34aecd8ca83aacaa5a1e68b79ae278b3a5215.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.327224+00:00",
+          "sha256": "87a279716d4f0f080d89a4e4e2b34aecd8ca83aacaa5a1e68b79ae278b3a5215",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671711"
+        },
+        "roster": {
+          "file": "roster-401671711-28-dfc6cb159bf829df6a87e509b65e75418cf5b0a1f0606ac42dd000a3e058c0f6.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.729860+00:00",
+          "sha256": "dfc6cb159bf829df6a87e509b65e75418cf5b0a1f0606ac42dd000a3e058c0f6",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671711/competitions/401671711/competitors/28/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "WAS"
+    },
+    {
+      "espn_starter_ids": [
+        "4685720"
+      ],
+      "game_id": "2024_10_NYG_CAR",
+      "pregame_verified": false,
+      "reconciled_name": "Bryce Young",
+      "reconciled_player_id": "00-0039150",
+      "scheduled_name": "Andy Dalton",
+      "scheduled_player_id": "00-0027973",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671803-ac2a8ec6554307a8b512486c09eec0c34633425997a9592870a0473d39d4e4d8.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.866345+00:00",
+          "sha256": "ac2a8ec6554307a8b512486c09eec0c34633425997a9592870a0473d39d4e4d8",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671803"
+        },
+        "roster": {
+          "file": "roster-401671803-29-8500c74bb05c82d057d8c80ca5b7e0a1b3418f8462e33aed67169c64f322b0b8.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.296938+00:00",
+          "sha256": "8500c74bb05c82d057d8c80ca5b7e0a1b3418f8462e33aed67169c64f322b0b8",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671803/competitions/401671803/competitors/29/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "CAR"
+    },
+    {
+      "espn_starter_ids": [
+        "4426348"
+      ],
+      "game_id": "2024_10_PIT_WAS",
+      "pregame_verified": false,
+      "reconciled_name": "Jayden Daniels",
+      "reconciled_player_id": "00-0039910",
+      "scheduled_name": "Marcus Mariota",
+      "scheduled_player_id": "00-0032268",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671641-6c17f8182d04a803bfa33734762b902b67dbdc7ac44b65e21299e955e3a3cab9.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.863347+00:00",
+          "sha256": "6c17f8182d04a803bfa33734762b902b67dbdc7ac44b65e21299e955e3a3cab9",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671641"
+        },
+        "roster": {
+          "file": "roster-401671641-28-59420e70b0a8b63e66799bf01a97c27a034d942790ed5298fac9e3ce00ec3a69.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.323384+00:00",
+          "sha256": "59420e70b0a8b63e66799bf01a97c27a034d942790ed5298fac9e3ce00ec3a69",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671641/competitions/401671641/competitors/28/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "WAS"
+    },
+    {
+      "espn_starter_ids": [
+        "4361418"
+      ],
+      "game_id": "2024_10_TEN_LAC",
+      "pregame_verified": false,
+      "reconciled_name": "Will Levis",
+      "reconciled_player_id": "00-0039152",
+      "scheduled_name": "Mason Rudolph",
+      "scheduled_player_id": "00-0034771",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671751-9fe38e5b608d387a31a000487842f8e487348f57d3994992983b5a0fb53f67e6.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.000433+00:00",
+          "sha256": "9fe38e5b608d387a31a000487842f8e487348f57d3994992983b5a0fb53f67e6",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671751"
+        },
+        "roster": {
+          "file": "roster-401671751-10-2148956c3b1cf7fd19aef1432db0687841ad3d298e9baa69d854e491a581b3a9.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.405976+00:00",
+          "sha256": "2148956c3b1cf7fd19aef1432db0687841ad3d298e9baa69d854e491a581b3a9",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671751/competitions/401671751/competitors/10/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "TEN"
+    },
+    {
+      "espn_starter_ids": [
+        "4429084"
+      ],
+      "game_id": "2024_11_IND_NYJ",
+      "pregame_verified": false,
+      "reconciled_name": "Anthony Richardson",
+      "reconciled_player_id": "00-0039164",
+      "scheduled_name": "Joe Flacco",
+      "scheduled_player_id": "00-0026158",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671782-78bd5981ce0894209d86cae3a12e6d14f037b1c15c0ac7a2008a2f35b793d608.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.139050+00:00",
+          "sha256": "78bd5981ce0894209d86cae3a12e6d14f037b1c15c0ac7a2008a2f35b793d608",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671782"
+        },
+        "roster": {
+          "file": "roster-401671782-11-a30a2ce13fd0b5f43fe5c8d854ef9423a6832ab9aeecb093340274215b4f4076.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.527021+00:00",
+          "sha256": "a30a2ce13fd0b5f43fe5c8d854ef9423a6832ab9aeecb093340274215b4f4076",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671782/competitions/401671782/competitors/11/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "IND"
+    },
+    {
+      "espn_starter_ids": [
+        "4361418"
+      ],
+      "game_id": "2024_11_MIN_TEN",
+      "pregame_verified": false,
+      "reconciled_name": "Will Levis",
+      "reconciled_player_id": "00-0039152",
+      "scheduled_name": "Mason Rudolph",
+      "scheduled_player_id": "00-0034771",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671824-6358001514882d304f9114cf8403b8f977f8aacfaddc09144419ca2773fb9d75.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.642759+00:00",
+          "sha256": "6358001514882d304f9114cf8403b8f977f8aacfaddc09144419ca2773fb9d75",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671824"
+        },
+        "roster": {
+          "file": "roster-401671824-10-ec6b24794c93b4a6f307f33be329b8556eadfbfe44d65f783014a8d87f0f80bb.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.044988+00:00",
+          "sha256": "ec6b24794c93b4a6f307f33be329b8556eadfbfe44d65f783014a8d87f0f80bb",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671824/competitions/401671824/competitors/10/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "TEN"
+    },
+    {
+      "espn_starter_ids": [
+        "4426348"
+      ],
+      "game_id": "2024_11_WAS_PHI",
+      "pregame_verified": false,
+      "reconciled_name": "Jayden Daniels",
+      "reconciled_player_id": "00-0039910",
+      "scheduled_name": "Marcus Mariota",
+      "scheduled_player_id": "00-0032268",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671813-0ff6d4740a8674091848410577ddbb67bd4563f6ac077294ff7367e4cb11ed60.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.610643+00:00",
+          "sha256": "0ff6d4740a8674091848410577ddbb67bd4563f6ac077294ff7367e4cb11ed60",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671813"
+        },
+        "roster": {
+          "file": "roster-401671813-28-202b7bbe76bd7c0beeb6cd6d77981419c6a90b3438219deaf3291eaba9c61262.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.045988+00:00",
+          "sha256": "202b7bbe76bd7c0beeb6cd6d77981419c6a90b3438219deaf3291eaba9c61262",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671813/competitions/401671813/competitors/28/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "WAS"
+    },
+    {
+      "espn_starter_ids": [
+        "4426348"
+      ],
+      "game_id": "2024_12_DAL_WAS",
+      "pregame_verified": false,
+      "reconciled_name": "Jayden Daniels",
+      "reconciled_player_id": "00-0039910",
+      "scheduled_name": "Marcus Mariota",
+      "scheduled_player_id": "00-0032268",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671715-1169874ec38aea7746fdabd452faefa7529b8fa46cd7ab58c67ce196c4f384ca.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.774793+00:00",
+          "sha256": "1169874ec38aea7746fdabd452faefa7529b8fa46cd7ab58c67ce196c4f384ca",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671715"
+        },
+        "roster": {
+          "file": "roster-401671715-28-30dfa6cfc6e373286bbf1ebed0ca2658aa96c3d11ca1a3d30df85e5c21702240.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.353638+00:00",
+          "sha256": "30dfa6cfc6e373286bbf1ebed0ca2658aa96c3d11ca1a3d30df85e5c21702240",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671715/competitions/401671715/competitors/28/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "WAS"
+    },
+    {
+      "espn_starter_ids": [
+        "4429084"
+      ],
+      "game_id": "2024_12_DET_IND",
+      "pregame_verified": false,
+      "reconciled_name": "Anthony Richardson",
+      "reconciled_player_id": "00-0039164",
+      "scheduled_name": "Joe Flacco",
+      "scheduled_player_id": "00-0026158",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671866-c7557885ab86cbe78cfcf0bbd5839895cd65a4a75f467bb7492a6e44afca818a.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.860991+00:00",
+          "sha256": "c7557885ab86cbe78cfcf0bbd5839895cd65a4a75f467bb7492a6e44afca818a",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671866"
+        },
+        "roster": {
+          "file": "roster-401671866-11-a5038881a6936707bf4d9391ed458df415ca0c4f04de9d88b8a70ba9cf24968a.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.521595+00:00",
+          "sha256": "a5038881a6936707bf4d9391ed458df415ca0c4f04de9d88b8a70ba9cf24968a",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671866/competitions/401671866/competitors/11/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "IND"
+    },
+    {
+      "espn_starter_ids": [
+        "4685720"
+      ],
+      "game_id": "2024_12_KC_CAR",
+      "pregame_verified": false,
+      "reconciled_name": "Bryce Young",
+      "reconciled_player_id": "00-0039150",
+      "scheduled_name": "Andy Dalton",
+      "scheduled_player_id": "00-0027973",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671651-c7c7b1da654b9fbeeb6340d3d4c71f4dc96c3e0eb4d347572ff4269f2eb6f8d4.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.333645+00:00",
+          "sha256": "c7c7b1da654b9fbeeb6340d3d4c71f4dc96c3e0eb4d347572ff4269f2eb6f8d4",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671651"
+        },
+        "roster": {
+          "file": "roster-401671651-29-2489e4d50ce914c0c360b1d353cd975e7fbab62f1149d95053ee774eb4e43ec8.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.951226+00:00",
+          "sha256": "2489e4d50ce914c0c360b1d353cd975e7fbab62f1149d95053ee774eb4e43ec8",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671651/competitions/401671651/competitors/29/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "CAR"
+    },
+    {
+      "espn_starter_ids": [
+        "4361418"
+      ],
+      "game_id": "2024_12_TEN_HOU",
+      "pregame_verified": false,
+      "reconciled_name": "Will Levis",
+      "reconciled_player_id": "00-0039152",
+      "scheduled_name": "Mason Rudolph",
+      "scheduled_player_id": "00-0034771",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671858-3975751de7fa6c2a63399327acafaef8daa91d4037ae8b054e2c683d8c6e141a.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.352647+00:00",
+          "sha256": "3975751de7fa6c2a63399327acafaef8daa91d4037ae8b054e2c683d8c6e141a",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671858"
+        },
+        "roster": {
+          "file": "roster-401671858-10-0011f3c6245311d210d6ee95838cb10478012ac113e2e392f9adeff486455928.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.977795+00:00",
+          "sha256": "0011f3c6245311d210d6ee95838cb10478012ac113e2e392f9adeff486455928",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671858/competitions/401671858/competitors/10/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "TEN"
+    },
+    {
+      "espn_starter_ids": [
+        "4429084"
+      ],
+      "game_id": "2024_13_IND_NE",
+      "pregame_verified": false,
+      "reconciled_name": "Anthony Richardson",
+      "reconciled_player_id": "00-0039164",
+      "scheduled_name": "Joe Flacco",
+      "scheduled_player_id": "00-0026158",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671620-d412402873eb2f646c3ce1f4193f5556ffaf7d84b3dff71240b0578a06dfa009.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.658769+00:00",
+          "sha256": "d412402873eb2f646c3ce1f4193f5556ffaf7d84b3dff71240b0578a06dfa009",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671620"
+        },
+        "roster": {
+          "file": "roster-401671620-11-0dbaa6fea306809522d940963c33c2bcb6ad40c77909a92a051cdccad860cede.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.086678+00:00",
+          "sha256": "0dbaa6fea306809522d940963c33c2bcb6ad40c77909a92a051cdccad860cede",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671620/competitions/401671620/competitors/11/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "IND"
+    },
+    {
+      "espn_starter_ids": [
+        "4260394"
+      ],
+      "game_id": "2024_13_LV_KC",
+      "pregame_verified": false,
+      "reconciled_name": "Aidan O'Connell",
+      "reconciled_player_id": "00-0038579",
+      "scheduled_name": "Gardner Minshew",
+      "scheduled_player_id": "00-0035289",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671806-b49b1bdaaf1e4a1c0c8954178e019a02def55732f276cddd019e4364d354b4c8.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.825622+00:00",
+          "sha256": "b49b1bdaaf1e4a1c0c8954178e019a02def55732f276cddd019e4364d354b4c8",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671806"
+        },
+        "roster": {
+          "file": "roster-401671806-13-bab0fcb905c648543942858611df1a29605a9a0847f4ddce425780b3a3244c8e.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.249339+00:00",
+          "sha256": "bab0fcb905c648543942858611df1a29605a9a0847f4ddce425780b3a3244c8e",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671806/competitions/401671806/competitors/13/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "LV"
+    },
+    {
+      "espn_starter_ids": [
+        "4685720"
+      ],
+      "game_id": "2024_13_TB_CAR",
+      "pregame_verified": false,
+      "reconciled_name": "Bryce Young",
+      "reconciled_player_id": "00-0039150",
+      "scheduled_name": "Andy Dalton",
+      "scheduled_player_id": "00-0027973",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671752-4e19ea04667433ec07a06824c9542cf8a86f831331dfc887bc40870f747c4f31.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.260284+00:00",
+          "sha256": "4e19ea04667433ec07a06824c9542cf8a86f831331dfc887bc40870f747c4f31",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671752"
+        },
+        "roster": {
+          "file": "roster-401671752-29-bd595096c2c4a9ef9f00a13f93d869152a55eb3a7067f4d1eb87787044c7338d.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.624313+00:00",
+          "sha256": "bd595096c2c4a9ef9f00a13f93d869152a55eb3a7067f4d1eb87787044c7338d",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671752/competitions/401671752/competitors/29/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "CAR"
+    },
+    {
+      "espn_starter_ids": [
+        "4361418"
+      ],
+      "game_id": "2024_13_TEN_WAS",
+      "pregame_verified": false,
+      "reconciled_name": "Will Levis",
+      "reconciled_player_id": "00-0039152",
+      "scheduled_name": "Mason Rudolph",
+      "scheduled_player_id": "00-0034771",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671743-07f3afa0f3eb50ba5e3e24f98ad6e289ad2f71397ff1264d9503b94f5960f20e.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.285439+00:00",
+          "sha256": "07f3afa0f3eb50ba5e3e24f98ad6e289ad2f71397ff1264d9503b94f5960f20e",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671743"
+        },
+        "roster": {
+          "file": "roster-401671743-10-7a856ca1088b41382725ccf880696ee334296f259098057271bcf88a139e8f75.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.651577+00:00",
+          "sha256": "7a856ca1088b41382725ccf880696ee334296f259098057271bcf88a139e8f75",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671743/competitions/401671743/competitors/10/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "TEN"
+    },
+    {
+      "espn_starter_ids": [
+        "4426348"
+      ],
+      "game_id": "2024_13_TEN_WAS",
+      "pregame_verified": false,
+      "reconciled_name": "Jayden Daniels",
+      "reconciled_player_id": "00-0039910",
+      "scheduled_name": "Marcus Mariota",
+      "scheduled_player_id": "00-0032268",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671743-07f3afa0f3eb50ba5e3e24f98ad6e289ad2f71397ff1264d9503b94f5960f20e.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.285439+00:00",
+          "sha256": "07f3afa0f3eb50ba5e3e24f98ad6e289ad2f71397ff1264d9503b94f5960f20e",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671743"
+        },
+        "roster": {
+          "file": "roster-401671743-28-8c7de50f66f60057f4f23394efb5a6fa29f4748f606d5d1d9505f0a1ccf0d405.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.032396+00:00",
+          "sha256": "8c7de50f66f60057f4f23394efb5a6fa29f4748f606d5d1d9505f0a1ccf0d405",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671743/competitions/401671743/competitors/28/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "WAS"
+    },
+    {
+      "espn_starter_ids": [
+        "4685720"
+      ],
+      "game_id": "2024_14_CAR_PHI",
+      "pregame_verified": false,
+      "reconciled_name": "Bryce Young",
+      "reconciled_player_id": "00-0039150",
+      "scheduled_name": "Andy Dalton",
+      "scheduled_player_id": "00-0027973",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671713-3b4d6ed108f7eae15e10b5eea12989af7044ae010d81ec902977a97abd42bc94.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.391552+00:00",
+          "sha256": "3b4d6ed108f7eae15e10b5eea12989af7044ae010d81ec902977a97abd42bc94",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671713"
+        },
+        "roster": {
+          "file": "roster-401671713-29-f426e69b46585176d56b7b7d8f5a8fe7391d4dcf76fc4874dd3b2f2791480cfa.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.736487+00:00",
+          "sha256": "f426e69b46585176d56b7b7d8f5a8fe7391d4dcf76fc4874dd3b2f2791480cfa",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671713/competitions/401671713/competitors/29/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "CAR"
+    },
+    {
+      "espn_starter_ids": [
+        "4361418"
+      ],
+      "game_id": "2024_14_JAX_TEN",
+      "pregame_verified": false,
+      "reconciled_name": "Will Levis",
+      "reconciled_player_id": "00-0039152",
+      "scheduled_name": "Mason Rudolph",
+      "scheduled_player_id": "00-0034771",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671821-673de197da120786ef72e089e65951d68d05088512966efc336baf25538cd206.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.601529+00:00",
+          "sha256": "673de197da120786ef72e089e65951d68d05088512966efc336baf25538cd206",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671821"
+        },
+        "roster": {
+          "file": "roster-401671821-10-68d98d4cc13933a12fbe3a7c693ca7069cf8bbac83d6494ec266b67f7d2eb0fd.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.998152+00:00",
+          "sha256": "68d98d4cc13933a12fbe3a7c693ca7069cf8bbac83d6494ec266b67f7d2eb0fd",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671821/competitions/401671821/competitors/10/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "TEN"
+    },
+    {
+      "espn_starter_ids": [
+        "4260394"
+      ],
+      "game_id": "2024_14_LV_TB",
+      "pregame_verified": false,
+      "reconciled_name": "Aidan O'Connell",
+      "reconciled_player_id": "00-0038579",
+      "scheduled_name": "Gardner Minshew",
+      "scheduled_player_id": "00-0035289",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671654-2dc2e47485231f3d50e1e6967e3c7ddf29c0d52ba1226884f003b99db095df22.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.002171+00:00",
+          "sha256": "2dc2e47485231f3d50e1e6967e3c7ddf29c0d52ba1226884f003b99db095df22",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671654"
+        },
+        "roster": {
+          "file": "roster-401671654-13-fc943a818da180c5c42c46a3806e570c8804922767a20915144bfd76ecf58a4c.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.645472+00:00",
+          "sha256": "fc943a818da180c5c42c46a3806e570c8804922767a20915144bfd76ecf58a4c",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671654/competitions/401671654/competitors/13/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "LV"
+    },
+    {
+      "espn_starter_ids": [
+        "3924327"
+      ],
+      "game_id": "2024_14_NO_NYG",
+      "pregame_verified": false,
+      "reconciled_name": "Drew Lock",
+      "reconciled_player_id": "00-0035704",
+      "scheduled_name": "Tommy DeVito",
+      "scheduled_player_id": "00-0038476",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671601-2c456f18b52289ab8bc7eed8127e0693f93c3197db321533f4e8ac6ffc177502.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.122029+00:00",
+          "sha256": "2c456f18b52289ab8bc7eed8127e0693f93c3197db321533f4e8ac6ffc177502",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671601"
+        },
+        "roster": {
+          "file": "roster-401671601-19-0484b71d752b415d21a1a7bc1bb11eade2866e89676ad3b6070d16df8964d54c.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.471766+00:00",
+          "sha256": "0484b71d752b415d21a1a7bc1bb11eade2866e89676ad3b6070d16df8964d54c",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671601/competitions/401671601/competitors/19/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "NYG"
+    },
+    {
+      "espn_starter_ids": [
+        "4239086"
+      ],
+      "game_id": "2024_15_ATL_LV",
+      "pregame_verified": false,
+      "reconciled_name": "Desmond Ridder",
+      "reconciled_player_id": "00-0038122",
+      "scheduled_name": "Aidan O'Connell",
+      "scheduled_player_id": "00-0038579",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671697-ff14be36f1268fb453751aab6687e5fc854a5496f35bcba17513b218f3df5f97.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.309009+00:00",
+          "sha256": "ff14be36f1268fb453751aab6687e5fc854a5496f35bcba17513b218f3df5f97",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671697"
+        },
+        "roster": {
+          "file": "roster-401671697-13-9dbc5179fb1380e5943cd0302e5070bfb8855bff0315e461fda68aea7c0ee7e1.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.647444+00:00",
+          "sha256": "9dbc5179fb1380e5943cd0302e5070bfb8855bff0315e461fda68aea7c0ee7e1",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671697/competitions/401671697/competitors/13/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "LV"
+    },
+    {
+      "espn_starter_ids": [
+        "4367178"
+      ],
+      "game_id": "2024_16_CLE_CIN",
+      "pregame_verified": false,
+      "reconciled_name": "Dorian Thompson-Robinson",
+      "reconciled_player_id": "00-0038583",
+      "scheduled_name": "Jameis Winston",
+      "scheduled_player_id": "00-0031503",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671811-eb1ecf32fa4fad45a2989fde7064d7ab821ed59df153125c2e024aaa9f079d56.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.351967+00:00",
+          "sha256": "eb1ecf32fa4fad45a2989fde7064d7ab821ed59df153125c2e024aaa9f079d56",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671811"
+        },
+        "roster": {
+          "file": "roster-401671811-5-2c433d4ff11da8e50ac6302da76a57de316aa6c47df757d8ac4b585a7c4dd847.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.698098+00:00",
+          "sha256": "2c433d4ff11da8e50ac6302da76a57de316aa6c47df757d8ac4b585a7c4dd847",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671811/competitions/401671811/competitors/5/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "CLE"
+    },
+    {
+      "espn_starter_ids": [
+        "4426339"
+      ],
+      "game_id": "2024_16_NO_GB",
+      "pregame_verified": false,
+      "reconciled_name": "Spencer Rattler",
+      "reconciled_player_id": "00-0039376",
+      "scheduled_name": "Jake Haener",
+      "scheduled_player_id": "00-0038998",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671692-d7d137a27e9c867a380bbb3e4ea08238cf87f23f772fec2fa888d601b364a8b0.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.796532+00:00",
+          "sha256": "d7d137a27e9c867a380bbb3e4ea08238cf87f23f772fec2fa888d601b364a8b0",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671692"
+        },
+        "roster": {
+          "file": "roster-401671692-18-adde2278b9fff622ef6d7167539fa171a0fc6dcb54efd7f899d920cccbf26e73.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.156268+00:00",
+          "sha256": "adde2278b9fff622ef6d7167539fa171a0fc6dcb54efd7f899d920cccbf26e73",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671692/competitions/401671692/competitors/18/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "NO"
+    },
+    {
+      "espn_starter_ids": [
+        "3924327"
+      ],
+      "game_id": "2024_16_NYG_ATL",
+      "pregame_verified": false,
+      "reconciled_name": "Drew Lock",
+      "reconciled_player_id": "00-0035704",
+      "scheduled_name": "Tommy DeVito",
+      "scheduled_player_id": "00-0038476",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671729-4033416cb67af8294b456bf7718854937f4c4f17ff7dabf893de2cf8d93bf9f7.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.975830+00:00",
+          "sha256": "4033416cb67af8294b456bf7718854937f4c4f17ff7dabf893de2cf8d93bf9f7",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671729"
+        },
+        "roster": {
+          "file": "roster-401671729-19-e481fc2db02a5a3906a3e36adf290b60718ec7dd4d168b24975147f54b912349.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.338031+00:00",
+          "sha256": "e481fc2db02a5a3906a3e36adf290b60718ec7dd4d168b24975147f54b912349",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671729/competitions/401671729/competitors/19/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "NYG"
+    },
+    {
+      "espn_starter_ids": [
+        "4429084"
+      ],
+      "game_id": "2024_16_TEN_IND",
+      "pregame_verified": false,
+      "reconciled_name": "Anthony Richardson",
+      "reconciled_player_id": "00-0039164",
+      "scheduled_name": "Joe Flacco",
+      "scheduled_player_id": "00-0026158",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671862-d85842f36a0c91d7a436d2f19ecb2da6234e1e6e3abceec573626105bce4b227.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.013119+00:00",
+          "sha256": "d85842f36a0c91d7a436d2f19ecb2da6234e1e6e3abceec573626105bce4b227",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671862"
+        },
+        "roster": {
+          "file": "roster-401671862-11-511a8cf17c6f6fa1a3d6c51718fb82f527eaf1ede747c5fb39186874930775db.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.672494+00:00",
+          "sha256": "511a8cf17c6f6fa1a3d6c51718fb82f527eaf1ede747c5fb39186874930775db",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671862/competitions/401671862/competitors/11/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "IND"
+    },
+    {
+      "espn_starter_ids": [
+        "4240703"
+      ],
+      "game_id": "2024_17_DAL_PHI",
+      "pregame_verified": false,
+      "reconciled_name": "Kenny Pickett",
+      "reconciled_player_id": "00-0038102",
+      "scheduled_name": "Jalen Hurts",
+      "scheduled_player_id": "00-0036389",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671765-5b126f2e340d7ef7a81d6b0aa5ec005f454e24abd141d924b33f30478038c927.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.055978+00:00",
+          "sha256": "5b126f2e340d7ef7a81d6b0aa5ec005f454e24abd141d924b33f30478038c927",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671765"
+        },
+        "roster": {
+          "file": "roster-401671765-21-ca6fd42acae4de856ba1a6d1770fe5cb795f950dc2dcfb79580e98d19438b58b.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.554571+00:00",
+          "sha256": "ca6fd42acae4de856ba1a6d1770fe5cb795f950dc2dcfb79580e98d19438b58b",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671765/competitions/401671765/competitors/21/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "PHI"
+    },
+    {
+      "espn_starter_ids": [
+        "3924327"
+      ],
+      "game_id": "2024_17_IND_NYG",
+      "pregame_verified": false,
+      "reconciled_name": "Drew Lock",
+      "reconciled_player_id": "00-0035704",
+      "scheduled_name": "Tommy DeVito",
+      "scheduled_player_id": "00-0038476",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671846-f20f3eebd45e435c4b5593fcad98261008a00012df85d45feeeed3f5c2eff4cc.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.495159+00:00",
+          "sha256": "f20f3eebd45e435c4b5593fcad98261008a00012df85d45feeeed3f5c2eff4cc",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671846"
+        },
+        "roster": {
+          "file": "roster-401671846-19-6f2654a2b75c4e76e32a7333621eea36c5b48c147d9d4eb5c2edbbe476b49bc8.json",
+          "retrieved_at_utc": "2026-10-01T20:10:51.059432+00:00",
+          "sha256": "6f2654a2b75c4e76e32a7333621eea36c5b48c147d9d4eb5c2edbbe476b49bc8",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671846/competitions/401671846/competitors/19/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "NYG"
+    },
+    {
+      "espn_starter_ids": [
+        "4426339"
+      ],
+      "game_id": "2024_17_LV_NO",
+      "pregame_verified": false,
+      "reconciled_name": "Spencer Rattler",
+      "reconciled_player_id": "00-0039376",
+      "scheduled_name": "Jake Haener",
+      "scheduled_player_id": "00-0038998",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671738-b64841346e812adb423df800373344735755b7a23abcc600bc953e9457aa1f4e.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.661306+00:00",
+          "sha256": "b64841346e812adb423df800373344735755b7a23abcc600bc953e9457aa1f4e",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671738"
+        },
+        "roster": {
+          "file": "roster-401671738-18-dc80070bd6a1af1f0a4caef2f2aaefff358ae0a9ed69e932236519f605875f70.json",
+          "retrieved_at_utc": "2026-10-01T20:10:51.049805+00:00",
+          "sha256": "dc80070bd6a1af1f0a4caef2f2aaefff358ae0a9ed69e932236519f605875f70",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671738/competitions/401671738/competitors/18/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "NO"
+    },
+    {
+      "espn_starter_ids": [
+        "4367178"
+      ],
+      "game_id": "2024_17_MIA_CLE",
+      "pregame_verified": false,
+      "reconciled_name": "Dorian Thompson-Robinson",
+      "reconciled_player_id": "00-0038583",
+      "scheduled_name": "Jameis Winston",
+      "scheduled_player_id": "00-0031503",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671877-202e7b2ae856d032c53697cd8c01eb195f11e8a3fbed846bba8bd0f514515ad1.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.861847+00:00",
+          "sha256": "202e7b2ae856d032c53697cd8c01eb195f11e8a3fbed846bba8bd0f514515ad1",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671877"
+        },
+        "roster": {
+          "file": "roster-401671877-5-5f6334a1b2aa9c785f2dc590ba9646c571b67f862ca7543c908a8dcd2607cdf7.json",
+          "retrieved_at_utc": "2026-10-01T20:10:51.273442+00:00",
+          "sha256": "5f6334a1b2aa9c785f2dc590ba9646c571b67f862ca7543c908a8dcd2607cdf7",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671877/competitions/401671877/competitors/5/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "CLE"
+    },
+    {
+      "espn_starter_ids": [
+        "4035671"
+      ],
+      "game_id": "2024_18_MIA_NYJ",
+      "pregame_verified": false,
+      "reconciled_name": "Tyler Huntley",
+      "reconciled_player_id": "00-0035993",
+      "scheduled_name": "Tua Tagovailoa",
+      "scheduled_player_id": "00-0036212",
+      "season": 2024,
+      "sources": {
+        "header": {
+          "file": "event-401671833-23eec7209774cdcdf7b8d25007f735b51c1691521fc8831cd1d09ff6d25e991a.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.982691+00:00",
+          "sha256": "23eec7209774cdcdf7b8d25007f735b51c1691521fc8831cd1d09ff6d25e991a",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671833"
+        },
+        "roster": {
+          "file": "roster-401671833-15-89bf798838d982e8689202e89205e79b715a6e87671b2d7b28bfc4396b396827.json",
+          "retrieved_at_utc": "2026-10-01T20:10:51.391615+00:00",
+          "sha256": "89bf798838d982e8689202e89205e79b715a6e87671b2d7b28bfc4396b396827",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671833/competitions/401671833/competitors/15/roster?limit=1000"
+        }
+      },
+      "status": "corrected_schedule_label",
+      "team": "MIA"
+    }
+  ],
+  "counts": {
+    "completed_team_game_slots": 1630,
+    "corrected_schedule_labels": 37,
+    "flagged_starter_labels": 37,
+    "historical_qb_rows": 1960,
+    "needs_review": 0,
+    "unflagged_slots_not_independently_verified": 1593
+  },
+  "evidence_manifest": {
+    "evidence": [
+      {
+        "game_id": "2022_08_LV_NO",
+        "header": {
+          "file": "event-401437810-ea1bb0554323ad479e1f42f2ed169c368755690eaed524aa312435a7e5d3210d.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.300971+00:00",
+          "sha256": "ea1bb0554323ad479e1f42f2ed169c368755690eaed524aa312435a7e5d3210d",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401437810"
+        },
+        "roster": {
+          "file": "roster-401437810-18-f041e2b6fbb24a459fef60902e18d0ebf48318b3f74e1eabfeb8bef906cf7e19.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.794593+00:00",
+          "sha256": "f041e2b6fbb24a459fef60902e18d0ebf48318b3f74e1eabfeb8bef906cf7e19",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437810/competitions/401437810/competitors/18/roster?limit=1000"
+        },
+        "team": "NO"
+      },
+      {
+        "game_id": "2022_11_CAR_BAL",
+        "header": {
+          "file": "event-401437846-540e25174c16832e1ca11ffbb3ae1987e761d707a1c82d751996e3b85a9e3735.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.370908+00:00",
+          "sha256": "540e25174c16832e1ca11ffbb3ae1987e761d707a1c82d751996e3b85a9e3735",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401437846"
+        },
+        "roster": {
+          "file": "roster-401437846-29-7b49fb844565d3d33ce2470c63f48e10300bc197eaf4df66ff055fa5a9035330.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.728474+00:00",
+          "sha256": "7b49fb844565d3d33ce2470c63f48e10300bc197eaf4df66ff055fa5a9035330",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437846/competitions/401437846/competitors/29/roster?limit=1000"
+        },
+        "team": "CAR"
+      },
+      {
+        "game_id": "2022_11_PHI_IND",
+        "header": {
+          "file": "event-401437849-546de9e0f19351979e88be40a8adc35ad0e7bb454cae6e12e532154844a8cfc1.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.377621+00:00",
+          "sha256": "546de9e0f19351979e88be40a8adc35ad0e7bb454cae6e12e532154844a8cfc1",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401437849"
+        },
+        "roster": {
+          "file": "roster-401437849-11-6e2546a3c5eedfd03f9851d65fc8e42f117f17273b572b8abbe6aa6777b8c4e0.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.719477+00:00",
+          "sha256": "6e2546a3c5eedfd03f9851d65fc8e42f117f17273b572b8abbe6aa6777b8c4e0",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437849/competitions/401437849/competitors/11/roster?limit=1000"
+        },
+        "team": "IND"
+      },
+      {
+        "game_id": "2022_15_PIT_CAR",
+        "header": {
+          "file": "event-401437907-f483b53dd0d35accab97844b8c539371d28e7aa0371da05eaa455f8319e03455.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.298990+00:00",
+          "sha256": "f483b53dd0d35accab97844b8c539371d28e7aa0371da05eaa455f8319e03455",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401437907"
+        },
+        "roster": {
+          "file": "roster-401437907-23-fe957deb6ede562b6ef9474e0da852186b94a88f14d2a083a99ebb956c8bcb5f.json",
+          "retrieved_at_utc": "2026-10-01T20:10:44.937132+00:00",
+          "sha256": "fe957deb6ede562b6ef9474e0da852186b94a88f14d2a083a99ebb956c8bcb5f",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401437907/competitions/401437907/competitors/23/roster?limit=1000"
+        },
+        "team": "PIT"
+      },
+      {
+        "game_id": "2024_08_ARI_MIA",
+        "header": {
+          "file": "event-401671850-4a7f67bfcb3a7ad60f22e0ad699fa217753bb5ca3325c40ee03d97f7a984f629.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.044825+00:00",
+          "sha256": "4a7f67bfcb3a7ad60f22e0ad699fa217753bb5ca3325c40ee03d97f7a984f629",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671850"
+        },
+        "roster": {
+          "file": "roster-401671850-15-04658bdccd7c0bc288add2025bc99d445701ae0d9b319c19df068a37e0b2b867.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.683857+00:00",
+          "sha256": "04658bdccd7c0bc288add2025bc99d445701ae0d9b319c19df068a37e0b2b867",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671850/competitions/401671850/competitors/15/roster?limit=1000"
+        },
+        "team": "MIA"
+      },
+      {
+        "game_id": "2024_08_IND_HOU",
+        "header": {
+          "file": "event-401671856-ee3c2f8e557ead11a6fae6798440b33a8a30796cf0a2f3f490df1a3efa6948ec.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.129316+00:00",
+          "sha256": "ee3c2f8e557ead11a6fae6798440b33a8a30796cf0a2f3f490df1a3efa6948ec",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671856"
+        },
+        "roster": {
+          "file": "roster-401671856-11-84aea1785c9c347cea7dd656092ba57c87a8a7d16068ac6dcbfb2fc819ae3e28.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.550491+00:00",
+          "sha256": "84aea1785c9c347cea7dd656092ba57c87a8a7d16068ac6dcbfb2fc819ae3e28",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671856/competitions/401671856/competitors/11/roster?limit=1000"
+        },
+        "team": "IND"
+      },
+      {
+        "game_id": "2024_08_KC_LV",
+        "header": {
+          "file": "event-401671671-5a755eb01af2d84c3d7426c3a0cd568f7e0395827d824fe7009a3154f0f32cb9.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.130321+00:00",
+          "sha256": "5a755eb01af2d84c3d7426c3a0cd568f7e0395827d824fe7009a3154f0f32cb9",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671671"
+        },
+        "roster": {
+          "file": "roster-401671671-13-510e60f0e92f656eb4f14f800e5ba0bfa9e88f641731a241b96413a69c11616c.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.547428+00:00",
+          "sha256": "510e60f0e92f656eb4f14f800e5ba0bfa9e88f641731a241b96413a69c11616c",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671671/competitions/401671671/competitors/13/roster?limit=1000"
+        },
+        "team": "LV"
+      },
+      {
+        "game_id": "2024_09_WAS_NYG",
+        "header": {
+          "file": "event-401671711-87a279716d4f0f080d89a4e4e2b34aecd8ca83aacaa5a1e68b79ae278b3a5215.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.327224+00:00",
+          "sha256": "87a279716d4f0f080d89a4e4e2b34aecd8ca83aacaa5a1e68b79ae278b3a5215",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671711"
+        },
+        "roster": {
+          "file": "roster-401671711-28-dfc6cb159bf829df6a87e509b65e75418cf5b0a1f0606ac42dd000a3e058c0f6.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.729860+00:00",
+          "sha256": "dfc6cb159bf829df6a87e509b65e75418cf5b0a1f0606ac42dd000a3e058c0f6",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671711/competitions/401671711/competitors/28/roster?limit=1000"
+        },
+        "team": "WAS"
+      },
+      {
+        "game_id": "2024_10_NYG_CAR",
+        "header": {
+          "file": "event-401671803-ac2a8ec6554307a8b512486c09eec0c34633425997a9592870a0473d39d4e4d8.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.866345+00:00",
+          "sha256": "ac2a8ec6554307a8b512486c09eec0c34633425997a9592870a0473d39d4e4d8",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671803"
+        },
+        "roster": {
+          "file": "roster-401671803-29-8500c74bb05c82d057d8c80ca5b7e0a1b3418f8462e33aed67169c64f322b0b8.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.296938+00:00",
+          "sha256": "8500c74bb05c82d057d8c80ca5b7e0a1b3418f8462e33aed67169c64f322b0b8",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671803/competitions/401671803/competitors/29/roster?limit=1000"
+        },
+        "team": "CAR"
+      },
+      {
+        "game_id": "2024_10_PIT_WAS",
+        "header": {
+          "file": "event-401671641-6c17f8182d04a803bfa33734762b902b67dbdc7ac44b65e21299e955e3a3cab9.json",
+          "retrieved_at_utc": "2026-10-01T20:10:45.863347+00:00",
+          "sha256": "6c17f8182d04a803bfa33734762b902b67dbdc7ac44b65e21299e955e3a3cab9",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671641"
+        },
+        "roster": {
+          "file": "roster-401671641-28-59420e70b0a8b63e66799bf01a97c27a034d942790ed5298fac9e3ce00ec3a69.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.323384+00:00",
+          "sha256": "59420e70b0a8b63e66799bf01a97c27a034d942790ed5298fac9e3ce00ec3a69",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671641/competitions/401671641/competitors/28/roster?limit=1000"
+        },
+        "team": "WAS"
+      },
+      {
+        "game_id": "2024_10_TEN_LAC",
+        "header": {
+          "file": "event-401671751-9fe38e5b608d387a31a000487842f8e487348f57d3994992983b5a0fb53f67e6.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.000433+00:00",
+          "sha256": "9fe38e5b608d387a31a000487842f8e487348f57d3994992983b5a0fb53f67e6",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671751"
+        },
+        "roster": {
+          "file": "roster-401671751-10-2148956c3b1cf7fd19aef1432db0687841ad3d298e9baa69d854e491a581b3a9.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.405976+00:00",
+          "sha256": "2148956c3b1cf7fd19aef1432db0687841ad3d298e9baa69d854e491a581b3a9",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671751/competitions/401671751/competitors/10/roster?limit=1000"
+        },
+        "team": "TEN"
+      },
+      {
+        "game_id": "2024_11_IND_NYJ",
+        "header": {
+          "file": "event-401671782-78bd5981ce0894209d86cae3a12e6d14f037b1c15c0ac7a2008a2f35b793d608.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.139050+00:00",
+          "sha256": "78bd5981ce0894209d86cae3a12e6d14f037b1c15c0ac7a2008a2f35b793d608",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671782"
+        },
+        "roster": {
+          "file": "roster-401671782-11-a30a2ce13fd0b5f43fe5c8d854ef9423a6832ab9aeecb093340274215b4f4076.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.527021+00:00",
+          "sha256": "a30a2ce13fd0b5f43fe5c8d854ef9423a6832ab9aeecb093340274215b4f4076",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671782/competitions/401671782/competitors/11/roster?limit=1000"
+        },
+        "team": "IND"
+      },
+      {
+        "game_id": "2024_11_MIN_TEN",
+        "header": {
+          "file": "event-401671824-6358001514882d304f9114cf8403b8f977f8aacfaddc09144419ca2773fb9d75.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.642759+00:00",
+          "sha256": "6358001514882d304f9114cf8403b8f977f8aacfaddc09144419ca2773fb9d75",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671824"
+        },
+        "roster": {
+          "file": "roster-401671824-10-ec6b24794c93b4a6f307f33be329b8556eadfbfe44d65f783014a8d87f0f80bb.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.044988+00:00",
+          "sha256": "ec6b24794c93b4a6f307f33be329b8556eadfbfe44d65f783014a8d87f0f80bb",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671824/competitions/401671824/competitors/10/roster?limit=1000"
+        },
+        "team": "TEN"
+      },
+      {
+        "game_id": "2024_11_WAS_PHI",
+        "header": {
+          "file": "event-401671813-0ff6d4740a8674091848410577ddbb67bd4563f6ac077294ff7367e4cb11ed60.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.610643+00:00",
+          "sha256": "0ff6d4740a8674091848410577ddbb67bd4563f6ac077294ff7367e4cb11ed60",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671813"
+        },
+        "roster": {
+          "file": "roster-401671813-28-202b7bbe76bd7c0beeb6cd6d77981419c6a90b3438219deaf3291eaba9c61262.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.045988+00:00",
+          "sha256": "202b7bbe76bd7c0beeb6cd6d77981419c6a90b3438219deaf3291eaba9c61262",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671813/competitions/401671813/competitors/28/roster?limit=1000"
+        },
+        "team": "WAS"
+      },
+      {
+        "game_id": "2024_12_DAL_WAS",
+        "header": {
+          "file": "event-401671715-1169874ec38aea7746fdabd452faefa7529b8fa46cd7ab58c67ce196c4f384ca.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.774793+00:00",
+          "sha256": "1169874ec38aea7746fdabd452faefa7529b8fa46cd7ab58c67ce196c4f384ca",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671715"
+        },
+        "roster": {
+          "file": "roster-401671715-28-30dfa6cfc6e373286bbf1ebed0ca2658aa96c3d11ca1a3d30df85e5c21702240.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.353638+00:00",
+          "sha256": "30dfa6cfc6e373286bbf1ebed0ca2658aa96c3d11ca1a3d30df85e5c21702240",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671715/competitions/401671715/competitors/28/roster?limit=1000"
+        },
+        "team": "WAS"
+      },
+      {
+        "game_id": "2024_12_DET_IND",
+        "header": {
+          "file": "event-401671866-c7557885ab86cbe78cfcf0bbd5839895cd65a4a75f467bb7492a6e44afca818a.json",
+          "retrieved_at_utc": "2026-10-01T20:10:46.860991+00:00",
+          "sha256": "c7557885ab86cbe78cfcf0bbd5839895cd65a4a75f467bb7492a6e44afca818a",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671866"
+        },
+        "roster": {
+          "file": "roster-401671866-11-a5038881a6936707bf4d9391ed458df415ca0c4f04de9d88b8a70ba9cf24968a.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.521595+00:00",
+          "sha256": "a5038881a6936707bf4d9391ed458df415ca0c4f04de9d88b8a70ba9cf24968a",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671866/competitions/401671866/competitors/11/roster?limit=1000"
+        },
+        "team": "IND"
+      },
+      {
+        "game_id": "2024_12_KC_CAR",
+        "header": {
+          "file": "event-401671651-c7c7b1da654b9fbeeb6340d3d4c71f4dc96c3e0eb4d347572ff4269f2eb6f8d4.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.333645+00:00",
+          "sha256": "c7c7b1da654b9fbeeb6340d3d4c71f4dc96c3e0eb4d347572ff4269f2eb6f8d4",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671651"
+        },
+        "roster": {
+          "file": "roster-401671651-29-2489e4d50ce914c0c360b1d353cd975e7fbab62f1149d95053ee774eb4e43ec8.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.951226+00:00",
+          "sha256": "2489e4d50ce914c0c360b1d353cd975e7fbab62f1149d95053ee774eb4e43ec8",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671651/competitions/401671651/competitors/29/roster?limit=1000"
+        },
+        "team": "CAR"
+      },
+      {
+        "game_id": "2024_12_TEN_HOU",
+        "header": {
+          "file": "event-401671858-3975751de7fa6c2a63399327acafaef8daa91d4037ae8b054e2c683d8c6e141a.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.352647+00:00",
+          "sha256": "3975751de7fa6c2a63399327acafaef8daa91d4037ae8b054e2c683d8c6e141a",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671858"
+        },
+        "roster": {
+          "file": "roster-401671858-10-0011f3c6245311d210d6ee95838cb10478012ac113e2e392f9adeff486455928.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.977795+00:00",
+          "sha256": "0011f3c6245311d210d6ee95838cb10478012ac113e2e392f9adeff486455928",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671858/competitions/401671858/competitors/10/roster?limit=1000"
+        },
+        "team": "TEN"
+      },
+      {
+        "game_id": "2024_13_IND_NE",
+        "header": {
+          "file": "event-401671620-d412402873eb2f646c3ce1f4193f5556ffaf7d84b3dff71240b0578a06dfa009.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.658769+00:00",
+          "sha256": "d412402873eb2f646c3ce1f4193f5556ffaf7d84b3dff71240b0578a06dfa009",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671620"
+        },
+        "roster": {
+          "file": "roster-401671620-11-0dbaa6fea306809522d940963c33c2bcb6ad40c77909a92a051cdccad860cede.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.086678+00:00",
+          "sha256": "0dbaa6fea306809522d940963c33c2bcb6ad40c77909a92a051cdccad860cede",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671620/competitions/401671620/competitors/11/roster?limit=1000"
+        },
+        "team": "IND"
+      },
+      {
+        "game_id": "2024_13_LV_KC",
+        "header": {
+          "file": "event-401671806-b49b1bdaaf1e4a1c0c8954178e019a02def55732f276cddd019e4364d354b4c8.json",
+          "retrieved_at_utc": "2026-10-01T20:10:47.825622+00:00",
+          "sha256": "b49b1bdaaf1e4a1c0c8954178e019a02def55732f276cddd019e4364d354b4c8",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671806"
+        },
+        "roster": {
+          "file": "roster-401671806-13-bab0fcb905c648543942858611df1a29605a9a0847f4ddce425780b3a3244c8e.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.249339+00:00",
+          "sha256": "bab0fcb905c648543942858611df1a29605a9a0847f4ddce425780b3a3244c8e",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671806/competitions/401671806/competitors/13/roster?limit=1000"
+        },
+        "team": "LV"
+      },
+      {
+        "game_id": "2024_13_TB_CAR",
+        "header": {
+          "file": "event-401671752-4e19ea04667433ec07a06824c9542cf8a86f831331dfc887bc40870f747c4f31.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.260284+00:00",
+          "sha256": "4e19ea04667433ec07a06824c9542cf8a86f831331dfc887bc40870f747c4f31",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671752"
+        },
+        "roster": {
+          "file": "roster-401671752-29-bd595096c2c4a9ef9f00a13f93d869152a55eb3a7067f4d1eb87787044c7338d.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.624313+00:00",
+          "sha256": "bd595096c2c4a9ef9f00a13f93d869152a55eb3a7067f4d1eb87787044c7338d",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671752/competitions/401671752/competitors/29/roster?limit=1000"
+        },
+        "team": "CAR"
+      },
+      {
+        "game_id": "2024_13_TEN_WAS",
+        "header": {
+          "file": "event-401671743-07f3afa0f3eb50ba5e3e24f98ad6e289ad2f71397ff1264d9503b94f5960f20e.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.285439+00:00",
+          "sha256": "07f3afa0f3eb50ba5e3e24f98ad6e289ad2f71397ff1264d9503b94f5960f20e",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671743"
+        },
+        "roster": {
+          "file": "roster-401671743-10-7a856ca1088b41382725ccf880696ee334296f259098057271bcf88a139e8f75.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.651577+00:00",
+          "sha256": "7a856ca1088b41382725ccf880696ee334296f259098057271bcf88a139e8f75",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671743/competitions/401671743/competitors/10/roster?limit=1000"
+        },
+        "team": "TEN"
+      },
+      {
+        "game_id": "2024_13_TEN_WAS",
+        "header": {
+          "file": "event-401671743-07f3afa0f3eb50ba5e3e24f98ad6e289ad2f71397ff1264d9503b94f5960f20e.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.285439+00:00",
+          "sha256": "07f3afa0f3eb50ba5e3e24f98ad6e289ad2f71397ff1264d9503b94f5960f20e",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671743"
+        },
+        "roster": {
+          "file": "roster-401671743-28-8c7de50f66f60057f4f23394efb5a6fa29f4748f606d5d1d9505f0a1ccf0d405.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.032396+00:00",
+          "sha256": "8c7de50f66f60057f4f23394efb5a6fa29f4748f606d5d1d9505f0a1ccf0d405",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671743/competitions/401671743/competitors/28/roster?limit=1000"
+        },
+        "team": "WAS"
+      },
+      {
+        "game_id": "2024_14_CAR_PHI",
+        "header": {
+          "file": "event-401671713-3b4d6ed108f7eae15e10b5eea12989af7044ae010d81ec902977a97abd42bc94.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.391552+00:00",
+          "sha256": "3b4d6ed108f7eae15e10b5eea12989af7044ae010d81ec902977a97abd42bc94",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671713"
+        },
+        "roster": {
+          "file": "roster-401671713-29-f426e69b46585176d56b7b7d8f5a8fe7391d4dcf76fc4874dd3b2f2791480cfa.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.736487+00:00",
+          "sha256": "f426e69b46585176d56b7b7d8f5a8fe7391d4dcf76fc4874dd3b2f2791480cfa",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671713/competitions/401671713/competitors/29/roster?limit=1000"
+        },
+        "team": "CAR"
+      },
+      {
+        "game_id": "2024_14_JAX_TEN",
+        "header": {
+          "file": "event-401671821-673de197da120786ef72e089e65951d68d05088512966efc336baf25538cd206.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.601529+00:00",
+          "sha256": "673de197da120786ef72e089e65951d68d05088512966efc336baf25538cd206",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671821"
+        },
+        "roster": {
+          "file": "roster-401671821-10-68d98d4cc13933a12fbe3a7c693ca7069cf8bbac83d6494ec266b67f7d2eb0fd.json",
+          "retrieved_at_utc": "2026-10-01T20:10:48.998152+00:00",
+          "sha256": "68d98d4cc13933a12fbe3a7c693ca7069cf8bbac83d6494ec266b67f7d2eb0fd",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671821/competitions/401671821/competitors/10/roster?limit=1000"
+        },
+        "team": "TEN"
+      },
+      {
+        "game_id": "2024_14_LV_TB",
+        "header": {
+          "file": "event-401671654-2dc2e47485231f3d50e1e6967e3c7ddf29c0d52ba1226884f003b99db095df22.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.002171+00:00",
+          "sha256": "2dc2e47485231f3d50e1e6967e3c7ddf29c0d52ba1226884f003b99db095df22",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671654"
+        },
+        "roster": {
+          "file": "roster-401671654-13-fc943a818da180c5c42c46a3806e570c8804922767a20915144bfd76ecf58a4c.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.645472+00:00",
+          "sha256": "fc943a818da180c5c42c46a3806e570c8804922767a20915144bfd76ecf58a4c",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671654/competitions/401671654/competitors/13/roster?limit=1000"
+        },
+        "team": "LV"
+      },
+      {
+        "game_id": "2024_14_NO_NYG",
+        "header": {
+          "file": "event-401671601-2c456f18b52289ab8bc7eed8127e0693f93c3197db321533f4e8ac6ffc177502.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.122029+00:00",
+          "sha256": "2c456f18b52289ab8bc7eed8127e0693f93c3197db321533f4e8ac6ffc177502",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671601"
+        },
+        "roster": {
+          "file": "roster-401671601-19-0484b71d752b415d21a1a7bc1bb11eade2866e89676ad3b6070d16df8964d54c.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.471766+00:00",
+          "sha256": "0484b71d752b415d21a1a7bc1bb11eade2866e89676ad3b6070d16df8964d54c",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671601/competitions/401671601/competitors/19/roster?limit=1000"
+        },
+        "team": "NYG"
+      },
+      {
+        "game_id": "2024_15_ATL_LV",
+        "header": {
+          "file": "event-401671697-ff14be36f1268fb453751aab6687e5fc854a5496f35bcba17513b218f3df5f97.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.309009+00:00",
+          "sha256": "ff14be36f1268fb453751aab6687e5fc854a5496f35bcba17513b218f3df5f97",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671697"
+        },
+        "roster": {
+          "file": "roster-401671697-13-9dbc5179fb1380e5943cd0302e5070bfb8855bff0315e461fda68aea7c0ee7e1.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.647444+00:00",
+          "sha256": "9dbc5179fb1380e5943cd0302e5070bfb8855bff0315e461fda68aea7c0ee7e1",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671697/competitions/401671697/competitors/13/roster?limit=1000"
+        },
+        "team": "LV"
+      },
+      {
+        "game_id": "2024_16_CLE_CIN",
+        "header": {
+          "file": "event-401671811-eb1ecf32fa4fad45a2989fde7064d7ab821ed59df153125c2e024aaa9f079d56.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.351967+00:00",
+          "sha256": "eb1ecf32fa4fad45a2989fde7064d7ab821ed59df153125c2e024aaa9f079d56",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671811"
+        },
+        "roster": {
+          "file": "roster-401671811-5-2c433d4ff11da8e50ac6302da76a57de316aa6c47df757d8ac4b585a7c4dd847.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.698098+00:00",
+          "sha256": "2c433d4ff11da8e50ac6302da76a57de316aa6c47df757d8ac4b585a7c4dd847",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671811/competitions/401671811/competitors/5/roster?limit=1000"
+        },
+        "team": "CLE"
+      },
+      {
+        "game_id": "2024_16_NO_GB",
+        "header": {
+          "file": "event-401671692-d7d137a27e9c867a380bbb3e4ea08238cf87f23f772fec2fa888d601b364a8b0.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.796532+00:00",
+          "sha256": "d7d137a27e9c867a380bbb3e4ea08238cf87f23f772fec2fa888d601b364a8b0",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671692"
+        },
+        "roster": {
+          "file": "roster-401671692-18-adde2278b9fff622ef6d7167539fa171a0fc6dcb54efd7f899d920cccbf26e73.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.156268+00:00",
+          "sha256": "adde2278b9fff622ef6d7167539fa171a0fc6dcb54efd7f899d920cccbf26e73",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671692/competitions/401671692/competitors/18/roster?limit=1000"
+        },
+        "team": "NO"
+      },
+      {
+        "game_id": "2024_16_NYG_ATL",
+        "header": {
+          "file": "event-401671729-4033416cb67af8294b456bf7718854937f4c4f17ff7dabf893de2cf8d93bf9f7.json",
+          "retrieved_at_utc": "2026-10-01T20:10:49.975830+00:00",
+          "sha256": "4033416cb67af8294b456bf7718854937f4c4f17ff7dabf893de2cf8d93bf9f7",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671729"
+        },
+        "roster": {
+          "file": "roster-401671729-19-e481fc2db02a5a3906a3e36adf290b60718ec7dd4d168b24975147f54b912349.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.338031+00:00",
+          "sha256": "e481fc2db02a5a3906a3e36adf290b60718ec7dd4d168b24975147f54b912349",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671729/competitions/401671729/competitors/19/roster?limit=1000"
+        },
+        "team": "NYG"
+      },
+      {
+        "game_id": "2024_16_TEN_IND",
+        "header": {
+          "file": "event-401671862-d85842f36a0c91d7a436d2f19ecb2da6234e1e6e3abceec573626105bce4b227.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.013119+00:00",
+          "sha256": "d85842f36a0c91d7a436d2f19ecb2da6234e1e6e3abceec573626105bce4b227",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671862"
+        },
+        "roster": {
+          "file": "roster-401671862-11-511a8cf17c6f6fa1a3d6c51718fb82f527eaf1ede747c5fb39186874930775db.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.672494+00:00",
+          "sha256": "511a8cf17c6f6fa1a3d6c51718fb82f527eaf1ede747c5fb39186874930775db",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671862/competitions/401671862/competitors/11/roster?limit=1000"
+        },
+        "team": "IND"
+      },
+      {
+        "game_id": "2024_17_DAL_PHI",
+        "header": {
+          "file": "event-401671765-5b126f2e340d7ef7a81d6b0aa5ec005f454e24abd141d924b33f30478038c927.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.055978+00:00",
+          "sha256": "5b126f2e340d7ef7a81d6b0aa5ec005f454e24abd141d924b33f30478038c927",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671765"
+        },
+        "roster": {
+          "file": "roster-401671765-21-ca6fd42acae4de856ba1a6d1770fe5cb795f950dc2dcfb79580e98d19438b58b.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.554571+00:00",
+          "sha256": "ca6fd42acae4de856ba1a6d1770fe5cb795f950dc2dcfb79580e98d19438b58b",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671765/competitions/401671765/competitors/21/roster?limit=1000"
+        },
+        "team": "PHI"
+      },
+      {
+        "game_id": "2024_17_IND_NYG",
+        "header": {
+          "file": "event-401671846-f20f3eebd45e435c4b5593fcad98261008a00012df85d45feeeed3f5c2eff4cc.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.495159+00:00",
+          "sha256": "f20f3eebd45e435c4b5593fcad98261008a00012df85d45feeeed3f5c2eff4cc",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671846"
+        },
+        "roster": {
+          "file": "roster-401671846-19-6f2654a2b75c4e76e32a7333621eea36c5b48c147d9d4eb5c2edbbe476b49bc8.json",
+          "retrieved_at_utc": "2026-10-01T20:10:51.059432+00:00",
+          "sha256": "6f2654a2b75c4e76e32a7333621eea36c5b48c147d9d4eb5c2edbbe476b49bc8",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671846/competitions/401671846/competitors/19/roster?limit=1000"
+        },
+        "team": "NYG"
+      },
+      {
+        "game_id": "2024_17_LV_NO",
+        "header": {
+          "file": "event-401671738-b64841346e812adb423df800373344735755b7a23abcc600bc953e9457aa1f4e.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.661306+00:00",
+          "sha256": "b64841346e812adb423df800373344735755b7a23abcc600bc953e9457aa1f4e",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671738"
+        },
+        "roster": {
+          "file": "roster-401671738-18-dc80070bd6a1af1f0a4caef2f2aaefff358ae0a9ed69e932236519f605875f70.json",
+          "retrieved_at_utc": "2026-10-01T20:10:51.049805+00:00",
+          "sha256": "dc80070bd6a1af1f0a4caef2f2aaefff358ae0a9ed69e932236519f605875f70",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671738/competitions/401671738/competitors/18/roster?limit=1000"
+        },
+        "team": "NO"
+      },
+      {
+        "game_id": "2024_17_MIA_CLE",
+        "header": {
+          "file": "event-401671877-202e7b2ae856d032c53697cd8c01eb195f11e8a3fbed846bba8bd0f514515ad1.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.861847+00:00",
+          "sha256": "202e7b2ae856d032c53697cd8c01eb195f11e8a3fbed846bba8bd0f514515ad1",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671877"
+        },
+        "roster": {
+          "file": "roster-401671877-5-5f6334a1b2aa9c785f2dc590ba9646c571b67f862ca7543c908a8dcd2607cdf7.json",
+          "retrieved_at_utc": "2026-10-01T20:10:51.273442+00:00",
+          "sha256": "5f6334a1b2aa9c785f2dc590ba9646c571b67f862ca7543c908a8dcd2607cdf7",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671877/competitions/401671877/competitors/5/roster?limit=1000"
+        },
+        "team": "CLE"
+      },
+      {
+        "game_id": "2024_18_MIA_NYJ",
+        "header": {
+          "file": "event-401671833-23eec7209774cdcdf7b8d25007f735b51c1691521fc8831cd1d09ff6d25e991a.json",
+          "retrieved_at_utc": "2026-10-01T20:10:50.982691+00:00",
+          "sha256": "23eec7209774cdcdf7b8d25007f735b51c1691521fc8831cd1d09ff6d25e991a",
+          "source": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401671833"
+        },
+        "roster": {
+          "file": "roster-401671833-15-89bf798838d982e8689202e89205e79b715a6e87671b2d7b28bfc4396b396827.json",
+          "retrieved_at_utc": "2026-10-01T20:10:51.391615+00:00",
+          "sha256": "89bf798838d982e8689202e89205e79b715a6e87671b2d7b28bfc4396b396827",
+          "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/events/401671833/competitions/401671833/competitors/15/roster?limit=1000"
+        },
+        "team": "MIA"
+      }
+    ],
+    "format_version": 1,
+    "identities": {
+      "file": "identities-f6d0d67e0a7f705e1195f0cd0c0a1fc8940824be70ce8e69861f4183c2992810.parquet",
+      "rows": 24838,
+      "schema": {
+        "display_name": "String",
+        "espn_id": "String",
+        "gsis_id": "String",
+        "position": "String"
+      },
+      "sha256": "f6d0d67e0a7f705e1195f0cd0c0a1fc8940824be70ce8e69861f4183c2992810",
+      "source": "https://github.com/nflverse/nflverse-data/releases/tag/players"
+    },
+    "qb_position": {
+      "file": "qb-position-2c5309658a4aadc37958fd321636c4fe3e49c73f1e1139f2adb106d892fb199b.json",
+      "retrieved_at_utc": "2026-10-01T20:10:43.948966+00:00",
+      "sha256": "2c5309658a4aadc37958fd321636c4fe3e49c73f1e1139f2adb106d892fb199b",
+      "source": "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/positions/8"
+    },
+    "raw_manifest": {
+      "datasets": {
+        "player_stats": {
+          "file": "player_stats-af357ced3ffaab6efff4aa865f7efe0f4d1157cd951e3c1220eb4ff46ced2993.parquet",
+          "license": "CC-BY-4.0",
+          "loader": "nflreadpy.load_player_stats(seasons, summary_level='week')",
+          "rows": 56457,
+          "schema": {
+            "air_yards_share": "Float64",
+            "attempts": "Int32",
+            "carries": "Int32",
+            "completions": "Int32",
+            "def_2pt_atts": "Int32",
+            "def_2pt_made": "Int32",
+            "def_fg_blocks": "Int32",
+            "def_fumbles": "Int32",
+            "def_fumbles_forced": "Int32",
+            "def_interception_yards": "Int32",
+            "def_interceptions": "Int32",
+            "def_pass_defended": "Int32",
+            "def_pat_blocks": "Int32",
+            "def_punt_blocks": "Int32",
+            "def_qb_hits": "Int32",
+            "def_sack_yards": "Float64",
+            "def_sacks": "Float64",
+            "def_safeties": "Int32",
+            "def_tackle_assists": "Int32",
+            "def_tackles_for_loss": "Int32",
+            "def_tackles_for_loss_yards": "Int32",
+            "def_tackles_solo": "Int32",
+            "def_tackles_with_assist": "Int32",
+            "def_tds": "Int32",
+            "fantasy_points": "Float64",
+            "fantasy_points_ppr": "Float64",
+            "fg_att": "Int32",
+            "fg_blocked": "Int32",
+            "fg_blocked_distance": "Int32",
+            "fg_blocked_list": "String",
+            "fg_long": "Int32",
+            "fg_made": "Int32",
+            "fg_made_0_19": "Int32",
+            "fg_made_20_29": "Int32",
+            "fg_made_30_39": "Int32",
+            "fg_made_40_49": "Int32",
+            "fg_made_50_59": "Int32",
+            "fg_made_60_": "Int32",
+            "fg_made_distance": "Int32",
+            "fg_made_list": "String",
+            "fg_missed": "Int32",
+            "fg_missed_0_19": "Int32",
+            "fg_missed_20_29": "Int32",
+            "fg_missed_30_39": "Int32",
+            "fg_missed_40_49": "Int32",
+            "fg_missed_50_59": "Int32",
+            "fg_missed_60_": "Int32",
+            "fg_missed_distance": "Int32",
+            "fg_missed_list": "String",
+            "fg_pct": "Float64",
+            "fumble_recovery_opp": "Int32",
+            "fumble_recovery_own": "Int32",
+            "fumble_recovery_tds": "Int32",
+            "fumble_recovery_yards_opp": "Int32",
+            "fumble_recovery_yards_own": "Int32",
+            "fumbles_forced_by_opp": "Int32",
+            "fumbles_lost_total": "Int32",
+            "fumbles_not_forced": "Int32",
+            "fumbles_out_of_bounds": "Int32",
+            "fumbles_total": "Int32",
+            "game_id": "String",
+            "gwfg_att": "Int32",
+            "gwfg_blocked": "Int32",
+            "gwfg_distance": "Int32",
+            "gwfg_made": "Int32",
+            "gwfg_missed": "Int32",
+            "headshot_url": "String",
+            "kickoff_return_yards": "Int32",
+            "kickoff_returns": "Int32",
+            "misc_yards": "Int32",
+            "opponent_team": "String",
+            "pacr": "Float64",
+            "passing_10": "Int32",
+            "passing_16": "Int32",
+            "passing_20": "Int32",
+            "passing_2pt_conversions": "Int32",
+            "passing_40": "Int32",
+            "passing_air_yards": "Int32",
+            "passing_cpoe": "Float64",
+            "passing_epa": "Float64",
+            "passing_first_downs": "Int32",
+            "passing_interceptions": "Int32",
+            "passing_tds": "Int32",
+            "passing_yards": "Int32",
+            "passing_yards_after_catch": "Int32",
+            "pat_att": "Int32",
+            "pat_blocked": "Int32",
+            "pat_made": "Int32",
+            "pat_missed": "Int32",
+            "pat_pct": "Float64",
+            "penalties": "Int32",
+            "penalty_yards": "Int32",
+            "player_display_name": "String",
+            "player_id": "String",
+            "player_name": "String",
+            "position": "String",
+            "position_group": "String",
+            "pt_att": "Int32",
+            "pt_blocked": "Int32",
+            "pt_downed": "Int32",
+            "pt_fair_caught": "Int32",
+            "pt_inside_20": "Int32",
+            "pt_long": "Int32",
+            "pt_net_yards": "Int32",
+            "pt_out_of_bounds": "Int32",
+            "pt_return_tds": "Int32",
+            "pt_return_yards": "Int32",
+            "pt_returned": "Int32",
+            "pt_touchback": "Int32",
+            "pt_yards": "Int32",
+            "punt_return_yards": "Int32",
+            "punt_returns": "Int32",
+            "racr": "Float64",
+            "receiving_10": "Int32",
+            "receiving_16": "Int32",
+            "receiving_20": "Int32",
+            "receiving_2pt_conversions": "Int32",
+            "receiving_40": "Int32",
+            "receiving_air_yards": "Int32",
+            "receiving_epa": "Float64",
+            "receiving_first_downs": "Int32",
+            "receiving_fumbles": "Int32",
+            "receiving_fumbles_lost": "Int32",
+            "receiving_tds": "Int32",
+            "receiving_yards": "Int32",
+            "receiving_yards_after_catch": "Int32",
+            "receptions": "Int32",
+            "rushing_10": "Int32",
+            "rushing_12": "Int32",
+            "rushing_20": "Int32",
+            "rushing_2pt_conversions": "Int32",
+            "rushing_40": "Int32",
+            "rushing_epa": "Float64",
+            "rushing_first_downs": "Int32",
+            "rushing_fumbles": "Int32",
+            "rushing_fumbles_lost": "Int32",
+            "rushing_tds": "Int32",
+            "rushing_yards": "Int32",
+            "sack_fumbles": "Int32",
+            "sack_fumbles_lost": "Int32",
+            "sack_yards_lost": "Int32",
+            "sacks_suffered": "Int32",
+            "season": "Int32",
+            "season_type": "String",
+            "special_teams_tds": "Int32",
+            "target_share": "Float64",
+            "targets": "Int32",
+            "team": "String",
+            "week": "Int32",
+            "wopr": "Float64"
+          },
+          "sha256": "af357ced3ffaab6efff4aa865f7efe0f4d1157cd951e3c1220eb4ff46ced2993",
+          "source": "https://github.com/nflverse/nflverse-data/releases/tag/stats_player"
+        },
+        "schedules": {
+          "file": "schedules-8bce9f23bf0158ecffc23fba1a2a8f780025759a1ed3dced81510eb30b312bef.parquet",
+          "license": "CC-BY-4.0",
+          "loader": "nflreadpy.load_schedules(seasons)",
+          "rows": 854,
+          "schema": {
+            "away_coach": "String",
+            "away_moneyline": "Int32",
+            "away_qb_id": "String",
+            "away_qb_name": "String",
+            "away_rest": "Int32",
+            "away_score": "Int32",
+            "away_spread_odds": "Int32",
+            "away_team": "String",
+            "div_game": "Int32",
+            "espn": "String",
+            "ftn": "Int32",
+            "game_id": "String",
+            "game_type": "String",
+            "gameday": "String",
+            "gametime": "String",
+            "gsis": "Int32",
+            "home_coach": "String",
+            "home_moneyline": "Int32",
+            "home_qb_id": "String",
+            "home_qb_name": "String",
+            "home_rest": "Int32",
+            "home_score": "Int32",
+            "home_spread_odds": "Int32",
+            "home_team": "String",
+            "location": "String",
+            "nfl_detail_id": "String",
+            "old_game_id": "String",
+            "over_odds": "Int32",
+            "overtime": "Int32",
+            "pff": "Int32",
+            "pfr": "String",
+            "referee": "String",
+            "result": "Int32",
+            "roof": "String",
+            "season": "Int32",
+            "spread_line": "Float64",
+            "stadium": "String",
+            "stadium_id": "String",
+            "surface": "String",
+            "temp": "Int32",
+            "total": "Int32",
+            "total_line": "Float64",
+            "under_odds": "Int32",
+            "week": "Int32",
+            "weekday": "String",
+            "wind": "Int32"
+          },
+          "sha256": "8bce9f23bf0158ecffc23fba1a2a8f780025759a1ed3dced81510eb30b312bef",
+          "source": "https://github.com/nflverse/nflverse-data/releases/tag/schedules"
+        }
+      },
+      "format_version": 1,
+      "packages": {
+        "nflreadpy": "0.1.5",
+        "polars": "1.44.2",
+        "tzdata": "2026.4"
+      },
+      "python_version": "3.14.2",
+      "retrieved_at_utc": "2026-09-15T03:08:35.222604+00:00",
+      "seasons": [
+        2022,
+        2023,
+        2024
+      ]
+    },
+    "retrieved_at_utc": "2026-10-01T20:10:51.392661+00:00",
+    "scope": "flagged_historical_starter_labels"
+  },
+  "format_version": 1,
+  "generated_at_utc": "2026-10-01T20:15:11.716790+00:00",
+  "limitations": [
+    "ESPN event-roster starter flags are retrospective evidence, not pregame knowledge.",
+    "Only schedule-listed starters missing a QB target row are reviewed. Other schedule starter labels remain unverified, even when a target row exists.",
+    "Training rows, targets, features, and schedule_reported_starter remain unchanged. Corrections are a separate diagnostic overlay, never a predictor or cohort filter.",
+    "No starter is inferred from passing volume, first passer, depth rank, or player names. Missing or conflicting starter/identity evidence remains unresolved.",
+    "No 2025 outcomes, current-season player statistics, forecasts, or EV are loaded.",
+    "ESPN's public endpoints have no versioned schema guarantee. Refresh requires network access; local evidence is retained by hash with retrieval timestamps."
+  ],
+  "scope": "flagged_historical_starter_labels",
+  "status_counts": {
+    "corrected_schedule_label": 37
+  }
+}

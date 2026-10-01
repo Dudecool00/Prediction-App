@@ -106,3 +106,24 @@ Depth-chart attribution: [ESPN via nflverse](https://github.com/nflverse/nflvers
 nflverse distribution: CC-BY-4.0. Times are converted from Eastern to UTC, team snapshots
 are filtered, and QBs are joined to future dated games. Rank does not confirm starting or
 active status; the source does not establish a player's retirement.
+
+## Historical starter evidence
+
+`nfl-prop starter-audit --refresh` adds `raw/starter_evidence_2022_2024/`, separate from training
+and upcoming caches. Only the flagged historical team/game slots are queried. The command
+retains the ESPN event identity and roster response plus the QB position definition; it uses
+`nflreadpy.load_players()` for a current ESPN-to-GSIS reference map. The identity table contains
+IDs, name, and position, with no player outcomes. Summary odds and market fields are discarded.
+
+ESPN provides the event-roster `starter`, `didNotPlay`, `valid`, and `period` flags. Event ID,
+regular-season year/week, both teams, and the roster's event/team reference must agree. The
+unique QB starter is mapped by IDs and checked for an existing same-team QB target row.
+No player is assigned by name or statistical volume. Missing or conflicting evidence remains
+unresolved. This source is retrospective and does not establish historical pregame knowledge.
+
+JSON evidence and the identity Parquet file are hash-verified; refreshes retain old files and
+manifests. A failed source-validation refresh leaves the active manifest intact. ESPN has no
+versioned schema guarantee for these public endpoints. Raw ESPN rosters remain local and are
+not redistributed or assigned nflverse's license. The nflverse identity distribution is CC-BY-4.0.
+[The derived reconciliation report](../reports/starter_audit/starter_audit.md) retains attribution
+and per-case source URLs/times/hashes. No model input, outcome, or original starter flag is changed.

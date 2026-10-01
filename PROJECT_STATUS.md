@@ -1,6 +1,24 @@
 # Project status
 
-Updated 2026-09-22. PR #3 is merged (`a2093da`); its Linux and Windows CI passed.
+Updated 2026-10-01. PR #5 is merged (`3a43295`); its Linux and Windows CI passed.
+
+## New: historical starter reconciliation
+
+- `nfl-prop starter-audit [--refresh]` and the **Starter audit** page review the 37 schedule-listed
+  starters missing from the historical QB target table. ESPN event rosters explicitly identify
+  a QB starter; nflverse identity mappings connect ESPN IDs to stable GSIS IDs.
+- October 1 evidence reconciles **all 37** to existing QB target rows: 4 in 2022, 33 in 2024,
+  and zero unresolved flagged cases. These were incorrect schedule labels, not missing targets.
+  [Read the derived report](reports/starter_audit/starter_audit.md).
+- The raw evidence cache preserves source hashes, retrieval times, and timestamped manifests.
+  Reads run offline; mismatched events/weeks/teams, contradictory flags, identity ambiguity,
+  stale input manifests, and damaged files fail. Missing or nonunique starter evidence stays unresolved.
+- All 1,960 training rows and the historical table hash remain unchanged. Corrections are a
+  separate diagnostic overlay. The other **1,593 team-game starter labels remain unverified**;
+  this does not establish pregame knowledge or enable starter-specific training.
+- Next: complete prospective starter/active-status handling, assess calibration for limited
+  history, and document the model policy before opening the reserved holdout. Historical weather
+  sourcing remains unfinished; keep it out of a frozen model unless its coverage is established.
 
 ## New: manual odds and local research interface
 
@@ -71,8 +89,8 @@ opponent XGBoost covers **89.90%**, width **278.73**. For 29 no-history cases, c
 
 ## Validation
 
-- **113 tests pass on local Windows Python 3.12.14 and 3.14.2**; pip check passes in both.
-- Ruff lint/format checks and strict mypy pass (27 source files).
+- **133 tests pass on local Windows Python 3.12.14**; pip check passes.
+- Ruff lint/format checks and strict mypy pass (28 source files).
 - Tests cover current/future outcome mutation, calibration/training separation, delayed-result
   cutoffs, game grouping, opponent totals, rookie retention, finite-sample interval ranks,
   strict smoothed tail probabilities, hand-calculated metrics, offline CLI, and cache mismatch.
@@ -101,17 +119,19 @@ opponent XGBoost covers **89.90%**, width **278.73**. For 29 no-history cases, c
 [Milestone 2 PR #2](https://github.com/Dudecool00/Prediction-App/pull/2) is merged (`38aeda3`).
 [Milestone 3 PR #3](https://github.com/Dudecool00/Prediction-App/pull/3) is merged (`a2093da`).
 Manual odds and the local research interface use `codex/milestone-4-manual-odds`.
-[PR #4](https://github.com/Dudecool00/Prediction-App/pull/4) is open; both CI platforms passed
-on `c96a0d4`. Upcoming-QB readiness follows on `codex/milestone-5-upcoming-qbs`, based on PR #4.
+[PR #4](https://github.com/Dudecool00/Prediction-App/pull/4) is merged (`354cc7f`).
+[PR #5](https://github.com/Dudecool00/Prediction-App/pull/5) is merged (`3a43295`); both CI platforms
+passed on `7f5b0e7`. The starter-audit follow-up uses `codex/starter-reconciliation`.
 
 ## Open limitations and next work
 
 - **Weather remains unfinished in Milestone 3.** The 2023 prior-day forecast probe returned
   temperature but no wind/precipitation. See [weather readiness](reports/milestone_3/weather_readiness.md)
   for source evidence and the remaining forecast archive, stadium map, and roof-policy work.
-- 37 schedule-listed historical starters have no matching QB target; the starter label stays
-  unverified and excluded. Reconcile before starter-specific forecasts. The cohort is conditioned
-  on recorded participation and does not reconstruct inactive QBs.
+- The 37 flagged historical starter labels are reconciled retrospectively; the remaining
+  1,593 team-game labels still require independent verification before starter-specific evaluation.
+  Prospective starter/active status also needs a separate timestamped check. The existing cohort
+  remains conditioned on recorded participation and does not reconstruct inactive QBs.
 - Small-history and tail calibration remain weak. Repeated players, shared games, and time
   dependence do not establish the assumptions behind formal conformal coverage guarantees.
   Reported coverage is empirical. Fixed diagnostic thresholds are not historical sportsbook lines.
