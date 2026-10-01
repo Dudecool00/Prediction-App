@@ -107,6 +107,22 @@ nflverse distribution: CC-BY-4.0. Times are converted from Eastern to UTC, team 
 are filtered, and QBs are joined to future dated games. Rank does not confirm starting or
 active status; the source does not establish a player's retirement.
 
+## Manual prospective status reviews
+
+`data/status_reviews/` is ignored by Git. Each UI save exclusively creates a checksummed JSON
+record with an ID, local UTC review time, full source manifest, selected 2026 candidate context,
+separate starter/active claims, their supplied source URLs/publication times, and notes. The app
+has no edit/delete API. Checksums detect changed contents; they do not authenticate the human
+reviewer or prove source accuracy. Raw source pages are not downloaded or redistributed.
+
+Verified offline reads reject corrupted records and mismatched filenames. Reports use only
+records saved by their cutoff, selecting the latest review per game/team/ESPN identity. A later
+`unknown` claim clears earlier status. Kickoff, opponent, home/away designation, GSIS identity,
+depth rank, or team-chart snapshot changes invalidate the review. Starter evidence expires
+after 24 hours, active evidence after 6 hours, measured from both source and local review time.
+Conflicting claims remain visible. Saving requires fresh underlying schedule/chart caches and
+a future, unscored game. This is a manual review overlay; historical model data remains unchanged.
+
 ## Historical starter evidence
 
 `nfl-prop starter-audit --refresh` adds `raw/starter_evidence_2022_2024/`, separate from training

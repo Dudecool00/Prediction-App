@@ -1,4 +1,4 @@
-"""Current-season QB candidates with source freshness; never a starter confirmation."""
+"""Current-season QB candidates with source freshness and separate human status reviews."""
 
 from datetime import UTC, datetime, timedelta
 from importlib.metadata import version
@@ -9,6 +9,7 @@ import polars as pl
 
 from nfl_prop_model.data.current_qbs import NFL_TEAMS, SOURCE, UPDATER, latest_quarterbacks
 from nfl_prop_model.data.schemas import DataQualityError, require_columns, require_keys
+from nfl_prop_model.data.status_reviews import apply_status_reviews, read_status_reviews
 from nfl_prop_model.data.storage import load_frame, read_json, store_frame, write_json
 
 SEASON = 2026
@@ -111,6 +112,7 @@ def build_upcoming_report(
     days: int = 14,
     expected_teams: set[str] = NFL_TEAMS,
     history: pl.DataFrame | None = None,
+    status_reviews: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     as_of = utc_time(as_of)
     retrieved = utc_time(datetime.fromisoformat(manifest["retrieved_at_utc"]))
@@ -201,8 +203,8 @@ def build_upcoming_report(
                         "review_reasons": issues,
                     }
                 )
-    return {
-        "format_version": 1,
+    report = {
+        "format_version": 2,
         "scope": "upcoming_qb_readiness_only",
         "as_of_utc": as_of.isoformat(),
         "horizon_days": days,
@@ -238,6 +240,8 @@ def build_upcoming_report(
             "The frozen model and current feature pipeline remain unfinished.",
         ],
     }
+    apply_status_reviews(report, status_reviews or [])
+    return report
 
 
 def load_upcoming_report(
@@ -264,6 +268,7 @@ def load_upcoming_report(
         as_of=as_of or datetime.now(UTC),
         days=days,
         history=history,
+        status_reviews=read_status_reviews(data_dir / "status_reviews"),
     )
     report["development_history_source"] = history_source
     return report
@@ -284,15 +289,20 @@ def write_upcoming_report(report_dir: Path, report: dict[str, Any]) -> None:
         f"{counts['unknown_kickoff_games']} regular-season games have an unknown kickoff and "
         "are excluded from time-based selection; their IDs are retained in JSON.",
         "",
-        "Depth-chart candidates only. No confirmed starters or upcoming forecasts.",
+        f"{counts['manually_reviewed_starter_rows']} candidates have current manual starter "
+        f"reviews; {counts['manually_reviewed_active_rows']} have current manual active reviews.",
+        "Human-entered evidence only. No upcoming forecasts.",
         "",
-        "| Game | Team | Player | Depth rank | Sources fresh | Development history |",
-        "| --- | --- | --- | ---: | --- | --- |",
+        "| Game | Team | Player | Depth rank | Sources fresh | Starter review | Active review | "
+        "Development history |",
+        "| --- | --- | --- | ---: | --- | --- | --- | --- |",
     ]
     for row in report["candidates"]:
         lines.append(
             f"| {row['game_id']} | {row['team']} | {row['player_name']} | {row['depth_rank']} | "
-            f"{'Yes' if row['sources_fresh'] else 'Refresh needed'} | {row['history_status']} |"
+            f"{'Yes' if row['sources_fresh'] else 'Refresh needed'} | "
+            f"{row['status_review']['starter']} | {row['status_review']['availability']} | "
+            f"{row['history_status']} |"
         )
     lines += ["", "## Limits", "", *[f"- {item}" for item in report["limitations"]], ""]
     lines += [

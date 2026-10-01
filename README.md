@@ -11,6 +11,7 @@ The Streamlit interface compares manual prices and saves research snapshots. Upc
 forecasts, historical weather, and final model selection remain unfinished.
 An **Upcoming QBs** page now joins scheduled 2026 games to current depth-chart candidates,
 with source-age checks and explicit starter/identity review needs.
+The page also saves dated manual starter and active-status reviews with separate expiry checks.
 Results are estimates, may be wrong, and may lose money. No profitability claim has been established.
 
 ## Start here
@@ -471,9 +472,37 @@ The [September 22 readiness snapshot](reports/milestone_5/upcoming.md) contains 
 32 upcoming games and 182 QB/game rows in a 14-day window. It is a frozen audit; refresh the
 cache for current use. See JSON for timestamps, source hashes, identity gaps, and review reasons.
 
+### Record prospective status evidence
+
+Select a game and QB on **Upcoming QBs**, then use **Record a status review**. For each known
+status, supply a source URL and its publication time, including a time zone. Use a source that
+explicitly refers to this player and this game; a general depth rank is not starter evidence.
+Choose `unknown` with empty evidence fields when a dated claim is unavailable. The app records
+the review time automatically and rejects future publication times, stale source caches, and
+games that have started or recorded a score. It rechecks the selected candidate when saving.
+
+Starter evidence has a 24-hour window and active-status evidence a 6-hour window. **Both** the
+publication time and review time must meet their window. These are conservative application
+policies, not guarantees. A review of an old article does not make its evidence fresh. Active
+status does not establish health, participation, or playing time. The app saves supplied links
+and claims; it does not fetch or independently verify their contents.
+
+Every save creates a new checksummed file in ignored `data/status_reviews/`, retaining the
+matchup, kickoff, chart snapshot, ESPN/GSIS identity, source manifest, evidence, and notes.
+The latest review available at a report's cutoff supplies **both** statuses; `unknown` clears
+an earlier claim without deleting it. Changed matchup/kickoff/chart/identity requires rechecking.
+Two current confirmed QBs on the same team, simultaneous reviews, or starter-plus-inactive
+evidence remain flagged. When a starter changes, review the former starter as `not_starter` or
+`unknown` as well. Missing-ID QBs stay visible and their identity warning remains.
+
+The table and format-2 readiness download show manual review statuses. `nfl-prop upcoming`
+reads these local reviews offline too. Review records cannot change training data or enable
+forecasts; source freshness, history, identity, and model checks remain separate. The frozen
+September 22 report predates this workflow and has no manual reviews.
+
 ### Next steps for actual upcoming forecasts
 
-Verify the remaining historical starter labels and prospective active/starter status,
+Verify the remaining historical starter labels, collect prospective status evidence,
 document a fixed model and calibration policy, evaluate
 the reserved holdout once choices are frozen, and build current features with explicit
 availability timestamps. Weather remains a separate unfinished feature investigation.
