@@ -11,6 +11,12 @@ import polars as pl
 import streamlit as st
 
 from nfl_prop_model.data.starter_audit import load_starter_audit
+from nfl_prop_model.data.status_reviews import (
+    checksum,
+    evidence,
+    review_context,
+    save_status_review,
+)
 from nfl_prop_model.data.storage import load_frame, read_json
 from nfl_prop_model.data.upcoming import load_upcoming_report
 from nfl_prop_model.markets.journal import read_quote_records, save_quote_record
@@ -338,6 +344,73 @@ def saved_page(journal_dir: Path) -> None:
     )
 
 
+def status_review_form(data_dir: Path, candidate: dict[str, Any]) -> None:
+    st.subheader("Record a status review")
+    st.caption(
+        "Record what a dated source says about this QB for this game. "
+        "Links are saved for your review; the app does not verify their contents. "
+        "Starter evidence expires after 24 hours and active evidence after 6 hours. "
+        "Active does not establish health or playing time."
+    )
+    context = review_context(candidate)
+    form_key = checksum(context)[:16]
+    with st.form(f"status_review_{form_key}"):
+        starter = st.selectbox(
+            "Reported starter status",
+            ["unknown", "confirmed", "not_starter"],
+            format_func=lambda value: value.replace("_", " ").capitalize(),
+            key=f"starter_{form_key}",
+        )
+        starter_url = st.text_input("Starter source URL", key=f"starter_url_{form_key}")
+        starter_time = st.text_input(
+            "Starter source publication time (ISO 8601 with time zone)",
+            placeholder="2026-10-01T14:30:00-05:00",
+            key=f"starter_time_{form_key}",
+        )
+        availability = st.selectbox(
+            "Reported active status",
+            ["unknown", "active", "inactive"],
+            format_func=lambda value: value.capitalize(),
+            key=f"availability_{form_key}",
+        )
+        active_url = st.text_input("Active status source URL", key=f"active_url_{form_key}")
+        active_time = st.text_input(
+            "Active source publication time (ISO 8601 with time zone)",
+            placeholder="2026-10-01T14:30:00-05:00",
+            key=f"active_time_{form_key}",
+        )
+        notes = st.text_area("Review notes", max_chars=2000, key=f"notes_{form_key}")
+        st.caption(
+            "Leave evidence fields empty for unknown status. A new review replaces both "
+            "current statuses for this QB and keeps every saved record. To change starters, "
+            "review the former starter too; two confirmed QBs on one team require resolution."
+        )
+        submitted = st.form_submit_button(
+            "Save status review",
+            disabled=not candidate["sources_fresh"],
+        )
+    if submitted:
+        try:
+            save_status_review(
+                data_dir,
+                candidate["game_id"],
+                candidate["espn_id"],
+                starter=evidence(starter, starter_url, starter_time),
+                availability=evidence(availability, active_url, active_time),
+                notes=notes,
+                expected_context=context,
+            )
+        except (OSError, ValueError) as error:
+            st.error(str(error))
+        else:
+            st.session_state["status_review_saved"] = True
+            st.rerun()
+    review = candidate["status_review"]
+    if review["record_ids"]:
+        with st.expander("Latest saved review evidence"):
+            st.json(review)
+
+
 def upcoming_page(data_dir: Path) -> None:
     st.title("Upcoming quarterbacks")
     st.write("Match scheduled 2026 games to the latest cached ESPN-derived QB depth charts.")
@@ -347,6 +420,8 @@ def upcoming_page(data_dir: Path) -> None:
     )
     days = st.select_slider("Look ahead", options=[7, 14, 21, 28], value=14, key="upcoming_days")
     report = load_upcoming_report(data_dir, days=days)
+    if st.session_state.pop("status_review_saved", False):
+        st.success("Status review saved. The readiness report now includes it.")
     counts = report["counts"]
     a, b, c = st.columns(3)
     a.metric("Scheduled games", counts["upcoming_games"])
@@ -384,6 +459,8 @@ def upcoming_page(data_dir: Path) -> None:
                     "Chart age (hours)": round(row["chart_age_hours"], 1),
                     "2022–2024 games": row["development_games"],
                     "History": row["history_status"].replace("_", " "),
+                    "Starter review": row["status_review"]["starter"].replace("_", " "),
+                    "Active review": row["status_review"]["availability"].replace("_", " "),
                 }
                 for row in rows
             ],
@@ -405,6 +482,7 @@ def upcoming_page(data_dir: Path) -> None:
             "Development-history counts describe 2022–2024, not current form. "
             "Newcomers and QBs without an ID mapping remain visible."
         )
+        status_review_form(data_dir, candidate)
     st.download_button(
         "Download readiness report",
         json.dumps(report, indent=2, allow_nan=False),

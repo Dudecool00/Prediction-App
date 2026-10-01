@@ -15,6 +15,7 @@ data/raw/
 data/processed/
 data/cache/
 data/journal/
+data/status_reviews/
 .streamlit/secrets.toml
 models/*.joblib
 models/*.cbm

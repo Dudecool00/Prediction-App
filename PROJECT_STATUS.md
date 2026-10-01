@@ -1,6 +1,24 @@
 # Project status
 
-Updated 2026-10-01. PR #5 is merged (`3a43295`); its Linux and Windows CI passed.
+Updated 2026-10-01. PR #6 is merged (`2033f9f`); its Linux and Windows CI passed.
+
+## New: prospective status review workflow
+
+- **Upcoming QBs** now saves dated manual starter and active-status evidence separately.
+  Each save preserves the candidate context, source manifest, supplied URLs/publication times,
+  local review time, and notes in a new checksummed record. Source contents are not auto-verified.
+- Starter evidence expires after 24 hours; active evidence after 6 hours. Both source and
+  local review age count. Changed matchup/kickoff/chart/identity, conflicting starters,
+  simultaneous reviews, and starter-plus-inactive evidence require another check.
+- Saves re-read verified sources and reject stale caches or started/scored games. The latest
+  review available at the report cutoff supplies both statuses; unknown clears an earlier claim.
+  UI/downloads and the offline `upcoming` command show the overlay. No forecasts are enabled.
+- October 1 source refresh: 93 QBs across 32 teams, 31 upcoming games and 180 candidate rows
+  in the 14-day window. All have fresh chart/cache sources. Zero real manual status claims
+  have been entered; those remain unknown. All 1,960 historical rows retain their original hash.
+- Next: investigate limited-history calibration and document the model policy before opening
+  the reserved holdout. Prospective evidence still needs collection and independent review;
+  historical starter coverage and weather sourcing remain incomplete.
 
 ## New: historical starter reconciliation
 
@@ -16,7 +34,7 @@ Updated 2026-10-01. PR #5 is merged (`3a43295`); its Linux and Windows CI passed
 - All 1,960 training rows and the historical table hash remain unchanged. Corrections are a
   separate diagnostic overlay. The other **1,593 team-game starter labels remain unverified**;
   this does not establish pregame knowledge or enable starter-specific training.
-- Next: complete prospective starter/active-status handling, assess calibration for limited
+- Next: collect prospective starter/active-status evidence, assess calibration for limited
   history, and document the model policy before opening the reserved holdout. Historical weather
   sourcing remains unfinished; keep it out of a frozen model unless its coverage is established.
 
@@ -89,8 +107,10 @@ opponent XGBoost covers **89.90%**, width **278.73**. For 29 no-history cases, c
 
 ## Validation
 
-- **134 tests pass on local Windows Python 3.12.14**; pip check passes.
-- Ruff lint/format checks and strict mypy pass (28 source files).
+- **155 tests pass in the full local suite on Windows Python 3.12.14**; pip check passes.
+  After the final save-time boundary fix, all 23 prospective-review tests pass, bringing the
+  suite to 157 tests. Final remote CI results belong to the review PR's exact commit.
+- Ruff lint/format checks and strict mypy pass (29 source files).
 - Tests cover current/future outcome mutation, calibration/training separation, delayed-result
   cutoffs, game grouping, opponent totals, rookie retention, finite-sample interval ranks,
   strict smoothed tail probabilities, hand-calculated metrics, offline CLI, and cache mismatch.
@@ -121,7 +141,9 @@ opponent XGBoost covers **89.90%**, width **278.73**. For 29 no-history cases, c
 Manual odds and the local research interface use `codex/milestone-4-manual-odds`.
 [PR #4](https://github.com/Dudecool00/Prediction-App/pull/4) is merged (`354cc7f`).
 [PR #5](https://github.com/Dudecool00/Prediction-App/pull/5) is merged (`3a43295`); both CI platforms
-passed on `7f5b0e7`. The starter-audit follow-up uses `codex/starter-reconciliation`.
+passed on `7f5b0e7`. [PR #6](https://github.com/Dudecool00/Prediction-App/pull/6) is merged
+(`2033f9f`); both CI platforms passed on `42e2f9b`. The prospective review follow-up uses
+`codex/upcoming-status-review`.
 
 ## Open limitations and next work
 
@@ -130,7 +152,8 @@ passed on `7f5b0e7`. The starter-audit follow-up uses `codex/starter-reconciliat
   for source evidence and the remaining forecast archive, stadium map, and roof-policy work.
 - The 37 flagged historical starter labels are reconciled retrospectively; the remaining
   1,593 team-game labels still require independent verification before starter-specific evaluation.
-  Prospective starter/active status also needs a separate timestamped check. The existing cohort
+  The prospective workflow now supports timestamped manual checks; actual evidence collection
+  and independent source verification remain. The existing cohort
   remains conditioned on recorded participation and does not reconstruct inactive QBs.
 - Small-history and tail calibration remain weak. Repeated players, shared games, and time
   dependence do not establish the assumptions behind formal conformal coverage guarantees.
