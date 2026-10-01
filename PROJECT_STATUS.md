@@ -24,6 +24,15 @@ Updated 2026-09-22. PR #3 is merged (`a2093da`); its Linux and Windows CI passed
 
 ## What works
 
+- The new **Upcoming QBs** page and `nfl-prop upcoming` command join 2026 schedules to
+  latest-per-team ESPN-derived depth charts. September 22 refresh: 91 QBs across 32 teams,
+  32 games / 182 candidate rows in the next 14 days; all meet the 24h cache / 48h chart policy.
+  Thirty current QBs have no development-sample history and remain visible. No missing ID
+  mappings in this snapshot. [Readiness report](reports/milestone_5/upcoming.md).
+- Upcoming source caches are separate from training data. Started/scored games are excluded,
+  unknown times are audited, and stale charts / unconfirmed starters / ID gaps are explicit.
+  This completes the current-candidate view, not a production forecasting pipeline.
+
 - Cached, audited 2022–2024 nflverse data: **1,960 recorded regular-season QB-games**,
   112 QBs, 815 games, seven strictly lagged QB features. Backups, early exits, 79 zero-attempt
   rows, and 112 first-sample rows remain. Manifests preserve schemas, attribution, and hashes.
@@ -62,8 +71,8 @@ opponent XGBoost covers **89.90%**, width **278.73**. For 29 no-history cases, c
 
 ## Validation
 
-- **100 tests pass on local Windows Python 3.12.14 and 3.14.2**; pip check passes in both.
-- Ruff lint/format checks and strict mypy pass (26 source files).
+- **113 tests pass on local Windows Python 3.12.14 and 3.14.2**; pip check passes in both.
+- Ruff lint/format checks and strict mypy pass (27 source files).
 - Tests cover current/future outcome mutation, calibration/training separation, delayed-result
   cutoffs, game grouping, opponent totals, rookie retention, finite-sample interval ranks,
   strict smoothed tail probabilities, hand-calculated metrics, offline CLI, and cache mismatch.
@@ -79,6 +88,10 @@ opponent XGBoost covers **89.90%**, width **278.73**. For 29 no-history cases, c
   passed Linux/Python 3.11 and Windows/Python 3.12 with zero such messages.
 - Browser inspection confirms the comparison calculator and model-results page render.
   App tests exercise invalid prices, changing games, saving twice, and reading saved snapshots.
+- Upcoming tests cover source timestamps, stale cache/chart separation, departing/current/new QBs,
+  source identity errors, incomplete scores, unknown kickoffs, unsupported seasons, cache tampering,
+  offline CLI, and the UI with no historical model cache. The browser preview could not attach
+  during this follow-up; the new page is validated through Streamlit AppTest.
 - CI installs the optional app and checks Linux/Python 3.11 and Windows/Python 3.12;
   consult the review PR's exact commit for remote results.
 
@@ -88,6 +101,8 @@ opponent XGBoost covers **89.90%**, width **278.73**. For 29 no-history cases, c
 [Milestone 2 PR #2](https://github.com/Dudecool00/Prediction-App/pull/2) is merged (`38aeda3`).
 [Milestone 3 PR #3](https://github.com/Dudecool00/Prediction-App/pull/3) is merged (`a2093da`).
 Manual odds and the local research interface use `codex/milestone-4-manual-odds`.
+[PR #4](https://github.com/Dudecool00/Prediction-App/pull/4) is open; both CI platforms passed
+on `c96a0d4`. Upcoming-QB readiness follows on `codex/milestone-5-upcoming-qbs`, based on PR #4.
 
 ## Open limitations and next work
 

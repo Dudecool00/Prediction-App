@@ -9,6 +9,8 @@ QB-game, and compares rolling forecasts, Ridge, and XGBoost using strictly lagge
 Research now includes prediction intervals, threshold probabilities, and calibration diagnostics.
 The Streamlit interface compares manual prices and saves research snapshots. Upcoming-game
 forecasts, historical weather, and final model selection remain unfinished.
+An **Upcoming QBs** page now joins scheduled 2026 games to current depth-chart candidates,
+with source-age checks and explicit starter/identity review needs.
 Results are estimates, may be wrong, and may lose money. No profitability claim has been established.
 
 ## Start here
@@ -401,6 +403,45 @@ overwritten. CLI quote reports can be regenerated; journal records are separate.
 This completes Milestone 4's historical integration and begins Milestone 5. The interface
 does **not** produce upcoming-game forecasts. Production eligibility/starter handling, weather,
 limited-history calibration, model freezing and final holdout assessment remain next work.
+
+## Upcoming QB readiness
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe upcoming --refresh
+.\.venv\Scripts\streamlit.exe run app.py
+```
+
+Choose **Upcoming QBs** in the sidebar. This page works independently of the historical
+research cache. It shows the next 7–28 days of dated regular-season games and all currently
+listed QBs for both teams. It produces a review list, **not upcoming forecasts**.
+
+`upcoming` downloads only 2026 schedules and ESPN-derived depth charts through `nflreadpy`.
+It caches hash-verified Parquet files and timestamped manifests in `data/raw/upcoming_2026/`;
+subsequent runs reuse them unless `--refresh` is supplied. `--days` defaults to 14 and accepts
+1–28; `--report-dir` defaults to `reports/local/upcoming`. The UI only reads local caches.
+The 2025 holdout and player-outcome datasets are not loaded by this command.
+
+- A source download older than 24 hours or a team chart older than 48 hours is marked
+  **Refresh needed**. These are application policies, not source-accuracy guarantees.
+  Freshness is recomputed against the current clock when the page reruns.
+- The latest complete snapshot for each team determines membership. Departed QBs do not
+  linger because of older individual rows. Newcomers and missing-ID cases remain visible.
+- Rank 1 is **unconfirmed**. Injuries, active status, depth-rank ties, and late game changes
+  need separate checks. Schedule QB IDs are not used to declare starters.
+- Started games and games with either score recorded are excluded. Unknown kickoffs are
+  counted and retained in the JSON audit; times are not guessed.
+- Matching 2022–2024 history provides reference counts only. Absence from a current chart
+  does not establish retirement, and no historical records are deleted.
+
+The [September 22 readiness snapshot](reports/milestone_5/upcoming.md) contains 91 current QBs,
+32 upcoming games and 182 QB/game rows in a 14-day window. It is a frozen audit; refresh the
+cache for current use. See JSON for timestamps, source hashes, identity gaps, and review reasons.
+
+### Next steps for actual upcoming forecasts
+
+Reconcile historical starter labels, document a fixed model and calibration policy, evaluate
+the reserved holdout once choices are frozen, and build current features with explicit
+availability timestamps. Weather remains a separate unfinished feature investigation.
 
 ## Sources and data rights
 

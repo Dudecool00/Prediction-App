@@ -92,3 +92,17 @@ Regenerate `research` once after upgrading. The original four artifacts remain b
 Manual quotes verify artifact hashes and calibration timing before pricing a custom line.
 `data/journal/` contains user-saved, append-only-through-the-app research snapshots and is
 ignored by Git. They capture today's analysis of historical forecasts, not original pregame logs.
+## Upcoming 2026 source cache
+
+`nfl-prop upcoming --refresh` creates `raw/upcoming_2026/` with nflreadpy 2026 schedules
+and ESPN-derived depth charts. Each dataset is stored by SHA-256 and each retrieval keeps
+a timestamped manifest. Refresh does not replace older snapshots or alter historical tables.
+The UI reads only verified local files and recalculates source age on rerun. No 2025 player
+outcomes or current-season player statistics enter this command.
+
+Schedule attribution: [Lee Sharpe / nflverse games](https://github.com/nflverse/nfldata/blob/master/data/games.csv).
+Depth-chart attribution: [ESPN via nflverse](https://github.com/nflverse/nflverse-data/releases/tag/depth_charts),
+[updater](https://github.com/nflverse/nflverse-rosters/blob/main/exec/update-depth-charts.R).
+nflverse distribution: CC-BY-4.0. Times are converted from Eastern to UTC, team snapshots
+are filtered, and QBs are joined to future dated games. Rank does not confirm starting or
+active status; the source does not establish a player's retirement.

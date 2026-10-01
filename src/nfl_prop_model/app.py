@@ -11,6 +11,7 @@ import polars as pl
 import streamlit as st
 
 from nfl_prop_model.data.storage import load_frame, read_json
+from nfl_prop_model.data.upcoming import load_upcoming_report
 from nfl_prop_model.markets.journal import read_quote_records, save_quote_record
 from nfl_prop_model.markets.odds import ManualMarket, parse_american
 from nfl_prop_model.markets.quote import (
@@ -336,6 +337,88 @@ def saved_page(journal_dir: Path) -> None:
     )
 
 
+def upcoming_page(data_dir: Path) -> None:
+    st.title("Upcoming quarterbacks")
+    st.write("Match scheduled 2026 games to the latest cached ESPN-derived QB depth charts.")
+    st.info(
+        "Candidate review only. Depth rank does not confirm a starter or active status. "
+        "Upcoming projections and EV are not available yet."
+    )
+    days = st.select_slider("Look ahead", options=[7, 14, 21, 28], value=14, key="upcoming_days")
+    report = load_upcoming_report(data_dir, days=days)
+    counts = report["counts"]
+    a, b, c = st.columns(3)
+    a.metric("Scheduled games", counts["upcoming_games"])
+    b.metric("QB / game candidates", counts["candidate_rows"])
+    c.metric("Cache age", f"{report['cache_age_hours']:.1f} h")
+    st.caption(
+        f"Checked {report['as_of_utc']} · retrieved {report['sources']['retrieved_at_utc']}. "
+        "Fresh means retrieval within 24 hours and team chart within 48 hours."
+    )
+    if report["cache_age_hours"] > 24 or counts["fresh_candidate_rows"] < counts["candidate_rows"]:
+        st.warning("Some sources need refreshing. Review chart timestamps before using this list.")
+    if counts["unknown_kickoff_games"]:
+        st.caption(
+            f"{counts['unknown_kickoff_games']} season games have an unknown kickoff; "
+            "they are excluded from the dated list and retained in the download."
+        )
+    with st.expander("Refresh the local sources"):
+        st.code("nfl-prop upcoming --refresh", language="text")
+        st.write("Run this in the repository terminal, then reload this page.")
+    candidates = report["candidates"]
+    if not candidates:
+        st.info("No dated, unscored games appear in this window. Check source freshness.")
+    else:
+        games = list(dict.fromkeys(row["game_id"] for row in candidates))
+        game = st.selectbox("Scheduled game", games, key="upcoming_game")
+        rows = [row for row in candidates if row["game_id"] == game]
+        st.caption(f"Scheduled kickoff: {rows[0]['kickoff_utc']}")
+        st.dataframe(
+            [
+                {
+                    "Team": row["team"],
+                    "Quarterback": row["player_name"],
+                    "Depth rank": row["depth_rank"],
+                    "Source status": "Fresh" if row["sources_fresh"] else "Refresh needed",
+                    "Chart age (hours)": round(row["chart_age_hours"], 1),
+                    "2022–2024 games": row["development_games"],
+                    "History": row["history_status"].replace("_", " "),
+                }
+                for row in rows
+            ],
+            hide_index=True,
+            width="stretch",
+        )
+        labels = {row["espn_id"]: f"{row['team']} · {row['player_name']}" for row in rows}
+        selected = st.selectbox(
+            "Review quarterback",
+            list(labels),
+            format_func=lambda key: labels[key],
+            key="upcoming_qb",
+        )
+        candidate = next(row for row in rows if row["espn_id"] == selected)
+        st.write("Needs review:")
+        for reason in candidate["review_reasons"]:
+            st.write(f"• {reason.replace('_', ' ').capitalize()}")
+        st.caption(
+            "Development-history counts describe 2022–2024, not current form. "
+            "Newcomers and QBs without an ID mapping remain visible."
+        )
+    st.download_button(
+        "Download readiness report",
+        json.dumps(report, indent=2, allow_nan=False),
+        file_name="upcoming-qb-readiness.json",
+        mime="application/json",
+    )
+    with st.expander("Sources and limits"):
+        st.markdown(
+            "[ESPN-derived depth charts](https://github.com/nflverse/nflverse-data/releases/tag/depth_charts)"
+            " · [nflverse schedules](https://github.com/nflverse/nfldata/blob/master/data/games.csv)"
+        )
+        for item in report["limitations"]:
+            st.write(item)
+
+
 def main() -> None:
     st.set_page_config(page_title="QB Research | Prediction App", page_icon="🏈", layout="wide")
     data_dir = Path(os.environ.get("NFL_PROP_DATA_DIR", "data"))
@@ -343,31 +426,39 @@ def main() -> None:
     st.sidebar.title("QB Research")
     st.sidebar.caption("NFL passing yards · local workspace")
     page = st.sidebar.radio(
-        "Workspace", ["Compare a line", "Model results", "Saved snapshots"], key="page"
+        "Workspace",
+        ["Compare a line", "Upcoming QBs", "Model results", "Saved snapshots"],
+        key="page",
     )
     if st.session_state.get("last_page") != page:
         st.session_state.pop("quote", None)
         st.session_state["last_page"] = page
-    st.sidebar.info(
-        "Historical replay · 2023–2024\n\n2025 is reserved. "
-        "Upcoming-game forecasts are not available yet."
-    )
+    st.sidebar.info("2025 remains reserved. Upcoming-game forecasts are not available yet.")
     st.sidebar.caption("Manual prices only. No sportsbook connection or automatic betting.")
-    st.caption("RESEARCH PREVIEW · RECORDED QB APPEARANCES")
+    st.caption("RESEARCH PREVIEW")
     try:
-        manifest, catalog = research_catalog(data_dir)
-        st.sidebar.caption(f"Data retrieved: {manifest['context_sources']['retrieved_at_utc']}")
-        st.sidebar.caption(f"Model source: {manifest['research_source_sha256'][:12]}")
-        if page == "Compare a line":
-            comparison_page(data_dir, journal_dir, manifest, catalog)
-        elif page == "Model results":
-            results_page(manifest)
+        if page == "Upcoming QBs":
+            upcoming_page(data_dir)
         else:
-            saved_page(journal_dir)
+            manifest, catalog = research_catalog(data_dir)
+            st.sidebar.caption("Historical replay · 2023–2024 recorded QB appearances")
+            st.sidebar.caption(f"Data retrieved: {manifest['context_sources']['retrieved_at_utc']}")
+            st.sidebar.caption(f"Model source: {manifest['research_source_sha256'][:12]}")
+            if page == "Compare a line":
+                comparison_page(data_dir, journal_dir, manifest, catalog)
+            elif page == "Model results":
+                results_page(manifest)
+            else:
+                saved_page(journal_dir)
     except (OSError, ValueError, pl.exceptions.PolarsError) as error:
         st.error(str(error))
         st.info("Prepare the verified local research cache from the repository terminal:")
-        st.code("nfl-prop fetch\nnfl-prop build\nnfl-prop research", language="text")
+        st.code(
+            "nfl-prop upcoming --refresh"
+            if page == "Upcoming QBs"
+            else "nfl-prop fetch\nnfl-prop build\nnfl-prop research",
+            language="text",
+        )
     st.divider()
     st.caption(
         "Estimates may be wrong and may lose money. Historical starter labels, weather, and "
