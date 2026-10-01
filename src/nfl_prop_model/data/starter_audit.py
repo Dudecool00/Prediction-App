@@ -133,6 +133,21 @@ def load_source(directory: Path, metadata: dict[str, Any]) -> dict[str, Any]:
     return read_json(path)
 
 
+def starter_identity(identities: pl.DataFrame, espn_id: str) -> dict[str, Any] | None:
+    mapped = identities.filter(pl.col("espn_id") == espn_id)
+    if mapped.height > 1:
+        raise DataQualityError(f"Ambiguous ESPN-to-GSIS mapping: {espn_id}")
+    if mapped.is_empty():
+        return None
+    identity = mapped.row(0, named=True)
+    if (
+        identity["gsis_id"]
+        and identities.filter(pl.col("gsis_id") == identity["gsis_id"]).height != 1
+    ):
+        raise DataQualityError("Ambiguous GSIS-to-ESPN mapping")
+    return identity
+
+
 def fetch_starter_evidence(data_dir: Path, *, refresh: bool = False) -> dict[str, Any]:
     directory = data_dir / "raw" / CACHE
     if (directory / "manifest.json").exists() and not refresh:
@@ -169,7 +184,9 @@ def fetch_starter_evidence(data_dir: Path, *, refresh: bool = False) -> dict[str
                 f"events/{event_id}/competitions/{event_id}/competitors/{team_id}/roster?limit=1000"
             )
             roster = request_json(roster_url)
-            roster_starters(roster, slot, team_id)
+            starters = roster_starters(roster, slot, team_id)
+            if len(starters) == 1:
+                starter_identity(identities, starters[0])
             evidence.append(
                 {
                     "game_id": slot["game_id"],
@@ -273,19 +290,14 @@ def load_starter_audit(data_dir: Path) -> dict[str, Any]:
             "sources": {"header": entry["header"], "roster": entry["roster"]},
         }
         if len(starters) == 1:
-            mapped = identities.filter(pl.col("espn_id") == starters[0])
-            if mapped.height > 1:
-                raise DataQualityError(f"Ambiguous ESPN-to-GSIS mapping: {starters[0]}")
+            identity = starter_identity(identities, starters[0])
             case["status"] = "unresolved_identity_mapping"
-            if mapped.height == 1:
-                identity = mapped.row(0, named=True)
+            if identity is not None:
                 if (
                     identity["gsis_id"]
                     and identity["display_name"]
                     and identity["position"] == "QB"
                 ):
-                    if identities.filter(pl.col("gsis_id") == identity["gsis_id"]).height != 1:
-                        raise DataQualityError("Ambiguous GSIS-to-ESPN mapping")
                     case["reconciled_player_id"] = identity["gsis_id"]
                     case["reconciled_name"] = identity["display_name"]
                     target = table.filter(

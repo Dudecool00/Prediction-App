@@ -1,5 +1,5 @@
 {
-  "audit_source_sha256": "d24a5b31e2891d54d58706e351ad4ef63923769c5407864b9cfe9506a7aebc90",
+  "audit_source_sha256": "1f83f612f2dfc64f6a9aa737f4450a6a5e82a4c8168090672427f7e5ac69482f",
   "cases": [
     {
       "espn_starter_ids": [
@@ -1897,7 +1897,7 @@
     "scope": "flagged_historical_starter_labels"
   },
   "format_version": 1,
-  "generated_at_utc": "2026-10-01T20:15:11.716790+00:00",
+  "generated_at_utc": "2026-10-01T20:27:11.001843+00:00",
   "limitations": [
     "ESPN event-roster starter flags are retrospective evidence, not pregame knowledge.",
     "Only schedule-listed starters missing a QB target row are reviewed. Other schedule starter labels remain unverified, even when a target row exists.",

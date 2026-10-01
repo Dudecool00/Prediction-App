@@ -89,7 +89,7 @@ opponent XGBoost covers **89.90%**, width **278.73**. For 29 no-history cases, c
 
 ## Validation
 
-- **133 tests pass on local Windows Python 3.12.14**; pip check passes.
+- **134 tests pass on local Windows Python 3.12.14**; pip check passes.
 - Ruff lint/format checks and strict mypy pass (28 source files).
 - Tests cover current/future outcome mutation, calibration/training separation, delayed-result
   cutoffs, game grouping, opponent totals, rookie retention, finite-sample interval ranks,

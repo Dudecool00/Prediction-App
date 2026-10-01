@@ -1,6 +1,6 @@
 # Historical starter reconciliation · 2022–2024
 
-Generated 2026-10-01T20:15:11.716790+00:00. Evidence retrieved 2026-10-01T20:10:51.392661+00:00.
+Generated 2026-10-01T20:27:11.001843+00:00. Evidence retrieved 2026-10-01T20:10:51.392661+00:00.
 
 37 flagged labels; 37 reconciled to an existing QB target row; 0 need review.
 All 1960 historical QB rows are retained. The other 1593 team-game slots have not been independently verified by this audit.

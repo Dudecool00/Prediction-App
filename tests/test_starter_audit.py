@@ -308,3 +308,19 @@ def test_failed_refresh_preserves_active_manifest(evidence_cache, monkeypatch):
         audit.fetch_starter_evidence(data, refresh=True)
     assert path.read_bytes() == before
     assert audit.load_starter_audit(data)["counts"]["corrected_schedule_labels"] == 1
+
+
+def test_identity_failure_during_refresh_preserves_active_manifest(evidence_cache, monkeypatch):
+    import nflreadpy as nfl
+
+    data, _, identities, _, _ = evidence_cache
+    path = data / "raw" / audit.CACHE / "manifest.json"
+    before = path.read_bytes()
+    ambiguous = pl.concat(
+        [identities, identities.head(1).with_columns(pl.lit("OTHER").alias("gsis_id"))]
+    )
+    monkeypatch.setattr(nfl, "load_players", lambda: ambiguous)
+    with pytest.raises(DataQualityError, match="Ambiguous"):
+        audit.fetch_starter_evidence(data, refresh=True)
+    assert path.read_bytes() == before
+    assert audit.load_starter_audit(data)["counts"]["corrected_schedule_labels"] == 1
