@@ -15,6 +15,7 @@ from nfl_prop_model.data.ingest_nfl import load_snapshot
 from nfl_prop_model.data.storage import load_frame, read_json, store_frame, write_json
 from nfl_prop_model.features.context import add_context_features
 from nfl_prop_model.features.quarterback import FEATURE_COLUMNS
+from nfl_prop_model.modeling.reporting import markdown_table as markdown_table
 from nfl_prop_model.modeling.research import (
     COVERAGES,
     DIAGNOSTIC_THRESHOLDS,
@@ -85,18 +86,6 @@ def calibration_chart(reliability: pl.DataFrame, path: Path) -> None:
         full_html=True,
         config={"displaylogo": False, "responsive": True},
     )
-
-
-def markdown_table(frame: pl.DataFrame) -> list[str]:
-    lines = [
-        "| " + " | ".join(frame.columns) + " |",
-        "| " + " | ".join(["---"] * frame.width) + " |",
-    ]
-    for row in frame.iter_rows():
-        lines.append(
-            "| " + " | ".join(f"{v:.3f}" if isinstance(v, float) else str(v) for v in row) + " |"
-        )
-    return lines
 
 
 def feature_contributions(metrics: pl.DataFrame) -> pl.DataFrame:

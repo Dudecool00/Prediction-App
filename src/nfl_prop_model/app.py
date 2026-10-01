@@ -27,6 +27,8 @@ from nfl_prop_model.markets.quote import (
     load_historical_forecast,
     quote_markdown,
 )
+from nfl_prop_model.modeling.calibration_audit import load_calibration_audit
+from nfl_prop_model.modeling.policy import history_policy_status
 
 MODEL_LABELS = {
     "xgb_schedule": "XGBoost · QB + schedule",
@@ -204,6 +206,15 @@ def comparison_page(
         f"History: {forecast.point['history_bucket']} · "
         f"Conceptual prediction time: {forecast.point['prediction_time_utc'].isoformat()}"
     )
+    if (
+        history_policy_status(int(forecast.point["prior_games_in_sample"]))
+        == "research_only_sparse_history"
+    ):
+        st.warning(
+            "This QB has fewer than five prior model-sample games. Historical comparisons "
+            "remain available for research; the candidate policy would abstain from prospective "
+            "probability and EV for this history group."
+        )
     with st.form("manual_market"):
         st.subheader("Enter a manual market")
         line_col, over_col, under_col = st.columns(3)
@@ -312,6 +323,136 @@ def results_page(manifest: dict[str, Any]) -> None:
     with st.expander("Results by season and feature contribution"):
         st.dataframe(points.filter(pl.col("scope") == "season").drop("scope"), hide_index=True)
         st.dataframe(pl.DataFrame(manifest["feature_contributions"]), hide_index=True)
+
+
+def calibration_audit_page(data_dir: Path) -> None:
+    st.title("Calibration audit")
+    st.write("Check uncertainty by each QB's available history before the evaluated game.")
+    report = load_calibration_audit(data_dir)
+    policy = report["policy"]
+    st.info(
+        "Development candidate: XGBoost with QB and schedule features. "
+        "Below five prior model-sample games, the policy would abstain from prospective "
+        "probability and EV. The policy is not frozen; 2025 is closed "
+        "and forecasts remain unavailable."
+    )
+    a, b, c = st.columns(3)
+    a.metric("Evaluated QB-games", report["counts"]["evaluated_qb_games"])
+    b.metric("Weekly folds", report["counts"]["weekly_folds"])
+    c.metric("Group residual minimum", policy["calibration"]["group_matched_minimum_rows"])
+    model = st.selectbox(
+        "Audit model",
+        list(MODEL_LABELS),
+        format_func=lambda value: MODEL_LABELS[value],
+        key="audit_model",
+    )
+    coverage = st.selectbox(
+        "Nominal interval coverage",
+        [0.5, 0.8, 0.9],
+        index=2,
+        format_func=lambda value: f"{value:.0%}",
+        key="audit_coverage",
+    )
+    metrics = pl.DataFrame(report["interval_metrics"]).filter(
+        (pl.col("scope") == "overall")
+        & (pl.col("model") == model)
+        & (pl.col("coverage") == coverage)
+    )
+    st.subheader("Interval support and observed coverage")
+    st.dataframe(
+        metrics.select(
+            "history_bucket",
+            "n",
+            "distinct_players",
+            "distinct_games",
+            "distinct_weeks",
+            "pooled_coverage",
+            "pooled_mean_width",
+            "matched_available_n",
+            "matched_coverage",
+            "paired_pooled_coverage",
+            "matched_mean_width",
+        ),
+        hide_index=True,
+        width="stretch",
+    )
+    st.caption(
+        "History-matched intervals are diagnostics only. Matched and paired pooled coverage "
+        "use the same available rows. Missing values mean insufficient group residuals. "
+        "Rows, players, games, and overlapping calibration windows are dependent."
+    )
+    with st.expander("History-matched cohort support"):
+        st.dataframe(
+            metrics.select(
+                "history_bucket",
+                "matched_available_n",
+                "matched_distinct_players",
+                "matched_distinct_games",
+                "matched_distinct_weeks",
+            ),
+            hide_index=True,
+            width="stretch",
+        )
+    st.subheader("Probability diagnostics by history")
+    line = st.selectbox("Audit threshold", [150.5, 200.5, 250.5, 300.5], key="audit_line")
+    scores = pl.DataFrame(report["probability_scores"]).filter(
+        (pl.col("model") == model) & (pl.col("line") == line)
+    )
+    st.dataframe(scores.drop("model", "line"), hide_index=True, width="stretch")
+    history = st.selectbox(
+        "Inspect history group", sorted(metrics["history_bucket"].to_list()), key="audit_history"
+    )
+    bins = (
+        pl.DataFrame(report["reliability"])
+        .filter(
+            (pl.col("model") == model)
+            & (pl.col("line") == line)
+            & (pl.col("history_bucket") == history)
+        )
+        .sort("bin")
+    )
+    figure = go.Figure(
+        [
+            go.Scatter(
+                x=[0, 1],
+                y=[0, 1],
+                mode="lines",
+                name="Perfect calibration",
+                line={"dash": "dash", "color": "#8A9895"},
+            ),
+            go.Scatter(
+                x=bins["mean_probability"].to_list(),
+                y=bins["observed_over_rate"].to_list(),
+                mode="markers",
+                name="Observed bins",
+                customdata=bins["n"].to_list(),
+                hovertemplate=(
+                    "Predicted %{x:.1%}<br>Observed %{y:.1%}<br>n=%{customdata}<extra></extra>"
+                ),
+            ),
+        ]
+    )
+    figure.update_layout(
+        height=350,
+        xaxis={"range": [0, 1], "tickformat": ".0%", "title": "Mean predicted over probability"},
+        yaxis={"range": [0, 1], "tickformat": ".0%", "title": "Observed over frequency"},
+    )
+    st.plotly_chart(figure, width="stretch")
+    st.dataframe(bins.drop("model", "line", "history_bucket"), hide_index=True, width="stretch")
+    st.caption(
+        "Fixed diagnostic thresholds, not sportsbook lines. Small bins and tails remain uncertain."
+    )
+    st.download_button(
+        "Download calibration audit",
+        json.dumps(report, indent=2, allow_nan=False),
+        file_name="calibration-audit.json",
+        mime="application/json",
+    )
+    with st.expander("Candidate policy, sources, and limits"):
+        st.json(policy)
+        st.caption(f"Policy SHA-256: {report['policy_sha256']}")
+        for limitation in report["limitations"]:
+            st.write(limitation)
 
 
 def saved_page(journal_dir: Path) -> None:
@@ -551,7 +692,14 @@ def main() -> None:
     st.sidebar.caption("NFL passing yards · local workspace")
     page = st.sidebar.radio(
         "Workspace",
-        ["Compare a line", "Upcoming QBs", "Starter audit", "Model results", "Saved snapshots"],
+        [
+            "Compare a line",
+            "Upcoming QBs",
+            "Starter audit",
+            "Model results",
+            "Calibration audit",
+            "Saved snapshots",
+        ],
         key="page",
     )
     if st.session_state.get("last_page") != page:
@@ -565,6 +713,8 @@ def main() -> None:
             upcoming_page(data_dir)
         elif page == "Starter audit":
             starter_audit_page(data_dir)
+        elif page == "Calibration audit":
+            calibration_audit_page(data_dir)
         else:
             manifest, catalog = research_catalog(data_dir)
             st.sidebar.caption("Historical replay · 2023–2024 recorded QB appearances")

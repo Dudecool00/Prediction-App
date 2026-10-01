@@ -1,6 +1,26 @@
 # Project status
 
-Updated 2026-10-01. PR #6 is merged (`2033f9f`); its Linux and Windows CI passed.
+Updated 2026-10-01. PR #7 is merged (`aabb94a`); its Linux and Windows CI passed.
+
+## New: limited-history calibration and candidate policy
+
+- **Calibration audit** and `nfl-prop calibration-audit` read saved research artifacts
+  offline. They report interval coverage/width and probability scores/reliability by pregame
+  history, with distinct player/game/week counts and per-fold calibration support.
+- A history-matched interval diagnostic requires 30 same-bucket residuals; unavailable
+  intervals stay missing. Paired pooled coverage uses exactly the available matched subset.
+  All six models and every development evaluation row remain in the diagnostics.
+- Schedule XGBoost's pooled nominal 90% coverage is 82.76% for 29 no-history rows, 84.89%
+  for 139 rows with 1–4 prior games, and 90.42% for 1,159 rows with 5+ games. No no-history
+  pool reaches 30 residuals. Matched intervals are available for only 61 of 139 limited-history
+  rows; their wider intervals do not establish general sparse-history readiness.
+- [The candidate policy](MODEL_POLICY.md) chooses fixed schedule XGBoost and pooled
+  calibration, excludes unverified weather, and would abstain prospectively below five prior
+  available model-sample games. The policy is versioned/hashed but **not frozen**. Historical
+  forecasts and training rows remain unchanged; 2025 is closed and no forecasts are enabled.
+- Next: resolve cohort/source requirements and freeze reproducible estimator/calibration
+  artifacts and the holdout protocol before accessing reserved outcomes. Prospective source
+  verification, the remaining historical starter labels, and weather research remain open.
 
 ## New: prospective status review workflow
 
@@ -16,8 +36,8 @@ Updated 2026-10-01. PR #6 is merged (`2033f9f`); its Linux and Windows CI passed
 - October 1 source refresh: 93 QBs across 32 teams, 31 upcoming games and 180 candidate rows
   in the 14-day window. All have fresh chart/cache sources. Zero real manual status claims
   have been entered; those remain unknown. All 1,960 historical rows retain their original hash.
-- Next: investigate limited-history calibration and document the model policy before opening
-  the reserved holdout. Prospective evidence still needs collection and independent review;
+- The follow-up now diagnoses limited-history calibration and records a candidate policy.
+  Prospective evidence still needs collection and independent review;
   historical starter coverage and weather sourcing remain incomplete.
 
 ## New: historical starter reconciliation
@@ -107,10 +127,12 @@ opponent XGBoost covers **89.90%**, width **278.73**. For 29 no-history cases, c
 
 ## Validation
 
-- **155 tests pass in the full local suite on Windows Python 3.12.14**; pip check passes.
-  After the final save-time boundary fix, all 23 prospective-review tests pass, bringing the
-  suite to 157 tests. Final remote CI results belong to the review PR's exact commit.
-- Ruff lint/format checks and strict mypy pass (29 source files).
+- **181 tests pass in the full local suite on Windows Python 3.12.14**; pip check passes.
+  The 24 new calibration/policy cases include hand calculations, partial matched availability,
+  outcome independence, source-coherent delayed results, cohort/protocol mismatch, corruption,
+  offline CLI, lightweight diagnostic imports, and Streamlit audit/history-warning flows.
+  The app also passes against the real research cache. Final CI belongs to the review PR.
+- Ruff lint/format checks and strict mypy pass (34 source files).
 - Tests cover current/future outcome mutation, calibration/training separation, delayed-result
   cutoffs, game grouping, opponent totals, rookie retention, finite-sample interval ranks,
   strict smoothed tail probabilities, hand-calculated metrics, offline CLI, and cache mismatch.
@@ -142,8 +164,9 @@ Manual odds and the local research interface use `codex/milestone-4-manual-odds`
 [PR #4](https://github.com/Dudecool00/Prediction-App/pull/4) is merged (`354cc7f`).
 [PR #5](https://github.com/Dudecool00/Prediction-App/pull/5) is merged (`3a43295`); both CI platforms
 passed on `7f5b0e7`. [PR #6](https://github.com/Dudecool00/Prediction-App/pull/6) is merged
-(`2033f9f`); both CI platforms passed on `42e2f9b`. The prospective review follow-up uses
-`codex/upcoming-status-review`.
+(`2033f9f`); both CI platforms passed on `42e2f9b`.
+[PR #7](https://github.com/Dudecool00/Prediction-App/pull/7) is merged (`aabb94a`); all 157 tests
+and both CI platforms passed on `dcae963`. The calibration follow-up uses `codex/calibration-policy`.
 
 ## Open limitations and next work
 
