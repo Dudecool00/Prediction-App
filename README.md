@@ -105,9 +105,11 @@ The initial sample contains **1,960 QB-game rows, 112 QBs, and 815 regular-seaso
 There are no duplicate QB keys or unmatched QB game IDs.
 
 Known source issues: 66 rows have no player identity or position and are counted among non-QB /
-unknown-position exclusions. There are 37 schedule-reported starters without a matching QB target
-row. The audit lists them. `schedule_reported_starter` is an **unverified retrospective label**;
-these discrepancies must be reconciled before starter-specific modeling. It is not a predictor.
+unknown-position exclusions. The original audit flagged 37 schedule-listed starters without a
+matching QB target row. The [starter reconciliation](reports/starter_audit/starter_audit.md) now resolves all 37
+as incorrect schedule labels using retrospective ESPN event-roster evidence and stable IDs.
+Corrections remain a separate audit overlay; `schedule_reported_starter` stays unchanged and
+is not a predictor. The other 1,593 team-game starter labels have not been independently verified.
 
 Absent/inactive QBs are not reconstructed. Missing targets are not replaced with zero. A
 cancelled game absent from both sources cannot be counted as an exclusion; a present game
@@ -139,8 +141,40 @@ retirement; [dated retirement evidence](reports/current_qbs_2026/retirement_note
 separately. The audit chooses each team's latest recorded snapshot before selecting QBs, so
 departed players are not retained from older charts. It rejects missing team/QB coverage and
 ambiguous IDs. It does not filter or modify the historical table, produce a starter guarantee,
-or resolve the 37 historical starter discrepancies. Current membership is never a historical
+or perform historical starter reconciliation. Current membership is never a historical
 predictor or backtest filter. Refresh before using these entries for an upcoming game.
+
+## Historical starter reconciliation
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe starter-audit --refresh
+.\.venv\Scripts\streamlit.exe run app.py
+```
+
+Choose **Starter audit** in the sidebar. The command cross-checks the 37 flagged historical
+starter labels against ESPN's explicit event-roster QB starter flags and nflverse's
+ESPN-to-GSIS identity mapping. The October 1 audit reconciles all 37 to existing QB target rows:
+four cases in 2022 and 33 in 2024. For example, 2022 Week 8 lists Winston in the cached
+schedule, while ESPN lists Dalton as the starter and the statistics contain Dalton's target.
+No missing passing-yard outcome is filled with zero or assigned to a different player.
+
+Omit `--refresh` to reuse the verified evidence offline. `--data-dir` selects the raw data;
+`--report-dir` defaults to `reports/local/starters`. The first run downloads identity mappings
+and historical event evidence only for flagged cases. The UI reads local files and works
+without the historical model-results cache. It offers the case table, source links, and JSON download.
+
+Hash-named evidence and timestamped manifests are retained under
+`data/raw/starter_evidence_2022_2024/`. Input, event/season/week/team identity, QB flags,
+and ESPN-to-GSIS mapping must agree; corrupted or contradictory evidence fails visibly.
+Zero or multiple QB starters, missing mappings, or missing targets remain unresolved.
+A failed refresh preserves the active manifest. No starter is inferred from the largest
+passing total, first passer, depth-chart rank, or name similarity.
+
+The [derived report](reports/starter_audit/starter_audit.md) and JSON include per-case URLs,
+retrieval times, source hashes, and the original statistics/schedule manifest. This is
+retrospective reconciliation, not proof of pregame knowledge. The other 1,593 team-game
+starter labels remain unverified. All 1,960 historical QB rows, targets, features, and existing
+starter flags are unchanged; no starter-only model cohort is enabled. The 2025 holdout remains untouched.
 
 ## Features and leakage controls
 
@@ -267,8 +301,8 @@ Use 2022 as initial training history. Evaluate **all 1,327 recorded QB-games in 
 36 weekly folds. Before each week's earliest prediction timestamp, fit using only games whose
 kickoff plus 24 hours is strictly earlier. Medians, scaling, and Ridge are learned from that
 training fold. Every model scores the same rows, including backups and 29 players' first sample
-appearances during evaluation. This is an appearance-conditioned research cohort; the 37
-historical starter discrepancies still prevent validated starter-specific conclusions.
+appearances during evaluation. This is an appearance-conditioned research cohort; the remaining
+unverified starter labels still prevent validated starter-specific conclusions.
 
 | Forecast | MAE (yards) | RMSE (yards) | Bias (yards) |
 | --- | ---: | ---: | ---: |
@@ -341,7 +375,7 @@ not established; these are observed results, not per-player guarantees.
 Signed residuals also yield smoothed over probabilities for fixed diagnostic thresholds
 150.5, 200.5, 250.5, and 300.5 yards. Reports include Brier scores, log loss, and reliability
 bins with counts. These are not historical sportsbook lines or validated betting probabilities.
-The 37 starter-label discrepancies, participation-conditioned sample, and retrospective source
+Unverified starter labels, the participation-conditioned sample, and retrospective source
 revisions remain limitations. The 2025 holdout remains untouched.
 
 Next: close weather-data readiness and investigate limited-history calibration and starter
@@ -439,7 +473,8 @@ cache for current use. See JSON for timestamps, source hashes, identity gaps, an
 
 ### Next steps for actual upcoming forecasts
 
-Reconcile historical starter labels, document a fixed model and calibration policy, evaluate
+Verify the remaining historical starter labels and prospective active/starter status,
+document a fixed model and calibration policy, evaluate
 the reserved holdout once choices are frozen, and build current features with explicit
 availability timestamps. Weather remains a separate unfinished feature investigation.
 

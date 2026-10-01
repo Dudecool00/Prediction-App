@@ -56,6 +56,15 @@ def main(argv: list[str] | None = None) -> int:
     upcoming.add_argument(
         "--refresh", action="store_true", help="Refresh schedules and depth charts"
     )
+    starters = commands.add_parser(
+        "starter-audit",
+        help="Reconcile flagged 2022–2024 starter labels against ESPN event rosters",
+    )
+    starters.add_argument("--data-dir", type=Path, default=Path("data"))
+    starters.add_argument("--report-dir", type=Path, default=Path("reports/local/starters"))
+    starters.add_argument(
+        "--refresh", action="store_true", help="Refresh historical starter evidence"
+    )
     quote_command = commands.add_parser(
         "quote", help="Compare manual odds with a saved historical forecast"
     )
@@ -83,6 +92,22 @@ def main(argv: list[str] | None = None) -> int:
     quote_command.add_argument("--game-total", type=float, help="Recorded note; not a predictor")
     args = parser.parse_args(argv)
     try:
+        if args.command == "starter-audit":
+            from nfl_prop_model.data.starter_audit import (
+                fetch_starter_evidence,
+                load_starter_audit,
+                write_starter_audit,
+            )
+
+            fetch_starter_evidence(args.data_dir, refresh=args.refresh)
+            report = load_starter_audit(args.data_dir)
+            write_starter_audit(args.report_dir, report)
+            print(
+                f"{report['counts']['corrected_schedule_labels']} starter labels reconciled; "
+                f"{report['counts']['needs_review']} need review. Historical data unchanged."
+            )
+            print(f"Report: {args.report_dir / 'starter_audit.md'}")
+            return 0
         if args.command == "upcoming":
             from nfl_prop_model.data.upcoming import (
                 fetch_upcoming,

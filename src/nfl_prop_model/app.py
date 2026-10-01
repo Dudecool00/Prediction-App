@@ -10,6 +10,7 @@ import plotly.graph_objects as go
 import polars as pl
 import streamlit as st
 
+from nfl_prop_model.data.starter_audit import load_starter_audit
 from nfl_prop_model.data.storage import load_frame, read_json
 from nfl_prop_model.data.upcoming import load_upcoming_report
 from nfl_prop_model.markets.journal import read_quote_records, save_quote_record
@@ -419,6 +420,51 @@ def upcoming_page(data_dir: Path) -> None:
             st.write(item)
 
 
+def starter_audit_page(data_dir: Path) -> None:
+    st.title("Historical starter audit")
+    st.write("Reconcile schedule-listed QBs missing from the 2022–2024 statistics table.")
+    st.info("Historical roster evidence. These corrections do not confirm upcoming starters.")
+    report = load_starter_audit(data_dir)
+    counts = report["counts"]
+    a, b, c = st.columns(3)
+    a.metric("Flagged starter labels", counts["flagged_starter_labels"])
+    b.metric("Reconciled labels", counts["corrected_schedule_labels"])
+    c.metric("Needs review", counts["needs_review"])
+    st.caption(
+        f"Evidence retrieved {report['evidence_manifest']['retrieved_at_utc']}. "
+        f"{counts['unflagged_slots_not_independently_verified']} other team-game labels "
+        "remain unverified. Historical training data is unchanged."
+    )
+    st.dataframe(
+        [
+            {
+                "Game": row["game_id"],
+                "Team": row["team"],
+                "Schedule-listed QB": row["scheduled_name"],
+                "ESPN-listed starter": row["reconciled_name"],
+                "Resolution": row["status"].replace("_", " "),
+            }
+            for row in report["cases"]
+        ],
+        hide_index=True,
+        width="stretch",
+    )
+    st.download_button(
+        "Download starter audit",
+        json.dumps(report, indent=2, allow_nan=False),
+        file_name="historical-starter-audit.json",
+        mime="application/json",
+    )
+    with st.expander("Sources and limits"):
+        for item in report["limitations"]:
+            st.write(item)
+        for row in report["cases"]:
+            st.markdown(
+                f"{row['game_id']} · {row['team']}: "
+                f"[ESPN event roster]({row['sources']['roster']['source']})"
+            )
+
+
 def main() -> None:
     st.set_page_config(page_title="QB Research | Prediction App", page_icon="🏈", layout="wide")
     data_dir = Path(os.environ.get("NFL_PROP_DATA_DIR", "data"))
@@ -427,7 +473,7 @@ def main() -> None:
     st.sidebar.caption("NFL passing yards · local workspace")
     page = st.sidebar.radio(
         "Workspace",
-        ["Compare a line", "Upcoming QBs", "Model results", "Saved snapshots"],
+        ["Compare a line", "Upcoming QBs", "Starter audit", "Model results", "Saved snapshots"],
         key="page",
     )
     if st.session_state.get("last_page") != page:
@@ -439,6 +485,8 @@ def main() -> None:
     try:
         if page == "Upcoming QBs":
             upcoming_page(data_dir)
+        elif page == "Starter audit":
+            starter_audit_page(data_dir)
         else:
             manifest, catalog = research_catalog(data_dir)
             st.sidebar.caption("Historical replay · 2023–2024 recorded QB appearances")
@@ -452,10 +500,12 @@ def main() -> None:
                 saved_page(journal_dir)
     except (OSError, ValueError, pl.exceptions.PolarsError) as error:
         st.error(str(error))
-        st.info("Prepare the verified local research cache from the repository terminal:")
+        st.info("Prepare this page's local cache from the repository terminal:")
         st.code(
             "nfl-prop upcoming --refresh"
             if page == "Upcoming QBs"
+            else "nfl-prop starter-audit --refresh"
+            if page == "Starter audit"
             else "nfl-prop fetch\nnfl-prop build\nnfl-prop research",
             language="text",
         )
