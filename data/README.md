@@ -143,3 +143,18 @@ versioned schema guarantee for these public endpoints. Raw ESPN rosters remain l
 not redistributed or assigned nflverse's license. The nflverse identity distribution is CC-BY-4.0.
 [The derived reconciliation report](../reports/starter_audit/starter_audit.md) retains attribution
 and per-case source URLs/times/hashes. No model input, outcome, or original starter flag is changed.
+
+## Calibration diagnostics and policy provenance
+
+`nfl-prop calibration-audit` reads only the hash-verified features, predictions, and calibration
+residuals in `processed/research_2022_2024/`. It checks the exact saved research protocol,
+development seasons, complete six-model cohorts, feature identities/history/timestamps, fold
+counts/cutoffs, and calibration result availability. Calibration history groups join to their
+own game's pregame feature row. No model is refitted and no source or research cache is written.
+
+The generated report preserves the research manifest hash, artifact hashes, historical source,
+code provenance, candidate policy and its hash, and per-fold group support. Generation rejects
+a manifest changed during reading. Outputs default to ignored `reports/local/calibration/`.
+The committed Markdown and policy JSON are derived snapshots; regenerate full diagnostic JSON
+with the CLI. They do not expose a frozen estimator or establish that source revisions were known
+before the historical games. Source data attribution remains nflverse / CC-BY-4.0.

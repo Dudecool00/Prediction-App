@@ -44,6 +44,13 @@ def main(argv: list[str] | None = None) -> int:
     )
     research.add_argument("--data-dir", type=Path, default=Path("data"))
     research.add_argument("--report-dir", type=Path, default=Path("reports/local/research"))
+    calibration_audit = commands.add_parser(
+        "calibration-audit", help="Audit saved development calibration by pregame QB history"
+    )
+    calibration_audit.add_argument("--data-dir", type=Path, default=Path("data"))
+    calibration_audit.add_argument(
+        "--report-dir", type=Path, default=Path("reports/local/calibration")
+    )
     settlement = commands.add_parser(
         "settlement-audit", help="Audit rounded probabilities and integer pushes"
     )
@@ -92,6 +99,20 @@ def main(argv: list[str] | None = None) -> int:
     quote_command.add_argument("--game-total", type=float, help="Recorded note; not a predictor")
     args = parser.parse_args(argv)
     try:
+        if args.command == "calibration-audit":
+            from nfl_prop_model.modeling.calibration_audit import (
+                load_calibration_audit,
+                write_calibration_audit,
+            )
+
+            report = load_calibration_audit(args.data_dir)
+            write_calibration_audit(args.report_dir, report)
+            print(
+                f"Audited {report['counts']['evaluated_qb_games']} development QB-games. "
+                "Candidate policy remains unfrozen; 2025 is closed."
+            )
+            print(f"Report: {args.report_dir / 'calibration_audit.md'}")
+            return 0
         if args.command == "starter-audit":
             from nfl_prop_model.data.starter_audit import (
                 fetch_starter_evidence,

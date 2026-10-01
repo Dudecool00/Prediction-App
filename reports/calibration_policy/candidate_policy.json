@@ -1,0 +1,251 @@
+{
+  "development_audit_provenance": {
+    "artifacts": {
+      "calibration_residuals": {
+        "file": "calibration_residuals-7ba466c9201390b466bbee248d5376405eb7806b1c6b64a315de5b3c8f68c36b.parquet",
+        "rows": 47658,
+        "schema": {
+          "evaluation_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "fold": "String",
+          "game_id": "String",
+          "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "model": "String",
+          "player_id": "String",
+          "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "residual": "Float64",
+          "training_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')"
+        },
+        "sha256": "7ba466c9201390b466bbee248d5376405eb7806b1c6b64a315de5b3c8f68c36b"
+      },
+      "features": {
+        "file": "features-859eb6d7046241e3adeaa751c61c4384da9ed42cb91996b1f24e637e4e43ac26.parquet",
+        "rows": 1960,
+        "schema": {
+          "attempts_mean5": "Float64",
+          "game_id": "String",
+          "history_available_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "is_designated_home": "Boolean",
+          "is_neutral_site": "Boolean",
+          "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "observed_attempts": "Float64",
+          "observed_completions": "Float64",
+          "opp_gross_pass_yards_allowed_mean5": "Float64",
+          "opp_pass_attempts_faced_mean5": "Float64",
+          "opponent_rest_days": "Float64",
+          "opponent_team": "String",
+          "passing_yards_lag1": "Float64",
+          "passing_yards_mean3": "Float64",
+          "passing_yards_mean5": "Float64",
+          "passing_yards_season_mean": "Float64",
+          "player_display_name": "String",
+          "player_id": "String",
+          "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "prior_games_in_sample": "UInt32",
+          "prior_season_games_in_sample": "UInt32",
+          "schedule_reported_starter": "Boolean",
+          "season": "Int32",
+          "target_passing_yards": "Float64",
+          "team": "String",
+          "team_rest_days": "Float64",
+          "week": "Int32"
+        },
+        "sha256": "859eb6d7046241e3adeaa751c61c4384da9ed42cb91996b1f24e637e4e43ac26"
+      },
+      "predictions": {
+        "file": "predictions-c9d2bd50de638323a108d63fe9b544e756a11a8f86b1352beb7daa661ab4b761.parquet",
+        "rows": 7962,
+        "schema": {
+          "actual": "Float64",
+          "evaluation_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "fold": "String",
+          "game_id": "String",
+          "history_bucket": "String",
+          "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "model": "String",
+          "player_id": "String",
+          "prediction": "Float64",
+          "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "prior_games_in_sample": "UInt32",
+          "season": "Int32",
+          "training_cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "week": "Int32"
+        },
+        "sha256": "c9d2bd50de638323a108d63fe9b544e756a11a8f86b1352beb7daa661ab4b761"
+      }
+    },
+    "historical_source": {
+      "build_environment": {
+        "polars": "1.44.2",
+        "python": "3.14.2",
+        "tzdata": "2026.4"
+      },
+      "file": "quarterback_games-5bceef915e3ff9216710f6be47c505fc39611d6b2ffa3d7bac77f3d6d44261cc.parquet",
+      "pipeline_source_sha256": "80d6c3f5427ab357fcfdea1a181c200fa0b0f854ae062c55f2f4708c2806f5b3",
+      "rows": 1960,
+      "schema": {
+        "attempts_mean5": "Float64",
+        "game_id": "String",
+        "history_available_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "is_designated_home": "Boolean",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "observed_attempts": "Float64",
+        "observed_completions": "Float64",
+        "opponent_team": "String",
+        "passing_yards_lag1": "Float64",
+        "passing_yards_mean3": "Float64",
+        "passing_yards_mean5": "Float64",
+        "passing_yards_season_mean": "Float64",
+        "player_display_name": "String",
+        "player_id": "String",
+        "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "prior_games_in_sample": "UInt32",
+        "prior_season_games_in_sample": "UInt32",
+        "schedule_reported_starter": "Boolean",
+        "season": "Int32",
+        "target_passing_yards": "Float64",
+        "team": "String",
+        "week": "Int32"
+      },
+      "sha256": "5bceef915e3ff9216710f6be47c505fc39611d6b2ffa3d7bac77f3d6d44261cc"
+    },
+    "method": {
+      "calibration_weeks": 6,
+      "diagnostic_thresholds": [
+        150.5,
+        200.5,
+        250.5,
+        300.5
+      ],
+      "hyperparameter_tuning": "none",
+      "minimum_calibration_rows": 100,
+      "nominal_coverages": [
+        0.5,
+        0.8,
+        0.9
+      ],
+      "reserved_season": 2025,
+      "tree_feature_groups": {
+        "xgb_context": [
+          "passing_yards_lag1",
+          "passing_yards_mean3",
+          "passing_yards_mean5",
+          "attempts_mean5",
+          "passing_yards_season_mean",
+          "prior_games_in_sample",
+          "prior_season_games_in_sample",
+          "is_designated_home",
+          "is_neutral_site",
+          "team_rest_days",
+          "opponent_rest_days",
+          "opp_gross_pass_yards_allowed_mean5",
+          "opp_pass_attempts_faced_mean5"
+        ],
+        "xgb_qb": [
+          "passing_yards_lag1",
+          "passing_yards_mean3",
+          "passing_yards_mean5",
+          "attempts_mean5",
+          "passing_yards_season_mean",
+          "prior_games_in_sample",
+          "prior_season_games_in_sample"
+        ],
+        "xgb_schedule": [
+          "passing_yards_lag1",
+          "passing_yards_mean3",
+          "passing_yards_mean5",
+          "attempts_mean5",
+          "passing_yards_season_mean",
+          "prior_games_in_sample",
+          "prior_season_games_in_sample",
+          "is_designated_home",
+          "is_neutral_site",
+          "team_rest_days",
+          "opponent_rest_days"
+        ]
+      },
+      "tree_parameters": {
+        "colsample_bytree": 1.0,
+        "device": "cpu",
+        "learning_rate": 0.05,
+        "max_bin": 256,
+        "max_depth": 2,
+        "min_child_weight": 10,
+        "n_estimators": 150,
+        "n_jobs": 1,
+        "objective": "reg:squarederror",
+        "random_state": 42,
+        "reg_lambda": 10.0,
+        "subsample": 1.0,
+        "tree_method": "hist"
+      }
+    },
+    "research_generated_at_utc": "2026-09-22T17:53:06.051700+00:00",
+    "research_manifest_sha256": "dddadb88b2c4479b51c24b51568f2c8c30c9981f5f1b499de2223476009b7ac1",
+    "research_source_sha256": "2f76737eda5646b2c4c4c8ce393f48cdb4f9c0975b720e3a44c381f4a5f7c7f4"
+  },
+  "policy": {
+    "calibration": {
+      "coverages": [
+        0.5,
+        0.8,
+        0.9
+      ],
+      "group_matched_minimum_rows": 30,
+      "group_matched_status": "diagnostic only; not selected for forecasts",
+      "interval": "finite-sample absolute residual order statistic",
+      "method": "pooled signed residuals",
+      "minimum_rows": 100,
+      "weeks": 6
+    },
+    "features": [
+      "passing_yards_lag1",
+      "passing_yards_mean3",
+      "passing_yards_mean5",
+      "attempts_mean5",
+      "passing_yards_season_mean",
+      "prior_games_in_sample",
+      "prior_season_games_in_sample",
+      "is_designated_home",
+      "is_neutral_site",
+      "team_rest_days",
+      "opponent_rest_days"
+    ],
+    "history": {
+      "below_minimum": "research_only; abstain from prospective probability and EV",
+      "meaning": "Pregame available model-sample appearances, not career experience",
+      "minimum_prior_games_in_sample": 5
+    },
+    "model": "xgb_schedule",
+    "parameters": {
+      "colsample_bytree": 1.0,
+      "device": "cpu",
+      "learning_rate": 0.05,
+      "max_bin": 256,
+      "max_depth": 2,
+      "min_child_weight": 10,
+      "n_estimators": 150,
+      "n_jobs": 1,
+      "objective": "reg:squarederror",
+      "random_state": 42,
+      "reg_lambda": 10.0,
+      "subsample": 1.0,
+      "tree_method": "hist"
+    },
+    "production_enabled": false,
+    "remaining_gates": [
+      "freeze source/code/estimator/calibration artifacts before holdout access",
+      "evaluate the reserved holdout once without using it to revise this candidate",
+      "validate the participation-conditioned cohort for prospective starter use",
+      "verify current feature availability, identity, starter, and active-status evidence"
+    ],
+    "reserved_holdout": {
+      "access": "closed_until_explicit_policy_freeze",
+      "season": 2025
+    },
+    "selection_basis": "Lowest pooled development MAE with improvements in both evaluation seasons; opponent features have mixed incremental results",
+    "status": "candidate_pending_freeze_and_holdout",
+    "version": "qb-passing-development-candidate-v1",
+    "weather": "excluded; historical pregame coverage is unverified"
+  },
+  "policy_sha256": "bdd760259e84d29d290dc1512bfb36348eb6170321c077d1a736d87a8a8669a3"
+}

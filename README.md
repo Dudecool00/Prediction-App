@@ -439,6 +439,29 @@ This completes Milestone 4's historical integration and begins Milestone 5. The 
 does **not** produce upcoming-game forecasts. Production eligibility/starter handling, weather,
 limited-history calibration, model freezing and final holdout assessment remain next work.
 
+## Calibration audit and candidate policy
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe calibration-audit
+```
+
+Choose **Calibration audit** in the app to inspect 50/80/90% interval coverage, distinct
+players/games/weeks, and fixed-threshold probability scores and reliability bins by pregame
+history. It reads verified format-2 research caches offline, without refitting or changing
+saved forecasts. `--report-dir` defaults to `reports/local/calibration`.
+
+History-matched intervals are a diagnostic comparison with a fixed minimum of 30 same-bucket
+residuals. Unavailable intervals stay missing; paired pooled metrics use the same available
+subset. Row counts do not imply independent samples. The new audit rejects holdout rows,
+changed protocols, incomplete model cohorts, inconsistent identities/timestamps, unavailable
+calibration results, and damaged files.
+
+[The candidate policy](MODEL_POLICY.md) selects fixed schedule XGBoost and existing pooled
+calibration for development. Below five prior available model-sample games, it would abstain
+from prospective probabilities and EV; historical comparisons stay available with a warning.
+The candidate is not frozen or fitted for production. The 2025 holdout remains closed.
+See the [dated audit](reports/calibration_policy/calibration_audit.md) for support and limits.
+
 ## Upcoming QB readiness
 
 ```powershell
