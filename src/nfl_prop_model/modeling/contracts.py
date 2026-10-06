@@ -7,6 +7,13 @@ from nfl_prop_model.features.quarterback import FEATURE_COLUMNS
 
 
 def validate_model_table(table: pl.DataFrame) -> None:
+    validate_model_values(table)
+    if set(table["season"].unique().to_list()) - {2022, 2023, 2024}:
+        raise DataQualityError("Only 2022-2024 development data are allowed; 2025+ is reserved")
+
+
+def validate_model_values(table: pl.DataFrame) -> None:
+    """Shared row invariants; callers must separately enforce their allowed seasons."""
     required = {
         "player_id",
         "game_id",
@@ -22,8 +29,6 @@ def validate_model_table(table: pl.DataFrame) -> None:
         raise DataQualityError(f"Model table missing columns: {sorted(missing)}")
     if table.is_empty():
         raise DataQualityError("Model table is empty")
-    if set(table["season"].unique().to_list()) - {2022, 2023, 2024}:
-        raise DataQualityError("Only 2022-2024 development data are allowed; 2025+ is reserved")
     require_keys(table, ["player_id", "game_id"], "model table")
     required_values = [
         "season",

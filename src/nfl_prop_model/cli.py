@@ -51,6 +51,30 @@ def main(argv: list[str] | None = None) -> int:
     calibration_audit.add_argument(
         "--report-dir", type=Path, default=Path("reports/local/calibration")
     )
+    candidate = commands.add_parser(
+        "prepare-candidate", help="Save a reproducible development candidate; 2025 stays closed"
+    )
+    candidate.add_argument("--data-dir", type=Path, default=Path("data"))
+    candidate.add_argument("--output-dir", type=Path, default=Path("models/candidates"))
+    candidate.add_argument("--report-dir", type=Path, default=Path("reports/local/candidate"))
+    verification = commands.add_parser("verify-candidate", help="Verify a saved candidate offline")
+    verification.add_argument("--bundle", type=Path, required=True)
+    freeze = commands.add_parser(
+        "freeze-candidate", help="Freeze exact artifacts/code for one 2025 diagnostic"
+    )
+    freeze.add_argument("--bundle", type=Path, required=True)
+    freeze.add_argument("--output-dir", type=Path, default=Path("models/frozen"))
+    holdout = commands.add_parser(
+        "evaluate-holdout", help="Evaluate 2025 once under an exact frozen candidate"
+    )
+    holdout.add_argument("--frozen", type=Path, required=True)
+    holdout.add_argument("--data-dir", type=Path, default=Path("data"))
+    holdout.add_argument("--report-dir", type=Path, default=Path("reports/local/holdout"))
+    holdout.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume an audited failure with the same frozen code/model",
+    )
     settlement = commands.add_parser(
         "settlement-audit", help="Audit rounded probabilities and integer pushes"
     )
@@ -99,6 +123,43 @@ def main(argv: list[str] | None = None) -> int:
     quote_command.add_argument("--game-total", type=float, help="Recorded note; not a predictor")
     args = parser.parse_args(argv)
     try:
+        if args.command == "freeze-candidate":
+            from nfl_prop_model.modeling.freeze import freeze_candidate
+
+            frozen = freeze_candidate(args.bundle, args.output_dir)
+            print(f"Frozen diagnostic candidate: {frozen}")
+            print("No holdout outcomes accessed by freezing; production stays disabled.")
+            return 0
+        if args.command == "evaluate-holdout":
+            from nfl_prop_model.modeling.holdout import evaluate_holdout, write_holdout_report
+
+            report, reused = evaluate_holdout(args.frozen, args.data_dir, resume=args.resume)
+            write_holdout_report(args.report_dir, report)
+            print(
+                f"{'Reused saved' if reused else 'Completed'} 2025 diagnostic: "
+                f"{report['counts']['qb_games']} QB-games."
+            )
+            print(
+                "2025 is now accessed; no retuning/retest as an untouched holdout. "
+                "Production stays disabled."
+            )
+            print(f"Report: {args.report_dir / 'holdout.md'}")
+            return 0
+        if args.command == "prepare-candidate":
+            from nfl_prop_model.modeling.candidate import write_candidate
+
+            bundle = write_candidate(args.data_dir, args.output_dir, args.report_dir)
+            print(f"Prepared and verified candidate: {bundle}")
+            print("Candidate remains unfrozen; 2025 access is closed; production is disabled.")
+            print(f"Report: {args.report_dir / 'candidate.md'}")
+            return 0
+        if args.command == "verify-candidate":
+            from nfl_prop_model.modeling.candidate import verify_candidate
+
+            report = verify_candidate(args.bundle)
+            print(f"Verified {report['counts']['calibration_rows']} saved calibration predictions.")
+            print("Candidate remains unfrozen; 2025 access is closed; production is disabled.")
+            return 0
         if args.command == "calibration-audit":
             from nfl_prop_model.modeling.calibration_audit import (
                 load_calibration_audit,

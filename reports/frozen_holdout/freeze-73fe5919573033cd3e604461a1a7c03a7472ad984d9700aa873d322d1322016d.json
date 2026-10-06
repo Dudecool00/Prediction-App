@@ -1,0 +1,131 @@
+{
+  "claim_scope": "All recorded appearances; prospective starter/cohort/source gates remain open",
+  "draft_protocol_sha256": "4acceab1f7828f858e7ed20ad461b988b65b09ba79c50e33eca516eac117c023",
+  "environment": {
+    "nflreadpy": "0.1.5",
+    "numpy": "2.4.6",
+    "polars": "1.44.2",
+    "python": "3.12.14",
+    "tzdata": "2026.4",
+    "xgboost-cpu": "3.2.0"
+  },
+  "evaluation_source": {
+    "file": "source.zip",
+    "members": {
+      "MODEL_POLICY.md": "06a7fb9c5fe7419f81c2b6a9536e74cc033d954aa5e6f11cb1948deb1e8b4205",
+      "pyproject.toml": "bde2a5f808c0a524fe0b4ff7cf01fd0a8709cffcde67e364dafcda2ffe9b0a26",
+      "requirements-dev.lock": "a16e29b90fd5d0280185bcae9e9c8e70c29664de6e36e1aa04cc30773f2dc682",
+      "src/nfl_prop_model/__init__.py": "d22dee588c9094d4ad39229a1ebb8e28dbadd7a1261fcf8d87a50b6d818da6a3",
+      "src/nfl_prop_model/app.py": "43591850839866fcf2cd1a9fa1a41477fecea9682d31f8bb96fb3a3803e7194e",
+      "src/nfl_prop_model/cli.py": "cbb4dccf2eefb99877cdf49dcdc377d26d5f317cf8c0df917a0b33ca5cda5211",
+      "src/nfl_prop_model/data/__init__.py": "ec4b33bfafd1717e9d753f622765a9004e35de283a0aaf8bb23d7da2ca1fc919",
+      "src/nfl_prop_model/data/audit.py": "df6648dae76acd3179da5297e597fa35393970322be33d73900e4268fdb0932c",
+      "src/nfl_prop_model/data/current_qbs.py": "ea2f96ebea512c3a86afb5d83386a26636d0e73df7ffb514ec09f1b425f5b026",
+      "src/nfl_prop_model/data/ingest_nfl.py": "4d5c5778f490d003b66dce91ec0f53334f25832d8ebc022b364080050040b12b",
+      "src/nfl_prop_model/data/quarterback_games.py": "03f67e9e4d6fad2e6058856ba4e37056cde6e3f8913927a2202835a8fa3d8e20",
+      "src/nfl_prop_model/data/schemas.py": "49039ab779104d4ea3f0c176cad0ecd5e99c018ecb1d816b5362eba513bb1fee",
+      "src/nfl_prop_model/data/starter_audit.py": "1f83f612f2dfc64f6a9aa737f4450a6a5e82a4c8168090672427f7e5ac69482f",
+      "src/nfl_prop_model/data/status_reviews.py": "a5c1c2c361afd94d436a995602661c155a632a8f610f9402c6c2b1bd5a33815f",
+      "src/nfl_prop_model/data/storage.py": "20e912d05336a77975ca3ae7bf0eb4de4091f1003fc1405ade93d33671bee25c",
+      "src/nfl_prop_model/data/upcoming.py": "ac46820fad59a5c4a027347d1148bfbe2d4a27b277fbd9a7f47b685a4437cae9",
+      "src/nfl_prop_model/features/__init__.py": "27203886453130586d451b3b96fbdbb4d83dee99a7e5d409e12cd368ba712de0",
+      "src/nfl_prop_model/features/context.py": "dc68f01b3c0227f1e8320d247dc31642dc016df012b5d4203c54f145aeb40f7a",
+      "src/nfl_prop_model/features/quarterback.py": "6754090547bfb6a4996a1f98aefacd53f9271dbd69e8981d941fe97aa5432469",
+      "src/nfl_prop_model/markets/__init__.py": "2db7f111ea1fbd4c3669c0e2f892153e2793b723bb1b31ecbfb9064f3dbca9b0",
+      "src/nfl_prop_model/markets/audit.py": "d9d5760c6a6f2e2db474e26b9b8e7c25d63973eb951976222f69051eae75ccca",
+      "src/nfl_prop_model/markets/distribution.py": "3d05d5cf54922893bdb547ed5d2df6c8c875029beec783f1f35ca529c7266448",
+      "src/nfl_prop_model/markets/journal.py": "8f1421b907f29e2983c685b9dec04afc59239c47825023d8a56cc5491ebb36f0",
+      "src/nfl_prop_model/markets/odds.py": "91b3f53d7c3dc29d56e7fa906430724830a0db1885d26ee4ef67760bfd8b1a8f",
+      "src/nfl_prop_model/markets/quote.py": "dab11d840e2de188557996fb5a5a3e30e3d480679ccc6f7b8bb4e3150b96b1d2",
+      "src/nfl_prop_model/modeling/__init__.py": "8efaf22f34bd3037c3d7b4a8c5890749598fb11193ffc0e47238069f128fdc4e",
+      "src/nfl_prop_model/modeling/baselines.py": "c94e08133d5ee82b205e966e914cf4a763226fda3e0776f8db6778541eaac99c",
+      "src/nfl_prop_model/modeling/calibration_audit.py": "d499a1b1b58d719b6772a342b0e39a391354543fc717b95a8c4a8b101b042bf0",
+      "src/nfl_prop_model/modeling/candidate.py": "238c8a3ec0d7d2896730a22b57346a12f0f93bb2333e2358276a66ac3e9b668b",
+      "src/nfl_prop_model/modeling/config.py": "672771eb04a6105caf5d7b946ce4da900a6d3e740f64a861a10ef0302aed3961",
+      "src/nfl_prop_model/modeling/contracts.py": "57840977af9cd3aa380bdcb42247739e24b5f8a55e4fb7a25a21dbafe9fdf17f",
+      "src/nfl_prop_model/modeling/evaluate.py": "4f39f9547f588bb5465002120a6c6aba2fed329851772518cf0a86e300201c81",
+      "src/nfl_prop_model/modeling/freeze.py": "b8e51de723c2383e7085c8dbce302db4134096a83358601a2cdb4df6b9726803",
+      "src/nfl_prop_model/modeling/holdout.py": "32e92f917534d66a1e8f203db2ac754893c8dc2f5cb5490b735254f64ccac498",
+      "src/nfl_prop_model/modeling/policy.py": "d2501720289854ced3e4ba45700bbe228aa97ecd3256a441e168d1e222705ca0",
+      "src/nfl_prop_model/modeling/report.py": "9daaa0693e863cb1f3b08bfc15df06df069cddc0377749c9d98baaed4d6f2288",
+      "src/nfl_prop_model/modeling/reporting.py": "03a1dc5ba09d914e24da2c8c661c40a6d7b0913ca906233936a2f6291df33883",
+      "src/nfl_prop_model/modeling/research.py": "310fbbea7b81483f74f5082b8c0f154a1db0d3f9ba58fd5e62cee16829dc13b5",
+      "src/nfl_prop_model/modeling/research_report.py": "d816af635cbcc0ffe69b038dadc4b135545ac9c194294701feec0149a4e686b5",
+      "src/nfl_prop_model/modeling/uncertainty.py": "8fd26f1229c6229291c7a317ac8ab2f12a6de20c433fd01131fae12efbfe9e54"
+    },
+    "sha256": "76553409fb002f72e1316bbff9d8fa103d3caaae5cec782859bf92c090471189"
+  },
+  "executable_sha256": "07bc08e500846ee8a26f8ac4748fdbcb441ef097416da3f391a307529acc19d7",
+  "format_version": 1,
+  "frozen_at_utc": "2026-10-06T22:45:14.093990+00:00",
+  "policy_sha256": "bdd760259e84d29d290dc1512bfb36348eb6170321c077d1a736d87a8a8669a3",
+  "prepared_manifest": {
+    "file": "manifest-795cc1bcc03ac71bc1b8aa90dfa84c2dc356f96e3d3d1714f937608f72d72f6e.json",
+    "sha256": "795cc1bcc03ac71bc1b8aa90dfa84c2dc356f96e3d3d1714f937608f72d72f6e"
+  },
+  "production_enabled": false,
+  "protocol": {
+    "acceptance": "Descriptive evaluation; no tuned pass threshold or profitability claim",
+    "access": "one_reserved_diagnostic_run",
+    "calibration_updates": "none; reuse the prepared development residual pool",
+    "claim_scope": "Participation-conditioned retrospective diagnostic; not a verified pregame starter cohort or validation of prospective probabilities/EV",
+    "cohort": "Every recorded regular-season QB appearance with a completed schedule game and nonmissing target; retain backups, early exits, zero attempts and sparse history",
+    "comparison": "Describe against development diagnostics; this static estimator protocol differs from development weekly refitting, so do not pool their metrics",
+    "dependence_counts": [
+      "distinct players",
+      "distinct games",
+      "distinct weeks"
+    ],
+    "development_result_cutoff_utc": "2025-02-01T00:00:00+00:00",
+    "development_seasons": [
+      2022,
+      2023,
+      2024
+    ],
+    "estimator_updates": "none; reuse the prepared estimator for the entire season",
+    "feature_history": "Development and earlier available regular-season holdout QB appearances may supply lagged features; no current/future results, refitting or tuning",
+    "interval_coverages": [
+      0.5,
+      0.8,
+      0.9
+    ],
+    "interval_metrics": [
+      "empirical coverage",
+      "mean width",
+      "sample count"
+    ],
+    "missing_data": "Reject invalid identities, duplicate keys, nonfinite targets, unmatched games and invalid timestamps; retain missing lagged/rest features with XGBoost native missing handling; enumerate target/position/unfinished exclusions",
+    "point_metrics": [
+      "MAE",
+      "RMSE",
+      "bias: prediction minus actual"
+    ],
+    "prediction_time": "Recorded kickoff minus one hour",
+    "primary_population": "All included appearances; MAE is the primary point metric",
+    "probability_metrics": [
+      "Brier",
+      "log loss",
+      "reliability bins with counts"
+    ],
+    "probability_thresholds": [
+      150.5,
+      200.5,
+      250.5,
+      300.5
+    ],
+    "production_enabled": false,
+    "report_splits": [
+      "overall",
+      "season/week",
+      "pregame history: 0, 1-4, 5+"
+    ],
+    "reruns": "One outcome evaluation after explicit freeze; errors require an audit trail. Any revised candidate uses a new holdout, never rebrands 2025 as untouched",
+    "result_availability": "Kickoff plus 24 hours, strictly before the relevant cutoff",
+    "season": 2025,
+    "secondary_population": "Same diagnostics for at least five prior available model-sample appearances; below five remains visible with prospective abstention",
+    "status": "frozen",
+    "version": "qb-passing-holdout-frozen-v1"
+  },
+  "protocol_sha256": "7d5dee74d11fc64ceb8ae635e589d577e93bc069642828461609ab6ec5f8a916",
+  "status": "frozen_for_reserved_diagnostic"
+}
