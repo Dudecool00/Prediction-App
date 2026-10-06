@@ -1,6 +1,34 @@
 # Project status
 
-Updated 2026-10-06. PR #7 is merged (`aabb94a`); its Linux and Windows CI passed.
+Updated 2026-10-06. PR #9 is merged (`58ea184`); its Linux and Windows CI passed.
+
+## New: prospective feature availability audit
+
+- `nfl-prop current-features [--refresh]` and **Current features** calculate the seven QB
+  lags and four schedule inputs from available appearances; no estimator is loaded/fitted.
+  Existing 2022–2024 and completed 2025 files supply prior history. Only 2026 is refreshed.
+- Per-result availability is the later of kickoff plus 24h and source retrieval. Features
+  match historical shifted definitions and exclude current/future or unavailable outcomes.
+  All current chart QBs stay visible; zeros, negative yards, backups and sparse history stay.
+- Team rest uses all completed regular 2026 schedule games. Intervening uncompleted/unknown
+  games block it; first-season rest is nullable. Feature checks separately flag stale sources,
+  missing IDs/completed QB team-game coverage and the kickoff-minus-one-hour deadline.
+- Manual status claims retain existing expiry/conflict/context checks. Independent source
+  verification, prospective participation-cohort validation and production enablement remain
+  open. Feature readiness and the five-game minimum never grant forecast access.
+- October 6 refresh: **29 games / 170 candidates**, **73** pass feature checks and **125**
+  meet the history minimum, using **144** available 2026 QB-games plus 2,624 saved prior rows.
+  All 170 starter/active statuses are unknown; zero forecasts. Rest is unresolved for 84
+  own-team and 83 opponent rows. [Dated audit](reports/prospective/current_features.md).
+- Each CLI run saves a new ignored checksummed feature snapshot; the UI saves on request.
+  JSON preserves source/feature/code hashes, availability, last-five inputs, season IDs,
+  rest gaps and status context. Snapshot verification is offline and detects changed bytes.
+- The historical table remains byte-identical; the model/calibration and one completed
+  2025 access record are unchanged. 2025 remains accessed, not reusable untouched validation.
+- **247 tests pass** locally, including 30 prospective feature/CLI/UI cases. Ruff lint/format,
+  strict mypy (39 source files) and pip check pass. Local Polars native diagnostics persist
+  with passing assertions and exit code 0; remote CI belongs to the review PR. Next: independently
+  verify prospective status evidence and specify/validate the participation cohort.
 
 ## New: frozen 2025 holdout diagnostic
 
@@ -185,7 +213,7 @@ can now be serialized. No production model is enabled.
 
 ## Validation
 
-- **217 tests pass in the full local suite on Windows Python 3.12.14**; pip check passes.
+- **247 tests pass in the full local suite on Windows Python 3.12.14**; pip check passes.
   The 20 candidate cases cover saved-model round trips, calibration-label/diagnostic-column
   independence, corruption and rehashed inconsistent manifests, reserved/late/invalid data
   rejection before fitting, embargo preservation, repeated preparation, offline CLI and
@@ -195,7 +223,7 @@ can now be serialized. No production model is enabled.
   outcome independence, source-coherent delayed results, cohort/protocol mismatch, corruption,
   offline CLI, lightweight diagnostic imports, and Streamlit audit/history-warning flows.
   The app also passes against the real research cache. Final CI belongs to the review PR.
-- Ruff lint/format checks and strict mypy pass (37 source files).
+- Ruff lint/format checks and strict mypy pass (39 source files).
 - Tests cover current/future outcome mutation, calibration/training separation, delayed-result
   cutoffs, game grouping, opponent totals, rookie retention, finite-sample interval ranks,
   strict smoothed tail probabilities, hand-calculated metrics, offline CLI, and cache mismatch.
@@ -231,7 +259,9 @@ passed on `7f5b0e7`. [PR #6](https://github.com/Dudecool00/Prediction-App/pull/6
 [PR #7](https://github.com/Dudecool00/Prediction-App/pull/7) is merged (`aabb94a`); all 157 tests
 and both CI platforms passed on `dcae963`. [PR #8](https://github.com/Dudecool00/Prediction-App/pull/8)
 is merged (`ecb993a`); its 181 tests and both CI platforms passed on `9947654`.
-The current freeze/holdout phase uses `codex/frozen-holdout`.
+The freeze/holdout phase used `codex/frozen-holdout`.
+PR #9 is merged (`58ea184`); both CI platforms passed on `6bf1e8e`.
+The current prospective feature phase uses `codex/prospective-features`.
 
 ## Open limitations and next work
 

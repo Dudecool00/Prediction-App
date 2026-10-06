@@ -12,6 +12,8 @@ forecasts, historical weather, and final model selection remain unfinished.
 An **Upcoming QBs** page now joins scheduled 2026 games to current depth-chart candidates,
 with source-age checks and explicit starter/identity review needs.
 The page also saves dated manual starter and active-status reviews with separate expiry checks.
+**Current features** audits the seven QB lags and four schedule inputs from available
+2022–2026 appearances, with source timestamps, history/rest evidence and explicit blockers.
 Results are estimates, may be wrong, and may lose money. No profitability claim has been established.
 
 A fixed candidate has now completed the reserved 2025 diagnostic: **664 QB-games**,
@@ -122,6 +124,47 @@ Absent/inactive QBs are not reconstructed. Missing targets are not replaced with
 cancelled game absent from both sources cannot be counted as an exclusion; a present game
 without final scores is counted and excluded. Historical rescheduling is reflected in the
 source's recorded kickoff, not reconstructed from an original schedule snapshot.
+
+## Prospective feature snapshots
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe current-features --refresh
+.\.venv\Scripts\streamlit.exe run app.py
+```
+
+Choose **Current features**. This separate command requires the verified 2022–2024 table
+and a completed local 2025 diagnostic/access record. It reads the existing checksummed 2025
+feature artifact as prior history; it never downloads/rescores that season or fits a model.
+Only 2026 statistics, schedules and ESPN-derived charts are refreshed. Omit `--refresh` for
+offline reads; `--days` accepts 1–28, with `--data-dir` and `--report-dir` overrides.
+
+A result is available at the later of kickoff plus 24 hours and its source retrieval.
+Historical snapshots must also precede the requested time. Only available completed regular
+QB appearances enter the rolling/season means and counts; zeros, negative yards and backups
+remain. Current/future game outcomes do not enter their candidate's features. The seven QB
+definitions match the historical shifted features; rest uses all earlier completed schedule
+games in 2026, including games without a given QB appearance. Unknown or intervening uncompleted
+games block rest features. First-season rest is nullable; schedule location must be known.
+
+The report preserves all chart candidates. It separates feature checks from the five-game
+history minimum and starter/active evidence. Cache/chart expiry, ID gaps, missing completed
+QB team/game statistics, changed/conflicting status reviews and snapshots at/after kickoff
+minus one hour are explicit blockers. Manual claims retain their 24h starter / 6h active
+windows; their source contents are not independently verified. Prospective participation
+validation and production approval remain open, so no predictions, probabilities or EV are
+generated, even if all per-candidate checks pass.
+
+Each CLI run creates a new checksummed snapshot in ignored `data/prospective/snapshot-*/`.
+The UI reads caches without network access and saves only when **Save feature snapshot** is
+clicked. JSON downloads and `reports/local/current_features/` include the source manifests,
+feature order/values/availability, all-prior-row digest, last-five input rows, current-season
+IDs, unresolved rest games, status context and Python source hashes. Snapshot reads detect
+changed report bytes; snapshots do not recheck freshness at a later clock time.
+
+The [October 6 feature audit](reports/prospective/current_features.md) contains 29 games and
+170 candidates: 73 pass feature checks; 125 meet the five-game minimum. It uses 144 available
+2026 QB-games. All starter/active statuses remain unknown and zero forecasts are enabled.
+This is a dated research snapshot, not prospective validation or a claim of past publication.
 
 ## Current 2026 QB cross-reference
 

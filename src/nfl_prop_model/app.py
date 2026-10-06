@@ -10,6 +10,7 @@ import plotly.graph_objects as go
 import polars as pl
 import streamlit as st
 
+from nfl_prop_model.data.prospective import load_feature_report, save_feature_snapshot
 from nfl_prop_model.data.starter_audit import load_starter_audit
 from nfl_prop_model.data.status_reviews import (
     checksum,
@@ -684,6 +685,77 @@ def starter_audit_page(data_dir: Path) -> None:
             )
 
 
+def current_features_page(data_dir: Path) -> None:
+    st.title("Current feature audit")
+    st.write("Inspect available QB history and schedule inputs for upcoming 2026 games.")
+    st.info(
+        "Research features only. Starter/active evidence and the participation cohort "
+        "still need validation. Upcoming predictions and EV remain disabled."
+    )
+    days = st.select_slider("Look ahead", options=[7, 14, 21, 28], value=14, key="feature_days")
+    report = load_feature_report(data_dir, days=days)
+    counts = report["counts"]
+    a, b, c = st.columns(3)
+    a.metric("QB / game candidates", counts["candidate_rows"])
+    b.metric("Feature checks passed", counts["features_ready_rows"])
+    c.metric("Five available sample games", counts["history_minimum_rows"])
+    st.caption(
+        f"Checked {report['as_of_utc']} · current stats age "
+        f"{report['current_stats_age_hours']:.1f} h. "
+        "Available means both retrieved and at least 24 hours after kickoff."
+    )
+    rows = report["candidates"]
+    if rows:
+        labels = {
+            f"{row['game_id']}:{row['espn_id']}": (
+                f"{row['game_id']} · {row['team']} · {row['player_name']}"
+            )
+            for row in rows
+        }
+        selected = st.selectbox(
+            "Candidate", list(labels), format_func=lambda key: labels[key], key="feature_candidate"
+        )
+        row = next(row for row in rows if f"{row['game_id']}:{row['espn_id']}" == selected)
+        st.dataframe(
+            [
+                {
+                    "Feature": name,
+                    "Value": str(row["features"][name]),
+                    "Available at (UTC)": row["feature_available_at_utc"][name],
+                }
+                for name in report["feature_columns"]
+            ],
+            hide_index=True,
+            width="stretch",
+        )
+        st.write("Forecast checks still open:")
+        for reason in row["forecast_blockers"]:
+            st.write(f"• {reason.replace('_', ' ').capitalize()}")
+        with st.expander("History, rest and status evidence"):
+            st.json(
+                {
+                    "history": row["history_audit"],
+                    "rest": row["rest_audit"],
+                    "status": row["status_review"],
+                }
+            )
+    else:
+        st.info("No dated, unscored games appear in this window.")
+    if st.button("Save feature snapshot", key="save_features"):
+        directory = save_feature_snapshot(data_dir, report)
+        st.success(f"Saved a new research snapshot: {directory.name}")
+    st.download_button(
+        "Download feature audit",
+        json.dumps(report, indent=2, allow_nan=False),
+        file_name="current-qb-features.json",
+        mime="application/json",
+    )
+    with st.expander("Sources and limits"):
+        st.code("nfl-prop current-features --refresh", language="text")
+        for item in report["limitations"]:
+            st.write(item)
+
+
 def main() -> None:
     st.set_page_config(page_title="QB Research | Prediction App", page_icon="🏈", layout="wide")
     data_dir = Path(os.environ.get("NFL_PROP_DATA_DIR", "data"))
@@ -695,6 +767,7 @@ def main() -> None:
         [
             "Compare a line",
             "Upcoming QBs",
+            "Current features",
             "Starter audit",
             "Model results",
             "Calibration audit",
@@ -705,12 +778,14 @@ def main() -> None:
     if st.session_state.get("last_page") != page:
         st.session_state.pop("quote", None)
         st.session_state["last_page"] = page
-    st.sidebar.info("2025 remains reserved. Upcoming-game forecasts are not available yet.")
+    st.sidebar.info("The frozen 2025 diagnostic is complete. Upcoming forecasts remain disabled.")
     st.sidebar.caption("Manual prices only. No sportsbook connection or automatic betting.")
     st.caption("RESEARCH PREVIEW")
     try:
         if page == "Upcoming QBs":
             upcoming_page(data_dir)
+        elif page == "Current features":
+            current_features_page(data_dir)
         elif page == "Starter audit":
             starter_audit_page(data_dir)
         elif page == "Calibration audit":
@@ -732,6 +807,8 @@ def main() -> None:
         st.code(
             "nfl-prop upcoming --refresh"
             if page == "Upcoming QBs"
+            else "nfl-prop current-features --refresh"
+            if page == "Current features"
             else "nfl-prop starter-audit --refresh"
             if page == "Starter audit"
             else "nfl-prop fetch\nnfl-prop build\nnfl-prop research",
@@ -740,5 +817,5 @@ def main() -> None:
     st.divider()
     st.caption(
         "Estimates may be wrong and may lose money. Historical starter labels, weather, and "
-        "limited-history calibration remain open research work. No production model is selected."
+        "limited-history calibration remain open research work. No production model is enabled."
     )

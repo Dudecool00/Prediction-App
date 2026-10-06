@@ -17,6 +17,7 @@ data/cache/
 data/journal/
 data/status_reviews/
 data/holdout/
+data/prospective/
 .streamlit/secrets.toml
 models/*.joblib
 models/*.cbm
