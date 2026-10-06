@@ -237,7 +237,7 @@ def build_upcoming_report(
             "Missing current chart membership does not establish retirement. "
             "Historical rows remain unchanged; newcomers and unmapped QBs stay visible.",
             "No upcoming prediction, probability, or EV is generated. "
-            "The frozen model and current feature pipeline remain unfinished.",
+            "Use current-features for the availability audit; production remains disabled.",
         ],
     }
     apply_status_reviews(report, status_reviews or [])

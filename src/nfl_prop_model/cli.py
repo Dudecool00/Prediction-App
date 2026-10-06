@@ -87,6 +87,17 @@ def main(argv: list[str] | None = None) -> int:
     upcoming.add_argument(
         "--refresh", action="store_true", help="Refresh schedules and depth charts"
     )
+    feature_command = commands.add_parser(
+        "current-features", help="Audit observed 2026 features; no forecasts or model fitting"
+    )
+    feature_command.add_argument("--data-dir", type=Path, default=Path("data"))
+    feature_command.add_argument(
+        "--report-dir", type=Path, default=Path("reports/local/current_features")
+    )
+    feature_command.add_argument("--days", type=int, default=14)
+    feature_command.add_argument(
+        "--refresh", action="store_true", help="Refresh 2026 stats/schedules/charts"
+    )
     starters = commands.add_parser(
         "starter-audit",
         help="Reconcile flagged 2022–2024 starter labels against ESPN event rosters",
@@ -123,6 +134,29 @@ def main(argv: list[str] | None = None) -> int:
     quote_command.add_argument("--game-total", type=float, help="Recorded note; not a predictor")
     args = parser.parse_args(argv)
     try:
+        if args.command == "current-features":
+            from nfl_prop_model.data.prospective import (
+                fetch_current_stats,
+                load_feature_report,
+                save_feature_snapshot,
+                write_feature_report,
+            )
+            from nfl_prop_model.data.upcoming import fetch_upcoming
+
+            if not 1 <= args.days <= 28:
+                raise ValueError("Upcoming horizon must be 1–28 days")
+            fetch_upcoming(args.data_dir, refresh=args.refresh)
+            fetch_current_stats(args.data_dir, refresh=args.refresh)
+            report = load_feature_report(args.data_dir, days=args.days)
+            saved = save_feature_snapshot(args.data_dir, report)
+            write_feature_report(args.report_dir, report)
+            print(
+                f"{report['counts']['features_ready_rows']} candidates pass feature checks. "
+                "No forecasts generated."
+            )
+            print(f"Snapshot: {saved}")
+            print(f"Report: {args.report_dir / 'current_features.md'}")
+            return 0
         if args.command == "freeze-candidate":
             from nfl_prop_model.modeling.freeze import freeze_candidate
 

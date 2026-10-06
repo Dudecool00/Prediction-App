@@ -152,6 +152,31 @@ The evaluation does not enable forecasts or establish starter-specific calibrati
 betting profitability. Once accessed, 2025 stays an accessed holdout; revised model
 choices require a new independent evaluation period.
 
+## Prospective feature availability audit
+
+`nfl-prop current-features` and **Current features** now calculate the same seven QB lags
+and four schedule inputs without fitting/loading an estimator. They use the unchanged
+development table, the completed 2025 feature artifact as accessed prior history, and a
+separate 2026 snapshot. No 2025 download, recalibration or holdout rerun occurs.
+
+Result availability is `max(kickoff + 24h, source retrieval)` and must be at/before the audit
+time. Saved historical sources must have been observed by that time. Means/counts use only
+available earlier regular-season appearances. Schedule rest resets in 2026 and uses earlier
+completed team games; intervening uncompleted/unknown games block it. Nullable season means
+and first-season rest retain their model definitions; zeros/negative yards/sparse history
+stay visible. Snapshot time at/after scheduled kickoff minus one hour blocks forecast use.
+
+This audits feature readiness only. The five-available-game gate, current ID/freshness/
+coverage checks, dated manual status expiry/conflict checks, independent source-content
+verification, prospective participation-cohort validation and production enablement remain
+separate. Manual active claims do not establish health or playing time. No candidate produces
+a prediction, probability or EV. Status URLs are preserved as reviewer-supplied claims.
+
+New checksummed local snapshots preserve inputs, cutoffs, feature values, history/rest
+evidence and executable source hashes. They establish when this application observed a
+snapshot; they do not reconstruct historical publication or prevent upstream revisions.
+Future independent validation must specify the participation/settlement cohort before outcomes.
+
 ## Reproduce the diagnostics
 
 ```powershell

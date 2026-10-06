@@ -49,3 +49,8 @@ resume; another checkpoint cannot retest an accessed season in that data directo
 The October 6 frozen diagnostic is complete. Its report/checkpoint are committed under
 `reports/frozen_holdout/`; the exact model/calibration files remain local ignored artifacts.
 The 2025 holdout is now accessed, and prospective forecasting/source/cohort gates remain open.
+
+`nfl-prop current-features` now audits prospective inputs without loading any estimator.
+It reads the completed 2025 features as prior appearances, combines observed 2026 history,
+and saves feature/status/rest evidence separately under ignored `data/prospective/`.
+Neither model parameters nor calibration change. No production model is enabled.
