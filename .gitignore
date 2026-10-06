@@ -16,9 +16,12 @@ data/processed/
 data/cache/
 data/journal/
 data/status_reviews/
+data/holdout/
 .streamlit/secrets.toml
 models/*.joblib
 models/*.cbm
+models/candidates/
+models/frozen/
 .ipynb_checkpoints/
 reports/local/
 reports/milestone_3/calibration.html

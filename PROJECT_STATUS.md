@@ -1,6 +1,63 @@
 # Project status
 
-Updated 2026-10-01. PR #7 is merged (`aabb94a`); its Linux and Windows CI passed.
+Updated 2026-10-06. PR #7 is merged (`aabb94a`); its Linux and Windows CI passed.
+
+## New: frozen 2025 holdout diagnostic
+
+- PR #8 is merged (`ecb993a`). This phase uses `codex/frozen-holdout` and includes the
+  preceding candidate preparation plus immutable freeze/holdout commands.
+- The exact schedule XGBoost model and 231-row development calibration pool were frozen
+  at **2026-10-06 22:45:14 UTC**, before first 2025 access at **22:47:18 UTC**.
+  The freeze identifies the policy/protocol, artifacts, evaluator source and runtime.
+  [Checkpoint](reports/frozen_holdout/freeze-73fe5919573033cd3e604461a1a7c03a7472ad984d9700aa873d322d1322016d.json).
+- One completed attempt scored **664 QB-games, 81 QBs, 272 games and 18 weeks** without
+  refitting, recalibration or dropped rows. All-appearance MAE is **66.12 yards**, RMSE
+  **83.04**, bias **+9.33**. Nominal 90% coverage is **90.96%**, with **278.48-yard**
+  mean width. [Holdout report](reports/frozen_holdout/holdout.md) and JSON preserve source,
+  prediction and code hashes, exclusions, weekly/history diagnostics and reliability bins.
+- The five-prior-game subgroup contains **594 rows**: MAE **65.29**, RMSE **82.74**, bias
+  **+8.79**, and 90% coverage **90.74%**. The other 70 appearances stay in diagnostics;
+  their prospective probability/EV abstention remains. Fifteen no-history rows show MAE
+  **78.02** and bias **+67.83**; these small groups do not establish readiness.
+- Thirty-six zero-attempt rows are retained. Seven schedule-listed starters have no target
+  row and remain source discrepancies; their labels do not change this appearance cohort.
+  Raw retrieval is retrospective; source revisions and the 24-hour availability assumption
+  remain limitations. This static model protocol differs from weekly-refit development.
+- The local access/attempt registry blocks a different freeze after access. Completed commands
+  reuse checksummed results; audited failures need explicit same-freeze resume. Code/runtime
+  drift blocks new outcome access. Development commands still reject 2025.
+- **2025 is now accessed**, and cannot be reused as untouched validation for revised model
+  choices. Upcoming forecasts remain disabled. Next: validate prospective feature availability,
+  identities, dated starter/active evidence and the participation cohort before enabling them.
+- **217 tests pass** locally; Ruff lint/format, strict mypy (37 source files) and pip check
+  pass. The 16 holdout cases cover freeze/code/runtime/corruption access gates, fixed-model
+  math, current/future outcome independence, sparse/zero/negative outcomes, source exclusions,
+  season/rest handling, one-run reuse, competing freezes, audited resume and writer locking.
+  Existing local Polars native diagnostics persist with passing assertions and exit code 0.
+  Remote CI results belong to the review PR for this phase.
+
+## New: reproducible candidate preparation and draft holdout protocol
+
+- `nfl-prop prepare-candidate` fits a development schedule XGBoost estimator from verified
+  2022–2024 caches, with the latest six eligible season/weeks reserved for calibration.
+  It preserves sparse-history rows and records any embargoed boundary rows separately.
+- Each preparation saves a new ignored bundle: JSON model, features/split tables,
+  calibration predictions/residuals, source archive/dependency constraints and a
+  content-addressed manifest with policy/protocol hashes, source provenance and cutoffs.
+- `nfl-prop verify-candidate --bundle PATH` works offline. It validates every checksum,
+  reconstructs the chronological cohorts and exactly reproduces the saved calibration
+  predictions, residuals and interval radii. Preparation leaves earlier bundles intact.
+- The draft holdout protocol fixes the estimator/residual pool for the entire 2025 season.
+  Earlier available appearances may update lagged features, without refitting/calibration.
+  All recorded appearances and the five-prior-game subgroup are reported separately.
+  This participation-conditioned diagnostic differs from weekly-refit development research.
+- Candidate preparation alone does not constitute an explicit freeze. The separate freeze
+  and holdout commands now completed the diagnostic above; prospective source/identity/status
+  and cohort validation remain open, and upcoming forecasts stay disabled.
+- October 6 offline preparation: 1,960 development rows split into 1,729 training and 231
+  calibration rows, with zero embargoed rows. The verified estimator reproduces all 231
+  calibration predictions. Historical table SHA-256 remains unchanged. The local report
+  is `reports/local/candidate/candidate.md`; the exact bundle path is recorded there.
 
 ## New: limited-history calibration and candidate policy
 
@@ -17,10 +74,10 @@ Updated 2026-10-01. PR #7 is merged (`aabb94a`); its Linux and Windows CI passed
 - [The candidate policy](MODEL_POLICY.md) chooses fixed schedule XGBoost and pooled
   calibration, excludes unverified weather, and would abstain prospectively below five prior
   available model-sample games. The policy is versioned/hashed but **not frozen**. Historical
-  forecasts and training rows remain unchanged; 2025 is closed and no forecasts are enabled.
-- Next: resolve cohort/source requirements and freeze reproducible estimator/calibration
-  artifacts and the holdout protocol before accessing reserved outcomes. Prospective source
-  verification, the remaining historical starter labels, and weather research remain open.
+  forecasts and training rows remain unchanged. At that audit stage, 2025 was still closed.
+  The specific checkpoint/holdout above now completes the diagnostic; no forecasts are enabled.
+- Prospective source verification, the remaining historical starter labels, and weather
+  research remain open. The development audit remains separate from the frozen 2025 results.
 
 ## New: prospective status review workflow
 
@@ -103,7 +160,7 @@ Updated 2026-10-01. PR #7 is merged (`aabb94a`); its Linux and Windows CI passed
   [Milestone 3 research](reports/milestone_3/research.md) and its JSON companion.
 - All six research forecasts score **1,327 QB-games over 36 weeks**, with zero dropped rows.
   Opponent means use earlier team games and all passers. Rest/home/neutral-site features are
-  added separately. The 2025 season remains reserved; current depth charts never enter models.
+  added separately. Development research excludes 2025; current depth charts never enter models.
 
 ## Latest comparison
 
@@ -123,16 +180,22 @@ Schedule improves MAE in both years. Opponent inputs have mixed incremental effe
 MAE worsens by 0.06 yards while RMSE improves by 0.29. No significance or profitability claim.
 Schedule XGBoost's nominal 90% intervals cover **89.68%**, averaging **279.01 yards total width**;
 opponent XGBoost covers **89.90%**, width **278.73**. For 29 no-history cases, coverage drops to
-82.76% and 86.21%. No production model is selected; fitted estimators remain transient.
+82.76% and 86.21%. Research estimators remain transient; a separate development candidate
+can now be serialized. No production model is enabled.
 
 ## Validation
 
-- **181 tests pass in the full local suite on Windows Python 3.12.14**; pip check passes.
+- **217 tests pass in the full local suite on Windows Python 3.12.14**; pip check passes.
+  The 20 candidate cases cover saved-model round trips, calibration-label/diagnostic-column
+  independence, corruption and rehashed inconsistent manifests, reserved/late/invalid data
+  rejection before fitting, embargo preservation, repeated preparation, offline CLI and
+  source snapshot mismatch. The real-data preparation succeeds offline. Sixteen further
+  cases cover the frozen holdout path; remote results are recorded in its review PR.
   The 24 new calibration/policy cases include hand calculations, partial matched availability,
   outcome independence, source-coherent delayed results, cohort/protocol mismatch, corruption,
   offline CLI, lightweight diagnostic imports, and Streamlit audit/history-warning flows.
   The app also passes against the real research cache. Final CI belongs to the review PR.
-- Ruff lint/format checks and strict mypy pass (34 source files).
+- Ruff lint/format checks and strict mypy pass (37 source files).
 - Tests cover current/future outcome mutation, calibration/training separation, delayed-result
   cutoffs, game grouping, opponent totals, rookie retention, finite-sample interval ranks,
   strict smoothed tail probabilities, hand-calculated metrics, offline CLI, and cache mismatch.
@@ -166,7 +229,9 @@ Manual odds and the local research interface use `codex/milestone-4-manual-odds`
 passed on `7f5b0e7`. [PR #6](https://github.com/Dudecool00/Prediction-App/pull/6) is merged
 (`2033f9f`); both CI platforms passed on `42e2f9b`.
 [PR #7](https://github.com/Dudecool00/Prediction-App/pull/7) is merged (`aabb94a`); all 157 tests
-and both CI platforms passed on `dcae963`. The calibration follow-up uses `codex/calibration-policy`.
+and both CI platforms passed on `dcae963`. [PR #8](https://github.com/Dudecool00/Prediction-App/pull/8)
+is merged (`ecb993a`); its 181 tests and both CI platforms passed on `9947654`.
+The current freeze/holdout phase uses `codex/frozen-holdout`.
 
 ## Open limitations and next work
 
@@ -184,9 +249,10 @@ and both CI platforms passed on `dcae963`. The calibration follow-up uses `codex
 - Source revisions and recorded kickoff times may differ from information available pregame.
   Kickoff plus 24 hours is an explicit result-availability assumption, not a publication record.
 - No production upcoming-game prediction yet. The manual EV engine, research UI, and historical
-  snapshot journal now work. Close weather/calibration/starter gaps, freeze the model, assess
-  the reserved holdout, and build timestamped upcoming-game forecasts before production use.
-  Keep 2025 out of development decisions. Statistical accuracy does not establish profitability.
+  snapshot journal work, and the frozen 2025 diagnostic is complete. Validate prospective
+  sources, starter/active evidence, features and the participation cohort before upcoming
+  forecasts. Keep unverified weather excluded. Revised choices require a new evaluation period;
+  2025 remains accessed. Statistical accuracy does not establish profitability.
 
 ## Reproduce
 

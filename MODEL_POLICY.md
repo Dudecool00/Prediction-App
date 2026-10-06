@@ -1,8 +1,14 @@
 # QB passing-yards development candidate
 
 This policy is a development candidate, not a frozen or production model. The reserved
-2025 season stays closed. The executable definition is `modeling/policy.py`; the audit
+2025 season stays closed until a specific bundle/protocol/code checkpoint is frozen. The
+executable definition is `modeling/policy.py`; the audit
 exports its version and SHA-256 so a report identifies the exact choices it describes.
+
+The specific October 6 checkpoint has now been frozen and evaluated once on 2025.
+[Its report](reports/frozen_holdout/holdout.md) records the exact checkpoint and first-access
+times. The reusable candidate definition below remains distinct from that immutable checkpoint.
+Upcoming forecasts stay disabled; 2025 is now an accessed holdout for future model revisions.
 
 ## Point forecast and features
 
@@ -57,7 +63,7 @@ are diagnostics, not historical sportsbook lines. Integer push estimates remain 
 
 ## Before a holdout run
 
-1. Resolve the remaining cohort/source requirements and explicitly freeze this policy's
+1. Fix the diagnostic cohort/source requirements and explicitly freeze this policy's
    version, code, data, fitted-estimator, and calibration artifacts. Record their hashes
    and timestamp before accessing 2025 targets.
 2. Fix the holdout cohort, history eligibility, result-availability rule, evaluation metrics,
@@ -71,6 +77,80 @@ are diagnostics, not historical sportsbook lines. Integer push estimates remain 
 
 This step reads only existing 2022–2024 research artifacts. It does not fit or serialize a
 production estimator, open the holdout, change historical rows, or enable upcoming forecasts.
+
+## Prepare artifacts for review
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe prepare-candidate
+.\.venv\Scripts\nfl-prop.exe verify-candidate --bundle models/candidates/<candidate-directory>
+```
+
+Preparation fits a separate development estimator using only verified 2022–2024 caches.
+All development results must clear kickoff plus 24 hours strictly before the fixed
+February 1, 2025 UTC cutoff. The latest six season/weeks supply at least 100 calibration
+rows; only earlier available results fit the estimator. Rows too late for training but
+outside calibration are retained in an embargo table. Sparse-history appearances stay
+in both training and calibration. The five-game prospective gate does not filter them.
+
+Each run saves a new directory containing the XGBoost JSON model, development features,
+training/calibration/embargo tables, calibration predictions and residuals, and a source
+archive with the dependency constraints. A content-addressed manifest records file hashes,
+policy/protocol hashes, feature order, source manifests, environment versions and cutoffs.
+Offline verification reconstructs the split and exactly reproduces the saved calibration
+predictions, residuals and interval radii. Checksums detect changed contents; they do not
+authenticate an unknown bundle's author. Use trusted project artifacts.
+
+The executable **draft** holdout protocol is `modeling/candidate.py`. It proposes a fixed
+estimator and fixed development residual pool for all 2025 games, with no holdout refitting,
+recalibration or tuning. Earlier holdout appearances may supply strictly lagged inputs
+only after their results clear the existing 24-hour availability rule. This differs from
+the weekly-refit development evaluation; report their results separately.
+
+The draft cohort is all recorded regular-season QB appearances, including backups,
+early exits, zero attempts and newcomers. Report MAE as the primary point metric plus
+RMSE/bias, empirical interval coverage/width and probability diagnostics at the existing
+four half-yard thresholds. Report all appearances and the five-prior-game subgroup
+separately, preserving player/game/week counts and exclusions. Missing lagged/rest features
+use native XGBoost missing handling; invalid identities, nonfinite targets and invalid
+timestamps fail. No sportsbook ROI or starter-specific validation is claimed.
+
+**Prepared does not mean frozen.** Preparation does not access the holdout. Review the
+diagnostic cohort, protocol and exact bundle, then explicitly freeze
+their hashes before any 2025 outcome access. Export time is retrospective; it does not
+prove historical pregame source availability. Prospective starter/active evidence,
+feature availability and participation-cohort validation still gate upcoming forecasts.
+
+## Freeze and evaluate the reserved diagnostic
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe freeze-candidate --bundle models/candidates/<candidate-directory>
+.\.venv\Scripts\nfl-prop.exe evaluate-holdout --frozen models/frozen/<frozen-directory>
+```
+
+Freezing copies the exact verified candidate and adds a content-addressed freeze record
+and a source archive for the evaluator. It fixes the all-recorded-appearance diagnostic
+cohort, metrics, fixed estimator/calibration, lag/result-availability rules, and missing-data
+handling above. Starter labels are diagnostic only; incomplete prospective starter/source
+verification remains a separate gate for upcoming forecasts rather than a claim about
+this retrospective cohort. No model choice is made from 2025 outcomes.
+
+The evaluator verifies the checkpoint and current executable/dependency hashes before
+opening any 2025 cache or downloading outcomes. It uses the original bundled development
+history rather than refreshed 2022–2024 targets. QB history is rebuilt across earlier
+available appearances; rest days reset each season and use completed regular-season
+schedule games. The model and development residuals remain fixed, and all included
+QB appearances receive diagnostic predictions even below the prospective history gate.
+
+Ignored `data/holdout/2025/access.json` records first access and each attempt. A completed
+command reads the saved checksummed artifacts without refitting or rerunning scoring.
+Another freeze is rejected once access has begun. A failed/interrupted attempt requires
+`--resume` with the same checkpoint and retains its failure audit. A stale writer lock
+requires inspection before removal. These are local project safeguards, not proof of
+nonaccess outside this workspace. Source retrieval and the freeze occur retrospectively.
+
+The evaluation does not enable forecasts or establish starter-specific calibration or
+betting profitability. Once accessed, 2025 stays an accessed holdout; revised model
+choices require a new independent evaluation period.
 
 ## Reproduce the diagnostics
 

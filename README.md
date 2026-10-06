@@ -14,6 +14,12 @@ with source-age checks and explicit starter/identity review needs.
 The page also saves dated manual starter and active-status reviews with separate expiry checks.
 Results are estimates, may be wrong, and may lose money. No profitability claim has been established.
 
+A fixed candidate has now completed the reserved 2025 diagnostic: **664 QB-games**,
+**66.12-yard MAE** and **90.96% coverage** for nominal 90% intervals averaging **278.48 yards**
+wide. [Read the frozen holdout report](reports/frozen_holdout/holdout.md). The checkpoint
+preceded outcome access; this diagnostic does not enable upcoming forecasts. The 2025 season
+is now accessed and cannot be reused as untouched validation for a revised candidate.
+
 ## Start here
 
 Requires Python 3.11+ and internet access for installation and the first download. Run commands
@@ -175,7 +181,8 @@ The [derived report](reports/starter_audit/starter_audit.md) and JSON include pe
 retrieval times, source hashes, and the original statistics/schedule manifest. This is
 retrospective reconciliation, not proof of pregame knowledge. The other 1,593 team-game
 starter labels remain unverified. All 1,960 historical QB rows, targets, features, and existing
-starter flags are unchanged; no starter-only model cohort is enabled. The 2025 holdout remains untouched.
+starter flags are unchanged; no starter-only model cohort is enabled. This development
+audit does not load 2025 outcomes; the separate frozen diagnostic is documented above.
 
 ## Features and leakage controls
 
@@ -321,8 +328,8 @@ forecast first falls back to the prior-five mean. Ridge uses median imputation, 
 standard scaling, and fixed alpha=1 with the SVD solver; no hyperparameter tuning was done.
 Coefficients in the JSON report use standardized features and do not imply causal effects.
 
-**The 2025 season remains reserved** until model and feature decisions are frozen. Historical
-fetch/build and evaluation reject 2025+ analysis. `load_schedules` internally reads an all-seasons
+Historical fetch/build and development evaluation reject 2025+ analysis. The separate
+frozen 2025 diagnostic above is complete. `load_schedules` internally reads an all-seasons
 file before filtering; only requested development seasons are stored/analyzed here. January 2025
 games belonging to the **2024 season** are valid development data.
 
@@ -377,7 +384,7 @@ Signed residuals also yield smoothed over probabilities for fixed diagnostic thr
 150.5, 200.5, 250.5, and 300.5 yards. Reports include Brier scores, log loss, and reliability
 bins with counts. These are not historical sportsbook lines or validated betting probabilities.
 Unverified starter labels, the participation-conditioned sample, and retrospective source
-revisions remain limitations. The 2025 holdout remains untouched.
+revisions remain limitations. Development research excludes the separate 2025 diagnostic.
 
 Next: close weather-data readiness and investigate limited-history calibration and starter
 labels before upcoming-game forecasts. Statistical accuracy does not establish profitability.
@@ -437,7 +444,8 @@ overwritten. CLI quote reports can be regenerated; journal records are separate.
 
 This completes Milestone 4's historical integration and begins Milestone 5. The interface
 does **not** produce upcoming-game forecasts. Production eligibility/starter handling, weather,
-limited-history calibration, model freezing and final holdout assessment remain next work.
+and prospective cohort/source validation remain next work. Limited-history diagnostics,
+candidate freezing and the reserved holdout assessment are now documented below.
 
 ## Calibration audit and candidate policy
 
@@ -459,7 +467,43 @@ calibration results, and damaged files.
 [The candidate policy](MODEL_POLICY.md) selects fixed schedule XGBoost and existing pooled
 calibration for development. Below five prior available model-sample games, it would abstain
 from prospective probabilities and EV; historical comparisons stay available with a warning.
-The candidate is not frozen or fitted for production. The 2025 holdout remains closed.
+The reusable candidate definition is not production approval. A specific checkpoint has
+now completed the 2025 diagnostic described above; preparation alone does not open outcomes.
+
+Prepare a reproducible development estimator and a draft holdout protocol for review:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe prepare-candidate
+.\.venv\Scripts\nfl-prop.exe verify-candidate --bundle models/candidates/<candidate-directory>
+```
+
+Preparation uses verified 2022–2024 caches offline. It saves a new XGBoost JSON model,
+training/calibration/embargo tables, residuals, source archive, dependency versions and
+content hashes under ignored `models/candidates/`. Verification checks the saved split
+and exactly reproduces calibration predictions. The Markdown/JSON summary goes to
+`reports/local/candidate/`. Use `--output-dir` and `--report-dir` to change these locations.
+
+The draft protocol keeps the estimator and development residual pool fixed throughout
+2025 while allowing earlier available results to supply lagged inputs. All recorded
+appearances remain in diagnostics, with five-game-history results shown separately.
+It differs from weekly-refit development research. Preparation does not freeze the policy
+or open the holdout. Read [the artifact and protocol details](MODEL_POLICY.md).
+
+Freeze that exact candidate before a reserved 2025 diagnostic:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe freeze-candidate --bundle models/candidates/<candidate-directory>
+.\.venv\Scripts\nfl-prop.exe evaluate-holdout --frozen models/frozen/<frozen-directory>
+```
+
+Freezing uses development artifacts only. Evaluation verifies frozen executable hashes
+before downloading 2025 sources, keeps the estimator/residual pool fixed, and reports
+every recorded appearance plus history/week splits. The access/attempt record and raw/
+processed holdout files stay under ignored `data/holdout/2025/`; Markdown/JSON summaries
+go to `reports/local/holdout/`. A completed invocation reuses the saved results. An audited
+failure needs `--resume` under the same freeze. Development commands still reject 2025.
+See [the protocol and limits](MODEL_POLICY.md) before running it. Upcoming forecasts
+remain disabled; an accessed holdout cannot become untouched validation for a revised model.
 See the [dated audit](reports/calibration_policy/calibration_audit.md) for support and limits.
 
 ## Upcoming QB readiness
@@ -525,10 +569,11 @@ September 22 report predates this workflow and has no manual reviews.
 
 ### Next steps for actual upcoming forecasts
 
-Verify the remaining historical starter labels, collect prospective status evidence,
-document a fixed model and calibration policy, evaluate
-the reserved holdout once choices are frozen, and build current features with explicit
-availability timestamps. Weather remains a separate unfinished feature investigation.
+The fixed checkpoint and 2025 diagnostic are complete. Verify prospective feature
+availability, identities and dated starter/active evidence, then validate the participation
+cohort for the intended starter use. Historical starter coverage and weather remain
+unfinished; unverified weather stays excluded. Revised model choices require a new
+evaluation period because 2025 is now accessed.
 
 ## Sources and data rights
 
