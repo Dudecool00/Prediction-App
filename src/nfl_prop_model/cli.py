@@ -122,6 +122,20 @@ def main(argv: list[str] | None = None) -> int:
     participation.add_argument(
         "--report-dir", type=Path, default=Path("reports/local/participation")
     )
+    reconciliation = commands.add_parser(
+        "participation-reconcile",
+        help="Reconcile enrolled candidates with completed-game ESPN rosters",
+    )
+    reconciliation.add_argument("--data-dir", type=Path, default=Path("data"))
+    reconciliation.add_argument("--registry", type=Path, required=True)
+    reconciliation.add_argument(
+        "--report-dir", type=Path, default=Path("reports/local/participation_reconciliation")
+    )
+    reconciliation.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Refresh 2026 stats/schedules and eligible postgame roster evidence",
+    )
     starters = commands.add_parser(
         "starter-audit",
         help="Reconcile flagged 2022–2024 starter labels against ESPN event rosters",
@@ -158,6 +172,28 @@ def main(argv: list[str] | None = None) -> int:
     quote_command.add_argument("--game-total", type=float, help="Recorded note; not a predictor")
     args = parser.parse_args(argv)
     try:
+        if args.command == "participation-reconcile":
+            from nfl_prop_model.data.prospective import fetch_current_stats
+            from nfl_prop_model.data.roster_reconciliation import (
+                fetch_roster_evidence,
+                reconcile_rosters,
+                write_reconciliation_report,
+            )
+            from nfl_prop_model.data.upcoming import fetch_upcoming
+
+            if args.refresh:
+                fetch_upcoming(args.data_dir, refresh=True)
+                fetch_current_stats(args.data_dir, refresh=True)
+                fetch_roster_evidence(args.data_dir, args.registry)
+            report = reconcile_rosters(args.data_dir, args.registry)
+            write_reconciliation_report(args.report_dir, report)
+            print(
+                f"{report['corroborated_rows']} of {report['candidate_count']} enrolled "
+                f"candidates corroborated: {report['roster_counts']}"
+            )
+            print("No forecasts enabled; incomplete or conflicting evidence stays unresolved.")
+            print(f"Report: {args.report_dir / 'reconciliation.md'}")
+            return 0
         if args.command == "capture-status":
             from nfl_prop_model.data.status_evidence import capture_status_evidence
 

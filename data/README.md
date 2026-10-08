@@ -147,7 +147,30 @@ blockers, publication/retrieval times and source/code/registry fingerprints. It 
 HTML and quoted text. Its schedule/stat/chart attribution remains nflverse's CC-BY-4.0
 distribution, with ESPN-derived depth charts. Club evidence retains its own source URL and rights.
 
-## Historical starter evidence (retrospective)
+## Postgame roster reconciliation of enrolled candidates
+
+`raw/participation_rosters/REGISTRY-ID/` retains content-addressed ESPN event headers, team
+rosters and the QB position definition, plus a hash-verified nflverse player-identity table.
+Manifest envelopes bind the cache to the original registry and snapshot. Refresh archives
+prior manifests and publishes its new active manifest only after every requested response
+passes validation. A partial failed refresh may leave extra immutable raw files; it never
+replaces the last usable manifest. API summary odds and market fields are discarded.
+
+Requests are limited to completed enrolled games after the original kickoff plus 24 hours,
+using fresh postgame schedule/stat sources. Event ID, season/week/type, kickoff, both sides and
+completion must agree; QB roster references and strict boolean flags must also agree. Separate
+identity evidence must match the original ESPN/GSIS pair. Evidence retrieved after the audit
+time is rejected, and raw source hashes are checked on offline reads. Future or rescheduled
+games retain pending/changed states and do not trigger roster or identity downloads.
+
+Roster `active` is not a gameday activation signal. DNP, ambiguous `valid=false` entries, missing
+QB targets and conflicts remain distinct. The fixed candidate pool and its source/code hashes
+are never replaced; unresolved outcomes do not become zero yards. Derived public reports
+contain rules, counts and source fingerprints. Raw ESPN JSON remains local with separate rights;
+the nflverse identity/stat distribution remains CC-BY-4.0. This workflow neither executes a model
+nor reevaluates 2025, and it cannot enable forecasts.
+
+## Historical starter evidence (development diagnostic)
 
 `nfl-prop starter-audit --refresh` adds `raw/starter_evidence_2022_2024/`, separate from training
 and upcoming caches. Only the flagged historical team/game slots are queried. The command

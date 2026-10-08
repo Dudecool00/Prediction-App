@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "activation": "Roster active is ignored; DNP and missing roster entries do not establish inactive status",
+    "ambiguous": "didNotPlay=false with valid=false is unresolved, even when stats exist",
+    "availability": "Completed game, matching kickoff, and evidence retrieved after kickoff plus 24 hours",
+    "claims": "Compare enrollment-time starter annotations with retrospective flags; outcome agreement is not source-content adjudication",
+    "conflict": "Roster DNP with a QB stats target remains a conflict, including zero-yard targets",
+    "denominator": "The existing registry's complete candidate pool; enrollment is never replaced",
+    "dnp": "Explicit didNotPlay=true, starter=false, valid=false plus no recorded QB appearance",
+    "forecast": "No model execution, probabilities, EV, calibration validation or production enablement",
+    "identity": "Unique ESPN-to-GSIS QB mapping must agree with the original candidate IDs",
+    "played": "Period-zero valid roster entry with didNotPlay=false plus a recorded QB stats target",
+    "scope": "prospective_postgame_roster_reconciliation",
+    "version": 1
+  },
+  "sha256": "38b329fa6de5efdbb51b56a10bfa0e1a39a3594d8f05cfde857ce0394fa5a96b"
+}
