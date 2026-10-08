@@ -163,6 +163,23 @@ def main(argv: list[str] | None = None) -> int:
     quote_command = commands.add_parser(
         "quote", help="Compare manual odds with a saved historical forecast"
     )
+    starter_coverage = commands.add_parser(
+        "starter-coverage", help="Audit every completed 2022–2024 team-game starter label"
+    )
+    starter_coverage.add_argument("--data-dir", type=Path, default=Path("data"))
+    starter_coverage.add_argument(
+        "--report-dir", type=Path, default=Path("reports/local/starter_coverage")
+    )
+    starter_coverage.add_argument(
+        "--collect",
+        action="store_true",
+        help="Collect missing/failed retrospective evidence; resume verified checkpoints",
+    )
+    starter_coverage.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Re-fetch all evidence instead of reusing checkpoints",
+    )
     quote_command.add_argument("--data-dir", type=Path, default=Path("data"))
     quote_command.add_argument("--report-dir", type=Path, default=Path("reports/local/quote"))
     quote_command.add_argument("--player-id", required=True, help="Stable GSIS player ID")
@@ -187,6 +204,27 @@ def main(argv: list[str] | None = None) -> int:
     quote_command.add_argument("--game-total", type=float, help="Recorded note; not a predictor")
     args = parser.parse_args(argv)
     try:
+        if args.command == "starter-coverage":
+            from nfl_prop_model.data.starter_coverage import (
+                fetch_starter_coverage,
+                load_starter_coverage,
+                write_starter_coverage,
+            )
+
+            if args.collect or args.refresh:
+
+                def progress(done: int, total: int) -> None:
+                    if done % 25 == 0 or done == total:
+                        print(f"Collected {done}/{total} development events", flush=True)
+
+                fetch_starter_coverage(args.data_dir, refresh=args.refresh, progress=progress)
+            report = load_starter_coverage(args.data_dir)
+            write_starter_coverage(args.report_dir, report)
+            print(f"Starter slots: {report['counts']}")
+            print(f"Appearance overlay: {report['appearance_counts']}")
+            print("Retrospective only; original training data and forecasts remain unchanged.")
+            print(f"Report: {args.report_dir / 'starter_coverage.md'}")
+            return 0
         if args.command == "review-claim":
             from nfl_prop_model.data.claim_review import save_claim_review
 

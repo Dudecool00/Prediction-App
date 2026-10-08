@@ -1,6 +1,37 @@
 # Project status
 
-Updated 2026-10-07 (local date). PR #12 is merged (`5be196e`); its Linux and Windows CI passed.
+Updated 2026-10-07 (local date). PR #13 is merged (`79c425f`); its Linux and Windows CI passed.
+
+## New: full development starter coverage
+
+- `starter-coverage --collect` and **Starter coverage** expand the retrospective audit
+  from the 37 flagged labels to **all 1,630 completed team-games across 815 games**.
+  Missing or conflicting event, kickoff, roster, identity and target evidence keeps its slot.
+- October 8 collection: **1,573** schedule labels agree, **44** differ and **13** remain
+  unresolved. The original 37 flagged corrections remain resolved; **seven further** wrong
+  schedule labels were missed by the initial check because those QBs also had target rows.
+  [Full audit](reports/starter_coverage/starter_coverage.md).
+- Eight slots have recorded kickoff disagreements, three lack unique QB starter flags,
+  and two mapped roster starters have no included target. Do not infer starters from passing
+  totals or fill missing targets with zero. These 13 cases still require further evidence.
+- A descriptive overlay keeps all **1,960 QB rows**: 1,617 resolved roster starters,
+  325 other recorded QBs and 18 rows from unresolved slots. Training rows, target/feature
+  bytes and original starter columns remain unchanged. No model is fitted or calibrated.
+- Collection uses four workers, content-addressed sources, checksummed per-game checkpoints
+  and a full-denominator manifest. It resumes verified completed requests and retries failed
+  ones. Incomplete refreshes preserve the prior active manifest. Reads run offline.
+- Public outputs include an aggregate report, summary/source fingerprints and a checksummed
+  compact JSONL cross-reference for all slots. Raw ESPN responses remain local. This is
+  retrospective coverage, not proof of pregame knowledge or a validated future selector.
+  No new 2025 access or forecasts occur; the 170 enrolled prospective outcomes are still pending.
+- **355 tests pass** in the full local suite, including 22 full-coverage cases. Ruff
+  lint/format, strict mypy (44 source files) and pip check pass. Shared parser source hashes
+  are included in the report; the public-export check is rerun after this provenance addition.
+  Known local Polars native diagnostics persist with passing assertions and exit code 0.
+  Remote Linux/Windows CI results belong to this phase's review PR.
+- The real-cache app renders all 1,630 slots and filters the 13 unresolved cases while
+  keeping its denominator metrics. Offline export/UI checks confirm the original development
+  table, frozen model/calibration, 170-candidate registry and single 2025 access remain intact.
 
 ## New: pregame article claim review
 
@@ -166,7 +197,7 @@ Updated 2026-10-07 (local date). PR #12 is merged (`5be196e`); its Linux and Win
   Reads run offline; mismatched events/weeks/teams, contradictory flags, identity ambiguity,
   stale input manifests, and damaged files fail. Missing or nonunique starter evidence stays unresolved.
 - All 1,960 training rows and the historical table hash remain unchanged. Corrections are a
-  separate diagnostic overlay. The other **1,593 team-game starter labels remain unverified**;
+  separate diagnostic overlay. That initial flagged audit left **1,593 other labels unverified**;
   this does not establish pregame knowledge or enable starter-specific training.
 - Next: collect prospective starter/active-status evidence, assess calibration for limited
   history, and document the model policy before opening the reserved holdout. Historical weather
@@ -297,8 +328,9 @@ The current prospective feature phase uses `codex/prospective-features`.
 - **Weather remains unfinished in Milestone 3.** The 2023 prior-day forecast probe returned
   temperature but no wind/precipitation. See [weather readiness](reports/milestone_3/weather_readiness.md)
   for source evidence and the remaining forecast archive, stadium map, and roof-policy work.
-- The 37 flagged historical starter labels are reconciled retrospectively; the remaining
-  1,593 team-game labels still require independent verification before starter-specific evaluation.
+- Full retrospective development starter coverage resolves 1,617 of 1,630 team-games.
+  The 13 unresolved slots need further event/roster/target evidence before a complete
+  starter-specific evaluation can be claimed. Retrospective labels do not establish pregame knowledge.
   The prospective workflow now supports timestamped manual checks; actual evidence collection
   and independent source verification remain. The existing cohort
   remains conditioned on recorded participation and does not reconstruct inactive QBs.

@@ -118,7 +118,8 @@ unknown-position exclusions. The original audit flagged 37 schedule-listed start
 matching QB target row. The [starter reconciliation](reports/starter_audit/starter_audit.md) now resolves all 37
 as incorrect schedule labels using retrospective ESPN event-roster evidence and stable IDs.
 Corrections remain a separate audit overlay; `schedule_reported_starter` stays unchanged and
-is not a predictor. The other 1,593 team-game starter labels have not been independently verified.
+is not a predictor. The [full starter coverage audit](reports/starter_coverage/starter_coverage.md)
+now resolves 1,617 of all 1,630 development team-games; 13 remain unresolved.
 
 Absent/inactive QBs are not reconstructed. Missing targets are not replaced with zero. A
 cancelled game absent from both sources cannot be counted as an exclusion; a present game
@@ -222,10 +223,47 @@ passing total, first passer, depth-chart rank, or name similarity.
 
 The [derived report](reports/starter_audit/starter_audit.md) and JSON include per-case URLs,
 retrieval times, source hashes, and the original statistics/schedule manifest. This is
-retrospective reconciliation, not proof of pregame knowledge. The other 1,593 team-game
-starter labels remain unverified. All 1,960 historical QB rows, targets, features, and existing
+retrospective reconciliation, not proof of pregame knowledge. This initial flagged audit left
+1,593 other team-game labels unverified; the full audit below extends that coverage.
+All 1,960 historical QB rows, targets, features, and existing
 starter flags are unchanged; no starter-only model cohort is enabled. This development
 audit does not load 2025 outcomes; the separate frozen diagnostic is documented above.
+
+### Full development starter coverage
+
+```powershell
+nfl-prop starter-coverage --collect
+# Read all hash-verified evidence offline:
+nfl-prop starter-coverage
+```
+
+Choose **Starter coverage** in the app. This separate audit preserves both teams in every
+completed regular-season 2022–2024 schedule game, including missing source/identity/target
+cases. It verifies ESPN event ID, season, week, both teams and recorded kickoff, explicit
+period-zero QB flags, unique ESPN/GSIS mappings and existing same-team targets. No starter
+is selected from passing volume or inferred from names. Missing targets never become zeros.
+
+`--collect` downloads missing/failed event evidence with four workers and reuses verified
+per-game checkpoints after interruption. `--refresh` requests every event again; incomplete
+refreshes retain the previous active manifest and archive the attempted collection. Hash-named
+raw evidence and manifests remain under ignored `data/raw/starter_coverage_2022_2024/`.
+The existing flagged-label audit has its own unchanged cache. Reads verify all source hashes,
+URLs, dates, denominator and input/rule bindings. `--data-dir` and `--report-dir` are supported.
+
+The October 8 collection covers **815 games / 1,630 team-games**: **1,573** schedule labels
+agree, **44** differ and **13** remain unresolved. All original 37 flagged corrections remain
+resolved; seven additional discrepancies concern schedule-listed QBs who also had target rows,
+so the initial missing-target check could not find them. Eight slots have kickoff disagreements,
+three lack a unique QB starter flag, and two mapped roster starters lack an included target.
+These cases remain open; a passing-yard target is never manufactured.
+
+The descriptive overlay retains all **1,960 QB rows**: 1,617 match resolved roster starters,
+325 are other recorded QBs, and 18 belong to unresolved slots. It does not filter training data,
+change starter columns, refit/recalibrate an estimator, re-evaluate 2025 or enable forecasts.
+These retrospective checks still do not establish pregame starter knowledge or the accuracy
+of an upcoming-game selector. [Derived report](reports/starter_coverage/starter_coverage.md)
+and [summary](reports/starter_coverage/summary.json) include a checksummed compact JSONL cross-reference
+for every team-game; raw ESPN responses remain local.
 
 ## Features and leakage controls
 
