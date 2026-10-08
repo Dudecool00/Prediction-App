@@ -19,6 +19,7 @@ data/status_reviews/
 data/holdout/
 data/prospective/
 data/status_evidence/
+data/claim_reviews/
 data/participation/
 .streamlit/secrets.toml
 models/*.joblib
