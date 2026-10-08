@@ -691,6 +691,38 @@ unchanged. [Read the initial reconciliation report](reports/participation_reconc
 and [the retrospective source-contract check](reports/participation_reconciliation/source_contract.md).
 All enrolled games remain pending at this report's cutoff; forecasts stay disabled.
 
+### Review the meaning of archived pregame claims
+
+Choose **Pregame evidence review** in the Streamlit sidebar. The page displays the saved
+article text, its official source link, publication/retrieval times, recorded claim, expiry
+and review history. Supply your name, a `supported`, `contradicted` or `unclear` verdict,
+and a reason, then confirm you read the article and checked the player/game context.
+These are named reviewer judgments; names are self-reported and independence is not certified.
+
+```powershell
+nfl-prop claim-review-queue
+nfl-prop review-claim --evidence-id ARCHIVE_ID --reviewer "Your name" `
+  --verdict unclear --notes "Explain whether the archived text supports this exact claim."
+```
+
+Both commands operate offline on verified 2026 caches and archived article bytes. Each save
+creates a new checksummed record under ignored `data/claim_reviews/`, bound to the entire
+archive annotation and candidate context. The CLI records the caller's stated verdict;
+it performs no semantic classification. The latest verdict per named reviewer supplies the
+displayed result; older records remain intact. Different reviewers' verdicts, or differing
+verdicts from the same reviewer at the same timestamp, produce a conflict.
+
+Saving rechecks candidate context and source freshness. Expired articles, changed candidates,
+stale source caches and kickoff-minus-one-hour cutoffs block a new pregame review. Reviewing
+never restarts the original 24-hour starter or 6-hour availability window. Expired claims
+and their earlier review histories stay visible. A supported verdict does not prove gameday
+activation or participation and does not enable forecasts. Original capture annotations,
+enrollment, training/model/calibration files and the single completed 2025 access stay unchanged.
+
+The [dated review-readiness check](reports/pregame_claim_review/readiness.md) has two unreviewed
+articles, one already expired. Fresh evidence is needed near the actual game cutoff; this
+workflow does not fill in missing human verdicts or status evidence.
+
 ### Remaining forecast validation work
 
 The fixed checkpoint and 2025 diagnostic are complete. Verify prospective feature

@@ -114,6 +114,21 @@ def main(argv: list[str] | None = None) -> int:
     )
     enrollment.add_argument("--data-dir", type=Path, default=Path("data"))
     enrollment.add_argument("--snapshot", type=Path, required=True)
+    claim_review = commands.add_parser(
+        "review-claim", help="Record a named pregame verdict on an archived article claim"
+    )
+    claim_review.add_argument("--data-dir", type=Path, default=Path("data"))
+    claim_review.add_argument("--evidence-id", required=True)
+    claim_review.add_argument("--reviewer", required=True)
+    claim_review.add_argument(
+        "--verdict", choices=("supported", "contradicted", "unclear"), required=True
+    )
+    claim_review.add_argument("--notes", required=True)
+    review_queue = commands.add_parser(
+        "claim-review-queue", help="Inspect archived claim reviews offline"
+    )
+    review_queue.add_argument("--data-dir", type=Path, default=Path("data"))
+    review_queue.add_argument("--report-dir", type=Path, default=Path("reports/local/claim_review"))
     participation = commands.add_parser(
         "participation-audit", help="Audit an immutable candidate registry offline"
     )
@@ -172,6 +187,31 @@ def main(argv: list[str] | None = None) -> int:
     quote_command.add_argument("--game-total", type=float, help="Recorded note; not a predictor")
     args = parser.parse_args(argv)
     try:
+        if args.command == "review-claim":
+            from nfl_prop_model.data.claim_review import save_claim_review
+
+            saved = save_claim_review(
+                args.data_dir,
+                args.evidence_id,
+                reviewer=args.reviewer,
+                verdict=args.verdict,
+                notes=args.notes,
+            )
+            print(f"Saved named claim review: {saved}")
+            print("Original evidence expiry retained; no forecasts enabled.")
+            return 0
+        if args.command == "claim-review-queue":
+            from nfl_prop_model.data.claim_review import (
+                claim_review_queue,
+                write_claim_review_report,
+            )
+
+            report = claim_review_queue(args.data_dir)
+            write_claim_review_report(args.report_dir, report)
+            print(f"{report['evidence_count']} archived claims: {report['review_counts']}")
+            print(f"Readiness: {report['readiness_counts']}. No forecasts enabled.")
+            print(f"Report: {args.report_dir / 'claim_review.md'}")
+            return 0
         if args.command == "participation-reconcile":
             from nfl_prop_model.data.prospective import fetch_current_stats
             from nfl_prop_model.data.roster_reconciliation import (

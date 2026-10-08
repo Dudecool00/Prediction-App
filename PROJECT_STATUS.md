@@ -1,6 +1,35 @@
 # Project status
 
-Updated 2026-10-06. PR #9 is merged (`58ea184`); its Linux and Windows CI passed.
+Updated 2026-10-07 (local date). PR #12 is merged (`5be196e`); its Linux and Windows CI passed.
+
+## New: pregame article claim review
+
+- **Pregame evidence review** displays verified archived article text and its exact claim.
+  Named reviewers record `supported`, `contradicted` or `unclear`, with a reason and an
+  explicit context acknowledgement. `review-claim` and `claim-review-queue` work offline.
+- Reviews are append-only, checksummed and bound to the archive annotation/context.
+  Newer judgments by the same named reviewer update their displayed verdict while retaining
+  history. Different reviewers' disagreements stay conflicts. Names are self-reported;
+  the workflow does not certify independence or replace semantic judgment with a classifier.
+- Every save checks live cached candidate context, source freshness, article expiry and
+  kickoff minus one hour. A review never extends the original status evidence window.
+  Expired/missing/changed evidence remains visible and blocked. No forecasts are enabled.
+- At **2026-10-08 01:20:19 UTC**, both captured claims remain **unreviewed**. Mayfield's
+  ruled-out article expired at 01:04 UTC; Daniels' starter article expires at 12:00:07 UTC,
+  before that game's 23:15 UTC decision cutoff. No real reviewer verdict was manufactured.
+  [Readiness check](reports/pregame_claim_review/readiness.md).
+- PR #11 fixed the full **170-candidate / 29-game** participation registry. PR #12 added
+  independent postgame roster checks; all enrolled games remain pending. Earliest possible
+  result availability is **October 10 00:15 UTC** (October 9, 7:15 PM Chicago), requiring final
+  scores and fresh postgame sources as well. The original registry/protocol and frozen model
+  remain intact; the 2025 season is still a single completed, already-accessed diagnostic.
+- **333 tests pass** in the full local suite, with 24 new claim-review cases; the final
+  form error handling also passes an isolated rerun. Ruff lint/format, strict mypy
+  (43 source files), and pip check pass. Original registry, development table, model and
+  calibration hashes and the single completed 2025 access were verified. Known local
+  Polars native diagnostics persist with passing assertions and exit code 0. Remote CI
+  results belong to this phase's review PR.
+
 
 ## New: prospective feature availability audit
 

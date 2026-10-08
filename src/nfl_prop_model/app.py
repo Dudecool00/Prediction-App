@@ -685,6 +685,114 @@ def starter_audit_page(data_dir: Path) -> None:
             )
 
 
+def claim_review_page(data_dir: Path) -> None:
+    from nfl_prop_model.data.claim_review import claim_review_queue, save_claim_review
+    from nfl_prop_model.data.status_evidence import article_text, validate_evidence
+
+    st.title("Pregame evidence review")
+    st.write("Read the archived article and judge whether it supports the recorded QB claim.")
+    st.info("Reviews retain the original expiry. Upcoming forecasts remain disabled.")
+    if message := st.session_state.pop("claim_review_saved", None):
+        st.success(message)
+    report = claim_review_queue(data_dir)
+    rows = report["evidence"]
+    st.caption(f"Checked {report['as_of_utc']} · reviewer names are self-reported.")
+    if not rows:
+        st.info("No primary articles have been archived yet.")
+        st.code("nfl-prop capture-status --help", language="text")
+        return
+    st.dataframe(
+        [
+            {
+                "Game": row["evidence"]["context"]["game_id"],
+                "QB": row["evidence"]["player_name"],
+                "Claim": f"{row['evidence']['kind']}: {row['evidence']['claim']}",
+                "Review": row["review_state"],
+                "Readiness": row["readiness"],
+                "Fresh until (UTC)": row["fresh_until_utc"],
+            }
+            for row in rows
+        ],
+        hide_index=True,
+        width="stretch",
+    )
+    selected = st.selectbox(
+        "Archived claim",
+        [row["evidence"]["record_id"] for row in rows],
+        format_func=lambda value: next(
+            f"{row['evidence']['player_name']} · {row['evidence']['kind']} · "
+            f"{row['evidence']['context']['game_id']}"
+            for row in rows
+            if row["evidence"]["record_id"] == value
+        ),
+        key="claim_archive",
+    )
+    row = next(row for row in rows if row["evidence"]["record_id"] == selected)
+    archived = row["evidence"]
+    raw = (data_dir / "status_evidence" / f"evidence-{selected}" / "article.html").read_bytes()
+    validate_evidence(archived, raw)
+    text, _ = article_text(raw)
+    st.link_button("Open official source", archived["final_url"])
+    st.write(f"Recorded claim: {archived['kind']} / {archived['claim']}")
+    st.write(f"Excerpt: {archived['quote']}")
+    st.caption(
+        f"Published {archived['published_at_utc']} · archived {archived['retrieved_at_utc']}. "
+        "The live page may have changed; the text below is the saved version."
+    )
+    st.text_area(
+        "Archived article text", text, height=240, disabled=True, key=f"article_{selected}"
+    )
+    with st.expander("Review history"):
+        st.json(row["review_history"])
+    if not row["review_allowed"]:
+        st.warning(
+            f"This claim cannot receive a pregame review: {row['readiness'].replace('_', ' ')}."
+        )
+    form_key = f"claim_{selected}_{checksum(archived)}"
+    with st.form(form_key):
+        reviewer = st.text_input("Reviewer name", max_chars=100, key=f"{form_key}_reviewer")
+        verdict = st.selectbox(
+            "Does the archived article support this exact claim?",
+            ["unclear", "supported", "contradicted"],
+            key=f"{form_key}_verdict",
+        )
+        notes = st.text_area("Reason for verdict", max_chars=2000, key=f"{form_key}_notes")
+        checked = st.checkbox(
+            "I read the archived article and checked the player and game context.",
+            key=f"{form_key}_read",
+        )
+        submitted = st.form_submit_button("Save claim review", disabled=not row["review_allowed"])
+    if submitted:
+        if not checked:
+            st.error("Read the archived article and confirm the context before saving.")
+        else:
+            try:
+                saved = save_claim_review(
+                    data_dir,
+                    selected,
+                    reviewer=reviewer,
+                    verdict=verdict,
+                    notes=notes,
+                    expected_evidence_sha256=checksum(archived),
+                )
+            except (OSError, ValueError) as error:
+                st.error(str(error))
+            else:
+                st.session_state["claim_review_saved"] = f"Saved a new review: {saved.name}"
+                st.rerun()
+    st.caption(
+        "A later review by the same named reviewer replaces their displayed verdict; "
+        "the full history is retained. Different reviewers' disagreements remain conflicts. "
+        "A supported claim does not certify independent validation or gameday participation."
+    )
+    st.download_button(
+        "Download claim review queue",
+        json.dumps(report, indent=2, allow_nan=False),
+        file_name="pregame-claim-reviews.json",
+        mime="application/json",
+    )
+
+
 def current_features_page(data_dir: Path) -> None:
     st.title("Current feature audit")
     st.write("Inspect available QB history and schedule inputs for upcoming 2026 games.")
@@ -810,6 +918,7 @@ def main() -> None:
             "Compare a line",
             "Upcoming QBs",
             "Current features",
+            "Pregame evidence review",
             "Starter audit",
             "Model results",
             "Calibration audit",
@@ -828,6 +937,8 @@ def main() -> None:
             upcoming_page(data_dir)
         elif page == "Current features":
             current_features_page(data_dir)
+        elif page == "Pregame evidence review":
+            claim_review_page(data_dir)
         elif page == "Starter audit":
             starter_audit_page(data_dir)
         elif page == "Calibration audit":
@@ -848,7 +959,7 @@ def main() -> None:
         st.info("Prepare this page's local cache from the repository terminal:")
         st.code(
             "nfl-prop upcoming --refresh"
-            if page == "Upcoming QBs"
+            if page in {"Upcoming QBs", "Pregame evidence review"}
             else "nfl-prop current-features --refresh"
             if page == "Current features"
             else "nfl-prop starter-audit --refresh"
