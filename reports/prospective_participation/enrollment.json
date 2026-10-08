@@ -1,0 +1,4789 @@
+{
+  "attribution": "nflverse CC-BY-4.0 distribution; ESPN-derived chart candidates; primary article annotations are research claims",
+  "candidates": [
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "2577417",
+        "game_id": "2026_05_TB_DAL",
+        "gsis_id": "00-0033077",
+        "kickoff_utc": "2026-10-09T00:15:00+00:00",
+        "opponent_team": "TB",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DAL",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "cc4dfc5d51c4eacb3d79d19a14cbfa35cb8b06ab554a199d81a8896249dde6a4",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Dak Prescott",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4426875",
+        "game_id": "2026_05_TB_DAL",
+        "gsis_id": "00-0037077",
+        "kickoff_utc": "2026-10-09T00:15:00+00:00",
+        "opponent_team": "TB",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DAL",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "18390c4f210f93ec84e717eeada9ad039410d5f7a9f64a8765f1230ab4ca5652",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Sam Howell",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "3052587",
+        "game_id": "2026_05_TB_DAL",
+        "gsis_id": "00-0034855",
+        "kickoff_utc": "2026-10-09T00:15:00+00:00",
+        "opponent_team": "DAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "TB",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "3c7c9f3e58807c635c89d4b88fba8862d74ebf7dc6459ab22f999f1eb40594af",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled",
+        "primary_availability_ruled_out",
+        "primary_status_claims_not_independently_adjudicated"
+      ],
+      "player_name": "Baker Mayfield",
+      "primary_annotations": [
+        {
+          "claim": "ruled_out",
+          "kind": "availability",
+          "published_at_utc": "2026-10-07T19:04:00+00:00",
+          "retrieved_at_utc": "2026-10-08T00:14:30.294002+00:00",
+          "source_sha256": "dff5dad37ae175a75d6d26ec5643f516039a0a18c50cae25d72e80064af9cf2d",
+          "source_url": "https://www.buccaneers.com/news/buccaneers-cowboys-injury-report-oct-7-week-5"
+        }
+      ]
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4596472",
+        "game_id": "2026_05_TB_DAL",
+        "gsis_id": "00-0041251",
+        "kickoff_utc": "2026-10-09T00:15:00+00:00",
+        "opponent_team": "DAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "TB",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "a845f02567f6bfb331973569ea429fc46704bd5e5c58636c06e2a0cd550f89c7",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled",
+        "primary_starter_confirmed",
+        "primary_status_claims_not_independently_adjudicated"
+      ],
+      "player_name": "Jalon Daniels",
+      "primary_annotations": [
+        {
+          "claim": "confirmed",
+          "kind": "starter",
+          "published_at_utc": "2026-10-07T12:00:07.395000+00:00",
+          "retrieved_at_utc": "2026-10-08T00:14:31.468896+00:00",
+          "source_sha256": "21e709c8edb714300a1c91f713e81d886e50e395baeeab78af55a5524685fd9e",
+          "source_url": "https://www.buccaneers.com/news/2026-game-preview-buccaneers-cowboys-week-5"
+        }
+      ]
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4360310",
+        "game_id": "2026_05_PHI_JAX",
+        "gsis_id": "00-0036971",
+        "kickoff_utc": "2026-10-11T13:30:00+00:00",
+        "opponent_team": "PHI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "JAX",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "29c310a2106f299af486aee538edb4fdcbb539a9284f639c3e620ea1561c902f",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Trevor Lawrence",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4889929",
+        "game_id": "2026_05_PHI_JAX",
+        "gsis_id": "00-0040234",
+        "kickoff_utc": "2026-10-11T13:30:00+00:00",
+        "opponent_team": "PHI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "JAX",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "985bc09883c7c5c6c4ad8aab544b2c9f2e39b8e316d1abca9a9d3cfdc581352a",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Quinn Ewers",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4040715",
+        "game_id": "2026_05_PHI_JAX",
+        "gsis_id": "00-0036389",
+        "kickoff_utc": "2026-10-11T13:30:00+00:00",
+        "opponent_team": "JAX",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PHI",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "4a44ac787054f51d278075b8879e291beef0e72ee7f8ffed951e82d21ddf9dcb",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jalen Hurts",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4685201",
+        "game_id": "2026_05_PHI_JAX",
+        "gsis_id": "00-0038400",
+        "kickoff_utc": "2026-10-11T13:30:00+00:00",
+        "opponent_team": "JAX",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PHI",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "3d0a114734e99f67b3b7e19350fba5cb26ce3f3bacbb2d05176d7cb95b68b659",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tanner McKee",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "14012",
+        "game_id": "2026_05_PHI_JAX",
+        "gsis_id": "00-0027973",
+        "kickoff_utc": "2026-10-11T13:30:00+00:00",
+        "opponent_team": "JAX",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PHI",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "2bd275300fad638ad1ba40891c97a2ba1c10ea073d8bcc7f160b104d90f8d6d8",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Andy Dalton",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": false,
+        "espn_id": "4879250",
+        "game_id": "2026_05_PHI_JAX",
+        "gsis_id": "00-0040891",
+        "kickoff_utc": "2026-10-11T13:30:00+00:00",
+        "opponent_team": "JAX",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PHI",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "da0993e58b8244030c71ac81f36397b5d2ec333d9ff7418f688d99bb294d813a",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Cole Payton",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4036378",
+        "game_id": "2026_05_CHI_GB",
+        "gsis_id": "00-0036264",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "CHI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "GB",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "3ef09eff93cf1f6a187f048f836fa2c038f89ce512ad1984b7a5d40bbe9454ec",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jordan Love",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "14163",
+        "game_id": "2026_05_CHI_GB",
+        "gsis_id": "00-0028118",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "CHI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "GB",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "11d03772548a6a8aab3e54336ff612373447b1a9cae05813f38f6d0afabe672e",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tyrod Taylor",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4431611",
+        "game_id": "2026_05_CHI_GB",
+        "gsis_id": "00-0039918",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "GB",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CHI",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "eed60dae70291186ddcff3391ce227a58b9fc718b78d8aa5c6218cc9e85ac376",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Caleb Williams",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4434153",
+        "game_id": "2026_05_CHI_GB",
+        "gsis_id": "00-0038416",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "GB",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CHI",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "e383bf6948c0488095b63e9af8c4bbdd3bf0815240bd5f3bb5dea5ec85ca4657",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tyson Bagent",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "15168",
+        "game_id": "2026_05_CHI_GB",
+        "gsis_id": "00-0028986",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "GB",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CHI",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "64c5a87369e1dc262c37f83278b31783fcc48d4d7adc3394c6609faedc2e43f8",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Case Keenum",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4242512",
+        "game_id": "2026_05_CIN_MIA",
+        "gsis_id": "00-0038128",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "CIN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "MIA",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "66adf3813481fb26874924578874c5572f8a3ae8cbf313fa9d4277276f0abd10",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Malik Willis",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4433971",
+        "game_id": "2026_05_CIN_MIA",
+        "gsis_id": "00-0040014",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "CIN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "MIA",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "908c0bc1beb2fc47d9b6da296d27d3046739da2ed502d1b14de8c6a0c73d34aa",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Kyle McCord",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4429435",
+        "game_id": "2026_05_CIN_MIA",
+        "gsis_id": "00-0040398",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "CIN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "MIA",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "600da1806c8a42c2bc91335067137ea4e273f756abe18cd3182df5209a4e78ba",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Brady Cook",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "3915511",
+        "game_id": "2026_05_CIN_MIA",
+        "gsis_id": "00-0036442",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "MIA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CIN",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "64f569208f578a128502d678fb895e1e8604ee25542bf369194bb01f165dcfd2",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Joe Burrow",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "11252",
+        "game_id": "2026_05_CIN_MIA",
+        "gsis_id": "00-0026158",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "MIA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CIN",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "ced3c497f879259715a7dbaf1b004e4a927b77b7aa40b5845a6af561341ce4e3",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Joe Flacco",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "15864",
+        "game_id": "2026_05_CLE_NYJ",
+        "gsis_id": "00-0030565",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "CLE",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NYJ",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "69f3ee1cf6aaf62e4e06ef09ff5838f7e57c8781084f053757cc6b397d7b1942",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Geno Smith",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4685413",
+        "game_id": "2026_05_CLE_NYJ",
+        "gsis_id": "00-0041056",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "CLE",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NYJ",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "ccc894bbf675c5ebc6afd814004c9ab77f97c5da37f5a5e15f196accb25332f8",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Cade Klubnik",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "3122840",
+        "game_id": "2026_05_CLE_NYJ",
+        "gsis_id": "00-0033537",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NYJ",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CLE",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "d6304397a752b698b5891ca849f886b5116f6dc80b0d4e982b9c8f372d55bcdd",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Deshaun Watson",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4432762",
+        "game_id": "2026_05_CLE_NYJ",
+        "gsis_id": "00-0040668",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NYJ",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CLE",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "8af5639007ed447f7eb1438fec07d2be8f929f19df3adf507183719c324ca162",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Shedeur Sanders",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4431325",
+        "game_id": "2026_05_CLE_NYJ",
+        "gsis_id": "00-0041092",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NYJ",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CLE",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "e0ff6cc2b0fcdbd1995d5e9eb2e9c655828a00db237acff8fa784cf44a6a1678",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Taylen Green",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": false,
+        "espn_id": "4427238",
+        "game_id": "2026_05_CLE_NYJ",
+        "gsis_id": "00-0040704",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NYJ",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CLE",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "6ed3004063f102075ce0543cf18db2e3a104a0457df2c407f5da9568efe611bc",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Dillon Gabriel",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4688380",
+        "game_id": "2026_05_HOU_TEN",
+        "gsis_id": "00-0040676",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "HOU",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "TEN",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "974deda64576f402e49dbcd2575057c80690b5e7d1076da278bb6af344c49279",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Cam Ward",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "3039707",
+        "game_id": "2026_05_HOU_TEN",
+        "gsis_id": "00-0033869",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "HOU",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "TEN",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "67564980bffd50e1654a4029198d817c533a578ed7d7efd28359d8711c4aef2f",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Mitchell Trubisky",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4432577",
+        "game_id": "2026_05_HOU_TEN",
+        "gsis_id": "00-0039163",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "TEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "HOU",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "5553e92fcad98d3467debeae73c0d5350c85151e974c205b9ea8d56803e86545",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "C.J. Stroud",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4242546",
+        "game_id": "2026_05_HOU_TEN",
+        "gsis_id": "00-0036898",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "TEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "HOU",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "755dafc069d1530dfa4919583982414f36dbb0076d1e41cdd8c5b803a0edacf2",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Davis Mills",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4426335",
+        "game_id": "2026_05_HOU_TEN",
+        "gsis_id": "00-0040211",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "TEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "HOU",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "938ade2a8ec1b4b18ae22309ced4ac41e376801f21471fc6a3d282c738ce4256",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Graham Mertz",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "8439",
+        "game_id": "2026_05_IND_PIT",
+        "gsis_id": "00-0023459",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "IND",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PIT",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "edb88d802463cafc1f38a49c585dc3dd1899183b35911904b40101af8bb63f50",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Aaron Rodgers",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "3116407",
+        "game_id": "2026_05_IND_PIT",
+        "gsis_id": "00-0034771",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "IND",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PIT",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "25f48767f869daab23445f5e3845f7087812a33f874e62dea68c840f9e52d4b3",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Mason Rudolph",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4429955",
+        "game_id": "2026_05_IND_PIT",
+        "gsis_id": "00-0040203",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "IND",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PIT",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "66dfd92e5cb3b76eda941ff7855198886179fbd91f0a9f6af641fbc5b3199ead",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Will Howard",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": true,
+        "espn_id": "4714771",
+        "game_id": "2026_05_IND_PIT",
+        "gsis_id": "00-0041565",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "IND",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PIT",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "66dfd92e5cb3b76eda941ff7855198886179fbd91f0a9f6af641fbc5b3199ead",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Drew Allar",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "3917792",
+        "game_id": "2026_05_IND_PIT",
+        "gsis_id": "00-0035710",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "PIT",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "IND",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "717ae222ed335b9794dc203a2990a8ed345d04481c48353d58bba68dc2f8f43e",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Daniel Jones",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4429084",
+        "game_id": "2026_05_IND_PIT",
+        "gsis_id": "00-0039164",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "PIT",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "IND",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "fcb04ffd6f991d20b922a412f9ff7f3935d223d6f83bb171df7b3bc50eee51b0",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Anthony Richardson Sr.",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4683423",
+        "game_id": "2026_05_IND_PIT",
+        "gsis_id": "00-0040206",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "PIT",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "IND",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "17bb77cdd4226c3ec9c7150a2663992529555ec85450d58402538dec7119f019",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Riley Leonard",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4431452",
+        "game_id": "2026_05_LV_NE",
+        "gsis_id": "00-0039851",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "LV",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NE",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "70c1b6c12acf40a8d60d6ff2a4f6aba9d153ce76ecbc5b2e7ed637f08c8ba9e4",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Drake Maye",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4240391",
+        "game_id": "2026_05_LV_NE",
+        "gsis_id": "00-0038476",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "LV",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NE",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "38fdf6d7be8e8234c3540e4f34654dd6a131d09fc15df2c4fb48b1241cfbab21",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tommy DeVito",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4431465",
+        "game_id": "2026_05_LV_NE",
+        "gsis_id": "00-0041123",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "LV",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NE",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "8f7b0255ad152c0dec05e644678c36e493f0cfd91890addf4804ffbc54cf7f8a",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Behren Morton",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "14880",
+        "game_id": "2026_05_LV_NE",
+        "gsis_id": "00-0029604",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NE",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LV",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "04b3a70a89a6c8ea1d278061818ab4aa51e043aa86b76e133ed9e777d759dd88",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Kirk Cousins",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4837248",
+        "game_id": "2026_05_LV_NE",
+        "gsis_id": "00-0041562",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NE",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LV",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "4a45b8dca8c41ad74bfa8aec40a3468c085e899398ffcbae20b20db37ca05526",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Fernando Mendoza",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4260394",
+        "game_id": "2026_05_LV_NE",
+        "gsis_id": "00-0038579",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NE",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LV",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "494ea9fb1cf86988e282a62bf42433e3bb59b7ac9b9caa37c9f45f1a623954a9",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Aidan O'Connell",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4360689",
+        "game_id": "2026_05_MIN_NO",
+        "gsis_id": "00-0040743",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "MIN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NO",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "9b5df8e4c17cb036e43785a9cd9efb90d13e0658d05b750c95752c8fd6659773",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tyler Shough",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4426339",
+        "game_id": "2026_05_MIN_NO",
+        "gsis_id": "00-0039376",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "MIN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NO",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "4aae8545296f9f5dd257ef399a191a51e2ac506e708c093e23bae0088e62c13e",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Spencer Rattler",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4361259",
+        "game_id": "2026_05_MIN_NO",
+        "gsis_id": "00-0037013",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "MIN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NO",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "718a67212655e504760f0e63e843bf46daf004eaa679557eb24c571c7e9e4319",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Zach Wilson",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "3917315",
+        "game_id": "2026_05_MIN_NO",
+        "gsis_id": "00-0035228",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NO",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "MIN",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "1c69cc84275985df5716f73b2659235dde40ddc6414400ba94afe4ec7fb957be",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Kyler Murray",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "2573079",
+        "game_id": "2026_05_MIN_NO",
+        "gsis_id": "00-0032950",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NO",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "MIN",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "c3a17eb1a58c737ce777b3d089ba5e64a3fe4c4f5a32702d2cb474d72a0aa7cd",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Carson Wentz",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4573398",
+        "game_id": "2026_05_MIN_NO",
+        "gsis_id": "00-0040494",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NO",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "MIN",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "a56ff788e4d5d2227c5c5f065ee399700130a14fca79db49501190445db0564f",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Max Brosmer",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4426348",
+        "game_id": "2026_05_NYG_WAS",
+        "gsis_id": "00-0039910",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NYG",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "WAS",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "60c8034f67305511fed3fdbbcdca815420f4cbcb0f532d6c686ee270c4487a94",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jayden Daniels",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "2576980",
+        "game_id": "2026_05_NYG_WAS",
+        "gsis_id": "00-0032268",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NYG",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "WAS",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "988a7863697da13bdb4924329db990b6e7c7980f539b9a8e209d2505f3b5cb3c",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Marcus Mariota",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4432722",
+        "game_id": "2026_05_NYG_WAS",
+        "gsis_id": "00-0041117",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "NYG",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "WAS",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "ade651b1165fb0868a762c5e05c26c69509caa9756abf1b65bcbf2db58a45042",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Athan Kaliakmanis",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "2969939",
+        "game_id": "2026_05_NYG_WAS",
+        "gsis_id": "00-0031503",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "WAS",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NYG",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "3c39ca9b1cd6142551000452057bf5113881b714206bcca371327dc56cb7f0ae",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jameis Winston",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4433970",
+        "game_id": "2026_05_NYG_WAS",
+        "gsis_id": "00-0039923",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "WAS",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NYG",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "623e97998ecad484ddfe77a34da1921b7ae79d2de6165f70acba0e5599e15edc",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "J.J. McCarthy",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4689114",
+        "game_id": "2026_05_NYG_WAS",
+        "gsis_id": "00-0040691",
+        "kickoff_utc": "2026-10-11T17:00:00+00:00",
+        "opponent_team": "WAS",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NYG",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "9bce3e001db7c9d809a50da31d2640fd860beedd1a58fb29a99c727e08693b07",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jaxson Dart",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4038941",
+        "game_id": "2026_05_DEN_LAC",
+        "gsis_id": "00-0036355",
+        "kickoff_utc": "2026-10-11T20:05:00+00:00",
+        "opponent_team": "DEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LAC",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "00da51df11b2674df6f09e2ec63cb6596988db9a291606b2f6d3529be58fe676",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Justin Herbert",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4383351",
+        "game_id": "2026_05_DEN_LAC",
+        "gsis_id": "00-0037012",
+        "kickoff_utc": "2026-10-11T20:05:00+00:00",
+        "opponent_team": "DEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LAC",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "59bc02c46194bb33be6308b809aa9049892012e82fc82c6d1b1a68e09830686f",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Trey Lance",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4429020",
+        "game_id": "2026_05_DEN_LAC",
+        "gsis_id": "00-0040464",
+        "kickoff_utc": "2026-10-11T20:05:00+00:00",
+        "opponent_team": "DEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LAC",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "326bed8a2077aaeede3536914bdeace2bf6ed9435e72e76cae60ebb26ae039c1",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "DJ Uiagalelei",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4426338",
+        "game_id": "2026_05_DEN_LAC",
+        "gsis_id": "00-0039732",
+        "kickoff_utc": "2026-10-11T20:05:00+00:00",
+        "opponent_team": "LAC",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DEN",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "434e0350055d3f1c6c5ccfe23c5b34ea246bbd0ba5a141bd35f84b46c78adf91",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Bo Nix",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "3892775",
+        "game_id": "2026_05_DEN_LAC",
+        "gsis_id": "00-0035264",
+        "kickoff_utc": "2026-10-11T20:05:00+00:00",
+        "opponent_team": "LAC",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DEN",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "cb0b39e95bfd616897ba3f827fd226c42bfea56b37537901db4c232cefcef793",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jarrett Stidham",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4241820",
+        "game_id": "2026_05_DEN_LAC",
+        "gsis_id": "00-0036879",
+        "kickoff_utc": "2026-10-11T20:05:00+00:00",
+        "opponent_team": "LAC",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DEN",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "b64f28b068dfab22f9b096e303559b578bc8dfb8598e220bbbdaa8fb3222b980",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Sam Ehlinger",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "2578570",
+        "game_id": "2026_05_DET_ARI",
+        "gsis_id": "00-0033119",
+        "kickoff_utc": "2026-10-11T20:25:00+00:00",
+        "opponent_team": "DET",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ARI",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "952513a08dab9c1e27b996ed3d2c49871cb752a4f1a687e2135fd4e71fd47a93",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jacoby Brissett",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4038524",
+        "game_id": "2026_05_DET_ARI",
+        "gsis_id": "00-0035289",
+        "kickoff_utc": "2026-10-11T20:25:00+00:00",
+        "opponent_team": "DET",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ARI",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "8691be3ca64d1449f3cea2676743563f57870b23ac6152a808da4543da50529f",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Gardner Minshew II",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4430841",
+        "game_id": "2026_05_DET_ARI",
+        "gsis_id": "00-0041561",
+        "kickoff_utc": "2026-10-11T20:25:00+00:00",
+        "opponent_team": "DET",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ARI",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "32429d9b59ea53425ac63a5d3c5ec67a97f0ad7e32fb082fc99bbcaccce289be",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Carson Beck",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "3046779",
+        "game_id": "2026_05_DET_ARI",
+        "gsis_id": "00-0033106",
+        "kickoff_utc": "2026-10-11T20:25:00+00:00",
+        "opponent_team": "ARI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DET",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "eaccf591265fcf889727db6fc60f9a24847f9bdde535826ad979db556817afac",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jared Goff",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "3044720",
+        "game_id": "2026_05_DET_ARI",
+        "gsis_id": "00-0033949",
+        "kickoff_utc": "2026-10-11T20:25:00+00:00",
+        "opponent_team": "ARI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DET",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "6f9d3598eaa68b663cd4c3c0a6ec784da1ae4c1e4fa19d510531e0aca0bcfb76",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Joshua Dobbs",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "3912547",
+        "game_id": "2026_05_SF_SEA",
+        "gsis_id": "00-0034869",
+        "kickoff_utc": "2026-10-11T20:25:00+00:00",
+        "opponent_team": "SF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SEA",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "129846d6a530a29c578d5c056da1d6cd3335592751e1f57dcae8702bcc13e9a5",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Sam Darnold",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "3924327",
+        "game_id": "2026_05_SF_SEA",
+        "gsis_id": "00-0035704",
+        "kickoff_utc": "2026-10-11T20:25:00+00:00",
+        "opponent_team": "SF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SEA",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "dcd641be415306e81d28a16871149c30c6732df165df810ba98a23dbf9bebeea",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Drew Lock",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4432734",
+        "game_id": "2026_05_SF_SEA",
+        "gsis_id": "00-0040673",
+        "kickoff_utc": "2026-10-11T20:25:00+00:00",
+        "opponent_team": "SF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SEA",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "b25ed645ce7ccc09a4a32cce8bdebe6b201f8b11231e0cc7dc8f2601c34f7cab",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jalen Milroe",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4361741",
+        "game_id": "2026_05_SF_SEA",
+        "gsis_id": "00-0037834",
+        "kickoff_utc": "2026-10-11T20:25:00+00:00",
+        "opponent_team": "SEA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SF",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "c969aa830baf2797fc4336ee9a287f8f975fe93e9c410cbb69f746025a67cdc2",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Brock Purdy",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4241464",
+        "game_id": "2026_05_SF_SEA",
+        "gsis_id": "00-0036972",
+        "kickoff_utc": "2026-10-11T20:25:00+00:00",
+        "opponent_team": "SEA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SF",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "035349af9498e2a747f885ccbc52b44b673beb9cb73be90cc02f6ad54100cd0b",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Mac Jones",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4430431",
+        "game_id": "2026_05_SF_SEA",
+        "gsis_id": "00-0040589",
+        "kickoff_utc": "2026-10-11T20:25:00+00:00",
+        "opponent_team": "SEA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SF",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "938ade2a8ec1b4b18ae22309ced4ac41e376801f21471fc6a3d282c738ce4256",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Kurtis Rourke",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4360423",
+        "game_id": "2026_05_BAL_ATL",
+        "gsis_id": "00-0039917",
+        "kickoff_utc": "2026-10-12T00:20:00+00:00",
+        "opponent_team": "BAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ATL",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "a502400467b34218adf3a95d01673b440ec22b6f3a6c8aa7ff20347aadeb0eaa",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Michael Penix Jr.",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4241479",
+        "game_id": "2026_05_BAL_ATL",
+        "gsis_id": "00-0036212",
+        "kickoff_utc": "2026-10-12T00:20:00+00:00",
+        "opponent_team": "BAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ATL",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "6622177c60987a050e6999699053c944fc3eeee9f8df6dfd84a2716ef6923646",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tua Tagovailoa",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "2972515",
+        "game_id": "2026_05_BAL_ATL",
+        "gsis_id": "00-0033662",
+        "kickoff_utc": "2026-10-12T00:20:00+00:00",
+        "opponent_team": "BAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ATL",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "aca234f2f85c22cff8132374cb0972083e385b1c8debc3c0224ee58ab760f8f0",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Cooper Rush",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": true,
+        "espn_id": "5344782",
+        "game_id": "2026_05_BAL_ATL",
+        "gsis_id": "00-0041194",
+        "kickoff_utc": "2026-10-12T00:20:00+00:00",
+        "opponent_team": "BAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ATL",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "1c428383b101a2d0da932955c3a789324a5f16fe52da86f2ceabaf237780813e",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jack Strand",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "3916387",
+        "game_id": "2026_05_BAL_ATL",
+        "gsis_id": "00-0034796",
+        "kickoff_utc": "2026-10-12T00:20:00+00:00",
+        "opponent_team": "ATL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BAL",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "21f7a9de8ec3d85b69aa8eade623c76f1cbbff8929e81bc0b6f9da61ac43e347",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Lamar Jackson",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4035671",
+        "game_id": "2026_05_BAL_ATL",
+        "gsis_id": "00-0035993",
+        "kickoff_utc": "2026-10-12T00:20:00+00:00",
+        "opponent_team": "ATL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BAL",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "e7382ca718b2537d53f1e66e3089e8937564e3b61a8d8224d95bf827dbf8cc14",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tyler Huntley",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4429582",
+        "game_id": "2026_05_BAL_ATL",
+        "gsis_id": "00-0040981",
+        "kickoff_utc": "2026-10-12T00:20:00+00:00",
+        "opponent_team": "ATL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BAL",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "3dde59a14685574eb24272ae9730b070c5dc08618417e33edd5b9e789bbcd5c5",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Joe Fagnano",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": false,
+        "espn_id": "4036419",
+        "game_id": "2026_05_BAL_ATL",
+        "gsis_id": "00-0037327",
+        "kickoff_utc": "2026-10-12T00:20:00+00:00",
+        "opponent_team": "ATL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BAL",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "3cc071fccb401c93f823525d344ee1f466936edb73efd1f169fe7f2bd9de07c7",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Skylar Thompson",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "12483",
+        "game_id": "2026_05_BUF_LA",
+        "gsis_id": "00-0026498",
+        "kickoff_utc": "2026-10-13T00:15:00+00:00",
+        "opponent_team": "BUF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LA",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "993706d84d7f6d3789adc748a303041c983549a4bd120093a7aa065dc1a8ec38",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Matthew Stafford",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4259553",
+        "game_id": "2026_05_BUF_LA",
+        "gsis_id": "00-0039107",
+        "kickoff_utc": "2026-10-13T00:15:00+00:00",
+        "opponent_team": "BUF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LA",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "e4c6959386b0e44df2ee505bf450466bc918ac794522f9a8cb418e4d4893ba56",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Stetson Bennett IV",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4685522",
+        "game_id": "2026_05_BUF_LA",
+        "gsis_id": "00-0041568",
+        "kickoff_utc": "2026-10-13T00:15:00+00:00",
+        "opponent_team": "BUF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LA",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "b2baaadf8d9651ce13c5b3c34f12f51287a91db84ba8534580fba806f37683fc",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Ty Simpson",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": true,
+        "espn_id": "4877717",
+        "game_id": "2026_05_BUF_LA",
+        "gsis_id": "00-0041414",
+        "kickoff_utc": "2026-10-13T00:15:00+00:00",
+        "opponent_team": "BUF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LA",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "b2baaadf8d9651ce13c5b3c34f12f51287a91db84ba8534580fba806f37683fc",
+      "forecast_blockers": [
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Matthew Caldwell",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "3918298",
+        "game_id": "2026_05_BUF_LA",
+        "gsis_id": "00-0034857",
+        "kickoff_utc": "2026-10-13T00:15:00+00:00",
+        "opponent_team": "LA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BUF",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "723bed3db212c9b9b89a70b54e2900ded3a8da31c21091fe7b70a95fbbeb2d9c",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Josh Allen",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "3115293",
+        "game_id": "2026_05_BUF_LA",
+        "gsis_id": "00-0034577",
+        "kickoff_utc": "2026-10-13T00:15:00+00:00",
+        "opponent_team": "LA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BUF",
+        "week": 5
+      },
+      "features_ready": true,
+      "features_sha256": "6dd9781908fc5e05521da790d8294a37c144c37f25dbb698266b70353709c91f",
+      "forecast_blockers": [
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Kyle Allen",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4426338",
+        "game_id": "2026_06_SEA_DEN",
+        "gsis_id": "00-0039732",
+        "kickoff_utc": "2026-10-16T00:15:00+00:00",
+        "opponent_team": "SEA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DEN",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "3ae08cc8923fd34e79c3d0d3b34e13f3e24dbcd42935f57ef626b092334f7d64",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Bo Nix",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "3892775",
+        "game_id": "2026_06_SEA_DEN",
+        "gsis_id": "00-0035264",
+        "kickoff_utc": "2026-10-16T00:15:00+00:00",
+        "opponent_team": "SEA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DEN",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "8d3b0cfa32b10e2c794e1ba82129f51eafa8c8e54a7cce71c018a58cc1a476ad",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jarrett Stidham",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4241820",
+        "game_id": "2026_06_SEA_DEN",
+        "gsis_id": "00-0036879",
+        "kickoff_utc": "2026-10-16T00:15:00+00:00",
+        "opponent_team": "SEA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DEN",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "f76c8e37d1fc26b6765aadac278c7e568a6e41ae1dc68056b578cedb6d406ac9",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Sam Ehlinger",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "3912547",
+        "game_id": "2026_06_SEA_DEN",
+        "gsis_id": "00-0034869",
+        "kickoff_utc": "2026-10-16T00:15:00+00:00",
+        "opponent_team": "DEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SEA",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "96a5dfc95f706081185452c472873220dc567198e867b043510d7944894d4f79",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Sam Darnold",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "3924327",
+        "game_id": "2026_06_SEA_DEN",
+        "gsis_id": "00-0035704",
+        "kickoff_utc": "2026-10-16T00:15:00+00:00",
+        "opponent_team": "DEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SEA",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "899c35d65fa7be37e4c07bbe8ea320619710fcdd82c775d74940dad63a49244b",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Drew Lock",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4432734",
+        "game_id": "2026_06_SEA_DEN",
+        "gsis_id": "00-0040673",
+        "kickoff_utc": "2026-10-16T00:15:00+00:00",
+        "opponent_team": "DEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SEA",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "a566fc5d0f55afe185a51b8160fc88b908314e9a45b57c04bf9041e28fbae563",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jalen Milroe",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4360310",
+        "game_id": "2026_06_HOU_JAX",
+        "gsis_id": "00-0036971",
+        "kickoff_utc": "2026-10-18T13:30:00+00:00",
+        "opponent_team": "HOU",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "JAX",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "de6928300576de85f528f038500bda8557890e7faae65e8b0157aa39febf4961",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Trevor Lawrence",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4889929",
+        "game_id": "2026_06_HOU_JAX",
+        "gsis_id": "00-0040234",
+        "kickoff_utc": "2026-10-18T13:30:00+00:00",
+        "opponent_team": "HOU",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "JAX",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "588197c38eb0ba467c071ddcff798b66eaea6fd7e5528c9a1655ab89c41d2e7b",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Quinn Ewers",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4432577",
+        "game_id": "2026_06_HOU_JAX",
+        "gsis_id": "00-0039163",
+        "kickoff_utc": "2026-10-18T13:30:00+00:00",
+        "opponent_team": "JAX",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "HOU",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "942da550b8cced2816498edfd4ca2acd05eb4d68bd9a844599f344d71dc85398",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "C.J. Stroud",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4242546",
+        "game_id": "2026_06_HOU_JAX",
+        "gsis_id": "00-0036898",
+        "kickoff_utc": "2026-10-18T13:30:00+00:00",
+        "opponent_team": "JAX",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "HOU",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "aaf3adb0a3744b4025283ccea328aae7afc5eb39681c74b506a4af8c545539d4",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Davis Mills",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4426335",
+        "game_id": "2026_06_HOU_JAX",
+        "gsis_id": "00-0040211",
+        "kickoff_utc": "2026-10-18T13:30:00+00:00",
+        "opponent_team": "JAX",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "HOU",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "0286d9cbec41616d6bd1fab7bb902dac99fe262a10e8f5ac5e318d886f461487",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Graham Mertz",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "3122840",
+        "game_id": "2026_06_BAL_CLE",
+        "gsis_id": "00-0033537",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "BAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CLE",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "6520a235025dc2964de0d01736d263391c550dc394382e3a3ac1e9f90a0a933c",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Deshaun Watson",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4432762",
+        "game_id": "2026_06_BAL_CLE",
+        "gsis_id": "00-0040668",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "BAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CLE",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "a2e98d2fb9d2d3c4c5dc03b08e9e0b6c378f6ced8f87113318e27440153073b2",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Shedeur Sanders",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4431325",
+        "game_id": "2026_06_BAL_CLE",
+        "gsis_id": "00-0041092",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "BAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CLE",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "94ed05d0d24e60c87e3a3dc23844e3d41058441e932997f99e575636a2784542",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Taylen Green",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": true,
+        "espn_id": "4427238",
+        "game_id": "2026_06_BAL_CLE",
+        "gsis_id": "00-0040704",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "BAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CLE",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "41e7d5e49a5ba3fe69e196fe01a2ba42d5301aead80228b64c43b4d80b4c504a",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Dillon Gabriel",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "3916387",
+        "game_id": "2026_06_BAL_CLE",
+        "gsis_id": "00-0034796",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CLE",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BAL",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "1171709b2d2f80696bb50b6268d6a283a490615a358b2bc031f3a606a44f8059",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Lamar Jackson",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4035671",
+        "game_id": "2026_06_BAL_CLE",
+        "gsis_id": "00-0035993",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CLE",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BAL",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "b1aa5baf1d26aa89f21722a375440f3d9ff745d29157155d32e90fe7c8a1afbb",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tyler Huntley",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4429582",
+        "game_id": "2026_06_BAL_CLE",
+        "gsis_id": "00-0040981",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CLE",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BAL",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "706f47fdc7893922fde3efa681b2c2cb370ef1e857e51628660cbe0607e794c1",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Joe Fagnano",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": false,
+        "espn_id": "4036419",
+        "game_id": "2026_06_BAL_CLE",
+        "gsis_id": "00-0037327",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CLE",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BAL",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "8dbd26b67886e1a377b42bac63a420b951c7f82c13d3793a0cb40d058d87506f",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Skylar Thompson",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4040715",
+        "game_id": "2026_06_CAR_PHI",
+        "gsis_id": "00-0036389",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CAR",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PHI",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "97e9e895294e0581f33f8e71e6f8b5f9db49db9fe853f067e12576cca34b8b71",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jalen Hurts",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4685201",
+        "game_id": "2026_06_CAR_PHI",
+        "gsis_id": "00-0038400",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CAR",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PHI",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "2683b831eeb6a43b48f2752c85a08af2e08996e6464b52bb8400fcc529dd59dd",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tanner McKee",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "14012",
+        "game_id": "2026_06_CAR_PHI",
+        "gsis_id": "00-0027973",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CAR",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PHI",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "47537137f88ec20ff6cddfe679ce95e3e62c7526dfa0262a758205b0a193802e",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Andy Dalton",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": true,
+        "espn_id": "4879250",
+        "game_id": "2026_06_CAR_PHI",
+        "gsis_id": "00-0040891",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CAR",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PHI",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "c5e906947ea372fbfdb454bc5f76e1668f812e2675fe2e98b66a0bb978986a9f",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Cole Payton",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4685720",
+        "game_id": "2026_06_CAR_PHI",
+        "gsis_id": "00-0039150",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "PHI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CAR",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "43c3e0309640bec57e63855e6bc0412cb7faa6da321cba92bb6e4d0b6148e395",
+      "forecast_blockers": [
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Bryce Young",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4240703",
+        "game_id": "2026_06_CAR_PHI",
+        "gsis_id": "00-0038102",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "PHI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CAR",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "e01fb7e231e5b8b9ec05988be5813f594b3fe3a6dbe33e9fd6a76d233302d6dd",
+      "forecast_blockers": [
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Kenny Pickett",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4428993",
+        "game_id": "2026_06_CAR_PHI",
+        "gsis_id": "00-0041149",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "PHI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CAR",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "272f428c6d8b7ea5baa135b4e5ed05e3844b4bcf904c44d51f5f53cc3dae51d1",
+      "forecast_blockers": [
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Haynes King",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4360423",
+        "game_id": "2026_06_CHI_ATL",
+        "gsis_id": "00-0039917",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CHI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ATL",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "729036140f479b4ec2e09622a3f6c0210f12b9462da212fcdd579d31de195701",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Michael Penix Jr.",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4241479",
+        "game_id": "2026_06_CHI_ATL",
+        "gsis_id": "00-0036212",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CHI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ATL",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "48bec5d476f7a1e064bfd0a244fc17e63cf3338f91c7f1bcd42e0ea1fe6a8c2c",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tua Tagovailoa",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "2972515",
+        "game_id": "2026_06_CHI_ATL",
+        "gsis_id": "00-0033662",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CHI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ATL",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "8376d0ad3534ec047bb752926bbcf9a7c92002df7f6c788b6d584a8391885650",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Cooper Rush",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": true,
+        "espn_id": "5344782",
+        "game_id": "2026_06_CHI_ATL",
+        "gsis_id": "00-0041194",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "CHI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ATL",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "b3521eb9003a8674a0ba1188fab3db5b0379a3535f821acf32da60eefb1753e7",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jack Strand",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4431611",
+        "game_id": "2026_06_CHI_ATL",
+        "gsis_id": "00-0039918",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "ATL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CHI",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "90ae94575ddb1a25f8e5527e5c59ee60e6d86f1c45e22e6c51585ab36928e7aa",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Caleb Williams",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4434153",
+        "game_id": "2026_06_CHI_ATL",
+        "gsis_id": "00-0038416",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "ATL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CHI",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "93f2e23a0599c24156d3d3aa418d57d04ad6c1e1b65058ef8720e0f951e855cd",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tyson Bagent",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "15168",
+        "game_id": "2026_06_CHI_ATL",
+        "gsis_id": "00-0028986",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "ATL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "CHI",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "c0a15622b1ba341e8a14866a035d7e050cf59e1983cd6bb250e3ec1096b84637",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Case Keenum",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "2969939",
+        "game_id": "2026_06_NO_NYG",
+        "gsis_id": "00-0031503",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "NO",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NYG",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "f339cb95f6d0987f6efa1ccef27e872c22c1f8239d188dd24f52d948217567c6",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jameis Winston",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4433970",
+        "game_id": "2026_06_NO_NYG",
+        "gsis_id": "00-0039923",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "NO",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NYG",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "98f3460162d78576b4acc1a25210308b0cf7e97a1e11abe3f97cc83eda08b5c7",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "J.J. McCarthy",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4689114",
+        "game_id": "2026_06_NO_NYG",
+        "gsis_id": "00-0040691",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "NO",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NYG",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "d5b972ea3f55b5bfad3b7ba12d0459ecc236fbd129793b7b006e8bf5523d3134",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jaxson Dart",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4360689",
+        "game_id": "2026_06_NO_NYG",
+        "gsis_id": "00-0040743",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "NYG",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NO",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "7b9be0b9b7cf1a0137219cae92f5cc3daf06e266b52c5267893cdc2689aa53b7",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tyler Shough",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4426339",
+        "game_id": "2026_06_NO_NYG",
+        "gsis_id": "00-0039376",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "NYG",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NO",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "d5e7784cdd62c09cbc08c292a06703511315b1d863e2695d24c577ea897cc519",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Spencer Rattler",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4361259",
+        "game_id": "2026_06_NO_NYG",
+        "gsis_id": "00-0037013",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "NYG",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NO",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "6daf9baef678f07a84b5c4134dcb59b70cf5b2beb93fd0d3db310cb9e7d61681",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Zach Wilson",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4431452",
+        "game_id": "2026_06_NYJ_NE",
+        "gsis_id": "00-0039851",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "NYJ",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NE",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "cdacb7cd9a5609da23fabbb191c344452384d8203e23b879c260b91c5ff2795b",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Drake Maye",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4240391",
+        "game_id": "2026_06_NYJ_NE",
+        "gsis_id": "00-0038476",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "NYJ",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NE",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "1a39ccec56a9a8dedd63abbd3a8d3fa5fc1f4907a2fce2d2b61fc4581190b0c5",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tommy DeVito",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4431465",
+        "game_id": "2026_06_NYJ_NE",
+        "gsis_id": "00-0041123",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "NYJ",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NE",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "94ed05d0d24e60c87e3a3dc23844e3d41058441e932997f99e575636a2784542",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Behren Morton",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "15864",
+        "game_id": "2026_06_NYJ_NE",
+        "gsis_id": "00-0030565",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "NE",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NYJ",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "f73b0bce6977c95c00d3d3fa7a1e8718f42b7bd3e7018983b47f7954e72d968d",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Geno Smith",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4685413",
+        "game_id": "2026_06_NYJ_NE",
+        "gsis_id": "00-0041056",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "NE",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "NYJ",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "706f47fdc7893922fde3efa681b2c2cb370ef1e857e51628660cbe0607e794c1",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Cade Klubnik",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "3052587",
+        "game_id": "2026_06_PIT_TB",
+        "gsis_id": "00-0034855",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "PIT",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "TB",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "e82252fcd0ad57dabc4c54d279740ff58db1c9bd730db503ea9a38a075edca84",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Baker Mayfield",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4596472",
+        "game_id": "2026_06_PIT_TB",
+        "gsis_id": "00-0041251",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "PIT",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "TB",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "26a38d949a290dc54d12c9155394648f259a4ba0beee6256984a89a6e17e5115",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jalon Daniels",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "8439",
+        "game_id": "2026_06_PIT_TB",
+        "gsis_id": "00-0023459",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "TB",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PIT",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "c09c49727131b3f06ec22011387b70633f08887554cf0658356baf0044b3a834",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Aaron Rodgers",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "3116407",
+        "game_id": "2026_06_PIT_TB",
+        "gsis_id": "00-0034771",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "TB",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PIT",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "99969834af4db51fe752f91fa6ed2f9d054a0434e167d5047addc9d597b5574d",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Mason Rudolph",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4429955",
+        "game_id": "2026_06_PIT_TB",
+        "gsis_id": "00-0040203",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "TB",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PIT",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "706f47fdc7893922fde3efa681b2c2cb370ef1e857e51628660cbe0607e794c1",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Will Howard",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": false,
+        "espn_id": "4714771",
+        "game_id": "2026_06_PIT_TB",
+        "gsis_id": "00-0041565",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "TB",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "PIT",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "706f47fdc7893922fde3efa681b2c2cb370ef1e857e51628660cbe0607e794c1",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Drew Allar",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "3917792",
+        "game_id": "2026_06_TEN_IND",
+        "gsis_id": "00-0035710",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "TEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "IND",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "e2e40c0a2cde323af0ef4cf115008f1f37e88eef82273d4a318d1feade491a75",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Daniel Jones",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4429084",
+        "game_id": "2026_06_TEN_IND",
+        "gsis_id": "00-0039164",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "TEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "IND",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "2578e19a8e92666aff99ca0e6f91f7af6736a029dfb74bcdb63fa1f4729f4513",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Anthony Richardson Sr.",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4683423",
+        "game_id": "2026_06_TEN_IND",
+        "gsis_id": "00-0040206",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "TEN",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "IND",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "da093e7f9ca826ffe5ac35f37743496585bb997ba9b55b5e55bceb22eb4cd6ae",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Riley Leonard",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4688380",
+        "game_id": "2026_06_TEN_IND",
+        "gsis_id": "00-0040676",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "IND",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "TEN",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "1bc839bb7a6a26970b06601f2fc45c91f2ab9f7a71615ac3ad0ab772e7aac94d",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Cam Ward",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "3039707",
+        "game_id": "2026_06_TEN_IND",
+        "gsis_id": "00-0033869",
+        "kickoff_utc": "2026-10-18T17:00:00+00:00",
+        "opponent_team": "IND",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "TEN",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "f99e9b9fa3020934d0c8cee507f8e8006326848d97a0f184ca4c1ed8ee7bf2d6",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Mitchell Trubisky",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "12483",
+        "game_id": "2026_06_ARI_LA",
+        "gsis_id": "00-0026498",
+        "kickoff_utc": "2026-10-18T20:05:00+00:00",
+        "opponent_team": "ARI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LA",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "a949d1547de7ef2105a96dbf93c7d833676b2407c9d6e9cb0ee9cf3412a17ae9",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Matthew Stafford",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4259553",
+        "game_id": "2026_06_ARI_LA",
+        "gsis_id": "00-0039107",
+        "kickoff_utc": "2026-10-18T20:05:00+00:00",
+        "opponent_team": "ARI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LA",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "07755636de17632101ef8c38d45d2fa220cdd6712c820a9aadc9815472b610e4",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Stetson Bennett IV",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4685522",
+        "game_id": "2026_06_ARI_LA",
+        "gsis_id": "00-0041568",
+        "kickoff_utc": "2026-10-18T20:05:00+00:00",
+        "opponent_team": "ARI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LA",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "94ed05d0d24e60c87e3a3dc23844e3d41058441e932997f99e575636a2784542",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Ty Simpson",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 4,
+        "designated_home": true,
+        "espn_id": "4877717",
+        "game_id": "2026_06_ARI_LA",
+        "gsis_id": "00-0041414",
+        "kickoff_utc": "2026-10-18T20:05:00+00:00",
+        "opponent_team": "ARI",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LA",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "94ed05d0d24e60c87e3a3dc23844e3d41058441e932997f99e575636a2784542",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Matthew Caldwell",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "2578570",
+        "game_id": "2026_06_ARI_LA",
+        "gsis_id": "00-0033119",
+        "kickoff_utc": "2026-10-18T20:05:00+00:00",
+        "opponent_team": "LA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ARI",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "df5d2510b657bce5871aac1753a51a628f519439e338cde6c2918f4c4978f07b",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jacoby Brissett",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4038524",
+        "game_id": "2026_06_ARI_LA",
+        "gsis_id": "00-0035289",
+        "kickoff_utc": "2026-10-18T20:05:00+00:00",
+        "opponent_team": "LA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ARI",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "0eb33938f99d560a3d7332d1a4b797366650820afc2baf2c5cb2bf52a0232bc3",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Gardner Minshew II",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4430841",
+        "game_id": "2026_06_ARI_LA",
+        "gsis_id": "00-0041561",
+        "kickoff_utc": "2026-10-18T20:05:00+00:00",
+        "opponent_team": "LA",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "ARI",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "706f47fdc7893922fde3efa681b2c2cb370ef1e857e51628660cbe0607e794c1",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Carson Beck",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "14880",
+        "game_id": "2026_06_BUF_LV",
+        "gsis_id": "00-0029604",
+        "kickoff_utc": "2026-10-18T20:25:00+00:00",
+        "opponent_team": "BUF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LV",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "c051fab92c5160f8dacfa57299f89887567ebc068c92ba04cf4c76cc699c439d",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Kirk Cousins",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4837248",
+        "game_id": "2026_06_BUF_LV",
+        "gsis_id": "00-0041562",
+        "kickoff_utc": "2026-10-18T20:25:00+00:00",
+        "opponent_team": "BUF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LV",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "94ed05d0d24e60c87e3a3dc23844e3d41058441e932997f99e575636a2784542",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Fernando Mendoza",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4260394",
+        "game_id": "2026_06_BUF_LV",
+        "gsis_id": "00-0038579",
+        "kickoff_utc": "2026-10-18T20:25:00+00:00",
+        "opponent_team": "BUF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LV",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "afbed3f24b4eb9f5e861c61bf173e73acccd9d01125beb8035bc38fe71ca1b99",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Aidan O'Connell",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "3918298",
+        "game_id": "2026_06_BUF_LV",
+        "gsis_id": "00-0034857",
+        "kickoff_utc": "2026-10-18T20:25:00+00:00",
+        "opponent_team": "LV",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BUF",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "e654ddac95f7c6d86b783a64a54073a0e3dcef3ab7891f8a1cfdc0d799c5a39d",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Josh Allen",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "3115293",
+        "game_id": "2026_06_BUF_LV",
+        "gsis_id": "00-0034577",
+        "kickoff_utc": "2026-10-18T20:25:00+00:00",
+        "opponent_team": "LV",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "BUF",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "f131ade54b2ae1672e1310d70f478f2f5ad80d328c33cffaba520148767339be",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Kyle Allen",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "3139477",
+        "game_id": "2026_06_LAC_KC",
+        "gsis_id": "00-0033873",
+        "kickoff_utc": "2026-10-18T20:25:00+00:00",
+        "opponent_team": "LAC",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "KC",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "efd68f1f2deb10619e40a643982df8956b1b92abf7446440ca6301ec1c8be169",
+      "forecast_blockers": [
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Patrick Mahomes",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4362887",
+        "game_id": "2026_06_LAC_KC",
+        "gsis_id": "00-0036945",
+        "kickoff_utc": "2026-10-18T20:25:00+00:00",
+        "opponent_team": "LAC",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "KC",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "942fc3128f93bb82e9fd8f34b53dba77b13d35b665bf3602d577160444227bfb",
+      "forecast_blockers": [
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Justin Fields",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4567747",
+        "game_id": "2026_06_LAC_KC",
+        "gsis_id": "00-0040906",
+        "kickoff_utc": "2026-10-18T20:25:00+00:00",
+        "opponent_team": "LAC",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "KC",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "28535e76161433964fa0d16a4245b940c08a8a7e5487141997a132ce3b64541d",
+      "forecast_blockers": [
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Garrett Nussmeier",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4038941",
+        "game_id": "2026_06_LAC_KC",
+        "gsis_id": "00-0036355",
+        "kickoff_utc": "2026-10-18T20:25:00+00:00",
+        "opponent_team": "KC",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LAC",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "e585017415afda827f73e888278bfafd2e207ba7a3a46b5ec7e610e83c065862",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Justin Herbert",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4383351",
+        "game_id": "2026_06_LAC_KC",
+        "gsis_id": "00-0037012",
+        "kickoff_utc": "2026-10-18T20:25:00+00:00",
+        "opponent_team": "KC",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LAC",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "4265553be00a584b3229f91e7bd44f3bb14b0bafc95554ceffbfafb7402724f5",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Trey Lance",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4429020",
+        "game_id": "2026_06_LAC_KC",
+        "gsis_id": "00-0040464",
+        "kickoff_utc": "2026-10-18T20:25:00+00:00",
+        "opponent_team": "KC",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "LAC",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "56118acefcb625035445d6f3dcd6ffd85d73305a00abd16146c73071084a4187",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "DJ Uiagalelei",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4036378",
+        "game_id": "2026_06_DAL_GB",
+        "gsis_id": "00-0036264",
+        "kickoff_utc": "2026-10-19T00:20:00+00:00",
+        "opponent_team": "DAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "GB",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "111b8333f89d6a56051f281476bde34a70ba8b9c634a70d0f441a35d58c4f15b",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jordan Love",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "14163",
+        "game_id": "2026_06_DAL_GB",
+        "gsis_id": "00-0028118",
+        "kickoff_utc": "2026-10-19T00:20:00+00:00",
+        "opponent_team": "DAL",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "GB",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "f0bc7a693113bc592beeb19a678df189e597370dd7621ed0458a24f6823d68d9",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Tyrod Taylor",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "2577417",
+        "game_id": "2026_06_DAL_GB",
+        "gsis_id": "00-0033077",
+        "kickoff_utc": "2026-10-19T00:20:00+00:00",
+        "opponent_team": "GB",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DAL",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "389e5d68c9f4f68f5ae894aa2e046dc74edc3e5aa57719d7a395ad3fcd9e197e",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Dak Prescott",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "4426875",
+        "game_id": "2026_06_DAL_GB",
+        "gsis_id": "00-0037077",
+        "kickoff_utc": "2026-10-19T00:20:00+00:00",
+        "opponent_team": "GB",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "DAL",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "779c073aa057a5f72785c356588ce9f1e374433d814bd0b83ec4b31f5ff465a4",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Sam Howell",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": true,
+        "espn_id": "4361741",
+        "game_id": "2026_06_WAS_SF",
+        "gsis_id": "00-0037834",
+        "kickoff_utc": "2026-10-20T00:15:00+00:00",
+        "opponent_team": "WAS",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SF",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "ceba1429322fe52c06149c913ce2fdc15973258d0ba26e8b7cb9fb0c2486287a",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Brock Purdy",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": true,
+        "espn_id": "4241464",
+        "game_id": "2026_06_WAS_SF",
+        "gsis_id": "00-0036972",
+        "kickoff_utc": "2026-10-20T00:15:00+00:00",
+        "opponent_team": "WAS",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SF",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "c6d0fd74f9b00d3da62fa967d1a132860638840330ebd622baeb5f2b0fad593c",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Mac Jones",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": true,
+        "espn_id": "4430431",
+        "game_id": "2026_06_WAS_SF",
+        "gsis_id": "00-0040589",
+        "kickoff_utc": "2026-10-20T00:15:00+00:00",
+        "opponent_team": "WAS",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "SF",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "94ed05d0d24e60c87e3a3dc23844e3d41058441e932997f99e575636a2784542",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Kurtis Rourke",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 1,
+        "designated_home": false,
+        "espn_id": "4426348",
+        "game_id": "2026_06_WAS_SF",
+        "gsis_id": "00-0039910",
+        "kickoff_utc": "2026-10-20T00:15:00+00:00",
+        "opponent_team": "SF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "WAS",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "721de44dd36554a2780c4d0bbfe5276b0ee1131ceccbf39411739d90296e9373",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Jayden Daniels",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 2,
+        "designated_home": false,
+        "espn_id": "2576980",
+        "game_id": "2026_06_WAS_SF",
+        "gsis_id": "00-0032268",
+        "kickoff_utc": "2026-10-20T00:15:00+00:00",
+        "opponent_team": "SF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "WAS",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "66f2d023dbe2a553a3565faef910d52f535bbf4e7673c01bb989163b5d96e953",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Marcus Mariota",
+      "primary_annotations": []
+    },
+    {
+      "context": {
+        "depth_rank": 3,
+        "designated_home": false,
+        "espn_id": "4432722",
+        "game_id": "2026_06_WAS_SF",
+        "gsis_id": "00-0041117",
+        "kickoff_utc": "2026-10-20T00:15:00+00:00",
+        "opponent_team": "SF",
+        "season": 2026,
+        "source_snapshot_utc": "2026-10-07T14:25:15Z",
+        "team": "WAS",
+        "week": 6
+      },
+      "features_ready": false,
+      "features_sha256": "39807226b7648b14b9dfd969bdc38eb6c67dd348966b66dada48ff1d44ab6fb5",
+      "forecast_blockers": [
+        "team_rest_unresolved",
+        "opponent_rest_unresolved",
+        "fewer_than_five_available_sample_games",
+        "starter_status_unknown",
+        "active_status_unknown",
+        "status_source_contents_not_independently_verified",
+        "prospective_participation_cohort_not_validated",
+        "production_model_not_enabled"
+      ],
+      "player_name": "Athan Kaliakmanis",
+      "primary_annotations": []
+    }
+  ],
+  "pipeline_source_hashes": {
+    "__init__.py": "d22dee588c9094d4ad39229a1ebb8e28dbadd7a1261fcf8d87a50b6d818da6a3",
+    "app.py": "3117f1ba7604d0109ee84b6f7658aa7132768c330bf477e54080756fe4977600",
+    "cli.py": "bd2e9dba6b38a5cea6e27c51d4c8fe78afbeddc0a11c8ead5fbc05ade17ed179",
+    "data/__init__.py": "ec4b33bfafd1717e9d753f622765a9004e35de283a0aaf8bb23d7da2ca1fc919",
+    "data/audit.py": "df6648dae76acd3179da5297e597fa35393970322be33d73900e4268fdb0932c",
+    "data/current_qbs.py": "ea2f96ebea512c3a86afb5d83386a26636d0e73df7ffb514ec09f1b425f5b026",
+    "data/ingest_nfl.py": "4d5c5778f490d003b66dce91ec0f53334f25832d8ebc022b364080050040b12b",
+    "data/participation.py": "1b0f50d57fd3466059191e932e3ea844f50c562d7b7bb1607a895c7606cac4e9",
+    "data/prospective.py": "bae5fb0ecb47f85975c6aeb9ae909178aed2ceb01f6aaa0b315bd41458267bab",
+    "data/quarterback_games.py": "03f67e9e4d6fad2e6058856ba4e37056cde6e3f8913927a2202835a8fa3d8e20",
+    "data/schemas.py": "49039ab779104d4ea3f0c176cad0ecd5e99c018ecb1d816b5362eba513bb1fee",
+    "data/starter_audit.py": "1f83f612f2dfc64f6a9aa737f4450a6a5e82a4c8168090672427f7e5ac69482f",
+    "data/status_evidence.py": "b064a3f93bebda8ac27893d2bd2edfe3c6e34fef01326dcb00b6215f3c383563",
+    "data/status_reviews.py": "a5c1c2c361afd94d436a995602661c155a632a8f610f9402c6c2b1bd5a33815f",
+    "data/storage.py": "20e912d05336a77975ca3ae7bf0eb4de4091f1003fc1405ade93d33671bee25c",
+    "data/upcoming.py": "08be08fea5b7134a1ffdffcbd8539772fe0259231eb76c09235349497430702e",
+    "features/__init__.py": "27203886453130586d451b3b96fbdbb4d83dee99a7e5d409e12cd368ba712de0",
+    "features/context.py": "dc68f01b3c0227f1e8320d247dc31642dc016df012b5d4203c54f145aeb40f7a",
+    "features/prospective.py": "fb8153100a191a250ee767fc6c23a569687800e18c98f67a65ec8d0edefea4f9",
+    "features/quarterback.py": "6754090547bfb6a4996a1f98aefacd53f9271dbd69e8981d941fe97aa5432469",
+    "markets/__init__.py": "2db7f111ea1fbd4c3669c0e2f892153e2793b723bb1b31ecbfb9064f3dbca9b0",
+    "markets/audit.py": "d9d5760c6a6f2e2db474e26b9b8e7c25d63973eb951976222f69051eae75ccca",
+    "markets/distribution.py": "3d05d5cf54922893bdb547ed5d2df6c8c875029beec783f1f35ca529c7266448",
+    "markets/journal.py": "8f1421b907f29e2983c685b9dec04afc59239c47825023d8a56cc5491ebb36f0",
+    "markets/odds.py": "91b3f53d7c3dc29d56e7fa906430724830a0db1885d26ee4ef67760bfd8b1a8f",
+    "markets/quote.py": "dab11d840e2de188557996fb5a5a3e30e3d480679ccc6f7b8bb4e3150b96b1d2",
+    "modeling/__init__.py": "8efaf22f34bd3037c3d7b4a8c5890749598fb11193ffc0e47238069f128fdc4e",
+    "modeling/baselines.py": "c94e08133d5ee82b205e966e914cf4a763226fda3e0776f8db6778541eaac99c",
+    "modeling/calibration_audit.py": "d499a1b1b58d719b6772a342b0e39a391354543fc717b95a8c4a8b101b042bf0",
+    "modeling/candidate.py": "238c8a3ec0d7d2896730a22b57346a12f0f93bb2333e2358276a66ac3e9b668b",
+    "modeling/config.py": "672771eb04a6105caf5d7b946ce4da900a6d3e740f64a861a10ef0302aed3961",
+    "modeling/contracts.py": "57840977af9cd3aa380bdcb42247739e24b5f8a55e4fb7a25a21dbafe9fdf17f",
+    "modeling/evaluate.py": "4f39f9547f588bb5465002120a6c6aba2fed329851772518cf0a86e300201c81",
+    "modeling/freeze.py": "b8e51de723c2383e7085c8dbce302db4134096a83358601a2cdb4df6b9726803",
+    "modeling/holdout.py": "32e92f917534d66a1e8f203db2ac754893c8dc2f5cb5490b735254f64ccac498",
+    "modeling/policy.py": "d2501720289854ced3e4ba45700bbe228aa97ecd3256a441e168d1e222705ca0",
+    "modeling/report.py": "9daaa0693e863cb1f3b08bfc15df06df069cddc0377749c9d98baaed4d6f2288",
+    "modeling/reporting.py": "03a1dc5ba09d914e24da2c8c661c40a6d7b0913ca906233936a2f6291df33883",
+    "modeling/research.py": "310fbbea7b81483f74f5082b8c0f154a1db0d3f9ba58fd5e62cee16829dc13b5",
+    "modeling/research_report.py": "d816af635cbcc0ffe69b038dadc4b135545ac9c194294701feec0149a4e686b5",
+    "modeling/uncertainty.py": "8fd26f1229c6229291c7a317ac8ab2f12a6de20c433fd01131fae12efbfe9e54"
+  },
+  "production_enabled": false,
+  "registry": {
+    "candidate_count": 170,
+    "format_version": 1,
+    "game_ids": [
+      "2026_05_BAL_ATL",
+      "2026_05_BUF_LA",
+      "2026_05_CHI_GB",
+      "2026_05_CIN_MIA",
+      "2026_05_CLE_NYJ",
+      "2026_05_DEN_LAC",
+      "2026_05_DET_ARI",
+      "2026_05_HOU_TEN",
+      "2026_05_IND_PIT",
+      "2026_05_LV_NE",
+      "2026_05_MIN_NO",
+      "2026_05_NYG_WAS",
+      "2026_05_PHI_JAX",
+      "2026_05_SF_SEA",
+      "2026_05_TB_DAL",
+      "2026_06_ARI_LA",
+      "2026_06_BAL_CLE",
+      "2026_06_BUF_LV",
+      "2026_06_CAR_PHI",
+      "2026_06_CHI_ATL",
+      "2026_06_DAL_GB",
+      "2026_06_HOU_JAX",
+      "2026_06_LAC_KC",
+      "2026_06_NO_NYG",
+      "2026_06_NYJ_NE",
+      "2026_06_PIT_TB",
+      "2026_06_SEA_DEN",
+      "2026_06_TEN_IND",
+      "2026_06_WAS_SF"
+    ],
+    "prior_diagnostic_reference": {
+      "freeze_sha256": "73fe5919573033cd3e604461a1a7c03a7472ad984d9700aa873d322d1322016d",
+      "observed_at_utc": "2026-10-06T22:47:22.014436+00:00",
+      "report_sha256": "b41a46b817869d4fde1ce9e7d588ce6aa09c434e36dd88d118578a6ad7c2e90c",
+      "table": {
+        "file": "features-9b0e5b0850a037c12cd62d2f6fddf7552ef30c324d59506164bd0423aae4feb5.parquet",
+        "rows": 664,
+        "schema": {
+          "attempts_mean5": "Float64",
+          "game_id": "String",
+          "history_available_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "is_designated_home": "Boolean",
+          "is_neutral_site": "Boolean",
+          "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "observed_attempts": "Float64",
+          "observed_completions": "Float64",
+          "opponent_rest_days": "Float64",
+          "opponent_team": "String",
+          "passing_yards_lag1": "Float64",
+          "passing_yards_mean3": "Float64",
+          "passing_yards_mean5": "Float64",
+          "passing_yards_season_mean": "Float64",
+          "player_display_name": "String",
+          "player_id": "String",
+          "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+          "prior_games_in_sample": "UInt32",
+          "prior_season_games_in_sample": "UInt32",
+          "schedule_reported_starter": "Boolean",
+          "season": "Int32",
+          "target_passing_yards": "Float64",
+          "team": "String",
+          "team_rest_days": "Float64",
+          "week": "Int32"
+        },
+        "sha256": "9b0e5b0850a037c12cd62d2f6fddf7552ef30c324d59506164bd0423aae4feb5"
+      },
+      "use": "Earlier recorded appearances for prospective lags only; no reevaluation"
+    },
+    "production_enabled": false,
+    "protocol": {
+      "absence": "No recorded QB appearance is not proof of inactive/DNP; never manufacture a zero target",
+      "appearance": "An explicit regular-season QB stats row with a finite passing-yards value; zero attempts/yards are retained",
+      "deadline": "Register before every enrolled game's scheduled kickoff minus one hour",
+      "enrollment": "Every chart candidate in the chosen feature snapshot, including abstentions and unmapped IDs",
+      "missing": "Unmapped identities, schedule changes and missing source coverage retain their denominator rows",
+      "model": "No predictions, probabilities, calibration tests, model selection or production enablement",
+      "next_validation": "Independent gameday roster/gamebook adjudication and a later prespecified forecast evaluation are still required",
+      "outcomes": "Wait for both scores, kickoff plus 24 hours, and a stats snapshot retrieved after that time",
+      "overlap": "Each game can belong to only one local registry; no replacement after outcomes",
+      "scope": "prospective_candidate_participation_audit",
+      "version": 1
+    },
+    "protocol_sha256": "31e2e9dc94bca0e4ee662c730672e911055b6fbea1a27c4fafbbbd47b616d223",
+    "registered_at_utc": "2026-10-08T00:20:15.401359+00:00",
+    "registry_id": "e98c93b387674ca88e0a95fbc6e1858e",
+    "scope": "prospective_candidate_participation_audit",
+    "snapshot_as_of_utc": "2026-10-08T00:19:56.884476+00:00",
+    "snapshot_sha256": "f32b85664961bce8903c17a5fb4290267775fdc2814417dfb49c4798609a3e36"
+  },
+  "registry_sha256": "d5b36e96b5582c38a2d93aa11e2827f441bda340d3da47c0812dd0fffe288906",
+  "scope": "public_participation_enrollment",
+  "source_hashes": {
+    "depth_charts": "83acbebffbb79fdfd63598e39c675258d9c0e4b55ac14cc48b1018a48df7ae68",
+    "player_stats": "a9e855804b527ac9f591ef4c9a51ae528b823f1129e4901e5ad520f858ee37ba",
+    "schedules": "a5de48d0d06ea98beafab3d84987a9519ac221f221937cb126e914765dc0fa63"
+  }
+}
