@@ -737,6 +737,7 @@ def current_features_page(data_dir: Path) -> None:
                     "history": row["history_audit"],
                     "rest": row["rest_audit"],
                     "status": row["status_review"],
+                    "archived_primary_articles": row.get("primary_status", {}),
                 }
             )
     else:
@@ -754,6 +755,31 @@ def current_features_page(data_dir: Path) -> None:
         st.code("nfl-prop current-features --refresh", language="text")
         for item in report["limitations"]:
             st.write(item)
+    with st.expander("Enrolled participation candidates"):
+        from nfl_prop_model.data.participation import audit_participation
+
+        registries = sorted((data_dir / "participation").glob("cohort-*"))
+        st.caption(
+            "Pregame enrollment fixes every candidate, including abstentions. "
+            "Missing stats never become zero targets."
+        )
+        if registries:
+            selected_registry = st.selectbox(
+                "Registry", registries, format_func=lambda path: path.name
+            )
+            audit = audit_participation(data_dir, selected_registry)
+            st.write(f"{audit['candidate_count']} enrolled candidates; outcomes: {audit['counts']}")
+            st.caption(
+                "Independent gamebook/roster adjudication remains required. "
+                "Forecasts stay disabled."
+            )
+        else:
+            st.write("No candidate registry has been enrolled yet.")
+        st.code(
+            "nfl-prop register-participation --snapshot data/prospective/snapshot-…\n"
+            "nfl-prop participation-audit --registry data/participation/cohort-…",
+            language="text",
+        )
 
 
 def main() -> None:

@@ -98,6 +98,30 @@ def main(argv: list[str] | None = None) -> int:
     feature_command.add_argument(
         "--refresh", action="store_true", help="Refresh 2026 stats/schedules/charts"
     )
+    status_capture = commands.add_parser(
+        "capture-status", help="Archive an official article for a pregame status annotation"
+    )
+    status_capture.add_argument("--data-dir", type=Path, default=Path("data"))
+    status_capture.add_argument("--game-id", required=True)
+    status_capture.add_argument("--espn-id", required=True)
+    status_capture.add_argument("--kind", choices=("starter", "availability"), required=True)
+    status_capture.add_argument("--claim", required=True)
+    status_capture.add_argument("--source-url", required=True)
+    status_capture.add_argument("--quote", required=True)
+    status_capture.add_argument("--context-quote", action="append", required=True)
+    enrollment = commands.add_parser(
+        "register-participation", help="Enroll every snapshot candidate before game cutoffs"
+    )
+    enrollment.add_argument("--data-dir", type=Path, default=Path("data"))
+    enrollment.add_argument("--snapshot", type=Path, required=True)
+    participation = commands.add_parser(
+        "participation-audit", help="Audit an immutable candidate registry offline"
+    )
+    participation.add_argument("--data-dir", type=Path, default=Path("data"))
+    participation.add_argument("--registry", type=Path, required=True)
+    participation.add_argument(
+        "--report-dir", type=Path, default=Path("reports/local/participation")
+    )
     starters = commands.add_parser(
         "starter-audit",
         help="Reconcile flagged 2022–2024 starter labels against ESPN event rosters",
@@ -134,6 +158,45 @@ def main(argv: list[str] | None = None) -> int:
     quote_command.add_argument("--game-total", type=float, help="Recorded note; not a predictor")
     args = parser.parse_args(argv)
     try:
+        if args.command == "capture-status":
+            from nfl_prop_model.data.status_evidence import capture_status_evidence
+
+            saved = capture_status_evidence(
+                args.data_dir,
+                args.game_id,
+                args.espn_id,
+                kind=args.kind,
+                claim=args.claim,
+                source_url=args.source_url,
+                quote=args.quote,
+                context_quotes=args.context_quote,
+            )
+            print(f"Archived primary status annotation: {saved}")
+            print(
+                "Article bytes/excerpts/date checked; claim adjudication remains open. "
+                "No forecasts enabled."
+            )
+            return 0
+        if args.command == "register-participation":
+            from nfl_prop_model.data.participation import register_candidates
+
+            saved = register_candidates(args.data_dir, args.snapshot)
+            print(f"Registered all snapshot candidates: {saved}")
+            print("Outcomes remain pending; no forecasts enabled.")
+            return 0
+        if args.command == "participation-audit":
+            from nfl_prop_model.data.participation import (
+                audit_participation,
+                export_enrollment,
+                write_participation_report,
+            )
+
+            report = audit_participation(args.data_dir, args.registry)
+            write_participation_report(args.report_dir, report)
+            export_enrollment(args.registry, args.report_dir / "enrollment.json")
+            print(f"Audited {report['candidate_count']} enrolled candidates: {report['counts']}")
+            print(f"Report: {args.report_dir / 'participation.md'}")
+            return 0
         if args.command == "current-features":
             from nfl_prop_model.data.prospective import (
                 fetch_current_stats,

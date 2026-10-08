@@ -18,6 +18,8 @@ data/journal/
 data/status_reviews/
 data/holdout/
 data/prospective/
+data/status_evidence/
+data/participation/
 .streamlit/secrets.toml
 models/*.joblib
 models/*.cbm

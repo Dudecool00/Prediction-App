@@ -123,7 +123,31 @@ after 24 hours, active evidence after 6 hours, measured from both source and loc
 Conflicting claims remain visible. Saving requires fresh underlying schedule/chart caches and
 a future, unscored game. This is a manual review overlay; historical model data remains unchanged.
 
-## Historical starter evidence
+## Primary articles and prospective participation enrollment
+
+`capture-status` writes append-only `status_evidence/evidence-ID/` directories with an
+archived HTML article and a checksummed annotation. HTTPS hosts are limited to NFL.com or
+the candidate's official club domain, with every redirect checked. Source publication metadata,
+retrieval time, exact short excerpts, full candidate/game/chart context and source-manifest
+fingerprints are retained. These archives are local and ignored by Git; the project does not
+assign nflverse's license to club articles or redistribute full pages. An annotation expresses
+the reviewer's reading of the excerpt. Matching bytes and dates do not establish claim accuracy,
+active status, or actual participation. Reading reports performs no article download.
+
+`participation/cohort-ID/` copies the complete pregame feature snapshot and its fixed enrollment
+protocol. A local exclusive lock serializes enrollment; each game can occur in only one registry.
+All candidates, including unknown identities and blocked rows, remain enrolled. The registry
+rejects registration after any game's kickoff-minus-one-hour cutoff and verifies hashes offline.
+Derived audits use only local, verified 2026 schedules/stats. Missing outcome coverage remains
+unknown; zero-valued recorded appearances remain valid observations. No 2025 evaluation,
+estimator execution or production prediction is part of this workflow.
+
+The public `enrollment.json` export contains candidate identities/game contexts, feature hashes,
+blockers, publication/retrieval times and source/code/registry fingerprints. It omits article
+HTML and quoted text. Its schedule/stat/chart attribution remains nflverse's CC-BY-4.0
+distribution, with ESPN-derived depth charts. Club evidence retains its own source URL and rights.
+
+## Historical starter evidence (retrospective)
 
 `nfl-prop starter-audit --refresh` adds `raw/starter_evidence_2022_2024/`, separate from training
 and upcoming caches. Only the flagged historical team/game slots are queried. The command

@@ -610,7 +610,53 @@ reads these local reviews offline too. Review records cannot change training dat
 forecasts; source freshness, history, identity, and model checks remain separate. The frozen
 September 22 report predates this workflow and has no manual reviews.
 
-### Next steps for actual upcoming forecasts
+### Archive primary status evidence and enroll participation candidates
+
+`capture-status` fetches an HTTPS article from NFL.com or the candidate's official club
+website. It checks every redirect, archives the HTML locally, reads the article's publication
+timestamp, and checks exact excerpts against its visible text. Supply an explicit reviewer
+annotation, a quote containing the candidate's full name, and context excerpts naming both
+clubs and the scheduled week. Combined excerpts are limited to 25 words.
+
+```powershell
+nfl-prop capture-status --game-id GAME --espn-id ID --kind availability --claim ruled_out `
+  --source-url https://www.CLUB.com/news/ARTICLE --quote "Full Name ... Game Status: Out" `
+  --context-quote "Club-Opponent" --context-quote "Week 5"
+nfl-prop current-features
+nfl-prop register-participation --snapshot data/prospective/snapshot-ID
+nfl-prop participation-audit --registry data/participation/cohort-ID
+```
+
+Starter annotations accept `confirmed` or `not_starter`; availability annotations accept
+`active`, `inactive`, or `ruled_out`. **The excerpt's meaning is a reviewer annotation, not an
+automatic semantic verification or proof of participation.** Ruled out is an injury designation,
+distinct from a gameday inactive list. Active status must never be inferred from chart rank,
+practice participation, or the absence of an injury designation. Articles need one unambiguous
+timezone-aware publication timestamp within the preceding seven days; captures must precede
+kickoff minus one hour. Reads verify both record and HTML hashes offline. Current checks retain
+the existing 24-hour starter and 6-hour availability windows, require the same candidate context,
+and flag contradictory claims. The **Current features** evidence panel shows these archives
+separately from the older manual reviews. All upcoming forecasts remain disabled.
+
+Enrollment fixes **every** candidate in a fresh, unchanged feature snapshot before the earliest
+game cutoff. Blocked and unmapped candidates remain included, and a game cannot be enrolled
+twice. A copied snapshot, protocol hash, source/code fingerprints and registration time remain
+in ignored `data/participation/`. The participation audit also writes `enrollment.json`, a public
+export of this fixed denominator and fingerprints that excludes raw article HTML and excerpts.
+
+After each game, refresh 2026 sources and run `participation-audit` against the **existing** registry.
+The offline audit waits for both scores, kickoff plus 24 hours, and fresh postgame source snapshots.
+Explicit QB appearances retain zero attempts and zero or negative yards. Missing identities,
+schedule changes and source gaps retain their rows; missing QB stats never become zero targets.
+A candidate absent from the QB stats is labeled `no_recorded_qb_appearance`, which still requires
+independent roster/gamebook adjudication to establish DNP or inactive status. This initial registry
+does not generate predictions or validate calibration. The page exposes registry outcome counts.
+
+[The first prospective enrollment report](reports/prospective_participation/participation.md)
+preserves the protocol and status at registration. Its games have not finished; empirical
+participation validation remains pending. No model fitting or new 2025 evaluation occurs.
+
+### Remaining work for actual upcoming forecasts
 
 The fixed checkpoint and 2025 diagnostic are complete. Verify prospective feature
 availability, identities and dated starter/active evidence, then validate the participation

@@ -12,6 +12,7 @@ import polars as pl
 
 from nfl_prop_model.data.quarterback_games import build_target_table
 from nfl_prop_model.data.schemas import DataQualityError, validate_sources
+from nfl_prop_model.data.status_evidence import apply_status_evidence, read_status_evidence
 from nfl_prop_model.data.status_reviews import read_status_reviews
 from nfl_prop_model.data.storage import load_frame, read_json, sha256_file, store_frame, write_json
 from nfl_prop_model.data.upcoming import (
@@ -311,6 +312,14 @@ def load_feature_report(
         status_reviews=read_status_reviews(data_dir / "status_reviews"),
     )
     report["history_sources"] = history_sources
+    apply_status_evidence(report, read_status_evidence(data_dir))
+    report["blocker_counts"] = dict(
+        sorted(
+            Counter(
+                reason for row in report["candidates"] for reason in row["forecast_blockers"]
+            ).items()
+        )
+    )
     package = Path(__file__).parents[1]
     report["pipeline_source_hashes"] = {
         path.relative_to(package).as_posix(): sha256_file(path)
@@ -396,6 +405,21 @@ def write_feature_report(report_dir: Path, report: dict[str, Any]) -> None:
         for row in report["candidates"]
     ]
     lines += [
+        "",
+        "## Archived primary status annotations",
+        "",
+        "Excerpts and article dates are checked against archived bytes. The claim interpretation "
+        "is a reviewer annotation; independent adjudication and participation "
+        "validation remain open.",
+        "",
+        *[
+            f"- {row['game_id']} · {row['player_name']} · {record['kind']}: {record['claim']} "
+            f"(current check: {row['primary_status'][record['kind']]}); "
+            f"[official source]({record['source_url']}), published {record['published_at_utc']}, "
+            f"archived {record['retrieved_at_utc']}; SHA-256 `{record['source_sha256']}`."
+            for row in report["candidates"]
+            for record in row.get("primary_status", {}).get("records", [])
+        ],
         "",
         "## Source snapshot fingerprints",
         "",
