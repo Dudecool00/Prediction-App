@@ -656,7 +656,42 @@ does not generate predictions or validate calibration. The page exposes registry
 preserves the protocol and status at registration. Its games have not finished; empirical
 participation validation remains pending. No model fitting or new 2025 evaluation occurs.
 
-### Remaining work for actual upcoming forecasts
+### Reconcile the fixed pool with postgame rosters
+
+```powershell
+nfl-prop participation-reconcile --registry data/participation/cohort-ID --refresh
+# Later offline reads use the verified local cache:
+nfl-prop participation-reconcile --registry data/participation/cohort-ID
+```
+
+Refresh retrieves only 2026 schedule/stat snapshots, then requests ESPN event rosters for
+completed **enrolled** games with fresh sources at least 24 hours after kickoff. Before any
+enrolled games qualify, it makes no ESPN roster/position or player-identity requests. The app
+reads cached evidence offline and shows per-candidate roster checks under **Current features**.
+Missing evidence retains the original candidate and its unresolved status.
+
+Reconciliation verifies event ID, year, regular-season week, both teams, kickoff and completion,
+checks roster references and literal period-zero flags, and compares a unique ESPN-to-GSIS
+mapping with the original candidate IDs. A newly mapped player does not rewrite an originally
+unmapped candidate. Hashes and retrieval times protect offline evidence reads; failed refreshes
+preserve the prior active manifest. The original enrollment, snapshot and protocol remain intact.
+
+A valid non-DNP roster entry plus a recorded QB stats target corroborates participation,
+including zero-yard/zero-attempt rows. Explicit DNP with no recorded QB appearance corroborates
+**DNP only**, not inactive status. DNP plus a QB target is a conflict. `didNotPlay=false` with
+`valid=false` is ambiguous; the roster's `active` field is ignored because it is false even for
+starters in the inspected completed-game response. Missing targets remain unknown rather than
+becoming zeros. NFL/ESPN coverage disagreements and identity changes remain unresolved.
+
+The report compares the frozen enrollment-time starter annotation with retrospective starter
+flags. That comparison does not verify an article's meaning, make expired evidence current,
+prove gameday activation, or establish forecast calibration. The roster interpretation rules
+are a separate prespecified addendum; the first enrollment's rules and 170-row denominator are
+unchanged. [Read the initial reconciliation report](reports/participation_reconciliation/reconciliation.md)
+and [the retrospective source-contract check](reports/participation_reconciliation/source_contract.md).
+All enrolled games remain pending at this report's cutoff; forecasts stay disabled.
+
+### Remaining forecast validation work
 
 The fixed checkpoint and 2025 diagnostic are complete. Verify prospective feature
 availability, identities and dated starter/active evidence, then validate the participation

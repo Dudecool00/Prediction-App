@@ -756,7 +756,7 @@ def current_features_page(data_dir: Path) -> None:
         for item in report["limitations"]:
             st.write(item)
     with st.expander("Enrolled participation candidates"):
-        from nfl_prop_model.data.participation import audit_participation
+        from nfl_prop_model.data.roster_reconciliation import reconcile_rosters
 
         registries = sorted((data_dir / "participation").glob("cohort-*"))
         st.caption(
@@ -767,17 +767,33 @@ def current_features_page(data_dir: Path) -> None:
             selected_registry = st.selectbox(
                 "Registry", registries, format_func=lambda path: path.name
             )
-            audit = audit_participation(data_dir, selected_registry)
+            audit = reconcile_rosters(data_dir, selected_registry)
             st.write(f"{audit['candidate_count']} enrolled candidates; outcomes: {audit['counts']}")
+            st.write(f"Roster checks: {audit['roster_counts']}")
+            st.dataframe(
+                [
+                    {
+                        "Game": row["context"]["game_id"],
+                        "Team": row["context"]["team"],
+                        "QB": row["player_name"],
+                        "QB stats": row["state"],
+                        "Roster check": row["roster_reconciliation"]["state"],
+                        "Starter annotation": row["roster_reconciliation"]["starter_claim_result"],
+                    }
+                    for row in audit["candidates"]
+                ],
+                hide_index=True,
+                width="stretch",
+            )
             st.caption(
-                "Independent gamebook/roster adjudication remains required. "
+                "Roster agreement does not verify article meaning or gameday inactive status. "
                 "Forecasts stay disabled."
             )
         else:
             st.write("No candidate registry has been enrolled yet.")
         st.code(
             "nfl-prop register-participation --snapshot data/prospective/snapshot-…\n"
-            "nfl-prop participation-audit --registry data/participation/cohort-…",
+            "nfl-prop participation-reconcile --registry data/participation/cohort-… --refresh",
             language="text",
         )
 
