@@ -640,6 +640,61 @@ def upcoming_page(data_dir: Path) -> None:
             st.write(item)
 
 
+def starter_coverage_page(data_dir: Path) -> None:
+    from nfl_prop_model.data.starter_coverage import load_starter_coverage
+
+    st.title("Full historical starter coverage")
+    st.info(
+        "Retrospective development audit. Original training rows and upcoming forecasts "
+        "are unchanged."
+    )
+    report = load_starter_coverage(data_dir)
+    counts = report["counts"]
+    a, b, c = st.columns(3)
+    a.metric("Completed team-games", counts["completed_team_game_slots"])
+    b.metric("Resolved starter slots", counts["resolved_slots"])
+    c.metric("Unresolved slots", counts["needs_review"])
+    st.caption(
+        f"{counts['verified_schedule_labels']} schedule labels agree; "
+        f"{counts['corrected_schedule_labels']} differ. "
+        f"All {counts['historical_qb_rows']} recorded QB rows remain in the descriptive overlay."
+    )
+    st.write(f"Recorded appearances: {report['appearance_counts']}")
+    unresolved = st.checkbox("Show unresolved slots only", key="coverage_unresolved")
+    cases = [
+        row for row in report["cases"] if not unresolved or row["status"].startswith("unresolved_")
+    ]
+    st.dataframe(
+        [
+            {
+                "Game": row["game_id"],
+                "Team": row["team"],
+                "Schedule QB": row["scheduled_name"],
+                "Roster starter": row["reconciled_name"],
+                "Status": row["status"],
+                "Detail": row["error"],
+            }
+            for row in cases
+        ],
+        hide_index=True,
+        width="stretch",
+    )
+    st.download_button(
+        "Download full starter coverage",
+        json.dumps(report, indent=2, allow_nan=False),
+        file_name="development-starter-coverage.json",
+        mime="application/json",
+    )
+    with st.expander("Evidence and limits"):
+        st.caption(
+            f"Evidence manifest published {report['evidence_manifest']['retrieved_at_utc']}."
+        )
+        st.json(report["rules"])
+        for item in report["limitations"]:
+            st.write(item)
+        st.code("nfl-prop starter-coverage --collect", language="text")
+
+
 def starter_audit_page(data_dir: Path) -> None:
     st.title("Historical starter audit")
     st.write("Reconcile schedule-listed QBs missing from the 2022–2024 statistics table.")
@@ -920,6 +975,7 @@ def main() -> None:
             "Current features",
             "Pregame evidence review",
             "Starter audit",
+            "Starter coverage",
             "Model results",
             "Calibration audit",
             "Saved snapshots",
@@ -941,6 +997,8 @@ def main() -> None:
             claim_review_page(data_dir)
         elif page == "Starter audit":
             starter_audit_page(data_dir)
+        elif page == "Starter coverage":
+            starter_coverage_page(data_dir)
         elif page == "Calibration audit":
             calibration_audit_page(data_dir)
         else:
@@ -964,6 +1022,8 @@ def main() -> None:
             if page == "Current features"
             else "nfl-prop starter-audit --refresh"
             if page == "Starter audit"
+            else "nfl-prop starter-coverage --collect"
+            if page == "Starter coverage"
             else "nfl-prop fetch\nnfl-prop build\nnfl-prop research",
             language="text",
         )
