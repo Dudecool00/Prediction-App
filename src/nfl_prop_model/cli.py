@@ -31,7 +31,7 @@ def main(argv: list[str] | None = None) -> int:
     from nfl_prop_model.data.team_games import DEFAULT_TEAM_SEASONS
     from nfl_prop_model.features.team_epa import HORIZONS
 
-    for name in ("team-fetch", "team-build", "team-evaluate", "team-forecast"):
+    for name in ("team-fetch", "team-build", "team-evaluate", "team-experiment", "team-forecast"):
         team_command = commands.add_parser(name, help="Team EPA final-score and margin research")
         team_command.add_argument("--data-dir", type=Path, default=Path("data"))
         if name in {"team-fetch", "team-build"}:
@@ -40,12 +40,18 @@ def main(argv: list[str] | None = None) -> int:
             )
         if name == "team-fetch":
             team_command.add_argument("--refresh", action="store_true")
-        if name == "team-evaluate":
+        if name in {"team-evaluate", "team-experiment"}:
             team_command.add_argument(
                 "--evaluation-seasons", type=int, nargs="+", default=[2022, 2023, 2024]
             )
             team_command.add_argument(
-                "--report-dir", type=Path, default=Path("reports/local/team_scores")
+                "--report-dir",
+                type=Path,
+                default=Path(
+                    "reports/local/team_experiments"
+                    if name == "team-experiment"
+                    else "reports/local/team_scores"
+                ),
             )
         if name == "team-forecast":
             team_command.add_argument("--horizon", choices=HORIZONS, default="early_week")
@@ -244,6 +250,18 @@ def main(argv: list[str] | None = None) -> int:
                 print(
                     f"Scored {len(report['folds'])} temporal folds. "
                     f"Report: {args.report_dir / 'team_scores.md'}"
+                )
+            elif args.command == "team-experiment":
+                from nfl_prop_model.modeling.team_experiments import save_team_experiments
+
+                report = save_team_experiments(
+                    args.data_dir,
+                    args.report_dir,
+                    evaluation_seasons=tuple(args.evaluation_seasons),
+                )
+                print(
+                    f"Compared four feature ablations across {len(report['folds'])} cutoffs. "
+                    f"Report: {args.report_dir / 'team_experiments.md'}"
                 )
             else:
                 path = save_team_forecast(args.data_dir, horizon=args.horizon, days=args.days)
