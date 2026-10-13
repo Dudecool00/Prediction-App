@@ -437,7 +437,9 @@ def test_sparse_history_comparison_is_flagged_without_changing_math(saved_resear
     )
     write_json(directory / "manifest.json", manifest)
     monkeypatch.setenv("NFL_PROP_DATA_DIR", str(data))
-    app = AppTest.from_file(Path(__file__).parents[1] / "app.py", default_timeout=30).run()
+    app = AppTest.from_file(Path(__file__).parents[1] / "app.py", default_timeout=30)
+    app.session_state["page"] = "Compare a line"
+    app.run()
     assert not app.exception and not app.error
     assert any("fewer than five" in w.value for w in app.warning)
     assert app.metric[0].value == "200.0 yd"

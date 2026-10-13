@@ -7,7 +7,9 @@ from streamlit.testing.v1 import AppTest
 
 
 def app_test():
-    return AppTest.from_file(Path(__file__).parents[1] / "app.py", default_timeout=20)
+    app = AppTest.from_file(Path(__file__).parents[1] / "app.py", default_timeout=20)
+    app.session_state["page"] = "Compare a line"
+    return app
 
 
 def test_missing_cache_has_setup_instructions(tmp_path, monkeypatch):

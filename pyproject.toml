@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "prediction-app"
 version = "0.1.0"
-description = "An auditable NFL quarterback passing-yards research pipeline"
+description = "Auditable NFL team EPA score and margin research with legacy QB models"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

@@ -24,10 +24,32 @@ from nfl_prop_model.markets.odds import ManualMarket, parse_american
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="NFL quarterback forecasts and manual-market research"
+        description="NFL team EPA scores, margins, and legacy quarterback research"
     )
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
+    from nfl_prop_model.data.team_games import DEFAULT_TEAM_SEASONS
+    from nfl_prop_model.features.team_epa import HORIZONS
+
+    for name in ("team-fetch", "team-build", "team-evaluate", "team-forecast"):
+        team_command = commands.add_parser(name, help="Team EPA final-score and margin research")
+        team_command.add_argument("--data-dir", type=Path, default=Path("data"))
+        if name in {"team-fetch", "team-build"}:
+            team_command.add_argument(
+                "--seasons", type=int, nargs="+", default=list(DEFAULT_TEAM_SEASONS)
+            )
+        if name == "team-fetch":
+            team_command.add_argument("--refresh", action="store_true")
+        if name == "team-evaluate":
+            team_command.add_argument(
+                "--evaluation-seasons", type=int, nargs="+", default=[2022, 2023, 2024]
+            )
+            team_command.add_argument(
+                "--report-dir", type=Path, default=Path("reports/local/team_scores")
+            )
+        if name == "team-forecast":
+            team_command.add_argument("--horizon", choices=HORIZONS, default="early_week")
+            team_command.add_argument("--days", type=int, default=7)
     for name in ("fetch", "build"):
         command = commands.add_parser(name)
         command.add_argument("--seasons", type=int, nargs="+", default=list(DEFAULT_SEASONS))
@@ -204,6 +226,29 @@ def main(argv: list[str] | None = None) -> int:
     quote_command.add_argument("--game-total", type=float, help="Recorded note; not a predictor")
     args = parser.parse_args(argv)
     try:
+        if args.command.startswith("team-"):
+            from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
+            from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
+
+            if args.command == "team-fetch":
+                fetch_team_sources(args.data_dir, args.seasons, refresh=args.refresh)
+            elif args.command == "team-build":
+                manifest = build_team_cache(args.data_dir, args.seasons)
+                print(f"Team data audit: {manifest['audit']}")
+            elif args.command == "team-evaluate":
+                report = save_team_evaluation(
+                    args.data_dir,
+                    args.report_dir,
+                    evaluation_seasons=tuple(args.evaluation_seasons),
+                )
+                print(
+                    f"Scored {len(report['folds'])} temporal folds. "
+                    f"Report: {args.report_dir / 'team_scores.md'}"
+                )
+            else:
+                path = save_team_forecast(args.data_dir, horizon=args.horizon, days=args.days)
+                print(f"Saved team score/margin research forecast: {path}")
+            return 0
         if args.command == "starter-coverage":
             from nfl_prop_model.data.starter_coverage import (
                 fetch_starter_coverage,

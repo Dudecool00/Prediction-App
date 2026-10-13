@@ -1,6 +1,51 @@
 # Project status
 
-Updated 2026-10-07 (local date). PR #13 is merged (`79c425f`); its Linux and Windows CI passed.
+Updated 2026-10-13 (local date). Team EPA score/margin implementation uses `codex/team-epa-scores`.
+The dated legacy QB milestones below retain their original evidence; PR #13 is merged (`79c425f`).
+
+## New: team EPA scores and margins
+
+- The user approved the pivot and added projected final scores. The first two-output Ridge
+  model predicts both final scores; signed margins and totals derive from the same rounded
+  score values. A 31.2–27.5 projection yields +3.7 and -3.7 depending on team perspective.
+- `team-fetch`, `team-build`, `team-evaluate`, and `team-forecast` reuse the existing
+  nflreadpy/Polars/Parquet/manifest infrastructure in independent team namespaces. Historical
+  QB rows, reports, raw evidence, and frozen bundles are preserved. Legacy QB gates remain.
+- Real 2016–2026 snapshots contain 2,718 completed regular-season games / 5,436 team-games,
+  and 337,801 eligible offensive plays. Both sides reconcile to completed schedules. One
+  candidate EPA value is missing/nonfinite and excluded with an explicit audit count.
+- The 2022–2024 comparison scores 815 games per horizon, with 421 temporal cutoff groups.
+  Early-week Ridge margin MAE is 9.811, versus 9.916 for prior team scoring with home field and 10.597 for
+  league scoring. Per-team score MAE is 7.333. Refresh margin MAE is 9.805. The gains are
+  modest. [Initial report](reports/team_scores/initial_backtest.md) and
+  [summary/source hashes](reports/team_scores/initial_summary.json) are retained.
+- **Team scores** is the default Streamlit page; **Team backtest** compares models and shows
+  historical score/margin projections with actual outcomes. The first early-week snapshot
+  was saved at 2026-10-13 18:20:57 UTC; subsequent corrected snapshots retain 14 Week 6 games.
+  The retained summary identifies the final source/model version and exact snapshot time.
+  For example, GB 26.3–DAL 25.0 yields GB +1.3 / DAL -1.3.
+  Live snapshots save actual run time, features, training inputs,
+  source/model hashes, and runtime versions without overwriting earlier forecasts.
+- Backtests use Tuesday 10:00 America/Chicago and kickoff minus one hour, separately scored.
+  Earlier results require kickoff plus 24 hours. These are retrospective availability
+  assumptions, not historical publication evidence. Rest uses schedule history independently
+  of delayed EPA availability, with separate regression checks for Monday games.
+  2025 is already accessed; no fresh
+  holdout claim is made. Current source snapshots are required for live research forecasts.
+- Lint, formatting, typing, and dependency checks pass. The complete 366-test regression suite
+  passed on Python 3.12, followed by 17 focused checks after the schedule-rest correction,
+  a separate cache-reader import check, and all 15 team checks after the baseline correction.
+  The team display check was rerun after a concurrent model-file edit correctly invalidated
+  its saved cache. The actual 14-game slate and saved backtest also passed Streamlit smoke checks.
+  Legacy UI tests explicitly select the QB page after
+  the default changed. Tests use temporary files outside OneDrive to avoid transient file locks.
+  Existing local native Polars access-violation diagnostics still occur on Python 3.12/3.14;
+  no fault handlers or tests are disabled.
+- Next: opponent-adjustment experiments, calibrated score/margin uncertainty, optional
+  QB/injury/weather context, prospective outcome summaries, and cadence scheduling. No
+  sportsbook lines, win/cover probabilities, or automated bets enter the first model.
+
+[Team policy](TEAM_MODEL_POLICY.md) defines the active feature, timing, and output contracts.
 
 ## New: full development starter coverage
 
