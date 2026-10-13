@@ -527,3 +527,250 @@ def test_team_experiments_display_saved_error_comparison(team_cache, monkeypatch
     comparisons = [frame.value for frame in app.dataframe if "Margin MAE" in frame.value.columns]
     assert any(len(frame) == 7 for frame in comparisons)
     assert any("EPA + scoring history" in frame["Model"].to_list() for frame in comparisons)
+
+
+def tuning_history(team_sources):
+    """Two initialization seasons support the minimum 64-game rule in early validation."""
+    plays, schedules = team_sources
+    older_plays, older_schedules = [], []
+    for season in (2018, 2019):
+        for row in plays.filter(pl.col("season") == 2020).to_dicts():
+            older_plays.append(
+                {**row, "season": season, "game_id": row["game_id"].replace("2020", str(season))}
+            )
+        for row in schedules.filter(pl.col("season") == 2020).to_dicts():
+            day = datetime.fromisoformat(row["gameday"])
+            older_schedules.append(
+                {
+                    **row,
+                    "season": season,
+                    "game_id": row["game_id"].replace("2020", str(season)),
+                    "gameday": day.replace(year=day.year - (2020 - season)).strftime("%Y-%m-%d"),
+                }
+            )
+    return build_team_games(
+        pl.concat([plays, pl.DataFrame(older_plays)]),
+        pl.concat([schedules, pl.DataFrame(older_schedules)]),
+    )[:2]
+
+
+def test_tuned_epa_default_identity_and_future_outcome_invariance(team_sources):
+    from nfl_prop_model.features.team_tuning import RatingSettings, tuned_matchup_features
+
+    teams, games = tuning_history(team_sources)
+    teams = teams.with_columns(
+        [
+            (pl.col(name) * pl.col("week")).alias(name)
+            for name in teams.columns
+            if name.endswith("epa_sum")
+        ]
+    )
+    canonical = matchup_features(teams, games).filter(
+        (pl.col("season") == 2022) & (pl.col("week") == 10)
+    )
+    assert_frame_equal(canonical, tuned_matchup_features(teams, canonical, RatingSettings()))
+    settings = RatingSettings(3, 0.65, 100)
+    before = tuned_matchup_features(teams, canonical, settings)
+    assert before["home_off_epa_recent"].to_list() != canonical["home_off_epa_recent"].to_list()
+    cutoff = canonical["prediction_time_utc"][0]
+    poison = teams.with_columns(
+        [
+            pl.when(pl.col("result_available_at_utc") >= cutoff)
+            .then(pl.lit(999999.0))
+            .otherwise(pl.col(name))
+            .alias(name)
+            for name in teams.columns
+            if name.endswith("epa_sum")
+        ]
+    )
+    assert_frame_equal(before, tuned_matchup_features(poison, canonical, settings))
+
+
+def test_tuning_windows_include_current_season_and_only_available_training(team_sources):
+    from nfl_prop_model.modeling.team_tuning import PROFILES, training_rows
+
+    teams, games = tuning_history(team_sources)
+    features = matchup_features(teams, games)
+    cutoff = features.filter((pl.col("season") == 2022) & (pl.col("week") == 10))[
+        "prediction_time_utc"
+    ][0]
+    short = training_rows(features, cutoff, 2022, PROFILES[1])
+    assert set(short["season"]) == {2020, 2021, 2022}
+    assert short["result_available_at_utc"].max() < cutoff
+    full = training_rows(features, cutoff, 2022, PROFILES[0])
+    assert set(full["season"]) == {2018, 2019, 2020, 2021, 2022}
+    assert short.height < full.height
+
+
+def selection_panel():
+    from nfl_prop_model.modeling.team_tuning import PROFILES, TuningProfile
+
+    profiles = (PROFILES[0], TuningProfile("candidate"), TuningProfile("bad_score"))
+    records = []
+    for season in (2020, 2021, 2022):
+        for week in range(1, 4):
+            for name, home, away in (
+                ("ridge_epa_scores", 22, 17),
+                ("candidate", 20.2, 17),
+                ("bad_score", 30, 27),
+            ):
+                records.append(
+                    {
+                        "game_id": f"{season}-{week}",
+                        "horizon": "early_week",
+                        "model": name,
+                        "season": season,
+                        "week": week,
+                        "home_score": 20,
+                        "away_score": 17,
+                        "target_home_margin": 3,
+                        "result_available_at_utc": datetime(season, 10, 1, tzinfo=UTC),
+                        **consistent_scores(home, away),
+                    }
+                )
+    return pl.DataFrame(records), profiles
+
+
+def test_tuning_selection_ignores_outer_outcomes_and_enforces_score_guard():
+    from nfl_prop_model.modeling.team_tuning import select_profiles
+
+    panel, profiles = selection_panel()
+    locks = {2022: datetime(2022, 9, 1, tzinfo=UTC)}
+    selections = select_profiles(panel, locks, profiles=profiles)
+    assert selections[0]["selected_profile"] == "candidate"
+    assert selections[0]["validation_seasons"] == [2020, 2021]
+    poison = panel.with_columns(
+        *[
+            pl.when(pl.col("season") == 2022)
+            .then(pl.lit(999.0))
+            .otherwise(pl.col(name))
+            .alias(name)
+            for name in ("target_home_margin", "home_score", "away_score")
+        ]
+    )
+    assert select_profiles(poison, locks, profiles=profiles) == selections
+    unavailable = panel.with_columns(
+        pl.when(pl.col("season") == 2021)
+        .then(pl.lit(locks[2022]))
+        .otherwise(pl.col("result_available_at_utc"))
+        .alias("result_available_at_utc")
+    )
+    with pytest.raises(DataQualityError, match="unavailable"):
+        select_profiles(unavailable, locks, profiles=profiles)
+    missing = panel.filter(~((pl.col("model") == "candidate") & (pl.col("week") == 1)))
+    with pytest.raises(DataQualityError, match="cohorts"):
+        select_profiles(missing, locks, profiles=profiles)
+
+
+def test_tuning_defaults_retain_control_for_tiny_validation_gains():
+    from nfl_prop_model.features.team_tuning import RatingSettings
+    from nfl_prop_model.modeling.team_tuning import PROFILES, TuningProfile, select_profiles
+
+    panel, profiles = selection_panel()
+    panel = panel.with_columns(
+        pl.when(pl.col("model") == "candidate")
+        .then(pl.lit(5.0))
+        .otherwise(pl.col("predicted_home_margin"))
+        .alias("predicted_home_margin")
+    )
+    assert (
+        select_profiles(panel, {2022: datetime(2022, 9, 1, tzinfo=UTC)}, profiles=profiles)[0][
+            "selected_profile"
+        ]
+        == "ridge_epa_scores"
+    )
+    with pytest.raises(ValueError, match="unchanged"):
+        select_profiles(
+            panel, {}, profiles=(TuningProfile("ridge_epa_scores", training_seasons=3),)
+        )
+    with pytest.raises(ValueError):
+        RatingSettings(recent_decay=0)
+    with pytest.raises(ValueError):
+        TuningProfile("short", training_seasons=1)
+    assert len(PROFILES) == 11
+
+
+def test_team_tune_cli_temporal_locks_and_saved_artifact_guards(
+    team_sources, tmp_path, monkeypatch
+):
+    from nfl_prop_model.modeling.team_tuning import TUNED_MODEL, load_team_tuning
+
+    teams, games = tuning_history(team_sources)
+    directory = tmp_path / "processed" / "team_epa"
+    write_json(
+        directory / "manifest.json",
+        {
+            "pipeline_source_sha256": team_source_hash(),
+            "sources": [],
+            "artifacts": {
+                "team_games": store_frame(directory, "team_games", teams),
+                "games": store_frame(directory, "games", games),
+            },
+        },
+    )
+    assert (
+        main(
+            [
+                "team-tune",
+                "--data-dir",
+                str(tmp_path),
+                "--report-dir",
+                str(tmp_path / "reports"),
+                "--evaluation-seasons",
+                "2022",
+            ]
+        )
+        == 0
+    )
+    report, predictions = load_team_tuning(tmp_path)
+    assert predictions.height == 144
+    assert set(predictions["model"]) == {"ridge_epa_scores", TUNED_MODEL}
+    assert report["selections"][0]["validation_seasons"] == [2020, 2021]
+    assert all(
+        fold["latest_training_result_available_utc"] < fold["cutoff_utc"]
+        for fold in report["folds"]
+    )
+    assert predictions.filter(
+        pl.col("predicted_home_margin")
+        != (pl.col("predicted_home_score") - pl.col("predicted_away_score")).round(1)
+    ).is_empty()
+    pytest.importorskip("streamlit")
+    from streamlit.testing.v1 import AppTest
+
+    monkeypatch.setenv("NFL_PROP_DATA_DIR", str(tmp_path))
+    save_team_evaluation(tmp_path, tmp_path / "scores", evaluation_seasons=(2022,))
+    app = AppTest.from_file(Path(__file__).parents[1] / "app.py", default_timeout=30).run()
+    app.radio(key="page").set_value("Team backtest").run()
+    assert not app.exception and not app.error
+    assert any(expander.label == "Chronological tuning" for expander in app.expander)
+    comparisons = [frame.value for frame in app.dataframe if "Model" in frame.value.columns]
+    assert any("Selected on earlier seasons" in frame["Model"].to_list() for frame in comparisons)
+    with monkeypatch.context() as guarded:
+        guarded.setattr("nfl_prop_model.modeling.team_tuning.tuning_source_hash", lambda: "changed")
+        with pytest.raises(DataQualityError, match="changed"):
+            load_team_tuning(tmp_path)
+    path = tmp_path / "processed" / "team_tuning" / report["artifacts"]["predictions"]["file"]
+    path.write_bytes(b"corrupted")
+    with pytest.raises(ValueError, match="checksum"):
+        load_team_tuning(tmp_path)
+
+
+def test_tuning_lock_precedes_week_one_even_when_week_one_has_no_scored_outcomes(team_sources):
+    from nfl_prop_model.modeling.team_tuning import PROFILES, evaluate_team_tuning
+
+    teams, games = tuning_history(team_sources)
+    missing = (pl.col("season") == 2022) & (pl.col("week") == 1)
+    teams = teams.filter(~missing)
+    games = games.with_columns(
+        [
+            pl.when(missing).then(None).otherwise(pl.col(name)).alias(name)
+            for name in ("home_score", "away_score", "target_home_margin")
+        ]
+    )
+    expected = (
+        matchup_features(teams, games).filter(pl.col("season") == 2022)["prediction_time_utc"].min()
+    )
+    _, _, selections, _ = evaluate_team_tuning(
+        teams, games, evaluation_seasons=(2022,), profiles=(PROFILES[0],)
+    )
+    assert selections[0]["lock_utc"] == expected.isoformat()

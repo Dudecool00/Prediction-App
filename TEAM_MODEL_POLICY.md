@@ -113,3 +113,32 @@ stability assessed alongside it. Paired season/week-block resampling uses 5,000 
 Development gains require later prospective validation. Reports record feature policies,
 code hashes, input snapshots, runtime versions and predictions. Stale code or corrupted
 artifacts fail visibly. The command does not automatically promote a winning candidate.
+
+## Chronological setting selection
+
+`team-tune` fixes the published EPA feature allowlist and Ridge alpha 20. Its 11 declared
+profiles contain the default; three- and five-season training windows; three- and eight-game
+recent windows; 0.65 and 1.0 recent decay; 100 and 400 prior pseudo-plays; a fast combined
+profile (three training seasons, three recent games, 0.65 decay, 100 prior plays); and a slow
+combined profile (five training seasons, eight recent games, 0.95 decay, 400 prior plays).
+Season counts include the forecast's current NFL season. Training still requires at least
+64 earlier available completed games, with preprocessing fitted inside each training split.
+
+For each evaluation season, select using only early-week errors from its preceding two
+completed NFL seasons. Each candidate's validation predictions are themselves chronological
+fits. Choose the lowest margin MAE among settings whose per-team score MAE is no more than
+0.05 points above the default. Require at least 0.05 points of margin-MAE improvement; otherwise
+retain the default. Break equal margin errors by fixed profile order, with the default first.
+Lock that choice before the season's first early-week prediction and use it for both forecast
+horizons throughout that season. Refit on available games at each cutoff without reselecting
+settings from that season's outcomes. Validation availability and equal model cohorts are
+checked explicitly; the following season's outcomes never participate in selection.
+
+The default evaluation uses 2020–2021 to select for 2022, 2021–2022 for 2023, and 2022–2023 for
+2024. These periods remain already examined development data, not a new untouched holdout.
+Record the computational protocol before evaluation, and retain candidate predictions,
+selected predictions, season choices, validation metrics, temporal fits and input/code hashes.
+Report subsequent-season score/margin/total error separately by season and horizon, with
+approximate paired week-block gain ranges. The research command does not automatically change
+published forecasts. The earlier feature experiments and forecasts remain readable because
+configurable rating code lives in a separate module from the published feature implementation.
