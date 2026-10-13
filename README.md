@@ -1,5 +1,61 @@
 # prediction-app
 
+The active direction is **NFL team EPA research: projected final scores and scoring margins**.
+The existing Python, nflverse, Parquet, audit, backtest, and Streamlit infrastructure now supports
+a separate team pipeline. The default app page is **Team scores**, with a **Team backtest** page.
+Earlier QB research remains available as legacy work.
+
+The first candidate jointly predicts home and away final scores with Ridge regression using
+strictly prior offensive/defensive EPA, dropback/rush splits, home/neutral context, and rest.
+Scores are projected averages and can be fractional. For example, **31.2–27.5** produces
+**+3.7** for the first team and **−3.7** for the other team. Stored and displayed margins use
+the same scores, rounded to one decimal. They are not a separate, conflicting prediction.
+
+### Team quick start (PowerShell)
+
+Use the existing virtual environment, or install with the instructions below. For the historical
+baseline, defaults download/build 2016–2024 and evaluate 2022–2024:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-fetch
+.\.venv\Scripts\nfl-prop.exe team-build
+.\.venv\Scripts\nfl-prop.exe team-evaluate
+.\.venv\Scripts\streamlit.exe run app.py
+```
+
+For upcoming games, include every intervening season through the current NFL season. On October
+13, 2026, use:
+
+```powershell
+$teamSeasons = 2016..2026
+.\.venv\Scripts\nfl-prop.exe team-fetch --seasons $teamSeasons
+.\.venv\Scripts\nfl-prop.exe team-build --seasons $teamSeasons
+.\.venv\Scripts\nfl-prop.exe team-forecast --horizon early_week
+```
+
+To refresh current sources later, download only the current season with `team-fetch --seasons
+2026 --refresh`, rebuild with the full season list, and run `team-forecast --horizon pregame_refresh`.
+Live snapshots record the actual run time; refreshes require a game 1–24 hours before kickoff.
+These commands are manual and do not install a scheduler. Each forecast is saved separately
+under ignored `data/journal/team_scores/snapshot-*/`, with features, training inputs, and source hashes.
+The app reads saved snapshots offline. It does not silently refit models on page load.
+
+Historical early-week backtests use Tuesday 10:00 America/Chicago before the first game of the
+week; refresh backtests use kickoff minus one hour. Results become eligible at kickoff plus
+24 hours, a stated retrospective assumption. Downloadable history may contain later revisions.
+Source snapshots for upcoming forecasts must predate the prediction time, and current-season
+data must be under 24 hours old. The 2025 season is already accessed and is not a fresh holdout.
+
+The 2022–2024 first comparison covers 815 games per horizon: early-week Ridge margin MAE **9.81
+points**, versus **9.92** for prior team scoring with home field and **10.60** for league scoring. Per-team score
+MAE is **7.33 points**. These are retrospective research errors; the improvement is modest.
+Calibration, opponent-adjustment experiments, QB/injury/weather enrichment, and market
+comparisons remain later work. No win, cover, or profitability claims are made.
+
+Read [the team model policy](TEAM_MODEL_POLICY.md) and [the pivot plan](TEAM_EPA_PIVOT_PLAN.md).
+
+## Legacy QB research
+
 An educational NFL quarterback passing-yards research project. Compare historical projections
 with manually entered sportsbook lines and prices in a local Streamlit app.
 

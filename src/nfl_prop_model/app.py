@@ -1,4 +1,4 @@
-"""Local research interface; no live predictions or external market connections."""
+"""Local team-score research and legacy QB pages; no external market connections."""
 
 import json
 import os
@@ -962,14 +962,16 @@ def current_features_page(data_dir: Path) -> None:
 
 
 def main() -> None:
-    st.set_page_config(page_title="QB Research | Prediction App", page_icon="🏈", layout="wide")
+    st.set_page_config(page_title="Team EPA | Prediction App", page_icon="🏈", layout="wide")
     data_dir = Path(os.environ.get("NFL_PROP_DATA_DIR", "data"))
     journal_dir = data_dir / "journal"
-    st.sidebar.title("QB Research")
-    st.sidebar.caption("NFL passing yards · local workspace")
+    st.sidebar.title("NFL Team Research")
+    st.sidebar.caption("EPA · final scores · margins")
     page = st.sidebar.radio(
         "Workspace",
         [
+            "Team scores",
+            "Team backtest",
             "Compare a line",
             "Upcoming QBs",
             "Current features",
@@ -985,11 +987,20 @@ def main() -> None:
     if st.session_state.get("last_page") != page:
         st.session_state.pop("quote", None)
         st.session_state["last_page"] = page
-    st.sidebar.info("The frozen 2025 diagnostic is complete. Upcoming forecasts remain disabled.")
-    st.sidebar.caption("Manual prices only. No sportsbook connection or automatic betting.")
+    st.sidebar.caption(
+        "Team forecasts use EPA and schedule context. Legacy QB research is retained below."
+    )
     st.caption("RESEARCH PREVIEW")
     try:
-        if page == "Upcoming QBs":
+        if page == "Team scores":
+            from nfl_prop_model.team_app import team_scores_page
+
+            team_scores_page(data_dir)
+        elif page == "Team backtest":
+            from nfl_prop_model.team_app import team_backtest_page
+
+            team_backtest_page(data_dir)
+        elif page == "Upcoming QBs":
             upcoming_page(data_dir)
         elif page == "Current features":
             current_features_page(data_dir)
@@ -1016,7 +1027,9 @@ def main() -> None:
         st.error(str(error))
         st.info("Prepare this page's local cache from the repository terminal:")
         st.code(
-            "nfl-prop upcoming --refresh"
+            "nfl-prop team-fetch\nnfl-prop team-build\nnfl-prop team-evaluate"
+            if page.startswith("Team ")
+            else "nfl-prop upcoming --refresh"
             if page in {"Upcoming QBs", "Pregame evidence review"}
             else "nfl-prop current-features --refresh"
             if page == "Current features"
@@ -1029,6 +1042,6 @@ def main() -> None:
         )
     st.divider()
     st.caption(
-        "Estimates may be wrong and may lose money. Historical starter labels, weather, and "
-        "limited-history calibration remain open research work. No production model is enabled."
+        "Research estimates may be wrong. Team probabilities and intervals are not yet calibrated. "
+        "Legacy QB prospective forecasts remain disabled."
     )
