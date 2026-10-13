@@ -170,6 +170,8 @@ def team_backtest_page(data_dir: Path) -> None:
     )
     with st.expander("Feature experiments"):
         team_experiments_panel(data_dir, horizon)
+    with st.expander("Chronological tuning"):
+        team_tuning_panel(data_dir, horizon)
 
 
 def team_experiments_panel(data_dir: Path, horizon: str) -> None:
@@ -215,4 +217,58 @@ def team_experiments_panel(data_dir: Path, horizon: str) -> None:
     st.caption(
         "Development comparison only; published forecasts retain the original EPA model. "
         "Choosing a candidate from these results requires later prospective validation."
+    )
+
+
+def team_tuning_panel(data_dir: Path, horizon: str) -> None:
+    from nfl_prop_model.data.schemas import DataQualityError
+    from nfl_prop_model.modeling.team_tuning import TUNED_MODEL, load_team_tuning
+
+    try:
+        report, _ = load_team_tuning(data_dir)
+    except (FileNotFoundError, DataQualityError, ValueError) as exc:
+        st.info(f"Prepare the comparison with nfl-prop team-tune. {exc}")
+        return
+    st.write(
+        "Each season's setting is selected using the preceding two seasons, "
+        "then held fixed for that season. Both forecast timings use the same choice."
+    )
+    metrics = pl.DataFrame(report["metrics"]).filter(pl.col("horizon") == horizon)
+    st.dataframe(
+        metrics.select(
+            pl.col("model")
+            .replace(
+                {"ridge_epa_scores": "Current EPA", TUNED_MODEL: "Selected on earlier seasons"}
+            )
+            .alias("Model"),
+            pl.col("season").cast(pl.String).fill_null("All").alias("Season"),
+            pl.col("games").alias("Games"),
+            pl.col("margin_mae").round(3).alias("Margin MAE"),
+            pl.col("score_mae").round(3).alias("Score MAE"),
+            pl.col("total_mae").round(3).alias("Total MAE"),
+        ),
+        hide_index=True,
+        width="stretch",
+    )
+    profiles = {profile["name"]: profile for profile in report["policy"]["profiles"]}
+    selections = []
+    for selection in report["selections"]:
+        profile = profiles[selection["selected_profile"]]
+        selections.append(
+            {
+                "Forecast season": selection["season"],
+                "Validation seasons": "–".join(
+                    str(year) for year in selection["validation_seasons"]
+                ),
+                "Training seasons": str(profile["training_seasons"] or "All"),
+                "Recent games": profile["rating"]["recent_games"],
+                "Recent decay": profile["rating"]["recent_decay"],
+                "Prior equivalent plays": profile["rating"]["prior_plays"],
+            }
+        )
+    st.dataframe(pl.DataFrame(selections), hide_index=True, width="stretch")
+    st.caption(
+        "Development simulation with settings locked before Week 1. "
+        "Published forecasts retain the current model pending assessment. "
+        "2025 is already accessed."
     )

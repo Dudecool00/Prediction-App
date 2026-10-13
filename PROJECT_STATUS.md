@@ -73,6 +73,35 @@ The dated legacy QB milestones below retain their original evidence; PR #13 is m
   QB availability and known starter-rest context. The first feature additions do not resolve
   the large unexpected-outcome errors. 2025 remains already accessed, not a fresh holdout.
 
+## New: chronological EPA setting selection
+
+- Added `team-tune` and a **Chronological tuning** comparison within **Team backtest**.
+  Eleven fixed profiles test three/five-season training windows, three/eight-game recent
+  windows, 0.65/uniform recent weights, 100/400 prior pseudo-plays and two combinations.
+  Ridge alpha 20 and the published EPA feature allowlist stay fixed.
+- For each evaluation season, select using early-week errors from its preceding two
+  seasons and lock the choice before Week 1. Require at least 0.05 points of margin-MAE
+  improvement, with at most 0.05 points of score degradation. Refresh uses the same choice;
+  refitting during the season uses available games without selecting on that season's outcomes.
+- The procedure retained the default for all three seasons: 2022–2024 early-week margin
+  MAE remains **9.811**, score MAE **7.333**, and refresh margin MAE **9.805**. The largest
+  eligible validation gains before 2022/2023 were only 0.018/0.034 points. All ten alternatives
+  also have worse aggregate development margin MAE; three-season training reaches 9.975.
+  This fixed grid does not support changing the forecast model. All 1,630 control predictions
+  match the original backtest. [Report](reports/team_scores/chronological_tuning_backtest.md)
+  and [summary/provenance](reports/team_scores/chronological_tuning_summary.json) retain results.
+- The computational protocol is saved before evaluation. Source/code guards, candidate
+  predictions, season decisions, validation metrics and training cutoffs are retained.
+  Current/future outcome mutations do not affect features; following-season outcomes do not
+  affect selection. A full **380-test** regression run passed, including five new modeling/
+  integration cases and the saved tuning display. A final timestamp guard additionally keeps
+  the lock anchored to Week 1 even if Week 1 outcomes are missing; all 26 team checks verify
+  the final implementation. Ruff, format, mypy and dependency checks pass. Existing
+  local native Polars diagnostics remain recorded without disabling tests or fault handlers.
+- Next comparisons can add compact forecast-time availability/resting-starter context or
+  test another model/loss. These are retrospective development results; 2025 remains already
+  accessed. Configurable features are isolated so the earlier reports and forecasts stay readable.
+
 ## New: full development starter coverage
 
 - `starter-coverage --collect` and **Starter coverage** expand the retrospective audit

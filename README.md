@@ -66,6 +66,20 @@ Results are under `reports/local/team_experiments/`; the published forecast mode
 after assessment. Opponent ratings fit offensive and defensive team effects using earlier
 available results, with play-weighted shrinkage and no current-game outcomes.
 
+For chronological selection of training windows, recent-form weighting and prior shrinkage:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-tune
+```
+
+The 11 fixed settings are selected on the preceding two seasons and locked before the next
+season's first early-week forecast. Both timings use that same selection. Ridge strength and
+the EPA feature list stay fixed. A setting needs at least 0.05 points of validation margin-MAE
+improvement, and score MAE can worsen by at most 0.05 points; otherwise retain the default.
+See **Chronological tuning** under **Team backtest**, or `reports/local/team_tuning/`.
+These are retrospective development simulations, with explicit temporal selection rather
+than choosing the best setting from the entire evaluation period.
+
 Read [the team model policy](TEAM_MODEL_POLICY.md) and [the pivot plan](TEAM_EPA_PIVOT_PLAN.md).
 
 ## Legacy QB research
