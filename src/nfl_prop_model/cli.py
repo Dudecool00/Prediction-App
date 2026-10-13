@@ -28,6 +28,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--version", action="version", version=__version__)
     commands = parser.add_subparsers(dest="command", required=True)
+    from nfl_prop_model.data.team_context import DEFAULT_CONTEXT_SEASONS
     from nfl_prop_model.data.team_games import DEFAULT_TEAM_SEASONS
     from nfl_prop_model.features.team_epa import HORIZONS
 
@@ -38,16 +39,26 @@ def main(argv: list[str] | None = None) -> int:
         "team-experiment",
         "team-tune",
         "team-forecast",
+        "team-context-fetch",
+        "team-context-build",
+        "team-context-evaluate",
     ):
         team_command = commands.add_parser(name, help="Team EPA final-score and margin research")
         team_command.add_argument("--data-dir", type=Path, default=Path("data"))
-        if name in {"team-fetch", "team-build"}:
+        if name in {"team-fetch", "team-build", "team-context-fetch", "team-context-build"}:
             team_command.add_argument(
-                "--seasons", type=int, nargs="+", default=list(DEFAULT_TEAM_SEASONS)
+                "--seasons",
+                type=int,
+                nargs="+",
+                default=list(
+                    DEFAULT_CONTEXT_SEASONS
+                    if name.startswith("team-context")
+                    else DEFAULT_TEAM_SEASONS
+                ),
             )
-        if name == "team-fetch":
+        if name in {"team-fetch", "team-context-fetch"}:
             team_command.add_argument("--refresh", action="store_true")
-        if name in {"team-evaluate", "team-experiment", "team-tune"}:
+        if name in {"team-evaluate", "team-experiment", "team-tune", "team-context-evaluate"}:
             team_command.add_argument(
                 "--evaluation-seasons", type=int, nargs="+", default=[2022, 2023, 2024]
             )
@@ -59,6 +70,7 @@ def main(argv: list[str] | None = None) -> int:
                         "team-evaluate": "reports/local/team_scores",
                         "team-experiment": "reports/local/team_experiments",
                         "team-tune": "reports/local/team_tuning",
+                        "team-context-evaluate": "reports/local/team_context",
                     }[name]
                 ),
             )
@@ -245,7 +257,28 @@ def main(argv: list[str] | None = None) -> int:
             from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
             from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-            if args.command == "team-fetch":
+            if args.command == "team-context-fetch":
+                from nfl_prop_model.data.team_context import fetch_context_sources
+
+                fetch_context_sources(args.data_dir, args.seasons, refresh=args.refresh)
+            elif args.command == "team-context-build":
+                from nfl_prop_model.data.team_context import build_context_cache
+
+                manifest = build_context_cache(args.data_dir, args.seasons)
+                print(f"Context audit: {manifest['audit']}")
+            elif args.command == "team-context-evaluate":
+                from nfl_prop_model.modeling.team_context import save_context_evaluation
+
+                report = save_context_evaluation(
+                    args.data_dir,
+                    args.report_dir,
+                    evaluation_seasons=tuple(args.evaluation_seasons),
+                )
+                print(
+                    f"Compared context across {len(report['folds'])} cutoffs. "
+                    f"Report: {args.report_dir / 'team_context.md'}"
+                )
+            elif args.command == "team-fetch":
                 fetch_team_sources(args.data_dir, args.seasons, refresh=args.refresh)
             elif args.command == "team-build":
                 manifest = build_team_cache(args.data_dir, args.seasons)

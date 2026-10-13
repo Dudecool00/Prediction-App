@@ -142,3 +142,42 @@ Report subsequent-season score/margin/total error separately by season and horiz
 approximate paired week-block gain ranges. The research command does not automatically change
 published forecasts. The earlier feature experiments and forecasts remain readable because
 configurable rating code lives in a separate module from the published feature implementation.
+
+## QB history and injury observations
+
+`team-context-fetch/build/evaluate` use independent 2016–2024 historical snapshots of passer
+statistics and injury records. The three fixed Ridge-alpha-20 additions are QB history,
+injury observations, and both with an interaction between reported unavailability and prior
+passer EPA. Controls, games and chronological cutoffs match the initial comparison. No
+current-game schedule QB labels, period-zero ESPN starter flags or actual participation in
+the predicted game are model inputs. Existing retrospective starter audits remain audits.
+
+The primary-passer proxy is the unique leader in attempts plus sacks in the last available
+current-season team game. Ties and missing observations remain unknown. Do not carry a
+previous-season player identity across an offseason without current-season evidence. Use
+five earlier available passer games, 0.85 decay and 100 passing pseudo-plays at the prior-only
+league rate for passer EPA. This rate covers attempts plus sacks; no scramble-inclusive
+dropback claim is made. Include previous participation share, observed passer continuity
+and history size. Player statistics retain the kickoff-plus-24-hour availability assumption.
+
+Injury rows must have UTC modification timestamps and stable GSIS IDs. Observed availability
+is modification plus 24 hours, strictly before the forecast cutoff. Use only same season,
+week and team, with the latest eligible row per player. The archive does not reconstruct
+earlier overwritten states or verify original publication/delivery. Missing eligible reports
+are unknown, not a healthy team. An eligible partial report can establish reported Out or
+Questionable/Doubtful status for the past primary passer, and observed Out counts for OL,
+skill and defensive positions. These are report counts, not complete injury/IR rosters or
+confirmed replacement starters. Ambiguous Note statuses stay unknown. Reported rest requires
+Out with an explicit Rest reason; non-injury-related does not automatically mean rest.
+No point deduction or replacement identity is invented from a coach's postgame decision.
+
+Record the feature protocol before evaluation and retain source audits, code hashes,
+candidate predictions, feature tables, temporal fits, coverage and per-season/per-horizon
+score/margin/total metrics. Approximate paired week-block gains use 5,000 samples with seed
+20261013. The 2022–2024 comparisons are already examined development simulations, and 2025
+is already accessed. Historical timestamps and source revisions limit the inference; these
+results do not alone establish prospective accuracy. Published forecasts remain the current
+EPA model while context performance is assessed. Live source integration is separate.
+
+Source definitions: [injury dictionary](https://nflreadr.nflverse.com/articles/dictionary_injuries.html)
+and [nflverse data timing](https://nflreadr.nflverse.com/articles/nflverse_data_schedule.html).

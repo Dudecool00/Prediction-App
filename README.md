@@ -80,6 +80,24 @@ See **Chronological tuning** under **Team backtest**, or `reports/local/team_tun
 These are retrospective development simulations, with explicit temporal selection rather
 than choosing the best setting from the entire evaluation period.
 
+To compare compact QB-history and injury observations:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-context-fetch
+.\.venv\Scripts\nfl-prop.exe team-context-build
+.\.venv\Scripts\nfl-prop.exe team-context-evaluate
+```
+
+These independent historical caches cover 2016–2024. The three fixed additions use prior
+primary-passer history, timestamp-gated injury observations, or both. Open **QB and injury
+context** on **Team backtest** to inspect metrics and coverage. The prior primary passer is
+a proxy; current-game schedule starter labels and retrospective ESPN starter flags are excluded.
+Injury observations require source modification plus 24 hours before the forecast, a stated
+retrospective assumption. Missing reports stay unknown; counts describe observed reports,
+not the complete injured roster. Explicit report-recorded rest is supported; coaching
+announcements and exact historical publication are not reconstructed. Live context integration
+remains separate from this comparison.
+
 Read [the team model policy](TEAM_MODEL_POLICY.md) and [the pivot plan](TEAM_EPA_PIVOT_PLAN.md).
 
 ## Legacy QB research
