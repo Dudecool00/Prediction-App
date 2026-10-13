@@ -47,6 +47,32 @@ The dated legacy QB milestones below retain their original evidence; PR #13 is m
 
 [Team policy](TEAM_MODEL_POLICY.md) defines the active feature, timing, and output contracts.
 
+## New: fixed EPA feature experiments
+
+- Added `team-experiment` and a **Feature experiments** panel within **Team backtest**.
+  Four fixed ablations add prior scoring history, eligible play volume, and regularized
+  opponent-adjusted offense/defense EPA to the current model. All models use Ridge alpha 20
+  and the identical 815 games per horizon / 421 chronological cutoffs from 2022–2024.
+- Opponent fits use only earlier available current/previous-season results, with an explicit
+  unpenalized league intercept, play weighting and a 200-pseudo-play team-effect penalty.
+  Future/current-game outcome and identity mutations do not affect available ratings.
+- Early-week margin MAE: original EPA 9.811; scoring hybrid 9.804; scoring/volume hybrid
+  9.800; EPA/opponent 9.836; all additions 9.825. The best gain is only 0.011 points, with
+  approximate paired week-block range [-0.058, +0.078]. Results vary by season and the refresh
+  gain is effectively zero. **Retain the current forecast model.** No probability or market
+  performance claims follow from these development comparisons.
+- All 4,890 league/prior-score/EPA control predictions match the saved initial backtest
+  exactly. [Report](reports/team_scores/feature_experiments_backtest.md) and
+  [summary/provenance](reports/team_scores/feature_experiments_summary.json) retain the result.
+  New checks cover past-only ratings, differing opponent strength, finite features, equal
+  cohorts, derived score/margin consistency, code/checksum guards and the saved app comparison.
+- The complete **375-test** suite passes on Python 3.12, including five added modeling/UI
+  cases. Ruff, formatting, strict mypy and dependency checks pass. Existing local native
+  Polars diagnostics remain recorded; no tests or fault handlers are disabled.
+- Next: define chronological tuning for form/prior/training windows, then compact historical
+  QB availability and known starter-rest context. The first feature additions do not resolve
+  the large unexpected-outcome errors. 2025 remains already accessed, not a fresh holdout.
+
 ## New: full development starter coverage
 
 - `starter-coverage --collect` and **Starter coverage** expand the retrospective audit

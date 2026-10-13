@@ -49,8 +49,22 @@ data must be under 24 hours old. The 2025 season is already accessed and is not 
 The 2022–2024 first comparison covers 815 games per horizon: early-week Ridge margin MAE **9.81
 points**, versus **9.92** for prior team scoring with home field and **10.60** for league scoring. Per-team score
 MAE is **7.33 points**. These are retrospective research errors; the improvement is modest.
-Calibration, opponent-adjustment experiments, QB/injury/weather enrichment, and market
+Calibration, QB/injury/weather enrichment, and market
 comparisons remain later work. No win, cover, or profitability claims are made.
+
+To compare scoring history, play volume, and opponent-adjusted EPA on exactly the same
+chronological games, run:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-experiment
+```
+
+This evaluates four fixed feature additions against the existing controls, retaining separate
+early-week and refresh results, seasonal metrics, and paired margin-error comparisons. Open
+**Feature experiments** on the **Team backtest** page to inspect the saved comparison.
+Results are under `reports/local/team_experiments/`; the published forecast model changes only
+after assessment. Opponent ratings fit offensive and defensive team effects using earlier
+available results, with play-weighted shrinkage and no current-game outcomes.
 
 Read [the team model policy](TEAM_MODEL_POLICY.md) and [the pivot plan](TEAM_EPA_PIVOT_PLAN.md).
 

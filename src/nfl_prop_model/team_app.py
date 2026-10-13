@@ -15,6 +15,13 @@ MODEL_LABELS = {
     "prior_team_scores": "Prior team scoring baseline",
     "ridge_epa_scores": "EPA score model",
 }
+EXPERIMENT_LABELS = {
+    **MODEL_LABELS,
+    "ridge_epa_scoring_scores": "EPA + scoring history",
+    "ridge_epa_scoring_volume_scores": "EPA + scoring + play volume",
+    "ridge_opponent_epa_scores": "EPA + opponent adjustment",
+    "ridge_epa_scoring_volume_opponent_scores": "EPA + scoring + volume + opponents",
+}
 
 
 def score_table(frame: pl.DataFrame) -> pl.DataFrame:
@@ -160,4 +167,52 @@ def team_backtest_page(data_dir: Path) -> None:
         "MAE is average absolute error in points. Score MAE includes both team scores; "
         "margin MAE counts each game once. "
         "Historical EPA revisions are not reconstructed. 2025 has already been accessed."
+    )
+    with st.expander("Feature experiments"):
+        team_experiments_panel(data_dir, horizon)
+
+
+def team_experiments_panel(data_dir: Path, horizon: str) -> None:
+    from nfl_prop_model.data.schemas import DataQualityError
+    from nfl_prop_model.modeling.team_experiments import load_team_experiments
+
+    try:
+        report, _ = load_team_experiments(data_dir)
+    except (FileNotFoundError, DataQualityError, ValueError) as exc:
+        st.info(f"Prepare the comparison with nfl-prop team-experiment. {exc}")
+        return
+    st.write(
+        "Fixed feature comparisons on the same games and forecast cutoffs. "
+        "MAE is average absolute error in points; lower is better."
+    )
+    metrics = pl.DataFrame(report["metrics"]).filter(
+        (pl.col("scope") == "overall") & (pl.col("horizon") == horizon)
+    )
+    st.dataframe(
+        metrics.sort("margin_mae").select(
+            pl.col("model").replace(EXPERIMENT_LABELS).alias("Model"),
+            pl.col("games").alias("Games"),
+            pl.col("margin_mae").round(3).alias("Margin MAE"),
+            pl.col("score_mae").round(3).alias("Score MAE"),
+            pl.col("total_mae").round(3).alias("Total MAE"),
+        ),
+        hide_index=True,
+        width="stretch",
+    )
+    seasonal = pl.DataFrame(report["metrics"]).filter(
+        (pl.col("scope") == "season") & (pl.col("horizon") == horizon)
+    )
+    st.dataframe(
+        seasonal.select(
+            pl.col("model").replace(EXPERIMENT_LABELS).alias("Model"),
+            pl.col("season").alias("Season"),
+            pl.col("margin_mae").round(3).alias("Margin MAE"),
+            pl.col("score_mae").round(3).alias("Score MAE"),
+        ),
+        hide_index=True,
+        width="stretch",
+    )
+    st.caption(
+        "Development comparison only; published forecasts retain the original EPA model. "
+        "Choosing a candidate from these results requires later prospective validation."
     )

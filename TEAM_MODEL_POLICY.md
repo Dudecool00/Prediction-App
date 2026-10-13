@@ -88,5 +88,28 @@ provide research forecasts rather than an unattended scheduled service.
 
 Publish no win/cover probabilities or intervals until team-margin and score uncertainty is
 calibrated on separate chronological games. Do not reuse QB-yard residuals or yard settlement.
-Opponent adjustments, QB continuity, injury/weather information, outcome tracking summaries,
+QB continuity, injury/weather information, outcome tracking summaries,
 and prospective performance comparisons remain explicit next milestones.
+
+## Fixed feature experiments
+
+`team-experiment` compares the current controls with four Ridge-alpha-20 ablations: EPA plus
+scoring history; EPA plus scoring and play volume; EPA plus opponent adjustment; and all three
+additions together. Scoring rates use the existing four-prior-season-game shrinkage. Play
+volume uses the same shrinkage for eligible offensive and defensive plays per game. These
+are explicit additional allowlists, not automatic inclusion of target or metadata columns.
+
+Opponent ratings separately fit all-play, dropback, and designed-rush EPA as an unpenalized
+league intercept plus offensive-team and opposing-defensive-team effects. Use play counts
+as weights, current season weight 1 and previous season weight 0.25. Penalize each team effect
+with 200 pseudo-plays toward zero. Ratings equal intercept plus team effect; lower defensive
+EPA allowed is better. Each rating fit uses only league results strictly available before
+that matchup's prediction time. No future team identities or outcomes enter its fit.
+
+Evaluate the identical games/cutoffs and controls across 2022–2024, with per-season and per-horizon
+score/margin/total MAE, RMSE and bias. Margin MAE is primary, with score error and seasonal
+stability assessed alongside it. Paired season/week-block resampling uses 5,000 draws and seed
+20261013; these approximate ranges do not correct serial dependence or candidate selection.
+Development gains require later prospective validation. Reports record feature policies,
+code hashes, input snapshots, runtime versions and predictions. Stale code or corrupted
+artifacts fail visibly. The command does not automatically promote a winning candidate.

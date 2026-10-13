@@ -376,3 +376,154 @@ def test_prospective_scores_append_only_and_game_refresh_window(team_cache, monk
     app = AppTest.from_file(Path(__file__).parents[1] / "app.py", default_timeout=30).run()
     assert not app.exception and not app.error
     assert len(app.metric) == 3
+
+
+def test_experiment_features_ignore_unavailable_and_current_game_outcomes(team_sources):
+    from nfl_prop_model.features.team_experiments import (
+        ADJUSTED_FEATURES,
+        VOLUME_FEATURES,
+        add_experiment_features,
+    )
+
+    teams, games, _ = build_team_games(*team_sources)
+    features = matchup_features(teams, games).filter(pl.col("season") == 2022).head(2)
+    cutoff = features["prediction_time_utc"][0]
+    before = add_experiment_features(teams, features)
+    poison = teams.with_columns(
+        *[
+            pl.when(pl.col("result_available_at_utc") >= cutoff)
+            .then(pl.lit(99999.0))
+            .otherwise(pl.col(name))
+            .alias(name)
+            for name in teams.columns
+            if name.endswith("epa_sum") or name == "points_scored"
+        ],
+        *[
+            pl.when(pl.col("result_available_at_utc") >= cutoff)
+            .then(pl.col(name) + "-future")
+            .otherwise(pl.col(name))
+            .alias(name)
+            for name in ("team", "opponent_team")
+        ],
+    )
+    after = add_experiment_features(poison, features)
+    assert_frame_equal(before, after)
+    assert before["home_off_plays_prior"].to_list() == [3.0, 3.0]
+    assert before.select(pl.col(ADJUSTED_FEATURES + VOLUME_FEATURES).is_finite().all()).row(0) == (
+        True,
+    ) * (len(ADJUSTED_FEATURES) + len(VOLUME_FEATURES))
+    # Results that become available exactly at the cutoff are also excluded.
+    exact = teams.with_columns(
+        pl.when(pl.col("result_available_at_utc") >= cutoff)
+        .then(pl.lit(cutoff))
+        .otherwise(pl.col("result_available_at_utc"))
+        .alias("result_available_at_utc")
+    )
+    assert_frame_equal(before, add_experiment_features(exact, features))
+
+
+def test_opponent_adjustment_distinguishes_equal_epa_against_different_defenses():
+    from nfl_prop_model.features.team_experiments import OpponentHistory
+
+    rows = []
+    for week in range(10):
+        for index, (team, opponent, epa) in enumerate(
+            (("A", "X", 0.1), ("B", "Y", 0.1), ("C", "X", 0.3), ("C", "Y", -0.3))
+        ):
+            row = {
+                "game_id": f"{week}-{index}",
+                "team": team,
+                "opponent_team": opponent,
+                "season": 2021,
+                "result_available_at_utc": datetime(2021, 10, 1, tzinfo=UTC),
+            }
+            for group in ("off_", "off_dropback_", "off_rush_"):
+                row[group + "plays"] = 60
+                row[group + "epa_sum"] = 60 * epa
+            rows.append(row)
+    history = OpponentHistory(pl.DataFrame(rows))
+    ratings = history.rating(2021, datetime(2021, 10, 2, tzinfo=UTC))["teams"]
+    assert ratings["B"]["off_adjusted_epa"] > ratings["A"]["off_adjusted_epa"]
+    assert ratings["X"]["def_adjusted_epa"] > ratings["Y"]["def_adjusted_epa"]
+    empty = history.rating(2021, datetime(2021, 10, 1, tzinfo=UTC))
+    assert not empty["teams"] and empty["latest_available_at_utc"] is None
+    assert set(empty["fallback"].values()) == {0.0}
+
+
+def test_experiment_validation_rejects_future_opponent_history_and_nonfinite_inputs(team_cache):
+    from nfl_prop_model.features.team_experiments import add_experiment_features
+    from nfl_prop_model.modeling.team_experiments import predict_experiments
+
+    _, teams, games, _ = team_cache
+    features = add_experiment_features(teams, matchup_features(teams, games))
+    test = features.filter(pl.col("season") == 2022).head(2)
+    train = features.filter(pl.col("result_available_at_utc") < test["prediction_time_utc"][0])
+    invalid = test.with_columns(
+        pl.col("prediction_time_utc").alias("opponent_history_available_at_utc")
+    )
+    with pytest.raises(DataQualityError, match="Opponent history was unavailable"):
+        predict_experiments(train, invalid)
+    invalid = test.with_columns(pl.lit(float("inf")).alias("home_off_plays_prior"))
+    with pytest.raises(DataQualityError, match="finite"):
+        predict_experiments(train, invalid)
+    values = predict_experiments(train, test)
+    control = predict_models(train, test)
+    assert values["ridge_epa_scores"].tolist() == control["ridge_epa_scores"].tolist()
+
+
+def test_team_experiment_cli_cohorts_consistency_and_checksum(team_cache, monkeypatch):
+    from nfl_prop_model.modeling.team_experiments import CANDIDATE_FEATURES, load_team_experiments
+
+    data, _, _, _ = team_cache
+    assert (
+        main(
+            [
+                "team-experiment",
+                "--data-dir",
+                str(data),
+                "--report-dir",
+                str(data / "reports"),
+                "--evaluation-seasons",
+                "2022",
+            ]
+        )
+        == 0
+    )
+    report, predictions = load_team_experiments(data)
+    with monkeypatch.context() as guarded:
+        guarded.setattr(
+            "nfl_prop_model.modeling.team_experiments.experiment_source_hash", lambda: "changed"
+        )
+        with pytest.raises(DataQualityError, match="changed"):
+            load_team_experiments(data)
+    assert len(report["paired_comparisons"]) == 2 * len(CANDIDATE_FEATURES)
+    assert predictions.height == 36 * 2 * (3 + len(CANDIDATE_FEATURES))
+    assert set(predictions.group_by("horizon", "model").len()["len"]) == {36}
+    assert predictions.filter(
+        pl.col("predicted_home_margin")
+        != (pl.col("predicted_home_score") - pl.col("predicted_away_score")).round(1)
+    ).is_empty()
+    assert (data / "reports" / "team_experiments.md").is_file()
+    path = data / "processed" / "team_experiments" / report["artifacts"]["predictions"]["file"]
+    path.write_bytes(b"corrupted")
+    with pytest.raises(ValueError, match="checksum"):
+        load_team_experiments(data)
+
+
+def test_team_experiments_display_saved_error_comparison(team_cache, monkeypatch):
+    pytest.importorskip("streamlit")
+    from streamlit.testing.v1 import AppTest
+
+    from nfl_prop_model.modeling.team_experiments import save_team_experiments
+
+    data, _, _, _ = team_cache
+    monkeypatch.setenv("NFL_PROP_DATA_DIR", str(data))
+    save_team_evaluation(data, data / "scores", evaluation_seasons=(2022,))
+    save_team_experiments(data, data / "experiments", evaluation_seasons=(2022,))
+    app = AppTest.from_file(Path(__file__).parents[1] / "app.py", default_timeout=30).run()
+    app.radio(key="page").set_value("Team backtest").run()
+    assert not app.exception and not app.error
+    assert any(expander.label == "Feature experiments" for expander in app.expander)
+    comparisons = [frame.value for frame in app.dataframe if "Margin MAE" in frame.value.columns]
+    assert any(len(frame) == 7 for frame in comparisons)
+    assert any("EPA + scoring history" in frame["Model"].to_list() for frame in comparisons)
