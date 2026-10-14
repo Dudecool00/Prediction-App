@@ -98,6 +98,25 @@ not the complete injured roster. Explicit report-recorded rest is supported; coa
 announcements and exact historical publication are not reconstructed. Live context integration
 remains separate from this comparison.
 
+To compare richer play-by-play and explicit opponent strength / strength of schedule:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-playbook-fetch
+.\.venv\Scripts\nfl-prop.exe team-playbook-build
+.\.venv\Scripts\nfl-prop.exe team-playbook-evaluate
+```
+
+These commands reuse the canonical 2016–2024 EPA play IDs and add yards, sack, interception
+and lost-fumble measurements in separate caches. They compare prior success, explosive-play,
+sack and turnover rates; opponent-adjusted offense/defense strength and the strength of
+previously faced opponents; and both together. Each forecast uses only earlier available games.
+Missing measurements remain unknown. Schedule strength uses opponent ratings at that
+forecast's cutoff, with separate recent and season averages for opposing offenses and defenses.
+Open **Play-by-play and schedule strength** in **Team backtest** to select a season, week,
+model and matchup, inspect the ratings, and see projected final scores and signed margins.
+The saved comparison is under `reports/local/team_playbook/`; published forecasts retain
+the current EPA model while the additions are assessed.
+
 Read [the team model policy](TEAM_MODEL_POLICY.md) and [the pivot plan](TEAM_EPA_PIVOT_PLAN.md).
 
 ## Legacy QB research

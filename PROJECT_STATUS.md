@@ -1,6 +1,6 @@
 # Project status
 
-Updated 2026-10-13 (local date). Team EPA score/margin implementation uses `codex/team-epa-scores`.
+Updated 2026-10-14 (local date). Active comparisons use `codex/team-epa-qb-injury-context`.
 The dated legacy QB milestones below retain their original evidence; PR #13 is merged (`79c425f`).
 
 ## New: team EPA scores and margins
@@ -128,6 +128,40 @@ The dated legacy QB milestones below retain their original evidence; PR #13 is m
 - Next: timestamped starter announcements and coaching rest plans, with independent coverage
   and prospective source capture. The generic historical report counts do not deliver a stable
   accuracy improvement. 2025 remains already accessed; live context integration is separate.
+
+## New: play-by-play and explicit schedule strength
+
+- Added independent `team-playbook-fetch/build/evaluate` commands, preserving original EPA
+  values and canonical play IDs. Expanded aggregates reconcile 4,734 team-games and 295,330
+  eligible offensive plays from 2016–2024, with no missing added yards, sack or turnover
+  measurements on eligible plays. Missing inputs remain unknown when present in other sources.
+- Three fixed additions compare prior offensive/defensive success, explosive dropback/rush,
+  sack and turnover rates; opponent-adjusted offense/defense strength and recent/season
+  schedule strength; and both. SOS rates previously faced opponents at each forecast cutoff,
+  counts repeated opponents per game and excludes future opponents. Current-game/future
+  measurements and outcomes cannot change earlier features. Ratings include available games
+  against the evaluated team, rather than using leave-one-team-out estimates.
+- **Play-by-play and schedule strength** under **Team backtest** shows seasonal metrics,
+  saved weekly final scores and derived margins, and matchup-specific team/opponent ratings.
+  The same 815 games per horizon / 421 chronological cutoff groups are retained; all 4,890
+  original control predictions are identical. New data and research reports use separate caches.
+- Retain the current forecast model. Early margin MAE is 9.811 for current EPA versus 9.862
+  with play tendencies, 9.826 with strength/schedule, and 9.892 with both. Refresh MAEs are
+  9.805, 9.862, 9.846 and 9.922 respectively. Every margin-error point estimate worsens;
+  all approximate paired week-block gain ranges include zero. The strength/schedule variant
+  slightly improves early margin RMSE/bias, but average margin error and total-score error
+  do not improve. [Report](reports/team_scores/playbook_schedule_backtest.md) and
+  [summary/provenance](reports/team_scores/playbook_schedule_summary.json) retain the comparison.
+- Six focused tests pass for event denominators, defense mirrors, missing measurements,
+  stable original EPA, changed/missing source identities, unavailable data exclusion,
+  differing schedules, invalid model inputs, score/margin consistency and cache guards.
+  The frozen-source full regression passes all **393** tests, including the added weekly
+  matchup view and code/checksum guards. Ruff, formatting, strict mypy and dependency checks
+  pass. Existing local native Polars diagnostics remain recorded without disabling handlers
+  or tests; the process exits successfully. The pytest cache emits a local permission warning.
+- These results cover examined development seasons and do not establish that these inputs
+  cannot help other models or feature choices. Later prospective validation remains required;
+  2025 is already accessed. Published forecasts retain current EPA.
 
 ## New: full development starter coverage
 

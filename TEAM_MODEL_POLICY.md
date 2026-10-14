@@ -181,3 +181,46 @@ EPA model while context performance is assessed. Live source integration is sepa
 
 Source definitions: [injury dictionary](https://nflreadr.nflverse.com/articles/dictionary_injuries.html)
 and [nflverse data timing](https://nflreadr.nflverse.com/articles/nflverse_data_schedule.html).
+
+## Richer play-by-play and schedule strength
+
+`team-playbook-fetch/build/evaluate` retain the exact canonical EPA play IDs, source values,
+eligible-play policy, team outcomes and original controls. Extra yards, sack, interception
+and lost-fumble measurements are joined by unique game/play IDs from independent snapshots;
+missing IDs or changed game/team identities fail visibly. The expanded aggregates must
+reconcile to both canonical play counts and EPA sums. Raw and processed content hashes,
+original source manifests, retrieval times and observed source schemas are retained.
+
+Success means positive EPA. Explosive plays gain at least 20 yards on a dropback or 10 yards
+on a designed rush, including sacks/scrambles in the dropback denominator. Sack rate uses
+dropbacks with a known binary sack flag and is not a pressure measure. Turnovers mean an
+interception or lost fumble, counted once per eligible play when both flags are known.
+Missing/nonfinite yards and missing event flags are audited and excluded from the specific
+measurement denominator, rather than counted as non-events. Defensive counts/exposures
+mirror the opposing offense. Rates use five available games, 0.85 decay and 100 exposure
+pseudo-plays at the prior-season rate, with a strictly past-only league fallback. Zero
+exposure and no valid fallback remain unknown.
+
+Strength fits reuse the existing regularized offense/defense EPA model: available current
+season games have weight 1, prior-season games 0.25, and each team effect has a 200-play
+penalty. Explicit strength features use the all-play adjusted offense and defense EPA.
+SOS averages the current-cutoff ratings of previously faced opponents, with separate
+opposing offense and opposing defense measures for the last five games and current season.
+Repeated opponents count once per game. Recent history can cross an offseason; season SOS
+starts unknown at Week 1. Higher opposing offense EPA means a harder defensive schedule;
+lower opposing defense EPA allowed means a harder offensive schedule. Earlier games against
+the evaluated team participate in the rating fit; this is not a leave-one-team-out rating.
+No predicted-game results, future opponents or full-season hindsight ratings enter SOS.
+
+Three fixed additions use richer play tendencies, opponent strength plus SOS, and both;
+each uses the original two-output score pipeline with Ridge alpha 20. Keep identical games,
+forecast horizons and expanding training cutoffs, and derive margins from the same rounded
+scores. Record the computational policy before evaluation and save feature tables, source/code
+hashes, folds, score/margin/total errors by season/horizon, and paired week-block margin gains
+(5,000 samples, seed 20261014). These are already examined development seasons, with the
+kickoff-plus-24-hour retrospective availability assumption and unreconstructed source revisions.
+No automatic model promotion follows from the experiment. Future prospective validation
+remains required for a selected revision; 2025 is already accessed.
+
+Source definitions: [nflverse play-by-play dictionary](https://nflreadr.nflverse.com/articles/dictionary_pbp.html)
+and its [source field definitions](https://github.com/nflverse/nflreadr/blob/main/data-raw/dictionary_pbp.csv).

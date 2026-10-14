@@ -42,10 +42,20 @@ def main(argv: list[str] | None = None) -> int:
         "team-context-fetch",
         "team-context-build",
         "team-context-evaluate",
+        "team-playbook-fetch",
+        "team-playbook-build",
+        "team-playbook-evaluate",
     ):
         team_command = commands.add_parser(name, help="Team EPA final-score and margin research")
         team_command.add_argument("--data-dir", type=Path, default=Path("data"))
-        if name in {"team-fetch", "team-build", "team-context-fetch", "team-context-build"}:
+        if name in {
+            "team-fetch",
+            "team-build",
+            "team-context-fetch",
+            "team-context-build",
+            "team-playbook-fetch",
+            "team-playbook-build",
+        }:
             team_command.add_argument(
                 "--seasons",
                 type=int,
@@ -56,9 +66,15 @@ def main(argv: list[str] | None = None) -> int:
                     else DEFAULT_TEAM_SEASONS
                 ),
             )
-        if name in {"team-fetch", "team-context-fetch"}:
+        if name in {"team-fetch", "team-context-fetch", "team-playbook-fetch"}:
             team_command.add_argument("--refresh", action="store_true")
-        if name in {"team-evaluate", "team-experiment", "team-tune", "team-context-evaluate"}:
+        if name in {
+            "team-evaluate",
+            "team-experiment",
+            "team-tune",
+            "team-context-evaluate",
+            "team-playbook-evaluate",
+        }:
             team_command.add_argument(
                 "--evaluation-seasons", type=int, nargs="+", default=[2022, 2023, 2024]
             )
@@ -71,6 +87,7 @@ def main(argv: list[str] | None = None) -> int:
                         "team-experiment": "reports/local/team_experiments",
                         "team-tune": "reports/local/team_tuning",
                         "team-context-evaluate": "reports/local/team_context",
+                        "team-playbook-evaluate": "reports/local/team_playbook",
                     }[name]
                 ),
             )
@@ -257,7 +274,28 @@ def main(argv: list[str] | None = None) -> int:
             from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
             from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-            if args.command == "team-context-fetch":
+            if args.command == "team-playbook-fetch":
+                from nfl_prop_model.data.team_playbook import fetch_playbook_sources
+
+                fetch_playbook_sources(args.data_dir, args.seasons, refresh=args.refresh)
+            elif args.command == "team-playbook-build":
+                from nfl_prop_model.data.team_playbook import build_playbook_cache
+
+                manifest = build_playbook_cache(args.data_dir, args.seasons)
+                print(f"Playbook audit: {manifest['audit']}")
+            elif args.command == "team-playbook-evaluate":
+                from nfl_prop_model.modeling.team_playbook import save_playbook_evaluation
+
+                report = save_playbook_evaluation(
+                    args.data_dir,
+                    args.report_dir,
+                    evaluation_seasons=tuple(args.evaluation_seasons),
+                )
+                print(
+                    f"Compared playbook across {len(report['folds'])} cutoffs. "
+                    f"Report: {args.report_dir / 'team_playbook.md'}"
+                )
+            elif args.command == "team-context-fetch":
                 from nfl_prop_model.data.team_context import fetch_context_sources
 
                 fetch_context_sources(args.data_dir, args.seasons, refresh=args.refresh)
