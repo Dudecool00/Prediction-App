@@ -303,3 +303,56 @@ Primary method references: [linear regularization](https://scikit-learn.org/stab
 [feature selection](https://scikit-learn.org/stable/modules/feature_selection.html),
 [complexity versus validation score](https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_refit_callable.html),
 and [boosting controls/loss](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html).
+
+## Weekly context readiness and development
+
+`team-pregame-audit`, `team-walkforward`, and `team-replay-check` implement the first three
+stages and readiness gate of the proposed enriched 2025 test. The current audit blocks that
+test. No enriched 2025 predictions or error scores have been produced by this experiment.
+Resolving the source gaps requires a dated provider/report archive and an audited adapter;
+there is no force option that assigns publication dates from week labels or retrieval time.
+
+Restrict both training and EPA/scoring history to 2022 onward. The 2022 season provides
+initialization; chronological development predictions cover 2023 and 2024, 544 games per
+horizon. Do not compare these aggregate error values directly with the older 2016-initialized
+2022–2024 report. Compare candidates and controls on identical development games instead.
+The intended 2025 Week 1 fit uses 2022–2024, and later weeks add eligible prior-week results.
+
+Lock all outcome-derived EPA/rest/scoring inputs on Tuesday 10:00 Chicago. Fit separate
+horizon pipelines on historical features from the matching horizon once per Tuesday lock;
+freeze coefficients until the next week. Earlier outcomes must be strictly available under
+the kickoff-plus-24-hour assumption. Monday games can remain ineligible on Tuesday.
+Do not let a pre-kickoff refresh use Thursday's result in the same NFL week.
+
+Compare the existing 28-input EPA control and scoring controls with compact eight-input
+season EPA; compact EPA plus eight observed QB/OL/skill/defense Out-count inputs; compact EPA
+plus three temperature/cold/heat inputs; and both additions. All use Ridge alpha 20 with
+training-only preprocessing and the same score/margin output contract. Injury counts are
+partial observations, not a healthy roster or a confirmed starter. No eligible reports leave
+these counts null. Use the existing modification-plus-24-hour assumption for development
+injuries. No 2025 injury row without a timestamp becomes a model input.
+
+Temperature comes from explicit GFS global previous-run forecasts at the floored kickoff
+hour and the venue's geocoded city. Choose a lead of 1–7 whole days whose valid-time-minus-lead
+plus six-hour publication buffer is strictly before the cutoff. This is a conservative
+availability assumption, not an exact original run/publication record. The refresh uses at
+least a 24-hour-old forecast. Do not use observed temperature, actual game roof, reanalysis,
+or stitched historical-forecast values. Fixed indoor venues have zero weather exposure;
+retractable/canopy venues stay unknown. The moved 2022 Cleveland–Buffalo game is excluded
+from weather inputs. Wind/rain and some outdoor temperatures lack earlier archive coverage;
+missing values remain explicit. The city/grid forecast is a coarse weather trial.
+
+Record protocol and source hash before computation. Freeze the research choice using only
+2023–2024 early-week errors: require at least 0.05 points of margin improvement over the EPA
+control, score regression no greater than 0.05, total regression no greater than 0.10, and
+per-season margin regression no greater than 0.25. The approximate paired season/week-block
+95% gain range must have a positive lower bound (5,000 draws, seed 20261014). Choose lowest
+eligible margin MAE, then fewer declared features, then fixed model order; otherwise retain
+the control. This conservative gate is not a correction for all prior model exploration.
+Report feature/encoded counts, fitted coefficients and effective Ridge degrees of freedom
+from training-only fits at season-start locks. No candidate is automatically promoted.
+
+Keep compact source schema/hash audits, forecast values, one feature/prediction table,
+metrics, coverage, fold references and the frozen choice. Do not copy full training data per
+fit. Cached choices fail visibly when code, artifact checksums or the frozen record change.
+2025 remains previously accessed diagnostic data, even after a new research lock.

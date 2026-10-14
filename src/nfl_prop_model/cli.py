@@ -94,12 +94,43 @@ def main(argv: list[str] | None = None) -> int:
     refinement.add_argument(
         "--report-dir", type=Path, default=Path("reports/local/team_refinement")
     )
+    for name in ("team-pregame-audit", "team-walkforward", "team-replay-check"):
+        command = commands.add_parser(
+            name, help="Audited weekly context development and replay gate"
+        )
+        command.add_argument("--data-dir", type=Path, default=Path("data"))
+        command.add_argument(
+            "--report-dir", type=Path, default=Path("reports/local/team_walkforward")
+        )
     args = parser.parse_args(argv)
     try:
         from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
         from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-        if args.command == "team-refine":
+        if args.command == "team-pregame-audit":
+            from nfl_prop_model.data.team_pregame import fetch_development_weather
+
+            manifest = fetch_development_weather(args.data_dir)
+            print(f"Pregame source audit cached; {manifest['known_temperatures']} forecast values.")
+        elif args.command == "team-walkforward":
+            from nfl_prop_model.modeling.team_walkforward import (
+                check_2025_replay,
+                save_walkforward_development,
+            )
+
+            report = save_walkforward_development(args.data_dir, args.report_dir)
+            status = check_2025_replay(args.data_dir, args.report_dir)
+            print(
+                f"Frozen model: {report['frozen_choice']['model']}. "
+                f"2025 replay: {status['status']}."
+            )
+            print(f"Report: {args.report_dir / 'findings.md'}")
+        elif args.command == "team-replay-check":
+            from nfl_prop_model.modeling.team_walkforward import check_2025_replay
+
+            status = check_2025_replay(args.data_dir, args.report_dir)
+            print(f"2025 replay: {status['status']}. Reasons: {status['blockers']}")
+        elif args.command == "team-refine":
             from nfl_prop_model.modeling.team_refinement import save_refinements
 
             report = save_refinements(
