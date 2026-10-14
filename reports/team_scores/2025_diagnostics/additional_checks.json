@@ -1,0 +1,207 @@
+{
+  "policy": "Descriptive resampling of season-week blocks, no recalibration/model selection. Approximate ranges; serial dependence and repeated development access not corrected.",
+  "results": {
+    "early_week": {
+      "approximate_week_block_extra_error_95_range": [
+        -0.2868963273568536,
+        0.5563735504134002
+      ],
+      "case_games": [
+        {
+          "away_score": 10.0,
+          "game_id": "2025_03_CIN_MIN",
+          "home_score": 48.0,
+          "predicted_away_score": 23.0,
+          "predicted_home_margin": -2.1,
+          "predicted_home_score": 20.9,
+          "prediction_time_utc": "2025-09-16 15:00:00.000000+00:00",
+          "target_home_margin": 38.0,
+          "week": 3
+        },
+        {
+          "away_score": 44.0,
+          "game_id": "2025_05_HOU_BAL",
+          "home_score": 10.0,
+          "predicted_away_score": 21.5,
+          "predicted_home_margin": 6.2,
+          "predicted_home_score": 27.7,
+          "prediction_time_utc": "2025-09-30 15:00:00.000000+00:00",
+          "target_home_margin": -34.0,
+          "week": 5
+        }
+      ],
+      "descriptive_calibration_slope_95_range": [
+        0.5495122253301677,
+        1.1399897706451554
+      ],
+      "epa_minus_prior_margin_mae": 0.15441176470588244,
+      "highest_team_mae": [
+        {
+          "games": 17,
+          "horizon": "early_week",
+          "margin_mae": 14.711764705882352,
+          "score_mae": 7.894117647058823,
+          "team": "MIA"
+        },
+        {
+          "games": 17,
+          "horizon": "early_week",
+          "margin_mae": 13.435294117647059,
+          "score_mae": 8.523529411764706,
+          "team": "MIN"
+        },
+        {
+          "games": 17,
+          "horizon": "early_week",
+          "margin_mae": 13.411764705882353,
+          "score_mae": 7.117647058823529,
+          "team": "BAL"
+        },
+        {
+          "games": 17,
+          "horizon": "early_week",
+          "margin_mae": 12.782352941176471,
+          "score_mae": 12.1,
+          "team": "CIN"
+        },
+        {
+          "games": 17,
+          "horizon": "early_week",
+          "margin_mae": 12.652941176470588,
+          "score_mae": 8.941176470588236,
+          "team": "JAX"
+        }
+      ],
+      "outcome_bands": [
+        {
+          "absolute_error_fraction": 0.2677024515133448,
+          "absolute_error_points": 763.3,
+          "games": 135,
+          "horizon": "early_week",
+          "margin_mae": 5.654074074074074,
+          "outcome_band": "Actual margin 0\u20137"
+        },
+        {
+          "absolute_error_fraction": 0.37642478869287693,
+          "absolute_error_points": 1073.3,
+          "games": 49,
+          "horizon": "early_week",
+          "margin_mae": 21.90408163265306,
+          "outcome_band": "Actual margin 21+"
+        },
+        {
+          "absolute_error_fraction": 0.3558727597937783,
+          "absolute_error_points": 1014.7,
+          "games": 88,
+          "horizon": "early_week",
+          "margin_mae": 11.530681818181819,
+          "outcome_band": "Actual margin 8\u201320"
+        }
+      ],
+      "weeks_1_4_mae": 9.484374999999998,
+      "weeks_5_18_mae": 10.789903846153845
+    },
+    "pregame_refresh": {
+      "approximate_week_block_extra_error_95_range": [
+        -0.2996589479939744,
+        0.5271128779979143
+      ],
+      "case_games": [
+        {
+          "away_score": 10.0,
+          "game_id": "2025_03_CIN_MIN",
+          "home_score": 48.0,
+          "predicted_away_score": 23.1,
+          "predicted_home_margin": -2.1,
+          "predicted_home_score": 21.0,
+          "prediction_time_utc": "2025-09-21 16:00:00.000000+00:00",
+          "target_home_margin": 38.0,
+          "week": 3
+        },
+        {
+          "away_score": 44.0,
+          "game_id": "2025_05_HOU_BAL",
+          "home_score": 10.0,
+          "predicted_away_score": 21.6,
+          "predicted_home_margin": 6.1,
+          "predicted_home_score": 27.7,
+          "prediction_time_utc": "2025-10-05 16:00:00.000000+00:00",
+          "target_home_margin": -34.0,
+          "week": 5
+        }
+      ],
+      "descriptive_calibration_slope_95_range": [
+        0.5728614000379686,
+        1.1480429903050293
+      ],
+      "epa_minus_prior_margin_mae": 0.13198529411764698,
+      "highest_team_mae": [
+        {
+          "games": 17,
+          "horizon": "pregame_refresh",
+          "margin_mae": 14.729411764705883,
+          "score_mae": 7.964705882352941,
+          "team": "MIA"
+        },
+        {
+          "games": 17,
+          "horizon": "pregame_refresh",
+          "margin_mae": 13.41764705882353,
+          "score_mae": 8.511764705882353,
+          "team": "MIN"
+        },
+        {
+          "games": 17,
+          "horizon": "pregame_refresh",
+          "margin_mae": 13.264705882352942,
+          "score_mae": 7.088235294117647,
+          "team": "BAL"
+        },
+        {
+          "games": 17,
+          "horizon": "pregame_refresh",
+          "margin_mae": 12.847058823529412,
+          "score_mae": 12.13529411764706,
+          "team": "CIN"
+        },
+        {
+          "games": 17,
+          "horizon": "pregame_refresh",
+          "margin_mae": 12.458823529411765,
+          "score_mae": 8.86470588235294,
+          "team": "JAX"
+        }
+      ],
+      "outcome_bands": [
+        {
+          "absolute_error_fraction": 0.2688274211711712,
+          "absolute_error_points": 763.9,
+          "games": 135,
+          "horizon": "pregame_refresh",
+          "margin_mae": 5.658518518518519,
+          "outcome_band": "Actual margin 0\u20137"
+        },
+        {
+          "absolute_error_fraction": 0.3757038288288288,
+          "absolute_error_points": 1067.6,
+          "games": 49,
+          "horizon": "pregame_refresh",
+          "margin_mae": 21.787755102040816,
+          "outcome_band": "Actual margin 21+"
+        },
+        {
+          "absolute_error_fraction": 0.35546875,
+          "absolute_error_points": 1010.1,
+          "games": 88,
+          "horizon": "pregame_refresh",
+          "margin_mae": 11.478409090909091,
+          "outcome_band": "Actual margin 8\u201320"
+        }
+      ],
+      "weeks_1_4_mae": 9.384375,
+      "weeks_5_18_mae": 10.774038461538462
+    }
+  },
+  "samples": 5000,
+  "seed": 20261014
+}

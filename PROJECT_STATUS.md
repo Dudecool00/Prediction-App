@@ -163,6 +163,41 @@ The dated legacy QB milestones below retain their original evidence; PR #13 is m
   cannot help other models or feature choices. Later prospective validation remains required;
   2025 is already accessed. Published forecasts retain current EPA.
 
+## New: graphical 2025 season diagnostic
+
+- Added `team-diagnose --season 2025`, with separate saved diagnostics rather than replacing
+  the original development backtest. Unchanged current EPA and two scoring controls cover
+  all 272 regular-season games per horizon / 144 chronological cutoff groups. Later seasons
+  are removed before feature construction/training, with strict prior-result timing guards.
+- Interactive standalone charts show predicted/actual margins and both final scores, weekly
+  baseline errors, team/week heatmaps and selectable team trajectories. Saved tables/CSV
+  retain every game, error distributions, largest misses and postgame outcome groups.
+  [Findings](reports/team_scores/2025_diagnostics/findings.md),
+  [overview](reports/team_scores/2025_diagnostics/overview.png), source/code
+  [summary](reports/team_scores/2025_diagnostics/summary.json) and
+  [additional descriptive checks](reports/team_scores/2025_diagnostics/additional_checks.json)
+  are tracked; complete local HTML/data artifacts remain ignored.
+- EPA margin MAE is 10.483 early week / 10.447 refresh, versus 10.328 / 10.315 for prior
+  scoring and 11.060 / 11.059 for league scoring. EPA versus prior-scoring paired ranges
+  include zero; no reliable model ordering or new model promotion is claimed.
+- The 49 actual 21+-point games contribute 37.6% of early absolute error; the largest ten
+  misses contribute only 11.4%. Close games average 5.65 points of error. Median error is
+  8.55; the 90th percentile is 22.89. These are postgame descriptions, not prediction filters.
+  Narrow predictions alone do not prove excess shrinkage: descriptive calibration slope is
+  0.832 with approximate range [0.550, 1.140]. Bias is only -0.58 points. Early weeks are not
+  uniquely worse (Weeks 1–4 MAE 9.48, later 10.79).
+- Official case checks document a forecast-time Lamar Jackson absence and Minnesota's two
+  defensive touchdowns in large misses. They motivate systematic coverage tests, not causal
+  conclusions for the full cohort or incorporation of current-game outcomes into features.
+  Three new diagnostic checks verify denominators, team orientation, future exclusion,
+  separate cache/CLI output, chart generation and code/checksum guards. All **396** tests
+  pass on the final full run after a missing shared fixture import was corrected in the new
+  module. Ruff, formatting, strict typing and dependency checks pass. All 1,632 predictions
+  are unchanged after a reporting-only calibration clarification. Native local Polars
+  diagnostics remain recorded; no handlers or tests were disabled.
+- 2025 is already accessed diagnostic data, not a fresh holdout. Source publication/revisions
+  are not reconstructed. No tuning, recalibration or forecast change follows from the report.
+
 ## New: full development starter coverage
 
 - `starter-coverage --collect` and **Starter coverage** expand the retrospective audit

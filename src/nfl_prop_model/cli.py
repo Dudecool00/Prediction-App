@@ -94,6 +94,12 @@ def main(argv: list[str] | None = None) -> int:
         if name == "team-forecast":
             team_command.add_argument("--horizon", choices=HORIZONS, default="early_week")
             team_command.add_argument("--days", type=int, default=7)
+    diagnosis = commands.add_parser(
+        "team-diagnose", help="Graphical season score/margin diagnostics"
+    )
+    diagnosis.add_argument("--season", type=int, default=2025)
+    diagnosis.add_argument("--data-dir", type=Path, default=Path("data"))
+    diagnosis.add_argument("--report-dir", type=Path)
     for name in ("fetch", "build"):
         command = commands.add_parser(name)
         command.add_argument("--seasons", type=int, nargs="+", default=list(DEFAULT_SEASONS))
@@ -274,7 +280,18 @@ def main(argv: list[str] | None = None) -> int:
             from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
             from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-            if args.command == "team-playbook-fetch":
+            if args.command == "team-diagnose":
+                from nfl_prop_model.modeling.team_diagnostics import save_season_diagnostics
+
+                directory = (
+                    args.report_dir or Path("reports/local") / f"team_diagnostics_{args.season}"
+                )
+                report = save_season_diagnostics(args.data_dir, directory, season=args.season)
+                print(
+                    f"Diagnosed {args.season} across {len(report['folds'])} cutoffs. "
+                    f"Charts: {directory / 'diagnostics.html'}"
+                )
+            elif args.command == "team-playbook-fetch":
                 from nfl_prop_model.data.team_playbook import fetch_playbook_sources
 
                 fetch_playbook_sources(args.data_dir, args.seasons, refresh=args.refresh)
