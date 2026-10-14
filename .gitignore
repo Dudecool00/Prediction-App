@@ -10,22 +10,14 @@ build/
 dist/
 .env
 .env.*
-!.env.example
-data/raw/
-data/processed/
-data/cache/
-data/journal/
-data/status_reviews/
-data/holdout/
-data/prospective/
-data/status_evidence/
-data/claim_reviews/
-data/participation/
 .streamlit/secrets.toml
-models/*.joblib
-models/*.cbm
-models/candidates/
-models/frozen/
 .ipynb_checkpoints/
-reports/local/
-reports/milestone_3/calibration.html
+
+# Local datasets, journals and historical artifacts
+data/*
+!data/README.md
+models/
+
+# Only curated team research belongs in the repository
+reports/*
+!reports/team_scores/
