@@ -80,6 +80,43 @@ See **Chronological tuning** under **Team backtest**, or `reports/local/team_tun
 These are retrospective development simulations, with explicit temporal selection rather
 than choosing the best setting from the entire evaluation period.
 
+To compare compact QB-history and injury observations:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-context-fetch
+.\.venv\Scripts\nfl-prop.exe team-context-build
+.\.venv\Scripts\nfl-prop.exe team-context-evaluate
+```
+
+These independent historical caches cover 2016–2024. The three fixed additions use prior
+primary-passer history, timestamp-gated injury observations, or both. Open **QB and injury
+context** on **Team backtest** to inspect metrics and coverage. The prior primary passer is
+a proxy; current-game schedule starter labels and retrospective ESPN starter flags are excluded.
+Injury observations require source modification plus 24 hours before the forecast, a stated
+retrospective assumption. Missing reports stay unknown; counts describe observed reports,
+not the complete injured roster. Explicit report-recorded rest is supported; coaching
+announcements and exact historical publication are not reconstructed. Live context integration
+remains separate from this comparison.
+
+To compare richer play-by-play and explicit opponent strength / strength of schedule:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-playbook-fetch
+.\.venv\Scripts\nfl-prop.exe team-playbook-build
+.\.venv\Scripts\nfl-prop.exe team-playbook-evaluate
+```
+
+These commands reuse the canonical 2016–2024 EPA play IDs and add yards, sack, interception
+and lost-fumble measurements in separate caches. They compare prior success, explosive-play,
+sack and turnover rates; opponent-adjusted offense/defense strength and the strength of
+previously faced opponents; and both together. Each forecast uses only earlier available games.
+Missing measurements remain unknown. Schedule strength uses opponent ratings at that
+forecast's cutoff, with separate recent and season averages for opposing offenses and defenses.
+Open **Play-by-play and schedule strength** in **Team backtest** to select a season, week,
+model and matchup, inspect the ratings, and see projected final scores and signed margins.
+The saved comparison is under `reports/local/team_playbook/`; published forecasts retain
+the current EPA model while the additions are assessed.
+
 Read [the team model policy](TEAM_MODEL_POLICY.md) and [the pivot plan](TEAM_EPA_PIVOT_PLAN.md).
 
 ## Legacy QB research

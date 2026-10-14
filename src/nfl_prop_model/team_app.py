@@ -172,6 +172,92 @@ def team_backtest_page(data_dir: Path) -> None:
         team_experiments_panel(data_dir, horizon)
     with st.expander("Chronological tuning"):
         team_tuning_panel(data_dir, horizon)
+    with st.expander("QB and injury context"):
+        team_context_panel(data_dir, horizon)
+    with st.expander("Play-by-play and schedule strength"):
+        team_playbook_panel(data_dir, horizon)
+
+
+def team_playbook_panel(data_dir: Path, horizon: str) -> None:
+    from nfl_prop_model.data.schemas import DataQualityError
+    from nfl_prop_model.modeling.team_playbook import load_playbook_evaluation
+
+    try:
+        report, predictions = load_playbook_evaluation(data_dir)
+    except (FileNotFoundError, DataQualityError, ValueError) as exc:
+        st.info(f"Prepare the comparison with nfl-prop team-playbook-evaluate. {exc}")
+        return
+    labels = {
+        **MODEL_LABELS,
+        "ridge_epa_play_scores": "EPA + play tendencies",
+        "ridge_epa_schedule_scores": "EPA + opponent strength + schedule",
+        "ridge_epa_play_schedule_scores": "EPA + plays + opponent strength + schedule",
+    }
+    metrics = pl.DataFrame(report["metrics"]).filter(pl.col("horizon") == horizon)
+    st.dataframe(
+        metrics.select(
+            pl.col("model").replace(labels).alias("Model"),
+            pl.col("season").cast(pl.String).fill_null("All").alias("Season"),
+            pl.col("games").alias("Games"),
+            pl.col("margin_mae").round(3).alias("Margin MAE"),
+            pl.col("score_mae").round(3).alias("Score MAE"),
+            pl.col("total_mae").round(3).alias("Total MAE"),
+        ),
+        hide_index=True,
+        width="stretch",
+    )
+    model = st.selectbox(
+        "Play and schedule model",
+        list(labels),
+        index=5,
+        format_func=labels.__getitem__,
+        key="team_playbook_model",
+    )
+    season = st.selectbox(
+        "Play and schedule season",
+        sorted(predictions["season"].unique().to_list()),
+        key="team_playbook_season",
+    )
+    rows = predictions.filter(
+        (pl.col("horizon") == horizon) & (pl.col("model") == model) & (pl.col("season") == season)
+    )
+    week = st.selectbox(
+        "Play and schedule week", sorted(rows["week"].unique().to_list()), key="team_playbook_week"
+    )
+    rows = rows.filter(pl.col("week") == week)
+    st.dataframe(score_table(rows), hide_index=True, width="stretch")
+    row = show_score_detail(rows, key="team_playbook_history")
+    features = load_frame(
+        data_dir / "processed" / "team_playbook_scores", report["artifacts"]["features"]
+    )
+    feature = features.filter(
+        (pl.col("game_id") == row["game_id"]) & (pl.col("horizon") == horizon)
+    ).row(0, named=True)
+    st.dataframe(
+        pl.DataFrame(
+            [
+                {
+                    "Team": row[f"{side}_team"],
+                    "Offense strength EPA/play": feature[f"{side}_off_strength"],
+                    "Defense strength EPA/play allowed": feature[f"{side}_def_strength"],
+                    "Faced offense EPA/play (season)": feature[f"{side}_sos_off_season"],
+                    "Faced defense EPA/play allowed (season)": feature[f"{side}_sos_def_season"],
+                    "Prior offensive success rate": feature[f"{side}_off_success_prior"],
+                    "Prior offensive sack rate": feature[f"{side}_off_sack_prior"],
+                    "Prior offensive turnover rate": feature[f"{side}_off_turnover_prior"],
+                }
+                for side in ("away", "home")
+            ]
+        ),
+        hide_index=True,
+        width="stretch",
+    )
+    st.caption(
+        "Prior success, explosive plays, sacks and turnovers. Schedule strength uses "
+        "previously faced opponents rated at the forecast cutoff. Higher opposing offense "
+        "EPA is harder; lower opposing defense EPA allowed is harder. "
+        "Development comparison; published forecasts retain current EPA."
+    )
 
 
 def team_experiments_panel(data_dir: Path, horizon: str) -> None:
@@ -271,4 +357,48 @@ def team_tuning_panel(data_dir: Path, horizon: str) -> None:
         "Development simulation with settings locked before Week 1. "
         "Published forecasts retain the current model pending assessment. "
         "2025 is already accessed."
+    )
+
+
+def team_context_panel(data_dir: Path, horizon: str) -> None:
+    from nfl_prop_model.data.schemas import DataQualityError
+    from nfl_prop_model.modeling.team_context import load_context_evaluation
+
+    try:
+        report, _ = load_context_evaluation(data_dir)
+    except (FileNotFoundError, DataQualityError, ValueError) as exc:
+        st.info(f"Prepare the comparison with nfl-prop team-context-evaluate. {exc}")
+        return
+    labels = {
+        **MODEL_LABELS,
+        "ridge_epa_qb_history_scores": "EPA + prior QB history",
+        "ridge_epa_injury_scores": "EPA + injury observations",
+        "ridge_epa_qb_injury_scores": "EPA + QB history + injuries",
+    }
+    metrics = pl.DataFrame(report["metrics"]).filter(pl.col("horizon") == horizon)
+    st.dataframe(
+        metrics.select(
+            pl.col("model").replace(labels).alias("Model"),
+            pl.col("season").cast(pl.String).fill_null("All").alias("Season"),
+            pl.col("games").alias("Games"),
+            pl.col("margin_mae").round(3).alias("Margin MAE"),
+            pl.col("score_mae").round(3).alias("Score MAE"),
+            pl.col("total_mae").round(3).alias("Total MAE"),
+        ),
+        hide_index=True,
+        width="stretch",
+    )
+    coverage = next(row for row in report["coverage"] if row["horizon"] == horizon)
+    observed = coverage["home_observed_report_games"] + coverage["away_observed_report_games"]
+    known = coverage["home_qb_known_games"] + coverage["away_qb_known_games"]
+    st.write(
+        f"Prior primary passer known in {known}/{2 * coverage['games']} team slots; "
+        f"partial injury observations in {observed}/{2 * coverage['games']} slots."
+    )
+    st.caption(
+        "Prior primary passer is a proxy, with no current-game starter labels. Injury rows "
+        "require modification plus 24 hours before the forecast. Missing observations are unknown. "
+        "Rest flags use explicit report reasons; coaching announcements remain outside this data. "
+        "Historical publication/revisions are not reconstructed. "
+        "Published forecasts retain current EPA."
     )

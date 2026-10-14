@@ -142,3 +142,85 @@ Report subsequent-season score/margin/total error separately by season and horiz
 approximate paired week-block gain ranges. The research command does not automatically change
 published forecasts. The earlier feature experiments and forecasts remain readable because
 configurable rating code lives in a separate module from the published feature implementation.
+
+## QB history and injury observations
+
+`team-context-fetch/build/evaluate` use independent 2016–2024 historical snapshots of passer
+statistics and injury records. The three fixed Ridge-alpha-20 additions are QB history,
+injury observations, and both with an interaction between reported unavailability and prior
+passer EPA. Controls, games and chronological cutoffs match the initial comparison. No
+current-game schedule QB labels, period-zero ESPN starter flags or actual participation in
+the predicted game are model inputs. Existing retrospective starter audits remain audits.
+
+The primary-passer proxy is the unique leader in attempts plus sacks in the last available
+current-season team game. Ties and missing observations remain unknown. Do not carry a
+previous-season player identity across an offseason without current-season evidence. Use
+five earlier available passer games, 0.85 decay and 100 passing pseudo-plays at the prior-only
+league rate for passer EPA. This rate covers attempts plus sacks; no scramble-inclusive
+dropback claim is made. Include previous participation share, observed passer continuity
+and history size. Player statistics retain the kickoff-plus-24-hour availability assumption.
+
+Injury rows must have UTC modification timestamps and stable GSIS IDs. Observed availability
+is modification plus 24 hours, strictly before the forecast cutoff. Use only same season,
+week and team, with the latest eligible row per player. The archive does not reconstruct
+earlier overwritten states or verify original publication/delivery. Missing eligible reports
+are unknown, not a healthy team. An eligible partial report can establish reported Out or
+Questionable/Doubtful status for the past primary passer, and observed Out counts for OL,
+skill and defensive positions. These are report counts, not complete injury/IR rosters or
+confirmed replacement starters. Ambiguous Note statuses stay unknown. Reported rest requires
+Out with an explicit Rest reason; non-injury-related does not automatically mean rest.
+No point deduction or replacement identity is invented from a coach's postgame decision.
+
+Record the feature protocol before evaluation and retain source audits, code hashes,
+candidate predictions, feature tables, temporal fits, coverage and per-season/per-horizon
+score/margin/total metrics. Approximate paired week-block gains use 5,000 samples with seed
+20261013. The 2022–2024 comparisons are already examined development simulations, and 2025
+is already accessed. Historical timestamps and source revisions limit the inference; these
+results do not alone establish prospective accuracy. Published forecasts remain the current
+EPA model while context performance is assessed. Live source integration is separate.
+
+Source definitions: [injury dictionary](https://nflreadr.nflverse.com/articles/dictionary_injuries.html)
+and [nflverse data timing](https://nflreadr.nflverse.com/articles/nflverse_data_schedule.html).
+
+## Richer play-by-play and schedule strength
+
+`team-playbook-fetch/build/evaluate` retain the exact canonical EPA play IDs, source values,
+eligible-play policy, team outcomes and original controls. Extra yards, sack, interception
+and lost-fumble measurements are joined by unique game/play IDs from independent snapshots;
+missing IDs or changed game/team identities fail visibly. The expanded aggregates must
+reconcile to both canonical play counts and EPA sums. Raw and processed content hashes,
+original source manifests, retrieval times and observed source schemas are retained.
+
+Success means positive EPA. Explosive plays gain at least 20 yards on a dropback or 10 yards
+on a designed rush, including sacks/scrambles in the dropback denominator. Sack rate uses
+dropbacks with a known binary sack flag and is not a pressure measure. Turnovers mean an
+interception or lost fumble, counted once per eligible play when both flags are known.
+Missing/nonfinite yards and missing event flags are audited and excluded from the specific
+measurement denominator, rather than counted as non-events. Defensive counts/exposures
+mirror the opposing offense. Rates use five available games, 0.85 decay and 100 exposure
+pseudo-plays at the prior-season rate, with a strictly past-only league fallback. Zero
+exposure and no valid fallback remain unknown.
+
+Strength fits reuse the existing regularized offense/defense EPA model: available current
+season games have weight 1, prior-season games 0.25, and each team effect has a 200-play
+penalty. Explicit strength features use the all-play adjusted offense and defense EPA.
+SOS averages the current-cutoff ratings of previously faced opponents, with separate
+opposing offense and opposing defense measures for the last five games and current season.
+Repeated opponents count once per game. Recent history can cross an offseason; season SOS
+starts unknown at Week 1. Higher opposing offense EPA means a harder defensive schedule;
+lower opposing defense EPA allowed means a harder offensive schedule. Earlier games against
+the evaluated team participate in the rating fit; this is not a leave-one-team-out rating.
+No predicted-game results, future opponents or full-season hindsight ratings enter SOS.
+
+Three fixed additions use richer play tendencies, opponent strength plus SOS, and both;
+each uses the original two-output score pipeline with Ridge alpha 20. Keep identical games,
+forecast horizons and expanding training cutoffs, and derive margins from the same rounded
+scores. Record the computational policy before evaluation and save feature tables, source/code
+hashes, folds, score/margin/total errors by season/horizon, and paired week-block margin gains
+(5,000 samples, seed 20261014). These are already examined development seasons, with the
+kickoff-plus-24-hour retrospective availability assumption and unreconstructed source revisions.
+No automatic model promotion follows from the experiment. Future prospective validation
+remains required for a selected revision; 2025 is already accessed.
+
+Source definitions: [nflverse play-by-play dictionary](https://nflreadr.nflverse.com/articles/dictionary_pbp.html)
+and its [source field definitions](https://github.com/nflverse/nflreadr/blob/main/data-raw/dictionary_pbp.csv).
