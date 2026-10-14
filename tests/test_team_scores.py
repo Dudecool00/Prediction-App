@@ -326,6 +326,7 @@ def test_team_app_defaults_and_historical_score_display(team_cache, monkeypatch)
     app = AppTest.from_file(Path(__file__).parents[1] / "app.py", default_timeout=30).run()
     assert not app.exception and not app.error
     assert app.radio(key="page").value == "Team scores"
+    assert app.radio(key="page").options == ["Team scores", "Team backtest"]
     app.radio(key="page").set_value("Team backtest").run()
     assert not app.exception and not app.error
     assert len(app.metric) == 3

@@ -37,7 +37,6 @@ typing-inspection==0.4.4
 typing_extensions==4.16.0
 tzdata==2026.4
 urllib3==2.7.0
-xgboost-cpu==3.2.0
 
 # Optional Streamlit app dependencies
 Jinja2==3.1.6

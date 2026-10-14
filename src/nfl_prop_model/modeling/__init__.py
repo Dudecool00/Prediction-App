@@ -1,1 +1,1 @@
-"""Chronological research baselines for recorded QB appearances."""
+"""Chronological team score and margin modeling."""

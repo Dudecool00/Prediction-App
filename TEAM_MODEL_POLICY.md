@@ -1,6 +1,6 @@
 # Team EPA score and margin research policy
 
-October 13, 2026. First implementation; independent of the legacy QB candidate and holdout policy.
+Updated October 14, 2026. Contracts for the active team EPA forecasting and research pipeline.
 
 ## Outcomes and consistency
 
@@ -18,7 +18,8 @@ enters margin and total summaries once. Early-week and refresh results are separ
 
 Use independent per-season snapshots in `data/raw/team_epa/`, with selected unmodified source
 columns, upstream schema metadata, retrieval times, package version, and file checksums.
-Rebuild offline into `data/processed/team_epa/`. Preserve legacy QB files and frozen artifacts.
+Rebuild offline into `data/processed/team_epa/`. Retain source manifests and append-only forecast
+snapshots. Historical QB workflows are recoverable from Git history after the repository cleanup.
 
 Eligible offense is a pass/rush-flagged play with finite team EPA, excluding `no_play`, kneels,
 spikes, and two-point tries. Penalties on eligible plays are retained; nullified `no_play`
