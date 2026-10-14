@@ -224,3 +224,28 @@ remains required for a selected revision; 2025 is already accessed.
 
 Source definitions: [nflverse play-by-play dictionary](https://nflreadr.nflverse.com/articles/dictionary_pbp.html)
 and its [source field definitions](https://github.com/nflverse/nflreadr/blob/main/data-raw/dictionary_pbp.csv).
+
+## Completed-season graphical diagnostics
+
+`team-diagnose --season 2025` reuses the unchanged current EPA model and its two scoring
+controls. Filter team and schedule histories to the requested season or earlier before
+constructing features and expanding training fits. Outcomes must be available strictly before
+each prediction cutoff; check every model/horizon cohort against the completed schedule.
+Use a separate per-season diagnostic namespace, preserving the initial evaluation and forecasts.
+Record the computational policy before the run, and retain model/diagnostic hashes, source
+provenance, runtime, temporal folds, predictions, CSV, tables and standalone offline HTML charts.
+
+Compare predicted and actual home margins and both team scores, weekly errors against the
+baselines, team/week error heatmaps and per-team trajectories. The same game appears in both
+teams' diagnostic rows, but enters overall margin metrics once. Missing heatmap cells are
+byes, not zero errors. Retain every game when displaying the largest errors and actual-margin
+bands. Median and 90th-percentile errors, forecast/outcome standard deviations, score-residual
+correlation, bias and descriptive actual-on-predicted calibration aid interpretation. Do not
+interpret narrow forecast dispersion alone as underfitting: realized outcomes include residual
+variation. Omit calibration slopes for the nearly constant league home-edge control.
+
+Outcome-selected groups and calibration fits are postgame diagnostics and never predictor
+filters or applied corrections. 2025 has already been accessed; this report is not an untouched
+holdout, and it does not select a revised model. Source revisions and exact historical
+publication remain unreconstructed. Proposed fixes require chronological selection and later
+prospective verification; no forecast/model promotion is automatic.

@@ -1,0 +1,1873 @@
+{
+  "artifacts": {
+    "distribution": {
+      "file": "distribution-134e835303322b0091fa340224cbbe54a047bf0800ae68bf59fc9d6474e55516.parquet",
+      "rows": 6,
+      "schema": {
+        "actual_margin_sd": "Float64",
+        "descriptive_calibration_intercept": "Float64",
+        "descriptive_calibration_slope": "Float64",
+        "games": "Int64",
+        "home_away_score_error_correlation": "Float64",
+        "horizon": "String",
+        "largest_10_error_games": "Int64",
+        "largest_10_errors_share": "Float64",
+        "margin_bias": "Float64",
+        "margin_correlation": "Float64",
+        "margin_mae": "Float64",
+        "margin_r2": "Float64",
+        "margin_rmse": "Float64",
+        "median_absolute_error": "Float64",
+        "model": "String",
+        "p90_absolute_error": "Float64",
+        "predicted_margin_sd": "Float64",
+        "within_14_points_fraction": "Float64",
+        "within_7_points_fraction": "Float64"
+      },
+      "sha256": "134e835303322b0091fa340224cbbe54a047bf0800ae68bf59fc9d6474e55516"
+    },
+    "games": {
+      "file": "games-6e69ec2912aba89e812ad4d56f3eacbb282cb3d8012e65834044537290b2f90e.parquet",
+      "rows": 1632,
+      "schema": {
+        "absolute_margin_error": "Float64",
+        "away_error": "Float64",
+        "away_prior_games": "Int64",
+        "away_score": "Float64",
+        "away_team": "String",
+        "game_id": "String",
+        "home_error": "Float64",
+        "home_prior_games": "Int64",
+        "home_score": "Float64",
+        "home_team": "String",
+        "horizon": "String",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "latest_training_result_available_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "margin_error": "Float64",
+        "model": "String",
+        "predicted_away_margin": "Float64",
+        "predicted_away_score": "Float64",
+        "predicted_home_margin": "Float64",
+        "predicted_home_score": "Float64",
+        "predicted_total": "Float64",
+        "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "season": "Int64",
+        "target_home_margin": "Float64",
+        "training_games": "Int64",
+        "week": "Int64"
+      },
+      "sha256": "6e69ec2912aba89e812ad4d56f3eacbb282cb3d8012e65834044537290b2f90e"
+    },
+    "largest_errors": {
+      "file": "largest_errors-d7e5986851ea30d638dd2db3077b2cc39a9dcae47764cb00e1833b34a7558340.parquet",
+      "rows": 20,
+      "schema": {
+        "absolute_margin_error": "Float64",
+        "away_error": "Float64",
+        "away_prior_games": "Int64",
+        "away_score": "Float64",
+        "away_team": "String",
+        "game_id": "String",
+        "home_error": "Float64",
+        "home_prior_games": "Int64",
+        "home_score": "Float64",
+        "home_team": "String",
+        "horizon": "String",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "latest_training_result_available_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "margin_error": "Float64",
+        "model": "String",
+        "predicted_away_margin": "Float64",
+        "predicted_away_score": "Float64",
+        "predicted_home_margin": "Float64",
+        "predicted_home_score": "Float64",
+        "predicted_total": "Float64",
+        "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "season": "Int64",
+        "target_home_margin": "Float64",
+        "training_games": "Int64",
+        "week": "Int64"
+      },
+      "sha256": "d7e5986851ea30d638dd2db3077b2cc39a9dcae47764cb00e1833b34a7558340"
+    },
+    "outcome_bands": {
+      "file": "outcome_bands-a71016b5be0eb6a54ce25b4b4e7543c521f96642fefdf0450c5c0717e325a470.parquet",
+      "rows": 6,
+      "schema": {
+        "absolute_error_points": "Float64",
+        "games": "UInt32",
+        "horizon": "String",
+        "margin_mae": "Float64",
+        "outcome_band": "String"
+      },
+      "sha256": "a71016b5be0eb6a54ce25b4b4e7543c521f96642fefdf0450c5c0717e325a470"
+    },
+    "team_games": {
+      "file": "team_games-702199447c2cc723a27b75761253bae02348a10466154c9d578cedd919e54295.parquet",
+      "rows": 1088,
+      "schema": {
+        "absolute_margin_error": "Float64",
+        "actual_margin": "Float64",
+        "actual_score": "Float64",
+        "game_id": "String",
+        "horizon": "String",
+        "opponent": "String",
+        "predicted_margin": "Float64",
+        "predicted_score": "Float64",
+        "team": "String",
+        "week": "Int64"
+      },
+      "sha256": "702199447c2cc723a27b75761253bae02348a10466154c9d578cedd919e54295"
+    },
+    "teams": {
+      "file": "teams-42e1327f7fb10114294acf5c0065e2dc2d764ad50bcae88755cac2bcf44551df.parquet",
+      "rows": 64,
+      "schema": {
+        "games": "UInt32",
+        "horizon": "String",
+        "margin_mae": "Float64",
+        "score_mae": "Float64",
+        "team": "String"
+      },
+      "sha256": "42e1327f7fb10114294acf5c0065e2dc2d764ad50bcae88755cac2bcf44551df"
+    },
+    "weekly": {
+      "file": "weekly-526ebd70d72d362bdccb624acfee980124619eb62fb6112595cf4740db91d94f.parquet",
+      "rows": 108,
+      "schema": {
+        "games": "UInt32",
+        "horizon": "String",
+        "margin_bias": "Float64",
+        "margin_mae": "Float64",
+        "model": "String",
+        "week": "Int64"
+      },
+      "sha256": "526ebd70d72d362bdccb624acfee980124619eb62fb6112595cf4740db91d94f"
+    }
+  },
+  "canonical_source_sha256": "906a7f6f9fa683b40f504d0bff44e1b4f2b373c3de71d77d01e948128e1cb632",
+  "diagnostic_source_sha256": "c18c0c0e0d71bb0ca71d8839fdb9f839ccc5ca43a5b8ad1eee427cfbd614ffa7",
+  "distribution": [
+    {
+      "actual_margin_sd": 14.151188995217812,
+      "descriptive_calibration_intercept": null,
+      "descriptive_calibration_slope": null,
+      "games": 272,
+      "home_away_score_error_correlation": -0.026219025960665093,
+      "horizon": "early_week",
+      "largest_10_error_games": 10,
+      "largest_10_errors_share": 0.10700751279835119,
+      "margin_bias": -0.29926470588235266,
+      "margin_correlation": null,
+      "margin_mae": 11.05955882352941,
+      "margin_r2": -0.0015422748397970754,
+      "margin_rmse": 14.162097302306604,
+      "median_absolute_error": 8.75,
+      "model": "league_scores",
+      "p90_absolute_error": 25.2,
+      "predicted_margin_sd": 0.04556450995538142,
+      "within_14_points_fraction": 0.6654411764705882,
+      "within_7_points_fraction": 0.4375
+    },
+    {
+      "actual_margin_sd": 14.151188995217812,
+      "descriptive_calibration_intercept": -0.10676503775827006,
+      "descriptive_calibration_slope": 1.335529190774305,
+      "games": 272,
+      "home_away_score_error_correlation": 0.026115402497752224,
+      "horizon": "early_week",
+      "largest_10_error_games": 10,
+      "largest_10_errors_share": 0.10913750756416188,
+      "margin_bias": -0.44007352941176475,
+      "margin_correlation": 0.3845368845477499,
+      "margin_mae": 10.328308823529412,
+      "margin_r2": 0.13756834601229462,
+      "margin_rmse": 13.141812761071389,
+      "median_absolute_error": 7.9,
+      "model": "prior_team_scores",
+      "p90_absolute_error": 23.18,
+      "predicted_margin_sd": 4.074530280923724,
+      "within_14_points_fraction": 0.7169117647058824,
+      "within_7_points_fraction": 0.4264705882352941
+    },
+    {
+      "actual_margin_sd": 14.151188995217812,
+      "descriptive_calibration_intercept": 0.8263378100627985,
+      "descriptive_calibration_slope": 0.8320691652224326,
+      "games": 272,
+      "home_away_score_error_correlation": 0.023108293654595786,
+      "horizon": "early_week",
+      "largest_10_error_games": 10,
+      "largest_10_errors_share": 0.11363237821344649,
+      "margin_bias": -0.5753676470588235,
+      "margin_correlation": 0.3686046214303529,
+      "margin_mae": 10.482720588235296,
+      "margin_r2": 0.12868193316693832,
+      "margin_rmse": 13.20934523247039,
+      "median_absolute_error": 8.55,
+      "model": "ridge_epa_scores",
+      "p90_absolute_error": 22.89,
+      "predicted_margin_sd": 6.268942391318179,
+      "within_14_points_fraction": 0.7169117647058824,
+      "within_7_points_fraction": 0.4338235294117647
+    },
+    {
+      "actual_margin_sd": 14.151188995217812,
+      "descriptive_calibration_intercept": null,
+      "descriptive_calibration_slope": null,
+      "games": 272,
+      "home_away_score_error_correlation": -0.02620558474182636,
+      "horizon": "pregame_refresh",
+      "largest_10_error_games": 10,
+      "largest_10_errors_share": 0.10701107011070111,
+      "margin_bias": -0.2981617647058822,
+      "margin_correlation": null,
+      "margin_mae": 11.059191176470588,
+      "margin_r2": -0.0014771009582978945,
+      "margin_rmse": 14.161636506047307,
+      "median_absolute_error": 8.75,
+      "model": "league_scores",
+      "p90_absolute_error": 25.2,
+      "predicted_margin_sd": 0.04504989304451014,
+      "within_14_points_fraction": 0.6654411764705882,
+      "within_7_points_fraction": 0.4375
+    },
+    {
+      "actual_margin_sd": 14.151188995217812,
+      "descriptive_calibration_intercept": -0.11497694746447618,
+      "descriptive_calibration_slope": 1.3552422570361176,
+      "games": 272,
+      "home_away_score_error_correlation": 0.02695490635127439,
+      "horizon": "pregame_refresh",
+      "largest_10_error_games": 10,
+      "largest_10_errors_share": 0.10913497522899811,
+      "margin_bias": -0.4577205882352943,
+      "margin_correlation": 0.38891367124462295,
+      "margin_mae": 10.315073529411764,
+      "margin_r2": 0.13981510083424042,
+      "margin_rmse": 13.124683469572535,
+      "median_absolute_error": 7.9,
+      "model": "prior_team_scores",
+      "p90_absolute_error": 23.18,
+      "predicted_margin_sd": 4.060964625352583,
+      "within_14_points_fraction": 0.7169117647058824,
+      "within_7_points_fraction": 0.43014705882352944
+    },
+    {
+      "actual_margin_sd": 14.151188995217812,
+      "descriptive_calibration_intercept": 0.7910111814522636,
+      "descriptive_calibration_slope": 0.8471625880296743,
+      "games": 272,
+      "home_away_score_error_correlation": 0.024735625197935308,
+      "horizon": "pregame_refresh",
+      "largest_10_error_games": 10,
+      "largest_10_errors_share": 0.11409065315315313,
+      "margin_bias": -0.5602941176470586,
+      "margin_correlation": 0.3770991447413036,
+      "margin_mae": 10.447058823529414,
+      "margin_r2": 0.13600766103588002,
+      "margin_rmse": 13.153698316890376,
+      "median_absolute_error": 8.55,
+      "model": "ridge_epa_scores",
+      "p90_absolute_error": 22.590000000000003,
+      "predicted_margin_sd": 6.299146518710836,
+      "within_14_points_fraction": 0.7058823529411765,
+      "within_7_points_fraction": 0.4338235294117647
+    }
+  ],
+  "fold_count": 144,
+  "generated_at_utc": "2026-10-14T16:53:11.821638+00:00",
+  "input_seasons": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "interpretation": "Previously accessed diagnostic season; not a fresh holdout. Postgame descriptions do not determine feature selection or recalibration.",
+  "metrics": [
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": -0.29926470588235266,
+      "margin_mae": 11.05955882352941,
+      "margin_rmse": 14.162097302306604,
+      "model": "league_scores",
+      "scope": "overall",
+      "score_bias": -0.221691176470589,
+      "score_mae": 7.875367647058823,
+      "score_rmse": 9.88679675122332,
+      "season": null,
+      "total_bias": -0.4433823529411783,
+      "total_mae": 10.972794117647059,
+      "total_rmse": 13.799637676402957
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": -0.44007352941176475,
+      "margin_mae": 10.328308823529412,
+      "margin_rmse": 13.141812761071389,
+      "model": "prior_team_scores",
+      "scope": "overall",
+      "score_bias": 0.03033088235294123,
+      "score_mae": 7.518566176470588,
+      "score_rmse": 9.413707347767497,
+      "season": null,
+      "total_bias": 0.06066176470588235,
+      "total_mae": 10.68125,
+      "total_rmse": 13.481999164463268
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": -0.5753676470588235,
+      "margin_mae": 10.482720588235296,
+      "margin_rmse": 13.20934523247039,
+      "model": "ridge_epa_scores",
+      "scope": "overall",
+      "score_bias": 0.25459558823529405,
+      "score_mae": 7.559007352941177,
+      "score_rmse": 9.449030256810358,
+      "season": null,
+      "total_bias": 0.5091911764705882,
+      "total_mae": 10.731985294117647,
+      "total_rmse": 13.514802614388504
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": -0.2981617647058822,
+      "margin_mae": 11.059191176470588,
+      "margin_rmse": 14.161636506047307,
+      "model": "league_scores",
+      "scope": "overall",
+      "score_bias": -0.22113970588235365,
+      "score_mae": 7.8748161764705875,
+      "score_rmse": 9.886535518513222,
+      "season": null,
+      "total_bias": -0.4422794117647077,
+      "total_mae": 10.972426470588236,
+      "total_rmse": 13.799361931114147
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": -0.4577205882352943,
+      "margin_mae": 10.315073529411764,
+      "margin_rmse": 13.124683469572535,
+      "model": "prior_team_scores",
+      "scope": "overall",
+      "score_bias": 0.024816176470588286,
+      "score_mae": 7.514889705882352,
+      "score_rmse": 9.405234579743347,
+      "season": null,
+      "total_bias": 0.04963235294117657,
+      "total_mae": 10.70110294117647,
+      "total_rmse": 13.475030011971379
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": -0.5602941176470586,
+      "margin_mae": 10.447058823529414,
+      "margin_rmse": 13.153698316890376,
+      "model": "ridge_epa_scores",
+      "scope": "overall",
+      "score_bias": 0.24411764705882344,
+      "score_mae": 7.540441176470588,
+      "score_rmse": 9.41699808543978,
+      "season": null,
+      "total_bias": 0.4882352941176469,
+      "total_mae": 10.715441176470588,
+      "total_rmse": 13.479600600646192
+    }
+  ],
+  "model_policy": {
+    "feature_policy": {
+      "availability": "only result_available_at_utc strictly earlier than prediction time",
+      "early_week": "Tuesday 10:00 America/Chicago on/before the first scheduled game of the week",
+      "pregame_refresh": "one hour before each recorded kickoff",
+      "recent": "last five available team games, decay 0.85 per game; play-weighted EPA rates",
+      "rest": "prior completed same-season schedule game; independent of EPA availability",
+      "scores": "prior team scoring/allowed means with four prior-season pseudo-games; baseline only",
+      "season": "current season EPA shrunk with 200 plays at prior-season EPA (league fallback)"
+    },
+    "features": [
+      "home_off_epa_recent",
+      "home_off_epa_season",
+      "home_off_dropback_epa_recent",
+      "home_off_dropback_epa_season",
+      "home_off_rush_epa_recent",
+      "home_off_rush_epa_season",
+      "home_def_epa_recent",
+      "home_def_epa_season",
+      "home_def_dropback_epa_recent",
+      "home_def_dropback_epa_season",
+      "home_def_rush_epa_recent",
+      "home_def_rush_epa_season",
+      "away_off_epa_recent",
+      "away_off_epa_season",
+      "away_off_dropback_epa_recent",
+      "away_off_dropback_epa_season",
+      "away_off_rush_epa_recent",
+      "away_off_rush_epa_season",
+      "away_def_epa_recent",
+      "away_def_epa_season",
+      "away_def_dropback_epa_recent",
+      "away_def_dropback_epa_season",
+      "away_def_rush_epa_recent",
+      "away_def_rush_epa_season",
+      "home_field",
+      "rest_difference",
+      "home_prior_games",
+      "away_prior_games"
+    ],
+    "minimum_training_games": 64,
+    "model": "joint two-output Ridge regression for home and away final scores",
+    "outputs": "scores clipped at zero and rounded to tenths; margins derived from those scores",
+    "probabilities": "not yet calibrated; no win or spread probabilities published",
+    "ridge_alpha": 20.0,
+    "scoring_baseline": "prior scoring rates plus training home edge; neutral effect is zero",
+    "validation": "retrospective expanding-window simulation; 2025 is already accessed"
+  },
+  "outcome_bands": [
+    {
+      "absolute_error_points": 763.3,
+      "games": 135,
+      "horizon": "early_week",
+      "margin_mae": 5.654074074074074,
+      "outcome_band": "Actual margin 0\u20137"
+    },
+    {
+      "absolute_error_points": 1073.3,
+      "games": 49,
+      "horizon": "early_week",
+      "margin_mae": 21.90408163265306,
+      "outcome_band": "Actual margin 21+"
+    },
+    {
+      "absolute_error_points": 1014.7,
+      "games": 88,
+      "horizon": "early_week",
+      "margin_mae": 11.530681818181819,
+      "outcome_band": "Actual margin 8\u201320"
+    },
+    {
+      "absolute_error_points": 763.9,
+      "games": 135,
+      "horizon": "pregame_refresh",
+      "margin_mae": 5.658518518518519,
+      "outcome_band": "Actual margin 0\u20137"
+    },
+    {
+      "absolute_error_points": 1067.6,
+      "games": 49,
+      "horizon": "pregame_refresh",
+      "margin_mae": 21.787755102040816,
+      "outcome_band": "Actual margin 21+"
+    },
+    {
+      "absolute_error_points": 1010.1,
+      "games": 88,
+      "horizon": "pregame_refresh",
+      "margin_mae": 11.478409090909091,
+      "outcome_band": "Actual margin 8\u201320"
+    }
+  ],
+  "policy": {
+    "calibration": "actual-on-predicted slope/intercept are descriptive; no recalibration applied",
+    "decision": "no model selection, feature tuning or forecast change from this report",
+    "interpretation": "retrospective descriptive diagnostic; 2025 already accessed, not a fresh holdout",
+    "league_calibration": "omitted: nearly constant home-edge baseline is not a matchup rating",
+    "outcome_groups": "actual margin bands and error-ranked games are postgame descriptions only",
+    "prediction": "unchanged current EPA and two scoring controls; expanding chronological fits",
+    "scope": "completed regular-season games; both forecast horizons; future seasons excluded"
+  },
+  "runtime": {
+    "numpy": "2.4.6",
+    "polars": "1.44.2",
+    "python": "3.12.14",
+    "scikit-learn": "1.9.1"
+  },
+  "season": 2025,
+  "source_artifacts": {
+    "games": {
+      "file": "games-bf7dfa3fb9149a9c3ce07a16eb96436b79e6411e81d740e082c4ed1801814917.parquet",
+      "rows": 2911,
+      "schema": {
+        "away_score": "Float64",
+        "away_team": "String",
+        "game_id": "String",
+        "game_type": "String",
+        "gameday": "String",
+        "gametime": "String",
+        "home_score": "Float64",
+        "home_team": "String",
+        "is_neutral_site": "Boolean",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "location": "String",
+        "result_available_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "season": "Int32",
+        "target_home_margin": "Float64",
+        "week": "Int32"
+      },
+      "sha256": "bf7dfa3fb9149a9c3ce07a16eb96436b79e6411e81d740e082c4ed1801814917"
+    },
+    "team_games": {
+      "file": "team_games-53c70746bc7fd9d4dc4c73ebcd59d095b710cdeb8943a512f530d55b08fba8f6.parquet",
+      "rows": 5436,
+      "schema": {
+        "def_dropback_epa_per_play": "Float64",
+        "def_dropback_epa_sum": "Float64",
+        "def_dropback_plays": "UInt32",
+        "def_epa_per_play": "Float64",
+        "def_epa_sum": "Float64",
+        "def_plays": "UInt32",
+        "def_rush_epa_per_play": "Float64",
+        "def_rush_epa_sum": "Float64",
+        "def_rush_plays": "UInt32",
+        "game_id": "String",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "off_dropback_epa_per_play": "Float64",
+        "off_dropback_epa_sum": "Float64",
+        "off_dropback_plays": "UInt32",
+        "off_epa_per_play": "Float64",
+        "off_epa_sum": "Float64",
+        "off_plays": "UInt32",
+        "off_rush_epa_per_play": "Float64",
+        "off_rush_epa_sum": "Float64",
+        "off_rush_plays": "UInt32",
+        "opponent_team": "String",
+        "points_allowed": "Float64",
+        "points_scored": "Float64",
+        "result_available_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "season": "Int32",
+        "team": "String",
+        "week": "Int32"
+      },
+      "sha256": "53c70746bc7fd9d4dc4c73ebcd59d095b710cdeb8943a512f530d55b08fba8f6"
+    }
+  },
+  "teams": [
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 14.711764705882352,
+      "score_mae": 7.894117647058823,
+      "team": "MIA"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 13.435294117647059,
+      "score_mae": 8.523529411764706,
+      "team": "MIN"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 13.411764705882353,
+      "score_mae": 7.117647058823529,
+      "team": "BAL"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 12.782352941176471,
+      "score_mae": 12.1,
+      "team": "CIN"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 12.652941176470588,
+      "score_mae": 8.941176470588236,
+      "team": "JAX"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 12.58235294117647,
+      "score_mae": 6.752941176470589,
+      "team": "WAS"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 12.076470588235296,
+      "score_mae": 7.2176470588235295,
+      "team": "ATL"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 11.68235294117647,
+      "score_mae": 8.200000000000001,
+      "team": "CAR"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 11.329411764705881,
+      "score_mae": 8.705882352941176,
+      "team": "DAL"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 11.111764705882353,
+      "score_mae": 8.382352941176471,
+      "team": "SEA"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 10.788235294117648,
+      "score_mae": 7.352941176470588,
+      "team": "LV"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 10.776470588235293,
+      "score_mae": 9.923529411764704,
+      "team": "DET"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 10.75294117647059,
+      "score_mae": 7.323529411764706,
+      "team": "IND"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 10.511764705882355,
+      "score_mae": 8.229411764705883,
+      "team": "LA"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 10.41764705882353,
+      "score_mae": 7.182352941176471,
+      "team": "KC"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 10.376470588235295,
+      "score_mae": 6.805882352941176,
+      "team": "NE"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 10.305882352941175,
+      "score_mae": 8.547058823529412,
+      "team": "NYJ"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 10.294117647058824,
+      "score_mae": 7.229411764705882,
+      "team": "TEN"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 10.18235294117647,
+      "score_mae": 6.964705882352941,
+      "team": "LAC"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 10.158823529411764,
+      "score_mae": 5.141176470588236,
+      "team": "CLE"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 10.152941176470588,
+      "score_mae": 8.376470588235295,
+      "team": "BUF"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 9.611764705882353,
+      "score_mae": 7.247058823529412,
+      "team": "HOU"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 9.264705882352942,
+      "score_mae": 7.147058823529411,
+      "team": "PIT"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 9.070588235294117,
+      "score_mae": 5.752941176470588,
+      "team": "NO"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 9.041176470588235,
+      "score_mae": 3.7882352941176465,
+      "team": "ARI"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 8.952941176470588,
+      "score_mae": 7.923529411764705,
+      "team": "NYG"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 8.905882352941177,
+      "score_mae": 7.782352941176471,
+      "team": "GB"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 8.811764705882354,
+      "score_mae": 7.5,
+      "team": "PHI"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 8.076470588235296,
+      "score_mae": 8.947058823529412,
+      "team": "SF"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 7.905882352941177,
+      "score_mae": 6.076470588235295,
+      "team": "CHI"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 7.764705882352941,
+      "score_mae": 6.382352941176471,
+      "team": "DEN"
+    },
+    {
+      "games": 17,
+      "horizon": "early_week",
+      "margin_mae": 7.5470588235294125,
+      "score_mae": 6.429411764705883,
+      "team": "TB"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 14.729411764705883,
+      "score_mae": 7.964705882352941,
+      "team": "MIA"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 13.41764705882353,
+      "score_mae": 8.511764705882353,
+      "team": "MIN"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 13.264705882352942,
+      "score_mae": 7.088235294117647,
+      "team": "BAL"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 12.847058823529412,
+      "score_mae": 12.13529411764706,
+      "team": "CIN"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 12.458823529411765,
+      "score_mae": 8.86470588235294,
+      "team": "JAX"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 12.25294117647059,
+      "score_mae": 6.5588235294117645,
+      "team": "WAS"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 12.070588235294117,
+      "score_mae": 7.288235294117647,
+      "team": "ATL"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 11.752941176470587,
+      "score_mae": 8.217647058823529,
+      "team": "CAR"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 11.211764705882352,
+      "score_mae": 8.623529411764705,
+      "team": "DAL"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.98235294117647,
+      "score_mae": 8.388235294117647,
+      "team": "SEA"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.723529411764707,
+      "score_mae": 7.347058823529412,
+      "team": "LV"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.66470588235294,
+      "score_mae": 9.811764705882352,
+      "team": "DET"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.611764705882353,
+      "score_mae": 8.299999999999999,
+      "team": "LA"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.600000000000001,
+      "score_mae": 7.276470588235294,
+      "team": "IND"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.335294117647058,
+      "score_mae": 7.217647058823529,
+      "team": "TEN"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.335294117647058,
+      "score_mae": 6.764705882352941,
+      "team": "NE"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.294117647058824,
+      "score_mae": 8.641176470588235,
+      "team": "NYJ"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.28235294117647,
+      "score_mae": 7.0058823529411764,
+      "team": "LAC"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.235294117647058,
+      "score_mae": 7.023529411764706,
+      "team": "KC"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.176470588235293,
+      "score_mae": 8.364705882352942,
+      "team": "BUF"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 10.094117647058823,
+      "score_mae": 5.117647058823529,
+      "team": "CLE"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 9.68235294117647,
+      "score_mae": 7.323529411764706,
+      "team": "HOU"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 9.229411764705883,
+      "score_mae": 7.088235294117647,
+      "team": "PIT"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 9.194117647058825,
+      "score_mae": 3.841176470588236,
+      "team": "ARI"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 9.064705882352941,
+      "score_mae": 5.705882352941177,
+      "team": "NO"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 8.947058823529412,
+      "score_mae": 7.794117647058823,
+      "team": "GB"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 8.905882352941177,
+      "score_mae": 7.917647058823529,
+      "team": "NYG"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 8.735294117647058,
+      "score_mae": 7.494117647058823,
+      "team": "PHI"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 8.076470588235296,
+      "score_mae": 8.876470588235295,
+      "team": "SF"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 7.747058823529411,
+      "score_mae": 6.341176470588235,
+      "team": "DEN"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 7.735294117647059,
+      "score_mae": 6.0588235294117645,
+      "team": "CHI"
+    },
+    {
+      "games": 17,
+      "horizon": "pregame_refresh",
+      "margin_mae": 7.647058823529412,
+      "score_mae": 6.341176470588235,
+      "team": "TB"
+    }
+  ],
+  "weekly": [
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -2.4875000000000003,
+      "margin_mae": 7.4375,
+      "model": "league_scores",
+      "week": 1
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 2.5124999999999997,
+      "margin_mae": 10.7375,
+      "model": "league_scores",
+      "week": 2
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -5.612500000000001,
+      "margin_mae": 12.675,
+      "model": "league_scores",
+      "week": 3
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -7.3,
+      "margin_mae": 10.2375,
+      "model": "league_scores",
+      "week": 4
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 5.014285714285713,
+      "margin_mae": 11.414285714285715,
+      "model": "league_scores",
+      "week": 5
+    },
+    {
+      "games": 15,
+      "horizon": "early_week",
+      "margin_bias": -2.066666666666666,
+      "margin_mae": 7.906666666666666,
+      "model": "league_scores",
+      "week": 6
+    },
+    {
+      "games": 15,
+      "horizon": "early_week",
+      "margin_bias": -1.4666666666666661,
+      "margin_mae": 13.28,
+      "model": "league_scores",
+      "week": 7
+    },
+    {
+      "games": 13,
+      "horizon": "early_week",
+      "margin_bias": -3.43076923076923,
+      "margin_mae": 18.046153846153846,
+      "model": "league_scores",
+      "week": 8
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 5.3,
+      "margin_mae": 9.957142857142857,
+      "model": "league_scores",
+      "week": 9
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 0.5857142857142862,
+      "margin_mae": 10.1,
+      "model": "league_scores",
+      "week": 10
+    },
+    {
+      "games": 15,
+      "horizon": "early_week",
+      "margin_bias": -0.39999999999999936,
+      "margin_mae": 9.813333333333333,
+      "model": "league_scores",
+      "week": 11
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": -1.4142857142857141,
+      "margin_mae": 8.842857142857143,
+      "model": "league_scores",
+      "week": 12
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 3.1125000000000007,
+      "margin_mae": 10.9375,
+      "model": "league_scores",
+      "week": 13
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 4.014285714285714,
+      "margin_mae": 13.471428571428572,
+      "model": "league_scores",
+      "week": 14
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -4.762499999999999,
+      "margin_mae": 12.1125,
+      "model": "league_scores",
+      "week": 15
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 5.362500000000001,
+      "margin_mae": 10.6125,
+      "model": "league_scores",
+      "week": 16
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 6.175,
+      "margin_mae": 11.45,
+      "model": "league_scores",
+      "week": 17
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -7.425,
+      "margin_mae": 11.025,
+      "model": "league_scores",
+      "week": 18
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -2.4125,
+      "margin_mae": 6.3375,
+      "model": "prior_team_scores",
+      "week": 1
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 2.9,
+      "margin_mae": 8.8,
+      "model": "prior_team_scores",
+      "week": 2
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -6.168749999999999,
+      "margin_mae": 12.19375,
+      "model": "prior_team_scores",
+      "week": 3
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -7.675000000000001,
+      "margin_mae": 9.9375,
+      "model": "prior_team_scores",
+      "week": 4
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 5.092857142857143,
+      "margin_mae": 11.935714285714285,
+      "model": "prior_team_scores",
+      "week": 5
+    },
+    {
+      "games": 15,
+      "horizon": "early_week",
+      "margin_bias": -3.026666666666667,
+      "margin_mae": 7.8,
+      "model": "prior_team_scores",
+      "week": 6
+    },
+    {
+      "games": 15,
+      "horizon": "early_week",
+      "margin_bias": -2.08,
+      "margin_mae": 12.92,
+      "model": "prior_team_scores",
+      "week": 7
+    },
+    {
+      "games": 13,
+      "horizon": "early_week",
+      "margin_bias": -2.3384615384615377,
+      "margin_mae": 15.23076923076923,
+      "model": "prior_team_scores",
+      "week": 8
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 5.085714285714286,
+      "margin_mae": 9.299999999999999,
+      "model": "prior_team_scores",
+      "week": 9
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 1.2571428571428576,
+      "margin_mae": 9.471428571428572,
+      "model": "prior_team_scores",
+      "week": 10
+    },
+    {
+      "games": 15,
+      "horizon": "early_week",
+      "margin_bias": -1.76,
+      "margin_mae": 9.066666666666666,
+      "model": "prior_team_scores",
+      "week": 11
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": -1.85,
+      "margin_mae": 7.392857142857143,
+      "model": "prior_team_scores",
+      "week": 12
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 3.1875,
+      "margin_mae": 10.487499999999999,
+      "model": "prior_team_scores",
+      "week": 13
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 4.014285714285714,
+      "margin_mae": 12.285714285714286,
+      "model": "prior_team_scores",
+      "week": 14
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -3.40625,
+      "margin_mae": 10.46875,
+      "model": "prior_team_scores",
+      "week": 15
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 4.44375,
+      "margin_mae": 11.56875,
+      "model": "prior_team_scores",
+      "week": 16
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 4.175,
+      "margin_mae": 11.2625,
+      "model": "prior_team_scores",
+      "week": 17
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -6.0875,
+      "margin_mae": 10.1375,
+      "model": "prior_team_scores",
+      "week": 18
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -4.31875,
+      "margin_mae": 7.418749999999999,
+      "model": "ridge_epa_scores",
+      "week": 1
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 2.65,
+      "margin_mae": 7.275,
+      "model": "ridge_epa_scores",
+      "week": 2
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -6.20625,
+      "margin_mae": 12.39375,
+      "model": "ridge_epa_scores",
+      "week": 3
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -7.325,
+      "margin_mae": 10.85,
+      "model": "ridge_epa_scores",
+      "week": 4
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 5.735714285714287,
+      "margin_mae": 11.935714285714287,
+      "model": "ridge_epa_scores",
+      "week": 5
+    },
+    {
+      "games": 15,
+      "horizon": "early_week",
+      "margin_bias": -2.76,
+      "margin_mae": 9.4,
+      "model": "ridge_epa_scores",
+      "week": 6
+    },
+    {
+      "games": 15,
+      "horizon": "early_week",
+      "margin_bias": -2.7199999999999998,
+      "margin_mae": 12.813333333333333,
+      "model": "ridge_epa_scores",
+      "week": 7
+    },
+    {
+      "games": 13,
+      "horizon": "early_week",
+      "margin_bias": -1.676923076923077,
+      "margin_mae": 13.292307692307693,
+      "model": "ridge_epa_scores",
+      "week": 8
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 4.9071428571428575,
+      "margin_mae": 10.049999999999999,
+      "model": "ridge_epa_scores",
+      "week": 9
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 1.4214285714285715,
+      "margin_mae": 9.807142857142859,
+      "model": "ridge_epa_scores",
+      "week": 10
+    },
+    {
+      "games": 15,
+      "horizon": "early_week",
+      "margin_bias": -3.066666666666667,
+      "margin_mae": 8.826666666666666,
+      "model": "ridge_epa_scores",
+      "week": 11
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": -1.7642857142857145,
+      "margin_mae": 7.164285714285714,
+      "model": "ridge_epa_scores",
+      "week": 12
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 3.1250000000000004,
+      "margin_mae": 10.3875,
+      "model": "ridge_epa_scores",
+      "week": 13
+    },
+    {
+      "games": 14,
+      "horizon": "early_week",
+      "margin_bias": 3.8500000000000005,
+      "margin_mae": 13.364285714285714,
+      "model": "ridge_epa_scores",
+      "week": 14
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -2.89375,
+      "margin_mae": 8.99375,
+      "model": "ridge_epa_scores",
+      "week": 15
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 4.18125,
+      "margin_mae": 12.50625,
+      "model": "ridge_epa_scores",
+      "week": 16
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": 3.45625,
+      "margin_mae": 11.68125,
+      "model": "ridge_epa_scores",
+      "week": 17
+    },
+    {
+      "games": 16,
+      "horizon": "early_week",
+      "margin_bias": -5.45625,
+      "margin_mae": 11.01875,
+      "model": "ridge_epa_scores",
+      "week": 18
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -2.4875000000000003,
+      "margin_mae": 7.4375,
+      "model": "league_scores",
+      "week": 1
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 2.5124999999999993,
+      "margin_mae": 10.7375,
+      "model": "league_scores",
+      "week": 2
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -5.60625,
+      "margin_mae": 12.68125,
+      "model": "league_scores",
+      "week": 3
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -7.2875000000000005,
+      "margin_mae": 10.225,
+      "model": "league_scores",
+      "week": 4
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 5.014285714285714,
+      "margin_mae": 11.414285714285715,
+      "model": "league_scores",
+      "week": 5
+    },
+    {
+      "games": 15,
+      "horizon": "pregame_refresh",
+      "margin_bias": -2.066666666666666,
+      "margin_mae": 7.906666666666666,
+      "model": "league_scores",
+      "week": 6
+    },
+    {
+      "games": 15,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.466666666666666,
+      "margin_mae": 13.28,
+      "model": "league_scores",
+      "week": 7
+    },
+    {
+      "games": 13,
+      "horizon": "pregame_refresh",
+      "margin_bias": -3.43076923076923,
+      "margin_mae": 18.046153846153846,
+      "model": "league_scores",
+      "week": 8
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 5.3,
+      "margin_mae": 9.957142857142857,
+      "model": "league_scores",
+      "week": 9
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.5857142857142862,
+      "margin_mae": 10.1,
+      "model": "league_scores",
+      "week": 10
+    },
+    {
+      "games": 15,
+      "horizon": "pregame_refresh",
+      "margin_bias": -0.3999999999999995,
+      "margin_mae": 9.813333333333333,
+      "model": "league_scores",
+      "week": 11
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.4142857142857141,
+      "margin_mae": 8.842857142857143,
+      "model": "league_scores",
+      "week": 12
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 3.1125000000000007,
+      "margin_mae": 10.9375,
+      "model": "league_scores",
+      "week": 13
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 4.014285714285715,
+      "margin_mae": 13.471428571428572,
+      "model": "league_scores",
+      "week": 14
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -4.762499999999999,
+      "margin_mae": 12.1125,
+      "model": "league_scores",
+      "week": 15
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 5.362500000000001,
+      "margin_mae": 10.6125,
+      "model": "league_scores",
+      "week": 16
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 6.175000000000001,
+      "margin_mae": 11.45,
+      "model": "league_scores",
+      "week": 17
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -7.425000000000001,
+      "margin_mae": 11.025,
+      "model": "league_scores",
+      "week": 18
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -2.39375,
+      "margin_mae": 6.34375,
+      "model": "prior_team_scores",
+      "week": 1
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 2.875,
+      "margin_mae": 8.7875,
+      "model": "prior_team_scores",
+      "week": 2
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -6.13125,
+      "margin_mae": 12.09375,
+      "model": "prior_team_scores",
+      "week": 3
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -7.60625,
+      "margin_mae": 9.86875,
+      "model": "prior_team_scores",
+      "week": 4
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 4.864285714285715,
+      "margin_mae": 11.807142857142859,
+      "model": "prior_team_scores",
+      "week": 5
+    },
+    {
+      "games": 15,
+      "horizon": "pregame_refresh",
+      "margin_bias": -3.0266666666666664,
+      "margin_mae": 7.826666666666667,
+      "model": "prior_team_scores",
+      "week": 6
+    },
+    {
+      "games": 15,
+      "horizon": "pregame_refresh",
+      "margin_bias": -2.08,
+      "margin_mae": 12.92,
+      "model": "prior_team_scores",
+      "week": 7
+    },
+    {
+      "games": 13,
+      "horizon": "pregame_refresh",
+      "margin_bias": -2.3,
+      "margin_mae": 15.36153846153846,
+      "model": "prior_team_scores",
+      "week": 8
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 4.964285714285714,
+      "margin_mae": 9.278571428571428,
+      "model": "prior_team_scores",
+      "week": 9
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 1.2214285714285718,
+      "margin_mae": 9.507142857142856,
+      "model": "prior_team_scores",
+      "week": 10
+    },
+    {
+      "games": 15,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.74,
+      "margin_mae": 9.086666666666668,
+      "model": "prior_team_scores",
+      "week": 11
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.8428571428571427,
+      "margin_mae": 7.328571428571428,
+      "model": "prior_team_scores",
+      "week": 12
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 3.1562499999999996,
+      "margin_mae": 10.48125,
+      "model": "prior_team_scores",
+      "week": 13
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 4.021428571428571,
+      "margin_mae": 12.307142857142859,
+      "model": "prior_team_scores",
+      "week": 14
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -3.425,
+      "margin_mae": 10.4875,
+      "model": "prior_team_scores",
+      "week": 15
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 4.4,
+      "margin_mae": 11.525,
+      "model": "prior_team_scores",
+      "week": 16
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 4.15625,
+      "margin_mae": 11.19375,
+      "model": "prior_team_scores",
+      "week": 17
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -6.1,
+      "margin_mae": 10.175,
+      "model": "prior_team_scores",
+      "week": 18
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -4.2625,
+      "margin_mae": 7.3875,
+      "model": "ridge_epa_scores",
+      "week": 1
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 2.475,
+      "margin_mae": 7.2,
+      "model": "ridge_epa_scores",
+      "week": 2
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -5.98125,
+      "margin_mae": 12.35625,
+      "model": "ridge_epa_scores",
+      "week": 3
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -7.06875,
+      "margin_mae": 10.59375,
+      "model": "ridge_epa_scores",
+      "week": 4
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 5.557142857142857,
+      "margin_mae": 11.985714285714286,
+      "model": "ridge_epa_scores",
+      "week": 5
+    },
+    {
+      "games": 15,
+      "horizon": "pregame_refresh",
+      "margin_bias": -2.726666666666667,
+      "margin_mae": 9.22,
+      "model": "ridge_epa_scores",
+      "week": 6
+    },
+    {
+      "games": 15,
+      "horizon": "pregame_refresh",
+      "margin_bias": -2.48,
+      "margin_mae": 12.56,
+      "model": "ridge_epa_scores",
+      "week": 7
+    },
+    {
+      "games": 13,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.5923076923076922,
+      "margin_mae": 13.561538461538463,
+      "model": "ridge_epa_scores",
+      "week": 8
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 4.735714285714287,
+      "margin_mae": 10.021428571428572,
+      "model": "ridge_epa_scores",
+      "week": 9
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 1.3857142857142857,
+      "margin_mae": 9.857142857142858,
+      "model": "ridge_epa_scores",
+      "week": 10
+    },
+    {
+      "games": 15,
+      "horizon": "pregame_refresh",
+      "margin_bias": -3.073333333333333,
+      "margin_mae": 8.873333333333333,
+      "model": "ridge_epa_scores",
+      "week": 11
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.692857142857143,
+      "margin_mae": 7.05,
+      "model": "ridge_epa_scores",
+      "week": 12
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 3.0062500000000005,
+      "margin_mae": 10.43125,
+      "model": "ridge_epa_scores",
+      "week": 13
+    },
+    {
+      "games": 14,
+      "horizon": "pregame_refresh",
+      "margin_bias": 3.8500000000000005,
+      "margin_mae": 13.421428571428573,
+      "model": "ridge_epa_scores",
+      "week": 14
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -2.85,
+      "margin_mae": 9.0125,
+      "model": "ridge_epa_scores",
+      "week": 15
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 4.1625,
+      "margin_mae": 12.4625,
+      "model": "ridge_epa_scores",
+      "week": 16
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": 3.375,
+      "margin_mae": 11.4,
+      "model": "ridge_epa_scores",
+      "week": 17
+    },
+    {
+      "games": 16,
+      "horizon": "pregame_refresh",
+      "margin_bias": -5.43125,
+      "margin_mae": 11.206249999999999,
+      "model": "ridge_epa_scores",
+      "week": 18
+    }
+  ]
+}

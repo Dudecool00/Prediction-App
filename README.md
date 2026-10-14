@@ -117,6 +117,21 @@ model and matchup, inspect the ratings, and see projected final scores and signe
 The saved comparison is under `reports/local/team_playbook/`; published forecasts retain
 the current EPA model while the additions are assessed.
 
+For a graphical diagnostic of the current EPA model against a completed season:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-diagnose --season 2025
+```
+
+This saves separate early-week/pre-kickoff score and margin scatterplots, weekly baseline
+comparisons, team/week error heatmaps, selectable team trajectories, full game predictions
+and error-distribution summaries under `reports/local/team_diagnostics_2025/`. Open
+`diagnostics.html` for the interactive charts. It uses the unchanged current model and only
+earlier available results at each cutoff, excluding later seasons. Diagnostic artifacts use
+their own namespace and preserve the original 2022–2024 backtest. Calibration slopes,
+actual-margin groups and largest errors are descriptive; no model change is applied.
+2025 is previously accessed diagnostic data, not an untouched holdout.
+
 Read [the team model policy](TEAM_MODEL_POLICY.md) and [the pivot plan](TEAM_EPA_PIVOT_PLAN.md).
 
 ## Legacy QB research
