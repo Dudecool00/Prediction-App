@@ -51,9 +51,29 @@ tests and fault handlers remain enabled.
 
 ## Next model work
 
-1. Test timestamped starter/replacement changes against a compact EPA baseline.
-2. Calibrate score/margin intervals using only earlier available residuals.
-3. Score preserved prospective forecasts as outcomes become available.
-4. Compare narrowly scoped special-teams/pace inputs with chronological selection.
+The [weekly context experiment](reports/team_scores/weekly_context/findings.md) completes the
+historical source audit, development comparison and research lock. History begins in 2022;
+544 games in 2023–2024 are compared per horizon with Tuesday-locked outcome features/fits.
+Eight-input EPA margin MAE is 10.335 versus the same-run 28-input control's 10.482, with
+per-team score MAE 7.383 versus 7.514. These are different windows/rules from the older table.
+Temperature worsens the compact model. Injury counts add only 0.0007 points of early margin
+improvement with two eligible team reports; pre-kickoff gains remain uncertain and score
+error worsens. The exact-minimum rule mechanically locks the injury candidate for research,
+but no candidate is promoted. The active model remains the original 28-input EPA model.
+
+The enriched 272-game 2025 replay **has not run**. Its readiness gate fails because the
+2022–2024 starter snapshots and 2022–2025 weekly rosters are untimed, the restored 2025 injury
+archive is untimed, and earlier wind/rain forecasts are missing. A provider with dated report
+versions and an audited adapter is needed before advancing. No week or retrieval date is
+substituted for publication. Published forecasts and prior 2025 diagnostics remain unchanged.
+
+The addition has three source modules, one test file, and three curated report files. Compact
+source/result files total about 1.7 MB; existing environments/caches were reused and training
+tables are not duplicated per fold. The new suite adds nine timing, cohort, output, attribution
+and artifact checks. The combined tree has 70 tracked files, 28 source modules and 56 tests.
+
+Next: resolve dated roster/starter/injury inputs, reconsider the extra parameters using the
+recorded development evidence, then freeze a fully audited policy before the 2025 replay.
+Interval calibration and preserved prospective forecasts remain subsequent validation work.
 
 [The model policy](TEAM_MODEL_POLICY.md) defines feature, cutoff, output and evaluation contracts.

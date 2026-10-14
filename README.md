@@ -55,6 +55,9 @@ The 2025 season has already been examined and is diagnostic data.
 | `team-playbook-fetch`, `team-playbook-build`, `team-playbook-evaluate` | Compare play-by-play tendencies, opponent strength and SOS |
 | `team-diagnose --season 2025` | Plot score/margin predictions against actual outcomes |
 | `team-refine` | Compare compact inputs, regularization, loss and small nonlinear models |
+| `team-pregame-audit` | Audit roster/starter/injury timing and cache compact development temperature forecasts |
+| `team-walkforward` | Compare weekly locked context models on 2023–2024 and freeze a research choice |
+| `team-replay-check` | Check input readiness for the enriched 2025 replay; blocked inputs prevent any fit |
 
 Prefix commands with `.\.venv\Scripts\nfl-prop.exe`. Fetch/build the required seasons before
 evaluation; a 2025 diagnostic needs a team cache including 2025. Research outputs go to
@@ -70,6 +73,28 @@ improve margins. The current model remains active.
 Read [the model policy](TEAM_MODEL_POLICY.md), [current status](PROJECT_STATUS.md), and
 [refinement findings](reports/team_scores/model_refinement/findings.md). Retained reports
 under `reports/team_scores/` document earlier comparisons and their provenance.
+
+The weekly context experiment starts history in **2022**, compares candidates on **2023–2024**,
+and freezes outcome-derived history and training at Tuesday's cutoff. Both horizons fit on
+earlier available games; the refresh updates context without learning same-week game results.
+The source audit currently blocks the enriched 2025 replay: development starter snapshots and
+weekly rosters are untimed, restored 2025 injuries are untimed, and 2022–2023 forecast wind/rain
+are unavailable. The temperature trial is explicitly partial. The published model stays active.
+
+Reuse your existing environment and caches. The commands need a team cache including
+2022–2025 and a context cache including 2022–2024. If those seasons are absent, fetch/build
+them with the existing commands and explicit `--seasons` lists before running:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-pregame-audit
+.\.venv\Scripts\nfl-prop.exe team-walkforward
+.\.venv\Scripts\nfl-prop.exe team-replay-check
+```
+
+Outputs go to `reports/local/team_walkforward/`. The audit caches selected QB rows and one
+weather hour per game; no global forecast grids or new Python environment are needed.
+The experiment stores one feature/prediction table and fold references, avoiding copies of
+the training data per weekly fit. Its chart uses Plotly's CDN to keep the HTML small.
 
 ## Repository and validation
 
