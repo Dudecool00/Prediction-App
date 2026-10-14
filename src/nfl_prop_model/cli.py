@@ -100,6 +100,16 @@ def main(argv: list[str] | None = None) -> int:
     diagnosis.add_argument("--season", type=int, default=2025)
     diagnosis.add_argument("--data-dir", type=Path, default=Path("data"))
     diagnosis.add_argument("--report-dir", type=Path)
+    refinement = commands.add_parser(
+        "team-refine", help="Chronological feature and model refinement"
+    )
+    refinement.add_argument("--data-dir", type=Path, default=Path("data"))
+    refinement.add_argument(
+        "--evaluation-seasons", type=int, nargs="+", default=[2022, 2023, 2024, 2025]
+    )
+    refinement.add_argument(
+        "--report-dir", type=Path, default=Path("reports/local/team_refinement")
+    )
     for name in ("fetch", "build"):
         command = commands.add_parser(name)
         command.add_argument("--seasons", type=int, nargs="+", default=list(DEFAULT_SEASONS))
@@ -280,7 +290,19 @@ def main(argv: list[str] | None = None) -> int:
             from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
             from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-            if args.command == "team-diagnose":
+            if args.command == "team-refine":
+                from nfl_prop_model.modeling.team_refinement import save_refinements
+
+                report = save_refinements(
+                    args.data_dir,
+                    args.report_dir,
+                    evaluation_seasons=tuple(args.evaluation_seasons),
+                )
+                print(
+                    f"Locked {len(report['selections'])} refinement choices. "
+                    f"Report: {args.report_dir / 'team_refinement.md'}"
+                )
+            elif args.command == "team-diagnose":
                 from nfl_prop_model.modeling.team_diagnostics import save_season_diagnostics
 
                 directory = (

@@ -132,6 +132,24 @@ their own namespace and preserve the original 2022–2024 backtest. Calibration 
 actual-margin groups and largest errors are descriptive; no model change is applied.
 2025 is previously accessed diagnostic data, not an untouched holdout.
 
+To test feature redundancy, regularization, loss and modest nonlinear effects:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-refine
+```
+
+Thirteen profiles compare 8/12/26/28 input features, stronger Ridge shrinkage, joint
+Elastic Net feature selection, median margin/total regression and small boosted trees.
+Choose using the preceding two seasons, with score/total-error guards and a minimum margin
+gain; the one-standard-error heuristic prefers simpler eligible models. Keep that choice
+fixed for both forecast timings throughout the following season. Reports include original
+controls, locked-choice performance, candidate validation, coefficient/missing-indicator
+counts, correlations, matrix rank and effective Ridge complexity. Defaults score 2022–2024
+development and an already accessed 2025 diagnostic. Two weaker median penalties follow
+an initial training audit that found near-complete shrinkage; the initial eleven-profile
+result is retained. No published forecast changes
+automatically. Results are under `reports/local/team_refinement/`.
+
 Read [the team model policy](TEAM_MODEL_POLICY.md) and [the pivot plan](TEAM_EPA_PIVOT_PLAN.md).
 
 ## Legacy QB research

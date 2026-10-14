@@ -1,6 +1,6 @@
 # Project status
 
-Updated 2026-10-14 (local date). Active comparisons use `codex/team-epa-qb-injury-context`.
+Updated 2026-10-14 (local date). Active comparisons use `codex/team-epa-model-refinement`.
 The dated legacy QB milestones below retain their original evidence; PR #13 is merged (`79c425f`).
 
 ## New: team EPA scores and margins
@@ -197,6 +197,47 @@ The dated legacy QB milestones below retain their original evidence; PR #13 is m
   diagnostics remain recorded; no handlers or tests were disabled.
 - 2025 is already accessed diagnostic data, not a fresh holdout. Source publication/revisions
   are not reconstructed. No tuning, recalibration or forecast change follows from the report.
+
+## New: feature/parameter, loss and nonlinear refinement
+
+- Added `team-refine`, isolating smaller feature groups, stronger Ridge, joint Elastic Net,
+  median margin/total regression and small squared/absolute-loss boosted trees. Thirteen
+  profiles use chronological validation on preceding seasons, score/total guards and a
+  simpler-model preference within one bootstrap standard error. Use the same simulated
+  season-locked choice for both forecast timings. No model promotion is automatic.
+- Pre-2025 fits use 2,367 earlier games. Current EPA has 28 raw / 29 encoded inputs and
+  60 coefficients/intercepts; the prior play/SOS expansion has 60 / 89 inputs and 180
+  coefficients/intercepts, rank 66 and many duplicate missing indicators. Ridge already
+  limits effective complexity. These counts support checking redundancy, not declaring
+  parameter count the main cause of margin error.
+- Compact eight-input Ridge allocates 20 coefficients/intercepts and nearly matches the
+  original 815-game early development MAE: 9.816 versus 9.811. The best fixed candidate,
+  eight-input median penalty 0.01, reaches 9.799, only a 0.012-point gain. Small nonlinear
+  candidates do not improve margin error. Stronger penalties can underfit as well as help.
+- The initial median penalty 0.1 left only one active encoded input; penalties 0.01/0.001
+  follow that pre-2025 training audit and retain seven/eight. The initial eleven-profile
+  result and exact local source/manifest bytes are preserved; the follow-up is explicitly
+  adaptive development, not independent confirmation.
+- The final chronological policy selects median 0.01 for 2022/2023 and current EPA for
+  2024/2025. Following 2022–2024 early/refresh margin MAE is 9.818/9.814 versus current
+  9.811/9.805, with approximate paired gain ranges including zero. Score MAE improves to
+  7.286/7.289 versus 7.333/7.331, and total MAE to 10.454/10.459 versus 10.538/10.523.
+  The primary margin objective does not improve; retain the published model. 2025 remains
+  identical to the original diagnostic because earlier validation retains current EPA.
+- All 6,522 original control predictions match exactly; complete 1,087-game cohorts per
+  horizon and consistent scores/margins are retained. Six new checks cover estimator
+  families, target reconstruction, control equivalence, complexity, prior-only selection,
+  future/unavailable data, output cohorts, CLI and code/checksum guards. All **402** tests
+  pass on the final full run; Ruff, formatting, strict typing and dependency checks pass.
+  An initial legacy enrollment guard failure passed all 14 participation checks in isolation;
+  post-failure live source/code/freshness comparisons matched. Its transient cause is not
+  established; the guard and native fault handlers remain unchanged.
+- [Methods and audit](reports/team_scores/model_refinement/methods.md),
+  [findings](reports/team_scores/model_refinement/findings.md),
+  [comparison](reports/team_scores/model_refinement/comparison.png), and source/code
+  [summary](reports/team_scores/model_refinement/summary.json) retain the evidence.
+  The initial round is in `round1_summary.json`. Starter-change evidence, special-teams
+  enrichment and prospective intervals remain separate next tests. 2025 is already accessed.
 
 ## New: full development starter coverage
 

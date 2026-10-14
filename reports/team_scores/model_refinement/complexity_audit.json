@@ -1,0 +1,1695 @@
+{
+  "audits": [
+    {
+      "allocated_coefficients_and_intercepts": 60,
+      "encoded_feature_names": [
+        "home_off_epa_recent",
+        "home_off_epa_season",
+        "home_off_dropback_epa_recent",
+        "home_off_dropback_epa_season",
+        "home_off_rush_epa_recent",
+        "home_off_rush_epa_season",
+        "home_def_epa_recent",
+        "home_def_epa_season",
+        "home_def_dropback_epa_recent",
+        "home_def_dropback_epa_season",
+        "home_def_rush_epa_recent",
+        "home_def_rush_epa_season",
+        "away_off_epa_recent",
+        "away_off_epa_season",
+        "away_off_dropback_epa_recent",
+        "away_off_dropback_epa_season",
+        "away_off_rush_epa_recent",
+        "away_off_rush_epa_season",
+        "away_def_epa_recent",
+        "away_def_epa_season",
+        "away_def_dropback_epa_recent",
+        "away_def_dropback_epa_season",
+        "away_def_rush_epa_recent",
+        "away_def_rush_epa_season",
+        "home_field",
+        "rest_difference",
+        "home_prior_games",
+        "away_prior_games",
+        "missingindicator_rest_difference"
+      ],
+      "encoded_features": 29,
+      "high_correlations": [
+        {
+          "correlation": 0.9367895759882762,
+          "first": "home_off_epa_recent",
+          "second": "home_off_dropback_epa_recent"
+        },
+        {
+          "correlation": 0.9524549829605153,
+          "first": "home_off_epa_season",
+          "second": "home_off_dropback_epa_season"
+        },
+        {
+          "correlation": 0.925721267500765,
+          "first": "home_def_epa_recent",
+          "second": "home_def_dropback_epa_recent"
+        },
+        {
+          "correlation": 0.9337535467523611,
+          "first": "home_def_epa_season",
+          "second": "home_def_dropback_epa_season"
+        },
+        {
+          "correlation": 0.935152777368493,
+          "first": "away_off_epa_recent",
+          "second": "away_off_dropback_epa_recent"
+        },
+        {
+          "correlation": 0.951106666705584,
+          "first": "away_off_epa_season",
+          "second": "away_off_dropback_epa_season"
+        },
+        {
+          "correlation": 0.9278110230416324,
+          "first": "away_def_epa_recent",
+          "second": "away_def_dropback_epa_recent"
+        },
+        {
+          "correlation": 0.9322929917476788,
+          "first": "away_def_epa_season",
+          "second": "away_def_dropback_epa_season"
+        },
+        {
+          "correlation": 0.9999203069008632,
+          "first": "home_prior_games",
+          "second": "away_prior_games"
+        }
+      ],
+      "matrix_rank": 29,
+      "model": "current",
+      "pairs_abs_correlation_over_09": 9,
+      "raw_features": 28,
+      "ridge_effective_df_per_output": 24.633309377773646,
+      "training_games": 2367
+    },
+    {
+      "allocated_coefficients_and_intercepts": 180,
+      "encoded_feature_names": [
+        "home_off_epa_recent",
+        "home_off_epa_season",
+        "home_off_dropback_epa_recent",
+        "home_off_dropback_epa_season",
+        "home_off_rush_epa_recent",
+        "home_off_rush_epa_season",
+        "home_def_epa_recent",
+        "home_def_epa_season",
+        "home_def_dropback_epa_recent",
+        "home_def_dropback_epa_season",
+        "home_def_rush_epa_recent",
+        "home_def_rush_epa_season",
+        "away_off_epa_recent",
+        "away_off_epa_season",
+        "away_off_dropback_epa_recent",
+        "away_off_dropback_epa_season",
+        "away_off_rush_epa_recent",
+        "away_off_rush_epa_season",
+        "away_def_epa_recent",
+        "away_def_epa_season",
+        "away_def_dropback_epa_recent",
+        "away_def_dropback_epa_season",
+        "away_def_rush_epa_recent",
+        "away_def_rush_epa_season",
+        "home_field",
+        "rest_difference",
+        "home_prior_games",
+        "away_prior_games",
+        "home_off_success_prior",
+        "home_off_explosive_dropback_prior",
+        "home_off_explosive_rush_prior",
+        "home_off_sack_prior",
+        "home_off_turnover_prior",
+        "home_def_success_prior",
+        "home_def_explosive_dropback_prior",
+        "home_def_explosive_rush_prior",
+        "home_def_sack_prior",
+        "home_def_turnover_prior",
+        "away_off_success_prior",
+        "away_off_explosive_dropback_prior",
+        "away_off_explosive_rush_prior",
+        "away_off_sack_prior",
+        "away_off_turnover_prior",
+        "away_def_success_prior",
+        "away_def_explosive_dropback_prior",
+        "away_def_explosive_rush_prior",
+        "away_def_sack_prior",
+        "away_def_turnover_prior",
+        "home_off_strength",
+        "home_def_strength",
+        "home_sos_off_recent",
+        "home_sos_def_recent",
+        "home_sos_off_season",
+        "home_sos_def_season",
+        "away_off_strength",
+        "away_def_strength",
+        "away_sos_off_recent",
+        "away_sos_def_recent",
+        "away_sos_off_season",
+        "away_sos_def_season",
+        "missingindicator_rest_difference",
+        "missingindicator_home_off_success_prior",
+        "missingindicator_home_off_explosive_dropback_prior",
+        "missingindicator_home_off_explosive_rush_prior",
+        "missingindicator_home_off_sack_prior",
+        "missingindicator_home_off_turnover_prior",
+        "missingindicator_home_def_success_prior",
+        "missingindicator_home_def_explosive_dropback_prior",
+        "missingindicator_home_def_explosive_rush_prior",
+        "missingindicator_home_def_sack_prior",
+        "missingindicator_home_def_turnover_prior",
+        "missingindicator_away_off_success_prior",
+        "missingindicator_away_off_explosive_dropback_prior",
+        "missingindicator_away_off_explosive_rush_prior",
+        "missingindicator_away_off_sack_prior",
+        "missingindicator_away_off_turnover_prior",
+        "missingindicator_away_def_success_prior",
+        "missingindicator_away_def_explosive_dropback_prior",
+        "missingindicator_away_def_explosive_rush_prior",
+        "missingindicator_away_def_sack_prior",
+        "missingindicator_away_def_turnover_prior",
+        "missingindicator_home_sos_off_recent",
+        "missingindicator_home_sos_def_recent",
+        "missingindicator_home_sos_off_season",
+        "missingindicator_home_sos_def_season",
+        "missingindicator_away_sos_off_recent",
+        "missingindicator_away_sos_def_recent",
+        "missingindicator_away_sos_off_season",
+        "missingindicator_away_sos_def_season"
+      ],
+      "encoded_features": 89,
+      "high_correlations": [
+        {
+          "correlation": 0.9367895759882762,
+          "first": "home_off_epa_recent",
+          "second": "home_off_dropback_epa_recent"
+        },
+        {
+          "correlation": 0.9524549829605153,
+          "first": "home_off_epa_season",
+          "second": "home_off_dropback_epa_season"
+        },
+        {
+          "correlation": 0.9767506045841701,
+          "first": "home_off_epa_season",
+          "second": "home_off_strength"
+        },
+        {
+          "correlation": 0.9377338306578525,
+          "first": "home_off_dropback_epa_season",
+          "second": "home_off_strength"
+        },
+        {
+          "correlation": 0.925721267500765,
+          "first": "home_def_epa_recent",
+          "second": "home_def_dropback_epa_recent"
+        },
+        {
+          "correlation": 0.9337535467523611,
+          "first": "home_def_epa_season",
+          "second": "home_def_dropback_epa_season"
+        },
+        {
+          "correlation": 0.9619778515939277,
+          "first": "home_def_epa_season",
+          "second": "home_def_strength"
+        },
+        {
+          "correlation": 0.9105873898968204,
+          "first": "home_def_dropback_epa_season",
+          "second": "home_def_strength"
+        },
+        {
+          "correlation": 0.935152777368493,
+          "first": "away_off_epa_recent",
+          "second": "away_off_dropback_epa_recent"
+        },
+        {
+          "correlation": 0.951106666705584,
+          "first": "away_off_epa_season",
+          "second": "away_off_dropback_epa_season"
+        },
+        {
+          "correlation": 0.9772547005664649,
+          "first": "away_off_epa_season",
+          "second": "away_off_strength"
+        },
+        {
+          "correlation": 0.9382225276621362,
+          "first": "away_off_dropback_epa_season",
+          "second": "away_off_strength"
+        },
+        {
+          "correlation": 0.9278110230416324,
+          "first": "away_def_epa_recent",
+          "second": "away_def_dropback_epa_recent"
+        },
+        {
+          "correlation": 0.9322929917476788,
+          "first": "away_def_epa_season",
+          "second": "away_def_dropback_epa_season"
+        },
+        {
+          "correlation": 0.9625313700345217,
+          "first": "away_def_epa_season",
+          "second": "away_def_strength"
+        },
+        {
+          "correlation": 0.9115921002548883,
+          "first": "away_def_dropback_epa_season",
+          "second": "away_def_strength"
+        },
+        {
+          "correlation": 0.9999203069008632,
+          "first": "home_prior_games",
+          "second": "away_prior_games"
+        },
+        {
+          "correlation": 0.9487529713893287,
+          "first": "missingindicator_rest_difference",
+          "second": "missingindicator_home_sos_off_season"
+        },
+        {
+          "correlation": 0.9487529713893287,
+          "first": "missingindicator_rest_difference",
+          "second": "missingindicator_home_sos_def_season"
+        },
+        {
+          "correlation": 0.9546093647034196,
+          "first": "missingindicator_rest_difference",
+          "second": "missingindicator_away_sos_off_season"
+        },
+        {
+          "correlation": 0.9546093647034196,
+          "first": "missingindicator_rest_difference",
+          "second": "missingindicator_away_sos_def_season"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_home_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_home_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_home_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_home_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_home_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_home_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_home_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_home_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_home_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_off_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_off_success_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_home_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_home_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_home_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_home_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_home_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_home_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_home_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_home_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_off_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_off_explosive_dropback_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_home_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_home_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_home_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_home_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_home_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_home_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_home_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_off_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_off_explosive_rush_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_home_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_home_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_home_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_home_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_home_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_home_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_off_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_off_sack_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_home_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_home_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_home_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_home_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_home_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_off_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_off_turnover_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_home_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_home_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_home_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_home_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_off_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_def_success_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_home_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_home_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_home_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_off_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_def_explosive_dropback_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_home_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_home_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_off_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_def_explosive_rush_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_home_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_off_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_def_sack_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_off_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_home_def_turnover_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_away_off_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_off_success_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_away_off_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_off_explosive_dropback_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_rush_prior",
+          "second": "missingindicator_away_off_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_rush_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_rush_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_rush_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_rush_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_rush_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_explosive_rush_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_off_explosive_rush_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_off_explosive_rush_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_off_explosive_rush_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_off_explosive_rush_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_sack_prior",
+          "second": "missingindicator_away_off_turnover_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_sack_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_sack_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_sack_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_sack_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_sack_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_off_sack_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_off_sack_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_off_sack_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_off_sack_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_turnover_prior",
+          "second": "missingindicator_away_def_success_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_turnover_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_turnover_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_turnover_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_off_turnover_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_off_turnover_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_off_turnover_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_off_turnover_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_off_turnover_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_def_success_prior",
+          "second": "missingindicator_away_def_explosive_dropback_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_def_success_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_def_success_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_def_success_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_def_success_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_def_success_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_def_success_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_def_success_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_def_explosive_dropback_prior",
+          "second": "missingindicator_away_def_explosive_rush_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_def_explosive_dropback_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_def_explosive_dropback_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_def_explosive_dropback_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_def_explosive_dropback_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_def_explosive_dropback_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_def_explosive_dropback_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_def_explosive_rush_prior",
+          "second": "missingindicator_away_def_sack_prior"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_def_explosive_rush_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_def_explosive_rush_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_def_explosive_rush_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_def_explosive_rush_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_def_explosive_rush_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999947,
+          "first": "missingindicator_away_def_sack_prior",
+          "second": "missingindicator_away_def_turnover_prior"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_def_sack_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_def_sack_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_def_sack_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_def_sack_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_def_turnover_prior",
+          "second": "missingindicator_home_sos_off_recent"
+        },
+        {
+          "correlation": 0.9170772554297263,
+          "first": "missingindicator_away_def_turnover_prior",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_def_turnover_prior",
+          "second": "missingindicator_away_sos_off_recent"
+        },
+        {
+          "correlation": 0.9699361527006594,
+          "first": "missingindicator_away_def_turnover_prior",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999981,
+          "first": "missingindicator_home_sos_off_recent",
+          "second": "missingindicator_home_sos_def_recent"
+        },
+        {
+          "correlation": 0.9999999999999982,
+          "first": "missingindicator_home_sos_off_season",
+          "second": "missingindicator_home_sos_def_season"
+        },
+        {
+          "correlation": 0.911921399315112,
+          "first": "missingindicator_home_sos_off_season",
+          "second": "missingindicator_away_sos_off_season"
+        },
+        {
+          "correlation": 0.911921399315112,
+          "first": "missingindicator_home_sos_off_season",
+          "second": "missingindicator_away_sos_def_season"
+        },
+        {
+          "correlation": 0.911921399315112,
+          "first": "missingindicator_home_sos_def_season",
+          "second": "missingindicator_away_sos_off_season"
+        },
+        {
+          "correlation": 0.911921399315112,
+          "first": "missingindicator_home_sos_def_season",
+          "second": "missingindicator_away_sos_def_season"
+        },
+        {
+          "correlation": 0.9999999999999958,
+          "first": "missingindicator_away_sos_off_recent",
+          "second": "missingindicator_away_sos_def_recent"
+        },
+        {
+          "correlation": 1.0000000000000013,
+          "first": "missingindicator_away_sos_off_season",
+          "second": "missingindicator_away_sos_def_season"
+        }
+      ],
+      "matrix_rank": 66,
+      "model": "play_and_schedule",
+      "pairs_abs_correlation_over_09": 299,
+      "raw_features": 60,
+      "ridge_effective_df_per_output": 59.157919017163756,
+      "training_games": 2367
+    }
+  ],
+  "counts": "Both score outputs; Ridge effective df reported per output including intercept. Matrix rank/correlation after training-only imputation and scaling.",
+  "cutoff_utc": "2025-09-02T15:00:00+00:00",
+  "model_source_sha256": "6013dfe034015dcee2c7449fe4d0e698ec6c03fcad7159f8297455549f996afc",
+  "ridge_alpha": 20,
+  "team_source_sha256": "906a7f6f9fa683b40f504d0bff44e1b4f2b373c3de71d77d01e948128e1cb632"
+}
