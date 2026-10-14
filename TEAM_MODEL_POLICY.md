@@ -249,3 +249,56 @@ filters or applied corrections. 2025 has already been accessed; this report is n
 holdout, and it does not select a revised model. Source revisions and exact historical
 publication remain unreconstructed. Proposed fixes require chronological selection and later
 prospective verification; no forecast/model promotion is automatic.
+
+## Feature, parameter and loss refinement
+
+`team-refine` compares thirteen profiles using the canonical past-only features.
+The controls retain the original 28-input two-score Ridge model. Feature ablations keep
+overall recent/season EPA plus context (12), overall season EPA plus context (8), or remove
+only the two history-count inputs (26). Other profiles use Ridge penalties 200/2000 instead
+of 20, and MultiTaskElasticNet alpha 0.1/0.5 with l1_ratio 0.5. Elastic Net fits both score
+targets jointly and can zero feature rows. Treat convergence warnings as failed fits.
+
+On the compact eight inputs, compare median/absolute-error linear regression against
+small squared/absolute-loss boosted trees. These candidates fit home margin and total;
+reconstruct home/away scores before the common nonnegative/rounding rule derives displayed
+margins. Median regression uses quantile 0.5, penalties 0.1/0.01/0.001 and the HiGHS solver.
+The two weaker penalties follow an initial training-only audit that found nearly all
+coefficients zero at 0.1. Preserve the initial eleven-profile comparison as well; this
+adaptive development step does not create an independent evaluation period. Boosting has
+80 iterations, learning rate 0.05, at most seven leaves and depth three, at least 40 samples
+per leaf, and L2 penalty 10. Disable random early-stopping validation splits. None of the
+candidates uses current-game outcomes, the actual starter audit, observed game weather,
+market lines or the previously unsuccessful play/SOS additions as predictors in this round.
+
+Simulate selection before each season's first early-week forecast using the preceding two
+completed seasons' chronological early-week predictions. Require identical validation
+cohorts and outcomes available strictly before the lock. Score MAE may exceed control by
+at most 0.05 points and total MAE by 0.10; margin MAE must improve by at least 0.05.
+Among eligible candidates within one season-week bootstrap standard error of the best
+margin MAE, prefer linear models, fewer fitted active encoded inputs, stronger Ridge
+shrinkage, then fixed family/profile order. Use 2,000 block samples, seed 20261014.
+If no candidate qualifies, retain current EPA. The simplicity ranking is a declared
+heuristic, not a universal parameter-count comparison across algorithms.
+
+Fit complexity audits only on outcomes available before that season's lock. Count raw
+inputs, imputation indicators, allocated scalar coefficients/intercepts and active encoded
+inputs (coefficient magnitude over 1e-8 in either target). Audit standardized matrix rank,
+correlations, and effective Ridge degrees of freedom per output, including the intercept.
+Tree leaf values are reported separately and do not equal linear coefficient counts.
+In-sample errors are diagnostics; selection uses chronological validation errors.
+
+Keep the selected profile fixed throughout the season and use it for both horizons,
+refitting coefficients only on outcomes available at each forecast. Candidate comparisons
+cover early-week development seasons; evaluate the locked policy on 2022–2024 and only
+the selected choice on 2025. 2025 is already accessed diagnostic data, so even this simulated
+lock does not create a fresh holdout or prove prospective accuracy. Save policy before
+computation, profiles, validation scores, audits, selections, folds, predictions and source/
+code hashes in a separate namespace. Approximate paired 5,000-sample week-block gain ranges
+keep development and 2025 separate. Source publication/revisions are not reconstructed;
+no model/forecast promotion is automatic.
+
+Primary method references: [linear regularization](https://scikit-learn.org/stable/modules/linear_model.html),
+[feature selection](https://scikit-learn.org/stable/modules/feature_selection.html),
+[complexity versus validation score](https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_refit_callable.html),
+and [boosting controls/loss](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html).
