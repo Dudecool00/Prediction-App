@@ -127,3 +127,21 @@ adapters. Stage four, the full enriched 2025 weekly replay, remains gated; zero 
 new 2025 outcomes were used. No further weather collector work was added in this follow-up.
 The two derived revision caches total about 120 KB, with upstream features referenced rather than copied.
 Seven new selection/timing/artifact cases bring the full suite to 78 tests.
+
+## Repository health audit, October 15, 2026
+
+Reviewed merged `main` at `e8ccc2c` and the ten team-model merges since PR #15. Two merged
+Windows runs (#21 and #23) failed at dependency validation because the hosted runner's
+preinstalled `pipx` required a newer `platformdirs` than this project's lock. Linux passed
+both runs; latest `main` passed all 78 tests and checks on both operating systems.
+
+CI now creates a separate environment per runner and uses its interpreter for installation,
+dependency checks, lint, formatting, typing and tests. The dependency lock and all model/data
+source files retain their bytes. No additional local environment or model fit was needed.
+Thirteen read-only audit groups passed, including current saved research/model artifacts,
+frozen choices, five score journals, two weather captures, output consistency, imports and
+local documentation links. See [evidence and limits](reports/team_scores/repository_health.md).
+
+GitHub reports `main` as unprotected with required checks off. Requiring the two platform
+checks before merging is recommended; repository access rules were not modified. The dated
+availability work in draft PR #25 is separate from the audited merged tree.
