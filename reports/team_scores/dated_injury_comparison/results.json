@@ -1,0 +1,3462 @@
+{
+  "2025_fits_performed": 0,
+  "artifacts": {
+    "context": {
+      "file": "context-46a19ce4c0937f53b387a1e586fa205aaa87b8a71d63a51de2b5dd4100172443.parquet",
+      "rows": 1630,
+      "schema": {
+        "away_formal_report": "Float64",
+        "away_news_captured_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "away_positions_known": "Float64",
+        "both_positions_known": "Float64",
+        "defensive_out_difference": "Float64",
+        "game_id": "String",
+        "home_formal_report": "Float64",
+        "home_news_captured_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "home_positions_known": "Float64",
+        "horizon": "String",
+        "offensive_out_difference": "Float64"
+      },
+      "sha256": "46a19ce4c0937f53b387a1e586fa205aaa87b8a71d63a51de2b5dd4100172443"
+    },
+    "predictions": {
+      "file": "predictions-b4aa8fc4fb8007b39292b70efc5e9b4b10c3c0435b2eaed5d76140934a73f5b0.parquet",
+      "rows": 3264,
+      "schema": {
+        "away_prior_games": "Int64",
+        "away_score": "Float64",
+        "away_team": "String",
+        "both_positions_known": "Float64",
+        "game_id": "String",
+        "home_prior_games": "Int64",
+        "home_score": "Float64",
+        "home_team": "String",
+        "horizon": "String",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "latest_training_result_available_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "model": "String",
+        "predicted_away_margin": "Float64",
+        "predicted_away_score": "Float64",
+        "predicted_home_margin": "Float64",
+        "predicted_home_score": "Float64",
+        "predicted_total": "Float64",
+        "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "result_available_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "season": "Int64",
+        "target_home_margin": "Float64",
+        "training_games": "Int64",
+        "week": "Int64",
+        "week_lock_utc": "Datetime(time_unit='us', time_zone='UTC')"
+      },
+      "sha256": "b4aa8fc4fb8007b39292b70efc5e9b4b10c3c0435b2eaed5d76140934a73f5b0"
+    }
+  },
+  "both_covered_secondary_metrics": [
+    {
+      "games": 207,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.2120772946859906,
+      "margin_mae": 10.06425120772947,
+      "margin_rmse": 13.441947107059509,
+      "model": "compact_dated_out_counts",
+      "scope": "overall",
+      "score_bias": -0.892512077294686,
+      "score_mae": 7.643719806763286,
+      "score_rmse": 9.814367610508734,
+      "season": null,
+      "total_bias": -1.785024154589372,
+      "total_mae": 11.03623188405797,
+      "total_rmse": 14.303891230984178
+    },
+    {
+      "games": 207,
+      "horizon": "pregame_refresh",
+      "margin_bias": -0.3468599033816426,
+      "margin_mae": 10.03864734299517,
+      "margin_rmse": 13.339371821030785,
+      "model": "compact_epa",
+      "scope": "overall",
+      "score_bias": -0.7975845410628021,
+      "score_mae": 7.545893719806763,
+      "score_rmse": 9.696241614629628,
+      "season": null,
+      "total_bias": -1.5951690821256037,
+      "total_mae": 10.894685990338166,
+      "total_rmse": 14.075850426080526
+    },
+    {
+      "games": 207,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.2101449275362322,
+      "margin_mae": 10.010144927536233,
+      "margin_rmse": 13.382985448580156,
+      "model": "compact_report_flags",
+      "scope": "overall",
+      "score_bias": -0.7794685990338165,
+      "score_mae": 7.580917874396135,
+      "score_rmse": 9.723164481599182,
+      "season": null,
+      "total_bias": -1.5589371980676325,
+      "total_mae": 10.91159420289855,
+      "total_rmse": 14.108699820607827
+    },
+    {
+      "games": 149,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.039597315436242,
+      "margin_mae": 10.381879194630873,
+      "margin_rmse": 13.978038863510097,
+      "model": "compact_dated_out_counts",
+      "scope": "season",
+      "score_bias": -0.8520134228187919,
+      "score_mae": 7.835234899328861,
+      "score_rmse": 10.101433548340731,
+      "season": 2023,
+      "total_bias": -1.7040268456375838,
+      "total_mae": 11.411409395973156,
+      "total_rmse": 14.586646923003785
+    },
+    {
+      "games": 58,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.6551724137931036,
+      "margin_mae": 9.248275862068965,
+      "margin_rmse": 11.955045104401565,
+      "model": "compact_dated_out_counts",
+      "scope": "season",
+      "score_bias": -0.9965517241379312,
+      "score_mae": 7.151724137931035,
+      "score_rmse": 9.0351898249242,
+      "season": 2024,
+      "total_bias": -1.9931034482758623,
+      "total_mae": 10.072413793103449,
+      "total_rmse": 13.550480332496678
+    },
+    {
+      "games": 149,
+      "horizon": "pregame_refresh",
+      "margin_bias": -0.07382550335570498,
+      "margin_mae": 10.374496644295304,
+      "margin_rmse": 13.879635993138056,
+      "model": "compact_epa",
+      "scope": "season",
+      "score_bias": -0.6791946308724833,
+      "score_mae": 7.73020134228188,
+      "score_rmse": 9.982820814248646,
+      "season": 2023,
+      "total_bias": -1.3583892617449662,
+      "total_mae": 11.26040268456376,
+      "total_rmse": 14.352092193668854
+    },
+    {
+      "games": 58,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.0482758620689652,
+      "margin_mae": 9.175862068965518,
+      "margin_rmse": 11.838962559395085,
+      "model": "compact_epa",
+      "scope": "season",
+      "score_bias": -1.1017241379310343,
+      "score_mae": 7.072413793103448,
+      "score_rmse": 8.917911074407195,
+      "season": 2024,
+      "total_bias": -2.203448275862069,
+      "total_mae": 9.955172413793104,
+      "total_rmse": 13.339996898102312
+    },
+    {
+      "games": 149,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.038926174496644,
+      "margin_mae": 10.322147651006711,
+      "margin_rmse": 13.920840443655624,
+      "model": "compact_report_flags",
+      "scope": "season",
+      "score_bias": -0.7288590604026846,
+      "score_mae": 7.781879194630872,
+      "score_rmse": 10.01726027193587,
+      "season": 2023,
+      "total_bias": -1.457718120805369,
+      "total_mae": 11.304697986577182,
+      "total_rmse": 14.408060756573061
+    },
+    {
+      "games": 58,
+      "horizon": "pregame_refresh",
+      "margin_bias": -1.65,
+      "margin_mae": 9.20862068965517,
+      "margin_rmse": 11.890237954754719,
+      "model": "compact_report_flags",
+      "scope": "season",
+      "score_bias": -0.90948275862069,
+      "score_mae": 7.064655172413792,
+      "score_rmse": 8.923317961850058,
+      "season": 2024,
+      "total_bias": -1.81896551724138,
+      "total_mae": 9.901724137931035,
+      "total_rmse": 13.308818699359225
+    }
+  ],
+  "comparisons": [
+    {
+      "control": "compact_epa",
+      "horizon": "early_week",
+      "margin_mae_gain": 0.0,
+      "model": "compact_report_flags",
+      "week_block_95_lower": 0.0,
+      "week_block_95_upper": 0.0
+    },
+    {
+      "control": "compact_epa",
+      "horizon": "early_week",
+      "margin_mae_gain": 0.0,
+      "model": "compact_dated_out_counts",
+      "week_block_95_lower": 0.0,
+      "week_block_95_upper": 0.0
+    },
+    {
+      "control": "compact_report_flags",
+      "horizon": "early_week",
+      "margin_mae_gain": 0.0,
+      "model": "compact_dated_out_counts",
+      "week_block_95_lower": 0.0,
+      "week_block_95_upper": 0.0
+    },
+    {
+      "control": "compact_epa",
+      "horizon": "pregame_refresh",
+      "margin_mae_gain": -0.036580882352941164,
+      "model": "compact_report_flags",
+      "week_block_95_lower": -0.1198577026853398,
+      "week_block_95_upper": 0.04038058275614989
+    },
+    {
+      "control": "compact_epa",
+      "horizon": "pregame_refresh",
+      "margin_mae_gain": -0.06029411764705882,
+      "model": "compact_dated_out_counts",
+      "week_block_95_lower": -0.13967490958232867,
+      "week_block_95_upper": 0.012112996383847819
+    },
+    {
+      "control": "compact_report_flags",
+      "horizon": "pregame_refresh",
+      "margin_mae_gain": -0.023713235294117656,
+      "model": "compact_dated_out_counts",
+      "week_block_95_lower": -0.04057190300474435,
+      "week_block_95_upper": -0.009123672104556356
+    }
+  ],
+  "complexity": [
+    {
+      "allocated_weights_and_intercepts": 20,
+      "context_standardized_coefficients": {},
+      "encoded_features": 9,
+      "horizon": "early_week",
+      "model": "compact_epa",
+      "raw_features": 8,
+      "season": 2023
+    },
+    {
+      "allocated_weights_and_intercepts": 30,
+      "context_standardized_coefficients": {
+        "away_formal_report": [
+          0.0,
+          0.0
+        ],
+        "away_positions_known": [
+          0.0,
+          0.0
+        ],
+        "both_positions_known": [
+          0.0,
+          0.0
+        ],
+        "home_formal_report": [
+          0.0,
+          0.0
+        ],
+        "home_positions_known": [
+          0.0,
+          0.0
+        ]
+      },
+      "encoded_features": 14,
+      "horizon": "early_week",
+      "model": "compact_report_flags",
+      "raw_features": 13,
+      "season": 2023
+    },
+    {
+      "allocated_weights_and_intercepts": 34,
+      "context_standardized_coefficients": {
+        "away_formal_report": [
+          0.0,
+          0.0
+        ],
+        "away_positions_known": [
+          0.0,
+          0.0
+        ],
+        "both_positions_known": [
+          0.0,
+          0.0
+        ],
+        "defensive_out_difference": [
+          0.0,
+          0.0
+        ],
+        "home_formal_report": [
+          0.0,
+          0.0
+        ],
+        "home_positions_known": [
+          0.0,
+          0.0
+        ],
+        "offensive_out_difference": [
+          0.0,
+          0.0
+        ]
+      },
+      "encoded_features": 16,
+      "horizon": "early_week",
+      "model": "compact_dated_out_counts",
+      "raw_features": 15,
+      "season": 2023
+    },
+    {
+      "allocated_weights_and_intercepts": 20,
+      "context_standardized_coefficients": {},
+      "encoded_features": 9,
+      "horizon": "early_week",
+      "model": "compact_epa",
+      "raw_features": 8,
+      "season": 2024
+    },
+    {
+      "allocated_weights_and_intercepts": 30,
+      "context_standardized_coefficients": {
+        "away_formal_report": [
+          0.0,
+          0.0
+        ],
+        "away_positions_known": [
+          0.0,
+          0.0
+        ],
+        "both_positions_known": [
+          0.0,
+          0.0
+        ],
+        "home_formal_report": [
+          0.0,
+          0.0
+        ],
+        "home_positions_known": [
+          0.0,
+          0.0
+        ]
+      },
+      "encoded_features": 14,
+      "horizon": "early_week",
+      "model": "compact_report_flags",
+      "raw_features": 13,
+      "season": 2024
+    },
+    {
+      "allocated_weights_and_intercepts": 34,
+      "context_standardized_coefficients": {
+        "away_formal_report": [
+          0.0,
+          0.0
+        ],
+        "away_positions_known": [
+          0.0,
+          0.0
+        ],
+        "both_positions_known": [
+          0.0,
+          0.0
+        ],
+        "defensive_out_difference": [
+          0.0,
+          0.0
+        ],
+        "home_formal_report": [
+          0.0,
+          0.0
+        ],
+        "home_positions_known": [
+          0.0,
+          0.0
+        ],
+        "offensive_out_difference": [
+          0.0,
+          0.0
+        ]
+      },
+      "encoded_features": 16,
+      "horizon": "early_week",
+      "model": "compact_dated_out_counts",
+      "raw_features": 15,
+      "season": 2024
+    },
+    {
+      "allocated_weights_and_intercepts": 20,
+      "context_standardized_coefficients": {},
+      "encoded_features": 9,
+      "horizon": "pregame_refresh",
+      "model": "compact_epa",
+      "raw_features": 8,
+      "season": 2023
+    },
+    {
+      "allocated_weights_and_intercepts": 30,
+      "context_standardized_coefficients": {
+        "away_formal_report": [
+          0.3518908647050354,
+          0.023334074351479366
+        ],
+        "away_positions_known": [
+          -0.22447274877356246,
+          -0.09200679125440228
+        ],
+        "both_positions_known": [
+          -0.5436397421003406,
+          -0.7455922726048657
+        ],
+        "home_formal_report": [
+          -1.4832610141200553,
+          0.4700793337330408
+        ],
+        "home_positions_known": [
+          0.8552093673219496,
+          0.7710647979784666
+        ]
+      },
+      "encoded_features": 14,
+      "horizon": "pregame_refresh",
+      "model": "compact_report_flags",
+      "raw_features": 13,
+      "season": 2023
+    },
+    {
+      "allocated_weights_and_intercepts": 34,
+      "context_standardized_coefficients": {
+        "away_formal_report": [
+          0.34761992323857654,
+          0.020439346281841842
+        ],
+        "away_positions_known": [
+          -0.23360046756238756,
+          -0.10618454429683233
+        ],
+        "both_positions_known": [
+          -0.5432145645971354,
+          -0.7415718965196872
+        ],
+        "defensive_out_difference": [
+          0.725839792578213,
+          0.7945813517772187
+        ],
+        "home_formal_report": [
+          -1.4724208568028325,
+          0.4843309600916398
+        ],
+        "home_positions_known": [
+          0.8381035202637926,
+          0.7519530421651696
+        ],
+        "offensive_out_difference": [
+          0.14522933672269953,
+          0.5653037440277929
+        ]
+      },
+      "encoded_features": 16,
+      "horizon": "pregame_refresh",
+      "model": "compact_dated_out_counts",
+      "raw_features": 15,
+      "season": 2023
+    },
+    {
+      "allocated_weights_and_intercepts": 20,
+      "context_standardized_coefficients": {},
+      "encoded_features": 9,
+      "horizon": "pregame_refresh",
+      "model": "compact_epa",
+      "raw_features": 8,
+      "season": 2024
+    },
+    {
+      "allocated_weights_and_intercepts": 30,
+      "context_standardized_coefficients": {
+        "away_formal_report": [
+          -0.0658835154098055,
+          -0.5454151070355544
+        ],
+        "away_positions_known": [
+          0.21171193418948678,
+          0.1905132542078883
+        ],
+        "both_positions_known": [
+          0.4152900006301716,
+          0.18102344990842456
+        ],
+        "home_formal_report": [
+          -1.5901332873958538,
+          0.2814233584087668
+        ],
+        "home_positions_known": [
+          0.6529498287487401,
+          0.37175784741935136
+        ]
+      },
+      "encoded_features": 14,
+      "horizon": "pregame_refresh",
+      "model": "compact_report_flags",
+      "raw_features": 13,
+      "season": 2024
+    },
+    {
+      "allocated_weights_and_intercepts": 34,
+      "context_standardized_coefficients": {
+        "away_formal_report": [
+          -0.06966558590190546,
+          -0.5477998915596921
+        ],
+        "away_positions_known": [
+          0.22091385435231412,
+          0.19613512863494356
+        ],
+        "both_positions_known": [
+          0.42688756512177556,
+          0.18644179994641852
+        ],
+        "defensive_out_difference": [
+          0.5092624625546986,
+          0.3802208640134438
+        ],
+        "home_formal_report": [
+          -1.5861577838104886,
+          0.28389264149720267
+        ],
+        "home_positions_known": [
+          0.6537901889393095,
+          0.37256915535984136
+        ],
+        "offensive_out_difference": [
+          0.1836790498603301,
+          0.04154716079328331
+        ]
+      },
+      "encoded_features": 16,
+      "horizon": "pregame_refresh",
+      "model": "compact_dated_out_counts",
+      "raw_features": 15,
+      "season": 2024
+    }
+  ],
+  "coverage": [
+    {
+      "away_formal_report": 0.0,
+      "away_positions_known": 0.0,
+      "both_positions_known": 0.0,
+      "games": 271,
+      "home_formal_report": 0.0,
+      "home_positions_known": 0.0,
+      "horizon": "early_week",
+      "season": 2022
+    },
+    {
+      "away_formal_report": 180.0,
+      "away_positions_known": 177.0,
+      "both_positions_known": 157.0,
+      "games": 271,
+      "home_formal_report": 175.0,
+      "home_positions_known": 173.0,
+      "horizon": "pregame_refresh",
+      "season": 2022
+    },
+    {
+      "away_formal_report": 0.0,
+      "away_positions_known": 0.0,
+      "both_positions_known": 0.0,
+      "games": 272,
+      "home_formal_report": 0.0,
+      "home_positions_known": 0.0,
+      "horizon": "early_week",
+      "season": 2023
+    },
+    {
+      "away_formal_report": 164.0,
+      "away_positions_known": 160.0,
+      "both_positions_known": 149.0,
+      "games": 272,
+      "home_formal_report": 166.0,
+      "home_positions_known": 166.0,
+      "horizon": "pregame_refresh",
+      "season": 2023
+    },
+    {
+      "away_formal_report": 0.0,
+      "away_positions_known": 0.0,
+      "both_positions_known": 0.0,
+      "games": 272,
+      "home_formal_report": 0.0,
+      "home_positions_known": 0.0,
+      "horizon": "early_week",
+      "season": 2024
+    },
+    {
+      "away_formal_report": 65.0,
+      "away_positions_known": 63.0,
+      "both_positions_known": 58.0,
+      "games": 272,
+      "home_formal_report": 62.0,
+      "home_positions_known": 62.0,
+      "horizon": "pregame_refresh",
+      "season": 2024
+    }
+  ],
+  "enriched_replay_ready": false,
+  "folds": [
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-01-10T01:20:00+00:00",
+      "lock_utc": "2023-09-05T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_01_ARI_WAS",
+        "2023_01_BUF_NYJ",
+        "2023_01_CAR_ATL",
+        "2023_01_CIN_CLE",
+        "2023_01_DAL_NYG",
+        "2023_01_DET_KC",
+        "2023_01_GB_CHI",
+        "2023_01_HOU_BAL",
+        "2023_01_JAX_IND",
+        "2023_01_LA_SEA",
+        "2023_01_LV_DEN",
+        "2023_01_MIA_LAC",
+        "2023_01_PHI_NE",
+        "2023_01_SF_PIT",
+        "2023_01_TB_MIN",
+        "2023_01_TEN_NO"
+      ],
+      "training_game_ids_sha256": "0f195f37fcff65160793e181e76be4eb17ef47e82607bf2dd46301e726ac7e1a",
+      "training_games": 271,
+      "training_seasons": [
+        2022
+      ],
+      "week": 1
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-09-12T00:20:00+00:00",
+      "lock_utc": "2023-09-12T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_02_BAL_CIN",
+        "2023_02_CHI_TB",
+        "2023_02_CLE_PIT",
+        "2023_02_GB_ATL",
+        "2023_02_IND_HOU",
+        "2023_02_KC_JAX",
+        "2023_02_LAC_TEN",
+        "2023_02_LV_BUF",
+        "2023_02_MIA_NE",
+        "2023_02_MIN_PHI",
+        "2023_02_NO_CAR",
+        "2023_02_NYG_ARI",
+        "2023_02_NYJ_DAL",
+        "2023_02_SEA_DET",
+        "2023_02_SF_LA",
+        "2023_02_WAS_DEN"
+      ],
+      "training_game_ids_sha256": "35782d96b4b296db4e792a65737bbb1b820834c2f182298b002178020e8538e1",
+      "training_games": 286,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 2
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-09-19T00:20:00+00:00",
+      "lock_utc": "2023-09-19T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_03_ATL_DET",
+        "2023_03_BUF_WAS",
+        "2023_03_CAR_SEA",
+        "2023_03_CHI_KC",
+        "2023_03_DAL_ARI",
+        "2023_03_DEN_MIA",
+        "2023_03_HOU_JAX",
+        "2023_03_IND_BAL",
+        "2023_03_LAC_MIN",
+        "2023_03_LA_CIN",
+        "2023_03_NE_NYJ",
+        "2023_03_NO_GB",
+        "2023_03_NYG_SF",
+        "2023_03_PHI_TB",
+        "2023_03_PIT_LV",
+        "2023_03_TEN_CLE"
+      ],
+      "training_game_ids_sha256": "ed3edfdd783a2f88bb9aec77c12e634cbc00a306c3fd6c06e2f639d06d11dc06",
+      "training_games": 301,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 3
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-09-26T00:20:00+00:00",
+      "lock_utc": "2023-09-26T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_04_ARI_SF",
+        "2023_04_ATL_JAX",
+        "2023_04_BAL_CLE",
+        "2023_04_CIN_TEN",
+        "2023_04_DEN_CHI",
+        "2023_04_DET_GB",
+        "2023_04_KC_NYJ",
+        "2023_04_LA_IND",
+        "2023_04_LV_LAC",
+        "2023_04_MIA_BUF",
+        "2023_04_MIN_CAR",
+        "2023_04_NE_DAL",
+        "2023_04_PIT_HOU",
+        "2023_04_SEA_NYG",
+        "2023_04_TB_NO",
+        "2023_04_WAS_PHI"
+      ],
+      "training_game_ids_sha256": "246dcb225c3da7090842cb3c545929ecbef8a7dd31f1ab162af64496650ed807",
+      "training_games": 317,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 4
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-10-03T00:20:00+00:00",
+      "lock_utc": "2023-10-03T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_05_BAL_PIT",
+        "2023_05_CAR_DET",
+        "2023_05_CHI_WAS",
+        "2023_05_CIN_ARI",
+        "2023_05_DAL_SF",
+        "2023_05_GB_LV",
+        "2023_05_HOU_ATL",
+        "2023_05_JAX_BUF",
+        "2023_05_KC_MIN",
+        "2023_05_NO_NE",
+        "2023_05_NYG_MIA",
+        "2023_05_NYJ_DEN",
+        "2023_05_PHI_LA",
+        "2023_05_TEN_IND"
+      ],
+      "training_game_ids_sha256": "09743329538ae1dae6bbd40f81af2231ebf0bc006408fa119725935d44b69318",
+      "training_games": 334,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 5
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-10-10T00:20:00+00:00",
+      "lock_utc": "2023-10-10T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_06_ARI_LA",
+        "2023_06_BAL_TEN",
+        "2023_06_CAR_MIA",
+        "2023_06_DAL_LAC",
+        "2023_06_DEN_KC",
+        "2023_06_DET_TB",
+        "2023_06_IND_JAX",
+        "2023_06_MIN_CHI",
+        "2023_06_NE_LV",
+        "2023_06_NO_HOU",
+        "2023_06_NYG_BUF",
+        "2023_06_PHI_NYJ",
+        "2023_06_SEA_CIN",
+        "2023_06_SF_CLE",
+        "2023_06_WAS_ATL"
+      ],
+      "training_game_ids_sha256": "e51b6f7b5443f1b1d392a78fc91e53c39600fd0b325451e20b744c07f8db5149",
+      "training_games": 348,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 6
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-10-17T00:20:00+00:00",
+      "lock_utc": "2023-10-17T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_07_ARI_SEA",
+        "2023_07_ATL_TB",
+        "2023_07_BUF_NE",
+        "2023_07_CLE_IND",
+        "2023_07_DET_BAL",
+        "2023_07_GB_DEN",
+        "2023_07_JAX_NO",
+        "2023_07_LAC_KC",
+        "2023_07_LV_CHI",
+        "2023_07_MIA_PHI",
+        "2023_07_PIT_LA",
+        "2023_07_SF_MIN",
+        "2023_07_WAS_NYG"
+      ],
+      "training_game_ids_sha256": "a553f9ba4ab22f39c2d25d8a0222808307f3b0d6f2da129bf2df07a4d9d64601",
+      "training_games": 363,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 7
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-10-24T00:20:00+00:00",
+      "lock_utc": "2023-10-24T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_08_ATL_TEN",
+        "2023_08_BAL_ARI",
+        "2023_08_CHI_LAC",
+        "2023_08_CIN_SF",
+        "2023_08_CLE_SEA",
+        "2023_08_HOU_CAR",
+        "2023_08_JAX_PIT",
+        "2023_08_KC_DEN",
+        "2023_08_LA_DAL",
+        "2023_08_LV_DET",
+        "2023_08_MIN_GB",
+        "2023_08_NE_MIA",
+        "2023_08_NO_IND",
+        "2023_08_NYJ_NYG",
+        "2023_08_PHI_WAS",
+        "2023_08_TB_BUF"
+      ],
+      "training_game_ids_sha256": "e7eafd52b1b41c0ea53c6ec35ced60af3183bf02c402256881b3d5a8205bec8c",
+      "training_games": 376,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 8
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-10-31T00:20:00+00:00",
+      "lock_utc": "2023-10-31T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_09_ARI_CLE",
+        "2023_09_BUF_CIN",
+        "2023_09_CHI_NO",
+        "2023_09_DAL_PHI",
+        "2023_09_IND_CAR",
+        "2023_09_LAC_NYJ",
+        "2023_09_LA_GB",
+        "2023_09_MIA_KC",
+        "2023_09_MIN_ATL",
+        "2023_09_NYG_LV",
+        "2023_09_SEA_BAL",
+        "2023_09_TB_HOU",
+        "2023_09_TEN_PIT",
+        "2023_09_WAS_NE"
+      ],
+      "training_game_ids_sha256": "9dce396801e5241a3a58ba0923d380f696d8d0946758d1de69a8713c240ceaaa",
+      "training_games": 392,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 9
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-11-07T01:20:00+00:00",
+      "lock_utc": "2023-11-07T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_10_ATL_ARI",
+        "2023_10_CAR_CHI",
+        "2023_10_CLE_BAL",
+        "2023_10_DEN_BUF",
+        "2023_10_DET_LAC",
+        "2023_10_GB_PIT",
+        "2023_10_HOU_CIN",
+        "2023_10_IND_NE",
+        "2023_10_NO_MIN",
+        "2023_10_NYG_DAL",
+        "2023_10_NYJ_LV",
+        "2023_10_SF_JAX",
+        "2023_10_TEN_TB",
+        "2023_10_WAS_SEA"
+      ],
+      "training_game_ids_sha256": "3a337fb405e03d22b60a99dd70ae47a25a387559b3594b7f92dfafc61c3f9adb",
+      "training_games": 406,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 10
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-11-14T01:20:00+00:00",
+      "lock_utc": "2023-11-14T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_11_ARI_HOU",
+        "2023_11_CHI_DET",
+        "2023_11_CIN_BAL",
+        "2023_11_DAL_CAR",
+        "2023_11_LAC_GB",
+        "2023_11_LV_MIA",
+        "2023_11_MIN_DEN",
+        "2023_11_NYG_WAS",
+        "2023_11_NYJ_BUF",
+        "2023_11_PHI_KC",
+        "2023_11_PIT_CLE",
+        "2023_11_SEA_LA",
+        "2023_11_TB_SF",
+        "2023_11_TEN_JAX"
+      ],
+      "training_game_ids_sha256": "7c694545e96f66ae30d394388344d7319aef9b21df88bf45af202af8c526ca77",
+      "training_games": 420,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 11
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-11-21T01:20:00+00:00",
+      "lock_utc": "2023-11-21T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_12_BAL_LAC",
+        "2023_12_BUF_PHI",
+        "2023_12_CAR_TEN",
+        "2023_12_CHI_MIN",
+        "2023_12_CLE_DEN",
+        "2023_12_GB_DET",
+        "2023_12_JAX_HOU",
+        "2023_12_KC_LV",
+        "2023_12_LA_ARI",
+        "2023_12_MIA_NYJ",
+        "2023_12_NE_NYG",
+        "2023_12_NO_ATL",
+        "2023_12_PIT_CIN",
+        "2023_12_SF_SEA",
+        "2023_12_TB_IND",
+        "2023_12_WAS_DAL"
+      ],
+      "training_game_ids_sha256": "ee6d3df2855f826e96c6606f9802c8c8b9f5c6814cb298f46504f23076d8e297",
+      "training_games": 434,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 12
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-11-28T01:20:00+00:00",
+      "lock_utc": "2023-11-28T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_13_ARI_PIT",
+        "2023_13_ATL_NYJ",
+        "2023_13_CAR_TB",
+        "2023_13_CIN_JAX",
+        "2023_13_CLE_LA",
+        "2023_13_DEN_HOU",
+        "2023_13_DET_NO",
+        "2023_13_IND_TEN",
+        "2023_13_KC_GB",
+        "2023_13_LAC_NE",
+        "2023_13_MIA_WAS",
+        "2023_13_SEA_DAL",
+        "2023_13_SF_PHI"
+      ],
+      "training_game_ids_sha256": "f246602a84d5bad730de2762ab723eeb26508bc06910f79886c467f4f34612b9",
+      "training_games": 450,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 13
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-12-05T01:20:00+00:00",
+      "lock_utc": "2023-12-05T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_14_BUF_KC",
+        "2023_14_CAR_NO",
+        "2023_14_DEN_LAC",
+        "2023_14_DET_CHI",
+        "2023_14_GB_NYG",
+        "2023_14_HOU_NYJ",
+        "2023_14_IND_CIN",
+        "2023_14_JAX_CLE",
+        "2023_14_LA_BAL",
+        "2023_14_MIN_LV",
+        "2023_14_NE_PIT",
+        "2023_14_PHI_DAL",
+        "2023_14_SEA_SF",
+        "2023_14_TB_ATL",
+        "2023_14_TEN_MIA"
+      ],
+      "training_game_ids_sha256": "0d43a5c7a60309d625c94b47495e4521e912327efee8959ca1515d5f450a3293",
+      "training_games": 463,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 14
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-12-12T01:20:00+00:00",
+      "lock_utc": "2023-12-12T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_15_ATL_CAR",
+        "2023_15_BAL_JAX",
+        "2023_15_CHI_CLE",
+        "2023_15_DAL_BUF",
+        "2023_15_DEN_DET",
+        "2023_15_HOU_TEN",
+        "2023_15_KC_NE",
+        "2023_15_LAC_LV",
+        "2023_15_MIN_CIN",
+        "2023_15_NYG_NO",
+        "2023_15_NYJ_MIA",
+        "2023_15_PHI_SEA",
+        "2023_15_PIT_IND",
+        "2023_15_SF_ARI",
+        "2023_15_TB_GB",
+        "2023_15_WAS_LA"
+      ],
+      "training_game_ids_sha256": "e4b11887bf1a3b5171902bde87cc4e2ca7021ea35553c8ead92a5bb0b475d107",
+      "training_games": 477,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 15
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-12-19T01:20:00+00:00",
+      "lock_utc": "2023-12-19T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_16_ARI_CHI",
+        "2023_16_BAL_SF",
+        "2023_16_BUF_LAC",
+        "2023_16_CIN_PIT",
+        "2023_16_CLE_HOU",
+        "2023_16_DAL_MIA",
+        "2023_16_DET_MIN",
+        "2023_16_GB_CAR",
+        "2023_16_IND_ATL",
+        "2023_16_JAX_TB",
+        "2023_16_LV_KC",
+        "2023_16_NE_DEN",
+        "2023_16_NO_LA",
+        "2023_16_NYG_PHI",
+        "2023_16_SEA_TEN",
+        "2023_16_WAS_NYJ"
+      ],
+      "training_game_ids_sha256": "49d0e082595d31e4076d74af823042bd77cbaf71a9bb05cee4436364c7024651",
+      "training_games": 494,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 16
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2023-12-26T01:15:00+00:00",
+      "lock_utc": "2023-12-26T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_17_ARI_PHI",
+        "2023_17_ATL_CHI",
+        "2023_17_CAR_JAX",
+        "2023_17_CIN_KC",
+        "2023_17_DET_DAL",
+        "2023_17_GB_MIN",
+        "2023_17_LAC_DEN",
+        "2023_17_LA_NYG",
+        "2023_17_LV_IND",
+        "2023_17_MIA_BAL",
+        "2023_17_NE_BUF",
+        "2023_17_NO_TB",
+        "2023_17_NYJ_CLE",
+        "2023_17_PIT_SEA",
+        "2023_17_SF_WAS",
+        "2023_17_TEN_HOU"
+      ],
+      "training_game_ids_sha256": "a4b0d08fc5a4dc58662ac117a714059ff00c45d80949f59ccfaa184be426fa29",
+      "training_games": 508,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 17
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-01-02T01:20:00+00:00",
+      "lock_utc": "2024-01-02T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_18_ATL_NO",
+        "2023_18_BUF_MIA",
+        "2023_18_CHI_GB",
+        "2023_18_CLE_CIN",
+        "2023_18_DAL_WAS",
+        "2023_18_DEN_LV",
+        "2023_18_HOU_IND",
+        "2023_18_JAX_TEN",
+        "2023_18_KC_LAC",
+        "2023_18_LA_SF",
+        "2023_18_MIN_DET",
+        "2023_18_NYJ_NE",
+        "2023_18_PHI_NYG",
+        "2023_18_PIT_BAL",
+        "2023_18_SEA_ARI",
+        "2023_18_TB_CAR"
+      ],
+      "training_game_ids_sha256": "8b72d16b482d0bbcc7261eaf7f40e1428506ee60158a80a67c28323c132d2670",
+      "training_games": 527,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 18
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-01-09T01:20:00+00:00",
+      "lock_utc": "2024-09-03T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_01_ARI_BUF",
+        "2024_01_BAL_KC",
+        "2024_01_CAR_NO",
+        "2024_01_DAL_CLE",
+        "2024_01_DEN_SEA",
+        "2024_01_GB_PHI",
+        "2024_01_HOU_IND",
+        "2024_01_JAX_MIA",
+        "2024_01_LA_DET",
+        "2024_01_LV_LAC",
+        "2024_01_MIN_NYG",
+        "2024_01_NE_CIN",
+        "2024_01_NYJ_SF",
+        "2024_01_PIT_ATL",
+        "2024_01_TEN_CHI",
+        "2024_01_WAS_TB"
+      ],
+      "training_game_ids_sha256": "dcfd9ea8f4f1f43a6e64029090e811eb72eedcd555a866cb7e7e48f44e9a1c6d",
+      "training_games": 543,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 1
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-09-10T00:20:00+00:00",
+      "lock_utc": "2024-09-10T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_02_ATL_PHI",
+        "2024_02_BUF_MIA",
+        "2024_02_CHI_HOU",
+        "2024_02_CIN_KC",
+        "2024_02_CLE_JAX",
+        "2024_02_IND_GB",
+        "2024_02_LAC_CAR",
+        "2024_02_LA_ARI",
+        "2024_02_LV_BAL",
+        "2024_02_NO_DAL",
+        "2024_02_NYG_WAS",
+        "2024_02_NYJ_TEN",
+        "2024_02_PIT_DEN",
+        "2024_02_SEA_NE",
+        "2024_02_SF_MIN",
+        "2024_02_TB_DET"
+      ],
+      "training_game_ids_sha256": "855533f97a6ecbbe318b7f1be2e5a8ed07cc409cc81c5860ecc05b91233fb3cb",
+      "training_games": 558,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 2
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-09-17T00:20:00+00:00",
+      "lock_utc": "2024-09-17T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_03_BAL_DAL",
+        "2024_03_CAR_LV",
+        "2024_03_CHI_IND",
+        "2024_03_DEN_TB",
+        "2024_03_DET_ARI",
+        "2024_03_GB_TEN",
+        "2024_03_HOU_MIN",
+        "2024_03_JAX_BUF",
+        "2024_03_KC_ATL",
+        "2024_03_LAC_PIT",
+        "2024_03_MIA_SEA",
+        "2024_03_NE_NYJ",
+        "2024_03_NYG_CLE",
+        "2024_03_PHI_NO",
+        "2024_03_SF_LA",
+        "2024_03_WAS_CIN"
+      ],
+      "training_game_ids_sha256": "eb733c0de776af6401660960b6890787dba4a1bb35a314e90fb51301952c0ded",
+      "training_games": 574,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 3
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-09-24T00:20:00+00:00",
+      "lock_utc": "2024-09-24T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_04_BUF_BAL",
+        "2024_04_CIN_CAR",
+        "2024_04_CLE_LV",
+        "2024_04_DAL_NYG",
+        "2024_04_DEN_NYJ",
+        "2024_04_JAX_HOU",
+        "2024_04_KC_LAC",
+        "2024_04_LA_CHI",
+        "2024_04_MIN_GB",
+        "2024_04_NE_SF",
+        "2024_04_NO_ATL",
+        "2024_04_PHI_TB",
+        "2024_04_PIT_IND",
+        "2024_04_SEA_DET",
+        "2024_04_TEN_MIA",
+        "2024_04_WAS_ARI"
+      ],
+      "training_game_ids_sha256": "64617e953b97d3a56899af944e245facc804864255aa6341902a02d2822b16d8",
+      "training_games": 589,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 4
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-10-01T00:20:00+00:00",
+      "lock_utc": "2024-10-01T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_05_ARI_SF",
+        "2024_05_BAL_CIN",
+        "2024_05_BUF_HOU",
+        "2024_05_CAR_CHI",
+        "2024_05_CLE_WAS",
+        "2024_05_DAL_PIT",
+        "2024_05_GB_LA",
+        "2024_05_IND_JAX",
+        "2024_05_LV_DEN",
+        "2024_05_MIA_NE",
+        "2024_05_NO_KC",
+        "2024_05_NYG_SEA",
+        "2024_05_NYJ_MIN",
+        "2024_05_TB_ATL"
+      ],
+      "training_game_ids_sha256": "f428c217bbba5697466d99607f1fe3f7e96622137063c25ad031b3896429bf70",
+      "training_games": 605,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 5
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-10-08T00:20:00+00:00",
+      "lock_utc": "2024-10-08T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_06_ARI_GB",
+        "2024_06_ATL_CAR",
+        "2024_06_BUF_NYJ",
+        "2024_06_CIN_NYG",
+        "2024_06_CLE_PHI",
+        "2024_06_DET_DAL",
+        "2024_06_HOU_NE",
+        "2024_06_IND_TEN",
+        "2024_06_JAX_CHI",
+        "2024_06_LAC_DEN",
+        "2024_06_PIT_LV",
+        "2024_06_SF_SEA",
+        "2024_06_TB_NO",
+        "2024_06_WAS_BAL"
+      ],
+      "training_game_ids_sha256": "1ad46b0c02050ed646f6be4b160436118239127c53d25b69e1d8d5be0219080f",
+      "training_games": 620,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 6
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-10-15T00:20:00+00:00",
+      "lock_utc": "2024-10-15T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_07_BAL_TB",
+        "2024_07_CAR_WAS",
+        "2024_07_CIN_CLE",
+        "2024_07_DEN_NO",
+        "2024_07_DET_MIN",
+        "2024_07_HOU_GB",
+        "2024_07_KC_SF",
+        "2024_07_LAC_ARI",
+        "2024_07_LV_LA",
+        "2024_07_MIA_IND",
+        "2024_07_NE_JAX",
+        "2024_07_NYJ_PIT",
+        "2024_07_PHI_NYG",
+        "2024_07_SEA_ATL",
+        "2024_07_TEN_BUF"
+      ],
+      "training_game_ids_sha256": "c942c1a4540be5acbb33e288bc0ec65436c733a66b6d39cfb868462695c04a98",
+      "training_games": 634,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 7
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-10-22T00:20:00+00:00",
+      "lock_utc": "2024-10-22T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_08_ARI_MIA",
+        "2024_08_ATL_TB",
+        "2024_08_BAL_CLE",
+        "2024_08_BUF_SEA",
+        "2024_08_CAR_DEN",
+        "2024_08_CHI_WAS",
+        "2024_08_DAL_SF",
+        "2024_08_GB_JAX",
+        "2024_08_IND_HOU",
+        "2024_08_KC_LV",
+        "2024_08_MIN_LA",
+        "2024_08_NO_LAC",
+        "2024_08_NYG_PIT",
+        "2024_08_NYJ_NE",
+        "2024_08_PHI_CIN",
+        "2024_08_TEN_DET"
+      ],
+      "training_game_ids_sha256": "82f7cae6ba6310beddc178248a8e0e720b7acbc1df6e3c9c3e6f48600519eeb2",
+      "training_games": 648,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 8
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-10-29T00:20:00+00:00",
+      "lock_utc": "2024-10-29T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_09_CHI_ARI",
+        "2024_09_DAL_ATL",
+        "2024_09_DEN_BAL",
+        "2024_09_DET_GB",
+        "2024_09_HOU_NYJ",
+        "2024_09_IND_MIN",
+        "2024_09_JAX_PHI",
+        "2024_09_LAC_CLE",
+        "2024_09_LA_SEA",
+        "2024_09_LV_CIN",
+        "2024_09_MIA_BUF",
+        "2024_09_NE_TEN",
+        "2024_09_NO_CAR",
+        "2024_09_TB_KC",
+        "2024_09_WAS_NYG"
+      ],
+      "training_game_ids_sha256": "f6ba18bfb8213eb48acc97d9b9d22e802391ef40a4dc3e7bcd8053fb0f6cb800",
+      "training_games": 665,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 9
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-11-05T01:20:00+00:00",
+      "lock_utc": "2024-11-05T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_10_ATL_NO",
+        "2024_10_BUF_IND",
+        "2024_10_CIN_BAL",
+        "2024_10_DEN_KC",
+        "2024_10_DET_HOU",
+        "2024_10_MIA_LA",
+        "2024_10_MIN_JAX",
+        "2024_10_NE_CHI",
+        "2024_10_NYG_CAR",
+        "2024_10_NYJ_ARI",
+        "2024_10_PHI_DAL",
+        "2024_10_PIT_WAS",
+        "2024_10_SF_TB",
+        "2024_10_TEN_LAC"
+      ],
+      "training_game_ids_sha256": "5a6378c05b40e90df41b22e53fec67a864d2fb538e8a6b367d3fb1c70c23aaad",
+      "training_games": 680,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 10
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-11-12T01:20:00+00:00",
+      "lock_utc": "2024-11-12T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_11_ATL_DEN",
+        "2024_11_BAL_PIT",
+        "2024_11_CIN_LAC",
+        "2024_11_CLE_NO",
+        "2024_11_GB_CHI",
+        "2024_11_HOU_DAL",
+        "2024_11_IND_NYJ",
+        "2024_11_JAX_DET",
+        "2024_11_KC_BUF",
+        "2024_11_LA_NE",
+        "2024_11_LV_MIA",
+        "2024_11_MIN_TEN",
+        "2024_11_SEA_SF",
+        "2024_11_WAS_PHI"
+      ],
+      "training_game_ids_sha256": "a24fc8016ac9ae74f258487b136e317ac9dff864b7b0e543ed3a5f60b3eb524e",
+      "training_games": 694,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 11
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-11-19T01:20:00+00:00",
+      "lock_utc": "2024-11-19T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_12_ARI_SEA",
+        "2024_12_BAL_LAC",
+        "2024_12_DAL_WAS",
+        "2024_12_DEN_LV",
+        "2024_12_DET_IND",
+        "2024_12_KC_CAR",
+        "2024_12_MIN_CHI",
+        "2024_12_NE_MIA",
+        "2024_12_PHI_LA",
+        "2024_12_PIT_CLE",
+        "2024_12_SF_GB",
+        "2024_12_TB_NYG",
+        "2024_12_TEN_HOU"
+      ],
+      "training_game_ids_sha256": "aa7d9319d0c6f02f422784c89d89296cb619e66fbc2396e511ec6c1d53517e80",
+      "training_games": 708,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 12
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-11-26T01:20:00+00:00",
+      "lock_utc": "2024-11-26T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_13_ARI_MIN",
+        "2024_13_CHI_DET",
+        "2024_13_CLE_DEN",
+        "2024_13_HOU_JAX",
+        "2024_13_IND_NE",
+        "2024_13_LAC_ATL",
+        "2024_13_LA_NO",
+        "2024_13_LV_KC",
+        "2024_13_MIA_GB",
+        "2024_13_NYG_DAL",
+        "2024_13_PHI_BAL",
+        "2024_13_PIT_CIN",
+        "2024_13_SEA_NYJ",
+        "2024_13_SF_BUF",
+        "2024_13_TB_CAR",
+        "2024_13_TEN_WAS"
+      ],
+      "training_game_ids_sha256": "f1f371b2b80179cc624e5ada626a95f1491b919b7c130ca90a5c86a94f95a93c",
+      "training_games": 721,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 13
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-12-03T01:20:00+00:00",
+      "lock_utc": "2024-12-03T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_14_ATL_MIN",
+        "2024_14_BUF_LA",
+        "2024_14_CAR_PHI",
+        "2024_14_CHI_SF",
+        "2024_14_CIN_DAL",
+        "2024_14_CLE_PIT",
+        "2024_14_GB_DET",
+        "2024_14_JAX_TEN",
+        "2024_14_LAC_KC",
+        "2024_14_LV_TB",
+        "2024_14_NO_NYG",
+        "2024_14_NYJ_MIA",
+        "2024_14_SEA_ARI"
+      ],
+      "training_game_ids_sha256": "288d22d48b8a25ed7f5a361fed29fc2fd6c23267560ea2ceff0856b7b2c1bd2b",
+      "training_games": 737,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 14
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-12-10T01:20:00+00:00",
+      "lock_utc": "2024-12-10T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_15_ATL_LV",
+        "2024_15_BAL_NYG",
+        "2024_15_BUF_DET",
+        "2024_15_CHI_MIN",
+        "2024_15_CIN_TEN",
+        "2024_15_DAL_CAR",
+        "2024_15_GB_SEA",
+        "2024_15_IND_DEN",
+        "2024_15_KC_CLE",
+        "2024_15_LA_SF",
+        "2024_15_MIA_HOU",
+        "2024_15_NE_ARI",
+        "2024_15_NYJ_JAX",
+        "2024_15_PIT_PHI",
+        "2024_15_TB_LAC",
+        "2024_15_WAS_NO"
+      ],
+      "training_game_ids_sha256": "e3562ad6b2e97105ae369e6d2ed095a199315f60f09765a629d110420c475011",
+      "training_games": 750,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 15
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-12-17T01:20:00+00:00",
+      "lock_utc": "2024-12-17T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_16_ARI_CAR",
+        "2024_16_CLE_CIN",
+        "2024_16_DEN_LAC",
+        "2024_16_DET_CHI",
+        "2024_16_HOU_KC",
+        "2024_16_JAX_LV",
+        "2024_16_LA_NYJ",
+        "2024_16_MIN_SEA",
+        "2024_16_NE_BUF",
+        "2024_16_NO_GB",
+        "2024_16_NYG_ATL",
+        "2024_16_PHI_WAS",
+        "2024_16_PIT_BAL",
+        "2024_16_SF_MIA",
+        "2024_16_TB_DAL",
+        "2024_16_TEN_IND"
+      ],
+      "training_game_ids_sha256": "d8ce68aa25050f232fb48fc6e0fc72e6273fe3f149aa225dee76186845fbd8f5",
+      "training_games": 765,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 16
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-12-24T01:20:00+00:00",
+      "lock_utc": "2024-12-24T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_17_ARI_LA",
+        "2024_17_ATL_WAS",
+        "2024_17_BAL_HOU",
+        "2024_17_CAR_TB",
+        "2024_17_DAL_PHI",
+        "2024_17_DEN_CIN",
+        "2024_17_DET_SF",
+        "2024_17_GB_MIN",
+        "2024_17_IND_NYG",
+        "2024_17_KC_PIT",
+        "2024_17_LAC_NE",
+        "2024_17_LV_NO",
+        "2024_17_MIA_CLE",
+        "2024_17_NYJ_BUF",
+        "2024_17_SEA_CHI",
+        "2024_17_TEN_JAX"
+      ],
+      "training_game_ids_sha256": "ac666b71fc86164f3c01ccc181f4970053c1a8ab3ab677527de8759c97294a38",
+      "training_games": 782,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 17
+    },
+    {
+      "horizon": "early_week",
+      "latest_training_result_available_utc": "2024-12-31T01:20:00+00:00",
+      "lock_utc": "2024-12-31T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_18_BUF_NE",
+        "2024_18_CAR_ATL",
+        "2024_18_CHI_GB",
+        "2024_18_CIN_PIT",
+        "2024_18_CLE_BAL",
+        "2024_18_HOU_TEN",
+        "2024_18_JAX_IND",
+        "2024_18_KC_DEN",
+        "2024_18_LAC_LV",
+        "2024_18_MIA_NYJ",
+        "2024_18_MIN_DET",
+        "2024_18_NO_TB",
+        "2024_18_NYG_PHI",
+        "2024_18_SEA_LA",
+        "2024_18_SF_ARI",
+        "2024_18_WAS_DAL"
+      ],
+      "training_game_ids_sha256": "9795ba12cdf21c07a47e7ae616000c6e3ea4bd8999183092f800e79749d82a4d",
+      "training_games": 798,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 18
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-01-10T01:20:00+00:00",
+      "lock_utc": "2023-09-05T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_01_ARI_WAS",
+        "2023_01_BUF_NYJ",
+        "2023_01_CAR_ATL",
+        "2023_01_CIN_CLE",
+        "2023_01_DAL_NYG",
+        "2023_01_DET_KC",
+        "2023_01_GB_CHI",
+        "2023_01_HOU_BAL",
+        "2023_01_JAX_IND",
+        "2023_01_LA_SEA",
+        "2023_01_LV_DEN",
+        "2023_01_MIA_LAC",
+        "2023_01_PHI_NE",
+        "2023_01_SF_PIT",
+        "2023_01_TB_MIN",
+        "2023_01_TEN_NO"
+      ],
+      "training_game_ids_sha256": "0f195f37fcff65160793e181e76be4eb17ef47e82607bf2dd46301e726ac7e1a",
+      "training_games": 271,
+      "training_seasons": [
+        2022
+      ],
+      "week": 1
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-09-12T00:20:00+00:00",
+      "lock_utc": "2023-09-12T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_02_BAL_CIN",
+        "2023_02_CHI_TB",
+        "2023_02_CLE_PIT",
+        "2023_02_GB_ATL",
+        "2023_02_IND_HOU",
+        "2023_02_KC_JAX",
+        "2023_02_LAC_TEN",
+        "2023_02_LV_BUF",
+        "2023_02_MIA_NE",
+        "2023_02_MIN_PHI",
+        "2023_02_NO_CAR",
+        "2023_02_NYG_ARI",
+        "2023_02_NYJ_DAL",
+        "2023_02_SEA_DET",
+        "2023_02_SF_LA",
+        "2023_02_WAS_DEN"
+      ],
+      "training_game_ids_sha256": "35782d96b4b296db4e792a65737bbb1b820834c2f182298b002178020e8538e1",
+      "training_games": 286,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 2
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-09-19T00:20:00+00:00",
+      "lock_utc": "2023-09-19T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_03_ATL_DET",
+        "2023_03_BUF_WAS",
+        "2023_03_CAR_SEA",
+        "2023_03_CHI_KC",
+        "2023_03_DAL_ARI",
+        "2023_03_DEN_MIA",
+        "2023_03_HOU_JAX",
+        "2023_03_IND_BAL",
+        "2023_03_LAC_MIN",
+        "2023_03_LA_CIN",
+        "2023_03_NE_NYJ",
+        "2023_03_NO_GB",
+        "2023_03_NYG_SF",
+        "2023_03_PHI_TB",
+        "2023_03_PIT_LV",
+        "2023_03_TEN_CLE"
+      ],
+      "training_game_ids_sha256": "ed3edfdd783a2f88bb9aec77c12e634cbc00a306c3fd6c06e2f639d06d11dc06",
+      "training_games": 301,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 3
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-09-26T00:20:00+00:00",
+      "lock_utc": "2023-09-26T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_04_ARI_SF",
+        "2023_04_ATL_JAX",
+        "2023_04_BAL_CLE",
+        "2023_04_CIN_TEN",
+        "2023_04_DEN_CHI",
+        "2023_04_DET_GB",
+        "2023_04_KC_NYJ",
+        "2023_04_LA_IND",
+        "2023_04_LV_LAC",
+        "2023_04_MIA_BUF",
+        "2023_04_MIN_CAR",
+        "2023_04_NE_DAL",
+        "2023_04_PIT_HOU",
+        "2023_04_SEA_NYG",
+        "2023_04_TB_NO",
+        "2023_04_WAS_PHI"
+      ],
+      "training_game_ids_sha256": "246dcb225c3da7090842cb3c545929ecbef8a7dd31f1ab162af64496650ed807",
+      "training_games": 317,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 4
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-10-03T00:20:00+00:00",
+      "lock_utc": "2023-10-03T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_05_BAL_PIT",
+        "2023_05_CAR_DET",
+        "2023_05_CHI_WAS",
+        "2023_05_CIN_ARI",
+        "2023_05_DAL_SF",
+        "2023_05_GB_LV",
+        "2023_05_HOU_ATL",
+        "2023_05_JAX_BUF",
+        "2023_05_KC_MIN",
+        "2023_05_NO_NE",
+        "2023_05_NYG_MIA",
+        "2023_05_NYJ_DEN",
+        "2023_05_PHI_LA",
+        "2023_05_TEN_IND"
+      ],
+      "training_game_ids_sha256": "09743329538ae1dae6bbd40f81af2231ebf0bc006408fa119725935d44b69318",
+      "training_games": 334,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 5
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-10-10T00:20:00+00:00",
+      "lock_utc": "2023-10-10T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_06_ARI_LA",
+        "2023_06_BAL_TEN",
+        "2023_06_CAR_MIA",
+        "2023_06_DAL_LAC",
+        "2023_06_DEN_KC",
+        "2023_06_DET_TB",
+        "2023_06_IND_JAX",
+        "2023_06_MIN_CHI",
+        "2023_06_NE_LV",
+        "2023_06_NO_HOU",
+        "2023_06_NYG_BUF",
+        "2023_06_PHI_NYJ",
+        "2023_06_SEA_CIN",
+        "2023_06_SF_CLE",
+        "2023_06_WAS_ATL"
+      ],
+      "training_game_ids_sha256": "e51b6f7b5443f1b1d392a78fc91e53c39600fd0b325451e20b744c07f8db5149",
+      "training_games": 348,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 6
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-10-17T00:20:00+00:00",
+      "lock_utc": "2023-10-17T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_07_ARI_SEA",
+        "2023_07_ATL_TB",
+        "2023_07_BUF_NE",
+        "2023_07_CLE_IND",
+        "2023_07_DET_BAL",
+        "2023_07_GB_DEN",
+        "2023_07_JAX_NO",
+        "2023_07_LAC_KC",
+        "2023_07_LV_CHI",
+        "2023_07_MIA_PHI",
+        "2023_07_PIT_LA",
+        "2023_07_SF_MIN",
+        "2023_07_WAS_NYG"
+      ],
+      "training_game_ids_sha256": "a553f9ba4ab22f39c2d25d8a0222808307f3b0d6f2da129bf2df07a4d9d64601",
+      "training_games": 363,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 7
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-10-24T00:20:00+00:00",
+      "lock_utc": "2023-10-24T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_08_ATL_TEN",
+        "2023_08_BAL_ARI",
+        "2023_08_CHI_LAC",
+        "2023_08_CIN_SF",
+        "2023_08_CLE_SEA",
+        "2023_08_HOU_CAR",
+        "2023_08_JAX_PIT",
+        "2023_08_KC_DEN",
+        "2023_08_LA_DAL",
+        "2023_08_LV_DET",
+        "2023_08_MIN_GB",
+        "2023_08_NE_MIA",
+        "2023_08_NO_IND",
+        "2023_08_NYJ_NYG",
+        "2023_08_PHI_WAS",
+        "2023_08_TB_BUF"
+      ],
+      "training_game_ids_sha256": "e7eafd52b1b41c0ea53c6ec35ced60af3183bf02c402256881b3d5a8205bec8c",
+      "training_games": 376,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 8
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-10-31T00:20:00+00:00",
+      "lock_utc": "2023-10-31T15:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_09_ARI_CLE",
+        "2023_09_BUF_CIN",
+        "2023_09_CHI_NO",
+        "2023_09_DAL_PHI",
+        "2023_09_IND_CAR",
+        "2023_09_LAC_NYJ",
+        "2023_09_LA_GB",
+        "2023_09_MIA_KC",
+        "2023_09_MIN_ATL",
+        "2023_09_NYG_LV",
+        "2023_09_SEA_BAL",
+        "2023_09_TB_HOU",
+        "2023_09_TEN_PIT",
+        "2023_09_WAS_NE"
+      ],
+      "training_game_ids_sha256": "9dce396801e5241a3a58ba0923d380f696d8d0946758d1de69a8713c240ceaaa",
+      "training_games": 392,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 9
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-11-07T01:20:00+00:00",
+      "lock_utc": "2023-11-07T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_10_ATL_ARI",
+        "2023_10_CAR_CHI",
+        "2023_10_CLE_BAL",
+        "2023_10_DEN_BUF",
+        "2023_10_DET_LAC",
+        "2023_10_GB_PIT",
+        "2023_10_HOU_CIN",
+        "2023_10_IND_NE",
+        "2023_10_NO_MIN",
+        "2023_10_NYG_DAL",
+        "2023_10_NYJ_LV",
+        "2023_10_SF_JAX",
+        "2023_10_TEN_TB",
+        "2023_10_WAS_SEA"
+      ],
+      "training_game_ids_sha256": "3a337fb405e03d22b60a99dd70ae47a25a387559b3594b7f92dfafc61c3f9adb",
+      "training_games": 406,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 10
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-11-14T01:20:00+00:00",
+      "lock_utc": "2023-11-14T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_11_ARI_HOU",
+        "2023_11_CHI_DET",
+        "2023_11_CIN_BAL",
+        "2023_11_DAL_CAR",
+        "2023_11_LAC_GB",
+        "2023_11_LV_MIA",
+        "2023_11_MIN_DEN",
+        "2023_11_NYG_WAS",
+        "2023_11_NYJ_BUF",
+        "2023_11_PHI_KC",
+        "2023_11_PIT_CLE",
+        "2023_11_SEA_LA",
+        "2023_11_TB_SF",
+        "2023_11_TEN_JAX"
+      ],
+      "training_game_ids_sha256": "7c694545e96f66ae30d394388344d7319aef9b21df88bf45af202af8c526ca77",
+      "training_games": 420,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 11
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-11-21T01:20:00+00:00",
+      "lock_utc": "2023-11-21T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_12_BAL_LAC",
+        "2023_12_BUF_PHI",
+        "2023_12_CAR_TEN",
+        "2023_12_CHI_MIN",
+        "2023_12_CLE_DEN",
+        "2023_12_GB_DET",
+        "2023_12_JAX_HOU",
+        "2023_12_KC_LV",
+        "2023_12_LA_ARI",
+        "2023_12_MIA_NYJ",
+        "2023_12_NE_NYG",
+        "2023_12_NO_ATL",
+        "2023_12_PIT_CIN",
+        "2023_12_SF_SEA",
+        "2023_12_TB_IND",
+        "2023_12_WAS_DAL"
+      ],
+      "training_game_ids_sha256": "ee6d3df2855f826e96c6606f9802c8c8b9f5c6814cb298f46504f23076d8e297",
+      "training_games": 434,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 12
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-11-28T01:20:00+00:00",
+      "lock_utc": "2023-11-28T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_13_ARI_PIT",
+        "2023_13_ATL_NYJ",
+        "2023_13_CAR_TB",
+        "2023_13_CIN_JAX",
+        "2023_13_CLE_LA",
+        "2023_13_DEN_HOU",
+        "2023_13_DET_NO",
+        "2023_13_IND_TEN",
+        "2023_13_KC_GB",
+        "2023_13_LAC_NE",
+        "2023_13_MIA_WAS",
+        "2023_13_SEA_DAL",
+        "2023_13_SF_PHI"
+      ],
+      "training_game_ids_sha256": "f246602a84d5bad730de2762ab723eeb26508bc06910f79886c467f4f34612b9",
+      "training_games": 450,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 13
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-12-05T01:20:00+00:00",
+      "lock_utc": "2023-12-05T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_14_BUF_KC",
+        "2023_14_CAR_NO",
+        "2023_14_DEN_LAC",
+        "2023_14_DET_CHI",
+        "2023_14_GB_NYG",
+        "2023_14_HOU_NYJ",
+        "2023_14_IND_CIN",
+        "2023_14_JAX_CLE",
+        "2023_14_LA_BAL",
+        "2023_14_MIN_LV",
+        "2023_14_NE_PIT",
+        "2023_14_PHI_DAL",
+        "2023_14_SEA_SF",
+        "2023_14_TB_ATL",
+        "2023_14_TEN_MIA"
+      ],
+      "training_game_ids_sha256": "0d43a5c7a60309d625c94b47495e4521e912327efee8959ca1515d5f450a3293",
+      "training_games": 463,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 14
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-12-12T01:20:00+00:00",
+      "lock_utc": "2023-12-12T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_15_ATL_CAR",
+        "2023_15_BAL_JAX",
+        "2023_15_CHI_CLE",
+        "2023_15_DAL_BUF",
+        "2023_15_DEN_DET",
+        "2023_15_HOU_TEN",
+        "2023_15_KC_NE",
+        "2023_15_LAC_LV",
+        "2023_15_MIN_CIN",
+        "2023_15_NYG_NO",
+        "2023_15_NYJ_MIA",
+        "2023_15_PHI_SEA",
+        "2023_15_PIT_IND",
+        "2023_15_SF_ARI",
+        "2023_15_TB_GB",
+        "2023_15_WAS_LA"
+      ],
+      "training_game_ids_sha256": "e4b11887bf1a3b5171902bde87cc4e2ca7021ea35553c8ead92a5bb0b475d107",
+      "training_games": 477,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 15
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-12-19T01:20:00+00:00",
+      "lock_utc": "2023-12-19T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_16_ARI_CHI",
+        "2023_16_BAL_SF",
+        "2023_16_BUF_LAC",
+        "2023_16_CIN_PIT",
+        "2023_16_CLE_HOU",
+        "2023_16_DAL_MIA",
+        "2023_16_DET_MIN",
+        "2023_16_GB_CAR",
+        "2023_16_IND_ATL",
+        "2023_16_JAX_TB",
+        "2023_16_LV_KC",
+        "2023_16_NE_DEN",
+        "2023_16_NO_LA",
+        "2023_16_NYG_PHI",
+        "2023_16_SEA_TEN",
+        "2023_16_WAS_NYJ"
+      ],
+      "training_game_ids_sha256": "49d0e082595d31e4076d74af823042bd77cbaf71a9bb05cee4436364c7024651",
+      "training_games": 494,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 16
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2023-12-26T01:15:00+00:00",
+      "lock_utc": "2023-12-26T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_17_ARI_PHI",
+        "2023_17_ATL_CHI",
+        "2023_17_CAR_JAX",
+        "2023_17_CIN_KC",
+        "2023_17_DET_DAL",
+        "2023_17_GB_MIN",
+        "2023_17_LAC_DEN",
+        "2023_17_LA_NYG",
+        "2023_17_LV_IND",
+        "2023_17_MIA_BAL",
+        "2023_17_NE_BUF",
+        "2023_17_NO_TB",
+        "2023_17_NYJ_CLE",
+        "2023_17_PIT_SEA",
+        "2023_17_SF_WAS",
+        "2023_17_TEN_HOU"
+      ],
+      "training_game_ids_sha256": "a4b0d08fc5a4dc58662ac117a714059ff00c45d80949f59ccfaa184be426fa29",
+      "training_games": 508,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 17
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-01-02T01:20:00+00:00",
+      "lock_utc": "2024-01-02T16:00:00+00:00",
+      "season": 2023,
+      "test_game_ids": [
+        "2023_18_ATL_NO",
+        "2023_18_BUF_MIA",
+        "2023_18_CHI_GB",
+        "2023_18_CLE_CIN",
+        "2023_18_DAL_WAS",
+        "2023_18_DEN_LV",
+        "2023_18_HOU_IND",
+        "2023_18_JAX_TEN",
+        "2023_18_KC_LAC",
+        "2023_18_LA_SF",
+        "2023_18_MIN_DET",
+        "2023_18_NYJ_NE",
+        "2023_18_PHI_NYG",
+        "2023_18_PIT_BAL",
+        "2023_18_SEA_ARI",
+        "2023_18_TB_CAR"
+      ],
+      "training_game_ids_sha256": "8b72d16b482d0bbcc7261eaf7f40e1428506ee60158a80a67c28323c132d2670",
+      "training_games": 527,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 18
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-01-09T01:20:00+00:00",
+      "lock_utc": "2024-09-03T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_01_ARI_BUF",
+        "2024_01_BAL_KC",
+        "2024_01_CAR_NO",
+        "2024_01_DAL_CLE",
+        "2024_01_DEN_SEA",
+        "2024_01_GB_PHI",
+        "2024_01_HOU_IND",
+        "2024_01_JAX_MIA",
+        "2024_01_LA_DET",
+        "2024_01_LV_LAC",
+        "2024_01_MIN_NYG",
+        "2024_01_NE_CIN",
+        "2024_01_NYJ_SF",
+        "2024_01_PIT_ATL",
+        "2024_01_TEN_CHI",
+        "2024_01_WAS_TB"
+      ],
+      "training_game_ids_sha256": "dcfd9ea8f4f1f43a6e64029090e811eb72eedcd555a866cb7e7e48f44e9a1c6d",
+      "training_games": 543,
+      "training_seasons": [
+        2022,
+        2023
+      ],
+      "week": 1
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-09-10T00:20:00+00:00",
+      "lock_utc": "2024-09-10T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_02_ATL_PHI",
+        "2024_02_BUF_MIA",
+        "2024_02_CHI_HOU",
+        "2024_02_CIN_KC",
+        "2024_02_CLE_JAX",
+        "2024_02_IND_GB",
+        "2024_02_LAC_CAR",
+        "2024_02_LA_ARI",
+        "2024_02_LV_BAL",
+        "2024_02_NO_DAL",
+        "2024_02_NYG_WAS",
+        "2024_02_NYJ_TEN",
+        "2024_02_PIT_DEN",
+        "2024_02_SEA_NE",
+        "2024_02_SF_MIN",
+        "2024_02_TB_DET"
+      ],
+      "training_game_ids_sha256": "855533f97a6ecbbe318b7f1be2e5a8ed07cc409cc81c5860ecc05b91233fb3cb",
+      "training_games": 558,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 2
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-09-17T00:20:00+00:00",
+      "lock_utc": "2024-09-17T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_03_BAL_DAL",
+        "2024_03_CAR_LV",
+        "2024_03_CHI_IND",
+        "2024_03_DEN_TB",
+        "2024_03_DET_ARI",
+        "2024_03_GB_TEN",
+        "2024_03_HOU_MIN",
+        "2024_03_JAX_BUF",
+        "2024_03_KC_ATL",
+        "2024_03_LAC_PIT",
+        "2024_03_MIA_SEA",
+        "2024_03_NE_NYJ",
+        "2024_03_NYG_CLE",
+        "2024_03_PHI_NO",
+        "2024_03_SF_LA",
+        "2024_03_WAS_CIN"
+      ],
+      "training_game_ids_sha256": "eb733c0de776af6401660960b6890787dba4a1bb35a314e90fb51301952c0ded",
+      "training_games": 574,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 3
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-09-24T00:20:00+00:00",
+      "lock_utc": "2024-09-24T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_04_BUF_BAL",
+        "2024_04_CIN_CAR",
+        "2024_04_CLE_LV",
+        "2024_04_DAL_NYG",
+        "2024_04_DEN_NYJ",
+        "2024_04_JAX_HOU",
+        "2024_04_KC_LAC",
+        "2024_04_LA_CHI",
+        "2024_04_MIN_GB",
+        "2024_04_NE_SF",
+        "2024_04_NO_ATL",
+        "2024_04_PHI_TB",
+        "2024_04_PIT_IND",
+        "2024_04_SEA_DET",
+        "2024_04_TEN_MIA",
+        "2024_04_WAS_ARI"
+      ],
+      "training_game_ids_sha256": "64617e953b97d3a56899af944e245facc804864255aa6341902a02d2822b16d8",
+      "training_games": 589,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 4
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-10-01T00:20:00+00:00",
+      "lock_utc": "2024-10-01T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_05_ARI_SF",
+        "2024_05_BAL_CIN",
+        "2024_05_BUF_HOU",
+        "2024_05_CAR_CHI",
+        "2024_05_CLE_WAS",
+        "2024_05_DAL_PIT",
+        "2024_05_GB_LA",
+        "2024_05_IND_JAX",
+        "2024_05_LV_DEN",
+        "2024_05_MIA_NE",
+        "2024_05_NO_KC",
+        "2024_05_NYG_SEA",
+        "2024_05_NYJ_MIN",
+        "2024_05_TB_ATL"
+      ],
+      "training_game_ids_sha256": "f428c217bbba5697466d99607f1fe3f7e96622137063c25ad031b3896429bf70",
+      "training_games": 605,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 5
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-10-08T00:20:00+00:00",
+      "lock_utc": "2024-10-08T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_06_ARI_GB",
+        "2024_06_ATL_CAR",
+        "2024_06_BUF_NYJ",
+        "2024_06_CIN_NYG",
+        "2024_06_CLE_PHI",
+        "2024_06_DET_DAL",
+        "2024_06_HOU_NE",
+        "2024_06_IND_TEN",
+        "2024_06_JAX_CHI",
+        "2024_06_LAC_DEN",
+        "2024_06_PIT_LV",
+        "2024_06_SF_SEA",
+        "2024_06_TB_NO",
+        "2024_06_WAS_BAL"
+      ],
+      "training_game_ids_sha256": "1ad46b0c02050ed646f6be4b160436118239127c53d25b69e1d8d5be0219080f",
+      "training_games": 620,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 6
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-10-15T00:20:00+00:00",
+      "lock_utc": "2024-10-15T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_07_BAL_TB",
+        "2024_07_CAR_WAS",
+        "2024_07_CIN_CLE",
+        "2024_07_DEN_NO",
+        "2024_07_DET_MIN",
+        "2024_07_HOU_GB",
+        "2024_07_KC_SF",
+        "2024_07_LAC_ARI",
+        "2024_07_LV_LA",
+        "2024_07_MIA_IND",
+        "2024_07_NE_JAX",
+        "2024_07_NYJ_PIT",
+        "2024_07_PHI_NYG",
+        "2024_07_SEA_ATL",
+        "2024_07_TEN_BUF"
+      ],
+      "training_game_ids_sha256": "c942c1a4540be5acbb33e288bc0ec65436c733a66b6d39cfb868462695c04a98",
+      "training_games": 634,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 7
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-10-22T00:20:00+00:00",
+      "lock_utc": "2024-10-22T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_08_ARI_MIA",
+        "2024_08_ATL_TB",
+        "2024_08_BAL_CLE",
+        "2024_08_BUF_SEA",
+        "2024_08_CAR_DEN",
+        "2024_08_CHI_WAS",
+        "2024_08_DAL_SF",
+        "2024_08_GB_JAX",
+        "2024_08_IND_HOU",
+        "2024_08_KC_LV",
+        "2024_08_MIN_LA",
+        "2024_08_NO_LAC",
+        "2024_08_NYG_PIT",
+        "2024_08_NYJ_NE",
+        "2024_08_PHI_CIN",
+        "2024_08_TEN_DET"
+      ],
+      "training_game_ids_sha256": "82f7cae6ba6310beddc178248a8e0e720b7acbc1df6e3c9c3e6f48600519eeb2",
+      "training_games": 648,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 8
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-10-29T00:20:00+00:00",
+      "lock_utc": "2024-10-29T15:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_09_CHI_ARI",
+        "2024_09_DAL_ATL",
+        "2024_09_DEN_BAL",
+        "2024_09_DET_GB",
+        "2024_09_HOU_NYJ",
+        "2024_09_IND_MIN",
+        "2024_09_JAX_PHI",
+        "2024_09_LAC_CLE",
+        "2024_09_LA_SEA",
+        "2024_09_LV_CIN",
+        "2024_09_MIA_BUF",
+        "2024_09_NE_TEN",
+        "2024_09_NO_CAR",
+        "2024_09_TB_KC",
+        "2024_09_WAS_NYG"
+      ],
+      "training_game_ids_sha256": "f6ba18bfb8213eb48acc97d9b9d22e802391ef40a4dc3e7bcd8053fb0f6cb800",
+      "training_games": 665,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 9
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-11-05T01:20:00+00:00",
+      "lock_utc": "2024-11-05T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_10_ATL_NO",
+        "2024_10_BUF_IND",
+        "2024_10_CIN_BAL",
+        "2024_10_DEN_KC",
+        "2024_10_DET_HOU",
+        "2024_10_MIA_LA",
+        "2024_10_MIN_JAX",
+        "2024_10_NE_CHI",
+        "2024_10_NYG_CAR",
+        "2024_10_NYJ_ARI",
+        "2024_10_PHI_DAL",
+        "2024_10_PIT_WAS",
+        "2024_10_SF_TB",
+        "2024_10_TEN_LAC"
+      ],
+      "training_game_ids_sha256": "5a6378c05b40e90df41b22e53fec67a864d2fb538e8a6b367d3fb1c70c23aaad",
+      "training_games": 680,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 10
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-11-12T01:20:00+00:00",
+      "lock_utc": "2024-11-12T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_11_ATL_DEN",
+        "2024_11_BAL_PIT",
+        "2024_11_CIN_LAC",
+        "2024_11_CLE_NO",
+        "2024_11_GB_CHI",
+        "2024_11_HOU_DAL",
+        "2024_11_IND_NYJ",
+        "2024_11_JAX_DET",
+        "2024_11_KC_BUF",
+        "2024_11_LA_NE",
+        "2024_11_LV_MIA",
+        "2024_11_MIN_TEN",
+        "2024_11_SEA_SF",
+        "2024_11_WAS_PHI"
+      ],
+      "training_game_ids_sha256": "a24fc8016ac9ae74f258487b136e317ac9dff864b7b0e543ed3a5f60b3eb524e",
+      "training_games": 694,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 11
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-11-19T01:20:00+00:00",
+      "lock_utc": "2024-11-19T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_12_ARI_SEA",
+        "2024_12_BAL_LAC",
+        "2024_12_DAL_WAS",
+        "2024_12_DEN_LV",
+        "2024_12_DET_IND",
+        "2024_12_KC_CAR",
+        "2024_12_MIN_CHI",
+        "2024_12_NE_MIA",
+        "2024_12_PHI_LA",
+        "2024_12_PIT_CLE",
+        "2024_12_SF_GB",
+        "2024_12_TB_NYG",
+        "2024_12_TEN_HOU"
+      ],
+      "training_game_ids_sha256": "aa7d9319d0c6f02f422784c89d89296cb619e66fbc2396e511ec6c1d53517e80",
+      "training_games": 708,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 12
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-11-26T01:20:00+00:00",
+      "lock_utc": "2024-11-26T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_13_ARI_MIN",
+        "2024_13_CHI_DET",
+        "2024_13_CLE_DEN",
+        "2024_13_HOU_JAX",
+        "2024_13_IND_NE",
+        "2024_13_LAC_ATL",
+        "2024_13_LA_NO",
+        "2024_13_LV_KC",
+        "2024_13_MIA_GB",
+        "2024_13_NYG_DAL",
+        "2024_13_PHI_BAL",
+        "2024_13_PIT_CIN",
+        "2024_13_SEA_NYJ",
+        "2024_13_SF_BUF",
+        "2024_13_TB_CAR",
+        "2024_13_TEN_WAS"
+      ],
+      "training_game_ids_sha256": "f1f371b2b80179cc624e5ada626a95f1491b919b7c130ca90a5c86a94f95a93c",
+      "training_games": 721,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 13
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-12-03T01:20:00+00:00",
+      "lock_utc": "2024-12-03T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_14_ATL_MIN",
+        "2024_14_BUF_LA",
+        "2024_14_CAR_PHI",
+        "2024_14_CHI_SF",
+        "2024_14_CIN_DAL",
+        "2024_14_CLE_PIT",
+        "2024_14_GB_DET",
+        "2024_14_JAX_TEN",
+        "2024_14_LAC_KC",
+        "2024_14_LV_TB",
+        "2024_14_NO_NYG",
+        "2024_14_NYJ_MIA",
+        "2024_14_SEA_ARI"
+      ],
+      "training_game_ids_sha256": "288d22d48b8a25ed7f5a361fed29fc2fd6c23267560ea2ceff0856b7b2c1bd2b",
+      "training_games": 737,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 14
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-12-10T01:20:00+00:00",
+      "lock_utc": "2024-12-10T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_15_ATL_LV",
+        "2024_15_BAL_NYG",
+        "2024_15_BUF_DET",
+        "2024_15_CHI_MIN",
+        "2024_15_CIN_TEN",
+        "2024_15_DAL_CAR",
+        "2024_15_GB_SEA",
+        "2024_15_IND_DEN",
+        "2024_15_KC_CLE",
+        "2024_15_LA_SF",
+        "2024_15_MIA_HOU",
+        "2024_15_NE_ARI",
+        "2024_15_NYJ_JAX",
+        "2024_15_PIT_PHI",
+        "2024_15_TB_LAC",
+        "2024_15_WAS_NO"
+      ],
+      "training_game_ids_sha256": "e3562ad6b2e97105ae369e6d2ed095a199315f60f09765a629d110420c475011",
+      "training_games": 750,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 15
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-12-17T01:20:00+00:00",
+      "lock_utc": "2024-12-17T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_16_ARI_CAR",
+        "2024_16_CLE_CIN",
+        "2024_16_DEN_LAC",
+        "2024_16_DET_CHI",
+        "2024_16_HOU_KC",
+        "2024_16_JAX_LV",
+        "2024_16_LA_NYJ",
+        "2024_16_MIN_SEA",
+        "2024_16_NE_BUF",
+        "2024_16_NO_GB",
+        "2024_16_NYG_ATL",
+        "2024_16_PHI_WAS",
+        "2024_16_PIT_BAL",
+        "2024_16_SF_MIA",
+        "2024_16_TB_DAL",
+        "2024_16_TEN_IND"
+      ],
+      "training_game_ids_sha256": "d8ce68aa25050f232fb48fc6e0fc72e6273fe3f149aa225dee76186845fbd8f5",
+      "training_games": 765,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 16
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-12-24T01:20:00+00:00",
+      "lock_utc": "2024-12-24T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_17_ARI_LA",
+        "2024_17_ATL_WAS",
+        "2024_17_BAL_HOU",
+        "2024_17_CAR_TB",
+        "2024_17_DAL_PHI",
+        "2024_17_DEN_CIN",
+        "2024_17_DET_SF",
+        "2024_17_GB_MIN",
+        "2024_17_IND_NYG",
+        "2024_17_KC_PIT",
+        "2024_17_LAC_NE",
+        "2024_17_LV_NO",
+        "2024_17_MIA_CLE",
+        "2024_17_NYJ_BUF",
+        "2024_17_SEA_CHI",
+        "2024_17_TEN_JAX"
+      ],
+      "training_game_ids_sha256": "ac666b71fc86164f3c01ccc181f4970053c1a8ab3ab677527de8759c97294a38",
+      "training_games": 782,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 17
+    },
+    {
+      "horizon": "pregame_refresh",
+      "latest_training_result_available_utc": "2024-12-31T01:20:00+00:00",
+      "lock_utc": "2024-12-31T16:00:00+00:00",
+      "season": 2024,
+      "test_game_ids": [
+        "2024_18_BUF_NE",
+        "2024_18_CAR_ATL",
+        "2024_18_CHI_GB",
+        "2024_18_CIN_PIT",
+        "2024_18_CLE_BAL",
+        "2024_18_HOU_TEN",
+        "2024_18_JAX_IND",
+        "2024_18_KC_DEN",
+        "2024_18_LAC_LV",
+        "2024_18_MIA_NYJ",
+        "2024_18_MIN_DET",
+        "2024_18_NO_TB",
+        "2024_18_NYG_PHI",
+        "2024_18_SEA_LA",
+        "2024_18_SF_ARI",
+        "2024_18_WAS_DAL"
+      ],
+      "training_game_ids_sha256": "9795ba12cdf21c07a47e7ae616000c6e3ea4bd8999183092f800e79749d82a4d",
+      "training_games": 798,
+      "training_seasons": [
+        2022,
+        2023,
+        2024
+      ],
+      "week": 18
+    }
+  ],
+  "following_season_choice": {
+    "2025_outcomes_used": false,
+    "checks": [
+      {
+        "control": "compact_epa",
+        "eligible": false,
+        "margin_mae_gain": -0.0727941176470588,
+        "reasons": [
+          "insufficient incremental margin improvement",
+          "paired range includes no improvement",
+          "pregame_refresh score regression",
+          "pregame_refresh total regression",
+          "pregame_refresh margin regression"
+        ],
+        "week_block_95_lower": -0.21469799309033039,
+        "week_block_95_upper": 0.06391274949964833
+      },
+      {
+        "control": "compact_report_flags",
+        "eligible": false,
+        "margin_mae_gain": -0.03419117647058821,
+        "reasons": [
+          "insufficient incremental margin improvement",
+          "paired range includes no improvement",
+          "pregame_refresh margin regression"
+        ],
+        "week_block_95_lower": -0.06455497418920422,
+        "week_block_95_upper": -0.010106491725217673
+      }
+    ],
+    "features": [
+      "home_off_epa_season",
+      "home_def_epa_season",
+      "away_off_epa_season",
+      "away_def_epa_season",
+      "home_field",
+      "rest_difference",
+      "home_prior_games",
+      "away_prior_games"
+    ],
+    "model": "compact_epa",
+    "primary_horizon": "pregame_refresh",
+    "selection_seasons": [
+      2023
+    ],
+    "simulated_lock_utc": "2024-09-03T15:00:00+00:00"
+  },
+  "following_season_selected_metrics": [
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_epa",
+      "scope": "overall",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": null,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_epa",
+      "scope": "overall",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": null,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_epa",
+      "scope": "season",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": 2024,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_epa",
+      "scope": "season",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": 2024,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    }
+  ],
+  "format_version": 1,
+  "frozen_research_choice": {
+    "2025_outcomes_used": false,
+    "checks": [
+      {
+        "control": "compact_epa",
+        "eligible": false,
+        "margin_mae_gain": -0.06029411764705882,
+        "reasons": [
+          "insufficient incremental margin improvement",
+          "paired range includes no improvement",
+          "pregame_refresh score regression",
+          "pregame_refresh margin regression"
+        ],
+        "week_block_95_lower": -0.13967490958232867,
+        "week_block_95_upper": 0.012112996383847819
+      },
+      {
+        "control": "compact_report_flags",
+        "eligible": false,
+        "margin_mae_gain": -0.023713235294117656,
+        "reasons": [
+          "insufficient incremental margin improvement",
+          "paired range includes no improvement",
+          "pregame_refresh margin regression"
+        ],
+        "week_block_95_lower": -0.04057190300474435,
+        "week_block_95_upper": -0.009123672104556356
+      }
+    ],
+    "features": [
+      "home_off_epa_season",
+      "home_def_epa_season",
+      "away_off_epa_season",
+      "away_def_epa_season",
+      "home_field",
+      "rest_difference",
+      "home_prior_games",
+      "away_prior_games"
+    ],
+    "model": "compact_epa",
+    "primary_horizon": "pregame_refresh",
+    "selection_seasons": [
+      2023,
+      2024
+    ],
+    "simulated_lock_utc": "2025-09-02T15:00:00+00:00"
+  },
+  "inputs": {
+    "(2022,)": {
+      "collection_policy": "canonical-only, uniformly across all initialization weeks",
+      "coverage": [
+        {
+          "designations": 0,
+          "formal_team_reports": 0,
+          "games_both_teams_formal": 0,
+          "games_both_teams_position_counts": 0,
+          "horizon": "early_week",
+          "no_designations": 0,
+          "partial_or_pending": 0,
+          "season": 2022,
+          "team_slots": 542,
+          "tracking_variant_slots": 0,
+          "unavailable": 542,
+          "unknown_out_position_slots": 0
+        },
+        {
+          "designations": 355,
+          "formal_team_reports": 355,
+          "games_both_teams_formal": 162,
+          "games_both_teams_position_counts": 157,
+          "horizon": "pregame_refresh",
+          "no_designations": 0,
+          "partial_or_pending": 33,
+          "season": 2022,
+          "team_slots": 542,
+          "tracking_variant_slots": 0,
+          "unavailable": 154,
+          "unknown_out_position_slots": 6
+        }
+      ],
+      "path": "C:\\Users\\Tiger\\OneDrive\\Documents\\ChatGPT\\EV App\\data\\raw\\team_injury_news\\980bda36c5bb\\manifest.json",
+      "schedule": {
+        "artifact_sha256": "bf7dfa3fb9149a9c3ce07a16eb96436b79e6411e81d740e082c4ed1801814917",
+        "manifest": "C:\\Users\\Tiger\\OneDrive\\Documents\\ChatGPT\\EV App\\data\\processed\\team_epa\\manifest.json",
+        "manifest_sha256": "1c35edef205f49105c215474d50c62b6f1f161a15150dde74d110e564c7fb8bd"
+      },
+      "sha256": "25afa031904036916f1df21db7cf499020bc6c8cb5dbfbed108a0338994f1b4f"
+    },
+    "(2023, 2024)": {
+      "coverage": [
+        {
+          "designations": 0,
+          "formal_team_reports": 0,
+          "games_both_teams_formal": 0,
+          "games_both_teams_position_counts": 0,
+          "horizon": "early_week",
+          "no_designations": 0,
+          "partial_or_pending": 0,
+          "season": 2023,
+          "team_slots": 544,
+          "tracking_variant_slots": 0,
+          "unavailable": 544,
+          "unknown_out_position_slots": 0
+        },
+        {
+          "designations": 329,
+          "formal_team_reports": 330,
+          "games_both_teams_formal": 153,
+          "games_both_teams_position_counts": 149,
+          "horizon": "pregame_refresh",
+          "no_designations": 1,
+          "partial_or_pending": 82,
+          "season": 2023,
+          "team_slots": 544,
+          "tracking_variant_slots": 0,
+          "unavailable": 132,
+          "unknown_out_position_slots": 5
+        },
+        {
+          "designations": 0,
+          "formal_team_reports": 0,
+          "games_both_teams_formal": 0,
+          "games_both_teams_position_counts": 0,
+          "horizon": "early_week",
+          "no_designations": 0,
+          "partial_or_pending": 0,
+          "season": 2024,
+          "team_slots": 544,
+          "tracking_variant_slots": 0,
+          "unavailable": 544,
+          "unknown_out_position_slots": 0
+        },
+        {
+          "designations": 127,
+          "formal_team_reports": 127,
+          "games_both_teams_formal": 60,
+          "games_both_teams_position_counts": 58,
+          "horizon": "pregame_refresh",
+          "no_designations": 0,
+          "partial_or_pending": 9,
+          "season": 2024,
+          "team_slots": 544,
+          "tracking_variant_slots": 116,
+          "unavailable": 408,
+          "unknown_out_position_slots": 2
+        }
+      ],
+      "path": "C:\\Users\\Tiger\\OneDrive\\Documents\\ChatGPT\\EV App\\data\\processed\\team_injury_news\\c62f29804740-aaf9fc9a4d0f\\manifest.json",
+      "sha256": "7bf49ad67f7ec7447f0e572676331d2d8109def531732d71cfaf35f9a017d588"
+    },
+    "weekly": {
+      "path": "C:\\Users\\Tiger\\OneDrive\\Documents\\ChatGPT\\EV App\\data\\processed\\team_walkforward\\manifest.json",
+      "sha256": "6ba06b2f8aa99de006eb9c2f88f110c97a4cf3f1c718b92bbe5d255640c031b8"
+    }
+  },
+  "metrics": [
+    {
+      "games": 544,
+      "horizon": "early_week",
+      "margin_bias": 0.11783088235294116,
+      "margin_mae": 10.335110294117648,
+      "margin_rmse": 13.319729809792777,
+      "model": "compact_dated_out_counts",
+      "scope": "overall",
+      "score_bias": -0.296047794117647,
+      "score_mae": 7.382812499999999,
+      "score_rmse": 9.397976256651654,
+      "season": null,
+      "total_bias": -0.5920955882352943,
+      "total_mae": 10.27886029411765,
+      "total_rmse": 13.261697805200908
+    },
+    {
+      "games": 544,
+      "horizon": "early_week",
+      "margin_bias": 0.11783088235294116,
+      "margin_mae": 10.335110294117648,
+      "margin_rmse": 13.319729809792777,
+      "model": "compact_epa",
+      "scope": "overall",
+      "score_bias": -0.296047794117647,
+      "score_mae": 7.382812499999999,
+      "score_rmse": 9.397976256651654,
+      "season": null,
+      "total_bias": -0.5920955882352943,
+      "total_mae": 10.27886029411765,
+      "total_rmse": 13.261697805200908
+    },
+    {
+      "games": 544,
+      "horizon": "early_week",
+      "margin_bias": 0.11783088235294116,
+      "margin_mae": 10.335110294117648,
+      "margin_rmse": 13.319729809792777,
+      "model": "compact_report_flags",
+      "scope": "overall",
+      "score_bias": -0.296047794117647,
+      "score_mae": 7.382812499999999,
+      "score_rmse": 9.397976256651654,
+      "season": null,
+      "total_bias": -0.5920955882352943,
+      "total_mae": 10.27886029411765,
+      "total_rmse": 13.261697805200908
+    },
+    {
+      "games": 544,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.1862132352941177,
+      "margin_mae": 10.395404411764705,
+      "margin_rmse": 13.392663570029674,
+      "model": "compact_dated_out_counts",
+      "scope": "overall",
+      "score_bias": -0.32840073529411773,
+      "score_mae": 7.438878676470588,
+      "score_rmse": 9.465589285126725,
+      "season": null,
+      "total_bias": -0.6568014705882355,
+      "total_mae": 10.356066176470588,
+      "total_rmse": 13.380062950480596
+    },
+    {
+      "games": 544,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.11783088235294116,
+      "margin_mae": 10.335110294117648,
+      "margin_rmse": 13.319729809792777,
+      "model": "compact_epa",
+      "scope": "overall",
+      "score_bias": -0.296047794117647,
+      "score_mae": 7.382812499999999,
+      "score_rmse": 9.397976256651654,
+      "season": null,
+      "total_bias": -0.5920955882352943,
+      "total_mae": 10.27886029411765,
+      "total_rmse": 13.261697805200908
+    },
+    {
+      "games": 544,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.18308823529411763,
+      "margin_mae": 10.371691176470588,
+      "margin_rmse": 13.369160352445915,
+      "model": "compact_report_flags",
+      "scope": "overall",
+      "score_bias": -0.30680147058823537,
+      "score_mae": 7.414889705882353,
+      "score_rmse": 9.431488638660202,
+      "season": null,
+      "total_bias": -0.6136029411764705,
+      "total_mae": 10.315073529411764,
+      "total_rmse": 13.30704562385258
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": -0.08602941176470591,
+      "margin_mae": 10.461029411764706,
+      "margin_rmse": 13.535074262600764,
+      "model": "compact_dated_out_counts",
+      "scope": "season",
+      "score_bias": -0.1617647058823529,
+      "score_mae": 7.556617647058822,
+      "score_rmse": 9.613272075625447,
+      "season": 2023,
+      "total_bias": -0.3235294117647061,
+      "total_mae": 10.63308823529412,
+      "total_rmse": 13.655100318411519
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_dated_out_counts",
+      "scope": "season",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": 2024,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": -0.08602941176470591,
+      "margin_mae": 10.461029411764706,
+      "margin_rmse": 13.535074262600764,
+      "model": "compact_epa",
+      "scope": "season",
+      "score_bias": -0.1617647058823529,
+      "score_mae": 7.556617647058822,
+      "score_rmse": 9.613272075625447,
+      "season": 2023,
+      "total_bias": -0.3235294117647061,
+      "total_mae": 10.63308823529412,
+      "total_rmse": 13.655100318411519
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_epa",
+      "scope": "season",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": 2024,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": -0.08602941176470591,
+      "margin_mae": 10.461029411764706,
+      "margin_rmse": 13.535074262600764,
+      "model": "compact_report_flags",
+      "scope": "season",
+      "score_bias": -0.1617647058823529,
+      "score_mae": 7.556617647058822,
+      "score_rmse": 9.613272075625447,
+      "season": 2023,
+      "total_bias": -0.3235294117647061,
+      "total_mae": 10.63308823529412,
+      "total_rmse": 13.655100318411519
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_report_flags",
+      "scope": "season",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": 2024,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": -0.058088235294117635,
+      "margin_mae": 10.533823529411764,
+      "margin_rmse": 13.626334257389903,
+      "model": "compact_dated_out_counts",
+      "scope": "season",
+      "score_bias": -0.22132352941176478,
+      "score_mae": 7.642279411764707,
+      "score_rmse": 9.708134097088834,
+      "season": 2023,
+      "total_bias": -0.4426470588235295,
+      "total_mae": 10.754411764705882,
+      "total_rmse": 13.831647960171544
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.430514705882353,
+      "margin_mae": 10.256985294117646,
+      "margin_rmse": 13.154842823305884,
+      "model": "compact_dated_out_counts",
+      "scope": "season",
+      "score_bias": -0.43547794117647065,
+      "score_mae": 7.235477941176471,
+      "score_rmse": 9.21666389657087,
+      "season": 2024,
+      "total_bias": -0.8709558823529413,
+      "total_mae": 9.957720588235293,
+      "total_rmse": 12.91269467708152
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": -0.08602941176470591,
+      "margin_mae": 10.461029411764706,
+      "margin_rmse": 13.535074262600764,
+      "model": "compact_epa",
+      "scope": "season",
+      "score_bias": -0.1617647058823529,
+      "score_mae": 7.556617647058822,
+      "score_rmse": 9.613272075625447,
+      "season": 2023,
+      "total_bias": -0.3235294117647061,
+      "total_mae": 10.63308823529412,
+      "total_rmse": 13.655100318411519
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_epa",
+      "scope": "season",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": 2024,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": -0.06727941176470587,
+      "margin_mae": 10.499632352941175,
+      "margin_rmse": 13.593246863575958,
+      "model": "compact_report_flags",
+      "scope": "season",
+      "score_bias": -0.1604779411764706,
+      "score_mae": 7.613419117647059,
+      "score_rmse": 9.661669072406996,
+      "season": 2023,
+      "total_bias": -0.3209558823529411,
+      "total_mae": 10.706985294117645,
+      "total_rmse": 13.733718970646876
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.43345588235294114,
+      "margin_mae": 10.24375,
+      "margin_rmse": 13.14125324178428,
+      "model": "compact_report_flags",
+      "scope": "season",
+      "score_bias": -0.453125,
+      "score_mae": 7.2163602941176475,
+      "score_rmse": 9.195548195602427,
+      "season": 2024,
+      "total_bias": -0.90625,
+      "total_mae": 9.923161764705883,
+      "total_rmse": 12.866230594307035
+    }
+  ],
+  "policy": {
+    "2025": "zero outcome reads, fits or replay; original enriched readiness gate unchanged",
+    "bootstrap": {
+      "blocks": "season/week",
+      "draws": 5000,
+      "seed": 20261015
+    },
+    "contrasts": "home minus away QB+OL+skill and defense Out counts; both teams required",
+    "coverage_control": "flags-only includes the same five report/position availability flags",
+    "fit": "Ridge alpha 20; train-only median/indicators/scaling; common fractional-score contract",
+    "following_season": "select on 2023 only, assess 2024; both seasons previously examined",
+    "guards": {
+      "maximum_score_regression": 0.05,
+      "maximum_single_season_margin_regression": 0.25,
+      "maximum_total_regression": 0.1,
+      "minimum_margin_gain": 0.05,
+      "positive_paired_lower_bound": true
+    },
+    "initialization_revision": "uniform canonical-only source declared before real fits after one tracking index remained unavailable; no partially collected tracking editions used for 2022",
+    "models": {
+      "compact_dated_out_counts": [
+        "home_off_epa_season",
+        "home_def_epa_season",
+        "away_off_epa_season",
+        "away_def_epa_season",
+        "home_field",
+        "rest_difference",
+        "home_prior_games",
+        "away_prior_games",
+        "home_formal_report",
+        "away_formal_report",
+        "home_positions_known",
+        "away_positions_known",
+        "both_positions_known",
+        "offensive_out_difference",
+        "defensive_out_difference"
+      ],
+      "compact_epa": [
+        "home_off_epa_season",
+        "home_def_epa_season",
+        "away_off_epa_season",
+        "away_def_epa_season",
+        "home_field",
+        "rest_difference",
+        "home_prior_games",
+        "away_prior_games"
+      ],
+      "compact_report_flags": [
+        "home_off_epa_season",
+        "home_def_epa_season",
+        "away_off_epa_season",
+        "away_def_epa_season",
+        "home_field",
+        "rest_difference",
+        "home_prior_games",
+        "away_prior_games",
+        "home_formal_report",
+        "away_formal_report",
+        "home_positions_known",
+        "away_positions_known",
+        "both_positions_known"
+      ]
+    },
+    "positions": "all Out positions must be known; no player-to-starter inference",
+    "primary_horizon": "pregame_refresh; this source has no Tuesday development formal reports",
+    "promotion": "separate research record; no active-model or original-lock changes",
+    "reports": "formal designations or explicit none; missing/partial/stale reports stay unknown",
+    "scope": "2022 initialization; all 544 development games in 2023-2024 at both horizons",
+    "secondary": "both-position-covered games only; retain every game in primary metrics",
+    "selection": "injury must pass against both EPA and flags-only; otherwise compact EPA",
+    "sources": "2022 canonical-only initialization; qualified canonical/tracking 2023-2024 audit",
+    "storage": "reuse features; one context delta and prediction panel; no training copies",
+    "timing": "Tuesday-locked EPA/history and coefficient fits, separately by horizon",
+    "unknown_contrasts": "neutral zero with five availability flags, including both-known"
+  },
+  "recorded_at_utc": "2026-10-15T19:48:58.077316+00:00",
+  "remaining_plan": "dated active/IR rosters and confirmed starters; historical forecast weather and audited adapters; enriched 2025 replay; then PEM-inspired comparison",
+  "source_sha256": "d717ca459f5e030751733b62179c9a0808cdf37e78a23f94b4ccb09f21ccaf39"
+}
