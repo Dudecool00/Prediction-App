@@ -22,6 +22,21 @@ Defaults fetch/build 2016–2024 and evaluate 2022–2024. On macOS/Linux, creat
 with `python3 -m venv .venv` and use `.venv/bin/` executables. No API key is required.
 `requirements-dev.lock` is a tested pip constraints file. Streamlit is an optional `app` extra.
 
+## Development injury coverage
+
+For dated development injury coverage (2022 initialization and 2023–2024 development):
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-injury-development-fetch
+.\.venv\Scripts\nfl-prop.exe team-injury-development-audit
+```
+
+These commands use the existing canonical team cache, including those seasons. The bounded
+archive collection resumes completed weeks; the audit runs offline and reads schedule metadata
+only. Reports go to `reports/local/team_injury_development/`. Blank game-status cells remain
+unknown, and observed designations do not establish a complete final report. This source audit
+does not train models or clear the enriched 2025 replay gate.
+
 ## Current-season forecasts
 
 Include every season through the current NFL season. For 2026:
