@@ -117,6 +117,8 @@ def main(argv: list[str] | None = None) -> int:
         "team-injury-news-fetch",
         "team-injury-news-audit",
         "team-dated-injury-compare",
+        "team-historical-weather-fetch",
+        "team-historical-weather-audit",
     ):
         command = commands.add_parser(
             name, help="Audited weekly context development and replay gate"
@@ -126,11 +128,15 @@ def main(argv: list[str] | None = None) -> int:
             command.add_argument("--seasons", type=int, nargs="+", default=[2023, 2024])
         if name == "team-injury-news-fetch":
             command.add_argument("--canonical-only", action="store_true")
+        if name == "team-historical-weather-fetch":
+            command.add_argument("--retry-failed", action="store_true")
         command.add_argument(
             "--report-dir",
             type=Path,
             default=Path(
-                "reports/local/team_dated_injuries"
+                "reports/local/team_historical_weather"
+                if name.startswith("team-historical-weather")
+                else "reports/local/team_dated_injuries"
                 if name == "team-dated-injury-compare"
                 else "reports/local/team_injury_news"
                 if name.startswith("team-injury-news")
@@ -150,7 +156,20 @@ def main(argv: list[str] | None = None) -> int:
         from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
         from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-        if args.command == "team-dated-injury-compare":
+        if args.command == "team-historical-weather-fetch":
+            from nfl_prop_model.data.team_historical_weather import collect_historical_weather
+
+            path = collect_historical_weather(args.data_dir, retry_failed=args.retry_failed)
+            print(f"Historical weather: {path}")
+        elif args.command == "team-historical-weather-audit":
+            from nfl_prop_model.data.team_historical_weather import audit_historical_weather
+
+            report = audit_historical_weather(args.data_dir, args.report_dir)
+            print(
+                f"Audited {report['records']} weather records, zero model fits. "
+                f"{report['replay_status']}"
+            )
+        elif args.command == "team-dated-injury-compare":
             from nfl_prop_model.modeling.team_dated_injuries import save_dated_comparison
 
             report = save_dated_comparison(args.data_dir, args.report_dir)

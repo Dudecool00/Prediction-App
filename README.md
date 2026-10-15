@@ -216,6 +216,13 @@ It reuses source data and stores context deltas and one prediction panel under i
 directories. It neither runs 2025 nor clears the enriched replay gate. The PEM-inspired
 three-model comparison follows completion of the original replay plan.
 
+Historical weather now has a separate bounded adapter for 2022–2025 temperature, wind and
+precipitation rate, with an [explicit collection policy](reports/team_scores/historical_weather/protocol.md).
+Run `team-historical-weather-fetch`, then `team-historical-weather-audit` to rebuild coverage
+offline. It corrects seven 2025 international venue defaults and retains indoor, uncertain-roof,
+moved-venue and unavailable rows. Cached point responses stay outside Git. Weather model
+comparison and dated roster/starter resolution still precede the full enriched 2025 replay.
+
 - `src/nfl_prop_model/data/`: source snapshots, validation and content-addressed storage.
 - `src/nfl_prop_model/features/`: past-only EPA and experimental matchup inputs.
 - `src/nfl_prop_model/modeling/`: forecasting, chronological comparisons and diagnostics.
