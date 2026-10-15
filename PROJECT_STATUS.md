@@ -76,4 +76,30 @@ Next: resolve dated roster/starter/injury inputs, reconsider the extra parameter
 recorded development evidence, then freeze a fully audited policy before the 2025 replay.
 Interval calibration and preserved prospective forecasts remain subsequent validation work.
 
+## Weather collection and resumed replay audit
+
+`team-forecast` now captures weather on demand and links a versioned context artifact before
+reporting success. Separate collection and offline date lookup commands are available. Checks
+preserve five hours per game, the pinned GFS initialization, actual receipt time, venue city,
+units, unknown values and checksums. Earlier captures and score manifests remain intact.
+Weather is not fitted into the published score model yet.
+
+The [live/source check](reports/team_scores/weather_collection.md) captured temperature, wind
+speed and precipitation for all 14 upcoming games, including London, in 70 hourly rows.
+Gusts remain unknown. Two preserved captures plus city caches occupy about 130 KB locally;
+no new environment, global grids or training-table copies were added by collection.
+
+On returning to step one of the replay plan, bounded NCAR point requests recovered archived
+temperature, 10 m wind components and precipitation rate for the 2022, 2023 and 2025 openers.
+This improves the earlier weather-source finding: wind/rain are absent from the selected
+Open-Meteo development archive, not necessarily from every archive. Full weather coverage,
+units/temporal conversion, pre-cutoff availability assumptions and an adapter remain unaudited.
+The original readiness gate still fails; no enriched 2025 predictions or new MAE were produced.
+
+Continue by resolving dated roster/starter/injury versions and auditing the historical weather
+adapter, then run small 2023–2024 comparisons before freezing and replaying 2025. Extra weather
+inputs must earn inclusion against compact EPA on identical games. The recorded tiny injury
+gain does not justify expanding the active model. The addition has one source module, one test
+file with 15 cases and this compact source-check report; CI covers 71 total tests.
+
 [The model policy](TEAM_MODEL_POLICY.md) defines feature, cutoff, output and evaluation contracts.
