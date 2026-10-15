@@ -119,6 +119,9 @@ def main(argv: list[str] | None = None) -> int:
         "team-dated-injury-compare",
         "team-historical-weather-fetch",
         "team-historical-weather-audit",
+        "team-archived-weather-compare",
+        "team-depth-catalog-fetch",
+        "team-depth-catalog-audit",
     ):
         command = commands.add_parser(
             name, help="Audited weekly context development and replay gate"
@@ -128,13 +131,17 @@ def main(argv: list[str] | None = None) -> int:
             command.add_argument("--seasons", type=int, nargs="+", default=[2023, 2024])
         if name == "team-injury-news-fetch":
             command.add_argument("--canonical-only", action="store_true")
-        if name == "team-historical-weather-fetch":
+        if name in {"team-historical-weather-fetch", "team-depth-catalog-fetch"}:
             command.add_argument("--retry-failed", action="store_true")
         command.add_argument(
             "--report-dir",
             type=Path,
             default=Path(
-                "reports/local/team_historical_weather"
+                "reports/local/team_depth_catalog"
+                if name.startswith("team-depth-catalog")
+                else "reports/local/team_archived_weather"
+                if name == "team-archived-weather-compare"
+                else "reports/local/team_historical_weather"
                 if name.startswith("team-historical-weather")
                 else "reports/local/team_dated_injuries"
                 if name == "team-dated-injury-compare"
@@ -156,7 +163,23 @@ def main(argv: list[str] | None = None) -> int:
         from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
         from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-        if args.command == "team-historical-weather-fetch":
+        if args.command == "team-depth-catalog-fetch":
+            from nfl_prop_model.data.team_depth_catalog import fetch_depth_catalog
+
+            report = fetch_depth_catalog(args.data_dir, retry_failed=args.retry_failed)
+            print(f"Depth source catalogs: {len(report['catalogs'])}; no chart entities fetched.")
+        elif args.command == "team-depth-catalog-audit":
+            from nfl_prop_model.data.team_depth_catalog import audit_depth_catalog
+
+            report = audit_depth_catalog(args.data_dir, args.report_dir)
+            print(f"Audited {report['records']} catalog slots; zero verified charts or fits.")
+        elif args.command == "team-archived-weather-compare":
+            from nfl_prop_model.modeling.team_archived_weather import save_weather_comparison
+
+            report = save_weather_comparison(args.data_dir, args.report_dir)
+            print(f"Archived weather research choice: {report['frozen_research_choice']['model']}.")
+            print(f"Report: {args.report_dir / 'findings.md'}. Enriched replay remains gated.")
+        elif args.command == "team-historical-weather-fetch":
             from nfl_prop_model.data.team_historical_weather import collect_historical_weather
 
             path = collect_historical_weather(args.data_dir, retry_failed=args.retry_failed)
