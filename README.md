@@ -39,6 +39,23 @@ does not train models or clear the enriched 2025 replay gate.
 See the [development coverage findings](reports/team_scores/development_injury_coverage/findings.md)
 for the measured source gaps and next comparison requirements.
 
+To qualify weekly news reports using the 2025 article definition:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-injury-news-fetch
+.\.venv\Scripts\nfl-prop.exe team-injury-news-audit
+```
+
+These commands default to 2023–2024. Run `--seasons 2022` separately for initialization,
+so the existing development collection can be reused without downloading those years again.
+Canonical and recognized tracking-link editions retain separate archive proofs. Each tracking
+edition must identify the same canonical article before its counts can be used in this source
+audit. The latest whole edition governs each cutoff; tied or unverified editions remain unknown.
+Reports include canonical-only coverage, combined coverage and games with both teams covered.
+They are saved under `reports/local/team_injury_news/`. Source qualification performs no model fits.
+See the [weekly-news findings](reports/team_scores/development_injury_news/findings.md)
+for measured coverage and the proposed small injury comparison.
+
 ## Current-season forecasts
 
 Include every season through the current NFL season. For 2026:
