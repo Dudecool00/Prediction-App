@@ -174,3 +174,24 @@ are recorded in PR #26.
 
 GitHub reports `main` as unprotected with required checks off. Requiring the two platform
 checks before merging is recommended; repository access rules were not modified.
+
+## Weekly injury source coverage, October 15, 2026
+
+The [full-season source check](reports/team_scores/weekly_injury_coverage/findings.md) now
+audits all 18 weeks of 2025 using schedule metadata only. At kickoff refresh, 390/544 team
+appearances have formal reports, 13 are partial/pending and 141 unavailable. All 544 Tuesday
+slots remain unknown for this canonical article archive. Missing refresh data comprise 78
+stale editions, 28 unverified editions, 27 missing sections and eight without an earlier
+edition. Six slots lack an Out player's position, leaving position-group counts unknown.
+
+Selected 29 editions, with 26 newly verified bodies and exact-version reuse of a prior
+Week 1 proof. Unknown capture states stay explicit. Original source modules, artifacts,
+model choices and replay gate remain intact; zero fits or 2025 outcome-column reads occur.
+Raw collection plus current cutoff table occupy about 1.84 MB, with an 80 KB development
+source probe. No new environment, training-table copy or forecast grid was added.
+
+Official catalogs provide candidate weekly table URLs for 2022–2024, and one preserved
+2023 body matches its digest. This does not yet establish timely development coverage or
+an identity adapter. Next audit campaign/query variants and development tables, then test
+refresh context against compact EPA before changing the freeze. Full enriched replay
+remains gated; source coverage does not establish an accuracy gain.
