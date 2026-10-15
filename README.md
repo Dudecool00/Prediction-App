@@ -232,6 +232,11 @@ retains compact EPA after testing all 544 development games at both horizons. Th
 temperature/wind/precipitation-rate package worsens margin MAE from 10.335 to 10.418 early
 and 10.428 at refresh. Run `team-archived-weather-compare` to reproduce the separate research
 record; it adds about 206 KB locally and performs no 2025 evaluation or model promotion.
+The [bounded depth-chart index inventory](reports/team_scores/depth_catalog/findings.md)
+finds 575 potential captures across 3,260 development team/horizon cutoffs, with zero newly
+verified chart entities or model-eligible records. Run `team-depth-catalog-fetch`, then
+`team-depth-catalog-audit`; raw/processed inventory storage totals about 258 KB. Dated roster
+and starter qualification remains unresolved for the enriched replay.
 
 - `src/nfl_prop_model/data/`: source snapshots, validation and content-addressed storage.
 - `src/nfl_prop_model/features/`: past-only EPA and experimental matchup inputs.
