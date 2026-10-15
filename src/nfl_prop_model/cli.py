@@ -112,6 +112,8 @@ def main(argv: list[str] | None = None) -> int:
         "team-availability-audit",
         "team-injury-fetch",
         "team-injury-audit",
+        "team-injury-development-fetch",
+        "team-injury-development-audit",
     ):
         command = commands.add_parser(
             name, help="Audited weekly context development and replay gate"
@@ -121,7 +123,9 @@ def main(argv: list[str] | None = None) -> int:
             "--report-dir",
             type=Path,
             default=Path(
-                "reports/local/team_injury_coverage"
+                "reports/local/team_injury_development"
+                if name.startswith("team-injury-development")
+                else "reports/local/team_injury_coverage"
                 if name.startswith("team-injury")
                 else "reports/local/team_availability"
                 if name.startswith("team-availability")
@@ -135,7 +139,17 @@ def main(argv: list[str] | None = None) -> int:
         from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
         from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-        if args.command == "team-injury-fetch":
+        if args.command == "team-injury-development-fetch":
+            from nfl_prop_model.data.team_injury_development import fetch_development
+
+            print(f"Development injury sources: {fetch_development(args.data_dir)}")
+        elif args.command == "team-injury-development-audit":
+            from nfl_prop_model.data.team_injury_development_audit import save_development_audit
+
+            report = save_development_audit(args.data_dir, args.report_dir)
+            print(f"Audited {report['records']} development team/horizon slots; zero model fits.")
+            print(f"Coverage: {args.report_dir / 'coverage.csv'}")
+        elif args.command == "team-injury-fetch":
             from nfl_prop_model.data.team_injury_history import fetch_history
 
             print(f"Weekly injury sources: {fetch_history(args.data_dir)}")
