@@ -1003,14 +1003,14 @@
     "simplicity": "within one block-bootstrap standard error of best eligible margin MAE, prefer fewer declared inputs",
     "storage": "reference original inputs; retain compact derived tables only; no training copies"
   },
-  "recorded_at_utc": "2026-10-15T00:39:06.372934+00:00",
+  "recorded_at_utc": "2026-10-15T00:46:18.965681+00:00",
   "replay_blockers": [
     "2022-2024 expected-starter snapshots lack publication timestamps",
     "2022-2025 weekly rosters lack publication timestamps",
     "2025 injury rows lack publication/modification timestamps",
     "2022-2023 wind/rain forecast archive absent; temperature trial is incomplete weather"
   ],
-  "source_sha256": "22969eebc53a7bc689843f2fcc5f2a6c92b7e1fb7ad7672ac8f797a631e6554c",
+  "source_sha256": "1d115b7c9604858a2ced131a07893f5da154ab26074a0bfa150a3c69127c3780",
   "upstream_manifest": "data/processed/team_walkforward/manifest.json",
   "upstream_manifest_sha256": "6ba06b2f8aa99de006eb9c2f88f110c97a4cf3f1c718b92bbe5d255640c031b8"
 }

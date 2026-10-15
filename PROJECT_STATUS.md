@@ -125,5 +125,5 @@ Stages two/three of the original plan now have a separate simplicity assessment 
 research choice. Stage one still needs dated roster/starter/injury evidence and audited
 adapters. Stage four, the full enriched 2025 weekly replay, remains gated; zero 2025 fits or
 new 2025 outcomes were used. No further weather collector work was added in this follow-up.
-The new derived cache is about 60 KB, with upstream features referenced rather than copied.
+The two derived revision caches total about 120 KB, with upstream features referenced rather than copied.
 Seven new selection/timing/artifact cases bring the full suite to 78 tests.

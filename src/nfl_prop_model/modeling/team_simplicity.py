@@ -391,6 +391,8 @@ def save_simplicity_check(data_dir: Path, report_dir: Path) -> dict[str, Any]:
     figure = make_subplots(
         rows=1, cols=2, subplot_titles=["2024 margin MAE", "2024 per-team score MAE"]
     )
+    labels = {CONTROL: "EPA, 28 inputs", COMPACT: "EPA, 8 inputs", SELECTED: "Selected on 2023"}
+    colors = {"early_week": "#2563eb", "pregame_refresh": "#d97706"}
     for horizon in HORIZONS:
         group = metrics.filter(
             (pl.col("horizon") == horizon) & pl.col("model").is_in([CONTROL, COMPACT, SELECTED])
@@ -398,9 +400,11 @@ def save_simplicity_check(data_dir: Path, report_dir: Path) -> dict[str, Any]:
         for column, quantity in enumerate(("margin", "score"), 1):
             figure.add_trace(
                 go.Bar(
-                    x=group["model"].to_list(),
+                    x=[labels[name] for name in group["model"]],
                     y=group[f"{quantity}_mae"].to_list(),
                     name=horizon,
+                    legendgroup=horizon,
+                    marker_color=colors[horizon],
                     showlegend=column == 1,
                 ),
                 row=1,
