@@ -1,0 +1,101 @@
+Dataset {
+    Float64 reftime;
+    Grid {
+     ARRAY:
+        Float32 Precipitation_rate_surface[time1 = 1][lat = 1][lon = 1];
+     MAPS:
+        Float64 time1[time1 = 1];
+        Float32 lat[lat = 1];
+        Float32 lon[lon = 1];
+    } Precipitation_rate_surface;
+    Grid {
+     ARRAY:
+        Float32 Temperature_height_above_ground[time1 = 1][height_above_ground3 = 1][lat = 1][lon = 1];
+     MAPS:
+        Float64 time1[time1 = 1];
+        Float32 height_above_ground3[height_above_ground3 = 1];
+        Float32 lat[lat = 1];
+        Float32 lon[lon = 1];
+    } Temperature_height_above_ground;
+    Grid {
+     ARRAY:
+        Float32 u-component_of_wind_height_above_ground[time1 = 1][height_above_ground2 = 1][lat = 1][lon = 1];
+     MAPS:
+        Float64 time1[time1 = 1];
+        Float32 height_above_ground2[height_above_ground2 = 1];
+        Float32 lat[lat = 1];
+        Float32 lon[lon = 1];
+    } u-component_of_wind_height_above_ground;
+    Grid {
+     ARRAY:
+        Float32 v-component_of_wind_height_above_ground[time1 = 1][height_above_ground2 = 1][lat = 1][lon = 1];
+     MAPS:
+        Float64 time1[time1 = 1];
+        Float32 height_above_ground2[height_above_ground2 = 1];
+        Float32 lat[lat = 1];
+        Float32 lon[lon = 1];
+    } v-component_of_wind_height_above_ground;
+} files/d084001/2022/20220906/gfs.0p25.2022090606.f066.grib2;
+---------------------------------------------
+reftime, 0.0
+Precipitation_rate_surface.Precipitation_rate_surface[1][1][1]
+[0][0], 0.0
+
+Precipitation_rate_surface.time1[1]
+66.0
+
+Precipitation_rate_surface.lat[1]
+34.0
+
+Precipitation_rate_surface.lon[1]
+241.75
+
+
+Temperature_height_above_ground.Temperature_height_above_ground[1][1][1][1]
+[0][0][0], 304.40253
+
+Temperature_height_above_ground.time1[1]
+66.0
+
+Temperature_height_above_ground.height_above_ground3[1]
+2.0
+
+Temperature_height_above_ground.lat[1]
+34.0
+
+Temperature_height_above_ground.lon[1]
+241.75
+
+
+u-component_of_wind_height_above_ground.u-component_of_wind_height_above_ground[1][1][1][1]
+[0][0][0], 5.1768236
+
+u-component_of_wind_height_above_ground.time1[1]
+66.0
+
+u-component_of_wind_height_above_ground.height_above_ground2[1]
+10.0
+
+u-component_of_wind_height_above_ground.lat[1]
+34.0
+
+u-component_of_wind_height_above_ground.lon[1]
+241.75
+
+
+v-component_of_wind_height_above_ground.v-component_of_wind_height_above_ground[1][1][1][1]
+[0][0][0], 0.44539794
+
+v-component_of_wind_height_above_ground.time1[1]
+66.0
+
+v-component_of_wind_height_above_ground.height_above_ground2[1]
+10.0
+
+v-component_of_wind_height_above_ground.lat[1]
+34.0
+
+v-component_of_wind_height_above_ground.lon[1]
+241.75
+
+

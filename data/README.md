@@ -97,3 +97,14 @@ availability evidence nor model research locks are rewritten.
 
 Use CLI `--data-dir` to select another cache directory and `NFL_PROP_DATA_DIR` for the app.
 All data subdirectories are ignored, including local artifacts from historical workflows.
+
+`team-historical-weather-fetch` collects selected 2022–2025 operational GFS points into
+`raw/team_historical_weather/`; `team-historical-weather-audit` reconstructs coverage offline
+into `processed/team_historical_weather/`. This separate namespace preserves older source
+and model hashes. It uses at most two request workers and a 24 MB compressed-body budget.
+Every accepted point checks forecast identity, units, heights, valid time and grid location.
+The historical release buffer and static announced-venue assumptions remain explicit;
+these are not observations or newly captured prospective forecasts. See the
+[declared policy](../reports/team_scores/historical_weather/protocol.md). Keep
+[NCAR](https://gdex.ucar.edu/datasets/d084001/) and
+[Open-Meteo](https://open-meteo.com/en/docs/geocoding-api) CC BY 4.0 attribution when sharing.
