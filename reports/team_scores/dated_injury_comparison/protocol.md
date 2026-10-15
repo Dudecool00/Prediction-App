@@ -5,9 +5,13 @@ inspection of earlier EPA/context results and outcome-free 2023-2024 source cove
 it is adaptive development, not an untouched holdout. The PEM-inspired comparison remains
 after completion of the original replay plan.
 
-1. Qualify the separately collected 2022 news archive with the unchanged article parser,
-   integrity checks, latest-whole-edition rules and forecast cutoffs. Keep the existing
-   2023-2024 audit intact. Unknown positions and missing reports remain unknown.
+1. Qualify the separately collected 2022 canonical news archive with the unchanged article
+   parser, integrity checks, latest-whole-edition rules and forecast cutoffs. Use canonical
+   editions uniformly across every 2022 week; keep the existing qualified canonical/tracking
+   2023-2024 audit intact. Unknown positions and missing reports remain unknown. This source
+   clarification was recorded before any real dated-count fits: one of 41 initialization
+   tracking indexes remained unavailable after bounded retries, so none of those tracking
+   editions enters initialization. This is a declared source sample, not complete injury coverage.
 2. Reuse the 2022-initialized Tuesday-locked EPA table. Compare compact EPA (8 inputs),
    compact EPA plus five availability flags (13), and those inputs plus two Out-count
    contrasts (15). The flags are each team's formal-report/known-position indicators plus

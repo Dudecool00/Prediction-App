@@ -10,12 +10,14 @@ import polars as pl
 
 from nfl_prop_model.data.schemas import DataQualityError, require_keys
 from nfl_prop_model.data.storage import load_frame, read_json, sha256_file, store_frame, write_json
-from nfl_prop_model.data.team_injury_news import news_schedule
+from nfl_prop_model.data.team_injury_news import load_news, news_path, news_schedule
 from nfl_prop_model.data.team_injury_news_audit import (
     FORMAL,
     GROUPS,
     load_news_audit,
+    news_records,
     news_source_hash,
+    news_summary,
 )
 from nfl_prop_model.data.team_injury_news_variants import qualified_path
 from nfl_prop_model.features.team_epa import HORIZONS
@@ -47,7 +49,11 @@ MODELS = {
 POLICY: dict[str, Any] = {
     "scope": "2022 initialization; all 544 development games in 2023-2024 at both horizons",
     "timing": "Tuesday-locked EPA/history and coefficient fits, separately by horizon",
-    "sources": "separate checksum-verified 2022 and 2023-2024 dated weekly news audits",
+    "sources": "2022 canonical-only initialization; qualified canonical/tracking 2023-2024 audit",
+    "initialization_revision": (
+        "uniform canonical-only source declared before real fits after one tracking index "
+        "remained unavailable; no partially collected tracking editions used for 2022"
+    ),
     "reports": "formal designations or explicit none; missing/partial/stale reports stay unknown",
     "positions": "all Out positions must be known; no player-to-starter inference",
     "contrasts": "home minus away QB+OL+skill and defense Out counts; both teams required",
@@ -311,8 +317,18 @@ def _inputs(data_dir: Path) -> tuple[pl.DataFrame, pl.DataFrame, pl.DataFrame, d
     controls = load_frame(path.parent, upstream["artifacts"]["predictions"]).filter(
         pl.col("model") == CONTROL
     )
-    sources = []
-    for seasons in ((2022,), (2023, 2024)):
+    initial_games, initial_schedule = news_schedule(data_dir, (2022,))
+    initial_raw = news_path(data_dir, initial_games)
+    initial = news_records(initial_games, load_news(initial_raw, initial_games), initial_raw.parent)
+    sources = [initial]
+    refs["(2022,)"] = {
+        "path": str(initial_raw.resolve()),
+        "sha256": sha256_file(initial_raw),
+        "schedule": initial_schedule,
+        "collection_policy": "canonical-only, uniformly across all initialization weeks",
+        "coverage": news_summary(initial, ["season", "horizon"]),
+    }
+    for seasons in ((2023, 2024),):
         games, schedule = news_schedule(data_dir, seasons)
         raw = qualified_path(data_dir, games)
         input_hash = hashlib.sha256(

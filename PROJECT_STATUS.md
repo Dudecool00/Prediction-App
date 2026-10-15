@@ -1,6 +1,31 @@
 # Project status
 
-Updated October 14, 2026. Active scope: weekly NFL team final-score and margin forecasts.
+Updated October 15, 2026. Active scope: weekly NFL team final-score and margin forecasts.
+
+## Current continuation
+
+Finish the existing source/development/freeze/2025-replay plan before the PEM-inspired
+comparison. The latest research check is declared in the
+[dated injury protocol](reports/team_scores/dated_injury_comparison/protocol.md): qualify
+2022 separately, compare compact EPA against report-availability controls and two coarse
+Out-count differences on all 2023-2024 games, then record the evidence and research choice.
+The implementation and measured findings are in PR #30; validation is recorded there.
+
+The 2022 canonical news collection is complete. One of 41 tracking indexes remained
+unavailable after retries. Before any real dated-count fits, initialization was explicitly
+fixed to canonical-only across all weeks; no partially collected tracking sample is used.
+Original choices remain intact.
+
+The [completed dated-count comparison](reports/team_scores/dated_injury_comparison/findings.md)
+retains compact EPA. On every 2023-2024 development game, refresh margin MAE is 10.335 for
+compact EPA, 10.372 with report-availability flags, and 10.395 with the coarse injury
+contrasts. Both the 2023-only choice for 2024 and the separate pre-2025 choice retain
+compact EPA. The added parameters do not earn inclusion; no new 2025 fit was performed.
+Full dated roster/starter evidence and the historical forecast-weather adapter remain
+requirements of the separate enriched 2025 replay. Neither that replay nor the PEM-inspired
+three-model comparison has run in this continuation. The original replay readiness check
+was rerun and still blocks on the unresolved source/adapter requirements. The sections below
+preserve earlier evidence and should not be read as completion of these remaining stages.
 
 ## Current model
 

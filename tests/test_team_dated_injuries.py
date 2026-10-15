@@ -6,11 +6,42 @@ from polars.testing import assert_frame_equal
 from test_team_scores import team_sources as team_sources
 from test_team_walkforward import weekly_data as weekly_data
 
+from nfl_prop_model.cli import main
 from nfl_prop_model.data.schemas import DataQualityError
 from nfl_prop_model.data.storage import read_json, store_frame, write_json
 from nfl_prop_model.features.team_walkforward import add_pregame_features
 from nfl_prop_model.modeling import team_dated_injuries as study
 from nfl_prop_model.modeling.team_walkforward import evaluate_weeks
+
+
+def test_explicit_canonical_fetch_does_not_require_optional_tracking_indexes(tmp_path, monkeypatch):
+    from nfl_prop_model.data import team_injury_news, team_injury_news_variants
+
+    called = []
+
+    def canonical(data_dir, seasons):
+        called.append((data_dir, seasons))
+        return tmp_path / "manifest.json"
+
+    def tracking(*args):
+        raise AssertionError("Canonical initialization must not depend on tracking availability")
+
+    monkeypatch.setattr(team_injury_news, "fetch_news", canonical)
+    monkeypatch.setattr(team_injury_news_variants, "fetch_qualified", tracking)
+    assert (
+        main(
+            [
+                "team-injury-news-fetch",
+                "--seasons",
+                "2022",
+                "--canonical-only",
+                "--data-dir",
+                str(tmp_path),
+            ]
+        )
+        == 0
+    )
+    assert called == [(tmp_path, (2022,))]
 
 
 def reports(base):

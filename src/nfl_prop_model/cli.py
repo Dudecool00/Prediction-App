@@ -124,6 +124,8 @@ def main(argv: list[str] | None = None) -> int:
         command.add_argument("--data-dir", type=Path, default=Path("data"))
         if name.startswith("team-injury-news"):
             command.add_argument("--seasons", type=int, nargs="+", default=[2023, 2024])
+        if name == "team-injury-news-fetch":
+            command.add_argument("--canonical-only", action="store_true")
         command.add_argument(
             "--report-dir",
             type=Path,
@@ -155,9 +157,11 @@ def main(argv: list[str] | None = None) -> int:
             print(f"Dated injury research choice: {report['frozen_research_choice']['model']}.")
             print(f"Report: {args.report_dir / 'findings.md'}. Enriched 2025 replay remains gated.")
         elif args.command == "team-injury-news-fetch":
+            from nfl_prop_model.data.team_injury_news import fetch_news
             from nfl_prop_model.data.team_injury_news_variants import fetch_qualified
 
-            print(f"Development injury news: {fetch_qualified(args.data_dir, tuple(args.seasons))}")
+            collect_news = fetch_news if args.canonical_only else fetch_qualified
+            print(f"Development injury news: {collect_news(args.data_dir, tuple(args.seasons))}")
         elif args.command == "team-injury-news-audit":
             from nfl_prop_model.data.team_injury_news_audit import save_news_audit
 
