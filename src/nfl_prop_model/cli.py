@@ -1,6 +1,8 @@
 """Reproducible NFL team data, forecasting and comparison commands."""
 
 import argparse
+import json
+from datetime import date
 from pathlib import Path
 
 import polars as pl
@@ -23,6 +25,8 @@ def main(argv: list[str] | None = None) -> int:
         "team-experiment",
         "team-tune",
         "team-forecast",
+        "team-weather-fetch",
+        "team-weather-lookup",
         "team-context-fetch",
         "team-context-build",
         "team-context-evaluate",
@@ -75,9 +79,14 @@ def main(argv: list[str] | None = None) -> int:
                     }[name]
                 ),
             )
-        if name == "team-forecast":
+        if name in {"team-forecast", "team-weather-fetch", "team-weather-lookup"}:
             team_command.add_argument("--horizon", choices=HORIZONS, default="early_week")
+        if name in {"team-forecast", "team-weather-fetch"}:
             team_command.add_argument("--days", type=int, default=7)
+        if name in {"team-weather-fetch", "team-weather-lookup"}:
+            team_command.add_argument(
+                "--date", type=date.fromisoformat, required=name == "team-weather-lookup"
+            )
     diagnosis = commands.add_parser(
         "team-diagnose", help="Graphical season score/margin diagnostics"
     )
@@ -107,7 +116,18 @@ def main(argv: list[str] | None = None) -> int:
         from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
         from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-        if args.command == "team-pregame-audit":
+        if args.command == "team-weather-fetch":
+            from nfl_prop_model.data.team_weather import collect_weather
+
+            path = collect_weather(
+                args.data_dir, horizon=args.horizon, days=args.days, target=args.date
+            )
+            print(f"Saved versioned game weather: {path}")
+        elif args.command == "team-weather-lookup":
+            from nfl_prop_model.data.team_weather import lookup_weather_date
+
+            print(json.dumps(lookup_weather_date(args.data_dir, args.date, args.horizon), indent=2))
+        elif args.command == "team-pregame-audit":
             from nfl_prop_model.data.team_pregame import fetch_development_weather
 
             manifest = fetch_development_weather(args.data_dir)
@@ -233,7 +253,11 @@ def main(argv: list[str] | None = None) -> int:
                 f"Report: {args.report_dir / 'team_tuning.md'}"
             )
         else:
+            from nfl_prop_model.data.team_weather import collect_weather, link_weather_forecast
+
+            weather = collect_weather(args.data_dir, horizon=args.horizon, days=args.days)
             path = save_team_forecast(args.data_dir, horizon=args.horizon, days=args.days)
+            link_weather_forecast(weather, path)
             print(f"Saved team score/margin research forecast: {path}")
         return 0
     except (OSError, ValueError, ConnectionError, pl.exceptions.PolarsError) as error:

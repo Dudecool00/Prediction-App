@@ -37,8 +37,28 @@ Refresh current-season sources with `team-fetch --seasons 2026 --refresh`, rebui
 full season list, then run `team-forecast --horizon pregame_refresh` 1–24 hours before kickoff.
 Commands are manual. Each forecast records its actual run time, features, training inputs,
 and source/model hashes in a separate `data/journal/team_scores/snapshot-*/` directory.
+`team-forecast` first collects a new game-window weather version, then links it in `weather.json`
+beside the score manifest. Collection checks the live schedule and actual venue city, including
+neutral sites. Temperature, wind speed, gusts and precipitation cover five hourly timestamps;
+unavailable values remain null. Weather is collected context: the EPA score weights are unchanged.
 The app reads saved snapshots offline. `NFL_PROP_DATA_DIR` sets its data directory;
 CLI commands accept `--data-dir`.
+
+Weather can also be collected independently, with an optional Chicago game date:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-weather-fetch --horizon early_week --days 7
+.\.venv\Scripts\nfl-prop.exe team-weather-fetch --horizon pregame_refresh --date 2026-10-15
+.\.venv\Scripts\nfl-prop.exe team-weather-lookup --date 2025-09-07 --horizon early_week
+```
+
+Use a future date within the requested window for collection. Refresh accepts games 1–24 hours
+away. Past dates require the offline lookup, which uses the cached schedule and only receipts
+captured strictly before Tuesday's cutoff or kickoff minus one hour. Missing historical versions
+stay unavailable. Today's forecast cannot fill a 2025 gap. Live runs record their actual prompt
+time, which can differ from the fixed historical cutoff. Repeated calls preserve earlier versions.
+If live and cached score schedules disagree, refresh/rebuild the team cache before linking them.
+The [collection check](reports/team_scores/weather_collection.md) records coverage and storage.
 
 Historical early-week forecasts use Tuesday 10:00 America/Chicago before the week's first game;
 refreshes use kickoff minus one hour. Earlier results become eligible at kickoff plus 24 hours,
@@ -79,7 +99,9 @@ and freezes outcome-derived history and training at Tuesday's cutoff. Both horiz
 earlier available games; the refresh updates context without learning same-week game results.
 The source audit currently blocks the enriched 2025 replay: development starter snapshots and
 weekly rosters are untimed, restored 2025 injuries are untimed, and 2022–2023 forecast wind/rain
-are unavailable. The temperature trial is explicitly partial. The published model stays active.
+are absent from the selected Open-Meteo archive. A small NCAR point-forecast probe has now
+verified an alternative for older wind/rain; its historical adapter and full coverage audit are
+still pending. The temperature trial is explicitly partial. The published model stays active.
 
 Reuse your existing environment and caches. The commands need a team cache including
 2022–2025 and a context cache including 2022–2024. If those seasons are absent, fetch/build

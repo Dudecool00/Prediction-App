@@ -92,6 +92,37 @@ calibrated on separate chronological games. Do not reuse QB-yard residuals or ya
 QB continuity, injury/weather information, outcome tracking summaries,
 and prospective performance comparisons remain explicit next milestones.
 
+## On-demand weather collection
+
+`team-weather-fetch` verifies upcoming regular-season games against a fresh schedule and ESPN
+event kickoff/teams, then geocodes the scheduled venue city. Country/state checks prevent a
+same-name city or designated home city from silently replacing an international/neutral venue.
+Coordinates remain a city/grid approximation. Outdoor forecasts are recorded for all venues;
+no retractable-roof decision or weather score correction is inferred.
+
+Use an explicit `gfs_global` Single Runs request at the latest six-hour UTC initialization
+at least six hours ten minutes before the request. This is a conservative run-selection buffer;
+the successful response receipt proves actual capture before the live prediction. Keep the
+floored kickoff hour and following four hours, Celsius temperature, m/s wind/gusts and mm
+hourly precipitation. Source units, hour arrays, values and receipt timing are validated.
+Missing values stay null; failed games retain reasons, including when the entire slate fails.
+GFS gusts were unavailable in the live probe. Provider coverage can be shorter than `--days`.
+
+Each request creates a separate compact weather journal with source/query digests, collector
+hash, run/capture times and kickoff. `team-forecast` collects before fitting and links this
+context by checksum in a new sidecar, with identical games, kickoff and horizon required.
+The original EPA manifest, feature allowlist and score weights remain unchanged. Neither the
+app nor historical lookup fetches automatically. Commands are invoked manually.
+
+`team-weather-lookup --date` interprets the date in America/Chicago and uses the cached schedule.
+Choose the latest receipt strictly before the historical Tuesday or one-hour cutoff with the
+same game/kickoff; do not relabel a late capture, observed weather, or changed kickoff. An absent
+version stays unavailable. This collector is forward capture: its GFS Single Runs archive starts
+April 2026. A separately audited historical adapter is required for older operational forecasts.
+The small NCAR archive probe does not alter the frozen development policy or clear replay gates.
+
+Primary source: [Single Runs API](https://open-meteo.com/en/docs/single-runs-api).
+
 ## Fixed feature experiments
 
 `team-experiment` compares the current controls with four Ridge-alpha-20 ablations: EPA plus
