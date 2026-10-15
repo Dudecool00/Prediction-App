@@ -165,7 +165,10 @@ The original readiness gate and model research choices remain intact.
 .\.venv\Scripts\python.exe -m pytest
 ```
 
-CI checks Linux/Python 3.11 and Windows/Python 3.12. The package and `nfl-prop` entry point keep
+CI checks Linux/Python 3.11 and Windows/Python 3.12 in isolated virtual environments so
+preinstalled runner packages cannot conflict with the project's pinned dependencies.
+The [repository health audit](reports/team_scores/repository_health.md) records merge/check
+history and saved-artifact validation. The package and `nfl-prop` entry point keep
 their existing names for compatibility. Historical QB passing-yard and betting workflows are
 recoverable from [the pre-cleanup commit](https://github.com/Dudecool00/Prediction-App/tree/0ea8952bde323f31b085373e757fd1a7e9bbd5a3).
 Raw datasets, local reports, model files and forecast journals stay outside Git;

@@ -153,3 +153,24 @@ and two compact curated reports were added; datasets/article bodies stay outside
 environments and model caches were reused. Thirteen source/timing/integrity cases add coverage
 for strict cutoffs, future-snapshot invariance, empty charts, archive receipts, gzip bounds,
 missing reports, outcome exclusion and cache preservation.
+
+## Repository health audit, October 15, 2026
+
+Reviewed merged `main` initially at `e8ccc2c`, then incorporated `91afc64` when PR #25 merged
+during the audit. The review covers eleven team-model merges since PR #15. Two merged
+Windows runs (#21 and #23) failed at dependency validation because the hosted runner's
+preinstalled `pipx` required a newer `platformdirs` than this project's lock. Linux passed
+both runs; the initial main snapshot passed all 78 tests and checks on both operating systems.
+The combined tree includes the thirteen availability cases for 91 total tests.
+
+CI now creates a separate environment per runner and uses its interpreter for installation,
+dependency checks, lint, formatting, typing and tests, with stable platform check names.
+The dependency lock and all model/data source files retain their bytes. No additional local
+environment or model fit was needed. Saved research/model artifacts, frozen choices, five
+score journals, two weather captures, dated availability, output consistency, imports and
+local documentation links are covered by the integrity audit. See
+[evidence and limits](reports/team_scores/repository_health.md); final combined CI results
+are recorded in PR #26.
+
+GitHub reports `main` as unprotected with required checks off. Requiring the two platform
+checks before merging is recommended; repository access rules were not modified.
