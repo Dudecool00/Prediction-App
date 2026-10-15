@@ -420,3 +420,41 @@ metrics and source/artifact hashes, referencing upstream features rather than co
 No 2025 outcomes enter this command, and no enriched replay or published-model promotion
 follows automatically. Its source, upstream manifest, artifacts and separate frozen record
 must all pass reader guards. The original full replay readiness gate remains in force.
+
+## Dated availability source audit
+
+`team-availability-fetch/audit` are source validation commands, separate from model selection
+and the enriched replay. Project only 2025 game ID, season/week, home/away teams and UTC kickoff
+from the checksum-verified canonical schedule. Require all 272 regular-season games; never
+read score or actual starter columns or call a fitting function. Audit 1,088 team/horizon
+slots at Tuesday's lock and kickoff minus one hour. Record code/input policy before computing.
+
+For 2025 depth charts, `dt` is the upstream record-load timestamp. Assume load plus 24 hours
+strictly before the cutoff and report zero-delay sensitivity. Neither proves original
+publication or prevents later source revisions. Select the latest eligible whole-team
+snapshot and require its load age to be at most 72 hours. Require a unique distinct rank-one
+QB ESPN ID across position slots. Missing, stale, empty and ambiguous charts stay unknown;
+do not fall back to an older player row. Keep snapshot counts so a removed player cannot
+survive an empty QB edition. Exclude GSIS IDs and names remapped retrospectively by the
+producer. A listed depth leader is not a confirmed game starter or complete active/IR roster.
+
+The injury adapter is limited to a 2025 Week 1 source pilot, at most 20 distinct editions and
+1 MB per entity. Bind each exact `id_` capture URL and original entity SHA1/base32 digest to
+the preserved CDX index. Verify the original encoded entity before bounded decompression;
+one real capture retains HTTP gzip. Preserve local body/index SHA256 checksums. Never accept
+a redirected version, current page, first-publication date or today's receipt as evidence
+that this specific edition existed before a historical cutoff.
+
+Select the latest whole edition captured strictly before the cutoff, no more than 72 hours
+old, for the same season/week/team. An absent team section cannot inherit an older report.
+Distinguish formal designations, an explicit empty designation statement, partial/pending
+notes and unavailable reports. Parse only article-body sections, excluding navigation and
+already-completed games. Missing positions among Out designations make all position-group
+counts unknown. Names/slugs are parser identities only; no GSIS/ESPN mapping or complete
+injury/IR roster is inferred. Derived audit records retain aggregate counts, not player names.
+
+Raw sources and one compact cutoff table stay ignored. Repeated offline reads verify source
+manifests, entity/index/artifact digests, source policy and recomputed cutoff records. Earlier
+model source files, evidence and frozen choices remain unchanged. Full-season injury coverage,
+2022–2024 dated development rosters/starters, complete availability and historical forecast
+weather remain unresolved. Pilot coverage cannot clear the original replay readiness gate.

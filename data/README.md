@@ -13,6 +13,8 @@ committed to this repository.
 | `raw/team_playbook/<season>/` | Additional play measurements joined to canonical EPA play IDs |
 | `raw/team_pregame/` | Compact QB roster/depth rows, untimed 2025 injury audit, venue IDs and source schema/hash evidence |
 | `raw/team_pregame/weather/` | Single-hour previous-run forecast requests, geocoded city points and selected temperature table |
+| `raw/team_availability/2025/` | Dated QB depth rows and whole-team snapshot inventory, excluding retrospectively mapped GSIS/name fields |
+| `raw/team_availability/injury_week1_2025/` | Three compressed original archive entities, preserved CDX index and integrity receipts |
 | `raw/team_weather/points/` | Cached venue-city geocoding responses, queries and digests |
 | `processed/team_epa/` | Validated team-games, completed/scheduled games and manifest |
 | Other `processed/team_*/` namespaces | Experimental features, predictions, diagnostics and selection records |
@@ -52,6 +54,29 @@ The Single Runs GFS archive starts in April 2026. The offline lookup cannot use 
 after a historical prediction cutoff. Separate [NCAR historical archive](https://gdex.ucar.edu/datasets/d084001/)
 point probes succeeded for 2022, 2023 and 2025; these remain source-access evidence, outside
 the frozen experiment and prospective receipt lookup. No global GRIB files were downloaded.
+
+The dated availability audit selects only schedule metadata from the canonical game artifact.
+It stores 1,088 team/horizon cutoff records under `processed/team_availability/`, with source,
+policy and artifact guards. It reads no score or actual starter columns and performs no fits.
+The entire new raw/processed namespace occupies 239,100 bytes at the recorded source check.
+
+For depth, nflverse documents `dt` as record-load time and appends daily ESPN updates. Use
+a declared 24-hour delay with zero-delay sensitivity; this is an availability assumption,
+not proof of original publication or immunity to later archive revisions. Select the latest
+whole-team snapshot, keeping empty, ambiguous or stale QB charts unknown. The pinned producer
+remaps GSIS IDs across old records, so the audit uses original ESPN IDs only. See the
+[depth dictionary](https://nflreadr.nflverse.com/articles/dictionary_depth_charts.html) and
+[producer at its pre-2025 commit](https://github.com/nflverse/nflverse-rosters/blob/140739bf9c6f80bbe435db1d058f92514141c337/exec/update-depth-charts.R).
+
+The injury pilot uses preserved NFL article editions through the Internet Archive. Verify
+the exact archive URL and CDX SHA1/base32 digest against the original HTTP entity before
+decoding it; one edition is itself gzip encoded. Local gzip containers and raw index have
+SHA256 checksums. Archived capture time, rather than today's receipt or the article's first
+publication date, establishes cutoff eligibility. No redirected version or live page is a
+fallback. Only aggregate counts enter derived records; article bodies remain ignored locally.
+Missing reports and unknown player positions stay unknown. This pilot is Week 1 only and
+does not supply a complete IR roster, a starter confirmation or a model identity crosswalk.
+See [coverage and provenance](../reports/team_scores/availability_audit/findings.md).
 
 Use CLI `--data-dir` to select another cache directory and `NFL_PROP_DATA_DIR` for the app.
 All data subdirectories are ignored, including local artifacts from historical workflows.

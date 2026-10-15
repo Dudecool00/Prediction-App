@@ -1,0 +1,216 @@
+{
+  "audit_artifact": {
+    "file": "availability-ce13dffe294a60c1432bf1b51430a4d445eb51d4d401cd886660218cda33ad33.parquet",
+    "rows": 1088,
+    "schema": {
+      "cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "depth_age_hours": "Float64",
+      "depth_assumed_available_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "depth_delay_sensitive": "Boolean",
+      "depth_loaded_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "depth_reason": "String",
+      "depth_status": "String",
+      "game_id": "String",
+      "horizon": "String",
+      "injury_OL_out_count": "Int64",
+      "injury_QB_out_count": "Int64",
+      "injury_archive_url": "String",
+      "injury_captured_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "injury_defense_out_count": "Int64",
+      "injury_out_count": "Int64",
+      "injury_reason": "String",
+      "injury_skill_out_count": "Int64",
+      "injury_special_out_count": "Int64",
+      "injury_status": "String",
+      "injury_unknown_position_out_players": "Int64",
+      "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "listed_qb_espn_id": "String",
+      "season": "Int64",
+      "side": "String",
+      "team": "String",
+      "week": "Int64",
+      "zero_delay_qb_espn_id": "String"
+    },
+    "sha256": "ce13dffe294a60c1432bf1b51430a4d445eb51d4d401cd886660218cda33ad33"
+  },
+  "depth_source": {
+    "artifacts": {
+      "inventory": {
+        "file": "inventory-3c1ee2201c4ea0dee20dc062a268a5765c2babcb894658bc31ba35bde2605d66.parquet",
+        "rows": 7072,
+        "schema": {
+          "chart_rows": "UInt32",
+          "dt": "String",
+          "qb_rows": "UInt32",
+          "team": "String"
+        },
+        "sha256": "3c1ee2201c4ea0dee20dc062a268a5765c2babcb894658bc31ba35bde2605d66"
+      },
+      "quarterbacks": {
+        "file": "quarterbacks-8e80504e83eda2891fd40a134c59eb5ca8e851b45ec48282a489ddb41a8b11ef.parquet",
+        "rows": 21429,
+        "schema": {
+          "dt": "String",
+          "espn_id": "String",
+          "pos_rank": "Int32",
+          "pos_slot": "Int32",
+          "team": "String"
+        },
+        "sha256": "8e80504e83eda2891fd40a134c59eb5ca8e851b45ec48282a489ddb41a8b11ef"
+      }
+    },
+    "download_bytes": 2584724,
+    "format_version": 1,
+    "retrieved_at_utc": "2026-10-15T00:59:14.584063+00:00",
+    "upstream_schema": {
+      "dt": "String",
+      "espn_id": "String",
+      "gsis_id": "String",
+      "player_name": "String",
+      "pos_abb": "String",
+      "pos_grp": "String",
+      "pos_grp_id": "String",
+      "pos_id": "String",
+      "pos_name": "String",
+      "pos_rank": "Int32",
+      "pos_slot": "Int32",
+      "team": "String"
+    },
+    "upstream_sha256": "14f74185b3c2c48df234ced284ba3596bda3333d0b2a8df40841f68cd34539fa",
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2025.parquet"
+  },
+  "description": "Outcome-free source coverage audit, not predictions or a replay lock",
+  "format_version": 1,
+  "games": 272,
+  "guarded_source_sha256": {
+    "src/nfl_prop_model/data/team_context.py": "3510e1ffa3e7c3a039b129f481476e707e025649b1c8a74f04397c3bc424f4c9",
+    "src/nfl_prop_model/data/team_games.py": "77a4c71ea1bdedd6e572a1bd91d14eb6b92aec62d9a4abc8686b933a03e6a995",
+    "src/nfl_prop_model/data/team_pregame.py": "f9953bb051f5c03dded10bf110a298ed29ebe467d02155f065d16eb1ef4ea73a",
+    "src/nfl_prop_model/features/team_context.py": "2316b987804c9d841f2345ce043c16a42150506c60f87a04233f1cc014cce036",
+    "src/nfl_prop_model/features/team_epa.py": "e134324708b6e5e1087435bc281a7f0e85e5ee6ad915465959998a7f6f9602a1",
+    "src/nfl_prop_model/features/team_walkforward.py": "b21df06601adea25a97d6f9683deebc7428da7da9385f0910f440663d5cda76f",
+    "src/nfl_prop_model/modeling/team_refinement.py": "1dcd0030444acd4ba1ce7226ef211e9248ba57f63b19954d7348145fb5282187",
+    "src/nfl_prop_model/modeling/team_scores.py": "fe94015a29a06f29c6c065ccbdc7480c5f4b4f08efb40ba5e72c84ec0297ac12",
+    "src/nfl_prop_model/modeling/team_simplicity.py": "1878d74676bb1dc94fd67abdf51274207f90257920b7d55c125950cb0693328c",
+    "src/nfl_prop_model/modeling/team_walkforward.py": "cc63cf697330100324edb637896f0afb6a9fd6037217200d6d022cd08ced8a7c"
+  },
+  "injury_source": {
+    "captures": [
+      {
+        "archive_url": "https://web.archive.org/web/20250903203503id_/https://www.nfl.com/news/nfl-week-1-injury-report-player-statuses-for-all-16-games-2025-season",
+        "body_sha256": "c56737a28da627b48667bd9811822f1b70af46e6ef4a28712b693503e93c8b27",
+        "bytes": 58641,
+        "captured_at_utc": "2025-09-03T20:35:03+00:00",
+        "cdx_sha1_base32": "FBLCHLZQQSNDMN4CY4PPFG5GZAKDIMRZ",
+        "compressed_sha256": "bb46615e2f4dbfb5367f6a1b33a2e130db6af4ec9075fc801fb3da336711fd0e",
+        "file": "20250903203503-FBLCHLZQQSNDMN4CY4PPFG5GZAKDIMRZ.html.gz",
+        "original_url": "https://www.nfl.com/news/nfl-week-1-injury-report-player-statuses-for-all-16-games-2025-season"
+      },
+      {
+        "archive_url": "https://web.archive.org/web/20250904153635id_/https://www.nfl.com/news/nfl-week-1-injury-report-player-statuses-for-all-16-games-2025-season",
+        "body_sha256": "4fb1bda9ac12529e0882dd4176326c815964a5c5c25959f74d4fab839705cb8a",
+        "bytes": 58993,
+        "captured_at_utc": "2025-09-04T15:36:35+00:00",
+        "cdx_sha1_base32": "DBQF3JPDH7KZTLBDRXLHNCZBQ32TUDMR",
+        "compressed_sha256": "01bbae0826144c290163c5c70c19d5f3eccd9db51f5943169f3b28661c8871a2",
+        "file": "20250904153635-DBQF3JPDH7KZTLBDRXLHNCZBQ32TUDMR.html.gz",
+        "original_url": "https://www.nfl.com/news/nfl-week-1-injury-report-player-statuses-for-all-16-games-2025-season"
+      },
+      {
+        "archive_url": "https://web.archive.org/web/20250906002521id_/https://www.nfl.com/news/nfl-week-1-injury-report-player-statuses-for-all-16-games-2025-season",
+        "body_sha256": "6ff6c1f676b8ed15b6bc7467844e2393499379a207c37b13c851f3d52b0f0312",
+        "bytes": 65102,
+        "captured_at_utc": "2025-09-06T00:25:21+00:00",
+        "cdx_sha1_base32": "Z7T4N46W3KNZOCVX5WGP6SMFV76HWEXN",
+        "compressed_sha256": "c49205cea7abcd4c296e69b9531540991fd15fb7dd783df2144aa9d836b3a04a",
+        "file": "20250906002521-Z7T4N46W3KNZOCVX5WGP6SMFV76HWEXN.html.gz",
+        "original_url": "https://www.nfl.com/news/nfl-week-1-injury-report-player-statuses-for-all-16-games-2025-season"
+      }
+    ],
+    "format_version": 1,
+    "index_file": "index-45f28ffd0aab947c4ff5a6b2948e056b46198c1e26858ba5618884efab376909.json",
+    "index_sha256": "45f28ffd0aab947c4ff5a6b2948e056b46198c1e26858ba5618884efab376909",
+    "index_url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.nfl.com%2Fnews%2Fnfl-week-1-injury-report-player-statuses-for-all-16-games-2025-season&output=json&filter=statuscode%3A200&collapse=digest&from=20250901&to=20250909",
+    "retrieved_at_utc": "2026-10-15T01:22:15.214975+00:00"
+  },
+  "input_manifest_sha256": {
+    "depth": "0f6d4eee971bb34255a32ddc5ef8e456f25dc2dfd4a2dcc3b0e141d388cfc108",
+    "injury": "8d550f7eff39794920df113215d9543852e4c71c86ec28be175e342cc7b2a21f",
+    "schedule": "1c35edef205f49105c215474d50c62b6f1f161a15150dde74d110e564c7fb8bd"
+  },
+  "policy": {
+    "2022-2024": "untimed depth/roster labels remain excluded; no invented publication dates",
+    "depth": {
+      "availability": "assume loaded time +24h strictly before cutoff; zero-delay sensitivity",
+      "freshness": "latest eligible whole team snapshot, no more than 72h old at cutoff",
+      "identity": "ESPN ID; exclude GSIS mapping and names remapped retroactively by producer",
+      "leader": "unique distinct QB ESPN ID at rank one across slots; ties/missing/stale unknown",
+      "missing": "do not carry a removed player or fall back past an empty/ambiguous snapshot",
+      "roster": "depth chart is not complete active/IR roster or a game-start confirmation",
+      "scope": "2025 dated ESPN depth-chart archive via nflverse, including January 2026",
+      "timestamp": "dt is record-load time, not verified source publication"
+    },
+    "injuries": {
+      "availability": "verified archive capture strictly before cutoff; never article's first publication date",
+      "classification": "unknown positions invalidate group counts; never guessed from names",
+      "freshness": "edition at most 72h old; older or missing editions unknown",
+      "identity": "NFL player slug or document name only; no fabricated GSIS or ESPN crosswalk",
+      "integrity": "raw id_ body SHA1/base32 must match the CDX digest and resolved capture URL",
+      "scope": "2025 Week 1 source pilot only, not season-wide injury coverage",
+      "selection": "latest whole archived edition; same week/team; no carry across a removed section",
+      "status": "formal Out/Questionable/Doubtful designations; not practice participation or complete IR roster",
+      "storage": "small compressed original bodies plus index/digests; no live fallback or grids"
+    },
+    "outcomes": "project schedule metadata columns only; no scores, actual starter or fits",
+    "readiness": "listed QB leaders and Week 1 pilot do not clear the enriched replay gate"
+  },
+  "recorded_at_utc": "2026-10-15T01:27:34.762874+00:00",
+  "records": 1088,
+  "schedule_artifact_sha256": "bf7dfa3fb9149a9c3ce07a16eb96436b79e6411e81d740e082c4ed1801814917",
+  "source_sha256": "91502522f139e775610f042a27693459f137bcebebb026a8d5dc3dd908497527",
+  "storage_bytes": {
+    "processed": 35746,
+    "raw": 203354
+  },
+  "summary": {
+    "2025_fits_performed": 0,
+    "confirmed_game_starters_established": false,
+    "coverage": [
+      {
+        "depth_delay_sensitive_slots": 11,
+        "depth_unavailable_slots": 0,
+        "horizon": "early_week",
+        "listed_qb_leader_slots": 544,
+        "team_slots": 544,
+        "week1_designation_slots": 0,
+        "week1_explicit_no_designation_slots": 0,
+        "week1_partial_or_pending_slots": 0,
+        "week1_slots": 32,
+        "week1_unavailable_slots": 32,
+        "week1_unknown_position_out_slots": 0
+      },
+      {
+        "depth_delay_sensitive_slots": 2,
+        "depth_unavailable_slots": 0,
+        "horizon": "pregame_refresh",
+        "listed_qb_leader_slots": 544,
+        "team_slots": 544,
+        "week1_designation_slots": 25,
+        "week1_explicit_no_designation_slots": 3,
+        "week1_partial_or_pending_slots": 0,
+        "week1_slots": 32,
+        "week1_unavailable_slots": 4,
+        "week1_unknown_position_out_slots": 1
+      }
+    ],
+    "depth_missing_reasons": [],
+    "full_enriched_replay_ready": false,
+    "known_listed_qb_changes_between_horizons": 20,
+    "remaining": [
+      "2022-2024 dated development starter/roster versions unresolved",
+      "full active/IR roster and starter confirmation not supplied by listed depth leaders",
+      "injury archive pilot is Week 1 only; full season coverage/identity adapter pending",
+      "complete historical forecast weather adapter and coverage pending"
+    ]
+  }
+}

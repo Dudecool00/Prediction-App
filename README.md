@@ -79,6 +79,8 @@ The 2025 season has already been examined and is diagnostic data.
 | `team-walkforward` | Compare weekly locked context models on 2023–2024 and freeze a research choice |
 | `team-replay-check` | Check input readiness for the enriched 2025 replay; blocked inputs prevent any fit |
 | `team-simplicity-check` | Reuse weekly predictions to assess simpler selection on 2024 and record a separate pre-2025 research choice |
+| `team-availability-fetch` | Cache dated 2025 QB depth snapshots and a small preserved Week 1 injury-report pilot |
+| `team-availability-audit` | Check source coverage at 2025 forecast cutoffs using schedule metadata only |
 
 Prefix commands with `.\.venv\Scripts\nfl-prop.exe`. Fetch/build the required seasons before
 evaluation; a 2025 diagnostic needs a team cache including 2025. Research outputs go to
@@ -127,6 +129,25 @@ compact EPA. This is an explicit adaptive development decision after seeing earl
 it preserves the original lock, performs no new fits, and does not use 2025 outcomes.
 Run `team-simplicity-check` after `team-walkforward`; outputs use `reports/local/team_simplicity/`.
 The enriched replay still requires the dated availability audit and validated adapters.
+
+The [dated availability audit](reports/team_scores/availability_audit/findings.md) now finds
+listed QB leaders for all 544 team-game appearances at both 2025 cutoffs, with 20 changes
+between Tuesday and kickoff. The Week 1 injury pilot covers 28 of 32 teams at the refresh
+and none at Tuesday's lock. These are source-coverage results, with no fits or outcome reads.
+Listed depth leaders are not confirmed starters; earlier development roster versions,
+full-season injuries and historical weather coverage still need work before the enriched replay.
+
+With the existing team cache including 2025, run:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-availability-fetch
+.\.venv\Scripts\nfl-prop.exe team-availability-audit
+```
+
+The fetch reuses validated local sources. The audit runs offline and writes to
+`reports/local/team_availability/`. Selected QB rows, whole-team snapshot counts, three
+compressed archived injury editions and the cutoff audit occupy about 239 KB locally.
+The original readiness gate and model research choices remain intact.
 
 ## Repository and validation
 
