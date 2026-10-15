@@ -1,0 +1,1016 @@
+{
+  "2025_fits_performed": 0,
+  "artifacts": {
+    "selected_2024_predictions": {
+      "file": "selected_2024-76be4f0bd5a0527d2ac26fc26246ebaa2f7d5152d7e60b9cb18d2711d722ea41.parquet",
+      "rows": 544,
+      "schema": {
+        "away_prior_games": "Int64",
+        "away_score": "Float64",
+        "away_team": "String",
+        "game_id": "String",
+        "home_prior_games": "Int64",
+        "home_score": "Float64",
+        "home_team": "String",
+        "horizon": "String",
+        "kickoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "latest_training_result_available_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "model": "String",
+        "predicted_away_margin": "Float64",
+        "predicted_away_score": "Float64",
+        "predicted_home_margin": "Float64",
+        "predicted_home_score": "Float64",
+        "predicted_total": "Float64",
+        "prediction_time_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "result_available_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+        "season": "Int64",
+        "target_home_margin": "Float64",
+        "training_games": "Int64",
+        "week": "Int64",
+        "week_lock_utc": "Datetime(time_unit='us', time_zone='UTC')"
+      },
+      "sha256": "76be4f0bd5a0527d2ac26fc26246ebaa2f7d5152d7e60b9cb18d2711d722ea41"
+    }
+  },
+  "curated_summary": true,
+  "following_season_choice": {
+    "2025_outcomes_used": false,
+    "adaptive_development": true,
+    "best_eligible_model": "compact_epa",
+    "checks": [
+      {
+        "comparisons": [
+          {
+            "control": "ridge_epa_scores",
+            "margin_mae_gain": 0.1790441176470588,
+            "reasons": [],
+            "week_block_95_lower": 0.06021719368653547,
+            "week_block_95_upper": 0.32161220871327245
+          }
+        ],
+        "eligible": true,
+        "model": "compact_epa",
+        "reasons": []
+      },
+      {
+        "comparisons": [
+          {
+            "control": "ridge_epa_scores",
+            "margin_mae_gain": 0.1790441176470588,
+            "reasons": [],
+            "week_block_95_lower": 0.06021719368653547,
+            "week_block_95_upper": 0.32161220871327245
+          },
+          {
+            "control": "compact_epa",
+            "margin_mae_gain": 0.0,
+            "reasons": [
+              "margin gain below 0.05 points",
+              "paired range includes no gain"
+            ],
+            "week_block_95_lower": 0.0,
+            "week_block_95_upper": 0.0
+          }
+        ],
+        "eligible": false,
+        "model": "compact_availability",
+        "reasons": [
+          "against compact_epa: margin gain below 0.05 points",
+          "against compact_epa: paired range includes no gain"
+        ]
+      },
+      {
+        "comparisons": [
+          {
+            "control": "ridge_epa_scores",
+            "margin_mae_gain": 0.024632352941176567,
+            "reasons": [
+              "margin gain below 0.05 points",
+              "paired range includes no gain"
+            ],
+            "week_block_95_lower": -0.14311960376194868,
+            "week_block_95_upper": 0.20775066305350556
+          },
+          {
+            "control": "compact_epa",
+            "margin_mae_gain": -0.15441176470588225,
+            "reasons": [
+              "margin gain below 0.05 points",
+              "paired range includes no gain",
+              "score error regresses",
+              "total error regresses"
+            ],
+            "week_block_95_lower": -0.2759145985401459,
+            "week_block_95_upper": -0.04999999999999994
+          }
+        ],
+        "eligible": false,
+        "model": "compact_temperature",
+        "reasons": [
+          "against ridge_epa_scores: margin gain below 0.05 points",
+          "against ridge_epa_scores: paired range includes no gain",
+          "against compact_epa: margin gain below 0.05 points",
+          "against compact_epa: paired range includes no gain",
+          "against compact_epa: score error regresses",
+          "against compact_epa: total error regresses"
+        ]
+      },
+      {
+        "comparisons": [
+          {
+            "control": "ridge_epa_scores",
+            "margin_mae_gain": 0.024632352941176567,
+            "reasons": [
+              "margin gain below 0.05 points",
+              "paired range includes no gain"
+            ],
+            "week_block_95_lower": -0.14311960376194868,
+            "week_block_95_upper": 0.20775066305350556
+          },
+          {
+            "control": "compact_epa",
+            "margin_mae_gain": -0.15441176470588225,
+            "reasons": [
+              "margin gain below 0.05 points",
+              "paired range includes no gain",
+              "score error regresses",
+              "total error regresses"
+            ],
+            "week_block_95_lower": -0.2759145985401459,
+            "week_block_95_upper": -0.04999999999999994
+          }
+        ],
+        "eligible": false,
+        "model": "compact_combined",
+        "reasons": [
+          "against ridge_epa_scores: margin gain below 0.05 points",
+          "against ridge_epa_scores: paired range includes no gain",
+          "against compact_epa: margin gain below 0.05 points",
+          "against compact_epa: paired range includes no gain",
+          "against compact_epa: score error regresses",
+          "against compact_epa: total error regresses"
+        ]
+      }
+    ],
+    "features": [
+      "home_off_epa_season",
+      "home_def_epa_season",
+      "away_off_epa_season",
+      "away_def_epa_season",
+      "home_field",
+      "rest_difference",
+      "home_prior_games",
+      "away_prior_games"
+    ],
+    "model": "compact_epa",
+    "one_standard_error": 0.502073697530625,
+    "ridge_alpha": 20.0,
+    "simulated_lock_utc": "2024-09-03T15:00:00+00:00",
+    "validation_games": 272,
+    "validation_seasons": [
+      2023
+    ],
+    "within_one_standard_error": [
+      "ridge_epa_scores",
+      "compact_epa"
+    ]
+  },
+  "following_season_margin_gains": [
+    {
+      "control": "ridge_epa_scores",
+      "horizon": "early_week",
+      "margin_mae_gain": 0.11544117647058813,
+      "week_block_95_lower": -0.09747181065475552,
+      "week_block_95_upper": 0.3188741675915646
+    },
+    {
+      "control": "compact_epa",
+      "horizon": "early_week",
+      "margin_mae_gain": 0.0,
+      "week_block_95_lower": 0.0,
+      "week_block_95_upper": 0.0
+    },
+    {
+      "control": "ridge_epa_scores",
+      "horizon": "pregame_refresh",
+      "margin_mae_gain": 0.11544117647058813,
+      "week_block_95_lower": -0.09747181065475552,
+      "week_block_95_upper": 0.3188741675915646
+    },
+    {
+      "control": "compact_epa",
+      "horizon": "pregame_refresh",
+      "margin_mae_gain": 0.0,
+      "week_block_95_lower": 0.0,
+      "week_block_95_upper": 0.0
+    }
+  ],
+  "following_season_metrics": [
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.33272058823529416,
+      "margin_mae": 10.207720588235293,
+      "margin_rmse": 13.094555727701584,
+      "model": "compact_availability",
+      "scope": "overall",
+      "score_bias": -0.42628676470588234,
+      "score_mae": 7.207536764705882,
+      "score_rmse": 9.175658134754277,
+      "season": null,
+      "total_bias": -0.8525735294117647,
+      "total_mae": 9.927573529411765,
+      "total_rmse": 12.857037727161224
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.3522058823529415,
+      "margin_mae": 10.179411764705883,
+      "margin_rmse": 13.090797171610111,
+      "model": "compact_combined",
+      "scope": "overall",
+      "score_bias": -0.6393382352941176,
+      "score_mae": 7.261764705882353,
+      "score_rmse": 9.218459741193211,
+      "season": null,
+      "total_bias": -1.2786764705882352,
+      "total_mae": 9.99705882352941,
+      "total_rmse": 12.982720416452198
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_epa",
+      "scope": "overall",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": null,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.339338235294118,
+      "margin_mae": 10.185661764705882,
+      "margin_rmse": 13.099858272695391,
+      "model": "compact_temperature",
+      "scope": "overall",
+      "score_bias": -0.6435661764705882,
+      "score_mae": 7.264154411764705,
+      "score_rmse": 9.222180941812484,
+      "season": null,
+      "total_bias": -1.2871323529411764,
+      "total_mae": 9.995955882352941,
+      "total_rmse": 12.984151821717573
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.41139705882352934,
+      "margin_mae": 10.324632352941178,
+      "margin_rmse": 13.133036755136441,
+      "model": "ridge_epa_scores",
+      "scope": "overall",
+      "score_bias": -0.2641544117647059,
+      "score_mae": 7.311213235294117,
+      "score_rmse": 9.271089829014013,
+      "season": null,
+      "total_bias": -0.5283088235294118,
+      "total_mae": 10.165073529411766,
+      "total_rmse": 13.089529099964732
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "simplicity_selected",
+      "scope": "overall",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": null,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.2573529411764707,
+      "margin_mae": 10.180147058823529,
+      "margin_rmse": 13.076348204026274,
+      "model": "compact_availability",
+      "scope": "overall",
+      "score_bias": -0.4183823529411765,
+      "score_mae": 7.299632352941177,
+      "score_rmse": 9.233831258252577,
+      "season": null,
+      "total_bias": -0.8367647058823529,
+      "total_mae": 10.021323529411765,
+      "total_rmse": 13.040846462963524
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.3297794117647058,
+      "margin_mae": 10.154044117647057,
+      "margin_rmse": 13.061479343744292,
+      "model": "compact_combined",
+      "scope": "overall",
+      "score_bias": -0.6174632352941176,
+      "score_mae": 7.3053308823529415,
+      "score_rmse": 9.243707120172587,
+      "season": null,
+      "total_bias": -1.2349264705882352,
+      "total_mae": 10.060661764705882,
+      "total_rmse": 13.083663196790829
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_epa",
+      "scope": "overall",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": null,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.3963235294117649,
+      "margin_mae": 10.17720588235294,
+      "margin_rmse": 13.085229661496875,
+      "model": "compact_temperature",
+      "scope": "overall",
+      "score_bias": -0.6213235294117647,
+      "score_mae": 7.229044117647058,
+      "score_rmse": 9.193297990448068,
+      "season": null,
+      "total_bias": -1.2426470588235294,
+      "total_mae": 9.950735294117647,
+      "total_rmse": 12.916798228299001
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.41139705882352934,
+      "margin_mae": 10.324632352941178,
+      "margin_rmse": 13.133036755136441,
+      "model": "ridge_epa_scores",
+      "scope": "overall",
+      "score_bias": -0.2641544117647059,
+      "score_mae": 7.311213235294117,
+      "score_rmse": 9.271089829014013,
+      "season": null,
+      "total_bias": -0.5283088235294118,
+      "total_mae": 10.165073529411766,
+      "total_rmse": 13.089529099964732
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "simplicity_selected",
+      "scope": "overall",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": null,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.33272058823529416,
+      "margin_mae": 10.207720588235293,
+      "margin_rmse": 13.094555727701584,
+      "model": "compact_availability",
+      "scope": "season",
+      "score_bias": -0.42628676470588234,
+      "score_mae": 7.207536764705882,
+      "score_rmse": 9.175658134754277,
+      "season": 2024,
+      "total_bias": -0.8525735294117647,
+      "total_mae": 9.927573529411765,
+      "total_rmse": 12.857037727161224
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.3522058823529415,
+      "margin_mae": 10.179411764705883,
+      "margin_rmse": 13.090797171610111,
+      "model": "compact_combined",
+      "scope": "season",
+      "score_bias": -0.6393382352941176,
+      "score_mae": 7.261764705882353,
+      "score_rmse": 9.218459741193211,
+      "season": 2024,
+      "total_bias": -1.2786764705882352,
+      "total_mae": 9.99705882352941,
+      "total_rmse": 12.982720416452198
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_epa",
+      "scope": "season",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": 2024,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.339338235294118,
+      "margin_mae": 10.185661764705882,
+      "margin_rmse": 13.099858272695391,
+      "model": "compact_temperature",
+      "scope": "season",
+      "score_bias": -0.6435661764705882,
+      "score_mae": 7.264154411764705,
+      "score_rmse": 9.222180941812484,
+      "season": 2024,
+      "total_bias": -1.2871323529411764,
+      "total_mae": 9.995955882352941,
+      "total_rmse": 12.984151821717573
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.41139705882352934,
+      "margin_mae": 10.324632352941178,
+      "margin_rmse": 13.133036755136441,
+      "model": "ridge_epa_scores",
+      "scope": "season",
+      "score_bias": -0.2641544117647059,
+      "score_mae": 7.311213235294117,
+      "score_rmse": 9.271089829014013,
+      "season": 2024,
+      "total_bias": -0.5283088235294118,
+      "total_mae": 10.165073529411766,
+      "total_rmse": 13.089529099964732
+    },
+    {
+      "games": 272,
+      "horizon": "early_week",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "simplicity_selected",
+      "scope": "season",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": 2024,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.2573529411764707,
+      "margin_mae": 10.180147058823529,
+      "margin_rmse": 13.076348204026274,
+      "model": "compact_availability",
+      "scope": "season",
+      "score_bias": -0.4183823529411765,
+      "score_mae": 7.299632352941177,
+      "score_rmse": 9.233831258252577,
+      "season": 2024,
+      "total_bias": -0.8367647058823529,
+      "total_mae": 10.021323529411765,
+      "total_rmse": 13.040846462963524
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.3297794117647058,
+      "margin_mae": 10.154044117647057,
+      "margin_rmse": 13.061479343744292,
+      "model": "compact_combined",
+      "scope": "season",
+      "score_bias": -0.6174632352941176,
+      "score_mae": 7.3053308823529415,
+      "score_rmse": 9.243707120172587,
+      "season": 2024,
+      "total_bias": -1.2349264705882352,
+      "total_mae": 10.060661764705882,
+      "total_rmse": 13.083663196790829
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "compact_epa",
+      "scope": "season",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": 2024,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.3963235294117649,
+      "margin_mae": 10.17720588235294,
+      "margin_rmse": 13.085229661496875,
+      "model": "compact_temperature",
+      "scope": "season",
+      "score_bias": -0.6213235294117647,
+      "score_mae": 7.229044117647058,
+      "score_rmse": 9.193297990448068,
+      "season": 2024,
+      "total_bias": -1.2426470588235294,
+      "total_mae": 9.950735294117647,
+      "total_rmse": 12.916798228299001
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.41139705882352934,
+      "margin_mae": 10.324632352941178,
+      "margin_rmse": 13.133036755136441,
+      "model": "ridge_epa_scores",
+      "scope": "season",
+      "score_bias": -0.2641544117647059,
+      "score_mae": 7.311213235294117,
+      "score_rmse": 9.271089829014013,
+      "season": 2024,
+      "total_bias": -0.5283088235294118,
+      "total_mae": 10.165073529411766,
+      "total_rmse": 13.089529099964732
+    },
+    {
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "margin_bias": 0.32169117647058826,
+      "margin_mae": 10.209191176470588,
+      "margin_rmse": 13.100846122203215,
+      "model": "simplicity_selected",
+      "scope": "season",
+      "score_bias": -0.4303308823529411,
+      "score_mae": 7.2090073529411764,
+      "score_rmse": 9.177631254369315,
+      "season": 2024,
+      "total_bias": -0.8606617647058823,
+      "total_mae": 9.924632352941176,
+      "total_rmse": 12.85626277916949
+    }
+  ],
+  "format_version": 1,
+  "frozen_2025_research_choice": {
+    "2025_outcomes_used": false,
+    "adaptive_development": true,
+    "best_eligible_model": "compact_epa",
+    "checks": [
+      {
+        "comparisons": [
+          {
+            "control": "ridge_epa_scores",
+            "margin_mae_gain": 0.14724264705882348,
+            "reasons": [],
+            "week_block_95_lower": 0.023100180505415152,
+            "week_block_95_upper": 0.27135588873545075
+          }
+        ],
+        "eligible": true,
+        "model": "compact_epa",
+        "reasons": []
+      },
+      {
+        "comparisons": [
+          {
+            "control": "ridge_epa_scores",
+            "margin_mae_gain": 0.14797794117647053,
+            "reasons": [],
+            "week_block_95_lower": 0.023353499993228846,
+            "week_block_95_upper": 0.27251049078170325
+          },
+          {
+            "control": "compact_epa",
+            "margin_mae_gain": 0.0007352941176470583,
+            "reasons": [
+              "margin gain below 0.05 points",
+              "paired range includes no gain"
+            ],
+            "week_block_95_lower": 0.0,
+            "week_block_95_upper": 0.0022222222222222205
+          }
+        ],
+        "eligible": false,
+        "model": "compact_availability",
+        "reasons": [
+          "against compact_epa: margin gain below 0.05 points",
+          "against compact_epa: paired range includes no gain"
+        ]
+      },
+      {
+        "comparisons": [
+          {
+            "control": "ridge_epa_scores",
+            "margin_mae_gain": 0.08180147058823534,
+            "reasons": [
+              "paired range includes no gain"
+            ],
+            "week_block_95_lower": -0.0628768382352941,
+            "week_block_95_upper": 0.2213716124934466
+          },
+          {
+            "control": "compact_epa",
+            "margin_mae_gain": -0.06544117647058814,
+            "reasons": [
+              "margin gain below 0.05 points",
+              "paired range includes no gain",
+              "score error regresses",
+              "total error regresses"
+            ],
+            "week_block_95_lower": -0.1432884543517124,
+            "week_block_95_upper": 0.004540262883592788
+          }
+        ],
+        "eligible": false,
+        "model": "compact_temperature",
+        "reasons": [
+          "against ridge_epa_scores: paired range includes no gain",
+          "against compact_epa: margin gain below 0.05 points",
+          "against compact_epa: paired range includes no gain",
+          "against compact_epa: score error regresses",
+          "against compact_epa: total error regresses"
+        ]
+      },
+      {
+        "comparisons": [
+          {
+            "control": "ridge_epa_scores",
+            "margin_mae_gain": 0.08492647058823533,
+            "reasons": [
+              "paired range includes no gain"
+            ],
+            "week_block_95_lower": -0.0612695633420966,
+            "week_block_95_upper": 0.22639449218247434
+          },
+          {
+            "control": "compact_epa",
+            "margin_mae_gain": -0.06231617647058814,
+            "reasons": [
+              "margin gain below 0.05 points",
+              "paired range includes no gain",
+              "score error regresses",
+              "total error regresses"
+            ],
+            "week_block_95_lower": -0.14059866357915715,
+            "week_block_95_upper": 0.006698156242765894
+          }
+        ],
+        "eligible": false,
+        "model": "compact_combined",
+        "reasons": [
+          "against ridge_epa_scores: paired range includes no gain",
+          "against compact_epa: margin gain below 0.05 points",
+          "against compact_epa: paired range includes no gain",
+          "against compact_epa: score error regresses",
+          "against compact_epa: total error regresses"
+        ]
+      }
+    ],
+    "features": [
+      "home_off_epa_season",
+      "home_def_epa_season",
+      "away_off_epa_season",
+      "away_def_epa_season",
+      "home_field",
+      "rest_difference",
+      "home_prior_games",
+      "away_prior_games"
+    ],
+    "model": "compact_epa",
+    "one_standard_error": 0.3516415382039148,
+    "ridge_alpha": 20.0,
+    "simulated_lock_utc": "2025-09-02T15:00:00+00:00",
+    "validation_games": 544,
+    "validation_seasons": [
+      2023,
+      2024
+    ],
+    "within_one_standard_error": [
+      "ridge_epa_scores",
+      "compact_epa"
+    ]
+  },
+  "original_complexity": [
+    {
+      "active_encoded_features": 9,
+      "allocated_weights_and_intercepts": 20,
+      "encoded_features": 9,
+      "horizon": "early_week",
+      "matrix_rank": 9,
+      "model": "compact_epa",
+      "raw_features": 8,
+      "ridge_degrees_of_freedom_per_output": 8.51706550129269,
+      "season": 2023
+    },
+    {
+      "active_encoded_features": 9,
+      "allocated_weights_and_intercepts": 52,
+      "encoded_features": 25,
+      "horizon": "early_week",
+      "matrix_rank": 9,
+      "model": "compact_availability",
+      "raw_features": 16,
+      "ridge_degrees_of_freedom_per_output": 8.51706550129269,
+      "season": 2023
+    },
+    {
+      "active_encoded_features": 15,
+      "allocated_weights_and_intercepts": 32,
+      "encoded_features": 15,
+      "horizon": "early_week",
+      "matrix_rank": 13,
+      "model": "compact_temperature",
+      "raw_features": 11,
+      "ridge_degrees_of_freedom_per_output": 12.19372933964585,
+      "season": 2023
+    },
+    {
+      "active_encoded_features": 15,
+      "allocated_weights_and_intercepts": 64,
+      "encoded_features": 31,
+      "horizon": "early_week",
+      "matrix_rank": 13,
+      "model": "compact_combined",
+      "raw_features": 19,
+      "ridge_degrees_of_freedom_per_output": 12.19372933964585,
+      "season": 2023
+    },
+    {
+      "active_encoded_features": 9,
+      "allocated_weights_and_intercepts": 20,
+      "encoded_features": 9,
+      "horizon": "early_week",
+      "matrix_rank": 9,
+      "model": "compact_epa",
+      "raw_features": 8,
+      "ridge_degrees_of_freedom_per_output": 8.766094383443686,
+      "season": 2024
+    },
+    {
+      "active_encoded_features": 9,
+      "allocated_weights_and_intercepts": 52,
+      "encoded_features": 25,
+      "horizon": "early_week",
+      "matrix_rank": 9,
+      "model": "compact_availability",
+      "raw_features": 16,
+      "ridge_degrees_of_freedom_per_output": 8.766094383443686,
+      "season": 2024
+    },
+    {
+      "active_encoded_features": 15,
+      "allocated_weights_and_intercepts": 32,
+      "encoded_features": 15,
+      "horizon": "early_week",
+      "matrix_rank": 13,
+      "model": "compact_temperature",
+      "raw_features": 11,
+      "ridge_degrees_of_freedom_per_output": 12.620559602859188,
+      "season": 2024
+    },
+    {
+      "active_encoded_features": 15,
+      "allocated_weights_and_intercepts": 64,
+      "encoded_features": 31,
+      "horizon": "early_week",
+      "matrix_rank": 13,
+      "model": "compact_combined",
+      "raw_features": 19,
+      "ridge_degrees_of_freedom_per_output": 12.620559602859188,
+      "season": 2024
+    },
+    {
+      "active_encoded_features": 9,
+      "allocated_weights_and_intercepts": 20,
+      "encoded_features": 9,
+      "horizon": "pregame_refresh",
+      "matrix_rank": 9,
+      "model": "compact_epa",
+      "raw_features": 8,
+      "ridge_degrees_of_freedom_per_output": 8.51706550129269,
+      "season": 2023
+    },
+    {
+      "active_encoded_features": 25,
+      "allocated_weights_and_intercepts": 52,
+      "encoded_features": 25,
+      "horizon": "pregame_refresh",
+      "matrix_rank": 19,
+      "model": "compact_availability",
+      "raw_features": 16,
+      "ridge_degrees_of_freedom_per_output": 17.830025418751003,
+      "season": 2023
+    },
+    {
+      "active_encoded_features": 15,
+      "allocated_weights_and_intercepts": 32,
+      "encoded_features": 15,
+      "horizon": "pregame_refresh",
+      "matrix_rank": 13,
+      "model": "compact_temperature",
+      "raw_features": 11,
+      "ridge_degrees_of_freedom_per_output": 12.196939285518097,
+      "season": 2023
+    },
+    {
+      "active_encoded_features": 31,
+      "allocated_weights_and_intercepts": 64,
+      "encoded_features": 31,
+      "horizon": "pregame_refresh",
+      "matrix_rank": 23,
+      "model": "compact_combined",
+      "raw_features": 19,
+      "ridge_degrees_of_freedom_per_output": 21.49138046491052,
+      "season": 2023
+    },
+    {
+      "active_encoded_features": 9,
+      "allocated_weights_and_intercepts": 20,
+      "encoded_features": 9,
+      "horizon": "pregame_refresh",
+      "matrix_rank": 9,
+      "model": "compact_epa",
+      "raw_features": 8,
+      "ridge_degrees_of_freedom_per_output": 8.766094383443686,
+      "season": 2024
+    },
+    {
+      "active_encoded_features": 25,
+      "allocated_weights_and_intercepts": 52,
+      "encoded_features": 25,
+      "horizon": "pregame_refresh",
+      "matrix_rank": 19,
+      "model": "compact_availability",
+      "raw_features": 16,
+      "ridge_degrees_of_freedom_per_output": 18.433585088747925,
+      "season": 2024
+    },
+    {
+      "active_encoded_features": 15,
+      "allocated_weights_and_intercepts": 32,
+      "encoded_features": 15,
+      "horizon": "pregame_refresh",
+      "matrix_rank": 13,
+      "model": "compact_temperature",
+      "raw_features": 11,
+      "ridge_degrees_of_freedom_per_output": 12.621263549829479,
+      "season": 2024
+    },
+    {
+      "active_encoded_features": 31,
+      "allocated_weights_and_intercepts": 64,
+      "encoded_features": 31,
+      "horizon": "pregame_refresh",
+      "matrix_rank": 23,
+      "model": "compact_combined",
+      "raw_features": 19,
+      "ridge_degrees_of_freedom_per_output": 22.28529426766829,
+      "season": 2024
+    }
+  ],
+  "original_coverage": [
+    {
+      "fixed_indoor_games": 34,
+      "games": 271,
+      "horizon": "early_week",
+      "outdoor_missing_temperature_games": 0,
+      "outdoor_temperature_games": 177,
+      "season": 2022,
+      "team_slots": 542,
+      "team_slots_with_observed_injury": 0,
+      "unknown_exposure_games": 60
+    },
+    {
+      "fixed_indoor_games": 34,
+      "games": 271,
+      "horizon": "pregame_refresh",
+      "outdoor_missing_temperature_games": 0,
+      "outdoor_temperature_games": 177,
+      "season": 2022,
+      "team_slots": 542,
+      "team_slots_with_observed_injury": 536,
+      "unknown_exposure_games": 60
+    },
+    {
+      "fixed_indoor_games": 33,
+      "games": 272,
+      "horizon": "early_week",
+      "outdoor_missing_temperature_games": 21,
+      "outdoor_temperature_games": 159,
+      "season": 2023,
+      "team_slots": 544,
+      "team_slots_with_observed_injury": 0,
+      "unknown_exposure_games": 59
+    },
+    {
+      "fixed_indoor_games": 33,
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "outdoor_missing_temperature_games": 21,
+      "outdoor_temperature_games": 159,
+      "season": 2023,
+      "team_slots": 544,
+      "team_slots_with_observed_injury": 541,
+      "unknown_exposure_games": 59
+    },
+    {
+      "fixed_indoor_games": 34,
+      "games": 272,
+      "horizon": "early_week",
+      "outdoor_missing_temperature_games": 0,
+      "outdoor_temperature_games": 178,
+      "season": 2024,
+      "team_slots": 544,
+      "team_slots_with_observed_injury": 2,
+      "unknown_exposure_games": 60
+    },
+    {
+      "fixed_indoor_games": 34,
+      "games": 272,
+      "horizon": "pregame_refresh",
+      "outdoor_missing_temperature_games": 0,
+      "outdoor_temperature_games": 178,
+      "season": 2024,
+      "team_slots": 544,
+      "team_slots_with_observed_injury": 540,
+      "unknown_exposure_games": 60
+    }
+  ],
+  "original_frozen_choice": "compact_availability",
+  "policy": {
+    "2025": "zero outcomes read or fits performed; original enriched replay gate remains unchanged",
+    "adaptive": "new rule after inspecting the existing 2023-2024 development results",
+    "bootstrap": {
+      "blocks": "season/week",
+      "draws": 5000,
+      "seed": 20261015
+    },
+    "context_increment": "each context addition must independently pass the same guards against compact EPA",
+    "following_season_check": "select on 2023 only before 2024 lock; assess 2024 both horizons",
+    "guards": {
+      "maximum_score_regression": 0.05,
+      "maximum_single_season_margin_regression": 0.25,
+      "maximum_total_regression": 0.1,
+      "minimum_margin_gain": 0.05,
+      "require_positive_95_percent_week_block_gain_lower": true
+    },
+    "history": "2022 initialization; outcome history/fits frozen at Tuesday; original timing",
+    "inputs": "reuse verified weekly predictions; no new estimator families or penalty search",
+    "limits": "examined development data; one-standard-error rule is a heuristic; no independent holdout claim",
+    "promotion": "separate research choice; published scores and original frozen record unchanged",
+    "research_lock": "select on 2023-2024 before simulated 2025-09-02T15:00:00Z lock",
+    "simplicity": "within one block-bootstrap standard error of best eligible margin MAE, prefer fewer declared inputs",
+    "storage": "reference original inputs; retain compact derived tables only; no training copies"
+  },
+  "recorded_at_utc": "2026-10-15T00:39:06.372934+00:00",
+  "replay_blockers": [
+    "2022-2024 expected-starter snapshots lack publication timestamps",
+    "2022-2025 weekly rosters lack publication timestamps",
+    "2025 injury rows lack publication/modification timestamps",
+    "2022-2023 wind/rain forecast archive absent; temperature trial is incomplete weather"
+  ],
+  "source_sha256": "22969eebc53a7bc689843f2fcc5f2a6c92b7e1fb7ad7672ac8f797a631e6554c",
+  "upstream_manifest": "data/processed/team_walkforward/manifest.json",
+  "upstream_manifest_sha256": "6ba06b2f8aa99de006eb9c2f88f110c97a4cf3f1c718b92bbe5d255640c031b8"
+}

@@ -387,3 +387,36 @@ Keep compact source schema/hash audits, forecast values, one feature/prediction 
 metrics, coverage, fold references and the frozen choice. Do not copy full training data per
 fit. Cached choices fail visibly when code, artifact checksums or the frozen record change.
 2025 remains previously accessed diagnostic data, even after a new research lock.
+
+## Adaptive weekly simplicity follow-up
+
+`team-simplicity-check` reuses the verified 2022-initialized weekly experiment; it does not
+search new estimator families/penalties or fit again. Record the new rule before calculation
+in a separate source/input-addressed namespace. The rule follows inspection of the previous
+2023–2024 results and their tiny injury gain; it is adaptive development, not a fresh holdout.
+Keep the original feature/score source bytes, artifacts and frozen choice intact.
+
+Require every candidate to pass the original margin/score/total/season and paired-range
+guards against the 28-input control. Context candidates must also pass those same guards
+against compact EPA: at least 0.05 points of early margin improvement, a positive lower
+paired-range bound, score regression at most 0.05, total at most 0.10, and single-season
+margin regression at most 0.25. Pruning improvement cannot count as context improvement.
+The control is always the fallback. Among eligible candidates within one bootstrap standard
+error of the best early margin MAE, prefer fewer declared inputs, lower margin error, then
+fixed model order. This feature-count ranking is an explicit simplicity heuristic.
+
+Bootstrap by season/week with 5,000 draws, seed 20261015, using identical games and consistent
+scores/targets for every model. Candidate gains are paired; the one-standard-error band uses
+the best candidate's absolute margin errors. These ranges do not correct repeated model
+exploration or establish independence. Complexity counts reuse training-only original audits.
+
+Select with only 2023 outcomes strictly available before the 2024 first Tuesday lock. Assess
+that unchanged choice on all 272 following-season games at both horizons. Separately record
+a simulated pre-2025 choice from 2023–2024, with the original September 2, 15:00 UTC cutoff
+and the actual current recording time. Prior inspection of 2024 is still disclosed; this
+separation does not make the check independent. Save selected 2024 predictions, decisions,
+metrics and source/artifact hashes, referencing upstream features rather than copying them.
+
+No 2025 outcomes enter this command, and no enriched replay or published-model promotion
+follows automatically. Its source, upstream manifest, artifacts and separate frozen record
+must all pass reader guards. The original full replay readiness gate remains in force.

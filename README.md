@@ -78,6 +78,7 @@ The 2025 season has already been examined and is diagnostic data.
 | `team-pregame-audit` | Audit roster/starter/injury timing and cache compact development temperature forecasts |
 | `team-walkforward` | Compare weekly locked context models on 2023–2024 and freeze a research choice |
 | `team-replay-check` | Check input readiness for the enriched 2025 replay; blocked inputs prevent any fit |
+| `team-simplicity-check` | Reuse weekly predictions to assess simpler selection on 2024 and record a separate pre-2025 research choice |
 
 Prefix commands with `.\.venv\Scripts\nfl-prop.exe`. Fetch/build the required seasons before
 evaluation; a 2025 diagnostic needs a team cache including 2025. Research outputs go to
@@ -117,6 +118,15 @@ Outputs go to `reports/local/team_walkforward/`. The audit caches selected QB ro
 weather hour per game; no global forecast grids or new Python environment are needed.
 The experiment stores one feature/prediction table and fold references, avoiding copies of
 the training data per weekly fit. Its chart uses Plotly's CDN to keep the HTML small.
+
+The [simplicity follow-up](reports/team_scores/model_simplicity/findings.md) requires each
+context addition to earn improvement against compact EPA itself, then prefers fewer inputs
+within one block standard error of the best eligible error. It selects on 2023 for the
+following 2024 check and on 2023–2024 for a separate simulated pre-2025 choice. Both choose
+compact EPA. This is an explicit adaptive development decision after seeing earlier results;
+it preserves the original lock, performs no new fits, and does not use 2025 outcomes.
+Run `team-simplicity-check` after `team-walkforward`; outputs use `reports/local/team_simplicity/`.
+The enriched replay still requires the dated availability audit and validated adapters.
 
 ## Repository and validation
 

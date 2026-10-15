@@ -103,3 +103,27 @@ gain does not justify expanding the active model. The addition has one source mo
 file with 15 cases and this compact source-check report; CI covers 71 total tests.
 
 [The model policy](TEAM_MODEL_POLICY.md) defines feature, cutoff, output and evaluation contracts.
+
+## Original model plan resumed
+
+The [simplicity check](reports/team_scores/model_simplicity/findings.md) uses the existing
+weekly predictions to prevent the negligible injury gain from deciding the research choice.
+Context must earn incremental improvement against compact EPA; eligible models within one
+block standard error prefer fewer declared inputs. This is an explicit adaptive follow-up,
+preserving the original `compact_availability` record and all previous artifacts.
+
+Selecting on 2023 gives compact EPA for the 272-game 2024 check. Its margin MAE is 10.209
+versus the same-run 28-input control's 10.325; per-team score MAE is 7.209 versus 7.311.
+The 2024 paired margin gain range is −0.097 to +0.319, so the gain remains uncertain.
+Both horizons are identical for this candidate because EPA history and fits lock on Tuesday;
+it contains no refresh-specific context. Across 2023–2024, the separate simulated pre-2025
+research choice also selects compact EPA, eight inputs with 20 allocated weights/intercepts
+versus the injury candidate's 16 inputs and 52. This supports simplification, without
+establishing that parameter count explains the high MAE or promoting the active model.
+
+Stages two/three of the original plan now have a separate simplicity assessment and revised
+research choice. Stage one still needs dated roster/starter/injury evidence and audited
+adapters. Stage four, the full enriched 2025 weekly replay, remains gated; zero 2025 fits or
+new 2025 outcomes were used. No further weather collector work was added in this follow-up.
+The new derived cache is about 60 KB, with upstream features referenced rather than copied.
+Seven new selection/timing/artifact cases bring the full suite to 78 tests.

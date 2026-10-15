@@ -103,20 +103,41 @@ def main(argv: list[str] | None = None) -> int:
     refinement.add_argument(
         "--report-dir", type=Path, default=Path("reports/local/team_refinement")
     )
-    for name in ("team-pregame-audit", "team-walkforward", "team-replay-check"):
+    for name in (
+        "team-pregame-audit",
+        "team-walkforward",
+        "team-replay-check",
+        "team-simplicity-check",
+    ):
         command = commands.add_parser(
             name, help="Audited weekly context development and replay gate"
         )
         command.add_argument("--data-dir", type=Path, default=Path("data"))
         command.add_argument(
-            "--report-dir", type=Path, default=Path("reports/local/team_walkforward")
+            "--report-dir",
+            type=Path,
+            default=Path(
+                "reports/local/team_simplicity"
+                if name == "team-simplicity-check"
+                else "reports/local/team_walkforward"
+            ),
         )
     args = parser.parse_args(argv)
     try:
         from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
         from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-        if args.command == "team-weather-fetch":
+        if args.command == "team-simplicity-check":
+            from nfl_prop_model.modeling.team_simplicity import save_simplicity_check
+
+            report = save_simplicity_check(args.data_dir, args.report_dir)
+            print(
+                f"2024 selected model: {report['following_season_choice']['model']}. "
+                f"Separate pre-2025 choice: {report['frozen_2025_research_choice']['model']}. "
+                "Enriched 2025 replay remains gated."
+            )
+            print(f"Report: {args.report_dir / 'findings.md'}")
+        elif args.command == "team-weather-fetch":
             from nfl_prop_model.data.team_weather import collect_weather
 
             path = collect_weather(
