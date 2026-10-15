@@ -36,6 +36,8 @@ archive collection resumes completed weeks; the audit runs offline and reads sch
 only. Reports go to `reports/local/team_injury_development/`. Blank game-status cells remain
 unknown, and observed designations do not establish a complete final report. This source audit
 does not train models or clear the enriched 2025 replay gate.
+See the [development coverage findings](reports/team_scores/development_injury_coverage/findings.md)
+for the measured source gaps and next comparison requirements.
 
 ## Current-season forecasts
 

@@ -92,15 +92,16 @@ def _team(table: Node) -> dict[str, Any]:
         name, position, _, _, status = [c.text() for c in cells]
         links = cells[0].find(tag="a")
         slugs = [a.attrs.get("href", "") for a in links]
+        identity = slugs[0] if len(slugs) == 1 else "name:" + name.casefold()
         if (
             not name
-            or len(slugs) != 1
-            or not re.fullmatch(r"/players/[a-z0-9-]+/", slugs[0])
-            or slugs[0] in players
+            or len(slugs) > 1
+            or (slugs and not re.fullmatch(r"/players/[a-z0-9-]+/", slugs[0]))
+            or identity in players
             or name.casefold() in names
         ):
             raise DataQualityError("Ambiguous or duplicate official injury player identity")
-        players.add(slugs[0])
+        players.add(identity)
         names.add(name.casefold())
         if not status:
             blank += 1
@@ -167,21 +168,37 @@ def parse_tables(payload: bytes, season: int, week: int) -> dict[str, dict[str, 
             or len(set(abbreviations)) != 2
             or not set(abbreviations) <= set(NICKNAMES.values())
             or len(labels) != 2
-            or len(tables) != 2
             or [NICKNAMES.get(n.text().upper()) for n in labels] != abbreviations
         ):
             raise DataQualityError("Official injury table team/matchup attribution is ambiguous")
-        # Label/table order must alternate inside the unit; a displaced label cannot rebind rows.
         ordered = unit.find()
-        if (
-            not ordered.index(labels[0])
-            < ordered.index(tables[0])
-            < ordered.index(labels[1])
-            < ordered.index(tables[1])
-        ):
-            raise DataQualityError("Official injury table labels do not bind adjacent tables")
-        for index, (team, table) in enumerate(zip(abbreviations, tables, strict=True)):
+        used = []
+        for index, team in enumerate(abbreviations):
             if team in teams:
                 raise DataQualityError("Duplicate official injury team section")
-            teams[team] = {"opponent": abbreviations[1 - index], **_team(table)}
+            start = ordered.index(labels[index])
+            end = ordered.index(labels[index + 1]) if index == 0 else len(ordered)
+            own = [t for t in tables if start < ordered.index(t) < end]
+            if len(own) > 1:
+                raise DataQualityError("Official injury table labels do not bind adjacent tables")
+            used.extend(own)
+            fields = (
+                _team(own[0])
+                if own
+                else {
+                    "status": "practice_only_or_pending",
+                    "player_rows": None,
+                    "blank_game_status_rows": None,
+                    "unsupported_rows": False,
+                    "observed_out_count": None,
+                    "observed_questionable_count": None,
+                    "observed_doubtful_count": None,
+                    "unknown_out_positions": None,
+                    **{g + "_observed_out_count": None for g in GROUPS},
+                    "final_report_verified": False,
+                }
+            )
+            teams[team] = {"opponent": abbreviations[1 - index], **fields}
+        if used != tables:
+            raise DataQualityError("Official injury table labels do not bind adjacent tables")
     return teams

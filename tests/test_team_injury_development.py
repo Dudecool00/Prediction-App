@@ -127,6 +127,23 @@ def test_january_week18_unknown_out_position_and_unsupported_or_empty_rows():
     assert unknown["CHI"]["observed_out_count"] is None
 
 
+def test_missing_table_and_unlinked_document_name_cannot_rebind_another_teams_players():
+    body = document(left=[player(status="")])
+    first_table = table([player(status="")]).encode()
+    result = parse_tables(body.replace(first_table, b"", 1), 2023, 2)
+    assert result["CHI"]["status"] == "practice_only_or_pending"
+    assert result["CHI"]["player_rows"] is None
+    assert result["CHI"]["observed_out_count"] is None
+    assert result["GB"]["player_rows"] == 1
+    unlinked = player()
+    unlinked[0] = "Document Player"
+    result = parse_tables(document(left=[unlinked]), 2023, 2)
+    assert result["CHI"]["observed_out_count"] == 1
+    assert result["CHI"]["OL_observed_out_count"] == 1
+    with pytest.raises(DataQualityError, match="duplicate"):
+        parse_tables(document(left=[unlinked, unlinked]), 2023, 2)
+
+
 @pytest.fixture
 def sources(tmp_path, monkeypatch):
     games = pl.DataFrame(

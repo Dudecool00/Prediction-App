@@ -38,7 +38,7 @@ POLICY = {
     "integrity": "exact id_ URL and original entity CDX digest before decoding; local checksums",
     "status": "observed Out/Q/D only; blank game status and practice participation are not healthy",
     "finality": "capture does not prove final team report completeness; model eligibility false",
-    "identity": "NFL slug within edition only; no GSIS crosswalk, starter labels or weights",
+    "identity": "NFL slug or unique document name within edition only; no crosswalk or weights",
     "bounds": "100 catalog rows/season, 80 versions/week, 1MB/entity, 8MB bodies, two workers",
     "missing": "missing, unverified, unsupported, stale and omitted teams stay unknown",
     "outcomes": "six schedule metadata fields only; zero model fits; no 2025 data selected",
