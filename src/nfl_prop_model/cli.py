@@ -116,6 +116,7 @@ def main(argv: list[str] | None = None) -> int:
         "team-injury-development-audit",
         "team-injury-news-fetch",
         "team-injury-news-audit",
+        "team-dated-injury-compare",
     ):
         command = commands.add_parser(
             name, help="Audited weekly context development and replay gate"
@@ -127,7 +128,9 @@ def main(argv: list[str] | None = None) -> int:
             "--report-dir",
             type=Path,
             default=Path(
-                "reports/local/team_injury_news"
+                "reports/local/team_dated_injuries"
+                if name == "team-dated-injury-compare"
+                else "reports/local/team_injury_news"
                 if name.startswith("team-injury-news")
                 else "reports/local/team_injury_development"
                 if name.startswith("team-injury-development")
@@ -145,7 +148,13 @@ def main(argv: list[str] | None = None) -> int:
         from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
         from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-        if args.command == "team-injury-news-fetch":
+        if args.command == "team-dated-injury-compare":
+            from nfl_prop_model.modeling.team_dated_injuries import save_dated_comparison
+
+            report = save_dated_comparison(args.data_dir, args.report_dir)
+            print(f"Dated injury research choice: {report['frozen_research_choice']['model']}.")
+            print(f"Report: {args.report_dir / 'findings.md'}. Enriched 2025 replay remains gated.")
+        elif args.command == "team-injury-news-fetch":
             from nfl_prop_model.data.team_injury_news_variants import fetch_qualified
 
             print(f"Development injury news: {fetch_qualified(args.data_dir, tuple(args.seasons))}")

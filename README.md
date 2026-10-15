@@ -196,6 +196,23 @@ comparisons, a revised freeze and the enriched 2025 replay. Existing caches are 
 
 ## Repository and validation
 
+The next bounded injury experiment uses separately qualified 2022 initialization and the
+existing 2023-2024 dated news audit. It compares compact EPA with report-availability controls
+and two coarse Out-count contrasts, retaining every development game. Its
+[declared protocol](reports/team_scores/dated_injury_comparison/protocol.md) requires improvement
+against both EPA and availability-only; QB counts do not establish the starting QB.
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-injury-news-fetch --seasons 2022
+.\.venv\Scripts\nfl-prop.exe team-injury-news-audit --seasons 2022 --report-dir reports/local/team_injury_news_2022
+.\.venv\Scripts\nfl-prop.exe team-dated-injury-compare
+```
+
+The comparison also requires the existing `team-walkforward` and 2023-2024 news audit caches.
+It reuses source data and stores context deltas and one prediction panel under ignored local
+directories. It neither runs 2025 nor clears the enriched replay gate. The PEM-inspired
+three-model comparison follows completion of the original replay plan.
+
 - `src/nfl_prop_model/data/`: source snapshots, validation and content-addressed storage.
 - `src/nfl_prop_model/features/`: past-only EPA and experimental matchup inputs.
 - `src/nfl_prop_model/modeling/`: forecasting, chronological comparisons and diagnostics.
