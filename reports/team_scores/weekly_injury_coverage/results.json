@@ -1,0 +1,813 @@
+{
+  "2025_fits_performed": 0,
+  "artifact": {
+    "file": "cutoffs-59fce7f467007582e3726671e3a3dafe097a55c07fe70aedbe69d0436ff8d0d4.parquet",
+    "rows": 1088,
+    "schema": {
+      "OL_out_count": "Int64",
+      "QB_out_count": "Int64",
+      "archive_captured_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "archive_url": "String",
+      "body_origin": "String",
+      "cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "defense_out_count": "Int64",
+      "detail": "String",
+      "game_id": "String",
+      "horizon": "String",
+      "out_count": "Int64",
+      "reason": "String",
+      "side": "String",
+      "skill_out_count": "Int64",
+      "special_out_count": "Int64",
+      "status": "String",
+      "team": "String",
+      "unknown_position_out_players": "Int64",
+      "week": "Int64"
+    },
+    "sha256": "59fce7f467007582e3726671e3a3dafe097a55c07fe70aedbe69d0436ff8d0d4"
+  },
+  "catalog": {
+    "file": "index-6d92721030eae09b18242ab248b3f6abacec1d0dbdf0a91b731fa5ee5dd08e65.json",
+    "sha256": "6d92721030eae09b18242ab248b3f6abacec1d0dbdf0a91b731fa5ee5dd08e65"
+  },
+  "catalog_url": "https://web.archive.org/cdx/search/cdx?url=www.nfl.com%2Fnews%2Fnfl-week-&matchType=prefix&from=20250801&to=20260106&filter=original%3A.%2Ainjury-report.%2A&collapse=urlkey&limit=101&output=json&filter=statuscode%3A200",
+  "coverage": [
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 32,
+      "unknown_position_out_slots": 0,
+      "week": 1
+    },
+    {
+      "designations": 25,
+      "horizon": "pregame_refresh",
+      "no_designations": 3,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 4,
+      "unknown_position_out_slots": 1,
+      "week": 1
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 32,
+      "unknown_position_out_slots": 0,
+      "week": 2
+    },
+    {
+      "designations": 25,
+      "horizon": "pregame_refresh",
+      "no_designations": 1,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 6,
+      "unknown_position_out_slots": 0,
+      "week": 2
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 32,
+      "unknown_position_out_slots": 0,
+      "week": 3
+    },
+    {
+      "designations": 28,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 4,
+      "unknown_position_out_slots": 0,
+      "week": 3
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 32,
+      "unknown_position_out_slots": 0,
+      "week": 4
+    },
+    {
+      "designations": 30,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 2,
+      "unknown_position_out_slots": 0,
+      "week": 4
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 28,
+      "unavailable": 28,
+      "unknown_position_out_slots": 0,
+      "week": 5
+    },
+    {
+      "designations": 2,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 28,
+      "unavailable": 26,
+      "unknown_position_out_slots": 0,
+      "week": 5
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 30,
+      "unavailable": 30,
+      "unknown_position_out_slots": 0,
+      "week": 6
+    },
+    {
+      "designations": 2,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 30,
+      "unavailable": 28,
+      "unknown_position_out_slots": 0,
+      "week": 6
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 30,
+      "unavailable": 30,
+      "unknown_position_out_slots": 0,
+      "week": 7
+    },
+    {
+      "designations": 30,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 30,
+      "unavailable": 0,
+      "unknown_position_out_slots": 0,
+      "week": 7
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 26,
+      "unavailable": 26,
+      "unknown_position_out_slots": 0,
+      "week": 8
+    },
+    {
+      "designations": 2,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 26,
+      "unavailable": 24,
+      "unknown_position_out_slots": 0,
+      "week": 8
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 28,
+      "unavailable": 28,
+      "unknown_position_out_slots": 0,
+      "week": 9
+    },
+    {
+      "designations": 25,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 3,
+      "team_slots": 28,
+      "unavailable": 0,
+      "unknown_position_out_slots": 0,
+      "week": 9
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 28,
+      "unavailable": 28,
+      "unknown_position_out_slots": 0,
+      "week": 10
+    },
+    {
+      "designations": 2,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 28,
+      "unavailable": 26,
+      "unknown_position_out_slots": 1,
+      "week": 10
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 30,
+      "unavailable": 30,
+      "unknown_position_out_slots": 0,
+      "week": 11
+    },
+    {
+      "designations": 26,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 30,
+      "unavailable": 4,
+      "unknown_position_out_slots": 2,
+      "week": 11
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 28,
+      "unavailable": 28,
+      "unknown_position_out_slots": 0,
+      "week": 12
+    },
+    {
+      "designations": 22,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 4,
+      "team_slots": 28,
+      "unavailable": 2,
+      "unknown_position_out_slots": 1,
+      "week": 12
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 32,
+      "unknown_position_out_slots": 0,
+      "week": 13
+    },
+    {
+      "designations": 24,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 1,
+      "team_slots": 32,
+      "unavailable": 7,
+      "unknown_position_out_slots": 0,
+      "week": 13
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 28,
+      "unavailable": 28,
+      "unknown_position_out_slots": 0,
+      "week": 14
+    },
+    {
+      "designations": 26,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 28,
+      "unavailable": 2,
+      "unknown_position_out_slots": 0,
+      "week": 14
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 32,
+      "unknown_position_out_slots": 0,
+      "week": 15
+    },
+    {
+      "designations": 29,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 2,
+      "team_slots": 32,
+      "unavailable": 1,
+      "unknown_position_out_slots": 0,
+      "week": 15
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 32,
+      "unknown_position_out_slots": 0,
+      "week": 16
+    },
+    {
+      "designations": 28,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 2,
+      "team_slots": 32,
+      "unavailable": 2,
+      "unknown_position_out_slots": 1,
+      "week": 16
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 32,
+      "unknown_position_out_slots": 0,
+      "week": 17
+    },
+    {
+      "designations": 30,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 2,
+      "unknown_position_out_slots": 0,
+      "week": 17
+    },
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "team_slots": 32,
+      "unavailable": 32,
+      "unknown_position_out_slots": 0,
+      "week": 18
+    },
+    {
+      "designations": 30,
+      "horizon": "pregame_refresh",
+      "no_designations": 0,
+      "partial_or_pending": 1,
+      "team_slots": 32,
+      "unavailable": 1,
+      "unknown_position_out_slots": 0,
+      "week": 18
+    }
+  ],
+  "development_source_check": {
+    "body_probe": {
+      "compressed_sha256": "f3162f1dfd64e0dd37c2657105c13fd59451c04316e787ccb7eab64a5ca115f1",
+      "file": "2023-week2-a45003d1ad6249704ea05c83ffa78915cbf6228b9b2376b980fca3a0a15b2bc3.entity.gz",
+      "parsed_into_model_inputs": false,
+      "record": {
+        "digest": "NRFZPUC26HCODC7LYCR2RAATF4SCTI3N",
+        "length": "68698",
+        "mimetype": "text/html",
+        "original": "https://www.nfl.com/injuries/league/2023/REG2",
+        "statuscode": "200",
+        "timestamp": "20230917091612",
+        "urlkey": "com,nfl)/injuries/league/2023/reg2"
+      },
+      "sha256": "a45003d1ad6249704ea05c83ffa78915cbf6228b9b2376b980fca3a0a15b2bc3",
+      "url": "https://web.archive.org/web/20230917091612id_/https://www.nfl.com/injuries/league/2023/REG2"
+    },
+    "body_probe_index": {
+      "file": "2023-week2-index-3352c20a0079eada116e93bd41471f6d9e0d43d43143ed172456ca19acd3d4d9.json",
+      "sha256": "3352c20a0079eada116e93bd41471f6d9e0d43d43143ed172456ca19acd3d4d9",
+      "url": "https://web.archive.org/cdx/search/cdx?url=https%3A%2F%2Fwww.nfl.com%2Finjuries%2Fleague%2F2023%2Freg2&from=20230912&to=20230919&collapse=digest&output=json&filter=statuscode%3A200"
+    },
+    "catalogs": [
+      {
+        "file": "2022-da29b693775f02cbf6511187261c862f6dcb31d82391964cb367e54bcfeb5a12.json",
+        "regular_week_urls": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "retrieved_at_utc": "2026-10-15T17:22:08.101940+00:00",
+        "season": 2022,
+        "sha256": "da29b693775f02cbf6511187261c862f6dcb31d82391964cb367e54bcfeb5a12",
+        "timely_report_coverage_established": false,
+        "url": "https://web.archive.org/cdx/search/cdx?url=www.nfl.com%2Finjuries%2Fleague%2F2022%2F&matchType=prefix&from=20220801&to=20230115&collapse=urlkey&output=json&filter=statuscode%3A200&limit=100"
+      },
+      {
+        "file": "2023-8416fbf073343ec5c2ce1607bc86a5be12db5c132560284eda9f8f2ff1a7d968.json",
+        "regular_week_urls": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "retrieved_at_utc": "2026-10-15T17:22:18.554276+00:00",
+        "season": 2023,
+        "sha256": "8416fbf073343ec5c2ce1607bc86a5be12db5c132560284eda9f8f2ff1a7d968",
+        "timely_report_coverage_established": false,
+        "url": "https://web.archive.org/cdx/search/cdx?url=www.nfl.com%2Finjuries%2Fleague%2F2023%2F&matchType=prefix&from=20230801&to=20240115&collapse=urlkey&output=json&filter=statuscode%3A200&limit=100"
+      },
+      {
+        "file": "2024-ee2ad51be1ffde1cabb8099c1bee07a6c0462870a967004c9eeec60680538da1.json",
+        "regular_week_urls": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          8,
+          13
+        ],
+        "retrieved_at_utc": "2026-10-15T17:22:09.265719+00:00",
+        "season": 2024,
+        "sha256": "ee2ad51be1ffde1cabb8099c1bee07a6c0462870a967004c9eeec60680538da1",
+        "timely_report_coverage_established": false,
+        "url": "https://web.archive.org/cdx/search/cdx?url=www.nfl.com%2Finjuries%2Fleague%2F2024%2F&matchType=prefix&from=20240801&to=20250115&collapse=urlkey&output=json&filter=statuscode%3A200&limit=100"
+      },
+      {
+        "file": "2025-19287961f84b887a70d280974b19fe8a994868f160da9ec917b354eb14ce040d.json",
+        "regular_week_urls": [
+          1,
+          6
+        ],
+        "retrieved_at_utc": "2026-10-15T17:22:18.213637+00:00",
+        "season": 2025,
+        "sha256": "19287961f84b887a70d280974b19fe8a994868f160da9ec917b354eb14ce040d",
+        "timely_report_coverage_established": false,
+        "url": "https://web.archive.org/cdx/search/cdx?url=www.nfl.com%2Finjuries%2Fleague%2F2025%2F&matchType=prefix&from=20250801&to=20260115&collapse=urlkey&output=json&filter=statuscode%3A200&limit=100"
+      }
+    ]
+  },
+  "enriched_replay_ready": false,
+  "format_version": 1,
+  "games": 272,
+  "missing_reasons": [
+    {
+      "horizon": "early_week",
+      "len": 544,
+      "reason": "no_earlier_edition"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 8,
+      "reason": "no_earlier_edition"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 78,
+      "reason": "stale_edition"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 27,
+      "reason": "team_section_missing"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 28,
+      "reason": "unverified_edition"
+    }
+  ],
+  "policy": {
+    "bounds": "100 catalog rows, 20 editions/week, 1 MB/entity, 8 MB retained bodies, two workers",
+    "catalog": "dated CDX prefix catalog; exclude query variants and unrelated article slugs",
+    "integrity": "exact id_ URL and original entity CDX SHA1/base32; bounded gzip decoding",
+    "missing": "missing, unverified, unsupported, stale or omitted team stays unknown; no fallback",
+    "outcomes": "schedule metadata only; no actual scores, game QB labels or model fits",
+    "readiness": "does not establish starters, full IR rosters or clear enriched replay gates",
+    "scope": "canonical NFL weekly injury articles, 2025 regular season; source audit only",
+    "selection": "latest whole edition strictly before each cutoff; maximum age 72 hours",
+    "timing": "archive capture proves version timing; first publication date does not"
+  },
+  "prior_pilot_manifest_sha256": "8d550f7eff39794920df113215d9543852e4c71c86ec28be175e342cc7b2a21f",
+  "raw_manifest_sha256": "b4dc1d9dc19319cc4a0e9341a97c09aaf174a384c6a57e94e03425624fd5f191",
+  "recorded_at_utc": "2026-10-15T17:51:21.110819+00:00",
+  "records": 1088,
+  "schedule_manifest_sha256": "1c35edef205f49105c215474d50c62b6f1f161a15150dde74d110e564c7fb8bd",
+  "selected_editions": [
+    {
+      "digest": "DBQF3JPDH7KZTLBDRXLHNCZBQ32TUDMR",
+      "original": "https://www.nfl.com/news/nfl-week-1-injury-report-player-statuses-for-all-16-games-2025-season",
+      "reason": "Capture URL or original entity digest mismatch",
+      "status": "unavailable",
+      "timestamp": "20250904153635",
+      "week": 1
+    },
+    {
+      "body_sha256": "6ff6c1f676b8ed15b6bc7467844e2393499379a207c37b13c851f3d52b0f0312",
+      "digest": "Z7T4N46W3KNZOCVX5WGP6SMFV76HWEXN",
+      "original": "https://www.nfl.com/news/nfl-week-1-injury-report-player-statuses-for-all-16-games-2025-season",
+      "status": "verified",
+      "timestamp": "20250906002521",
+      "week": 1
+    },
+    {
+      "body_sha256": "7cb65640caa7d863a73e655a3c075ac0c3aad1b7194ae5176e7c6b5792ec1b8e",
+      "digest": "6YELCUMBCFFUAETR4J7T2YWHN77RP6XY",
+      "original": "https://www.nfl.com/news/nfl-week-2-injury-report-player-statuses-2025-season",
+      "status": "verified",
+      "timestamp": "20250913143229",
+      "week": 2
+    },
+    {
+      "body_sha256": "5d6d2204ea5cfb7c6b056475a2e48afda87c96a74cca17dd079fc137345c575c",
+      "digest": "YOSNYXWAYW5XBA5FMSMY5V44H3ZFFP3T",
+      "original": "https://www.nfl.com/news/nfl-week-3-injury-report-player-statuses-2025-season",
+      "status": "verified",
+      "timestamp": "20250920142716",
+      "week": 3
+    },
+    {
+      "body_sha256": "ae53d0edc28a30bd78569e45e07eff7b4b6a8f50e04fa6c139bbe496c85cd9ee",
+      "digest": "BNZLHPVI3PV2PS4CHCTY6B4CZERYAMXR",
+      "original": "https://www.nfl.com/news/nfl-week-4-injury-report-player-statuses-2025-season",
+      "status": "verified",
+      "timestamp": "20250925160149",
+      "week": 4
+    },
+    {
+      "digest": "AWBJ66GCIZFT2KLGGSCKB2PGPYOIMGXW",
+      "original": "https://www.nfl.com/news/nfl-week-4-injury-report-player-statuses-2025-season",
+      "reason": "Capture URL or original entity digest mismatch",
+      "status": "unavailable",
+      "timestamp": "20250928060107",
+      "week": 4
+    },
+    {
+      "body_sha256": "8f5abba6ba8df166796e6910477d0d07877de67990f55c3fff68eda69f2465ec",
+      "digest": "WDHQEJOIIIWT5YEUZC72HEMAXMPJ3BNL",
+      "original": "https://www.nfl.com/news/nfl-week-4-injury-report-player-statuses-2025-season",
+      "status": "verified",
+      "timestamp": "20250928142015",
+      "week": 4
+    },
+    {
+      "body_sha256": "fbd939b7e1d4672eb005f217661d82eeda66864c9e5e3920cd751c87d8727a1c",
+      "digest": "XPEL5IRLSJWLCO3QVKAWWK62YS7Q2GNZ",
+      "original": "https://www.nfl.com/news/nfl-week-5-injury-report-player-statuses-for-all-14-games",
+      "status": "verified",
+      "timestamp": "20251001204520",
+      "week": 5
+    },
+    {
+      "body_sha256": "a94f99309cb2bdcbe8e91a201e34b6c0541628b3f89e359a2c175d668a3363b4",
+      "digest": "MXQ4X2M7TNICAZBJBPIZ5CNS37LJ72NU",
+      "original": "https://www.nfl.com/news/nfl-week-6-injury-report-player-statuses-for-all-15-games",
+      "status": "verified",
+      "timestamp": "20251008192726",
+      "week": 6
+    },
+    {
+      "body_sha256": "40348f4d1681617420ff69a3fa2aca51a9d3439bf4eb27d4f0d9256c7248f1fb",
+      "digest": "ANREKS5K3S54DBIDUXBY5R5TIPM5B4J6",
+      "original": "https://www.nfl.com/news/nfl-week-7-injury-report-player-statuses-for-all-15-games",
+      "status": "verified",
+      "timestamp": "20251015202218",
+      "week": 7
+    },
+    {
+      "body_sha256": "054451aeb2d254b43c9791c7545bc9e904d8798fcfb46ad0cd3ae72fc3832847",
+      "digest": "U6TEPTZKXZE42HSQLW5WWKSTOSUAVAL7",
+      "original": "https://www.nfl.com/news/nfl-week-7-injury-report-player-statuses-for-all-15-games",
+      "status": "verified",
+      "timestamp": "20251018224056",
+      "week": 7
+    },
+    {
+      "body_sha256": "fbb755f596f7becfedcf79aac495987430ab04b1d8329b4cdf2fbd19a8a726fd",
+      "digest": "PCH2RLTVWQG5NM3YAKDIAFC7KSC6JLG3",
+      "original": "https://www.nfl.com/news/nfl-week-8-injury-report-player-statuses-for-all-13-games",
+      "status": "verified",
+      "timestamp": "20251022222315",
+      "week": 8
+    },
+    {
+      "body_sha256": "2fe3c5228f20648045b9556c762ca9b77aecf322f9baa30f2109f2bc5c2da4ca",
+      "digest": "FXUN5C66JFZGSKXTUFCKPSM3CAU2Z7FN",
+      "original": "https://www.nfl.com/news/nfl-week-9-injury-report-player-statuses-for-all-14-games",
+      "status": "verified",
+      "timestamp": "20251029235631",
+      "week": 9
+    },
+    {
+      "body_sha256": "7125740e384e34c8a02f9763714bd9d7fe16d8fe67d670fde8cce0079ebd99fa",
+      "digest": "EKXNZLBKBK3SJM5D76KWQWTJLII7323Z",
+      "original": "https://www.nfl.com/news/nfl-week-9-injury-report-player-statuses-for-all-14-games",
+      "status": "verified",
+      "timestamp": "20251102013619",
+      "week": 9
+    },
+    {
+      "body_sha256": "de21f279b13ed2078f67a15c08b82ebc745fa57a2b2c619427cc4f8ee980370c",
+      "digest": "WJDI5TDNT3OPK3WMMIEPHUHFE5JSLURW",
+      "original": "https://www.nfl.com/news/nfl-week-10-injury-report-player-statuses-for-all-14-games",
+      "status": "verified",
+      "timestamp": "20251106005930",
+      "week": 10
+    },
+    {
+      "digest": "XYJI34JQRK3NHE5PQW5TZMF5OAEMMASE",
+      "original": "https://www.nfl.com/news/nfl-week-10-injury-report-player-statuses-for-all-14-games",
+      "reason": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>",
+      "status": "unavailable",
+      "timestamp": "20251108133734",
+      "week": 10
+    },
+    {
+      "body_sha256": "4d31ff17b890e9e583d756ea60e03aa51a538875175e5eecddec50a61e7a3c46",
+      "digest": "QN7C6JOTPUD2LI6QZXYP66DKXV57ISJ2",
+      "original": "https://www.nfl.com/news/nfl-week-11-injury-report-player-statuses-for-all-15-games",
+      "status": "verified",
+      "timestamp": "20251115133908",
+      "week": 11
+    },
+    {
+      "body_sha256": "52577771ff013885058307ba938efe3f8c092e412acd4e3fabb1ce91240168dd",
+      "digest": "DIYH7YFCJR4LGYB537QJKKT5E3O4EUHD",
+      "original": "https://www.nfl.com/news/nfl-week-12-injury-report-player-statuses-for-all-14-games",
+      "status": "verified",
+      "timestamp": "20251119224258",
+      "week": 12
+    },
+    {
+      "body_sha256": "9aa771a26b258f98733056831ed9067bb1a0db31a505747c5f5221abd8579678",
+      "digest": "4WTIXD3EMZI77GJABYXRH7MGKTOFWIOL",
+      "original": "https://www.nfl.com/news/nfl-week-12-injury-report-player-statuses-for-all-14-games",
+      "status": "verified",
+      "timestamp": "20251122044743",
+      "week": 12
+    },
+    {
+      "body_sha256": "a1da8ac5e1f22292757499aa5a0e489a86748d55d183e69b94f2f20cbbf8adf2",
+      "digest": "C72IK2WHX6DNLBBINZOP2QBYG2ZOOTQN",
+      "original": "https://www.nfl.com/news/nfl-week-13-injury-report-player-statuses-for-all-14-games",
+      "status": "verified",
+      "timestamp": "20251126203046",
+      "week": 13
+    },
+    {
+      "body_sha256": "202acb65dde01275c84a28f7379dd771225e353b2be582c12ca5f04534830bd9",
+      "digest": "NFGYKLBO7FH5SNJKW3LGTELNUR7NYSSA",
+      "original": "https://www.nfl.com/news/nfl-week-13-injury-report-player-statuses-for-all-14-games",
+      "status": "verified",
+      "timestamp": "20251129141616",
+      "week": 13
+    },
+    {
+      "body_sha256": "8f235378952fe2fc4b9452140b885221744ce1218cddffa2de429388c3b9c0ba",
+      "digest": "4GJLG3FCEKMWGVKIJHLH5ODCLAN4U3XD",
+      "original": "https://www.nfl.com/news/nfl-week-14-injury-report-player-statuses-for-all-14-games",
+      "status": "verified",
+      "timestamp": "20251207010745",
+      "week": 14
+    },
+    {
+      "body_sha256": "6968ab8d0c953fb97ab2b84681b73a94e62c613d93bc031119d3c6fd0d5e2992",
+      "digest": "6C5CKOSIJMZBEA5QCCIWQPHYVB4KK73U",
+      "original": "https://www.nfl.com/news/nfl-week-15-injury-report-player-statuses-for-all-16-games",
+      "status": "verified",
+      "timestamp": "20251212000937",
+      "week": 15
+    },
+    {
+      "body_sha256": "e9e6fafe525114c072bafa53ffa88a737c49b06e248c0dcf8fb1d968b8f6d836",
+      "digest": "KI4W6SNO4ZE2TC46CRA3KD3KHO7D72NV",
+      "original": "https://www.nfl.com/news/nfl-week-15-injury-report-player-statuses-for-all-16-games",
+      "status": "verified",
+      "timestamp": "20251214133733",
+      "week": 15
+    },
+    {
+      "body_sha256": "e4aa5e4fcfe9dbe8a4f6d3154773ebc7cf3044b4b2ebe589e4686c766f9856ad",
+      "digest": "BSSDODO2HFVMUOLWFZLVICVZJV5WHSNK",
+      "original": "https://www.nfl.com/news/nfl-week-16-injury-report-player-statuses-for-all-16-games",
+      "status": "verified",
+      "timestamp": "20251218002545",
+      "week": 16
+    },
+    {
+      "body_sha256": "3e77faeb78a6c2e536b8c5ed3516f4d851fee441ba523b49798ba908c335368c",
+      "digest": "PRQTNKH4BX22QK7SGQXBWK27AJSZ7J7R",
+      "original": "https://www.nfl.com/news/nfl-week-16-injury-report-player-statuses-for-all-16-games",
+      "status": "verified",
+      "timestamp": "20251220004458",
+      "week": 16
+    },
+    {
+      "body_sha256": "3f6c73ecc7e6cecc900ac8fcd827bd2b2d4230dc185467c679ca5593c934525f",
+      "digest": "JGSJZ5MUD2DD7N6HA63LPWHSLWGNIB2Q",
+      "original": "https://www.nfl.com/news/nfl-week-17-injury-report-player-statuses-for-all-16-games",
+      "status": "verified",
+      "timestamp": "20251224234832",
+      "week": 17
+    },
+    {
+      "body_sha256": "e6246f29d4e92b357a7044028883247e0b255e7cb3815d08c8cedc86f51f8947",
+      "digest": "SQ5OTUGIKFAFLFFDNDHWQEDMIMUTRPZ6",
+      "original": "https://www.nfl.com/news/nfl-week-17-injury-report-player-statuses-for-all-16-games",
+      "status": "verified",
+      "timestamp": "20251227173457",
+      "week": 17
+    },
+    {
+      "body_sha256": "83bf6c3b54d708e55cb0d37df0ca0c8a8a6622135c68e818d64d695822468a3c",
+      "digest": "ACXTGAOKBZ6V4QRQLQ372L7C32WGDR7L",
+      "original": "https://www.nfl.com/news/nfl-week-18-injury-report-player-statuses-for-all-16-games",
+      "status": "verified",
+      "timestamp": "20260102230621",
+      "week": 18
+    }
+  ],
+  "source_sha256": "2e31ced79354b2cfd6984e307937200dded5cf5cf7667e0e8d8eea89d6698338",
+  "storage_bytes": {
+    "development_probe": 80157,
+    "weekly_processed": 28525,
+    "weekly_raw": 1809642
+  },
+  "totals": [
+    {
+      "designations": 0,
+      "horizon": "early_week",
+      "no_designations": 0,
+      "partial_or_pending": 0,
+      "reused_exact_pilot_slots": 0,
+      "team_slots": 544,
+      "unavailable": 544
+    },
+    {
+      "designations": 386,
+      "horizon": "pregame_refresh",
+      "no_designations": 4,
+      "partial_or_pending": 13,
+      "reused_exact_pilot_slots": 4,
+      "team_slots": 544,
+      "unavailable": 141
+    }
+  ],
+  "unsupported_editions": []
+}

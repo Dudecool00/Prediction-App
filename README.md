@@ -81,6 +81,8 @@ The 2025 season has already been examined and is diagnostic data.
 | `team-simplicity-check` | Reuse weekly predictions to assess simpler selection on 2024 and record a separate pre-2025 research choice |
 | `team-availability-fetch` | Cache dated 2025 QB depth snapshots and a small preserved Week 1 injury-report pilot |
 | `team-availability-audit` | Check source coverage at 2025 forecast cutoffs using schedule metadata only |
+| `team-injury-fetch` | Cache only needed editions of canonical 2025 weekly injury articles, within an 8 MB body budget |
+| `team-injury-audit` | Audit all 18 weeks at both cutoffs offline; no model fit or outcome-column reads |
 
 Prefix commands with `.\.venv\Scripts\nfl-prop.exe`. Fetch/build the required seasons before
 evaluation; a 2025 diagnostic needs a team cache including 2025. Research outputs go to
@@ -148,6 +150,15 @@ The fetch reuses validated local sources. The audit runs offline and writes to
 `reports/local/team_availability/`. Selected QB rows, whole-team snapshot counts, three
 compressed archived injury editions and the cutoff audit occupy about 239 KB locally.
 The original readiness gate and model research choices remain intact.
+
+The [weekly injury follow-up](reports/team_scores/weekly_injury_coverage/findings.md) extends
+the source check to all 18 weeks. Formal reports cover **390/544** team appearances at
+kickoff refresh; 13 are partial and 141 unavailable. None of this archive's editions is
+eligible by Tuesday. These gaps remain unknown and no new score weights are fitted.
+Run `team-injury-fetch`, then `team-injury-audit`; output uses
+`reports/local/team_injury_coverage/`. New raw/audit/probe data occupy about 2 MB locally.
+Archived query variants and dated development tables need further auditing before context
+comparisons, a revised freeze and the enriched 2025 replay. Existing caches are reused.
 
 ## Repository and validation
 

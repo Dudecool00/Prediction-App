@@ -458,3 +458,36 @@ manifests, entity/index/artifact digests, source policy and recomputed cutoff re
 model source files, evidence and frozen choices remain unchanged. Full-season injury coverage,
 2022–2024 dated development rosters/starters, complete availability and historical forecast
 weather remain unresolved. Pilot coverage cannot clear the original replay readiness gate.
+
+## Weekly injury archive coverage
+
+`team-injury-fetch/audit` extend the source check to canonical 2025 regular-season injury
+articles in separate raw/processed namespaces. Preserve the original Week 1 adapter and
+its evidence byte-for-byte. Discover URLs through a date-bounded CDX catalog, excluding
+unrelated slugs and query variants. Index each NFL week, then retain only the latest whole
+edition strictly before at least one Tuesday or kickoff-minus-one-hour cutoff. This is a
+bounded source sample, not proof that every earlier report or other provider is covered.
+
+Verify exact archive URLs, original-entity SHA1/base32 and local/index SHA256 digests before
+parsing. Enforce 100 catalog rows, 20 indexed editions/week, 1 MB per entity, bounded gzip,
+8 MB retained bodies and at most two week workers. Retry transient transport failures once;
+do not retry an integrity failure into acceptance. Completed raw weeks are immutable and
+reused on resumption. An unavailable selected edition stays unknown; no older body replaces it.
+An original pilot entity is eligible only for the identical URL/timestamp/digest, with its
+source manifest bound to the coverage report. This is reuse of the same verified edition.
+
+Require edition age at most 72 hours and publication/modification dates consistent with
+its NFL week and capture. Week 18 January dates belong to the 2025 schedule. Parse only
+article-body teams; recognize explicit heading or standalone paragraph labels. Unlabeled
+sections cannot transfer players to a previous team. Empty comma separators may be ignored,
+but missing separators, unbalanced annotations and unclassified notes leave that team's
+counts partial/unknown. Missing positions null all position-group counts. No GSIS/ESPN
+mapping, confirmed starter, complete active/IR roster or injury point adjustment is inferred.
+
+Keep all 272 games and 1,088 team/horizon slots regardless of coverage. Project schedule
+metadata only, with no score/starter columns or fits. Derived readers verify code/policy,
+source inputs, artifact checksums, recomputed cutoff records, coverage and missingness.
+Official development table catalogs and one preserved 2023 body are source-access probes,
+not audited historical feature replacements. Canonical query variants, development timing,
+roster/starter confirmation and historical weather remain unresolved. Extra model inputs
+must earn inclusion on identical development games before a new freeze or enriched replay.

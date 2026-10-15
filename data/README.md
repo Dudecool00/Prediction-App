@@ -15,6 +15,8 @@ committed to this repository.
 | `raw/team_pregame/weather/` | Single-hour previous-run forecast requests, geocoded city points and selected temperature table |
 | `raw/team_availability/2025/` | Dated QB depth rows and whole-team snapshot inventory, excluding retrospectively mapped GSIS/name fields |
 | `raw/team_availability/injury_week1_2025/` | Three compressed original archive entities, preserved CDX index and integrity receipts |
+| `raw/team_injury_history/2025/` | Bounded canonical article catalog, weekly indexes and selected original entities at 2025 cutoffs |
+| `raw/team_injury_history/development_probe/` | Official table catalog receipts and one verified 2023 body; not model inputs |
 | `raw/team_weather/points/` | Cached venue-city geocoding responses, queries and digests |
 | `processed/team_epa/` | Validated team-games, completed/scheduled games and manifest |
 | Other `processed/team_*/` namespaces | Experimental features, predictions, diagnostics and selection records |
@@ -77,6 +79,21 @@ fallback. Only aggregate counts enter derived records; article bodies remain ign
 Missing reports and unknown player positions stay unknown. This pilot is Week 1 only and
 does not supply a complete IR roster, a starter confirmation or a model identity crosswalk.
 See [coverage and provenance](../reports/team_scores/availability_audit/findings.md).
+
+The [weekly injury coverage audit](../reports/team_scores/weekly_injury_coverage/findings.md)
+adds all 18 weeks in a separate namespace. `team-injury-fetch` stores only editions needed
+at a cutoff, caps retained bodies at 8 MB and reuses completed weeks after an interrupted
+index request. `team-injury-audit` runs offline, producing 1,088 records under
+`processed/team_injury_coverage/`. The recorded raw collection and current audit total about
+1.84 MB; the development probe is about 80 KB. Earlier decoder revisions remain separate.
+
+The 390 formal refresh reports are partial source coverage. Thirteen slots are pending or
+malformed and 141 unavailable; all 544 Tuesday slots are unknown for this source. Source
+variants, failed capture verification and sparse earlier editions remain explicit limits.
+An exact Week 1 entity may be reused from the original pilot only when its original URL,
+capture timestamp and digest match; the pilot manifest is a checksum-bound input. No report
+is carried from an older edition to fill a failed or omitted section. Neither original
+availability evidence nor model research locks are rewritten.
 
 Use CLI `--data-dir` to select another cache directory and `NFL_PROP_DATA_DIR` for the app.
 All data subdirectories are ignored, including local artifacts from historical workflows.

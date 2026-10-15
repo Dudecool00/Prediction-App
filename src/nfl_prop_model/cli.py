@@ -110,6 +110,8 @@ def main(argv: list[str] | None = None) -> int:
         "team-simplicity-check",
         "team-availability-fetch",
         "team-availability-audit",
+        "team-injury-fetch",
+        "team-injury-audit",
     ):
         command = commands.add_parser(
             name, help="Audited weekly context development and replay gate"
@@ -119,7 +121,9 @@ def main(argv: list[str] | None = None) -> int:
             "--report-dir",
             type=Path,
             default=Path(
-                "reports/local/team_availability"
+                "reports/local/team_injury_coverage"
+                if name.startswith("team-injury")
+                else "reports/local/team_availability"
                 if name.startswith("team-availability")
                 else "reports/local/team_simplicity"
                 if name == "team-simplicity-check"
@@ -131,7 +135,17 @@ def main(argv: list[str] | None = None) -> int:
         from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
         from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-        if args.command == "team-availability-fetch":
+        if args.command == "team-injury-fetch":
+            from nfl_prop_model.data.team_injury_history import fetch_history
+
+            print(f"Weekly injury sources: {fetch_history(args.data_dir)}")
+        elif args.command == "team-injury-audit":
+            from nfl_prop_model.data.team_injury_coverage import save_coverage
+
+            report = save_coverage(args.data_dir, args.report_dir)
+            print(f"Audited {report['records']} team/horizon slots. Enriched replay remains gated.")
+            print(f"Coverage: {args.report_dir / 'coverage.csv'}")
+        elif args.command == "team-availability-fetch":
             from nfl_prop_model.data.team_depth import fetch_depth_source
             from nfl_prop_model.data.team_injury_archive import fetch_injury_pilot
 
