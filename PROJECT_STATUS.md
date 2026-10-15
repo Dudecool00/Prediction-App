@@ -32,7 +32,7 @@ recorded weaker median penalties after an initial training-only underfitting aud
 
 ## Repository cleanup
 
-The active tree has 63 tracked files and 25 Python source modules, down from 161 files and 60
+At cleanup, the tree had 63 tracked files and 25 Python source modules, down from 161 files and 60
 modules. Removed the standalone QB passing-yard, sportsbook/EV, old candidate/holdout and
 participation workflows, their tests/reports, redundant plans and XGBoost dependency.
 The app now has two team pages, and the CLI exposes only team commands.
@@ -128,20 +128,49 @@ new 2025 outcomes were used. No further weather collector work was added in this
 The two derived revision caches total about 120 KB, with upstream features referenced rather than copied.
 Seven new selection/timing/artifact cases bring the full suite to 78 tests.
 
+## Dated availability evidence
+
+The [source audit](reports/team_scores/availability_audit/findings.md) adds an outcome-free
+check of all 272 scheduled 2025 games at both cutoffs. Dated ESPN depth charts provide a
+listed QB leader for all 544 team-game appearances per horizon; 20 leaders change between
+Tuesday and kickoff. A 24-hour assumed delay changes 11 early selections and two refresh
+selections relative to zero delay. Load timestamps are not verified publication times, and
+listed leaders do not establish starters or complete active/IR rosters.
+
+Three distinct archived Week 1 injury editions now have original-entity digests matching
+the preserved archive index. Eligible editions cover 28 of 32 teams before kickoff refresh:
+25 with designations and three explicit empty statements. Four remain unknown; all 32 are
+unknown at Tuesday's lock. One covered team has an unclassified Out position, so its position
+group counts remain unknown. Current-page content and first-publication timestamps are excluded.
+
+This advances stage one with dated evidence but leaves the enriched 2025 replay gated.
+Zero fits or 2025 outcome reads occurred. Stages two/three retain their compact EPA research
+choice. The next source work is broader archived injury coverage and dated development
+availability; starter/active-roster confirmation and historical weather coverage remain pending.
+
+The raw sources and processed audit occupy 239,100 bytes. Three source modules, one test file
+and two compact curated reports were added; datasets/article bodies stay outside Git. Existing
+environments and model caches were reused. Thirteen source/timing/integrity cases add coverage
+for strict cutoffs, future-snapshot invariance, empty charts, archive receipts, gzip bounds,
+missing reports, outcome exclusion and cache preservation.
+
 ## Repository health audit, October 15, 2026
 
-Reviewed merged `main` at `e8ccc2c` and the ten team-model merges since PR #15. Two merged
+Reviewed merged `main` initially at `e8ccc2c`, then incorporated `91afc64` when PR #25 merged
+during the audit. The review covers eleven team-model merges since PR #15. Two merged
 Windows runs (#21 and #23) failed at dependency validation because the hosted runner's
 preinstalled `pipx` required a newer `platformdirs` than this project's lock. Linux passed
-both runs; latest `main` passed all 78 tests and checks on both operating systems.
+both runs; the initial main snapshot passed all 78 tests and checks on both operating systems.
+The combined tree includes the thirteen availability cases for 91 total tests.
 
 CI now creates a separate environment per runner and uses its interpreter for installation,
-dependency checks, lint, formatting, typing and tests. The dependency lock and all model/data
-source files retain their bytes. No additional local environment or model fit was needed.
-Thirteen read-only audit groups passed, including current saved research/model artifacts,
-frozen choices, five score journals, two weather captures, output consistency, imports and
-local documentation links. See [evidence and limits](reports/team_scores/repository_health.md).
+dependency checks, lint, formatting, typing and tests, with stable platform check names.
+The dependency lock and all model/data source files retain their bytes. No additional local
+environment or model fit was needed. Saved research/model artifacts, frozen choices, five
+score journals, two weather captures, dated availability, output consistency, imports and
+local documentation links are covered by the integrity audit. See
+[evidence and limits](reports/team_scores/repository_health.md); final combined CI results
+are recorded in PR #26.
 
 GitHub reports `main` as unprotected with required checks off. Requiring the two platform
-checks before merging is recommended; repository access rules were not modified. The dated
-availability work in draft PR #25 is separate from the audited merged tree.
+checks before merging is recommended; repository access rules were not modified.

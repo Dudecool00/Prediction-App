@@ -108,6 +108,8 @@ def main(argv: list[str] | None = None) -> int:
         "team-walkforward",
         "team-replay-check",
         "team-simplicity-check",
+        "team-availability-fetch",
+        "team-availability-audit",
     ):
         command = commands.add_parser(
             name, help="Audited weekly context development and replay gate"
@@ -117,7 +119,9 @@ def main(argv: list[str] | None = None) -> int:
             "--report-dir",
             type=Path,
             default=Path(
-                "reports/local/team_simplicity"
+                "reports/local/team_availability"
+                if name.startswith("team-availability")
+                else "reports/local/team_simplicity"
                 if name == "team-simplicity-check"
                 else "reports/local/team_walkforward"
             ),
@@ -127,7 +131,22 @@ def main(argv: list[str] | None = None) -> int:
         from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
         from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-        if args.command == "team-simplicity-check":
+        if args.command == "team-availability-fetch":
+            from nfl_prop_model.data.team_depth import fetch_depth_source
+            from nfl_prop_model.data.team_injury_archive import fetch_injury_pilot
+
+            print(f"Depth source: {fetch_depth_source(args.data_dir)}")
+            print(f"Week 1 injury pilot: {fetch_injury_pilot(args.data_dir)}")
+        elif args.command == "team-availability-audit":
+            from nfl_prop_model.data.team_availability import save_availability_audit
+
+            report = save_availability_audit(args.data_dir, args.report_dir)
+            print(
+                f"Audited {report['records']} team/horizon slots. "
+                "Enriched 2025 replay remains gated."
+            )
+            print(f"Report: {args.report_dir / 'findings.md'}")
+        elif args.command == "team-simplicity-check":
             from nfl_prop_model.modeling.team_simplicity import save_simplicity_check
 
             report = save_simplicity_check(args.data_dir, args.report_dir)

@@ -1,11 +1,12 @@
 # Repository health audit
 
-Checked October 15, 2026 against merged `main` at
-[`e8ccc2c9bd9421a0809712772aba32d35fd56280`](https://github.com/Dudecool00/Prediction-App/commit/e8ccc2c9bd9421a0809712772aba32d35fd56280).
-The review covers the ten team-model merges from PR #15 through #24, current source/tests,
-local saved team artifacts and CI configuration. Draft [PR #25](https://github.com/Dudecool00/Prediction-App/pull/25)
-is separate from this merged tree. Its new availability modules were not included in the
-main-branch test count below.
+Checked October 15, 2026, initially against merged `main` at
+[`e8ccc2c`](https://github.com/Dudecool00/Prediction-App/commit/e8ccc2c9bd9421a0809712772aba32d35fd56280),
+then refreshed to [`91afc64`](https://github.com/Dudecool00/Prediction-App/commit/91afc64225ac127c8e17bf16a8b2708efb176e0f)
+when [PR #25](https://github.com/Dudecool00/Prediction-App/pull/25) merged during the audit.
+The review covers eleven team-model merges from PR #15 through #25, current source/tests,
+local saved team artifacts and CI configuration. The original snapshot has 78 tests;
+the combined tree includes the thirteen availability cases for 91 total.
 
 ## Failed merge checks
 
@@ -19,7 +20,7 @@ Both Windows failures report the same conflict: the hosted runner's globally ins
 `platformdirs==4.11.8`. Subsequent lint, typing and test steps were skipped on those Windows
 jobs. The logs identify an environment conflict, not a failed model assertion.
 
-The latest merged-main [workflow 38662787345](https://github.com/Dudecool00/Prediction-App/actions/runs/38662787345)
+The initial merged-main [workflow 38662787345](https://github.com/Dudecool00/Prediction-App/actions/runs/38662787345)
 passed dependency checks, lint, formatting, strict typing and all **78 tests on each of
 Linux/Python 3.11 and Windows/Python 3.12**. That later pass does not remove the recurring
 environment risk: the workflow previously installed into the runner's global interpreter.
@@ -32,7 +33,8 @@ The fix's exact-commit workflow results are recorded in its pull request.
 
 ## Read-only artifact and source checks
 
-All thirteen local audit groups passed:
+The initial thirteen local audit groups passed; the merged availability audit is checked
+again when refreshing the combined branch:
 
 - Canonical team cache; active score evaluation; feature experiments; chronological tuning;
   passer/injury comparison; playbook/SOS comparison; saved 2025 diagnostics; refinement;
@@ -40,6 +42,9 @@ All thirteen local audit groups passed:
 - Five prospective score versions, with all 15 referenced tables verified, and both saved
   weather captures with their original receipt/timing checks.
 - Source parsing/internal imports, local Markdown links and tracked repository contents.
+
+The added availability reader revalidates its preserved source/index digests and all
+1,088 cutoff records without reading score columns or fitting a model.
 
 The nine core cache namespaces above contain 24 referenced artifacts; all pass their
 reader/source guards and content checksums. The current simplicity cache and its frozen
