@@ -1,0 +1,234 @@
+{
+  "artifact": {
+    "file": "weather-86771d07426c5a975f88377dce40678171daec25d9e313acc0644342bbc807e7.parquet",
+    "rows": 2174,
+    "schema": {
+      "assumed_available_utc": "String",
+      "away_team": "String",
+      "cutoff_utc": "String",
+      "exposure": "Float64",
+      "game_id": "String",
+      "grid_latitude": "Float64",
+      "grid_longitude": "Float64",
+      "home_team": "String",
+      "horizon": "String",
+      "kickoff_utc": "String",
+      "lead_hours": "Int64",
+      "point_url": "String",
+      "precipitation_rate_mm_h": "Float64",
+      "run_utc": "String",
+      "season": "Int64",
+      "stadium_id": "String",
+      "status": "String",
+      "temperature_c": "Float64",
+      "url": "String",
+      "valid_offset_minutes": "Float64",
+      "valid_utc": "String",
+      "venue_corrected": "Boolean",
+      "venue_key": "String",
+      "week": "Int64",
+      "wind_speed_m_s": "Float64"
+    },
+    "sha256": "86771d07426c5a975f88377dce40678171daec25d9e313acc0644342bbc807e7"
+  },
+  "coverage": [
+    {
+      "horizon": "early_week",
+      "len": 177,
+      "season": 2022,
+      "status": "complete"
+    },
+    {
+      "horizon": "early_week",
+      "len": 34,
+      "season": 2022,
+      "status": "fixed_indoor"
+    },
+    {
+      "horizon": "early_week",
+      "len": 1,
+      "season": 2022,
+      "status": "moved_venue_excluded"
+    },
+    {
+      "horizon": "early_week",
+      "len": 59,
+      "season": 2022,
+      "status": "roof_unknown"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 177,
+      "season": 2022,
+      "status": "complete"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 34,
+      "season": 2022,
+      "status": "fixed_indoor"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 1,
+      "season": 2022,
+      "status": "moved_venue_excluded"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 59,
+      "season": 2022,
+      "status": "roof_unknown"
+    },
+    {
+      "horizon": "early_week",
+      "len": 180,
+      "season": 2023,
+      "status": "complete"
+    },
+    {
+      "horizon": "early_week",
+      "len": 33,
+      "season": 2023,
+      "status": "fixed_indoor"
+    },
+    {
+      "horizon": "early_week",
+      "len": 59,
+      "season": 2023,
+      "status": "roof_unknown"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 180,
+      "season": 2023,
+      "status": "complete"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 33,
+      "season": 2023,
+      "status": "fixed_indoor"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 59,
+      "season": 2023,
+      "status": "roof_unknown"
+    },
+    {
+      "horizon": "early_week",
+      "len": 178,
+      "season": 2024,
+      "status": "complete"
+    },
+    {
+      "horizon": "early_week",
+      "len": 34,
+      "season": 2024,
+      "status": "fixed_indoor"
+    },
+    {
+      "horizon": "early_week",
+      "len": 60,
+      "season": 2024,
+      "status": "roof_unknown"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 177,
+      "season": 2024,
+      "status": "complete"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 34,
+      "season": 2024,
+      "status": "fixed_indoor"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 60,
+      "season": 2024,
+      "status": "roof_unknown"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 1,
+      "season": 2024,
+      "status": "source_unavailable"
+    },
+    {
+      "horizon": "early_week",
+      "len": 181,
+      "season": 2025,
+      "status": "complete"
+    },
+    {
+      "horizon": "early_week",
+      "len": 33,
+      "season": 2025,
+      "status": "fixed_indoor"
+    },
+    {
+      "horizon": "early_week",
+      "len": 58,
+      "season": 2025,
+      "status": "roof_unknown"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 181,
+      "season": 2025,
+      "status": "complete"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 33,
+      "season": 2025,
+      "status": "fixed_indoor"
+    },
+    {
+      "horizon": "pregame_refresh",
+      "len": 58,
+      "season": 2025,
+      "status": "roof_unknown"
+    }
+  ],
+  "format_version": 1,
+  "games": 1087,
+  "generated_at_utc": "2026-10-15T21:29:15.292978+00:00",
+  "inputs": {
+    "schedule_sha256": "bf7dfa3fb9149a9c3ce07a16eb96436b79e6411e81d740e082c4ed1801814917",
+    "venues_sha256": "c0220a9db22f3dc5d166583e7a166bd769b4341b7816cd95152b0c50686cd6d1"
+  },
+  "model_fits": 0,
+  "policy": {
+    "availability": "publication buffer is an assumption; current receipt is not historical proof",
+    "cohort": "2022-2025 regular-season canonical schedule metadata only; no outcomes or fits",
+    "exposure": "fixed indoor zero; outdoor one; retractable/canopy unknown, no postgame roof",
+    "fields": "2m temperature C; 10m wind magnitude m/s; instantaneous precipitation rate mm/h",
+    "limits": "600kB metadata/20kB point response; 24MB compressed raw cache; two request workers",
+    "location": "venue city nearest 0.25 degree grid; no stadium measurement claim",
+    "missing": "retain all game/horizon rows, no fallback run or imputed weather",
+    "moved_game": "2022_11_CLE_BUF weather excluded at both cutoffs",
+    "rain": "rate equivalent, not accumulated hourly precipitation; no rain/snow type or gusts",
+    "run": "latest six-hour run with run +6h10m strictly before prediction cutoff",
+    "source": "NCAR d084001 operational GFS 0.25 degree archive; DOI 10.5065/D65D8PWK",
+    "valid": "nearest three-hour point to kickoff, ties later; maximum 90 minutes offset",
+    "venue_publication": "2025-05-13; static announced schedule assumption, not archived edition",
+    "venue_source": "https://www.nfl.com/news/nfl-announces-2025-international-games-to-feature-seven-games-in-five-countries",
+    "venues": "retrospective registry; seven 2025 overrides from preseason NFL announcement"
+  },
+  "raw_bytes": 7266818,
+  "records": 2174,
+  "replay_status": "blocked: dated development roster/starter inputs and weather comparison still required",
+  "source_sha256": "f13a026f9726416dda718c319df0d256474d512abf34d5acd84f6958f91600a6",
+  "status": {
+    "complete": 1431,
+    "fixed_indoor": 268,
+    "moved_venue_excluded": 2,
+    "roof_unknown": 472,
+    "source_unavailable": 1
+  }
+}

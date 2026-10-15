@@ -222,6 +222,10 @@ Run `team-historical-weather-fetch`, then `team-historical-weather-audit` to reb
 offline. It corrects seven 2025 international venue defaults and retains indoor, uncertain-roof,
 moved-venue and unavailable rows. Cached point responses stay outside Git. Weather model
 comparison and dated roster/starter resolution still precede the full enriched 2025 replay.
+The [completed source audit](reports/team_scores/historical_weather/findings.md) retains all
+2,174 game/horizon records: 1,431 have complete outdoor weather and one outdoor forecast
+is unavailable. Indoor and uncertain-roof cases remain explicit. The new raw/processed
+weather cache occupies about 7.46 MB locally; all raw responses stay outside Git.
 
 - `src/nfl_prop_model/data/`: source snapshots, validation and content-addressed storage.
 - `src/nfl_prop_model/features/`: past-only EPA and experimental matchup inputs.
