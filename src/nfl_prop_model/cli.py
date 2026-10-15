@@ -114,16 +114,22 @@ def main(argv: list[str] | None = None) -> int:
         "team-injury-audit",
         "team-injury-development-fetch",
         "team-injury-development-audit",
+        "team-injury-news-fetch",
+        "team-injury-news-audit",
     ):
         command = commands.add_parser(
             name, help="Audited weekly context development and replay gate"
         )
         command.add_argument("--data-dir", type=Path, default=Path("data"))
+        if name.startswith("team-injury-news"):
+            command.add_argument("--seasons", type=int, nargs="+", default=[2023, 2024])
         command.add_argument(
             "--report-dir",
             type=Path,
             default=Path(
-                "reports/local/team_injury_development"
+                "reports/local/team_injury_news"
+                if name.startswith("team-injury-news")
+                else "reports/local/team_injury_development"
                 if name.startswith("team-injury-development")
                 else "reports/local/team_injury_coverage"
                 if name.startswith("team-injury")
@@ -139,7 +145,17 @@ def main(argv: list[str] | None = None) -> int:
         from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
         from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-        if args.command == "team-injury-development-fetch":
+        if args.command == "team-injury-news-fetch":
+            from nfl_prop_model.data.team_injury_news_variants import fetch_qualified
+
+            print(f"Development injury news: {fetch_qualified(args.data_dir, tuple(args.seasons))}")
+        elif args.command == "team-injury-news-audit":
+            from nfl_prop_model.data.team_injury_news_audit import save_news_audit
+
+            report = save_news_audit(args.data_dir, args.report_dir, tuple(args.seasons))
+            print(f"Audited {report['records']} news team/horizon slots; zero model fits.")
+            print(f"Coverage: {args.report_dir / 'coverage.csv'}")
+        elif args.command == "team-injury-development-fetch":
             from nfl_prop_model.data.team_injury_development import fetch_development
 
             print(f"Development injury sources: {fetch_development(args.data_dir)}")
