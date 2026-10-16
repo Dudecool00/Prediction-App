@@ -222,6 +222,19 @@ reuses those predictions without fitting: excluding 49 blowouts lowers EPA margi
 post-hoc outcome filter does not replace the full-season evaluation. Reproduce it with
 `python -m nfl_prop_model.modeling.team_margin_sensitivity` using the existing replay cache.
 
+The [forecast-defined calibration](reports/team_scores/margin_calibration/findings.md)
+keeps every game and compares methods on common EPA-predicted margin bands. It does not
+support stretching all EPA margins: the development/2025 slope ranges include 1.0.
+The [fixed EPA / opponent-adjusted points / blend study](reports/team_scores/points_comparison/findings.md)
+has 2025 margin MAE 10.508 / 10.517 / 10.397, versus prior scoring's 10.338. The blend does
+not pass the development guards; the research choice remains compact EPA. These points
+ratings are PEM-inspired, not a reconstruction of an unavailable formula. Reproduce offline:
+
+```powershell
+python -m nfl_prop_model.modeling.team_margin_calibration
+python -m nfl_prop_model.modeling.team_points_comparison
+```
+
 The next bounded injury experiment uses separately qualified 2022 initialization and the
 existing 2023-2024 dated news audit. It compares compact EPA with report-availability controls
 and two coarse Out-count contrasts, retaining every development game. Its
