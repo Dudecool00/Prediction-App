@@ -108,3 +108,15 @@ these are not observations or newly captured prospective forecasts. See the
 [declared policy](../reports/team_scores/historical_weather/protocol.md). Keep
 [NCAR](https://gdex.ucar.edu/datasets/d084001/) and
 [Open-Meteo](https://open-meteo.com/en/docs/geocoding-api) CC BY 4.0 attribution when sharing.
+
+`team-archived-weather-compare` reconstructs only 2022–2024 weather offline, verifies identical
+development cohorts and reproduces the saved EPA control before accepting a research result.
+It stores context deltas, one prediction panel and fold IDs under `processed/team_archived_weather/`;
+the original model and source artifacts remain intact. No additional weather download or
+2025 score evaluation is performed. See the [development result](../reports/team_scores/weather_comparison/findings.md).
+
+`team-depth-catalog-fetch/audit` inventory official chart-page archive indexes for 2022–2024.
+They use the current NFL club directory as an explicit domain assumption and store bounded
+indexes under `raw/team_depth_catalog/`, with one cutoff table under `processed/team_depth_catalog/`.
+Indexed candidates remain unverified and model-ineligible: chart bodies and player identities
+require a separate audited adapter. See the [source inventory policy](../reports/team_scores/depth_catalog/protocol.md).

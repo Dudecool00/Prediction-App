@@ -1,0 +1,761 @@
+{
+  "artifact": {
+    "file": "candidates-c97853b82c375d5c927538bc00be499970094a399eb2aeb605d8a9c271aa14e8.parquet",
+    "rows": 3260,
+    "schema": {
+      "candidate_found": "Boolean",
+      "captured_at_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "catalog_status": "String",
+      "cdx_digest": "String",
+      "cutoff_utc": "Datetime(time_unit='us', time_zone='UTC')",
+      "game_id": "String",
+      "horizon": "String",
+      "model_eligible": "Boolean",
+      "original_url": "String",
+      "season": "Int64",
+      "side": "String",
+      "team": "String",
+      "week": "Int64"
+    },
+    "sha256": "c97853b82c375d5c927538bc00be499970094a399eb2aeb605d8a9c271aa14e8"
+  },
+  "catalogs": [
+    {
+      "indexed_rows": 6,
+      "season": 2022,
+      "site": "https://www.azcardinals.com",
+      "status": "indexed",
+      "team": "ARI"
+    },
+    {
+      "indexed_rows": 5,
+      "season": 2022,
+      "site": "https://www.atlantafalcons.com",
+      "status": "indexed",
+      "team": "ATL"
+    },
+    {
+      "indexed_rows": 10,
+      "season": 2022,
+      "site": "https://www.baltimoreravens.com",
+      "status": "indexed",
+      "team": "BAL"
+    },
+    {
+      "indexed_rows": 10,
+      "season": 2022,
+      "site": "https://www.buffalobills.com",
+      "status": "indexed",
+      "team": "BUF"
+    },
+    {
+      "indexed_rows": 8,
+      "season": 2022,
+      "site": "https://www.panthers.com",
+      "status": "indexed",
+      "team": "CAR"
+    },
+    {
+      "indexed_rows": 8,
+      "season": 2022,
+      "site": "https://www.chicagobears.com",
+      "status": "indexed",
+      "team": "CHI"
+    },
+    {
+      "indexed_rows": 17,
+      "season": 2022,
+      "site": "https://www.bengals.com",
+      "status": "indexed",
+      "team": "CIN"
+    },
+    {
+      "indexed_rows": 6,
+      "season": 2022,
+      "site": "https://www.clevelandbrowns.com",
+      "status": "indexed",
+      "team": "CLE"
+    },
+    {
+      "indexed_rows": 13,
+      "season": 2022,
+      "site": "https://www.dallascowboys.com",
+      "status": "indexed",
+      "team": "DAL"
+    },
+    {
+      "indexed_rows": 6,
+      "season": 2022,
+      "site": "https://www.denverbroncos.com",
+      "status": "indexed",
+      "team": "DEN"
+    },
+    {
+      "indexed_rows": 16,
+      "season": 2022,
+      "site": "https://www.detroitlions.com",
+      "status": "indexed",
+      "team": "DET"
+    },
+    {
+      "indexed_rows": 9,
+      "season": 2022,
+      "site": "https://www.packers.com",
+      "status": "indexed",
+      "team": "GB"
+    },
+    {
+      "indexed_rows": 6,
+      "season": 2022,
+      "site": "https://www.houstontexans.com",
+      "status": "indexed",
+      "team": "HOU"
+    },
+    {
+      "indexed_rows": 13,
+      "season": 2022,
+      "site": "https://www.colts.com",
+      "status": "indexed",
+      "team": "IND"
+    },
+    {
+      "indexed_rows": 10,
+      "season": 2022,
+      "site": "https://www.jaguars.com",
+      "status": "indexed",
+      "team": "JAX"
+    },
+    {
+      "indexed_rows": 6,
+      "season": 2022,
+      "site": "https://www.chiefs.com",
+      "status": "indexed",
+      "team": "KC"
+    },
+    {
+      "indexed_rows": 13,
+      "season": 2022,
+      "site": "https://www.therams.com",
+      "status": "indexed",
+      "team": "LA"
+    },
+    {
+      "indexed_rows": 5,
+      "season": 2022,
+      "site": "https://www.chargers.com",
+      "status": "indexed",
+      "team": "LAC"
+    },
+    {
+      "indexed_rows": 7,
+      "season": 2022,
+      "site": "https://www.raiders.com",
+      "status": "indexed",
+      "team": "LV"
+    },
+    {
+      "indexed_rows": 7,
+      "season": 2022,
+      "site": "https://www.miamidolphins.com",
+      "status": "indexed",
+      "team": "MIA"
+    },
+    {
+      "indexed_rows": 10,
+      "season": 2022,
+      "site": "https://www.vikings.com",
+      "status": "indexed",
+      "team": "MIN"
+    },
+    {
+      "indexed_rows": 13,
+      "season": 2022,
+      "site": "https://www.patriots.com",
+      "status": "indexed",
+      "team": "NE"
+    },
+    {
+      "indexed_rows": 17,
+      "season": 2022,
+      "site": "https://www.neworleanssaints.com",
+      "status": "indexed",
+      "team": "NO"
+    },
+    {
+      "indexed_rows": 11,
+      "season": 2022,
+      "site": "https://www.giants.com",
+      "status": "indexed",
+      "team": "NYG"
+    },
+    {
+      "indexed_rows": 4,
+      "season": 2022,
+      "site": "https://www.newyorkjets.com",
+      "status": "indexed",
+      "team": "NYJ"
+    },
+    {
+      "indexed_rows": 12,
+      "season": 2022,
+      "site": "https://www.philadelphiaeagles.com",
+      "status": "indexed",
+      "team": "PHI"
+    },
+    {
+      "indexed_rows": 16,
+      "season": 2022,
+      "site": "https://www.steelers.com",
+      "status": "indexed",
+      "team": "PIT"
+    },
+    {
+      "indexed_rows": 7,
+      "season": 2022,
+      "site": "https://www.seahawks.com",
+      "status": "indexed",
+      "team": "SEA"
+    },
+    {
+      "indexed_rows": 3,
+      "season": 2022,
+      "site": "https://www.49ers.com",
+      "status": "indexed",
+      "team": "SF"
+    },
+    {
+      "indexed_rows": 6,
+      "season": 2022,
+      "site": "https://www.buccaneers.com",
+      "status": "indexed",
+      "team": "TB"
+    },
+    {
+      "indexed_rows": 12,
+      "season": 2022,
+      "site": "https://www.tennesseetitans.com",
+      "status": "indexed",
+      "team": "TEN"
+    },
+    {
+      "indexed_rows": 7,
+      "season": 2022,
+      "site": "https://www.commanders.com",
+      "status": "indexed",
+      "team": "WAS"
+    },
+    {
+      "indexed_rows": 7,
+      "season": 2023,
+      "site": "https://www.azcardinals.com",
+      "status": "indexed",
+      "team": "ARI"
+    },
+    {
+      "indexed_rows": 5,
+      "season": 2023,
+      "site": "https://www.atlantafalcons.com",
+      "status": "indexed",
+      "team": "ATL"
+    },
+    {
+      "indexed_rows": 2,
+      "season": 2023,
+      "site": "https://www.baltimoreravens.com",
+      "status": "indexed",
+      "team": "BAL"
+    },
+    {
+      "indexed_rows": 7,
+      "season": 2023,
+      "site": "https://www.buffalobills.com",
+      "status": "indexed",
+      "team": "BUF"
+    },
+    {
+      "indexed_rows": 4,
+      "season": 2023,
+      "site": "https://www.panthers.com",
+      "status": "indexed",
+      "team": "CAR"
+    },
+    {
+      "indexed_rows": 8,
+      "season": 2023,
+      "site": "https://www.chicagobears.com",
+      "status": "indexed",
+      "team": "CHI"
+    },
+    {
+      "indexed_rows": 8,
+      "season": 2023,
+      "site": "https://www.bengals.com",
+      "status": "indexed",
+      "team": "CIN"
+    },
+    {
+      "indexed_rows": 8,
+      "season": 2023,
+      "site": "https://www.clevelandbrowns.com",
+      "status": "indexed",
+      "team": "CLE"
+    },
+    {
+      "indexed_rows": 3,
+      "season": 2023,
+      "site": "https://www.dallascowboys.com",
+      "status": "indexed",
+      "team": "DAL"
+    },
+    {
+      "indexed_rows": 4,
+      "season": 2023,
+      "site": "https://www.denverbroncos.com",
+      "status": "indexed",
+      "team": "DEN"
+    },
+    {
+      "indexed_rows": 7,
+      "season": 2023,
+      "site": "https://www.detroitlions.com",
+      "status": "indexed",
+      "team": "DET"
+    },
+    {
+      "indexed_rows": 10,
+      "season": 2023,
+      "site": "https://www.packers.com",
+      "status": "indexed",
+      "team": "GB"
+    },
+    {
+      "indexed_rows": 9,
+      "season": 2023,
+      "site": "https://www.houstontexans.com",
+      "status": "indexed",
+      "team": "HOU"
+    },
+    {
+      "indexed_rows": 8,
+      "season": 2023,
+      "site": "https://www.colts.com",
+      "status": "indexed",
+      "team": "IND"
+    },
+    {
+      "indexed_rows": 8,
+      "season": 2023,
+      "site": "https://www.jaguars.com",
+      "status": "indexed",
+      "team": "JAX"
+    },
+    {
+      "indexed_rows": 3,
+      "season": 2023,
+      "site": "https://www.chiefs.com",
+      "status": "indexed",
+      "team": "KC"
+    },
+    {
+      "indexed_rows": 10,
+      "season": 2023,
+      "site": "https://www.therams.com",
+      "status": "indexed",
+      "team": "LA"
+    },
+    {
+      "indexed_rows": 7,
+      "season": 2023,
+      "site": "https://www.chargers.com",
+      "status": "indexed",
+      "team": "LAC"
+    },
+    {
+      "indexed_rows": 16,
+      "season": 2023,
+      "site": "https://www.raiders.com",
+      "status": "indexed",
+      "team": "LV"
+    },
+    {
+      "indexed_rows": 11,
+      "season": 2023,
+      "site": "https://www.miamidolphins.com",
+      "status": "indexed",
+      "team": "MIA"
+    },
+    {
+      "indexed_rows": 11,
+      "season": 2023,
+      "site": "https://www.vikings.com",
+      "status": "indexed",
+      "team": "MIN"
+    },
+    {
+      "indexed_rows": 4,
+      "season": 2023,
+      "site": "https://www.patriots.com",
+      "status": "indexed",
+      "team": "NE"
+    },
+    {
+      "indexed_rows": 13,
+      "season": 2023,
+      "site": "https://www.neworleanssaints.com",
+      "status": "indexed",
+      "team": "NO"
+    },
+    {
+      "indexed_rows": 2,
+      "season": 2023,
+      "site": "https://www.giants.com",
+      "status": "indexed",
+      "team": "NYG"
+    },
+    {
+      "indexed_rows": 10,
+      "season": 2023,
+      "site": "https://www.newyorkjets.com",
+      "status": "indexed",
+      "team": "NYJ"
+    },
+    {
+      "indexed_rows": 11,
+      "season": 2023,
+      "site": "https://www.philadelphiaeagles.com",
+      "status": "indexed",
+      "team": "PHI"
+    },
+    {
+      "indexed_rows": 7,
+      "season": 2023,
+      "site": "https://www.steelers.com",
+      "status": "indexed",
+      "team": "PIT"
+    },
+    {
+      "indexed_rows": 0,
+      "season": 2023,
+      "site": "https://www.seahawks.com",
+      "status": "unavailable",
+      "team": "SEA"
+    },
+    {
+      "indexed_rows": 8,
+      "season": 2023,
+      "site": "https://www.49ers.com",
+      "status": "indexed",
+      "team": "SF"
+    },
+    {
+      "indexed_rows": 0,
+      "season": 2023,
+      "site": "https://www.buccaneers.com",
+      "status": "unavailable",
+      "team": "TB"
+    },
+    {
+      "indexed_rows": 4,
+      "season": 2023,
+      "site": "https://www.tennesseetitans.com",
+      "status": "indexed",
+      "team": "TEN"
+    },
+    {
+      "indexed_rows": 0,
+      "season": 2023,
+      "site": "https://www.commanders.com",
+      "status": "unavailable",
+      "team": "WAS"
+    },
+    {
+      "indexed_rows": 16,
+      "season": 2024,
+      "site": "https://www.azcardinals.com",
+      "status": "indexed",
+      "team": "ARI"
+    },
+    {
+      "indexed_rows": 9,
+      "season": 2024,
+      "site": "https://www.atlantafalcons.com",
+      "status": "indexed",
+      "team": "ATL"
+    },
+    {
+      "indexed_rows": 0,
+      "season": 2024,
+      "site": "https://www.baltimoreravens.com",
+      "status": "unavailable",
+      "team": "BAL"
+    },
+    {
+      "indexed_rows": 17,
+      "season": 2024,
+      "site": "https://www.buffalobills.com",
+      "status": "indexed",
+      "team": "BUF"
+    },
+    {
+      "indexed_rows": 15,
+      "season": 2024,
+      "site": "https://www.panthers.com",
+      "status": "indexed",
+      "team": "CAR"
+    },
+    {
+      "indexed_rows": 21,
+      "season": 2024,
+      "site": "https://www.chicagobears.com",
+      "status": "indexed",
+      "team": "CHI"
+    },
+    {
+      "indexed_rows": 21,
+      "season": 2024,
+      "site": "https://www.bengals.com",
+      "status": "indexed",
+      "team": "CIN"
+    },
+    {
+      "indexed_rows": 22,
+      "season": 2024,
+      "site": "https://www.clevelandbrowns.com",
+      "status": "indexed",
+      "team": "CLE"
+    },
+    {
+      "indexed_rows": 16,
+      "season": 2024,
+      "site": "https://www.dallascowboys.com",
+      "status": "indexed",
+      "team": "DAL"
+    },
+    {
+      "indexed_rows": 12,
+      "season": 2024,
+      "site": "https://www.denverbroncos.com",
+      "status": "indexed",
+      "team": "DEN"
+    },
+    {
+      "indexed_rows": 18,
+      "season": 2024,
+      "site": "https://www.detroitlions.com",
+      "status": "indexed",
+      "team": "DET"
+    },
+    {
+      "indexed_rows": 20,
+      "season": 2024,
+      "site": "https://www.packers.com",
+      "status": "indexed",
+      "team": "GB"
+    },
+    {
+      "indexed_rows": 11,
+      "season": 2024,
+      "site": "https://www.houstontexans.com",
+      "status": "indexed",
+      "team": "HOU"
+    },
+    {
+      "indexed_rows": 14,
+      "season": 2024,
+      "site": "https://www.colts.com",
+      "status": "indexed",
+      "team": "IND"
+    },
+    {
+      "indexed_rows": 13,
+      "season": 2024,
+      "site": "https://www.jaguars.com",
+      "status": "indexed",
+      "team": "JAX"
+    },
+    {
+      "indexed_rows": 20,
+      "season": 2024,
+      "site": "https://www.chiefs.com",
+      "status": "indexed",
+      "team": "KC"
+    },
+    {
+      "indexed_rows": 14,
+      "season": 2024,
+      "site": "https://www.therams.com",
+      "status": "indexed",
+      "team": "LA"
+    },
+    {
+      "indexed_rows": 18,
+      "season": 2024,
+      "site": "https://www.chargers.com",
+      "status": "indexed",
+      "team": "LAC"
+    },
+    {
+      "indexed_rows": 26,
+      "season": 2024,
+      "site": "https://www.raiders.com",
+      "status": "indexed",
+      "team": "LV"
+    },
+    {
+      "indexed_rows": 7,
+      "season": 2024,
+      "site": "https://www.miamidolphins.com",
+      "status": "indexed",
+      "team": "MIA"
+    },
+    {
+      "indexed_rows": 21,
+      "season": 2024,
+      "site": "https://www.vikings.com",
+      "status": "indexed",
+      "team": "MIN"
+    },
+    {
+      "indexed_rows": 19,
+      "season": 2024,
+      "site": "https://www.patriots.com",
+      "status": "indexed",
+      "team": "NE"
+    },
+    {
+      "indexed_rows": 13,
+      "season": 2024,
+      "site": "https://www.neworleanssaints.com",
+      "status": "indexed",
+      "team": "NO"
+    },
+    {
+      "indexed_rows": 20,
+      "season": 2024,
+      "site": "https://www.giants.com",
+      "status": "indexed",
+      "team": "NYG"
+    },
+    {
+      "indexed_rows": 26,
+      "season": 2024,
+      "site": "https://www.newyorkjets.com",
+      "status": "indexed",
+      "team": "NYJ"
+    },
+    {
+      "indexed_rows": 23,
+      "season": 2024,
+      "site": "https://www.philadelphiaeagles.com",
+      "status": "indexed",
+      "team": "PHI"
+    },
+    {
+      "indexed_rows": 28,
+      "season": 2024,
+      "site": "https://www.steelers.com",
+      "status": "indexed",
+      "team": "PIT"
+    },
+    {
+      "indexed_rows": 27,
+      "season": 2024,
+      "site": "https://www.seahawks.com",
+      "status": "indexed",
+      "team": "SEA"
+    },
+    {
+      "indexed_rows": 17,
+      "season": 2024,
+      "site": "https://www.49ers.com",
+      "status": "indexed",
+      "team": "SF"
+    },
+    {
+      "indexed_rows": 19,
+      "season": 2024,
+      "site": "https://www.buccaneers.com",
+      "status": "indexed",
+      "team": "TB"
+    },
+    {
+      "indexed_rows": 7,
+      "season": 2024,
+      "site": "https://www.tennesseetitans.com",
+      "status": "indexed",
+      "team": "TEN"
+    },
+    {
+      "indexed_rows": 13,
+      "season": 2024,
+      "site": "https://www.commanders.com",
+      "status": "indexed",
+      "team": "WAS"
+    }
+  ],
+  "coverage": [
+    {
+      "candidate_found": 91,
+      "horizon": "early_week",
+      "season": 2022,
+      "team_slots": 542
+    },
+    {
+      "candidate_found": 95,
+      "horizon": "pregame_refresh",
+      "season": 2022,
+      "team_slots": 542
+    },
+    {
+      "candidate_found": 66,
+      "horizon": "early_week",
+      "season": 2023,
+      "team_slots": 544
+    },
+    {
+      "candidate_found": 49,
+      "horizon": "pregame_refresh",
+      "season": 2023,
+      "team_slots": 544
+    },
+    {
+      "candidate_found": 162,
+      "horizon": "early_week",
+      "season": 2024,
+      "team_slots": 544
+    },
+    {
+      "candidate_found": 112,
+      "horizon": "pregame_refresh",
+      "season": 2024,
+      "team_slots": 544
+    }
+  ],
+  "directory_sha256": "aadf48d06a2a6aeb0b094986963ff3d7c43ced4c9b74c4d51898c3a9fc177196",
+  "format_version": 1,
+  "games": 815,
+  "generated_at_utc": "2026-10-15T21:59:19.773439+00:00",
+  "local_workspace_path_omitted": true,
+  "model_eligible_records": 0,
+  "model_fits": 0,
+  "policy": {
+    "bounds": "96 indexes, two workers, 650 rows and 200kB/index; 500kB directory; 4MB gzip total",
+    "candidate": "latest sampled capture strictly before cutoff, age <=72h; never model eligible",
+    "cutoffs": "Tuesday 10 Chicago and kickoff minus 1h; metadata-only canonical 815 games",
+    "domains": "current NFL directory, retrospective domain assumption; pin all 32 clubs",
+    "failures": "one retry; unavailable/empty/truncated supply no candidate; resume receipts",
+    "limitations": "may miss domains, routes and revisions; no complete roster or starter proof",
+    "routes": "/team/depth-chart or /team/depthchart, optional slash; no query variants",
+    "sampling": "CDX HTTP200 HTML, collapse timestamp:8; adjacent URL groups, first capture/day",
+    "scope": "2022-2024 official depth-chart catalog sample only, no body verification or fits",
+    "window": "August 15 through next January 16 for each NFL season"
+  },
+  "raw_bytes": 203886,
+  "records": 3260,
+  "schedule": {
+    "artifact_sha256": "bf7dfa3fb9149a9c3ce07a16eb96436b79e6411e81d740e082c4ed1801814917",
+    "manifest_sha256": "1c35edef205f49105c215474d50c62b6f1f161a15150dde74d110e564c7fb8bd"
+  },
+  "source_sha256": "f607ab3f1cce03fbe323db9fd9dd85314706242a56c8965bc51c91cb7e4af612",
+  "verified_snapshots": 0
+}
