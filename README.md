@@ -212,6 +212,10 @@ horizons. Output includes every game's predicted/actual scores and margins, week
 fold receipts and interactive charts under `reports/local/team_compact_replay/`. Cached
 runs are verified and reused without refitting. 2025 was previously examined, so this is a
 retrospective diagnostic. The PEM-inspired three-model comparison remains the next model study.
+The [completed replay](reports/team_scores/compact_2025/findings.md) has margin MAE **10.508**
+and team-score MAE **7.635** across 272 games. The prior-team-score control has margin MAE
+10.338, so this diagnostic does not justify promotion. All game scores, weekly errors and
+predicted-versus-actual charts are retained; the original enriched replay stays gated.
 
 The next bounded injury experiment uses separately qualified 2022 initialization and the
 existing 2023-2024 dated news audit. It compares compact EPA with report-availability controls
