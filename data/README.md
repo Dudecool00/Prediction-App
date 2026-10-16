@@ -128,3 +128,11 @@ predictions and fold receipts are added under `processed/team_compact_replay/`; 
 and raw datasets are reused. Cached runs are verified without refitting. This command does
 not supply missing roster inputs or clear the original enriched replay gate. The
 [declared protocol](../reports/team_scores/compact_2025/protocol.md) fixes all comparisons.
+
+Forecast-band calibration reads the verified 2023–2024 development and frozen 2025
+panels without changing predictions. The separate opponent-adjusted points study stores
+one five-method panel, fit parameters/receipts and a development-only choice under
+`processed/team_points_comparison/`. It performs 36 development and 18 diagnostic points
+fits; EPA and original controls are reused. The equal blend has fixed weights. No raw
+data, copied training tables or new environment is added. Both modules export derived
+tables/charts under ignored `reports/local/` directories and retain the enriched gate.
