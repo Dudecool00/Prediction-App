@@ -216,6 +216,11 @@ The [completed replay](reports/team_scores/compact_2025/findings.md) has margin 
 and team-score MAE **7.635** across 272 games. The prior-team-score control has margin MAE
 10.338, so this diagnostic does not justify promotion. All game scores, weekly errors and
 predicted-versus-actual charts are retained; the original enriched replay stays gated.
+The [requested 21-point-margin sensitivity](reports/team_scores/compact_2025_margin_subset/findings.md)
+reuses those predictions without fitting: excluding 49 blowouts lowers EPA margin MAE to
+7.953 on 223 games, versus 7.796 for league scores and 7.520 for prior team scores. This
+post-hoc outcome filter does not replace the full-season evaluation. Reproduce it with
+`python -m nfl_prop_model.modeling.team_margin_sensitivity` using the existing replay cache.
 
 The next bounded injury experiment uses separately qualified 2022 initialization and the
 existing 2023-2024 dated news audit. It compares compact EPA with report-availability controls
