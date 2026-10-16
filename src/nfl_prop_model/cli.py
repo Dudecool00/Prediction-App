@@ -107,6 +107,7 @@ def main(argv: list[str] | None = None) -> int:
         "team-pregame-audit",
         "team-walkforward",
         "team-replay-check",
+        "team-compact-replay",
         "team-simplicity-check",
         "team-availability-fetch",
         "team-availability-audit",
@@ -137,7 +138,9 @@ def main(argv: list[str] | None = None) -> int:
             "--report-dir",
             type=Path,
             default=Path(
-                "reports/local/team_depth_catalog"
+                "reports/local/team_compact_replay"
+                if name == "team-compact-replay"
+                else "reports/local/team_depth_catalog"
                 if name.startswith("team-depth-catalog")
                 else "reports/local/team_archived_weather"
                 if name == "team-archived-weather-compare"
@@ -163,7 +166,13 @@ def main(argv: list[str] | None = None) -> int:
         from nfl_prop_model.data.team_games import build_team_cache, fetch_team_sources
         from nfl_prop_model.modeling.team_scores import save_team_evaluation, save_team_forecast
 
-        if args.command == "team-depth-catalog-fetch":
+        if args.command == "team-compact-replay":
+            from nfl_prop_model.modeling.team_compact_replay import save_compact_replay
+
+            report = save_compact_replay(args.data_dir, args.report_dir)
+            print(f"Compact 2025 diagnostic: {report['2025_fits_performed']} Tuesday fits.")
+            print(f"Charts: {args.report_dir / 'comparison.html'}. Enriched replay stays gated.")
+        elif args.command == "team-depth-catalog-fetch":
             from nfl_prop_model.data.team_depth_catalog import fetch_depth_catalog
 
             report = fetch_depth_catalog(args.data_dir, retry_failed=args.retry_failed)

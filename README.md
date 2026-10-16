@@ -196,6 +196,23 @@ comparisons, a revised freeze and the enriched 2025 replay. Existing caches are 
 
 ## Repository and validation
 
+The separately authorized [frozen compact-EPA 2025 diagnostic](reports/team_scores/compact_2025/protocol.md)
+uses the eight-input research choice after the simplicity, injury and weather comparisons.
+It does not clear the original enriched replay gate or replace the published app model.
+With those verified development caches and the canonical 2022–2025 cache available, run:
+
+```powershell
+.\.venv\Scripts\nfl-prop.exe team-compact-replay
+```
+
+The command runs offline, freezes its source hashes before opening 2025 outcomes, then fits
+once per Tuesday using all available 2022–2024 games plus eligible earlier 2025 weeks.
+Kickoff-minus-one-hour refresh reuses that fit; compact predictions are identical at both
+horizons. Output includes every game's predicted/actual scores and margins, weekly metrics,
+fold receipts and interactive charts under `reports/local/team_compact_replay/`. Cached
+runs are verified and reused without refitting. 2025 was previously examined, so this is a
+retrospective diagnostic. The PEM-inspired three-model comparison remains the next model study.
+
 The next bounded injury experiment uses separately qualified 2022 initialization and the
 existing 2023-2024 dated news audit. It compares compact EPA with report-availability controls
 and two coarse Out-count contrasts, retaining every development game. Its

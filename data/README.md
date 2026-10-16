@@ -120,3 +120,11 @@ They use the current NFL club directory as an explicit domain assumption and sto
 indexes under `raw/team_depth_catalog/`, with one cutoff table under `processed/team_depth_catalog/`.
 Indexed candidates remain unverified and model-ineligible: chart bodies and player identities
 require a separate audited adapter. See the [source inventory policy](../reports/team_scores/depth_catalog/protocol.md).
+
+`team-compact-replay` is a separate, offline 2025 diagnostic using the frozen eight-input
+research choice. It verifies the existing simplicity, dated-injury and archived-weather
+decisions before freezing hashes, then reads the canonical outcomes. Only 2025 feature rows,
+predictions and fold receipts are added under `processed/team_compact_replay/`; training
+and raw datasets are reused. Cached runs are verified without refitting. This command does
+not supply missing roster inputs or clear the original enriched replay gate. The
+[declared protocol](../reports/team_scores/compact_2025/protocol.md) fixes all comparisons.
